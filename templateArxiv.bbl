@@ -1,0 +1,448 @@
+\begin{thebibliography}{10}
+
+\bibitem{10.1145/1968.1972}
+L.~G. Valiant.
+\newblock A theory of the learnable.
+\newblock {\em Commun. ACM}, 27(11):1134–1142, November 1984.
+
+\bibitem{Vapnik1999-VAPTNO}
+Vladimir Vapnik.
+\newblock {\em The Nature of Statistical Learning Theory}.
+\newblock Springer: New York, 1999.
+
+\bibitem{6797087}
+Stuart Geman, Elie Bienenstock, and René Doursat.
+\newblock Neural networks and the bias/variance dilemma.
+\newblock {\em Neural Computation}, 4(1):1--58, 1992.
+
+\bibitem{belkin_reconciling_2019}
+Mikhail Belkin, Daniel Hsu, Siyuan Ma, and Soumik Mandal.
+\newblock Reconciling modern machine learning practice and the bias-variance
+  trade-off.
+\newblock {\em Proc. Natl. Acad. Sci. U.S.A.}, 116(32):15849--15854, August
+  2019.
+\newblock arXiv:1812.11118 [cs, stat].
+
+\bibitem{10.5555/2371238}
+Mehryar Mohri, Afshin Rostamizadeh, and Ameet Talwalkar.
+\newblock {\em Foundations of Machine Learning}.
+\newblock The MIT Press, 2012.
+
+\bibitem{10.5555/2621980}
+Shai Shalev-Shwartz and Shai Ben-David.
+\newblock {\em Understanding Machine Learning: From Theory to Algorithms}.
+\newblock Cambridge University Press, USA, 2014.
+
+\bibitem{STL_Hajek_Maxim_2021}
+Bruce Hajek and Maxim Raginsky.
+\newblock {\em Statistical Learning Theory}, volume~1.
+\newblock 2021.
+
+\bibitem{bousquet2020theoryuniversallearning}
+Olivier Bousquet, Steve Hanneke, Shay Moran, Ramon van Handel, and Amir
+  Yehudayoff.
+\newblock A theory of universal learning, 2020.
+
+\bibitem{Domingos2000AUB}
+Pedro~M. Domingos.
+\newblock A unified bias-variance decomposition for zero-one and squared loss.
+\newblock In {\em AAAI/IAAI}, 2000.
+
+\bibitem{schaeffer_double_2023}
+Rylan Schaeffer, Mikail Khona, Zachary Robertson, Akhilan Boopathy, Kateryna
+  Pistunova, Jason~W. Rocks, Ila~Rani Fiete, and Oluwasanmi Koyejo.
+\newblock Double {Descent} {Demystified}: {Identifying}, {Interpreting} \&
+  {Ablating} the {Sources} of a {Deep} {Learning} {Puzzle}, March 2023.
+\newblock arXiv:2303.14151 [cs, stat].
+
+\bibitem{nakkiran_deep_2019}
+Preetum Nakkiran, Gal Kaplun, Yamini Bansal, Tristan Yang, Boaz Barak, and Ilya
+  Sutskever.
+\newblock Deep {Double} {Descent}: {Where} {Bigger} {Models} and {More} {Data}
+  {Hurt}, December 2019.
+\newblock arXiv:1912.02292 [cs, stat].
+
+\bibitem{lafon_understanding_2024}
+Marc Lafon and Alexandre Thomas.
+\newblock Understanding the {Double} {Descent} {Phenomenon} in {Deep}
+  {Learning}, March 2024.
+\newblock arXiv:2403.10459 [cs, stat].
+
+\bibitem{davies_unifying_2023}
+Xander Davies, Lauro Langosco, and David Krueger.
+\newblock Unifying {Grokking} and {Double} {Descent}, March 2023.
+\newblock arXiv:2303.06173 [cs].
+
+\bibitem{d_ascoli_triple_2020}
+Stéphane d'~Ascoli, Levent Sagun, and Giulio Biroli.
+\newblock Triple descent and the two kinds of overfitting: where \& why do they
+  appear?
+\newblock In {\em Advances in {Neural} {Information} {Processing} {Systems}},
+  volume~33, pages 3058--3069. Curran Associates, Inc., 2020.
+
+\bibitem{liu2023understandingroleoptimizationdouble}
+Chris~Yuhao Liu and Jeffrey Flanigan.
+\newblock Understanding the role of optimization in double descent, 2023.
+
+\bibitem{olmin2024understandingepochwisedoubledescent}
+Amanda Olmin and Fredrik Lindsten.
+\newblock Towards understanding epoch-wise double descent in two-layer linear
+  neural networks, 2024.
+
+\bibitem{sharma_bias-variance_2014}
+Rahul Sharma and Alex Aiken.
+\newblock Bias-variance tradeoffs in program analysis.
+\newblock In {\em Proceedings of the 41st {ACM} {SIGPLAN}-{SIGACT} {Symposium}
+  on {Principles} of {Programming} {Languages}}, {POPL} '14, pages 127--137,
+  New York, NY, USA, 2014. Association for Computing Machinery.
+
+\bibitem{unified_bias_composition}
+[{PDF}] {A} {Unifeid} {Bias}-{Variance} {Decomposition} and its {Applications}
+  {\textbar} {Semantic} {Scholar}.
+
+\bibitem{Scott_Fortmann_Bias}
+Scott Fortmann.
+\newblock Understanding the {Bias}-{Variance} {Tradeoff}, 2012.
+
+\bibitem{neal2019biasvariancetradeofftextbooksneed}
+Brady Neal.
+\newblock On the bias-variance tradeoff: Textbooks need an update, 2019.
+
+\bibitem{Cristianini2000AnIT}
+Nello Cristianini and John Shawe-Taylor.
+\newblock An introduction to support vector machines and other kernel-based
+  learning methods.
+\newblock 2000.
+
+\bibitem{goodfellow2016deep}
+Ian Goodfellow, Yoshua Bengio, Aaron Courville, and Yoshua Bengio.
+\newblock {\em Deep learning}, volume~1.
+\newblock MIT Press, 2016.
+
+\bibitem{GRP_Hamilton}
+William~L. Hamilton.
+\newblock Graph representation learning.
+\newblock {\em Synthesis Lectures on Artificial Intelligence and Machine
+  Learning}, 14(3):1--159.
+
+\bibitem{Scar04}
+Franco Scarselli, Marco Gori, Ah~Chung Tsoi, Markus Hagenbuchner, and Gabriele
+  Monfardini.
+\newblock The graph neural network model.
+\newblock {\em IEEE Transactions on Neural Networks}, 20(1):61--80, 2009.
+
+\bibitem{lopushanskyy2024graphneuralnetworksgraph}
+Dmytro Lopushanskyy and Borun Shi.
+\newblock Graph neural networks on graph databases, 2024.
+
+\bibitem{tanis2024introductiongraphneuralnetworks}
+James~H. Tanis, Chris Giannella, and Adrian~V. Mariano.
+\newblock Introduction to graph neural networks: A starting point for machine
+  learning engineers, 2024.
+
+\bibitem{bronstein2021geometricdeeplearninggrids}
+Michael~M. Bronstein, Joan Bruna, Taco Cohen, and Petar Veličković.
+\newblock Geometric deep learning: Grids, groups, graphs, geodesics, and
+  gauges, 2021.
+
+\bibitem{Veli_kovi__2023}
+Petar Veličković.
+\newblock Everything is connected: Graph neural networks.
+\newblock {\em Current Opinion in Structural Biology}, 79:102538, April 2023.
+
+\bibitem{Oono2020Graph}
+Kenta Oono and Taiji Suzuki.
+\newblock Graph neural networks exponentially lose expressive power for node
+  classification.
+\newblock In {\em International Conference on Learning Representations}, 2020.
+
+\bibitem{shi2024homophilymodulatesdoubledescent}
+Cheng Shi, Liming Pan, Hong Hu, and Ivan Dokmanić.
+\newblock Homophily modulates double descent generalization in graph
+  convolution networks, 2024.
+
+\bibitem{Bronstein_2017}
+Michael~M. Bronstein, Joan Bruna, Yann LeCun, Arthur Szlam, and Pierre
+  Vandergheynst.
+\newblock Geometric deep learning: Going beyond euclidean data.
+\newblock {\em IEEE Signal Processing Magazine}, 34(4):18–42, July 2017.
+
+\bibitem{Sterkenburg_2024}
+Tom~F. Sterkenburg.
+\newblock Statistical learning theory and occam’s razor: The core argument.
+\newblock {\em Minds and Machines}, 35(1), November 2024.
+
+\bibitem{achlioptas_stochastic_nodate}
+Panos Achlioptas.
+\newblock Stochastic {Gradient} {Descent} in {Theory} and {Practice}.
+\newblock {\em Lecture note, Stanford's AI}.
+
+\bibitem{ruder_overview_2017}
+Sebastian Ruder.
+\newblock An overview of gradient descent optimization algorithms, June 2017.
+\newblock arXiv:1609.04747 [cs].
+
+\bibitem{zhang_gradient_2019}
+Jiawei Zhang.
+\newblock Gradient {Descent} based {Optimization} {Algorithms} for {Deep}
+  {Learning} {Models} {Training}, March 2019.
+\newblock arXiv:1903.03614 [cs].
+
+\bibitem{gareth_james_introduction_2013}
+Gareth James, Trevor Hastie, Robert Tibshirani, and Daniela Witten.
+\newblock {\em An introduction to statistical learning : with applications in
+  {R}}.
+\newblock New York : Springer, [2013] ©2013, 2013.
+
+\bibitem{LehmannCasella_theory_1998}
+George~Casella E.~L.~Lehmann.
+\newblock {\em Theory of {Point} {Estimation}}.
+\newblock Springer {Texts} in {Statistics}. Springer-Verlag, New York, 1998.
+
+\bibitem{liam_statistics_2005}
+Liam Paninski.
+\newblock Statistics 4107: {Intro} to {Math} {Stat} (fall 2005), 2005.
+
+\bibitem{piera_sample_2005}
+Villares Piera and Nemesio Javier.
+\newblock {\em Sample {Covariance} {Based} {Parameter} {Estimation} {For}
+  {Digital} {Communications}}.
+\newblock Doctoral thesis, Universitat Politècnica de Catalunya, October 2005.
+\newblock Accepted: 2011-04-12T15:27:01Z ISBN: 9788468995571 Publication Title:
+  TDX (Tesis Doctorals en Xarxa).
+
+\bibitem{MkayPretenceSignalStatistics1993}
+Steven~M. Kay.
+\newblock Fundamentals of statistical signal processing: estimation theory
+  {\textbar} {Guide} books {\textbar} {ACM} {Digital} {Library}, 1993.
+
+\bibitem{brown2024biasvariance}
+Gavin Brown and Riccardo Ali.
+\newblock Bias/variance is not the same as approximation/estimation.
+\newblock {\em Transactions on Machine Learning Research}, 2024.
+
+\bibitem{adlam2020understandingdoubledescentrequires}
+Ben Adlam and Jeffrey Pennington.
+\newblock Understanding double descent requires a fine-grained bias-variance
+  decomposition, 2020.
+
+\bibitem{PfauBregmanDivergence}
+David Pfau.
+\newblock A generalized bias-variance decomposition for bregman divergences.
+\newblock Technical report, 2013.
+
+\bibitem{domingos_unifeid_2000}
+Pedro~M. Domingos.
+\newblock A {Unifeid} {Bias}-{Variance} {Decomposition} and its {Applications}.
+\newblock In {\em Semantic Scholar}, June 2000.
+
+\bibitem{yang_rethinking_2020}
+Zitong Yang, Yaodong Yu, Chong You, Jacob Steinhardt, and Yi~Ma.
+\newblock Rethinking {Bias}-{Variance} {Trade}-off for {Generalization} of
+  {Neural} {Networks}, December 2020.
+\newblock arXiv:2002.11328 [cs, stat].
+
+\bibitem{hastie2019surprises}
+Trevor Hastie, Andrea Montanari, Saharon Rosset, and Ryan~J Tibshirani.
+\newblock Surprises in high-dimensional ridgeless least squares interpolation.
+\newblock {\em arXiv preprint arXiv:1903.08560}, 2019.
+
+\bibitem{mei2019generalization}
+Song Mei and Andrea Montanari.
+\newblock The generalization error of random features regression: Precise
+  asymptotics and double descent curve.
+\newblock {\em arXiv preprint arXiv:1908.05355}, 2019.
+
+\bibitem{neal2018modern}
+Brady Neal, Sarthak Mittal, Aristide Baratin, Vinayak Tantia, Matthew Scicluna,
+  Simon Lacoste-Julien, and Ioannis Mitliagkas.
+\newblock A modern take on the bias-variance tradeoff in neural networks.
+\newblock {\em arXiv preprint arXiv:1810.08591}, 2018.
+
+\bibitem{advani2017highdimensionaldynamicsgeneralizationerror}
+Madhu~S. Advani and Andrew~M. Saxe.
+\newblock High-dimensional dynamics of generalization error in neural networks,
+  2017.
+
+\bibitem{belkin2018understanddeeplearningneed}
+Mikhail Belkin, Siyuan Ma, and Soumik Mandal.
+\newblock To understand deep learning we need to understand kernel learning,
+  2018.
+
+\bibitem{mei2020generalizationerrorrandomfeatures}
+Song Mei and Andrea Montanari.
+\newblock The generalization error of random features regression: Precise
+  asymptotics and double descent curve, 2020.
+
+\bibitem{hu2021modelcomplexitydeeplearning}
+Xia Hu, Lingyang Chu, Jian Pei, Weiqing Liu, and Jiang Bian.
+\newblock Model complexity of deep learning: A survey, 2021.
+
+\bibitem{luo2024investigatingimpactmodelcomplexity}
+Jing Luo, Huiyuan Wang, and Weiran Huang.
+\newblock Investigating the impact of model complexity in large language
+  models, 2024.
+
+\bibitem{barceló2020modelinterpretabilitylenscomputational}
+Pablo Barceló, Mikaël Monet, Jorge Pérez, and Bernardo Subercaseaux.
+\newblock Model interpretability through the lens of computational complexity,
+  2020.
+
+\bibitem{Molnar_2020}
+Christoph Molnar, Giuseppe Casalicchio, and Bernd Bischl.
+\newblock {\em Quantifying Model Complexity via Functional Decomposition for
+  Better Post-hoc Interpretability}, page 193–204.
+\newblock Springer International Publishing, 2020.
+
+\bibitem{janik2021complexitydeepneuralnetworks}
+Romuald~A. Janik and Przemek Witaszczyk.
+\newblock Complexity for deep neural networks and other characteristics of deep
+  feature representations, 2021.
+
+\bibitem{10.5555/200548}
+Michael~J. Kearns and Umesh~V. Vazirani.
+\newblock {\em An introduction to computational learning theory}.
+\newblock MIT Press, Cambridge, MA, USA, 1994.
+
+\bibitem{Wegener1987}
+Ingo Wegener.
+\newblock {\em The Complexity of Boolean Functions}.
+\newblock John Wiley \& Sons, Chichester, UK, 1987.
+
+\bibitem{MiltersenRadhakrishnanWegener2005}
+Peter B. Miltersen, Jaikumar Radhakrishnan, and Ingo Wegener.
+\newblock On converting {CNF} to {DNF}.
+\newblock {\em Theoretical Computer Science}, 347(1–2):325–335, 2005.
+
+\bibitem{DarwicheMarquis2002}
+Adnan Darwiche and Pierre Marquis.
+\newblock A knowledge compilation map.
+\newblock {\em Journal of Artificial Intelligence Research}, 17:229–264,
+  2002.
+
+\bibitem{VapnikChervonenkis:1971}
+Vladimir~N. Vapnik and Alexey~Y. Chervonenkis.
+\newblock On the uniform convergence of relative frequencies to their
+  probabilities.
+\newblock {\em Theory of Probability and Its Applications}, 16(2):264--280,
+  1971.
+\newblock Classic VC uniform convergence result.
+
+\bibitem{BartlettMendelson:2002:Rademacher}
+Peter~L. Bartlett and Shahar Mendelson.
+\newblock Rademacher and gaussian complexities: Risk bounds and structural
+  results.
+\newblock {\em Journal of Machine Learning Research}, 3:463--482, 2002.
+\newblock Data-dependent complexity measures.
+
+\bibitem{BartlettBousquetMendelson:2005:LocalRademacher}
+Peter~L. Bartlett, Olivier Bousquet, and Shahar Mendelson.
+\newblock Local rademacher complexities.
+\newblock {\em Annals of Statistics}, 33(4):1497--1537, 2005.
+\newblock Sharper, localized capacity bounds.
+
+\bibitem{BousquetElisseeff:2002:Stability}
+Olivier Bousquet and Andr\'e Elisseeff.
+\newblock Stability and generalization.
+\newblock {\em Journal of Machine Learning Research}, 2:499--526, 2002.
+\newblock Algorithmic stability bounds.
+
+\bibitem{McAllester:1999:PACBayes}
+David~A. McAllester.
+\newblock Pac-bayesian model averaging.
+\newblock In {\em Proceedings of the 12th Annual Conference on Computational
+  Learning Theory (COLT)}, pages 164--170. ACM, 1999.
+\newblock Foundational PAC-Bayes framework.
+
+\bibitem{FloydWarmuth:1995:SampleCompression}
+Stephen Floyd and Manfred~K. Warmuth.
+\newblock Sample compression, learnability, and the vapnik-chervonenkis
+  dimension.
+\newblock {\em Machine Learning}, 21(3):269--304, 1995.
+\newblock Compression bounds linking model size and generalization.
+
+\bibitem{RussoZou:2016:InformationTheory}
+Daniel Russo and James Zou.
+\newblock Controlling bias in adaptive data analysis using information theory.
+\newblock In {\em Proceedings of AISTATS}, 2016.
+\newblock Introduced info-theoretic generalization bounds.
+
+\bibitem{XuRaginsky:2017:InfoGen}
+An~Xu and Maxim Raginsky.
+\newblock Information-theoretic analysis of generalization capability of
+  learning algorithms.
+\newblock In {\em NeurIPS}, 2017.
+\newblock Mutual information bounds.
+
+\bibitem{Jacot:2018:NTK}
+Arthur Jacot, Fran\c~cois Gabriel, and Clément Hongler.
+\newblock Neural tangent kernel: Convergence and generalization in neural
+  networks.
+\newblock In {\em Advances in Neural Information Processing Systems (NeurIPS)},
+  2018.
+\newblock Kernel view of wide-network behavior.
+
+\bibitem{Bartlett:1998:MarginComplexity}
+Peter~L. Bartlett.
+\newblock The sample complexity of pattern classification with margin.
+\newblock {\em IEEE Transactions on Information Theory}, 44(2):525--536, 1998.
+\newblock Margin bounds in classification.
+
+\bibitem{XuMannor:2010:RobustnessGeneralization}
+Huan Xu and Shie Mannor.
+\newblock Robustness and generalization.
+\newblock In {\em Proceedings of the 23rd Annual Conference on Learning Theory
+  (COLT)}, 2010.
+\newblock arXiv:1005.2243; derives generalization bounds from algorithmic
+  robustness.
+
+\bibitem{LittlestoneWarmuth:1994:WeightedMajority}
+Nick Littlestone and Manfred~K. Warmuth.
+\newblock The weighted majority algorithm.
+\newblock {\em Information and Computation}, 108(2):212--261, 1994.
+\newblock Classic multiplicative-weights algorithm and regret bounds.
+
+\bibitem{zhang2023mathematical}
+Tong Zhang.
+\newblock {\em Mathematical Analysis of Machine Learning Algorithms}.
+\newblock Cambridge University Press, 2023.
+
+\bibitem{mcculloch_logical_1943}
+Warren~S. McCulloch and Walter Pitts.
+\newblock A logical calculus of the ideas immanent in nervous activity.
+\newblock {\em The bulletin of mathematical biophysics}, 5(4):115--133,
+  December 1943.
+
+\bibitem{Rosenblatt1958ThePA}
+Frank Rosenblatt.
+\newblock The perceptron: a probabilistic model for information storage and
+  organization in the brain.
+\newblock {\em Psychological review}, 65 6:386--408, 1958.
+
+\bibitem{buschjager_generalized_2020}
+Sebastian Buschjäger, Lukas Pfahler, and Katharina Morik.
+\newblock Generalized {Negative} {Correlation} {Learning} for {Deep}
+  {Ensembling}, December 2020.
+\newblock arXiv:2011.02952 [cs, stat].
+
+\bibitem{rossi2020temporalgraphnetworksdeep}
+Emanuele Rossi, Ben Chamberlain, Fabrizio Frasca, Davide Eynard, Federico
+  Monti, and Michael Bronstein.
+\newblock Temporal graph networks for deep learning on dynamic graphs, 2020.
+
+\bibitem{pyg_docs}
+{PyTorch Geometric Team}.
+\newblock Creating message passing networks, 2025.
+
+\bibitem{Fey/Lenssen/2019}
+Matthias Fey and Jan~Eric Lenssen.
+\newblock Fast graph representation learning with {PyTorch Geometric}.
+\newblock In {\em ICLR Workshop on Representation Learning on Graphs and
+  Manifolds}, 2019.
+
+\bibitem{10.5555/2930837}
+Masashi Sugiyama.
+\newblock {\em Introduction to Statistical Machine Learning}.
+\newblock Morgan Kaufmann Publishers Inc., San Francisco, CA, USA, 2015.
+
+\end{thebibliography}

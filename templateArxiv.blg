@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: templateArxiv.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+The style file: unsrt.bst
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Database file #1: references.bib
+Warning--empty publisher in STL_Hajek_Maxim_2021
+Warning--empty booktitle in Cristianini2000AnIT
+Warning--empty year in GRP_Hamilton
+Warning--empty year in achlioptas_stochastic_nodate
+You've used 80 entries,
+            1791 wiz_defined-function locations,
+            870 strings with 17497 characters,
+and the built_in function-call counts, 15079 in all, are:
+= -- 1221
+> -- 721
+< -- 7
++ -- 275
+- -- 195
+* -- 785
+:= -- 2347
+add.period$ -- 235
+call.type$ -- 80
+change.case$ -- 68
+chr.to.int$ -- 0
+cite$ -- 84
+duplicate$ -- 684
+empty$ -- 1667
+format.name$ -- 195
+if$ -- 3438
+int.to.chr$ -- 0
+int.to.str$ -- 80
+missing$ -- 60
+newline$ -- 394
+num.names$ -- 79
+pop$ -- 393
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 349
+stack$ -- 0
+substring$ -- 554
+swap$ -- 141
+text.length$ -- 7
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 4
+while$ -- 116
+width$ -- 82
+write$ -- 817
+(There were 4 warnings)

@@ -1,0 +1,58 @@
+%\begin{table}[htb]
+%\centering
+%\begin{tabularx}{\textwidth}{@{} c  P{3cm}  P{6cm}  X @{}} 
+%\hline 
+%\textbf{Function class} & $f(x)$ & \textbf{Power-series expansion} & \textbf{Degree-$D$ truncation} \\
+%\hline 
+%Linear &
+%$ax + b$ &
+%already polynomial &
+%$ax + b$ \\
+%
+%Polynomial &
+%$\displaystyle \sum_{k=0}^d a_k x^k$ &
+%already polynomial &
+%$\displaystyle \sum_{k=0}^d a_k x^k$ \\
+%
+%Exponential &
+%$ae^{bx} + c$ &
+%$\displaystyle a\sum_{k=0}^{\infty}\frac{(bx)^k}{k!} + c$ &
+%$\displaystyle \sum_{k=0}^{D}\left(a\frac{b^k}{k!}\right)x^k + c$ \\
+%
+%Trigonometric &
+%$a\sin(bx + c) + d$ &
+%Taylor series approximation&
+%$D$-degree Taylor form \\
+%
+%Hyperbolic &
+%$\displaystyle \frac{a}{x + b} + c$ &
+%$\displaystyle \frac{a}{b}\left[\sum_{k=0}^{\infty}(-1)^k\left(\frac{x}{b}\right)^k\right] + c$ &
+%$\displaystyle \sum_{k=0}^{D}\left(\frac{a}{b}(-1)^k b^{-k}\right)x^k + c$ \\
+%
+%\hline
+%\end{tabularx}
+%\caption{\textbf{Function class and their respective polynomial form}. We use the expression of polynomial to take the approximate form of those %elementary function classes, for a more general complexity measure making use of the above parameter-based structural and effective complexity %analysis.}
+%\label{table:taylor_expand1}
+%\end{table}
+%
+%\begin{equation}
+%  M_{\beta}(f) = \left(\sum^{n}_{i=1}(i+1)\lvert a_{k}\rvert\right)^{1/\beta} + 1
+%\end{equation}
+%again, for the $+1$ factor to take into account the free parameter, or generally just bias in the model. If we set $\beta = 1$, then we have the %\textbf{weighted sum} of the parameter only, 
+%\begin{equation}
+%  M_{1}(f) = \left(\sum^{n}_{i=1}(i+1)\lvert a_{k}\rvert\right) + 1
+%\end{equation}
+%As $\beta$ increases, the more powerful terms will make the more expressive term in the sense of a polynomial to dominate the expressive %complexity. Here is the table for such complexity measure for exponential, hyperbolic, trigonometric, and polynomial and linear function class of %the same family $\mathcal{F}$. Hence, in total, the complexity used is a combination of both the structural mass and the expressive complexity as 
+%\begin{equation}
+%  M(f) = M_{\alpha}(f)+ M_{\beta}(f) = p + \left(\sum^{n}_{i=1}(i+1)\lvert a_{k}\rvert\right)^{1/\beta} + 2
+%\end{equation}
+%For the functions $f\in\mathcal{F}$, we approximate them to polynomial using Taylor expansion, presented in Table~\ref{table:taylor_expand1}. The %trigonometric form is derived by noticing that
+%\begin{equation}
+%  a\left[\sin{(c)}\sum_{k=0}^{\infty}(-1)^k\frac{(bx)^{2k}}{(2k)!} \;+\;\cos{(c)}\sum_{k=0}^{\infty}(-1)^k\frac{(bx)^{2k+1}}{(2k+1)!}\right] + d
+%\end{equation}
+%can be also expanded by replacing the remaining $\sin{(c)}$ and $\cos{(c)}$ with their respective Taylor expansion. Applying the formula on them %yields the following
+%\begin{align}
+%  M_{\beta}(f_{\mathrm{lin}}) & = p + \left(\sum^{n}_{i=1}(i+1)\lvert a_{k}\rvert\right)^{1/\beta} + 2 = p + 2(\lvert a \rvert+1) \\
+%  M_{\beta}(f_{\mathrm{poly}}) & = p + \left(\sum^{n}_{i=1}(i+1)\lvert a_{k}\rvert\right)^{1/\beta} + 2 \quad \text{base case.}\\
+%  M_{\beta}(f_{\mathrm{trig}}) & = p + \left(\sum^{n}_{i=1}(i+1)\lvert a_{k}\rvert\right)^{1/\beta} + 2 = 
+%\end{align}
