@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.6.17)  10 AUG 2025 17:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.6.17)  15 AUG 2025 22:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1016,6 +1016,12 @@ LaTeX Warning: Label `fig:2d' multiply defined.
 
 LaTeX Warning: Label `sub@fig:2d' multiply defined.
 
+
+LaTeX Warning: Label `fig:2i' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:2i' multiply defined.
+
 )
 \openout1 = `templateArxiv.aux'.
 
@@ -1215,7 +1221,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 [2]
 Package hyperref Info: bookmark level for unknown assumption defaults to 0 on input line 122.
 Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 130.
-<media/g10.png, id=370, 384.0749pt x 142.5325pt>
+<media/g10.png, id=394, 384.0749pt x 142.5325pt>
 File: media/g10.png Graphic file (type png)
 <use media/g10.png>
 Package pdftex.def Info: media/g10.png  used on input line 147.
@@ -1232,7 +1238,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 
 [5]
-<media/mamamia.png, id=422, 600.5637pt x 315.8199pt>
+<media/mamamia.png, id=446, 600.5637pt x 315.8199pt>
 File: media/mamamia.png Graphic file (type png)
 <use media/mamamia.png>
 Package pdftex.def Info: media/mamamia.png  used on input line 230.
@@ -1240,12 +1246,12 @@ Package pdftex.def Info: media/mamamia.png  used on input line 230.
 
 
 [6 <./media/mamamia.png>]
-<media/illustration_descent_algorithm1.png, id=433, 666.3294pt x 320.8788pt>
+<media/illustration_descent_algorithm1.png, id=457, 666.3294pt x 320.8788pt>
 File: media/illustration_descent_algorithm1.png Graphic file (type png)
 <use media/illustration_descent_algorithm1.png>
 Package pdftex.def Info: media/illustration_descent_algorithm1.png  used on input line 251.
 (pdftex.def)             Requested size: 328.82706pt x 158.35321pt.
-<media/illustration_descent_algorithm2.png, id=434, 648.9846pt x 306.4248pt>
+<media/illustration_descent_algorithm2.png, id=458, 648.9846pt x 306.4248pt>
 File: media/illustration_descent_algorithm2.png Graphic file (type png)
 <use media/illustration_descent_algorithm2.png>
 Package pdftex.def Info: media/illustration_descent_algorithm2.png  used on input line 258.
@@ -1281,7 +1287,7 @@ Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input
 [9
 
 ]
-<media/error_decomposition.png, id=479, 174.1707pt x 87.4467pt>
+<media/error_decomposition.png, id=503, 174.1707pt x 87.4467pt>
 File: media/error_decomposition.png Graphic file (type png)
 <use media/error_decomposition.png>
 Package pdftex.def Info: media/error_decomposition.png  used on input line 327.
@@ -1289,7 +1295,7 @@ Package pdftex.def Info: media/error_decomposition.png  used on input line 327.
 
 
 [10 <./media/error_decomposition.png>]
-<pdf/VennFig2.pdf, id=513, 1824.8175pt x 527.9725pt>
+<pdf/VennFig2.pdf, id=537, 1824.8175pt x 527.9725pt>
 File: pdf/VennFig2.pdf Graphic file (type pdf)
 <use pdf/VennFig2.pdf>
 Package pdftex.def Info: pdf/VennFig2.pdf  used on input line 396.
@@ -1299,17 +1305,17 @@ Package pdftex.def Info: pdf/VennFig2.pdf  used on input line 396.
 [11]
 
 [12 <./pdf/VennFig2.pdf>]
-<pdf/u-shaped.pdf, id=678, 114.32813pt x 75.23106pt>
+<pdf/u-shaped.pdf, id=702, 114.32813pt x 75.23106pt>
 File: pdf/u-shaped.pdf Graphic file (type pdf)
 <use pdf/u-shaped.pdf>
 Package pdftex.def Info: pdf/u-shaped.pdf  used on input line 436.
 (pdftex.def)             Requested size: 148.2689pt x 97.56052pt.
-<pdf/doubledescent.pdf, id=679, 203.12387pt x 75.23106pt>
+<pdf/doubledescent.pdf, id=703, 203.12387pt x 75.23106pt>
 File: pdf/doubledescent.pdf Graphic file (type pdf)
 <use pdf/doubledescent.pdf>
 Package pdftex.def Info: pdf/doubledescent.pdf  used on input line 437.
 (pdftex.def)             Requested size: 263.42561pt x 97.56052pt.
-<media/errorvscomplexity.png, id=685, 986.7264pt x 263.5446pt>
+<media/errorvscomplexity.png, id=709, 986.7264pt x 263.5446pt>
 File: media/errorvscomplexity.png Graphic file (type png)
 <use media/errorvscomplexity.png>
 Package pdftex.def Info: media/errorvscomplexity.png  used on input line 458.
@@ -1319,12 +1325,12 @@ Overfull \hbox (23.48918pt too wide) in paragraph at lines 458--473
  [][] 
  []
 
-<media/Intro-ocean-test.png, id=688, 885.0666pt x 493.3632pt>
+<media/Intro-ocean-test.png, id=712, 885.0666pt x 493.3632pt>
 File: media/Intro-ocean-test.png Graphic file (type png)
 <use media/Intro-ocean-test.png>
 Package pdftex.def Info: media/Intro-ocean-test.png  used on input line 481.
 (pdftex.def)             Requested size: 240.51144pt x 134.06804pt.
-<media/Rn-cifar10-p15-adam-aug-train.png, id=689, 869.1672pt x 493.3632pt>
+<media/Rn-cifar10-p15-adam-aug-train.png, id=713, 869.1672pt x 493.3632pt>
 File: media/Rn-cifar10-p15-adam-aug-train.png Graphic file (type png)
 <use media/Rn-cifar10-p15-adam-aug-train.png>
 Package pdftex.def Info: media/Rn-cifar10-p15-adam-aug-train.png  used on input line 485.
@@ -1410,354 +1416,363 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 
 [22]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 761.
+ (D:\MikTek\tex/latex/amsfonts\ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+) (D:\MikTek\tex/latex/microtype\mt-euf.cfg
+File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
+)
 
 [23]
-<media/img/vapniksetting.png, id=910, 310.15875pt x 182.93344pt>
+
+[24]
+<media/img/vapniksetting.png, id=954, 310.15875pt x 182.93344pt>
 File: media/img/vapniksetting.png Graphic file (type png)
 <use media/img/vapniksetting.png>
-Package pdftex.def Info: media/img/vapniksetting.png  used on input line 766.
+Package pdftex.def Info: media/img/vapniksetting.png  used on input line 808.
 (pdftex.def)             Requested size: 187.89912pt x 110.8244pt.
+<media/Diagramatic_Modelling_View.png, id=958, 9144.1625pt x 5560.775pt>
+File: media/Diagramatic_Modelling_View.png Graphic file (type png)
+<use media/Diagramatic_Modelling_View.png>
+Package pdftex.def Info: media/Diagramatic_Modelling_View.png  used on input line 815.
+(pdftex.def)             Requested size: 328.82706pt x 199.90775pt.
 
-
-[24
-
- <./media/img/vapniksetting.png>]
 pdfTeX warning (ext4): destination with the same identifier (name{theorem.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.803   G
+l.858   G
          iven a univariate functional space $\mathbf{U}_{\mathbf{w},x}$, the...
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\begingroup' on input line 812.
+[25
 
+ <./media/img/vapniksetting.png>]
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.866   T
+         he class of all Fourier-class models can approximate, in a given ra...
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\<let>-command' on input line 812.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\NAT@ctype' on input line 812.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 812.
-
+[26 <./media/Diagramatic_Modelling_View.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\let' on input line 812.
+(hyperref)                removing `\begingroup' on input line 882.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\let' on input line 812.
+(hyperref)                removing `\<let>-command' on input line 882.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\new@ifnextchar' on input line 812.
+(hyperref)                removing `\NAT@ctype' on input line 882.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 812.
+(hyperref)                removing `\z@' on input line 882.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 812.
+(hyperref)                removing `\let' on input line 882.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\let' on input line 882.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\new@ifnextchar' on input line 882.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 882.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 882.
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.816 F
+l.886 F
        or $p \in \llbracket1,d\rrbracket$, $\mathcal{H}_p$ is the set of fun...
-pdfTeX warning (ext4): destination with the same identifier (name{theorem.2}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.830 L
+l.900 L
        et $(x, \epsilon)\in \R^d\times\R$ independent random variables with ...
-<media/img/descent_lin_reg_1.png, id=923, 792.9625pt x 491.8375pt>
-File: media/img/descent_lin_reg_1.png Graphic file (type png)
-<use media/img/descent_lin_reg_1.png>
-Package pdftex.def Info: media/img/descent_lin_reg_1.png  used on input line 855.
-(pdftex.def)             Requested size: 103.34666pt x 64.09871pt.
-<media/img/descent_lin_reg_2.png, id=924, 570.933pt x 354.123pt>
-File: media/img/descent_lin_reg_2.png Graphic file (type png)
-<use media/img/descent_lin_reg_2.png>
-Package pdftex.def Info: media/img/descent_lin_reg_2.png  used on input line 860.
-(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
-<media/img/descent_lin_reg_3.png, id=925, 570.933pt x 354.123pt>
-File: media/img/descent_lin_reg_3.png Graphic file (type png)
-<use media/img/descent_lin_reg_3.png>
-Package pdftex.def Info: media/img/descent_lin_reg_3.png  used on input line 865.
-(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
-<media/img/descent_lin_reg_4.png, id=926, 570.933pt x 354.123pt>
-File: media/img/descent_lin_reg_4.png Graphic file (type png)
-<use media/img/descent_lin_reg_4.png>
-Package pdftex.def Info: media/img/descent_lin_reg_4.png  used on input line 870.
-(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
-<media/img/descent_lin_reg_5.png, id=927, 570.933pt x 354.123pt>
-File: media/img/descent_lin_reg_5.png Graphic file (type png)
-<use media/img/descent_lin_reg_5.png>
-Package pdftex.def Info: media/img/descent_lin_reg_5.png  used on input line 878.
-(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
-<media/img/descent_lin_reg_6.png, id=928, 570.933pt x 354.123pt>
-File: media/img/descent_lin_reg_6.png Graphic file (type png)
-<use media/img/descent_lin_reg_6.png>
-Package pdftex.def Info: media/img/descent_lin_reg_6.png  used on input line 883.
-(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
-<media/img/descent_lin_reg_7.png, id=929, 570.933pt x 354.123pt>
-File: media/img/descent_lin_reg_7.png Graphic file (type png)
-<use media/img/descent_lin_reg_7.png>
-Package pdftex.def Info: media/img/descent_lin_reg_7.png  used on input line 888.
-(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
-<media/img/descent_lin_reg_8.png, id=930, 570.933pt x 354.123pt>
-File: media/img/descent_lin_reg_8.png Graphic file (type png)
-<use media/img/descent_lin_reg_8.png>
-Package pdftex.def Info: media/img/descent_lin_reg_8.png  used on input line 893.
-(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
-<media/img/descent_lin_reg_9.png, id=931, 570.933pt x 354.123pt>
-File: media/img/descent_lin_reg_9.png Graphic file (type png)
-<use media/img/descent_lin_reg_9.png>
-Package pdftex.def Info: media/img/descent_lin_reg_9.png  used on input line 901.
-(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
-<media/img/descent_lin_reg_10.png, id=932, 570.933pt x 354.123pt>
-File: media/img/descent_lin_reg_10.png Graphic file (type png)
-<use media/img/descent_lin_reg_10.png>
-Package pdftex.def Info: media/img/descent_lin_reg_10.png  used on input line 906.
-(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
-<media/img/descent_lin_reg_11.png, id=933, 570.933pt x 354.123pt>
-File: media/img/descent_lin_reg_11.png Graphic file (type png)
-<use media/img/descent_lin_reg_11.png>
-Package pdftex.def Info: media/img/descent_lin_reg_11.png  used on input line 911.
-(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
 
-
-[25]
-<media/img/descent_devel1.png, id=950, 570.933pt x 354.123pt>
-File: media/img/descent_devel1.png Graphic file (type png)
-<use media/img/descent_devel1.png>
-Package pdftex.def Info: media/img/descent_devel1.png  used on input line 950.
-(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
-<media/img/descent_devel2.png, id=951, 570.933pt x 354.123pt>
-File: media/img/descent_devel2.png Graphic file (type png)
-<use media/img/descent_devel2.png>
-Package pdftex.def Info: media/img/descent_devel2.png  used on input line 955.
-(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
-<media/img/descent_devel3.png, id=952, 570.933pt x 354.123pt>
-File: media/img/descent_devel3.png Graphic file (type png)
-<use media/img/descent_devel3.png>
-Package pdftex.def Info: media/img/descent_devel3.png  used on input line 960.
-(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
-<media/img/descent_devel4.png, id=953, 570.933pt x 354.123pt>
-File: media/img/descent_devel4.png Graphic file (type png)
-<use media/img/descent_devel4.png>
-Package pdftex.def Info: media/img/descent_devel4.png  used on input line 965.
-(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
-<media/img/descent_devel5.png, id=954, 570.933pt x 354.123pt>
-File: media/img/descent_devel5.png Graphic file (type png)
-<use media/img/descent_devel5.png>
-Package pdftex.def Info: media/img/descent_devel5.png  used on input line 973.
-(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
-<media/img/descent_devel6.png, id=955, 570.933pt x 354.123pt>
-File: media/img/descent_devel6.png Graphic file (type png)
-<use media/img/descent_devel6.png>
-Package pdftex.def Info: media/img/descent_devel6.png  used on input line 978.
-(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
-<media/img/descent_devel7.png, id=956, 570.933pt x 354.123pt>
-File: media/img/descent_devel7.png Graphic file (type png)
-<use media/img/descent_devel7.png>
-Package pdftex.def Info: media/img/descent_devel7.png  used on input line 983.
-(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
-<media/img/descent_devel8.png, id=957, 570.933pt x 354.123pt>
-File: media/img/descent_devel8.png Graphic file (type png)
-<use media/img/descent_devel8.png>
-Package pdftex.def Info: media/img/descent_devel8.png  used on input line 988.
-(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
-<media/img/descent_devel9.png, id=958, 570.933pt x 354.123pt>
-File: media/img/descent_devel9.png Graphic file (type png)
-<use media/img/descent_devel9.png>
-Package pdftex.def Info: media/img/descent_devel9.png  used on input line 996.
-(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
-<media/img/descent_devel10.png, id=959, 570.933pt x 354.123pt>
-File: media/img/descent_devel10.png Graphic file (type png)
-<use media/img/descent_devel10.png>
-Package pdftex.def Info: media/img/descent_devel10.png  used on input line 1001.
-(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
-<media/img/descent_devel11.png, id=960, 570.933pt x 354.123pt>
-File: media/img/descent_devel11.png Graphic file (type png)
-<use media/img/descent_devel11.png>
-Package pdftex.def Info: media/img/descent_devel11.png  used on input line 1006.
-(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
-<media/img/descent_devel_t1.png, id=963, 578.16pt x 361.35pt>
-File: media/img/descent_devel_t1.png Graphic file (type png)
-<use media/img/descent_devel_t1.png>
-Package pdftex.def Info: media/img/descent_devel_t1.png  used on input line 1039.
-(pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
-<media/img/descent_devel_t2.png, id=964, 578.16pt x 361.35pt>
-File: media/img/descent_devel_t2.png Graphic file (type png)
-<use media/img/descent_devel_t2.png>
-Package pdftex.def Info: media/img/descent_devel_t2.png  used on input line 1044.
-(pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
-<media/img/descent_devel_t3.png, id=965, 578.16pt x 361.35pt>
-File: media/img/descent_devel_t3.png Graphic file (type png)
-<use media/img/descent_devel_t3.png>
-Package pdftex.def Info: media/img/descent_devel_t3.png  used on input line 1049.
-(pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
-<media/img/descent_devel_t4.png, id=966, 578.16pt x 361.35pt>
-File: media/img/descent_devel_t4.png Graphic file (type png)
-<use media/img/descent_devel_t4.png>
-Package pdftex.def Info: media/img/descent_devel_t4.png  used on input line 1054.
-(pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
-<media/img/descent_devel_t5.png, id=967, 578.16pt x 361.35pt>
-File: media/img/descent_devel_t5.png Graphic file (type png)
-<use media/img/descent_devel_t5.png>
-Package pdftex.def Info: media/img/descent_devel_t5.png  used on input line 1062.
-(pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
-<media/img/descent_devel_t6.png, id=968, 578.16pt x 361.35pt>
-File: media/img/descent_devel_t6.png Graphic file (type png)
-<use media/img/descent_devel_t6.png>
-Package pdftex.def Info: media/img/descent_devel_t6.png  used on input line 1067.
-(pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
-<media/img/descent_devel_t7.png, id=969, 578.16pt x 361.35pt>
-File: media/img/descent_devel_t7.png Graphic file (type png)
-<use media/img/descent_devel_t7.png>
-Package pdftex.def Info: media/img/descent_devel_t7.png  used on input line 1072.
-(pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
-<media/img/descent_devel_t8.png, id=970, 578.16pt x 361.35pt>
-File: media/img/descent_devel_t8.png Graphic file (type png)
-<use media/img/descent_devel_t8.png>
-Package pdftex.def Info: media/img/descent_devel_t8.png  used on input line 1077.
-(pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
-<media/img/descent_devel_t9.png, id=971, 578.16pt x 361.35pt>
-File: media/img/descent_devel_t9.png Graphic file (type png)
-<use media/img/descent_devel_t9.png>
-Package pdftex.def Info: media/img/descent_devel_t9.png  used on input line 1085.
-(pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
-<media/img/descent_devel_t10.png, id=972, 578.16pt x 361.35pt>
-File: media/img/descent_devel_t10.png Graphic file (type png)
-<use media/img/descent_devel_t10.png>
-Package pdftex.def Info: media/img/descent_devel_t10.png  used on input line 1090.
-(pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
-<media/img/descent_devel_t11.png, id=973, 578.16pt x 361.35pt>
-File: media/img/descent_devel_t11.png Graphic file (type png)
-<use media/img/descent_devel_t11.png>
-Package pdftex.def Info: media/img/descent_devel_t11.png  used on input line 1095.
-(pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
-<media/img/dimensional_descent.png, id=979, 792.9625pt x 491.8375pt>
+[27]
+<media/img/dimensional_descent.png, id=995, 792.9625pt x 491.8375pt>
 File: media/img/dimensional_descent.png Graphic file (type png)
 <use media/img/dimensional_descent.png>
-Package pdftex.def Info: media/img/dimensional_descent.png  used on input line 1110.
+Package pdftex.def Info: media/img/dimensional_descent.png  used on input line 960.
 (pdftex.def)             Requested size: 281.85585pt x 174.82492pt.
 
 
-[26 <./media/img/descent_lin_reg_1.png> <./media/img/descent_lin_reg_2.png> <./media/img/descent_lin_reg_3.png> <./media/img/descent_lin_reg_4.png> <./media/img/descent_lin_reg_5.png> <./media/img/descent_lin_reg_6.png> <./media/img/descent_lin_reg_7.png> <./media/img/descent_lin_reg_8.png> <./media/img/descent_lin_reg_9.png> <./media/img/descent_lin_reg_10.png> <./media/img/descent_lin_reg_11.png>]
+[28 <./media/img/dimensional_descent.png>]
+<media/img/descent_lin_reg_1.png, id=1005, 792.9625pt x 491.8375pt>
+File: media/img/descent_lin_reg_1.png Graphic file (type png)
+<use media/img/descent_lin_reg_1.png>
+Package pdftex.def Info: media/img/descent_lin_reg_1.png  used on input line 977.
+(pdftex.def)             Requested size: 103.34666pt x 64.09871pt.
+<media/img/descent_lin_reg_2.png, id=1006, 570.933pt x 354.123pt>
+File: media/img/descent_lin_reg_2.png Graphic file (type png)
+<use media/img/descent_lin_reg_2.png>
+Package pdftex.def Info: media/img/descent_lin_reg_2.png  used on input line 982.
+(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
+<media/img/descent_lin_reg_3.png, id=1007, 570.933pt x 354.123pt>
+File: media/img/descent_lin_reg_3.png Graphic file (type png)
+<use media/img/descent_lin_reg_3.png>
+Package pdftex.def Info: media/img/descent_lin_reg_3.png  used on input line 987.
+(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
+<media/img/descent_lin_reg_4.png, id=1008, 570.933pt x 354.123pt>
+File: media/img/descent_lin_reg_4.png Graphic file (type png)
+<use media/img/descent_lin_reg_4.png>
+Package pdftex.def Info: media/img/descent_lin_reg_4.png  used on input line 992.
+(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
+<media/img/descent_lin_reg_5.png, id=1009, 570.933pt x 354.123pt>
+File: media/img/descent_lin_reg_5.png Graphic file (type png)
+<use media/img/descent_lin_reg_5.png>
+Package pdftex.def Info: media/img/descent_lin_reg_5.png  used on input line 1000.
+(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
+<media/img/descent_lin_reg_6.png, id=1010, 570.933pt x 354.123pt>
+File: media/img/descent_lin_reg_6.png Graphic file (type png)
+<use media/img/descent_lin_reg_6.png>
+Package pdftex.def Info: media/img/descent_lin_reg_6.png  used on input line 1005.
+(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
+<media/img/descent_lin_reg_7.png, id=1011, 570.933pt x 354.123pt>
+File: media/img/descent_lin_reg_7.png Graphic file (type png)
+<use media/img/descent_lin_reg_7.png>
+Package pdftex.def Info: media/img/descent_lin_reg_7.png  used on input line 1010.
+(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
+<media/img/descent_lin_reg_8.png, id=1012, 570.933pt x 354.123pt>
+File: media/img/descent_lin_reg_8.png Graphic file (type png)
+<use media/img/descent_lin_reg_8.png>
+Package pdftex.def Info: media/img/descent_lin_reg_8.png  used on input line 1015.
+(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
+<media/img/descent_lin_reg_9.png, id=1013, 570.933pt x 354.123pt>
+File: media/img/descent_lin_reg_9.png Graphic file (type png)
+<use media/img/descent_lin_reg_9.png>
+Package pdftex.def Info: media/img/descent_lin_reg_9.png  used on input line 1023.
+(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
+<media/img/descent_lin_reg_10.png, id=1014, 570.933pt x 354.123pt>
+File: media/img/descent_lin_reg_10.png Graphic file (type png)
+<use media/img/descent_lin_reg_10.png>
+Package pdftex.def Info: media/img/descent_lin_reg_10.png  used on input line 1028.
+(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
+<media/img/descent_lin_reg_11.png, id=1015, 570.933pt x 354.123pt>
+File: media/img/descent_lin_reg_11.png Graphic file (type png)
+<use media/img/descent_lin_reg_11.png>
+Package pdftex.def Info: media/img/descent_lin_reg_11.png  used on input line 1033.
+(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
+<media/img/descent_devel1.png, id=1018, 570.933pt x 354.123pt>
+File: media/img/descent_devel1.png Graphic file (type png)
+<use media/img/descent_devel1.png>
+Package pdftex.def Info: media/img/descent_devel1.png  used on input line 1051.
+(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
+<media/img/descent_devel2.png, id=1019, 570.933pt x 354.123pt>
+File: media/img/descent_devel2.png Graphic file (type png)
+<use media/img/descent_devel2.png>
+Package pdftex.def Info: media/img/descent_devel2.png  used on input line 1056.
+(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
+<media/img/descent_devel3.png, id=1020, 570.933pt x 354.123pt>
+File: media/img/descent_devel3.png Graphic file (type png)
+<use media/img/descent_devel3.png>
+Package pdftex.def Info: media/img/descent_devel3.png  used on input line 1061.
+(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
+<media/img/descent_devel4.png, id=1021, 570.933pt x 354.123pt>
+File: media/img/descent_devel4.png Graphic file (type png)
+<use media/img/descent_devel4.png>
+Package pdftex.def Info: media/img/descent_devel4.png  used on input line 1066.
+(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
+<media/img/descent_devel5.png, id=1022, 570.933pt x 354.123pt>
+File: media/img/descent_devel5.png Graphic file (type png)
+<use media/img/descent_devel5.png>
+Package pdftex.def Info: media/img/descent_devel5.png  used on input line 1074.
+(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
+<media/img/descent_devel6.png, id=1023, 570.933pt x 354.123pt>
+File: media/img/descent_devel6.png Graphic file (type png)
+<use media/img/descent_devel6.png>
+Package pdftex.def Info: media/img/descent_devel6.png  used on input line 1079.
+(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
+<media/img/descent_devel7.png, id=1024, 570.933pt x 354.123pt>
+File: media/img/descent_devel7.png Graphic file (type png)
+<use media/img/descent_devel7.png>
+Package pdftex.def Info: media/img/descent_devel7.png  used on input line 1084.
+(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
+<media/img/descent_devel8.png, id=1025, 570.933pt x 354.123pt>
+File: media/img/descent_devel8.png Graphic file (type png)
+<use media/img/descent_devel8.png>
+Package pdftex.def Info: media/img/descent_devel8.png  used on input line 1089.
+(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
+<media/img/descent_devel9.png, id=1026, 570.933pt x 354.123pt>
+File: media/img/descent_devel9.png Graphic file (type png)
+<use media/img/descent_devel9.png>
+Package pdftex.def Info: media/img/descent_devel9.png  used on input line 1097.
+(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
+<media/img/descent_devel10.png, id=1027, 570.933pt x 354.123pt>
+File: media/img/descent_devel10.png Graphic file (type png)
+<use media/img/descent_devel10.png>
+Package pdftex.def Info: media/img/descent_devel10.png  used on input line 1102.
+(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
+<media/img/descent_devel11.png, id=1028, 570.933pt x 354.123pt>
+File: media/img/descent_devel11.png Graphic file (type png)
+<use media/img/descent_devel11.png>
+Package pdftex.def Info: media/img/descent_devel11.png  used on input line 1107.
+(pdftex.def)             Requested size: 103.34666pt x 64.09601pt.
+<media/img/descent_devel_t1.png, id=1031, 578.16pt x 361.35pt>
+File: media/img/descent_devel_t1.png Graphic file (type png)
+<use media/img/descent_devel_t1.png>
+Package pdftex.def Info: media/img/descent_devel_t1.png  used on input line 1125.
+(pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
+<media/img/descent_devel_t2.png, id=1032, 578.16pt x 361.35pt>
+File: media/img/descent_devel_t2.png Graphic file (type png)
+<use media/img/descent_devel_t2.png>
+Package pdftex.def Info: media/img/descent_devel_t2.png  used on input line 1130.
+(pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
+<media/img/descent_devel_t3.png, id=1033, 578.16pt x 361.35pt>
+File: media/img/descent_devel_t3.png Graphic file (type png)
+<use media/img/descent_devel_t3.png>
+Package pdftex.def Info: media/img/descent_devel_t3.png  used on input line 1135.
+(pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
+<media/img/descent_devel_t4.png, id=1034, 578.16pt x 361.35pt>
+File: media/img/descent_devel_t4.png Graphic file (type png)
+<use media/img/descent_devel_t4.png>
+Package pdftex.def Info: media/img/descent_devel_t4.png  used on input line 1140.
+(pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
+<media/img/descent_devel_t5.png, id=1035, 578.16pt x 361.35pt>
+File: media/img/descent_devel_t5.png Graphic file (type png)
+<use media/img/descent_devel_t5.png>
+Package pdftex.def Info: media/img/descent_devel_t5.png  used on input line 1148.
+(pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
+<media/img/descent_devel_t6.png, id=1036, 578.16pt x 361.35pt>
+File: media/img/descent_devel_t6.png Graphic file (type png)
+<use media/img/descent_devel_t6.png>
+Package pdftex.def Info: media/img/descent_devel_t6.png  used on input line 1153.
+(pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
+<media/img/descent_devel_t7.png, id=1037, 578.16pt x 361.35pt>
+File: media/img/descent_devel_t7.png Graphic file (type png)
+<use media/img/descent_devel_t7.png>
+Package pdftex.def Info: media/img/descent_devel_t7.png  used on input line 1158.
+(pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
+<media/img/descent_devel_t8.png, id=1038, 578.16pt x 361.35pt>
+File: media/img/descent_devel_t8.png Graphic file (type png)
+<use media/img/descent_devel_t8.png>
+Package pdftex.def Info: media/img/descent_devel_t8.png  used on input line 1163.
+(pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
+<media/img/descent_devel_t9.png, id=1039, 578.16pt x 361.35pt>
+File: media/img/descent_devel_t9.png Graphic file (type png)
+<use media/img/descent_devel_t9.png>
+Package pdftex.def Info: media/img/descent_devel_t9.png  used on input line 1171.
+(pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
+<media/img/descent_devel_t10.png, id=1040, 578.16pt x 361.35pt>
+File: media/img/descent_devel_t10.png Graphic file (type png)
+<use media/img/descent_devel_t10.png>
+Package pdftex.def Info: media/img/descent_devel_t10.png  used on input line 1176.
+(pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
+<media/img/descent_devel_t11.png, id=1041, 578.16pt x 361.35pt>
+File: media/img/descent_devel_t11.png Graphic file (type png)
+<use media/img/descent_devel_t11.png>
+Package pdftex.def Info: media/img/descent_devel_t11.png  used on input line 1181.
+(pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
 
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 1163.
 
-<media/img2/risk_curve_n12.png, id=1005, 578.16pt x 361.35pt>
+[29
+
+ <./media/img/descent_lin_reg_1.png> <./media/img/descent_lin_reg_2.png> <./media/img/descent_lin_reg_3.png> <./media/img/descent_lin_reg_4.png> <./media/img/descent_lin_reg_5.png> <./media/img/descent_lin_reg_6.png> <./media/img/descent_lin_reg_7.png> <./media/img/descent_lin_reg_8.png> <./media/img/descent_lin_reg_9.png> <./media/img/descent_lin_reg_10.png> <./media/img/descent_lin_reg_11.png>]
+
+[30 <./media/img/descent_devel1.png> <./media/img/descent_devel2.png> <./media/img/descent_devel3.png> <./media/img/descent_devel4.png> <./media/img/descent_devel5.png> <./media/img/descent_devel6.png> <./media/img/descent_devel7.png> <./media/img/descent_devel8.png> <./media/img/descent_devel9.png> <./media/img/descent_devel10.png> <./media/img/descent_devel11.png> <./media/img/descent_devel_t1.png> <./media/img/descent_devel_t2.png> <./media/img/descent_devel_t3.png> <./media/img/descent_devel_t4.png> <./media/img/descent_devel_t5.png> <./media/img/descent_devel_t6.png> <./media/img/descent_devel_t7.png> <./media/img/descent_devel_t8.png> <./media/img/descent_devel_t9.png> <./media/img/descent_devel_t10.png> <./media/img/descent_devel_t11.png>]
+
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 1239.
+
+<media/img2/risk_curve_n12.png, id=1090, 578.16pt x 361.35pt>
 File: media/img2/risk_curve_n12.png Graphic file (type png)
 <use media/img2/risk_curve_n12.png>
-Package pdftex.def Info: media/img2/risk_curve_n12.png  used on input line 1174.
+Package pdftex.def Info: media/img2/risk_curve_n12.png  used on input line 1250.
 (pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
-<media/img2/risk_curve_n24.png, id=1006, 578.16pt x 361.35pt>
+<media/img2/risk_curve_n24.png, id=1091, 578.16pt x 361.35pt>
 File: media/img2/risk_curve_n24.png Graphic file (type png)
 <use media/img2/risk_curve_n24.png>
-Package pdftex.def Info: media/img2/risk_curve_n24.png  used on input line 1179.
+Package pdftex.def Info: media/img2/risk_curve_n24.png  used on input line 1255.
 (pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
-<media/img2/risk_curve_n36.png, id=1007, 578.16pt x 361.35pt>
+<media/img2/risk_curve_n36.png, id=1092, 578.16pt x 361.35pt>
 File: media/img2/risk_curve_n36.png Graphic file (type png)
 <use media/img2/risk_curve_n36.png>
-Package pdftex.def Info: media/img2/risk_curve_n36.png  used on input line 1184.
+Package pdftex.def Info: media/img2/risk_curve_n36.png  used on input line 1260.
 (pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
-<media/img2/risk_curve_n50.png, id=1008, 578.16pt x 361.35pt>
+<media/img2/risk_curve_n50.png, id=1093, 578.16pt x 361.35pt>
 File: media/img2/risk_curve_n50.png Graphic file (type png)
 <use media/img2/risk_curve_n50.png>
-Package pdftex.def Info: media/img2/risk_curve_n50.png  used on input line 1189.
+Package pdftex.def Info: media/img2/risk_curve_n50.png  used on input line 1265.
 (pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
-<media/img2/risk_curve_n76.png, id=1009, 578.16pt x 361.35pt>
+<media/img2/risk_curve_n76.png, id=1094, 578.16pt x 361.35pt>
 File: media/img2/risk_curve_n76.png Graphic file (type png)
 <use media/img2/risk_curve_n76.png>
-Package pdftex.def Info: media/img2/risk_curve_n76.png  used on input line 1197.
+Package pdftex.def Info: media/img2/risk_curve_n76.png  used on input line 1273.
 (pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
-<media/img2/risk_curve_n82.png, id=1010, 578.16pt x 361.35pt>
+<media/img2/risk_curve_n82.png, id=1095, 578.16pt x 361.35pt>
 File: media/img2/risk_curve_n82.png Graphic file (type png)
 <use media/img2/risk_curve_n82.png>
-Package pdftex.def Info: media/img2/risk_curve_n82.png  used on input line 1202.
+Package pdftex.def Info: media/img2/risk_curve_n82.png  used on input line 1278.
 (pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
-<media/img2/risk_curve_n90.png, id=1011, 578.16pt x 361.35pt>
+<media/img2/risk_curve_n90.png, id=1096, 578.16pt x 361.35pt>
 File: media/img2/risk_curve_n90.png Graphic file (type png)
 <use media/img2/risk_curve_n90.png>
-Package pdftex.def Info: media/img2/risk_curve_n90.png  used on input line 1207.
+Package pdftex.def Info: media/img2/risk_curve_n90.png  used on input line 1283.
 (pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
-<media/img2/risk_curve_n100.png, id=1012, 578.16pt x 361.35pt>
+<media/img2/risk_curve_n100.png, id=1097, 578.16pt x 361.35pt>
 File: media/img2/risk_curve_n100.png Graphic file (type png)
 <use media/img2/risk_curve_n100.png>
-Package pdftex.def Info: media/img2/risk_curve_n100.png  used on input line 1212.
+Package pdftex.def Info: media/img2/risk_curve_n100.png  used on input line 1288.
 (pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
-<media/img2/risk_curve_n106.png, id=1013, 578.16pt x 361.35pt>
+<media/img2/risk_curve_n106.png, id=1098, 578.16pt x 361.35pt>
 File: media/img2/risk_curve_n106.png Graphic file (type png)
 <use media/img2/risk_curve_n106.png>
-Package pdftex.def Info: media/img2/risk_curve_n106.png  used on input line 1220.
+Package pdftex.def Info: media/img2/risk_curve_n106.png  used on input line 1296.
 (pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
-<media/img2/risk_curve_n112.png, id=1014, 578.16pt x 361.35pt>
+<media/img2/risk_curve_n112.png, id=1099, 578.16pt x 361.35pt>
 File: media/img2/risk_curve_n112.png Graphic file (type png)
 <use media/img2/risk_curve_n112.png>
-Package pdftex.def Info: media/img2/risk_curve_n112.png  used on input line 1225.
+Package pdftex.def Info: media/img2/risk_curve_n112.png  used on input line 1301.
 (pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
-<media/img2/risk_curve_n121.png, id=1015, 578.16pt x 361.35pt>
+<media/img2/risk_curve_n121.png, id=1100, 578.16pt x 361.35pt>
 File: media/img2/risk_curve_n121.png Graphic file (type png)
 <use media/img2/risk_curve_n121.png>
-Package pdftex.def Info: media/img2/risk_curve_n121.png  used on input line 1230.
+Package pdftex.def Info: media/img2/risk_curve_n121.png  used on input line 1306.
 (pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
-<media/img2/risk_curve_n150.png, id=1016, 578.16pt x 361.35pt>
+<media/img2/risk_curve_n150.png, id=1101, 578.16pt x 361.35pt>
 File: media/img2/risk_curve_n150.png Graphic file (type png)
 <use media/img2/risk_curve_n150.png>
-Package pdftex.def Info: media/img2/risk_curve_n150.png  used on input line 1235.
+Package pdftex.def Info: media/img2/risk_curve_n150.png  used on input line 1311.
 (pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
-<media/img2/risk_curve_n231.png, id=1017, 578.16pt x 361.35pt>
+<media/img2/risk_curve_n231.png, id=1102, 578.16pt x 361.35pt>
 File: media/img2/risk_curve_n231.png Graphic file (type png)
 <use media/img2/risk_curve_n231.png>
-Package pdftex.def Info: media/img2/risk_curve_n231.png  used on input line 1243.
+Package pdftex.def Info: media/img2/risk_curve_n231.png  used on input line 1319.
 (pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
-<media/img2/risk_curve_n250.png, id=1018, 578.16pt x 361.35pt>
+<media/img2/risk_curve_n250.png, id=1103, 578.16pt x 361.35pt>
 File: media/img2/risk_curve_n250.png Graphic file (type png)
 <use media/img2/risk_curve_n250.png>
-Package pdftex.def Info: media/img2/risk_curve_n250.png  used on input line 1248.
+Package pdftex.def Info: media/img2/risk_curve_n250.png  used on input line 1324.
 (pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
-<media/img2/risk_curve_n256.png, id=1019, 578.16pt x 361.35pt>
+<media/img2/risk_curve_n256.png, id=1104, 578.16pt x 361.35pt>
 File: media/img2/risk_curve_n256.png Graphic file (type png)
 <use media/img2/risk_curve_n256.png>
-Package pdftex.def Info: media/img2/risk_curve_n256.png  used on input line 1253.
+Package pdftex.def Info: media/img2/risk_curve_n256.png  used on input line 1329.
 (pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
-<media/img2/risk_curve_n280.png, id=1020, 578.16pt x 361.35pt>
+<media/img2/risk_curve_n280.png, id=1105, 578.16pt x 361.35pt>
 File: media/img2/risk_curve_n280.png Graphic file (type png)
 <use media/img2/risk_curve_n280.png>
-Package pdftex.def Info: media/img2/risk_curve_n280.png  used on input line 1258.
+Package pdftex.def Info: media/img2/risk_curve_n280.png  used on input line 1334.
 (pdftex.def)             Requested size: 103.34666pt x 64.58806pt.
 
 
-[27 <./media/img/descent_devel1.png> <./media/img/descent_devel2.png> <./media/img/descent_devel3.png> <./media/img/descent_devel4.png> <./media/img/descent_devel5.png> <./media/img/descent_devel6.png> <./media/img/descent_devel7.png> <./media/img/descent_devel8.png> <./media/img/descent_devel9.png> <./media/img/descent_devel10.png> <./media/img/descent_devel11.png>]
-Underfull \vbox (badness 1953) has occurred while \output is active []
+[31
 
+]
 
-
-[28 <./media/img/descent_devel_t1.png> <./media/img/descent_devel_t2.png> <./media/img/descent_devel_t3.png> <./media/img/descent_devel_t4.png> <./media/img/descent_devel_t5.png> <./media/img/descent_devel_t6.png> <./media/img/descent_devel_t7.png> <./media/img/descent_devel_t8.png> <./media/img/descent_devel_t9.png> <./media/img/descent_devel_t10.png> <./media/img/descent_devel_t11.png> <./media/img/dimensional_descent.png>]
-Underfull \vbox (badness 3323) has occurred while \output is active []
-
-
-
-[29]
-Package hyperref Info: bookmark level for unknown setting defaults to 0 on input line 1296.
-
-
-[30 <./media/img2/risk_curve_n12.png> <./media/img2/risk_curve_n24.png> <./media/img2/risk_curve_n36.png> <./media/img2/risk_curve_n50.png> <./media/img2/risk_curve_n76.png> <./media/img2/risk_curve_n82.png> <./media/img2/risk_curve_n90.png> <./media/img2/risk_curve_n100.png> <./media/img2/risk_curve_n106.png> <./media/img2/risk_curve_n112.png> <./media/img2/risk_curve_n121.png> <./media/img2/risk_curve_n150.png> <./media/img2/risk_curve_n231.png> <./media/img2/risk_curve_n250.png> <./media/img2/risk_curve_n256.png> <./media/img2/risk_curve_n280.png>]
-
-[31]
-
-[32]
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 1355.
-
+[32 <./media/img2/risk_curve_n12.png> <./media/img2/risk_curve_n24.png> <./media/img2/risk_curve_n36.png> <./media/img2/risk_curve_n50.png> <./media/img2/risk_curve_n76.png> <./media/img2/risk_curve_n82.png> <./media/img2/risk_curve_n90.png> <./media/img2/risk_curve_n100.png> <./media/img2/risk_curve_n106.png> <./media/img2/risk_curve_n112.png> <./media/img2/risk_curve_n121.png> <./media/img2/risk_curve_n150.png> <./media/img2/risk_curve_n231.png> <./media/img2/risk_curve_n250.png> <./media/img2/risk_curve_n256.png> <./media/img2/risk_curve_n280.png>]
+Package hyperref Info: bookmark level for unknown setting defaults to 0 on input line 1377.
 
 
 [33
@@ -1767,202 +1782,342 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 [34
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1410--1410
+<media/test_case_ideal_svm.png, id=1164, 992.70876pt x 491.8375pt>
+File: media/test_case_ideal_svm.png Graphic file (type png)
+<use media/test_case_ideal_svm.png>
+Package pdftex.def Info: media/test_case_ideal_svm.png  used on input line 1419.
+(pdftex.def)             Requested size: 234.87749pt x 116.36983pt.
+<media/img_qq/risk_curve_n5.png, id=1166, 722.7pt x 361.35pt>
+File: media/img_qq/risk_curve_n5.png Graphic file (type png)
+<use media/img_qq/risk_curve_n5.png>
+Package pdftex.def Info: media/img_qq/risk_curve_n5.png  used on input line 1431.
+(pdftex.def)             Requested size: 103.34666pt x 51.66934pt.
+<media/img_qq/risk_curve_n10.png, id=1167, 722.7pt x 361.35pt>
+File: media/img_qq/risk_curve_n10.png Graphic file (type png)
+<use media/img_qq/risk_curve_n10.png>
+Package pdftex.def Info: media/img_qq/risk_curve_n10.png  used on input line 1436.
+(pdftex.def)             Requested size: 103.34666pt x 51.66934pt.
+<media/img_qq/risk_curve_n20.png, id=1168, 722.7pt x 361.35pt>
+File: media/img_qq/risk_curve_n20.png Graphic file (type png)
+<use media/img_qq/risk_curve_n20.png>
+Package pdftex.def Info: media/img_qq/risk_curve_n20.png  used on input line 1441.
+(pdftex.def)             Requested size: 103.34666pt x 51.66934pt.
+<media/img_qq/risk_curve_n30.png, id=1169, 722.7pt x 361.35pt>
+File: media/img_qq/risk_curve_n30.png Graphic file (type png)
+<use media/img_qq/risk_curve_n30.png>
+Package pdftex.def Info: media/img_qq/risk_curve_n30.png  used on input line 1446.
+(pdftex.def)             Requested size: 103.34666pt x 51.66934pt.
+<media/img_qq/risk_curve_n40.png, id=1170, 722.7pt x 361.35pt>
+File: media/img_qq/risk_curve_n40.png Graphic file (type png)
+<use media/img_qq/risk_curve_n40.png>
+Package pdftex.def Info: media/img_qq/risk_curve_n40.png  used on input line 1454.
+(pdftex.def)             Requested size: 103.34666pt x 51.66934pt.
+<media/img_qq/risk_curve_n50.png, id=1171, 722.7pt x 361.35pt>
+File: media/img_qq/risk_curve_n50.png Graphic file (type png)
+<use media/img_qq/risk_curve_n50.png>
+Package pdftex.def Info: media/img_qq/risk_curve_n50.png  used on input line 1459.
+(pdftex.def)             Requested size: 103.34666pt x 51.66934pt.
+<media/img_qq/risk_curve_n60.png, id=1172, 722.7pt x 361.35pt>
+File: media/img_qq/risk_curve_n60.png Graphic file (type png)
+<use media/img_qq/risk_curve_n60.png>
+Package pdftex.def Info: media/img_qq/risk_curve_n60.png  used on input line 1464.
+(pdftex.def)             Requested size: 103.34666pt x 51.66934pt.
+<media/img_qq/risk_curve_n70.png, id=1173, 722.7pt x 361.35pt>
+File: media/img_qq/risk_curve_n70.png Graphic file (type png)
+<use media/img_qq/risk_curve_n70.png>
+Package pdftex.def Info: media/img_qq/risk_curve_n70.png  used on input line 1469.
+(pdftex.def)             Requested size: 103.34666pt x 51.66934pt.
+<media/img_qq/risk_curve_n80.png, id=1174, 722.7pt x 361.35pt>
+File: media/img_qq/risk_curve_n80.png Graphic file (type png)
+<use media/img_qq/risk_curve_n80.png>
+Package pdftex.def Info: media/img_qq/risk_curve_n80.png  used on input line 1477.
+(pdftex.def)             Requested size: 103.34666pt x 51.66934pt.
+<media/img_qq/risk_curve_n100.png, id=1175, 722.7pt x 361.35pt>
+File: media/img_qq/risk_curve_n100.png Graphic file (type png)
+<use media/img_qq/risk_curve_n100.png>
+Package pdftex.def Info: media/img_qq/risk_curve_n100.png  used on input line 1482.
+(pdftex.def)             Requested size: 103.34666pt x 51.66934pt.
+<media/img_qq/risk_curve_n120.png, id=1176, 722.7pt x 361.35pt>
+File: media/img_qq/risk_curve_n120.png Graphic file (type png)
+<use media/img_qq/risk_curve_n120.png>
+Package pdftex.def Info: media/img_qq/risk_curve_n120.png  used on input line 1487.
+(pdftex.def)             Requested size: 103.34666pt x 51.66934pt.
+<media/img_qq/risk_curve_n140.png, id=1177, 722.7pt x 361.35pt>
+File: media/img_qq/risk_curve_n140.png Graphic file (type png)
+<use media/img_qq/risk_curve_n140.png>
+Package pdftex.def Info: media/img_qq/risk_curve_n140.png  used on input line 1492.
+(pdftex.def)             Requested size: 103.34666pt x 51.66934pt.
+<media/img_qq/risk_curve_n150.png, id=1178, 722.7pt x 361.35pt>
+File: media/img_qq/risk_curve_n150.png Graphic file (type png)
+<use media/img_qq/risk_curve_n150.png>
+Package pdftex.def Info: media/img_qq/risk_curve_n150.png  used on input line 1500.
+(pdftex.def)             Requested size: 103.34666pt x 51.66934pt.
+<media/img_qq/risk_curve_n160.png, id=1179, 722.7pt x 361.35pt>
+File: media/img_qq/risk_curve_n160.png Graphic file (type png)
+<use media/img_qq/risk_curve_n160.png>
+Package pdftex.def Info: media/img_qq/risk_curve_n160.png  used on input line 1505.
+(pdftex.def)             Requested size: 103.34666pt x 51.66934pt.
+<media/img_qq/risk_curve_n170.png, id=1180, 722.7pt x 361.35pt>
+File: media/img_qq/risk_curve_n170.png Graphic file (type png)
+<use media/img_qq/risk_curve_n170.png>
+Package pdftex.def Info: media/img_qq/risk_curve_n170.png  used on input line 1510.
+(pdftex.def)             Requested size: 103.34666pt x 51.66934pt.
+
+
+[35 <./media/test_case_ideal_svm.png>]
+
+[36 <./media/img_qq/risk_curve_n5.png> <./media/img_qq/risk_curve_n10.png> <./media/img_qq/risk_curve_n20.png> <./media/img_qq/risk_curve_n30.png> <./media/img_qq/risk_curve_n40.png> <./media/img_qq/risk_curve_n50.png> <./media/img_qq/risk_curve_n60.png> <./media/img_qq/risk_curve_n70.png> <./media/img_qq/risk_curve_n80.png> <./media/img_qq/risk_curve_n100.png> <./media/img_qq/risk_curve_n120.png> <./media/img_qq/risk_curve_n140.png> <./media/img_qq/risk_curve_n150.png> <./media/img_qq/risk_curve_n160.png> <./media/img_qq/risk_curve_n170.png>]
+
+[37
+
+]
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 1543.
+
+
+
+[38
+
+]
+
+[39
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1598--1598
 []|\T1/ptm/b/n/9 (+20) Ising Model (Mean-Field
  []
 
 
-Underfull \hbox (badness 1424) in paragraph at lines 1410--1411
+Underfull \hbox (badness 1424) in paragraph at lines 1598--1599
 []|\T1/ptm/b/n/9 (+20) GNN on a Large Ran-dom
  []
 
 
-Underfull \hbox (badness 3623) in paragraph at lines 1414--1415
+Underfull \hbox (badness 3623) in paragraph at lines 1602--1603
 []|\T1/ptm/m/n/9 (+20) Local weak con-ver-gence of
  []
 
 
-Underfull \hbox (badness 2150) in paragraph at lines 1416--1417
+Underfull \hbox (badness 2150) in paragraph at lines 1604--1605
 []|\T1/ptm/m/n/9 (+20) Discriminative power of the
  []
 
 
 
-[35]
-<media/graph_tech.png, id=1143, 6032.5375pt x 4807.9625pt>
+[40]
+<media/graph_tech.png, id=1246, 6032.5375pt x 4807.9625pt>
 File: media/graph_tech.png Graphic file (type png)
 <use media/graph_tech.png>
-Package pdftex.def Info: media/graph_tech.png  used on input line 1449.
-(pdftex.def)             Requested size: 305.33788pt x 243.34674pt.
-<media/img/graphdecom.png, id=1145, 237.22627pt x 68.11447pt>
+Package pdftex.def Info: media/graph_tech.png  used on input line 1637.
+(pdftex.def)             Requested size: 281.85585pt x 224.63905pt.
+<media/img/graphdecom.png, id=1248, 237.22627pt x 68.11447pt>
 File: media/img/graphdecom.png Graphic file (type png)
 <use media/img/graphdecom.png>
-Package pdftex.def Info: media/img/graphdecom.png  used on input line 1474.
+Package pdftex.def Info: media/img/graphdecom.png  used on input line 1662.
 (pdftex.def)             Requested size: 328.82706pt x 94.41794pt.
 
-
-[36
-
-]
-
-[37 <./media/graph_tech.png> <./media/img/graphdecom.png>]
-pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1492     G
-            iven a graph $\mathcal{G}(\mathcal{V},\mathcal{E})$, for any typ...
-<media/img/What.png, id=1176, 738.3585pt x 351.714pt>
-File: media/img/What.png Graphic file (type png)
-<use media/img/What.png>
-Package pdftex.def Info: media/img/What.png  used on input line 1521.
-(pdftex.def)             Requested size: 281.85585pt x 134.25914pt.
-<media/img/gnn_encoding.png, id=1178, 328.8285pt x 126.11115pt>
-File: media/img/gnn_encoding.png Graphic file (type png)
-<use media/img/gnn_encoding.png>
-Package pdftex.def Info: media/img/gnn_encoding.png  used on input line 1529.
-(pdftex.def)             Requested size: 375.80542pt x 144.13379pt.
-
-
-[38]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[39 <./media/img/What.png> <./media/img/gnn_encoding.png>]
-pdfTeX warning (ext4): destination with the same identifier (name{definition.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1545   G
-          iven a graph $G(V,E,\psi_{E})$ for $\psi_{E}$ the edge proprietary...
-Package hyperref Info: bookmark level for unknown question defaults to 0 on input line 1556.
-
-
-[40] (templateArxiv.bbl
 
 [41
 
 ]
 
-[42]
-
-[43])
-
-[44]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\begingroup' on input line 1576.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\<let>-command' on input line 1576.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\NAT@ctype' on input line 1576.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 1576.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\let' on input line 1576.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\let' on input line 1576.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\new@ifnextchar' on input line 1576.
-
-
+[42 <./media/graph_tech.png> <./media/img/graphdecom.png>]
 pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1582         A
-                 \textbf{parametric model} is one that can be parameterized ...
-Package hyperref Info: bookmark level for unknown col defaults to 0 on input line 1633.
+l.1680     G
+            iven a graph $\mathcal{G}(\mathcal{V},\mathcal{E})$, for any typ...
+<media/img/What.png, id=1278, 738.3585pt x 351.714pt>
+File: media/img/What.png Graphic file (type png)
+<use media/img/What.png>
+Package pdftex.def Info: media/img/What.png  used on input line 1709.
+(pdftex.def)             Requested size: 281.85585pt x 134.25914pt.
+<media/img/gnn_encoding.png, id=1280, 328.8285pt x 126.11115pt>
+File: media/img/gnn_encoding.png Graphic file (type png)
+<use media/img/gnn_encoding.png>
+Package pdftex.def Info: media/img/gnn_encoding.png  used on input line 1717.
+(pdftex.def)             Requested size: 375.80542pt x 144.13379pt.
 
 
-[45
-
-]
-
-LaTeX Warning: Reference `thm:minimalNeu' on page 46 undefined on input line 1655.
-
-
-
-[46]
-pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1739     A
-             \textbf{deterministic model} $h_{d}$ assumes its internal space...
-
-[47]
+[43]
 pdfTeX warning (ext4): destination with the same identifier (name{definition.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1744     A
+l.1733   G
+          iven a graph $G(V,E,\psi_{E})$ for $\psi_{E}$ the edge proprietary...
+
+[44 <./media/img/What.png> <./media/img/gnn_encoding.png>]
+Package hyperref Info: bookmark level for unknown question defaults to 0 on input line 1744.
+
+
+[45] (templateArxiv.bbl
+
+[46
+
+]
+
+[47]
+
+[48])
+
+[49]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\begingroup' on input line 1764.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<let>-command' on input line 1764.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\NAT@ctype' on input line 1764.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@' on input line 1764.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\let' on input line 1764.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\let' on input line 1764.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\new@ifnextchar' on input line 1764.
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1770         A
+                 \textbf{parametric model} is one that can be parameterized ...
+Package hyperref Info: bookmark level for unknown col defaults to 0 on input line 1821.
+
+
+[50
+
+]
+
+LaTeX Warning: Reference `thm:minimalNeu' on page 51 undefined on input line 1843.
+
+
+
+[51]
+pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1927     A
+             \textbf{deterministic model} $h_{d}$ assumes its internal space...
+
+[52]
+pdfTeX warning (ext4): destination with the same identifier (name{definition.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1932     A
              \textbf{probabilistic model} $h_{p}$ assumes its internal space...
 pdfTeX warning (ext4): destination with the same identifier (name{definition.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1755         A
+l.1943         A
                  loss function is a non-negative function $\ell :\mathcal{Y}...
-Package hyperref Info: bookmark level for unknown conjecture defaults to 0 on input line 1759.
+Package hyperref Info: bookmark level for unknown conjecture defaults to 0 on input line 1947.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1768.
+(hyperref)                removing `math shift' on input line 1956.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1768.
+(hyperref)                removing `math shift' on input line 1956.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1768.
+(hyperref)                removing `math shift' on input line 1956.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1768.
+(hyperref)                removing `math shift' on input line 1956.
 
 
 
-[48]
+[53]
 
-[49]
-Package hyperref Info: bookmark level for unknown assume defaults to 0 on input line 1816.
+[54]
+Package hyperref Info: bookmark level for unknown assume defaults to 0 on input line 2004.
 
 pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1820     F
+l.2008     F
             or a system and its object, an object's \textbf{representation s...
 Underfull \vbox (badness 1014) has occurred while \output is active []
 
 
 
-[50]
-Package hyperref Info: bookmark level for unknown note defaults to 0 on input line 1854.
+[55]
+Package hyperref Info: bookmark level for unknown note defaults to 0 on input line 2042.
 
 
-[51]
+[56]
 
-[52]
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\begingroup' on input line 2065.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<let>-command' on input line 2065.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\NAT@ctype' on input line 2065.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@' on input line 2065.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\let' on input line 2065.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\let' on input line 2065.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\new@ifnextchar' on input line 2065.
+
+
 pdfTeX warning (ext4): destination with the same identifier (name{conjecture.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1888     A
-            ll observations $\mathcal{D}$ represents certain class of struct...
+l.2070     B
+            ias-variance can be identified, under several contexts, to mean ...
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2078     L
+            et $A$ be any learning algorithm for the task of binary classifi...
 
-[53
+[57]
+pdfTeX warning (ext4): destination with the same identifier (name{col.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2088     L
+            et $\mathcal{X}$ be an infinite domain, and let $\mathcal{H}$ be...
+
+[58]
+
+[59
 
 ]
 
-[54] (templateArxiv.aux)
+[60] (templateArxiv.aux)
  ***********
 LaTeX2e <2025-06-01>
 L3 programming layer <2025-05-26>
@@ -1978,20 +2133,20 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `templateArxiv.out' has not changed.
-(rerunfilecheck)             Checksum: 79A8EAA29F7899EEDCB09B168AB5C419;11644.
+(rerunfilecheck)             Checksum: 8A86657146719009D73C3ADB66384162;12888.
  ) 
 Here is how much of TeX's memory you used:
- 65366 strings out of 468187
- 1600546 string characters out of 5448667
- 2416765 words of memory out of 5000000
- 92106 multiletter control sequences out of 15000+600000
- 739139 words of font info for 513 fonts, out of 8000000 for 9000
+ 65653 strings out of 468187
+ 1608207 string characters out of 5448667
+ 2408088 words of memory out of 5000000
+ 92336 multiletter control sequences out of 15000+600000
+ 741556 words of font info for 530 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  121i,25n,124p,2141b,949s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<D:/MikTek/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbx7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbx9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi5.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmib10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr5.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmss10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmss12.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmss9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy5.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy9.pfb><D:/MikTek/fonts/type1/public/amsfonts/symbols/msam10.pfb><D:/MikTek/fonts/type1/public/amsfonts/symbols/msam7.pfb><D:/MikTek/fonts/type1/public/amsfonts/symbols/msbm10.pfb><D:/MikTek/fonts/type1/public/amsfonts/symbols/msbm7.pfb><D:/MikTek/fonts/type1/public/cm-super/sftt1000.pfb><D:/MikTek/fonts/type1/public/hoekwater/stmary10.pfb><D:/MikTek/fonts/type1/public/hoekwater/stmary7.pfb><D:/MikTek/fonts/type1/public/urw-base35/utmb8a.pfb><D:/MikTek/fonts/type1/public/urw-base35/utmbi8a.pfb><D:/MikTek/fonts/type1/public/urw-base35/utmr8a.pfb><D:/MikTek/fonts/type1/public/urw-base35/utmri8a.pfb>
-Output written on templateArxiv.pdf (54 pages, 7763738 bytes).
+<D:/MikTek/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbx7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbx9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi5.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmib10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr5.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmss10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmss12.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmss9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy5.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy9.pfb><D:/MikTek/fonts/type1/public/amsfonts/euler/eufm10.pfb><D:/MikTek/fonts/type1/public/amsfonts/symbols/msam10.pfb><D:/MikTek/fonts/type1/public/amsfonts/symbols/msam7.pfb><D:/MikTek/fonts/type1/public/amsfonts/symbols/msbm10.pfb><D:/MikTek/fonts/type1/public/amsfonts/symbols/msbm7.pfb><D:/MikTek/fonts/type1/public/cm-super/sftt1000.pfb><D:/MikTek/fonts/type1/public/hoekwater/stmary10.pfb><D:/MikTek/fonts/type1/public/hoekwater/stmary7.pfb><D:/MikTek/fonts/type1/public/urw-base35/utmb8a.pfb><D:/MikTek/fonts/type1/public/urw-base35/utmbi8a.pfb><D:/MikTek/fonts/type1/public/urw-base35/utmr8a.pfb><D:/MikTek/fonts/type1/public/urw-base35/utmri8a.pfb>
+Output written on templateArxiv.pdf (60 pages, 14318508 bytes).
 PDF statistics:
- 1570 PDF objects out of 1728 (max. 8388607)
- 396 named destinations out of 1000 (max. 500000)
- 86863 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 1694 PDF objects out of 1728 (max. 8388607)
+ 429 named destinations out of 1000 (max. 500000)
+ 86996 words of extra memory for PDF output out of 89155 (max. 10000000)
 

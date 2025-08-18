@@ -138,3 +138,11 @@
 \newtheorem{example}{Example}[section]
 \newtheorem{note}{Note}[section]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% nicer spacing
+\renewcommand{\arraystretch}{1.35} % vertical row padding
+\setlength{\tabcolsep}{8pt}        % horizontal cell padding
+
+% helper column types
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}

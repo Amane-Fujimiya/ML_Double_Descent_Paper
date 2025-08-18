@@ -402,6 +402,11 @@ Nick Littlestone and Manfred~K. Warmuth.
 \newblock {\em Information and Computation}, 108(2):212--261, 1994.
 \newblock Classic multiplicative-weights algorithm and regret bounds.
 
+\bibitem{10.5555/2930837}
+Masashi Sugiyama.
+\newblock {\em Introduction to Statistical Machine Learning}.
+\newblock Morgan Kaufmann Publishers Inc., San Francisco, CA, USA, 2015.
+
 \bibitem{zhang2023mathematical}
 Tong Zhang.
 \newblock {\em Mathematical Analysis of Machine Learning Algorithms}.
@@ -439,10 +444,5 @@ Matthias Fey and Jan~Eric Lenssen.
 \newblock Fast graph representation learning with {PyTorch Geometric}.
 \newblock In {\em ICLR Workshop on Representation Learning on Graphs and
   Manifolds}, 2019.
-
-\bibitem{10.5555/2930837}
-Masashi Sugiyama.
-\newblock {\em Introduction to Statistical Machine Learning}.
-\newblock Morgan Kaufmann Publishers Inc., San Francisco, CA, USA, 2015.
 
 \end{thebibliography}

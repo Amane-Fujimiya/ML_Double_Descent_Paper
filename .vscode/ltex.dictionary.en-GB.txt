@@ -145,3 +145,6 @@ thresholding
 parameter-affectant
 subgraph
 Cayton
+Vapnik
+permutating
+approximator

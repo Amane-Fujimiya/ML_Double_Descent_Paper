@@ -752,6 +752,48 @@ This ultimately results in the PAC-similar procedure constraint, of which we cal
 \end{theorem}
 Notice that as $\beta$ tends to 1, the exponent in the bound for $m$ tends to infinity. This corresponds with the assumption of intuition that the length of the hypothesis approaches that of the data itself, then the predictive power of the hypothesis is diminishing. 
 
+\subsection{Rademacher + VC pair}
+
+Rademacher and Vapnik-Chervonenkis theory (VC-theory) goes in pair, because they dictate a usually fundamental set of framework for identifying and constraining models. The compound theory relies on the Rademacher descriptions (empirical Rademacher complexity and Rademacher complexity), growth function, and VC-dimension. \cite{10.5555/2371238,STL_Hajek_Maxim_2021,10.5555/2930837}
+
+Let $G$ be a family of functions mapping from $Z\to [a,b]$, $S=(z_1,\dots, z_m)$ a fixed sample of size $m$ with elements in $Z$. Then, the \textbf{empirical Rademacher complexity} of $G$ with respect to the sample $S$ is defined as:
+\begin{equation*}
+    \hat{\mathfrak{R}}_S (\mathcal{G}) = \mathbb{E} \left[ \sup_{g\in G} \frac{1}{m} \sum^{m}_{i=1} \sigma_i g(z_i) \right]
+\end{equation*}
+where $\bm{\sigma}=\{\sigma_1,\dots,\sigma_m\}^{\top}$ with $\sigma_i$s independent uniform random variables taking values in $\{-1,+1\}$. The random variable $\sigma_i$ are called \textbf{Rademacher variables}.
+
+The empirical Rademacher complexity can be rewritten as:
+$$\hat{\mathfrak{R}}_S (\mathcal{G}) = \underset{\mathbf{\sigma}}{\mathbb{E}} \left[\sup_{g \in G} \frac{\bm{\sigma}\cdot \mathbf{g}_S}{m}\right]$$
+
+\begin{definition}[Rademacher complexity]
+    Let $\mathcal{D}$ denote the distribution according to which samples are drawn. For any integer $m\geq 1$, the \textbf{Rademacher complexity} of $\mathcal{G}$ is the expectation of the empirical Rademacher complexity over all samples of size $m$ drawn according to $\mathcal{D}$. 
+    \begin{equation}
+        \mathfrak{R}_{m} (\mathcal{G}) = \underset{S\sim \mathcal{D}^{m}}{\mathbb{E}} [\hat{\mathfrak{R}}_{S}(\mathcal{G})]
+    \end{equation}
+\end{definition}
+
+\begin{definition}[Growth function]
+    Given a binary class of functions $\mathcal{H}$, we define the \textit{growth function} $\Pi_{\mathcal{H}}: \mathbb{N}\to \mathbb{N}$ as: 
+    \begin{equation}
+        \Pi_{\mathcal{H}} (m) = \max_{\{x_1, \dots, x_m\}\subseteq \mathcal{X}} \lvert \{h(x_1),\dots, h(x_m): h\in \mathcal{H}\}
+    \end{equation} 
+\end{definition}
+
+For the definition of VC-dimension, we require the notion of \textit{shattering}
+\begin{definition}[Shattering]
+    We say that a finite set $S\subset \mathcal{X}$ is \textbf{shattered} by $C$, if $|\Pi_{C}(S)|=2^{|S|}$. $S$ is shattered by $C$ if all possible dichotomies over $S$ can be realized by $C$. 
+\end{definition}
+\begin{definition}[VC-dimension]
+    The \textbf{VC}-dimension of a hypothesis set $\mathcal{H}$ is the size of the largest set that can be shattered by $\mathcal{H}$, 
+    \begin{equation}
+        \mathrm{VCdim}(\mathcal{H}) = \max_{m\in S} \{m: \Pi_{\mathcal{H}}(m)=2^{m}\}
+    \end{equation}
+\end{definition}
+
+Both PAC and VC-dimension are related through the equivalence in statement. In essence, if a concept class $\mathcal{C}$ is PAC-learnable, then its VC-dimension is finite. For Rademacher complexity, it is a semi-heuristic approach, as it bounds and approach the learning bound using heuristic of random statistical measure (Rademacher random variables set). Growth function works directly on tabulated system of discrete permutating models. 
+\subsection{Remark}
+
+
 \clearpage
 
 \section{Analytical experiments}
@@ -759,13 +801,21 @@ For understanding and analysing double descent and bias-variance trade-off, and 
 
 \subsection{Analytical model}
 
-We then have the following control group for experimental setting. Taking inspiration from the framework of \cite{Vapnik1999-VAPTNO}, we would likely want to adopt Vapnik's control method. Similar to how we argue about the notion of statistical learning, here we also indict on the categorization of the testing model in such configuration. 
+We then have the following control group for experimental setting. Taking inspiration from the framework of \cite{Vapnik1999-VAPTNO}, we would likely want to adopt Vapnik's control method - which separates the ambiance space into three main parts - the \textit{learner}, the \textit{responder} (concept), and the supervisor, completing the supervised learning variant. Similar to how we argue about the notion of statistical learning, here we also indict on the categorization of the testing model in such configuration. 
 
 \begin{SCfigure}[0.7][htb]
     \centering
     \includegraphics[width=0.4\textwidth]{img/vapniksetting.png}
     \caption{A model of learning from examples. During the learning process, the learning machine observes the pairs $(x, y)$ (the training set). After training, the machine must on any given return a value $j$. The goal is to return a value $y$ that is close to the supervisor's response $y$. We will use this interpretation in the experimental setting. Reused from \cite{Vapnik1999-VAPTNO}}
 \end{SCfigure}
+
+We adopt this for our own scheme, which is represented as in Figure~\ref{fig:vapnik_scheme}. This scheme is also used in developing and considering all possible further algorithms and experiments. 
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.7\textwidth]{Diagramatic_Modelling_View.png}
+  \caption{\textbf{Diagramatic view for the ambiance space of the modelling scenario setting.} Under classical learning theory and consideration, such scheme is used for almost every aspect possible of the learner's action. $c\in\mathcal{C}, h\in \mathcal{H}$ described by the tuple $(\mathbf{w},\mathbf{s})$ of main (weight) parameters and special parameters (for example, bias), $\mathbf{I}$ as the input space. The 3-tuple $(\omega, k,m)$ is used for controlling the partitioning (for $k=2$ is the train-test split). Others include $P(\mathbf{I},c,h,\mathcal{D}_{c})$ as the theorized action sequence (where the concept is exhibited, or the where the observational space is formed) of supposed distribution $\mathcal{D}_{c}$, the supervisor $\text{Supervisor}(\nabla, \mathcal{A}, \{\Theta_{S}\})$ for the loss class $\nabla$, algorithm $\mathcal{A}$, and $\{\Theta_{S}\}$ of special parameters for the supervisor. Additionally, we also include the supposed randomized state generation, $\mathsf{RAND}_{i}(\theta_{i,j,k})$ of distinct controlling parameters and arbitrary pseudo-random shape.}
+  \label{fig:vapnik_scheme}
+\end{figure}
 
 
 \subsection{Observation 1 - Univariate standard function models}
@@ -778,27 +828,32 @@ The following lists all the elementary function class used in such particular re
 
 \begin{table}[htb]
   \centering
-  \begin{tabular}{p{2cm}p{3cm}} 
-    \hline 
-    Function class & Expression\\
-    \hline
-    Linear & $ax + b$ \\
-    Polynomial & $\sum_{i=0}^{k} a_{k}x^{k}$ \\
-    Exponential & $ (a/b) \exp{(bx+d)}+e$ \\
-    Trigonometric & $a\sin{(bx+d)}+e$ \\
-  \end{tabular}
-  \caption{
-    \textbf{Elementary function class and their respective parameter control form.} For linear and polynomial regression, they are the same. However, the other function class need specific facility to cater for its analysis.  
+  \begin{tabularx}{\textwidth}{L{2cm} L{3cm} Y}
+    \toprule
+    Function class & Expression & Compound model form\\
+    \midrule
+    Linear & \(a x + b\) & None \\
+    Polynomial & \(\displaystyle \sum_{i=0}^{k} a_{i} x^{i}\) &
+        $p(x)q(x)=\sum_{k}\Big(\sum_{i+j=k} a_i b_j\Big)\,x^k$\\
+    Exponential & \((a/b)\,\exp(bx+d)+e\) &
+    \(\displaystyle \sum_{n} c_n e^{\lambda_n x}\)
+    \\
+    Trigonometric & \(a\sin(bx+d)+e\) &
+    \(\displaystyle \sum_{n=0}^{\infty}\big(A_n\cos(nx)+B_n\sin(nx)\big)\)
+    \\
+    \bottomrule
+  \end{tabularx}
+  \caption{\textbf{Elementary function classes and their respective parameter-control / compound forms on unitary $\mathbb{R}$-space}. For linear we do not expand into a compound; polynomials admit coefficient convolution under multiplication,
+    exponentials admit sums of exponentials (Proxy / exponential sums), and trigonometric functions admit Fourier-series decompositions. Analytical expression and complexity analysis of exponential and trigonometric class can be reduced to singular network, however their expressive complexity is harder to define. 
   }
 \end{table}
 
-For them, the most simple ones are linear and polynomial class, since they are based on fundamental elementary operation, which can then be regarded or graded of certain complexity. For linear and polynomial form, they are of the already well-formed operational form, which is the parameter-affectant form $a_{i}x^{i}$, which can be easily compared. However, for the other elementary functional form, their \textit{control-added parameters} require a few more considerations. In the exponential form, for example, the `degree of control' is directed as being 
+For them, the most simple ones are linear and polynomial class, since they are based on fundamental elementary operation, which can then be regarded or graded of certain complexity. The polynomial itself can have special configuration, for example, the Chebyshev-class polynomials. For linear and polynomial form, they are of the already well-formed operational form, which is the parameter-affectant form $a_{i}x^{i}$, which can be easily compared. However, for the other elementary functional form, their \textit{control-added parameters} require a few more considerations. In the exponential form, for example, the `degree of control' is directed as being 
 \begin{equation}
   \mathcal{E}(x) : \omega \exp{(bx+d)}+ e = \frac{a}{b} \exp{(bx + d)} + e 
 \end{equation}
-for elementary values $a,b,c,d,e,\omega \in \mathbb{R}$. As this is the singular form, it can then be expressed in such form easily. However, the effect is rather not well-defined. Let's see what we can do. 
-\subsubsection{Linear vs all}
-We first use linear versus all the other models. A linear model of univariate setting will just be $f_{\mathrm{Lin}}(x)=a_{1}x+a_{2}$ for the set of parameter $a_{1}x+a_{2}$. For the setting, we will not test it against the same class itself, since there exists the guarantee of approximating same class representation for a finite univariate space, for a given $\epsilon > 0$ as noise. 
+for elementary values $a,b,c,d,e,\omega \in \mathbb{R}$. As this is the singular form, it can then be expressed in such form easily. However, the effect is rather not well-defined, which is a problem that have to be considered. 
+
 \begin{theorem}[Approximation on univariate form]
   Given a univariate functional space $\mathbf{U}_{\mathbf{w},x}$, there exists at least one $\epsilon > 0$ as noise of the observable on continuous form, such that for a model and concept $h,c\in \mathcal{F}$ of the same function class, then it is guaranteed of a polynomial-time $p(\cdot,\cdot,\cdot,\cdot)$ complexity, $\ell(c,h)\geq 1/\delta$ for $\delta > 0$. 
 \end{theorem}
@@ -807,7 +862,22 @@ We first use linear versus all the other models. A linear model of univariate se
 \end{proof}
 The result with polynomial and exponential is then presented for a given variational $\epsilon$, within standard gradient descent. To control the stability of changing complexity class, we repeat the experiment with a variable of ensembles. Statistical measure are there to fill in the details. 
 
+\begin{theorem}[Unitary Fourier]
+  The class of all Fourier-class models can approximate, in a given range $[a,b]$, of confidence $1/\delta$ and within accuracy $1/\epsilon$ arbitrary unitary function class on $(\mathbb{R},\mathbb{R})$. 
+\end{theorem}
 
+
+The following experiments will justify and investigate all different ordered permutation of models, especially to extract double descent behaviours or not. Interestingly, the system complexity, one of the complexity measure that is of consideration, will be excluded, and is reserved for latter examples. 
+
+\subsubsection{Linear vs all}
+We first use linear versus all the other models. A linear model of univariate setting will just be $f_{\mathrm{Lin}}(x)=a_{1}x+a_{2}$ for the set of parameter $a_{1}x+a_{2}$. For the setting, we will not test it against the same class itself, since there exists the guarantee of approximating same class representation for a finite univariate space, for a given $\epsilon > 0$ as noise. 
+
+
+\subsubsection{Polynomial-vs-all}
+
+\subsubsection{Exponential compound model}
+
+\subsubsection{Fourier-based compound model}
 
 \subsection{Observation 2 - Prescription from \cite{lafon_understanding_2024}}
 We reserve the first experimental run for a test and check experiment, so that we can then identify the problem setting more accordingly. The first, and the most simple model that can be taken into account is the model of linear regression with varied setting. The model that is representative of this preliminary observation is from \cite{lafon_understanding_2024}, specifically, linear regression with Gaussian noise. Consider the family class $(\mathcal{H}_p)_{p\in\llbracket1,d\rrbracket}$ of linear functions $h:\R^d\mapsto \R$ where exactly $p$ components are non-zero ($1\leq p\leq d$), we have the following model. 
@@ -844,7 +914,59 @@ As said, this theorem is designed to mimic the double descent behaviour on the r
 %    \caption{Theorem~\ref{thm:double_descent_lr} behaviours on randomized setting. For this model, we have %$d=100$, $\sigma = 0.5$, and variational $n$. This case is for $n=12$.}
 %\end{figure}
 
-The first experimental setting is then conducted with fixed $d$, varying $p$ for each varying $n$ samples. Since this is a least square result, preliminary run is conducted using one-shot error-risk measure on least square closed-form approximation. Note that $p\leq d$, hence we are regarding the domain of the term underparameterized and equal parameterization setting. 
+The first experimental setting is then conducted with fixed $d$, varying $p$ for each varying $n$ samples. Since this is a least square result, preliminary run is conducted using one-shot error-risk measure on least square closed-form approximation. Note that $p\leq d$, hence we are regarding the domain of the term underparameterized and equal parameterization setting. This is illustrated in Fig~\ref{fig:11grid}.
+
+From such data, and setting, we see that for constant noise with expanding dataset, random ordering of such dataset, the analytical solution of best fit turns out to as the risk decomposition, using the above Theorem~\ref{thm:double_descent_lr}, fails to be realized with large $n$ after certain threshold. What is even more interesting, is that as we find out, the above double-descent replicating formula can actually be realized by the parameter-wised error, or 
+\begin{equation}
+\mathrm{MSE}_{\mathrm{param}}=\left\lvert \hat w - w \right\rvert _{2}^{2}=
+\sum_{j=1}^{d}
+\left(
+  \hat w_{j} - w_{j}
+\right)^{2}
+\end{equation}
+with 
+\begin{equation}
+\hat w_{j}
+=
+\begin{cases}
+\beta_{p,k}, & j = i_{k} \in S,\\[6pt]
+0,           & j \notin S,
+\end{cases}
+\quad
+S = \{\,i_{1},\dots,i_{p}\}.
+\end{equation}
+and \(S=\{i_1,\dots,i_p\}\) is the set of selected feature indices. The result is represented in Figure~\ref{fig:11grid2}, as per elementary result. While previously mentioned and analysed in Theorem~\ref{thm:double_descent_lr} to be equivalent, in such setting, it is entirely nonexistent. 
+
+If we are to use the standard measure of MSE on model's response, though, the result is rather fairly disappointing, with no trace of double descent in any given way. This is perhaps the more interesting result, as it represents two masks of measure in one setting that might be overlooked. For the formulation
+\begin{equation}
+\mathrm{MSE}_{\mathrm{pred}}
+=
+\frac{1}{n}
+\left\lVert
+  y - X_{p}\,\hat\beta
+\right\rVert_{2}^{2}
+=
+\frac{1}{n}
+\sum_{i=1}^{n}
+\left(
+  y^{(i)} - x_{p}^{(i)\,T}\,\hat\beta
+\right)^{2}
+\end{equation}
+of the standard model, we gain the following result. This also suggest perhaps double descent indeed is coming from some internal fluctuation and aspect that cannot be dissected from another angle, but apparent in some of the model's behaviours, at least intrinsic in the closed-form approximation solution case. 
+
+Thence, the theorem gives us two things - the interpolation point, in this setting, refers to the parameter error for their double descent behaviour. However, on the prediction results' error measure, the interpolation point correlates to the point where the defined generalization risk in such case equals zero. These patterns hold up to certain point. However, the test case is only up to $d=p$. An unexplored test case for $p>d$ indicate the surprising fact according still, to the theorem: the generalization risk takes double descent as a region with disturbance in the middle, but bias-variance appears afterward. This is illustrated in Figure~\ref{fig:contrarian}, where the same theorem is applied but in the domain which is usually called as \textit{overparameterized region}. 
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{img/dimensional_descent.png}
+  \caption{Similar experiment according to setting and result of Theorem~\ref{eq:linear_gaussian_erm}, where $p$ is in the range [1,5523]. Here, we can see small double descent modelled exactly at the interpolation threshold, while the later region exhibit similar phenomenon as bias-variance tradeoff.}
+  \label{fig:contrarian}
+\end{figure}
+
+The setting of the theorem and the model itself requires several moving parts in making it to work. 
+
+However, the interpretation of the result is not perfect. Under such setting, then for the concept of the same class, so $d=150$, any concept of $p>d$ would result in the metric taking zero value of the `truncated region' where $d$ is literally flat on the $d+1$ onward space. Hence, the error being added on top of such error measure is the component distance of $p$ to the flat sub $p-d$ space itself - which explains the curve going upward, as more and more risks are configured. Nevertheless, the amount of data provided, at least in terms of this model, does indeed have non-trivial effect on the model itself, and the least square solution of best fit which gives the potential minimal, hence the empirical best. Considering the results, we can see regions where the theorem `breaks' of its bias-variance pattern. Further experiment to verify such claim and reconfiguration is needed. Worryingly, in this particular case, there exists no saddle point that was theorized by bias-variance tradeoff, which must then be explained accordingly. Furthermore, we also notice the troublesome fact that this particular pattern works on \textit{same operational space} models, that is, linear models approximating linear models. This setting is fairly limited, and would not generalize well. However, we also do not know what kind of measure to take in such case. 
+
+\clearpage
 
 \begin{figure}[htb]
   \centering
@@ -920,27 +1042,6 @@ The first experimental setting is then conducted with fixed $d$, varying $p$ for
   \label{fig:11grid}
 \end{figure}
 
-From such data, and setting, we see that for constant noise with expanding dataset, random ordering of such dataset, the analytical solution of best fit turns out to as the risk decomposition, using the above Theorem~\ref{thm:double_descent_lr}, fails to be realized with large $n$ after certain threshold. What is even more interesting, is that as we find out, the above double-descent replicating formula can actually be realized by the parameter-wised error, or 
-\begin{equation}
-\mathrm{MSE}_{\mathrm{param}}=\left\lvert \hat w - w \right\rvert _{2}^{2}=
-\sum_{j=1}^{d}
-\left(
-  \hat w_{j} - w_{j}
-\right)^{2}
-\end{equation}
-with 
-\begin{equation}
-\hat w_{j}
-=
-\begin{cases}
-\beta_{p,k}, & j = i_{k} \in S,\\[6pt]
-0,           & j \notin S,
-\end{cases}
-\quad
-S = \{\,i_{1},\dots,i_{p}\}.
-\end{equation}
-and \(S=\{i_1,\dots,i_p\}\) is the set of selected feature indices. The result is represented in Figure~\ref{fig:11grid2}, as per elementary result. While previously mentioned and analysed in Theorem~\ref{thm:double_descent_lr} to be equivalent, in such setting, it is entirely nonexistent. 
-
 \begin{figure}[htb]
   \centering
   \newcommand{\imgwidth}{0.22\textwidth}
@@ -1014,22 +1115,7 @@ and \(S=\{i_1,\dots,i_p\}\) is the set of selected feature indices. The result i
   \caption{Contrary to Theorem~\ref{thm:double_descent_lr}, this is the behaviours on randomized setting for standard parameter-wised mean square error measure (MSE-on-parameter). For this model, we have $d=100$, $\sigma = 0.5$, and variational $n$. Full test cases are for $p=[1,100]$, $n=\{12,24,36,50,76,82,90,100,106,112,121\}$ accordingly. The test function of the concept itself is the same linear model, but with different input only.}
   \label{fig:11grid2}
 \end{figure}
-If we are to use the standard measure of MSE on model's response, though, the result is rather fairly disappointing, with no trace of double descent in any given way. This is perhaps the more interesting result, as it represents two masks of measure in one setting that might be overlooked. For the formulation
-\begin{equation}
-\mathrm{MSE}_{\mathrm{pred}}
-=
-\frac{1}{n}
-\left\lVert
-  y - X_{p}\,\hat\beta
-\right\rVert_{2}^{2}
-=
-\frac{1}{n}
-\sum_{i=1}^{n}
-\left(
-  y^{(i)} - x_{p}^{(i)\,T}\,\hat\beta
-\right)^{2}
-\end{equation}
-of the standard model, we gain the following result. This also suggest perhaps double descent indeed is coming from some internal fluctuation and aspect that cannot be dissected from another angle, but apparent in some of the model's behaviours, at least intrinsic in the closed-form approximation solution case. 
+
 \begin{figure}[htb]
   \centering
   \newcommand{\imgwidth}{0.22\textwidth}
@@ -1104,17 +1190,7 @@ of the standard model, we gain the following result. This also suggest perhaps d
   \label{fig:11grid21}
 \end{figure}
 
-Thence, the theorem gives us two things - the interpolation point, in this setting, refers to the parameter error for their double descent behaviour. However, on the prediction results' error measure, the interpolation point correlates to the point where the defined generalization risk in such case equals zero. These patterns hold up to certain point. However, the test case is only up to $d=p$. An unexplored test case for $p>d$ indicate the surprising fact according still, to the theorem: the generalization risk takes double descent as a region with disturbance in the middle, but bias-variance appears afterward. This is illustrated in Figure~\ref{fig:contrarian}, where the same theorem is applied but in the domain which is usually called as \textit{overparameterized region}. 
-\begin{figure}[htp]
-  \centering
-  \includegraphics[width=0.6\textwidth]{img/dimensional_descent.png}
-  \caption{Similar experiment according to setting and result of Theorem~\ref{eq:linear_gaussian_erm}, where $p$ is in the range [1,5523]. Here, we can see small double descent modelled exactly at the interpolation threshold, while the later region exhibit similar phenomenon as bias-variance tradeoff.}
-  \label{fig:contrarian}
-\end{figure}
-
-The setting of the theorem and the model itself requires several moving parts in making it to work. 
-
-However, the interpretation of the result is not perfect. Under such setting, then for the concept of the same class, so $d=150$, any concept of $p>d$ would result in the metric taking zero value of the `truncated region' where $d$ is literally flat on the $d+1$ onward space. Hence, the error being added on top of such error measure is the component distance of $p$ to the flat sub $p-d$ space itself - which explains the curve going upward, as more and more risks are configured. Nevertheless, the amount of data provided, at least in terms of this model, does indeed have non-trivial effect on the model itself, and the least square solution of best fit which gives the potential minimal, hence the empirical best. Considering the results, we can see regions where the theorem `breaks' of its bias-variance pattern. Further experiment to verify such claim and reconfiguration is needed. Worryingly, in this particular case, there exists no saddle point that was theorized by bias-variance tradeoff, which must then be explained accordingly. Furthermore, we also notice the troublesome fact that this particular pattern works on \textit{same operational space} models, that is, linear models approximating linear models. This setting is fairly limited, and would not generalize well. However, we also do not know what kind of measure to take in such case. 
+\clearpage 
 
 \subsubsection{Verification}
 
@@ -1122,7 +1198,7 @@ To verify the theorem itself, we test it with a standard setting without the the
 
 We use the Algorithm~\ref{algo:algo_reg_lin_1} for verification, including three modes of error measure, which will then be calculated accordingly. For gradient descent, we refer to another experiment. For such algorithm, we notice that the operational space of the model is $\mathbb{R}^{n}\to \mathbb{R}$. The masking of parameters then is not well-received, since the output space is far more skewed - single dimension resultant with no scaling difference because the model in question is supposed to be linear. Regarding such, it makes sense to realize that the model itself can still attain relatively stable error, because its feature compounds on the scaling parameters.  
 
-To test the stability of the model, we run for a stable section of the permutations done on $p$. The result is outlined in \ref{fig:risk_all_grid}. Interestingly, while $p=n$ does not hold, the pattern of double descent without head descent still fundamentally exists, albeit in a much more constrained region, as can see from $n=12$ to $n=150$. 
+To test the stability of the model, we run for a stable section of the permutations done on $p$. The result is outlined in \ref{fig:risk_all_grid}. Interestingly, while the interpolation threshold theorized being $p=n$ does not hold, the pattern of double descent without head descent still fundamentally exists, albeit in a much more constrained region, as can see from $n=12$ to $n=150$. The pattern from then onward follows a reduced trend, without the chaotic behaviours seen. 
 
 \RestyleAlgo{ruled}
 \SetKwComment{Comment}{/* }{ */}
@@ -1265,6 +1341,11 @@ To test the stability of the model, we run for a stable section of the permutati
 
 \subsubsection{Remark}
 
+Experiments conducted using Theorem~\ref{thm:double_descent_lr} and variations of it suggests inconsistent results. The supposed interpolation threshold has different interpretation and indication in different scenario, including both parameter-wise error and prediction-only error measure. Furthermore, verification also shows inconsistency with the interpolation threshold, albeit given the fact that the margin of error from the highest peak to the interpolation point is consistent up to certain $n$. Breakdown of the result from theorem, as well as double descent behaviour starts with high $n$ counts, as well as interesting outlook of bias-variance reappearance for $p\sim 5000$, far more than what is tested in normal testing cases. Such result suggests further experiments to validate the observations, as well as statistical analysis of the entire system. 
+
+Additionally, 
+
+\clearpage
 
 \subsection{Observation 3 - Polynomial regression}
 
@@ -1298,7 +1379,9 @@ Experimentally, we would likely have to present certain interpretation and confi
 \end{setting}
 The complexity measure on the surface (operational) would be the degree $n,m$ of the hypothesis and the concept (respectively with the setting), the degree of noise (hence variations) and type of noise, the input space width for $\mathbf{x}\in \mathbb{R}^{d}$ - for it if being high dimensional means more flexibility - which is inherent of the data, and other hyperparameters typical of controlling standard behaviours for the supervisor's learning procedure. In the experimental session, we would also want to somewhat compare the noise fitting solution, to the best interpolation solutions set, to be able to see the interpolating shape after noise. This will determine $d(c,c')$.
 
-\subsection{Support Vector Machine (SVM)}
+\clearpage
+
+\subsection{Observation 5 - Support Vector Machine}
 
 Support vector machine, first formally originated from \cite{Vapnik1999-VAPTNO}, is a model inherently, specifically defined for pattern recognition task, and binary classification via an \textit{optimal separating hyperplane}. There are two variants for SVM, namely, for linear and nonlinear hyperplane. 
 
@@ -1328,6 +1411,111 @@ From such observation, it would seem imperative that the notion of complexity ba
 \end{setting}
 
 The complexity in question that would have to be considered and calculated is the support vectors, or rather, the margin point. Though this effectively means that it does not take all data to form the margin, it still means that there then can exist infinite `counting complexity' with respect to the parameter counts. Thereby, we would need another measure of complexity than just as parameters specific to the hypothesis. In fact, the construction of the hypothesis must also consider this aspect itself as a class. 
+
+We tested preliminary SVM with dimension of the feature $p$ in range $[1,80]$, linear kernel, data points increase of the sequence $\{5, 10, 20, 30, 40 , 50, 60, 70 , 80, 100, 120, 140, 150, 160, 170\}$, noise $\sigma = 0.1$, and with distributions almost all being standard normal distribution. Train-test variation is configured with partition scale $0.2$ with random shuffling. Preliminary experiment unfortunately does not give any indication of particularly double descent, and is rather very chaotic. Let us illustrate it. The first case, for $n=20$, normalized, $p=[1,30]$, $\sigma =0.5$, and standard no regularization gives the result in Figure~\ref{fig:test_svm_com_ideal}.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.5\textwidth]{test_case_ideal_svm.png}
+  \caption{\textbf{Experiment on support vector machine on parameterized double descent identification}. The pattern appears marginally on the result graph, with a correct case of interpolation prediction for $p=n$.}
+  \label{fig:test_svm_com_ideal}
+\end{figure}
+However, when we turn our attention to a wider experimental analysis, we gain the following results in Figure~\ref{fig:risk_all_grid_svm}, which is very chaotic. Further experiment is required to validate hypothesis about both, in certain cases, manifold hypothesis's contribution and double descent. 
+
+\begin{figure}[htb]
+  \centering
+  \newcommand{\imgwidth}{0.22\textwidth}
+
+  % First row
+  \begin{subfigure}[b]{\imgwidth}
+    \includegraphics[width=\linewidth]{img_qq/risk_curve_n5.png}
+    \caption{$n=12$}\label{fig:2a1}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{\imgwidth}
+    \includegraphics[width=\linewidth]{img_qq/risk_curve_n10.png}
+    \caption{$n=24$}\label{fig:2b1}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{\imgwidth}
+    \includegraphics[width=\linewidth]{img_qq/risk_curve_n20.png}
+    \caption{$n=36$}\label{fig:2c1}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{\imgwidth}
+    \includegraphics[width=\linewidth]{img_qq/risk_curve_n30.png}
+    \caption{$n=50$}\label{fig:2d1}
+  \end{subfigure}
+
+  \medskip
+
+  % Second row
+  \begin{subfigure}[b]{\imgwidth}
+    \includegraphics[width=\linewidth]{img_qq/risk_curve_n40.png}
+    \caption{$n=76$}\label{fig:2e1}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{\imgwidth}
+    \includegraphics[width=\linewidth]{img_qq/risk_curve_n50.png}
+    \caption{$n=82$}\label{fig:2f1}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{\imgwidth}
+    \includegraphics[width=\linewidth]{img_qq/risk_curve_n60.png}
+    \caption{$n=90$}\label{fig:2g1}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{\imgwidth}
+    \includegraphics[width=\linewidth]{img_qq/risk_curve_n70.png}
+    \caption{$n=100$}\label{fig:2h1}
+  \end{subfigure}
+
+  \medskip
+
+  % Third row
+  \begin{subfigure}[b]{\imgwidth}
+    \includegraphics[width=\linewidth]{img_qq/risk_curve_n80.png}
+    \caption{$n=106$}\label{fig:2i}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{\imgwidth}
+    \includegraphics[width=\linewidth]{img_qq/risk_curve_n100.png}
+    \caption{$n=112$}\label{fig:2j1}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{\imgwidth}
+    \includegraphics[width=\linewidth]{img_qq/risk_curve_n120.png}
+    \caption{$n=121$}\label{fig:2k1}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{\imgwidth}
+    \includegraphics[width=\linewidth]{img_qq/risk_curve_n140.png}
+    \caption{$n=150$}\label{fig:2l1}
+  \end{subfigure}
+
+  \medskip
+
+  % Fourth row
+  \begin{subfigure}[b]{\imgwidth}
+    \includegraphics[width=\linewidth]{img_qq/risk_curve_n150.png}
+    \caption{$n=231$}\label{fig:2m1}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{\imgwidth}
+    \includegraphics[width=\linewidth]{img_qq/risk_curve_n160.png}
+    \caption{$n=250$}\label{fig:2n1}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{\imgwidth}
+    \includegraphics[width=\linewidth]{img_qq/risk_curve_n170.png}
+    \caption{$n=256$}\label{fig:2o1}
+  \end{subfigure}%
+
+  \caption{\textbf{Risk plots of support vector machine on incremental $p$ and $n$}. The pattern is not interpretable, albeit we have doubts about the actual result.}
+  \label{fig:risk_all_grid_svm}
+\end{figure}
+
+\clearpage
 
 \subsection{Neural network}
 
@@ -1446,7 +1634,7 @@ The graph data can be loosely (not specifically in cases) as followed. Let $\mat
 
 \begin{figure}[htb]
   \centering
-  \includegraphics[width=0.65\textwidth]{graph_tech.png}
+  \includegraphics[width=0.6\textwidth]{graph_tech.png}
   \caption{
     \textbf{Illustration of an ordering for a specific graph configuration.} We emphasize the perspective to the higher neighbouring degree node in the graph, namely $V_{1}$, and their relative links and connections of the graph itself. A 2-walk (in red) can be seen, which aggregates more to create the 2-neighbourhood of maximally two walks away. 
   }
@@ -1874,6 +2062,35 @@ Hence, from the definition and consideration of the representation space, we can
 \end{enumerate}
 
 We would likely want to give a pretty much different interpretation thereof, on one of the more primitive notion in mathematical analysis, which also looks just as similar in idea as the representation of subject to be: the \textbf{Stone-Weierstrass Approximation Theorem}, which states that for $f\in C([a,b],\mathbb{R})$, then there is a sequence of polynomials $p_{n}(x)$ that conveys uniformly to $f(x)$ to $[a,b]$, essentially represents the complex subject. We would ultimately, in actuality, assume this to be true in our connection to practical problems and more complex subjects non-mathematically, and if this is not particularly true, then we are in plenty of trouble. 
+\subsection{Bias-variance intuition - No-free-lunch (\cite{10.5555/2371238})}
+
+Even though bias-variance tradeoff is considered to be the standard rule of thumb in encounters of the dichotomy between \textit{complexity} and \textit{performance}, its form and analytical expression is not uniform throughout different literature of interest. Specifically, it is sometime considered to be equal to the estimation-approximation tradeoff, though in some case it is not. Hence, for an approach for the formal treatment, our consideration should start with the question of the existence of a universal approximator. The goal of the standard learning problem, aside from microscopic and specific details, deals with the construction of the solution to the problem of approximating a given observation set, providing that there exists a hidden relation or concept $c$ that governs the observation itself. Then, the question is to ask if there exists a universal approximator that can approximate any concept $c$ of the entire concept space $\mathcal{C}$, given sufficient time, complexity, and expression. 
+
+\begin{conjecture}[General insight]
+    Bias-variance can be identified, under several contexts, to mean the following: \begin{itemize}
+        \item For any model $h$ and measure of its complexity $\mathcal{M}(h)\:\mathcal{H}\to \mathbb{F}^{k}$, There exists a point $\psi$ such that when
+    \end{itemize}
+\end{conjecture}
+
+This is expressed by the No-Free-Lunch theorem. We would then see why this leads to the tradeoff we are familiar. We state the No-Free-Lunch theorem as followed.
+
+\begin{theorem}[No-Free-Lunch]
+    Let $A$ be any learning algorithm for the task of binary classification with respect to the $0-1$ loss over a domain $\mathcal{X}$. Let $m$ be any number smaller than $|\mathcal{X}|/2$, representing the training set size. Thn, there exists a distribution $\mathcal{D}$ over $\mathcal{X}\times \{0,1\}$, such that: 
+    \begin{enumerate}
+        \item There exists a function $f:\mathcal{X}\to \{0,1\}$ with $L_{\mathcal{D}}(f)= 0$. 
+        \item With probability of at least $1/7$ over the choice of $S\sim \mathcal{D}^{m}$ we have that $R_{\mathcal{D}}(A(S))\geq 1/8$. 
+    \end{enumerate}
+\end{theorem}
+
+This theorem states that there exists no universal learner, for every learner there exists a task on which it fails, even though success can be achieved by another learner. In certain way or another, this theorem is in the profession of \textit{impossibility theorem}, where one choose to forbid the model at present theory from being universal, that is, capable of doing everything. In particular, any algorithm that choooses its output from hypothesis in $\mathcal{H}$ will fail on some learning tasks. 
+
+\begin{col}
+    Let $\mathcal{X}$ be an infinite domain, and let $\mathcal{H}$ be all functions from $\mathcal{X}\to \mathcal{Y}$. Then $\mathcal{H}$ is not PAC learnable. 
+\end{col}
+
+\begin{proof}[Draft proof for binary case]
+    We first prove this for some class of binary classification functions $f: \mathcal{X}\to \{0,1\}$. Assume $\mathcal{H}$ is learnable. Choose for $\epsilon < 1/8, \delta < 1/7$. There, $\mathcal{H}$ is fixed. Then, by PAC learning, for some number $m=m(\epsilon, \delta)$, there must be some algorithm $\mathcal{A}$ and an integer $m = m(\epsilon, \delta)$, such that for any data-generating distribution over $\mathcal{X} \times \{0,1\}$, if for some function $f: \mathcal{X} \to \{0,1\}$, $R(f) = 0$, then with probability greater than $1 - \delta$ when $A$ is applied to samples $S$ of size $m$, generated i.i.d. by $\mathcal{D}$, $R(A(S)) \leq \epsilon$. However, applying the No-Free-Lunch theorem, since $|\mathcal{X}| > 2m$, for every learning algorithm (and in particular for the algorithm $A$), there exists a distribution $\mathcal{D}$ such that with probability greater than $1/7 > \delta$, $R(A(S)) > 1/8 > \epsilon$, which leads to the desired contradiction.
+\end{proof}
 
 \clearpage
 \section*{Comment on statistical consideration}
