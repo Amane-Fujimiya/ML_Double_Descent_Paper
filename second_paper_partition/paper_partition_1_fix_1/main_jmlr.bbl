@@ -1,0 +1,615 @@
+\begin{thebibliography}{88}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[uni()]{unified_bias_composition}
+[{PDF}] {A} {Unifeid} {Bias}-{Variance} {Decomposition} and its {Applications}
+  {\textbar} {Semantic} {Scholar}.
+\newblock URL
+  \url{https://www.semanticscholar.org/paper/A-Unifeid-Bias-Variance-Decomposition-and-its-Domingos/e1ed9d24db5e8f7ab326aeb797e965a94f5ad6d3}.
+
+\bibitem[Achlioptas()]{achlioptas_stochastic_nodate}
+Panos Achlioptas.
+\newblock Stochastic {Gradient} {Descent} in {Theory} and {Practice}.
+\newblock \emph{Lecture note, Stanford's AI}.
+
+\bibitem[Adlam and
+  Pennington(2020)]{adlam2020understandingdoubledescentrequires}
+Ben Adlam and Jeffrey Pennington.
+\newblock Understanding double descent requires a fine-grained bias-variance
+  decomposition, 2020.
+\newblock URL \url{https://arxiv.org/abs/2011.03321}.
+
+\bibitem[Advani and
+  Saxe(2017)]{advani2017highdimensionaldynamicsgeneralizationerror}
+Madhu~S. Advani and Andrew~M. Saxe.
+\newblock High-dimensional dynamics of generalization error in neural networks,
+  2017.
+\newblock URL \url{https://arxiv.org/abs/1710.03667}.
+
+\bibitem[Balcan et~al.(2010)Balcan, Hanneke, and
+  Wortman~Vaughan]{Balcan2010TrueSampleComplexity}
+Maria-Florina Balcan, Steve Hanneke, and Jennifer Wortman~Vaughan.
+\newblock The true sample complexity of active learning.
+\newblock \emph{Machine Learning}, 80\penalty0 (2–3):\penalty0 111--139,
+  2010.
+\newblock \doi{10.1007/s10994-010-5174-y}.
+\newblock URL
+  \url{https://link.springer.com/article/10.1007/s10994-010-5174-y}.
+
+\bibitem[Barbierato and Gatti(2024)]{electronics13020416}
+Enrico Barbierato and Alice Gatti.
+\newblock The challenges of machine learning: A critical review.
+\newblock \emph{Electronics}, 13\penalty0 (2), 2024.
+\newblock ISSN 2079-9292.
+\newblock \doi{10.3390/electronics13020416}.
+\newblock URL \url{https://www.mdpi.com/2079-9292/13/2/416}.
+
+\bibitem[Barceló et~al.(2020)Barceló, Monet, Pérez, and
+  Subercaseaux]{barceló2020modelinterpretabilitylenscomputational}
+Pablo Barceló, Mikaël Monet, Jorge Pérez, and Bernardo Subercaseaux.
+\newblock Model interpretability through the lens of computational complexity,
+  2020.
+\newblock URL \url{https://arxiv.org/abs/2010.12265}.
+
+\bibitem[Bartlett and Mendelson(2005)]{bartlett2005local}
+Peter~L. Bartlett and Shahar Mendelson.
+\newblock Empirical minimization.
+\newblock In \emph{Probability Theory and Related Fields}, volume 135, pages
+  311--334, 2005.
+\newblock \doi{10.1007/s00440-005-0460-0}.
+
+\bibitem[Bartlett et~al.(2017)Bartlett, Foster, and
+  Telgarsky]{bartlett2017spectrally}
+Peter~L. Bartlett, Dylan~J. Foster, and Matus Telgarsky.
+\newblock Spectrally-normalized margin bounds for neural networks.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, pages 6241--6250, 2017.
+
+\bibitem[Belkin et~al.(2018)Belkin, Ma, and
+  Mandal]{belkin2018understanddeeplearningneed}
+Mikhail Belkin, Siyuan Ma, and Soumik Mandal.
+\newblock To understand deep learning we need to understand kernel learning,
+  2018.
+\newblock URL \url{https://arxiv.org/abs/1802.01396}.
+
+\bibitem[Belkin et~al.(2019)Belkin, Hsu, Ma, and
+  Mandal]{belkin_reconciling_2019}
+Mikhail Belkin, Daniel Hsu, Siyuan Ma, and Soumik Mandal.
+\newblock Reconciling modern machine learning practice and the bias-variance
+  trade-off.
+\newblock \emph{Proc. Natl. Acad. Sci. U.S.A.}, 116\penalty0 (32):\penalty0
+  15849--15854, August 2019.
+\newblock ISSN 0027-8424, 1091-6490.
+\newblock \doi{10.1073/pnas.1903070116}.
+\newblock URL \url{http://arxiv.org/abs/1812.11118}.
+\newblock arXiv:1812.11118 [cs, stat].
+
+\bibitem[Bousquet and Elisseeff(2002)]{bousquet2002stability}
+Olivier Bousquet and André Elisseeff.
+\newblock Stability and generalization.
+\newblock In \emph{Journal of Machine Learning Research}, volume~2, pages
+  499--526, 2002.
+
+\bibitem[Bousquet et~al.(2020)Bousquet, Hanneke, Moran, van Handel, and
+  Yehudayoff]{bousquet2020theoryuniversallearning}
+Olivier Bousquet, Steve Hanneke, Shay Moran, Ramon van Handel, and Amir
+  Yehudayoff.
+\newblock A theory of universal learning, 2020.
+\newblock URL \url{https://arxiv.org/abs/2011.04483}.
+
+\bibitem[Brooks(1991)]{brooks1991intelligence}
+Rodney~A. Brooks.
+\newblock Intelligence without representation.
+\newblock \emph{Artificial Intelligence}, 47:\penalty0 139--159, 1991.
+\newblock \doi{10.1016/0004-3702(91)90053-M}.
+\newblock URL
+  \url{https://people.csail.mit.edu/brooks/papers/representation.pdf}.
+
+\bibitem[Brown and Ali(2024)]{brown2024biasvariance}
+Gavin Brown and Riccardo Ali.
+\newblock Bias/variance is not the same as approximation/estimation.
+\newblock \emph{Transactions on Machine Learning Research}, 2024.
+\newblock ISSN 2835-8856.
+\newblock URL \url{https://openreview.net/forum?id=4TnFbv16hK}.
+
+\bibitem[Cristianini and Shawe-Taylor(2000)]{Cristianini2000AnIT}
+Nello Cristianini and John Shawe-Taylor.
+\newblock An introduction to support vector machines and other kernel-based
+  learning methods.
+\newblock 2000.
+\newblock URL \url{https://api.semanticscholar.org/CorpusID:60486887}.
+
+\bibitem[d'~Ascoli et~al.(2020)d'~Ascoli, Sagun, and
+  Biroli]{d_ascoli_triple_2020}
+Stéphane d'~Ascoli, Levent Sagun, and Giulio Biroli.
+\newblock Triple descent and the two kinds of overfitting: where \& why do they
+  appear?
+\newblock In \emph{Advances in {Neural} {Information} {Processing} {Systems}},
+  volume~33, pages 3058--3069. Curran Associates, Inc., 2020.
+\newblock URL
+  \url{https://proceedings.neurips.cc/paper/2020/hash/1fd09c5f59a8ff35d499c0ee25a1d47e-Abstract.html}.
+
+\bibitem[Darwiche and Marquis(2002)]{DarwicheMarquis2002}
+Adnan Darwiche and Pierre Marquis.
+\newblock A knowledge compilation map.
+\newblock \emph{Journal of Artificial Intelligence Research}, 17:\penalty0
+  229–264, 2002.
+
+\bibitem[Davies et~al.(2023)Davies, Langosco, and
+  Krueger]{davies_unifying_2023}
+Xander Davies, Lauro Langosco, and David Krueger.
+\newblock Unifying {Grokking} and {Double} {Descent}, March 2023.
+\newblock URL \url{http://arxiv.org/abs/2303.06173}.
+\newblock arXiv:2303.06173 [cs].
+
+\bibitem[Domingos(2000{\natexlab{a}})]{Domingos2000AUB}
+Pedro~M. Domingos.
+\newblock A unified bias-variance decomposition for zero-one and squared loss.
+\newblock In \emph{AAAI/IAAI}, 2000{\natexlab{a}}.
+\newblock URL \url{https://api.semanticscholar.org/CorpusID:2063488}.
+
+\bibitem[Domingos(2000{\natexlab{b}})]{domingos_unifeid_2000}
+Pedro~M. Domingos.
+\newblock A {Unifeid} {Bias}-{Variance} {Decomposition} and its {Applications}.
+\newblock In \emph{Semantic Scholar}, June 2000{\natexlab{b}}.
+\newblock URL
+  \url{https://www.semanticscholar.org/paper/A-Unifeid-Bias-Variance-Decomposition-and-its-Domingos/e1ed9d24db5e8f7ab326aeb797e965a94f5ad6d3}.
+
+\bibitem[Doshi-Velez and Kim(2017)]{doshi2017towards}
+Finale Doshi-Velez and Been Kim.
+\newblock Towards a rigorous science of interpretable machine learning.
+\newblock In \emph{arXiv preprint arXiv:1702.08608}, 2017.
+
+\bibitem[Dreyfus(1965)]{dreyfus1965alchemy}
+Hubert~L. Dreyfus.
+\newblock Alchemy and artificial intelligence.
+\newblock Technical Report P-3244, RAND Corporation, 1965.
+\newblock URL \url{https://www.rand.org/pubs/papers/P3244.html}.
+
+\bibitem[Dreyfus(1972)]{dreyfus1972what}
+Hubert~L. Dreyfus.
+\newblock \emph{What Computers Can't Do: A Critique of Artificial Reason}.
+\newblock Harper \& Row, 1972.
+\newblock ISBN 0060110821.
+
+\bibitem[Dreyfus and Dreyfus(1986)]{dreyfus1986mind}
+Hubert~L. Dreyfus and Stuart~E. Dreyfus.
+\newblock \emph{Mind Over Machine: The Power of Human Intuition and Expertise
+  in the Era of the Computer}.
+\newblock Free Press, 1986.
+\newblock ISBN 0029080606.
+
+\bibitem[E.~L.~Lehmann(1998)]{LehmannCasella_theory_1998}
+George~Casella E.~L.~Lehmann.
+\newblock \emph{Theory of {Point} {Estimation}}.
+\newblock Springer {Texts} in {Statistics}. Springer-Verlag, New York, 1998.
+\newblock ISBN 978-0-387-98502-2.
+\newblock \doi{10.1007/b98854}.
+\newblock URL \url{http://link.springer.com/10.1007/b98854}.
+
+\bibitem[Fortmann(2012)]{Scott_Fortmann_Bias}
+Scott Fortmann.
+\newblock Understanding the {Bias}-{Variance} {Tradeoff}, 2012.
+\newblock URL \url{https://scott.fortmann-roe.com/docs/BiasVariance.html}.
+
+\bibitem[Geman et~al.(1992)Geman, Bienenstock, and Doursat]{6797087}
+Stuart Geman, Elie Bienenstock, and René Doursat.
+\newblock Neural networks and the bias/variance dilemma.
+\newblock \emph{Neural Computation}, 4\penalty0 (1):\penalty0 1--58, 1992.
+\newblock \doi{10.1162/neco.1992.4.1.1}.
+
+\bibitem[Goodfellow et~al.(2016)Goodfellow, Bengio, Courville, and
+  Bengio]{goodfellow2016deep}
+Ian Goodfellow, Yoshua Bengio, Aaron Courville, and Yoshua Bengio.
+\newblock \emph{Deep learning}, volume~1.
+\newblock MIT Press, 2016.
+
+\bibitem[Hajek and Raginsky(2021)]{STL_Hajek_Maxim_2021}
+Bruce Hajek and Maxim Raginsky.
+\newblock \emph{Statistical Learning Theory}, volume~1.
+\newblock 2021.
+\newblock URL \url{https://maxim.ece.illinois.edu/teaching/SLT/}.
+
+\bibitem[Harnad(1990)]{harnad1990symbol}
+Stevan Harnad.
+\newblock The symbol grounding problem.
+\newblock \emph{Physica D: Nonlinear Phenomena}, 42:\penalty0 335--346, 1990.
+\newblock \doi{10.1016/0167-2789(90)90087-6}.
+
+\bibitem[Hu et~al.(2021)Hu, Chu, Pei, Liu, and
+  Bian]{hu2021modelcomplexitydeeplearning}
+Xia Hu, Lingyang Chu, Jian Pei, Weiqing Liu, and Jiang Bian.
+\newblock Model complexity of deep learning: A survey, 2021.
+\newblock URL \url{https://arxiv.org/abs/2103.05127}.
+
+\bibitem[Huang et~al.(2025)Huang, Li, Wu, Yang, Talwalkar, Ramchandran, Jordan,
+  and Jiao]{huang2025samplecomplexityrepresentationability}
+Baihe Huang, Shanda Li, Tianhao Wu, Yiming Yang, Ameet Talwalkar, Kannan
+  Ramchandran, Michael~I. Jordan, and Jiantao Jiao.
+\newblock Sample complexity and representation ability of test-time scaling
+  paradigms, 2025.
+\newblock URL \url{https://arxiv.org/abs/2506.05295}.
+
+\bibitem[Jacot et~al.(2018)Jacot, Gabriel, and Hongler]{Jacot:2018:NTK}
+Arthur Jacot, Fran\c~cois Gabriel, and Clément Hongler.
+\newblock Neural tangent kernel: Convergence and generalization in neural
+  networks.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, 2018.
+\newblock Kernel view of wide-network behavior.
+
+\bibitem[Janik and Witaszczyk(2021)]{janik2021complexitydeepneuralnetworks}
+Romuald~A. Janik and Przemek Witaszczyk.
+\newblock Complexity for deep neural networks and other characteristics of deep
+  feature representations, 2021.
+\newblock URL \url{https://arxiv.org/abs/2006.04791}.
+
+\bibitem[Kaplan et~al.(2020)Kaplan, McCandlish, Henighan, Brown, Chess, Child,
+  Gray, Radford, Wu, and Amodei]{kaplan2020scalinglawsneurallanguage}
+Jared Kaplan, Sam McCandlish, Tom Henighan, Tom~B. Brown, Benjamin Chess, Rewon
+  Child, Scott Gray, Alec Radford, Jeffrey Wu, and Dario Amodei.
+\newblock Scaling laws for neural language models, 2020.
+\newblock URL \url{https://arxiv.org/abs/2001.08361}.
+
+\bibitem[Kapoor and Narayanan(2022)]{kapoor2022leakage}
+Sayash Kapoor and Arvind Narayanan.
+\newblock Leakage and the reproducibility crisis in ml-based science.
+\newblock \emph{arXiv preprint arXiv:2207.07048}, 2022.
+
+\bibitem[Kay(1993)]{MkayPretenceSignalStatistics1993}
+Steven~M. Kay.
+\newblock Fundamentals of statistical signal processing: estimation theory
+  {\textbar} {Guide} books {\textbar} {ACM} {Digital} {Library}, 1993.
+\newblock URL \url{https://dl.acm.org/doi/10.5555/151045}.
+
+\bibitem[Kearns and Vazirani(1994)]{10.5555/200548}
+Michael~J. Kearns and Umesh~V. Vazirani.
+\newblock \emph{An introduction to computational learning theory}.
+\newblock MIT Press, Cambridge, MA, USA, 1994.
+\newblock ISBN 0262111934.
+
+\bibitem[Lafon and Thomas(2024)]{lafon_understanding_2024}
+Marc Lafon and Alexandre Thomas.
+\newblock Understanding the {Double} {Descent} {Phenomenon} in {Deep}
+  {Learning}, March 2024.
+\newblock URL \url{http://arxiv.org/abs/2403.10459}.
+\newblock arXiv:2403.10459 [cs, stat].
+
+\bibitem[Lipton(2018)]{lipton2016mythos}
+Zachary~C. Lipton.
+\newblock The mythos of model interpretability.
+\newblock \emph{Queue}, 16\penalty0 (3):\penalty0 31--57, 2018.
+
+\bibitem[Lipton and Steinhardt(2018)]{lipton2018troublingtrendsmachinelearning}
+Zachary~C. Lipton and Jacob Steinhardt.
+\newblock Troubling trends in machine learning scholarship, 2018.
+\newblock URL \url{https://arxiv.org/abs/1807.03341}.
+
+\bibitem[Liu and Flanigan(2023)]{liu2023understandingroleoptimizationdouble}
+Chris~Yuhao Liu and Jeffrey Flanigan.
+\newblock Understanding the role of optimization in double descent, 2023.
+\newblock URL \url{https://arxiv.org/abs/2312.03951}.
+
+\bibitem[Luo et~al.(2024)Luo, Wang, and
+  Huang]{luo2024investigatingimpactmodelcomplexity}
+Jing Luo, Huiyuan Wang, and Weiran Huang.
+\newblock Investigating the impact of model complexity in large language
+  models, 2024.
+\newblock URL \url{https://arxiv.org/abs/2410.00699}.
+
+\bibitem[Manin and Marcolli(2024)]{Manin_2024}
+Yuri Manin and Matilde Marcolli.
+\newblock Homotopy theoretic and categorical models of neural information
+  networks.
+\newblock \emph{Compositionality}, Volume 6 (2024), September 2024.
+\newblock ISSN 2631-4444.
+\newblock \doi{10.46298/compositionality-6-4}.
+\newblock URL \url{http://dx.doi.org/10.46298/compositionality-6-4}.
+
+\bibitem[Marcus(2018)]{marcus2018deep}
+Gary Marcus.
+\newblock Deep learning: A critical appraisal.
+\newblock arXiv preprint arXiv:1801.00631, 2018.
+\newblock URL \url{https://arxiv.org/abs/1801.00631}.
+
+\bibitem[McCarthy and Hayes(1969)]{mccarthy1969philosophical}
+John McCarthy and Patrick~J. Hayes.
+\newblock Some philosophical problems from the standpoint of artificial
+  intelligence.
+\newblock In B.~Meltzer and D.~Michie, editors, \emph{Machine Intelligence 4},
+  pages 463--502. Edinburgh University Press, 1969.
+
+\bibitem[Mei et~al.(2022)Mei, Zhao, Yuan, and Ni]{Mei2022TowardsBridging}
+Shibin Mei, Chenglong Zhao, Shengchao Yuan, and Bingbing Ni.
+\newblock Towards bridging sample complexity and model capacity.
+\newblock In \emph{Proceedings of the AAAI Conference on Artificial
+  Intelligence}, volume~36 of \emph{AAAI'22 Technical Tracks}, pages
+  1972--1980, June 2022.
+\newblock \doi{10.1609/aaai.v36i2.20092}.
+
+\bibitem[Mei and Montanari(2020)]{mei2020generalizationerrorrandomfeatures}
+Song Mei and Andrea Montanari.
+\newblock The generalization error of random features regression: Precise
+  asymptotics and double descent curve, 2020.
+\newblock URL \url{https://arxiv.org/abs/1908.05355}.
+
+\bibitem[Miltersen et~al.(2005)Miltersen, Radhakrishnan, and
+  Wegener]{MiltersenRadhakrishnanWegener2005}
+Peter~B. Miltersen, Jaikumar Radhakrishnan, and Ingo Wegener.
+\newblock On converting {CNF} to {DNF}.
+\newblock \emph{Theoretical Computer Science}, 347\penalty0 (1–2):\penalty0
+  325–335, 2005.
+
+\bibitem[Mohri et~al.(2012)Mohri, Rostamizadeh, and Talwalkar]{10.5555/2371238}
+Mehryar Mohri, Afshin Rostamizadeh, and Ameet Talwalkar.
+\newblock \emph{Foundations of Machine Learning}.
+\newblock The MIT Press, 2012.
+\newblock ISBN 026201825X.
+
+\bibitem[Molnar et~al.(2020{\natexlab{a}})Molnar, Casalicchio, and
+  Bischl]{Molnar_2020}
+Christoph Molnar, Giuseppe Casalicchio, and Bernd Bischl.
+\newblock \emph{Quantifying Model Complexity via Functional Decomposition for
+  Better Post-hoc Interpretability}, page 193–204.
+\newblock Springer International Publishing, 2020{\natexlab{a}}.
+\newblock ISBN 9783030438234.
+\newblock \doi{10.1007/978-3-030-43823-4_17}.
+\newblock URL \url{http://dx.doi.org/10.1007/978-3-030-43823-4_17}.
+
+\bibitem[Molnar et~al.(2020{\natexlab{b}})Molnar, König, Herbinger,
+  Freiesleben, Dandl, Scholbeck, Casalicchio, Grosse-Wentrup, and
+  Bischl]{molnar2020general}
+Christoph Molnar, Gunnar König, Julia Herbinger, Timo Freiesleben, Susanne
+  Dandl, Christian~A. Scholbeck, Giuseppe Casalicchio, Moritz Grosse-Wentrup,
+  and Bernd Bischl.
+\newblock General pitfalls of model-agnostic interpretation methods for machine
+  learning models.
+\newblock \emph{arXiv preprint arXiv:2007.04131}, 2020{\natexlab{b}}.
+
+\bibitem[Nagarajan and
+  Kolter(2021)]{nagarajan2021uniformconvergenceunableexplain}
+Vaishnavh Nagarajan and J.~Zico Kolter.
+\newblock Uniform convergence may be unable to explain generalization in deep
+  learning, 2021.
+\newblock URL \url{https://arxiv.org/abs/1902.04742}.
+
+\bibitem[Nakkiran et~al.(2019)Nakkiran, Kaplun, Bansal, Yang, Barak, and
+  Sutskever]{nakkiran_deep_2019}
+Preetum Nakkiran, Gal Kaplun, Yamini Bansal, Tristan Yang, Boaz Barak, and Ilya
+  Sutskever.
+\newblock Deep {Double} {Descent}: {Where} {Bigger} {Models} and {More} {Data}
+  {Hurt}, December 2019.
+\newblock URL \url{http://arxiv.org/abs/1912.02292}.
+\newblock arXiv:1912.02292 [cs, stat].
+
+\bibitem[Neal(2019)]{neal2019biasvariancetradeofftextbooksneed}
+Brady Neal.
+\newblock On the bias-variance tradeoff: Textbooks need an update, 2019.
+\newblock URL \url{https://arxiv.org/abs/1912.08286}.
+
+\bibitem[Neyshabur et~al.(2015)Neyshabur, Tomioka, and
+  Srebro]{neyshabur2015norm}
+Behnam Neyshabur, Ryota Tomioka, and Nathan Srebro.
+\newblock Norm-based capacity control in neural networks.
+\newblock In \emph{Conference on Learning Theory (COLT)}, pages 1376--1401,
+  2015.
+
+\bibitem[Olmin and
+  Lindsten(2024)]{olmin2024understandingepochwisedoubledescent}
+Amanda Olmin and Fredrik Lindsten.
+\newblock Towards understanding epoch-wise double descent in two-layer linear
+  neural networks, 2024.
+\newblock URL \url{https://arxiv.org/abs/2407.09845}.
+
+\bibitem[Paninski(2005)]{liam_statistics_2005}
+Liam Paninski.
+\newblock Statistics 4107: {Intro} to {Math} {Stat} (fall 2005), 2005.
+\newblock URL \url{https://sites.stat.columbia.edu/liam/teaching/4107-fall05/}.
+
+\bibitem[Pearl(2009)]{pearl2009causality}
+Judea Pearl.
+\newblock \emph{Causality: Models, Reasoning, and Inference}.
+\newblock Cambridge University Press, 2nd edition, 2009.
+\newblock ISBN 9780521895606.
+\newblock \doi{10.1017/CBO9780511803161}.
+
+\bibitem[Pfau(2013)]{PfauBregmanDivergence}
+David Pfau.
+\newblock A generalized bias-variance decomposition for bregman divergences.
+\newblock Technical report, 2013.
+
+\bibitem[Phillips(2003)]{McArtneyInterpolation2003}
+{George McArtney} Phillips.
+\newblock \emph{Interpolation and Approximation by Polynomials}.
+\newblock CMS Books in Mathematics. Springer, Netherlands, 1 edition, 2003.
+\newblock ISBN 978-0-387-00215-6.
+\newblock \doi{10.1007/b97417}.
+
+\bibitem[Piera and Javier(2005)]{piera_sample_2005}
+Villares Piera and Nemesio Javier.
+\newblock \emph{Sample {Covariance} {Based} {Parameter} {Estimation} {For}
+  {Digital} {Communications}}.
+\newblock Doctoral thesis, Universitat Politècnica de Catalunya, October 2005.
+\newblock URL \url{https://upcommons.upc.edu/handle/2117/94206}.
+\newblock Accepted: 2011-04-12T15:27:01Z ISBN: 9788468995571 Publication Title:
+  TDX (Tesis Doctorals en Xarxa).
+
+\bibitem[Power et~al.(2022)Power, Burda, Edwards, Babuschkin, and
+  Misra]{power2022grokkinggeneralizationoverfittingsmall}
+Alethea Power, Yuri Burda, Harri Edwards, Igor Babuschkin, and Vedant Misra.
+\newblock Grokking: Generalization beyond overfitting on small algorithmic
+  datasets, 2022.
+\newblock URL \url{https://arxiv.org/abs/2201.02177}.
+
+\bibitem[Romer(2015)]{romer2015mathiness}
+Paul~M. Romer.
+\newblock Mathiness in the theory of economic growth.
+\newblock \emph{American Economic Review}, 105\penalty0 (5):\penalty0 89--93,
+  2015.
+
+\bibitem[Schaeffer et~al.(2023)Schaeffer, Khona, Robertson, Boopathy,
+  Pistunova, Rocks, Fiete, and Koyejo]{schaeffer_double_2023}
+Rylan Schaeffer, Mikail Khona, Zachary Robertson, Akhilan Boopathy, Kateryna
+  Pistunova, Jason~W. Rocks, Ila~Rani Fiete, and Oluwasanmi Koyejo.
+\newblock Double {Descent} {Demystified}: {Identifying}, {Interpreting} \&
+  {Ablating} the {Sources} of a {Deep} {Learning} {Puzzle}, March 2023.
+\newblock URL \url{http://arxiv.org/abs/2303.14151}.
+\newblock arXiv:2303.14151 [cs, stat].
+
+\bibitem[Searle(1980)]{searle1980minds}
+John~R. Searle.
+\newblock Minds, brains, and programs.
+\newblock \emph{Behavioral and Brain Sciences}, 3\penalty0 (3):\penalty0
+  417--457, 1980.
+
+\bibitem[Shalev-Shwartz and Ben-David(2014)]{10.5555/2621980}
+Shai Shalev-Shwartz and Shai Ben-David.
+\newblock \emph{Understanding Machine Learning: From Theory to Algorithms}.
+\newblock Cambridge University Press, USA, 2014.
+\newblock ISBN 1107057132.
+
+\bibitem[Shalev-Shwartz et~al.(2010)Shalev-Shwartz, Shamir, Srebro, and
+  Sridharan]{JMLR:v11:shalev-shwartz10a}
+Shai Shalev-Shwartz, Ohad Shamir, Nathan Srebro, and Karthik Sridharan.
+\newblock Learnability, stability and uniform convergence.
+\newblock \emph{Journal of Machine Learning Research}, 11\penalty0
+  (90):\penalty0 2635--2670, 2010.
+\newblock URL \url{http://jmlr.org/papers/v11/shalev-shwartz10a.html}.
+
+\bibitem[Sharma and Aiken(2014)]{sharma_bias-variance_2014}
+Rahul Sharma and Alex Aiken.
+\newblock Bias-variance tradeoffs in program analysis.
+\newblock In \emph{Proceedings of the 41st {ACM} {SIGPLAN}-{SIGACT} {Symposium}
+  on {Principles} of {Programming} {Languages}}, {POPL} '14, pages 127--137,
+  New York, NY, USA, 2014. Association for Computing Machinery.
+\newblock ISBN 978-1-4503-2544-8.
+\newblock \doi{10.1145/2535838.2535853}.
+\newblock URL \url{https://doi.org/10.1145/2535838.2535853}.
+
+\bibitem[Shi et~al.(2024)Shi, Pan, Hu, and
+  Dokmanić]{shi2024homophilymodulatesdoubledescent}
+Cheng Shi, Liming Pan, Hong Hu, and Ivan Dokmanić.
+\newblock Homophily modulates double descent generalization in graph
+  convolution networks, 2024.
+\newblock URL \url{https://arxiv.org/abs/2212.13069}.
+
+\bibitem[Soudry et~al.(2024)Soudry, Hoffer, Nacson, Gunasekar, and
+  Srebro]{soudry2024implicitbiasgradientdescent}
+Daniel Soudry, Elad Hoffer, Mor~Shpigel Nacson, Suriya Gunasekar, and Nathan
+  Srebro.
+\newblock The implicit bias of gradient descent on separable data, 2024.
+\newblock URL \url{https://arxiv.org/abs/1710.10345}.
+
+\bibitem[Sterkenburg(2024)]{Sterkenburg_2024}
+Tom~F. Sterkenburg.
+\newblock Statistical learning theory and occam’s razor: The core argument.
+\newblock \emph{Minds and Machines}, 35\penalty0 (1), November 2024.
+\newblock ISSN 1572-8641.
+\newblock \doi{10.1007/s11023-024-09703-y}.
+\newblock URL \url{http://dx.doi.org/10.1007/s11023-024-09703-y}.
+
+\bibitem[Suchman(1987)]{suchman1987plans}
+Lucy~A. Suchman.
+\newblock \emph{Plans and Situated Actions: The Problem of Human--Machine
+  Communication}.
+\newblock Cambridge University Press, 1987.
+\newblock ISBN 0521388473.
+
+\bibitem[Sugiyama(2015)]{10.5555/2930837}
+Masashi Sugiyama.
+\newblock \emph{Introduction to Statistical Machine Learning}.
+\newblock Morgan Kaufmann Publishers Inc., San Francisco, CA, USA, 2015.
+\newblock ISBN 9780128023501.
+
+\bibitem[Sutton(2019)]{sutton2019bitter}
+Richard~S. Sutton.
+\newblock The bitter lesson.
+\newblock Web essay / blog post, 2019.
+\newblock URL \url{https://www.incompleteideas.net/IncIdeas/BitterLesson.html}.
+
+\bibitem[Syll(2024)]{syll2024postreal}
+Lars~P{\aa}lsson Syll.
+\newblock Post-real economics — a severe case of mathiness.
+\newblock Blog post, Heterodox Economic Blogs, 2024.
+
+\bibitem[Truong(2025)]{truong2025rademachercomplexitybasedgeneralizationbounds}
+Lan~V. Truong.
+\newblock On rademacher complexity-based generalization bounds for deep
+  learning, 2025.
+\newblock URL \url{https://arxiv.org/abs/2208.04284}.
+
+\bibitem[Tunali(2019)]{tunali2019empirical}
+Onur Tunali.
+\newblock Empirical rademacher complexity and its implications to deep
+  learning, February 2019.
+\newblock URL
+  \url{https://www.onurtunali.com/ml/2019/02/01/empirical-rademacher-complexity-and-its-implications-to-deep-learning.html}.
+\newblock Accessed: 2025-08-29.
+
+\bibitem[Valiant(1984)]{10.1145/1968.1972}
+L.~G. Valiant.
+\newblock A theory of the learnable.
+\newblock \emph{Commun. ACM}, 27\penalty0 (11):\penalty0 1134–1142, November
+  1984.
+\newblock ISSN 0001-0782.
+\newblock \doi{10.1145/1968.1972}.
+\newblock URL \url{https://doi.org/10.1145/1968.1972}.
+
+\bibitem[van~de Ven et~al.(2024)van~de Ven, Soures, and
+  Kudithipudi]{vandeven2024continuallearningcatastrophicforgetting}
+Gido~M. van~de Ven, Nicholas Soures, and Dhireesha Kudithipudi.
+\newblock Continual learning and catastrophic forgetting, 2024.
+\newblock URL \url{https://arxiv.org/abs/2403.05175}.
+
+\bibitem[Vapnik(1999)]{Vapnik1999-VAPTNO}
+Vladimir Vapnik.
+\newblock \emph{The Nature of Statistical Learning Theory}.
+\newblock Springer: New York, 1999.
+
+\bibitem[Wegel et~al.(2025)Wegel, So, Park, and
+  Yang]{wegel2025samplecomplexitysemisupervisedmultiobjective}
+Tobias Wegel, Geelon So, Junhyung Park, and Fanny Yang.
+\newblock On the sample complexity of semi-supervised multi-objective learning,
+  2025.
+\newblock URL \url{https://arxiv.org/abs/2508.17152}.
+
+\bibitem[Wegener(1987)]{Wegener1987}
+Ingo Wegener.
+\newblock \emph{The Complexity of Boolean Functions}.
+\newblock John Wiley \& Sons, Chichester, UK, 1987.
+
+\bibitem[Wei et~al.(2022)Wei, Tay, Bommasani, Raffel, Zoph, Borgeaud, Yogatama,
+  Bosma, Zhou, Metzler, Chi, Hashimoto, Vinyals, Liang, Dean, and
+  Fedus]{wei2022emergentabilitieslargelanguage}
+Jason Wei, Yi~Tay, Rishi Bommasani, Colin Raffel, Barret Zoph, Sebastian
+  Borgeaud, Dani Yogatama, Maarten Bosma, Denny Zhou, Donald Metzler, Ed~H.
+  Chi, Tatsunori Hashimoto, Oriol Vinyals, Percy Liang, Jeff Dean, and William
+  Fedus.
+\newblock Emergent abilities of large language models, 2022.
+\newblock URL \url{https://arxiv.org/abs/2206.07682}.
+
+\bibitem[Yang et~al.(2020)Yang, Yu, You, Steinhardt, and
+  Ma]{yang_rethinking_2020}
+Zitong Yang, Yaodong Yu, Chong You, Jacob Steinhardt, and Yi~Ma.
+\newblock Rethinking {Bias}-{Variance} {Trade}-off for {Generalization} of
+  {Neural} {Networks}, December 2020.
+\newblock URL \url{http://arxiv.org/abs/2002.11328}.
+\newblock arXiv:2002.11328 [cs, stat].
+
+\bibitem[Zhang et~al.(2023)Zhang, Lipton, Li, and
+  Smola]{zhang2023divedeeplearning}
+Aston Zhang, Zachary~C. Lipton, Mu~Li, and Alexander~J. Smola.
+\newblock Dive into deep learning, 2023.
+\newblock URL \url{https://arxiv.org/abs/2106.11342}.
+
+\bibitem[Zhang et~al.(2017)Zhang, Bengio, Hardt, Recht, and
+  Vinyals]{zhang2017understandingdeeplearningrequires}
+Chiyuan Zhang, Samy Bengio, Moritz Hardt, Benjamin Recht, and Oriol Vinyals.
+\newblock Understanding deep learning requires rethinking generalization, 2017.
+\newblock URL \url{https://arxiv.org/abs/1611.03530}.
+
+\end{thebibliography}

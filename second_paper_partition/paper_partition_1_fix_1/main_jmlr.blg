@@ -1,0 +1,61 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main_jmlr.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: plainnat.bst
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Database file #1: references.bib
+Warning--entry type for "tunali2019empirical" isn't style-file defined
+--line 1490 of file references.bib
+Warning--I didn't find a database entry for "ruder_overview_2017"
+Warning--I didn't find a database entry for "zhang_gradient_2019"
+Warning--to sort, need author or key in unified_bias_composition
+Warning--empty year in unified_bias_composition
+Warning--empty year in achlioptas_stochastic_nodate
+Warning--empty year in achlioptas_stochastic_nodate
+Warning--can't use both volume and number fields in bartlett2005local
+Warning--empty booktitle in Cristianini2000AnIT
+Warning--empty publisher in STL_Hajek_Maxim_2021
+Warning--can't use both volume and number fields in Mei2022TowardsBridging
+You've used 88 entries,
+            2773 wiz_defined-function locations,
+            1119 strings with 22000 characters,
+and the built_in function-call counts, 38812 in all, are:
+= -- 3419
+> -- 2344
+< -- 70
++ -- 803
+- -- 713
+* -- 2961
+:= -- 5978
+add.period$ -- 332
+call.type$ -- 88
+change.case$ -- 488
+chr.to.int$ -- 86
+cite$ -- 185
+duplicate$ -- 1723
+empty$ -- 3153
+format.name$ -- 850
+if$ -- 8198
+int.to.chr$ -- 3
+int.to.str$ -- 1
+missing$ -- 62
+newline$ -- 511
+num.names$ -- 350
+pop$ -- 1135
+preamble$ -- 1
+purify$ -- 413
+quote$ -- 0
+skip$ -- 1478
+stack$ -- 0
+substring$ -- 788
+swap$ -- 223
+text.length$ -- 16
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 893
+warning$ -- 8
+while$ -- 307
+width$ -- 0
+write$ -- 1232
+(There were 11 warnings)

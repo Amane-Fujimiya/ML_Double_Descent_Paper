@@ -1,7 +1,7 @@
-\documentclass[twoside,11pt]{article}
-
+\documentclass[preview, border=5pt,10pt]{standalone}
+\usepackage[preprint]{jmlr2e}
 \usepackage{blindtext}
-
+\usepackage{subfig}
 % Any additional packages needed should be included after jmlr2e.
 % Note that jmlr2e.sty includes epsfig, amssymb, natbib and graphicx,
 % and defines many common macros, such as 'proof' and 'example'.
@@ -21,8 +21,24 @@
 %
 % \usepackage[abbrvbib, preprint]{jmlr2e}
 
-\usepackage{jmlr2e}
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
 
+\input{preamble.tex}
+\usepackage[leftcaption]{sidecap}
+\input{mathcommand.tex}
+
+
+
+\usepackage{caption}
+%\captionsetup{type=figure}
+
+\graphicspath{{media/}} 
 % Definitions of handy macros can go here
 
 \newcommand{\dataset}{{\cal D}}
@@ -31,98 +47,241 @@
 % Heading arguments are {volume}{year}{pages}{date submitted}{date published}{paper id}{author-full-names}
 
 \usepackage{lastpage}
-\jmlrheading{23}{2022}{1-\pageref{LastPage}}{1/21; Revised 5/22}{9/22}{21-0000}{Author One and Author Two}
+%\jmlrheading{23}{2022}{1-\pageref{LastPage}}{1/21; Revised 5/22}{9/22}{21-0000}{Author One and Author Two}
 
 % Short headings should be running head and authors last names
 
-\ShortHeadings{Sample JMLR Paper}{One and Two}
-\firstpageno{1}
+%\ShortHeadings{Sample JMLR Paper}{One and Two}
+%\firstpageno{1}
+\newcommand{\imsize}{0.22\textwidth}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% -- TIKZ DEFINITION -- %%
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+% Define block styles used later
+
+\tikzstyle{sensor}=[draw, fill=blue!20, text width=5em, 
+    text centered, minimum height=2.5em,drop shadow]
+\tikzstyle{ann} = [above, text width=5em, text centered]
+\tikzstyle{wa} = [sensor, text width=10em, fill=red!20, 
+    minimum height=6em, rounded corners, drop shadow]
+\tikzstyle{sc} = [sensor, text width=13em, fill=red!20, 
+    minimum height=10em, rounded corners, drop shadow]
+
+% Define distances for bordering
+\def\blockdist{2.3}
+\def\edgedist{2.5}
+\definecolor{bg}{gray}{0.95}
+
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{3d,perspective}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
-\title{Sample JMLR Paper}
+% first row: images 1–4
+%\begin{figure}
+%\centering
+%
+%% first row
+%%\subfloat[][$n=12$]{\includegraphics[width=\imsize]{img/%%descent_devel_t1.png}\label{fig:1a2}}\enspace
+%%    \subfloat[][$n=24$]{\includegraphics[width=\imsize]{img/%%descent_devel_t2.png}\label{fig:1b2}}\enspace
+%%    \subfloat[][$n=36$]{\includegraphics[width=\imsize]{img/%%descent_devel_t3.png}\label{fig:1c2}}\enspace
+%%    \subfloat[][$n=50$]{\includegraphics[width=\imsize]{img/%%descent_devel_t4.png}\label{fig:1d2}} \\
+%%
+%%    % second row
+%%    \subfloat[][$n=76$]{\includegraphics[width=\imsize]{img/%%descent_devel_t5.png}\label{fig:2a2}}\enspace
+%%    \subfloat[][$n=82$]{\includegraphics[width=\imsize]{img/%%descent_devel_t6.png}\label{fig:2b2}}\enspace
+%%    \subfloat[][$n=90$]{\includegraphics[width=\imsize]{img/%%descent_devel_t7.png}\label{fig:2c2}}\enspace
+%%    \subfloat[][$n=100$]{\includegraphics[width=\imsize]{img/%%descent_devel_t8.png}\label{fig:2d2}} \\
+%%
+%%    % third row
+%%    \subfloat[][$n=106$]{\includegraphics[width=\imsize]{img/%%descent_devel_t9.png}\label{fig:3a2}}\enspace
+%%    \subfloat[][$n=112$]{\includegraphics[width=\imsize]{img/%%descent_devel_t10.png}\label{fig:3b2}}\enspace
+%%    \subfloat[][$n=121$]{\includegraphics[width=\imsize]{img/%%descent_devel_t11.png}\label{fig:3c2}}
+%
+%% first row
+%\subfloat[][$n=12$]{\includegraphics[width=\imsize]{img2/%risk_curve_n12.png}\label{fig:2a}}\enspace
+%\subfloat[][$n=24$]{\includegraphics[width=\imsize]{img2/%risk_curve_n24.png}\label{fig:2b}}\enspace
+%\subfloat[][$n=36$]{\includegraphics[width=\imsize]{img2/%risk_curve_n36.png}\label{fig:2c}}\enspace
+%\subfloat[][$n=50$]{\includegraphics[width=\imsize]{img2/%risk_curve_n50.png}\label{fig:2d}} \\
+%
+%% second row
+%\subfloat[][$n=76$]{\includegraphics[width=\imsize]{img2/%risk_curve_n76.png}\label{fig:2e}}\enspace
+%\subfloat[][$n=82$]{\includegraphics[width=\imsize]{img2/%risk_curve_n82.png}\label{fig:2f}}\enspace
+%\subfloat[][$n=90$]{\includegraphics[width=\imsize]{img2/%risk_curve_n90.png}\label{fig:2g}}\enspace
+%\subfloat[][$n=100$]{\includegraphics[width=\imsize]{img2/%risk_curve_n100.png}\label{fig:2h}} \\
+%
+%% third row
+%\subfloat[][$n=106$]{\includegraphics[width=\imsize]{img2/%risk_curve_n106.png}\label{fig:2i}}\enspace
+%\subfloat[][$n=112$]{\includegraphics[width=\imsize]{img2/%risk_curve_n112.png}\label{fig:2j}}\enspace
+%\subfloat[][$n=121$]{\includegraphics[width=\imsize]{img2/%risk_curve_n121.png}\label{fig:2k}}\enspace
+%\subfloat[][$n=150$]{\includegraphics[width=\imsize]{img2/%risk_curve_n150.png}\label{fig:2l}} \\
+%
+%% fourth row
+%\subfloat[][$n=231$]{\includegraphics[width=\imsize]{img2/%risk_curve_n231.png}\label{fig:2m}}\enspace
+%\subfloat[][$n=250$]{\includegraphics[width=\imsize]{img2/%risk_curve_n250.png}\label{fig:2n}}\enspace
+%\subfloat[][$n=256$]{\includegraphics[width=\imsize]{img2/%risk_curve_n256.png}\label{fig:2o}}\enspace
+%\subfloat[][$n=280$]{\includegraphics[width=\imsize]{img2/%risk_curve_n280.png}\label{fig:2p}}
+%
+%
+%
+%\end{figure}
 
-\author{\name Author One \email one@stat.washington.edu \\
-       \addr Department of Statistics\\
-       University of Washington\\
-       Seattle, WA 98195-4322, USA
-       \AND
-       \name Author Two \email two@cs.berkeley.edu \\
-       \addr Division of Computer Science\\
-       University of California\\
-       Berkeley, CA 94720-1776, USA}
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}[3d view={20}{15}]
+        \foreach \Z in {0,...,4}
+        {
+            \begin{scope}[canvas is xy plane at z=-(\Z+ (0.5)*\Z),transform shape]
+                \ifnum\Z>0 
+                    \draw[semithick,gray,dashed] (0,0) coordinate(p\Z) rectangle (4,4);
+                \fi 
+                % Insert another TikZ picture dynamically for each layer
+                \ifnum\Z=0 % Example: Add a specific illustration at layer 2
+                \begin{scope}[scale=0.5]
+                    \node (wa) [wa] at (5,1) {Core system};
 
-\editor{My editor}
+                    \path (wa.west)+(-2.2,1.5) node (asr1) [sensor] {Sensor 1};
+                    \path (wa.west)+(-2.2,0.5) node (asr2)[sensor] {Sensor 2};
+                    \path (wa.west)+(-2.2,-1.0) node (dots)[ann] {$\vdots$}; 
+                    \path (wa.west)+(-2.2,-2.0) node (asr3)[sensor] {Sensor $n$};    
+                    \path (wa.south)+(0,-1.0) node (wo) [sensor] {Core components}; 
+                   
+                    \path (wa.east)+(\blockdist,0) node (vote) [sensor] {Actors $\mathcal{A}$};
+                
+                    \path [draw, ->] (wa.south) -- node [above] {} 
+                        (wo.north) ;
+                    
+                    \path [draw, ->] (asr1.east) -- node [above] {} 
+                        (wa.160) ;
+                    \path [draw, ->] (asr2.east) -- node [above] {} 
+                        (wa.180);
+                    \path [draw, ->] (asr3.east) -- node [above] {} 
+                        (wa.200);
+                    \path [draw, ->] (wa.east) -- node [above] {} 
+                        (vote.west);
+                    \path (wa.south) +(0,-1.5) node (asrs) {};
+                \end{scope}
+                \fi
+                \ifnum\Z=4
+                \begin{scope}[scale=0.5]
+                    \node (wa1) [sensor] at (4,4.2) {$M1$};
+                    \path (wa1.west)+(-2.0,0) node (asr1) [sensor] {$M2$};
+                    \path (wa1.east)+(2.0,0) node (asr2)[sensor] {$M3$};
+                    \path (wa1.north)+(0,2.0) node (asr3)[sensor] {$M4$};   
+                    \path (wa1.south)+(0,-2.0) node (asr4) [sensor] {$M5$}; 
+                    \path [draw, ->] (wa1.west) -- node [above] {} 
+                    (asr1.east) ;
+                    \path [draw, ->] (wa1.east) -- node [above] {} 
+                    (asr2.west) ;
+                    \path [draw, ->] (wa1.north) -- node [above] {} 
+                    (asr3.south) ;
+                    \path [draw, ->] (wa1.south) -- node [above] {} 
+                    (asr4.north) ;
+            
+                    \path [draw, ->] (asr1.north) -- node [above] {} 
+                    (asr3.west) ;
+                    \path [draw, ->] (asr3.east) -- node [above] {} 
+                    (asr2.north) ;
+                    \path [draw, ->] (asr2.south) -- node [above] {} 
+                    (asr4.east) ;
+                    \path [draw, ->] (asr4.west) -- node [above] {} 
+                    (asr1.south) ;
+                \end{scope}
+                \fi
+                \ifnum\Z=3
+                \begin{scope}[scale=0.5]
+                    \node (wa1) [sensor] at (4,4.2) {$M1$};
+                    \path (wa1.west)+(-2.0,0) node (asr1) [sensor] {$M2$};
+                    \path (wa1.east)+(2.0,0) node (asr2)[sensor] {$M3$};
+                    \path (wa1.north)+(0,2.0) node (asr3)[sensor] {$M4$};   
+                    \path (wa1.south)+(2.0,-2.0) node (asr4) [sensor] {$M5$}; 
+                    \path (wa1.south)+(-2.0,-2.0) node (asr5) [sensor] {$M5$}; 
+                    \path [draw, ->] (wa1.west) -- node [above] {} 
+                    (asr1.east) ;
+                    \path [draw, ->] (wa1.east) -- node [above] {} 
+                    (asr2.west) ;
+                    \path [draw, ->] (wa1.north) -- node [above] {} 
+                    (asr3.south) ;
+                    \path [draw, ->] (wa1.south) -- node [above] {} 
+                    (asr4.north) ;
+                    \path [draw, ->] (wa1.south) -- node [above] {} 
+                    (asr5.north) ;
+            
+                    \path [draw, ->] (asr1.north) -- node [above] {} 
+                    (asr3.west) ;
+                    \path [draw, ->] (asr3.east) -- node [above] {} 
+                    (asr2.north) ;
+                    \path [draw, ->] (asr2.south) -- node [above] {} 
+                    (asr4.east) ;
+                    \path [draw, ->] (asr4.west) -- node [above] {} 
+                    (asr5.east) ;
+                    \path [draw, ->] (asr5.west) -- node [above] {} 
+                    (asr1.south) ;
+                \end{scope}
+                \fi
+                \ifnum\Z=2
+                \begin{scope}[scale=0.5]
+                    \node (wa1) [sensor] at (4,4.2) {$M1$};
+                    \path (wa1.west)+(-2.0,2) node (asr1) [sensor] {$M2$};
+                    \path (wa1.east)+(2.0,2) node (asr2)[sensor] {$M3$};
+                    \path (wa1.south)+(0,-2.0) node (asr3)[sensor] {$M4$};   
+            
+                    \path [draw, ->] (wa1.west) -- node [above] {} 
+                    (asr1.east) ;
+                    \path [draw, ->] (wa1.east) -- node [above] {} 
+                    (asr2.west) ;
+                    \path [draw, ->] (wa1.south) -- node [above] {} 
+                    (asr3.north) ;
+            
+            
+                    \path [draw, ->] (asr1.south) -- node [above] {} 
+                    (asr3.west) ;
+                    \path [draw, ->] (asr3.east) -- node [above] {} 
+                    (asr2.south) ;
+                    \path [draw, ->] (asr2.west) -- node [above] {} 
+                    (asr1.east) ;
+                \end{scope}
+                \fi
+                \ifnum\Z=1
+                \begin{scope}[scale=0.5]
+                    \node (wa1) [sensor] at (4,4.2) {$M1$};
+                    \path (wa1.west)+(-2.0,2) node (p2) [sensor] {$M2$};
+                    \path (wa1.east)+(2.0,2) node (p3)[sensor] {$M3$};
+                    \path (wa1.south)+(2,-2.0) node (p4)[sensor] {$M4$};  
+                    \path (wa1.south)+(-2,-2.0) node (p5)[sensor] {$M5$};  
+            
+                    \path [draw, ->] (wa1.west) -- node [above] {} 
+                    (p2.south) ;
+                    \path [draw, ->] (wa1.east) -- node [above] {} 
+                    (p3.south) ;
+                    \path [draw, ->] (wa1.south) -- node [above] {} 
+                    (p4.north) ;
+                    \path [draw, ->] (wa1.south) -- node [above] {} 
+                    (p5.north) ;
+            
+                    \path [draw, ->] (p2.east) -- node [above] {} 
+                    (p3.west) ;
+                    \path [draw, ->] (p3.south) -- node [above] {} 
+                    (p4.north) ;
+                    \path [draw, ->] (p4.west) -- node [above] {} 
+                    (p5.east) ;
+                    \path [draw, ->] (p5.north) -- node [above] {} 
+                    (p2.south) ;
+                \end{scope}
+                \fi
+            \end{scope}
+            % Label for each layer
+            \ifnum\Z>0
+                \path (p\Z) node[left] {$\mathcal{L}_{\Z}([E_t])$};
+            \fi
+        }
+    \end{tikzpicture}
+\end{figure}
 
-\maketitle
-
-\begin{abstract}%   <- trailing '%' for backward compatibility of .sty file
-\blindtext
-\end{abstract}
-
-\begin{keywords}
-  keyword one, keyword two, keyword three
-\end{keywords}
-
-\section{Introduction}
-
-\blindmathpaper
-
-Here is a citation \cite{chow:68}.
-
-% Acknowledgements and Disclosure of Funding should go at the end, before appendices and references
-
-\acks{All acknowledgements go at the end of the paper before appendices and references.
-Moreover, you are required to declare funding (financial activities supporting the
-submitted work) and competing interests (related financial activities outside the submitted work).
-More information about this disclosure can be found on the JMLR website.}
-
-% Manual newpage inserted to improve layout of sample file - not
-% needed in general before appendices/bibliography.
-
-\newpage
-
-\appendix
-\section{}
-\label{app:theorem}
-
-% Note: in this sample, the section number is hard-coded in. Following
-% proper LaTeX conventions, it should properly be coded as a reference:
-
-%In this appendix we prove the following theorem from
-%Section~\ref{sec:textree-generalization}:
-
-In this appendix we prove the following theorem from
-Section~6.2:
-
-\noindent
-{\bf Theorem} {\it Let $u,v,w$ be discrete variables such that $v, w$ do
-not co-occur with $u$ (i.e., $u\neq0\;\Rightarrow \;v=w=0$ in a given
-dataset $\dataset$). Let $N_{v0},N_{w0}$ be the number of data points for
-which $v=0, w=0$ respectively, and let $I_{uv},I_{uw}$ be the
-respective empirical mutual information values based on the sample
-$\dataset$. Then
-\[
-	N_{v0} \;>\; N_{w0}\;\;\Rightarrow\;\;I_{uv} \;\leq\;I_{uw}
-\]
-with equality only if $u$ is identically 0.} \hfill\BlackBox
-
-\section{}
-
-\noindent
-{\bf Proof}. We use the notation:
-\[
-P_v(i) \;=\;\frac{N_v^i}{N},\;\;\;i \neq 0;\;\;\;
-P_{v0}\;\equiv\;P_v(0)\; = \;1 - \sum_{i\neq 0}P_v(i).
-\]
-These values represent the (empirical) probabilities of $v$
-taking value $i\neq 0$ and 0 respectively.  Entropies will be denoted
-by $H$. We aim to show that $\fracpartial{I_{uv}}{P_{v0}} < 0$....\\
-
-{\noindent \em Remainder omitted in this sample. See http://www.jmlr.org/papers/ for full paper.}
-
-
-\vskip 0.2in
-\bibliography{sample}
 
 \end{document}

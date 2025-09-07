@@ -148,3 +148,6 @@ Cayton
 Vapnik
 permutating
 approximator
+NTK-based
+Vandermonde
+overparameterization
