@@ -1,0 +1,42 @@
+Given the univariate case, for a finite sample space $\mathcal{S}^{\lvert n\rvert}$, of fixed range $[a,b]$ correspond to the minimum and maximum of the dataset, $[\min s_{i},\max s_{i}]$ for $s_{i}\in \mathcal{S}^{\lvert n\rvert}$, the problem of polynomial regression is indeed the problem of \textit{soft interpolation}. That is, it basically interpolates based on a constrained response sequence, and where chaotic behaviours can ensue. For our statistical structure to be effective, we will have to use them accordingly. For any model of polynomial regression that want to optimize this specific dataset $\mathcal{S}$, given a free-arbitrary interpolation polynomial $p_{n}(x)$ in univariate space, means fitting to $n$ points specifically such that the polynomial passes each point without any margin of error. This can be done (\cite{McArtneyInterpolation2003}) in either of the parameter basis $\{x^{i}\}^{n}$ up to $n$th degree, of which results in finding the solution for a polynomial 
+\begin{equation}
+    p_{n}(x) = a_{0} + a_{1} x + a_{2} x^{2} + \dots + a_{n}x^{n} 
+\end{equation}
+such that $p_{n}(x_{i})=f(x_{i})$, for any arbitrary $f$ of which shape is not known or rather irrelevant of the problem, and for $j=0,1,\dots,n$ (hence there are $n+1$ points). From such, means we require 
+\begin{equation}
+    p_{n}(x) = a_{0} + a_{1} x_{j} + a_{2} x^{2}_{j} + \dots + a_{n}x^{n}_{j} = f(x_{j}), \quad 0 \leq j \leq n 
+\end{equation}
+giving a system of $n+1$ linear equation to determine the $n+1$ unknowns $a_{0},a_{1},\dots,a_{n}$. This system of equation has a unique solution, often time, if its \textbf{Vandermonde matrix} $\mathbf{V}$ is nonsingular, or rather, for the determinant of the Vandermonde matrix to be nonzero, \begin{equation}
+    \det{\mathbf{V}} = \prod (x_{i}-x_{j}) \ne 0 , \quad 0 \leq j < i \leq n 
+\end{equation}
+hence giving us the interpolating solution. Hence, we can somewhat guarantee that of the $n+1$ points of which none coincides, then there exists an $n$-th degree polynomial that interpolates to this particular dataset. Usually, polynomial regression uses the same basis for this, hence giving their solution in that respect of the monomial basis. In certain cases, interpolation is basically impossible if our dataset is larger than the number of degree taken, which is typically what is of the polynomial regression case for $n$-basis. This suggests that the number of dataset directly affect the interpolation problem. One result from this is naturally the reduction of the requirement of interpolation, giving us \textit{polynomial regression} - which in such sense is indeed a soft-version of interpolation. Nevertheless, it means we require the system to solve 
+\begin{equation}\label{eq:soft_hard_interpolation}
+\begin{bmatrix}
+1 & x_0 & x_0^2 & \cdots & x_0^n \\
+1 & x_1 & x_1^2 & \cdots & x_1^n \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+1 & x_n & x_n^2 & \cdots & x_n^n
+\end{bmatrix}
+\begin{bmatrix}
+a_0 \\
+a_1 \\
+\vdots \\
+a_n
+\end{bmatrix}
+- 
+\begin{bmatrix}
+f(x_0) \\
+f(x_1) \\
+\vdots \\
+f(x_n)
+\end{bmatrix}
+\leq 
+\begin{bmatrix}
+  \epsilon\\
+  \epsilon \\
+  \vdots \\
+  \epsilon
+\end{bmatrix}
+\end{equation}
+
+for a particular $\epsilon > 0$, called the \textit{strength} of the interpolating-with-data parameter. It is trivial to see $\epsilon = 0$ results in the perfect interpolation problem. Note that for this to succeed, the basic intuition is that for $n+1$ points, beyond the constant term, there exists an $n$th degree polynomial with $n+1$ saddle point to wiggle, or rather $n$-degree of freedom of the fundamental monomial basis. 

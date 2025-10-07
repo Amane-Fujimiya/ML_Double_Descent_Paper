@@ -831,13 +831,13 @@ If, however, we turn our attention to the statement itself, of which refers to t
 \right)^{2}
 \end{equation}} on $h$ and $c$ accordingly, a strong case of this happens to be not following the pattern indicted by the theorem. Rather than being the interpolation point of return, $p=n$ is now the convergence point of the prediction error instead. Test result is shown in Figure~\ref{fig:theorem_double_descent_fig3}.
 
-\begin{figure}[htb]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{pdf/theorem_3.pdf}
     \caption{Contrary to Theorem~\ref{thm:double_descent_lr} and both figure~\ref{fig:theorem_double_descent_fig2}, this is the behaviours on randomized setting for standard parameter-wised mean square error measure (MSE-on-prediction). Especially, we do not see double descent pattern in this setting, as it is. For this model, we have $d=100$, $\sigma = 0.5$, and variational $n$. Full test cases are for $p=[1,100]$, $n=\{12,24,36,50,76,82,90,100,106,112,121\}$ accordingly. The test function of the concept itself is the same linear model, but with different input only.}
     \label{fig:theorem_double_descent_fig3}
 \end{figure}
-\begin{figure}[htb]
+\begin{figure}[H]
   \centering
   \includegraphics[width=0.6\textwidth]{media/dimensional_descent.png}
   \caption{Similar experiment according to setting and result of Theorem~\ref{eq:linear_gaussian_erm}, where $p$ is in the range [1,5523]. Here, we can see small double descent modelled exactly at the interpolation threshold, while the later region exhibit similar phenomenon as bias-variance tradeoff.}
@@ -846,7 +846,9 @@ If, however, we turn our attention to the statement itself, of which refers to t
 Thence, the theorem gives us two things - the interpolation point, in this setting, refers to the parameter error for their double descent behaviour. However, on the prediction results' error measure, the interpolation point correlates to the point where the defined generalization risk in such case equals zero. These patterns hold up to certain point. However, the test case is only up to $d=p$. An unexplored test case for $p>d$ indicate the surprising fact according still, to the theorem: the generalization risk takes double descent as a region with disturbance in the middle, but bias-variance appears afterward. This is illustrated in Figure~\ref{fig:contrarian}, where the same theorem is applied but in the domain which is usually called as \textit{overparameterized region}. 
 \subsection{Linear function class extension}
 
-The current theory prompted for a more general treatment of the linear function class, as in-line with exploring reasonable existing alternatives in interpretation (\cite{nakkiran2019datahurtlinearregression})
+The current theory prompted for a more general treatment of the linear function class, as in-line with exploring reasonable existing alternatives in interpretation (\cite{nakkiran2019datahurtlinearregression}).
+
+\clearpage
 
 \subsection{Polynomials}
 
@@ -862,63 +864,99 @@ There exists two type of elementary polynomial classification, based on their (i
     where $\{a_{i}\}$ are constants, and of a singular variable $t$.  
 \end{definition}
 
-From this, we can extend to polynomial of mutiple variables. In general, a function $f(x,y)$ is a \textit{multivariate polynomial} in $x,y$ if and only if it can be represented as a finite sum of terms of the form $cx^{k}y^{m}$, where $c$ is a coefficient and $k$ an $m$ are nonnegative integers. The number $k+m$ is called the degree of the term, and the degree of the polynomial $f(x,y)$ is equal to the highest degree of its own terms.
+From this, we can extend to polynomial of multiple variables. In general, a function $f(x,y)$ is a \textit{multivariate polynomial} in $x,y$ if and only if it can be represented as a finite sum of terms of the form $cx^{k}y^{m}$, where $c$ is a coefficient and $k$ an $m$ are nonnegative integers. The number $k+m$ is called the degree of the term, and the degree of the polynomial $f(x,y)$ is equal to the highest degree of its own terms. We can then generalize multivariate polynomial and univariate polynomial in the same kind. 
 
-Fundamentally, given the univariate case, for a finite sample space $\mathcal{S}^{\lvert n\rvert}$, of fixed range $[a,b]$ correspond to the minimum and maximum of the dataset, $[\min s_{i},\max s_{i}]$ for $s_{i}\in \mathcal{S}^{\lvert n\rvert}$, the problem of polynomial regression is indeed the problem of \textit{soft interpolation}. That is, it basically interpolates based on a constrained response sequence, and where chaotic behaviours can ensue. For our statistical structure to be effective, we will have to use them accordingly. For any model of polynomial regression that want to optimize this specific dataset $\mathcal{S}$, given a free-arbitrary interpolation polynomial $p_{n}(x)$ in univariate space, means fitting to $n$ points specifically such that the polynomial passes each point without any margin of error. This can be done (\cite{McArtneyInterpolation2003}) in either of the parameter basis $\{x^{i}\}^{n}$ up to $n$th degree, of which results in finding the solution for a polynomial 
+\begin{definition}[Polynomial, multivariate generalization]
+    Let $K$ be a field. We then denote $K[x_{1},\dots,x_{n}]$ the space of all polynomials in $n$ variables, $x_{1},\dots,x_{n}$. A \textbf{multivariate monomial} is then an expression $x_{1}^{\alpha_{1}}\dots x_{n}^{\alpha_{n}}$ where $\alpha_{1},\dots,\alpha_{n}$ are integers. The degree ò such multivariate polynomial is the largest degree of terms of any monomial term.
+\end{definition}
+Effectively, we can see that multivariate polynomial can take on many forms, and also unconventional forms. In order to capture any reasonable details, most of the time focus are on symmetric polynomials $f(x,y)$ in which $f(x,y)=f(y,x)$, or homogeneous polynomials in which all the terms are of the same degree. 
+
+Given such, operationally, polynomial is used for expressing other functions, due to their usefulness because of such simplicity and versatility. In fact, applications ranges, even to a polynomial basis on $n$-dimensional space, $(p_{1},\dots,p_{n})\in K[x,\dots,x_{n}]$; their growth rate being polynomial also added more to their strength of approximating fast increasing function, usually expressed and used in setting, for example, polynomial growth class $\mathcal{O}(p(x))$ in computer science. Two applications stand out for such properties: function approximation of arbitrary criteria $\ell$, or polynomial interpolation on arbitrary points. Those two are interconnected, though their objective and object of concern is much different. 
+
+We can define the application of analytical polynomial on arbitrary function by using the criteria on approximation. Usually, this is expressed in the theory of approximation, and requires a guarantee that polynomial can indeed approximate to arbitrary accuracy, of arbitrary function on specific interval. This is the statement of Weierstrass theorem. 
+
+\begin{theorem}[Weierstrass Approximation Theorem]
+    Let $f\in C[a,b]$ of all continuously differentiable functions on the closed interval $[a,b]$. Then, for every $\epsilon > 0$, there is a polynomial $p$ such that $||f-p||< \epsilon$, for $||f-p||=\sum_{i=1}^{\infty}|(f(x_{i})-p(x_{i}))|$ \footnote{We again note the disparity between $h(x)-c(x)$ or $c(x)-h(x)$ for clarity. In essence, $c(x)-h(c)$ is looking from the perspective of the concept itself. While $h(x)-c(x)$ is comparison on difference from the perspective of the hypothesis.}
+\end{theorem}
+Here, $\epsilon$ is defined to be the \textit{global error} of the polynomial with respect to the arbitrary function, and with uniform approximation. Another variation works on the squared error, such that $||f-p||=\sum_{i=1}^{\infty}(f(x_{i})-p(x_{i}))^{2}$, or the mean absolute $$||f-p||=\lim_{n\to\infty}\frac{1}{n}\sum_{i=1}^{n}(f(x_{i})-p(x_{i}))$$
+Weierstrass Approximation Theorem provides tighter bound for the mean absolute error, but not the square error, or the mean square case. Nevertheless, they are natural measure on the uniform metric space $C(X)$ with measure $d(f,g)=\sup_{x\in X}|f(x)-g(x)|$. If said metric also use the $L^{p}$ metric instead, which is defined by 
 \begin{equation}
-    p_{n}(x) = a_{0} + a_{1} x + a_{2} x^{2} + \dots + a_{n}x^{n} 
+    d_{p}(f,g) = \left(\int_{X}|f(x)-f(g)|^{p}\:dx\right)^{1/p}
 \end{equation}
-such that $p_{n}(x_{i})=f(x_{i})$, for any arbitrary $f$ of which shape is not known or rather irrelevant of the problem, and for $j=0,1,\dots,n$ (hence there are $n+1$ points). From such, means we require 
-\begin{equation}
-    p_{n}(x) = a_{0} + a_{1} x_{j} + a_{2} x^{2}_{j} + \dots + a_{n}x^{n}_{j} = f(x_{j}), \quad 0 \leq j \leq n 
-\end{equation}
-giving a system of $n+1$ linear equation to determine the $n+1$ unknowns $a_{0},a_{1},\dots,a_{n}$. This system of equation has a unique solution, often time, if its \textbf{Vandermonde matrix} $\mathbf{V}$ is nonsingular, or rather, for the determinant of the Vandermonde matrix to be nonzero, \begin{equation}
-    \det{\mathbf{V}} = \prod (x_{i}-x_{j}) \ne 0 , \quad 0 \leq j < i \leq n 
-\end{equation}
-hence giving us the interpolating solution. Hence, we can somewhat guarantee that of the $n+1$ points of which none coincides, then there exists an $n$-th degree polynomial that interpolates to this particular dataset. Usually, polynomial regression uses the same basis for this, hence giving their solution in that respect of the monomial basis. In certain cases, interpolation is basically impossible if our dataset is larger than the number of degree taken, which is typically what is of the polynomial regression case for $n$-basis. This suggests that the number of dataset directly affect the interpolation problem. One result from this is naturally the reduction of the requirement of interpolation, giving us \textit{polynomial regression} - which in such sense is indeed a soft-version of interpolation. Nevertheless, it means we require the system to solve 
-\begin{equation}\label{eq:soft_hard_interpolation}
-\begin{bmatrix}
-1 & x_0 & x_0^2 & \cdots & x_0^n \\
-1 & x_1 & x_1^2 & \cdots & x_1^n \\
-\vdots & \vdots & \vdots & \ddots & \vdots \\
-1 & x_n & x_n^2 & \cdots & x_n^n
-\end{bmatrix}
-\begin{bmatrix}
-a_0 \\
-a_1 \\
-\vdots \\
-a_n
-\end{bmatrix}
-- 
-\begin{bmatrix}
-f(x_0) \\
-f(x_1) \\
-\vdots \\
-f(x_n)
-\end{bmatrix}
-\leq 
-\begin{bmatrix}
-  \epsilon\\
-  \epsilon \\
-  \vdots \\
-  \epsilon
-\end{bmatrix}
-\end{equation}
+we can also see that it is weaker than the bound given by Weierstrass theorem. Generalization of Weierstrass theorem can be made by Stone-Weierstrass theorem instead, of which is state in real space as followed, though generally Weierstrass theorem is sufficed.
+\begin{theorem}[Stone-Weierstrass Theorem (real version)]
+  Let $S$ be a locally compact Hausdorff space. Let $A$ be the subset of bounded continuous real functions on $X$, or of subalgebras $\mathcal{C}(X,\mathbb{R})$ which contains a non-zero constant function, then $A$ is uniformly dense in $\mathcal{C}(X,\mathbb{R})$ if and only if it separates points. 
+\end{theorem}
+The setting of polynomial interpolation is rather different from the setting of function approximation. The setting of interpolation gives an $n$ samples set $\mathcal{S}$, of which in this case we restrict to $\mathbb{R}\to\mathbb{R}$. Then, we are required to fit exactly the entire dataset, such that the following setting is sufficed. 
+\begin{definition}[Interpolation]
+    A function class $\mathcal{F}$ is said to \textbf{interpolate} a distinct dataset $\mathcal{S}_{n}=(x_{n},y_{n})$ of $n$ samples, if there exists $f\in \mathcal{F}$ such that $\mathbb{E}||S_{i}-|f(x_{i})||= 0$. Such $f$ is then called the \textbf{interpolating function} of $\mathcal{S}_{n}$. 
+\end{definition}
+Under such definition, the question is then if the polynomial class $\mathcal{P}_{n}$ of any given polynomial with the highest degree $n$ is sufficed to approximate such dataset. The answer can be found using unisolvence theorem.
 
-for a particular $\epsilon > 0$, called the \textit{strength} of the interpolating-with-data parameter. It is trivial to see $\epsilon = 0$ results in the perfect interpolation problem. Note that for this to succeed, the basic intuition is that for $n+1$ points, beyond the constant term, there exists an $n$th degree polynomial with $n+1$ saddle point to wiggle, or rather $n$-degree of freedom of the fundamental monomial basis. 
+\begin{theorem}[Unisolvence theorem]
+    Given $n+1$ bivariate data points $(x_{0},y_{0}),(x_{1},y_{1}),\dots,(x_{n},y_{n})\in \mathcal{S}_{n}\subset \mathbb{R}^{n}$, with all $x_{i}$ distinct, there exists a unique polynomial $p_{n}(x)$ of degree at most $n$ such that $p(x_{i})=y_{i}$ for $i=0,1,\dots,n$.
+\end{theorem}
 
-\begin{figure}[htb]
-    \centering
-    \includegraphics[width=0.55\textwidth]{media/double_descent_synthetic.png}
-    \caption{Synthetic double descent curve illustration, with 3 axes of dependency supposed of the parameterization case - the axis of the number of data point in soft interpolation, the saddle points given of the model, and the overall error observed of the model. We did not take into account the relative curve of the test error.}
-    \label{fig:descent_synthetic_curve}
-\end{figure}
+In determining such problem, we can also say that there exists a unique $n$-saddle point function represented here as polynomial, such that to fit $n$ points perfectly by the definition of the saddle point. The process in obtaining such formula is difficult, however, and finding the perfect interpolation polynomial would be computationally significant, and erroneous. 
 
-In this particular fundamental space, we can somewhat define the notion of underparameterization and overparameterization in the context of an algorithmic optimization task. This might very well align with the considerable double descent. Hints from this particular polynomial construct means we want to have particular analysis that looks like Figure~\ref{fig:descent_synthetic_curve}, but with some caveat. 
+\begin{definition}[Saddle point,\cite{NieYangZhou2021}]
+    Let $X\subseteq \mathbb{R}^{n}$, $Y\subseteq \mathbb{R}^{m}$ be two sets (for dimension $n,m>0$) and let $F(x,y)$ be a continuous function in $(x,y)\in X\times Y$. A pair $(x^{*},y^{*})\in X\times Y$ is said to be a saddle point of $F(x,y)$ over $X\times Y$ if \begin{equation}
+        F(x^{*},y) \leq F(x^{*},y^{*})\leq F(x,y^{*}), \quad \forall x\in X, \forall y\in Y
+    \end{equation}
+\end{definition}
 
-Generally, as for other experiments in this particular paper, we would be entitled to see particular trajectory specifically designed around the point of interpolating match, or $n=m$ of $n$ degree of freedom, technically, and $m$ data points. After this point, there exist two possibility of dynamic - either the model dilutes, in which case result in \textit{double descent}, or the model fluctuate strongly afterward, leading to \textit{bias-variance emergence} again later on. This conclusion however, would have to be analysed within the current framework of the possible interjection to its fluctuation strength. For example, in the monomial basis $\{x^{i}\}^{n}$, any given fluctuation contributes to the entire polynomial. In such case, fluctuation of the other $[0,n-k]$ of arbitrary $k$ and large enough $n$ would be unaccounted for by the scale. Conversely, restrict them to $[1,0]$ range will reveal something about the system, however will destroy particular properties of the prediction, which is not recommended. Nevertheless, we must conduct the test before giving in any reasonable conclusion.
+Polynomial regression is one such analytical solution to function approximation task, using Weierstrass theorem as its basis. From such, we can also observe that polynomial regression, and hence polynomial interpolation, are correlated and can be reduced to each other. Polynomial regression can be reduced to interpolation via stating the criteria such that, denoting it as $\ell$, then $\ell(f,p)=0$, and interpolation can be reduced to regression via the condition that $p(x_{i})-y_{i}\leq \epsilon$ for arbitrary $\epsilon>0$. Hence, the regression formulae lie between the two extreme: the Weierstrass setting and the interpolation setting. 
 
-Previously, we said that we did indeed focus on the interpolation problem. Now, assuming we have given the interpolating algorithm $\mathcal{A}$ to approximate the interpolation, what will this look like? First of all, solving this is \textit{very computationally expensive}, because it is a dense, $(n+1)\times(n+1)$ linear system, and even more so if we consider the overparameterized outcome. However, this can be reduced further down if we attempt to solve them using convergence boun, but will be still very expensive. That and incremental soft interpolation is somewhat out of the question since it will be kind of the same. Aside from the insight, we would still have to know what to do. Then there exists two ways - we have some version of this to optimize of simply evaluating by gradient descent optimization, or, we can use somewhat analytical fit for the case of soft interpolation modification. 
+We then have to identify such extreme and what kind of extreme they represent. Fortunately, we know this as the problem of \textbf{transparency}, in the setting of approximation, which certainly correlates to the learning theory. According to such, the Stone-Weierstrass represents the total transparency case, where the function $f$ is known to the approximator with polynomial class. Interpolation represents total black box, where the goal is only to interpolate the sample point by itself. In between such interpretation, there exists a fundamental assumption, hence the structural assumption. 
+
+\begin{assumption}[Transparency]
+    For any bivariate pair $(x,y)$, we assume each pair depends on and originate from a based concept $y=f(x)$. 
+\end{assumption}
+
+Two kinds of knowledge is then available, which correlates to the degree of freedom the observation space can have. First is the knowledge of $f$. This knowledge of $f$ is encoded directly by the number of sample point and their distribution in certain case. Accordingly, the worst case is as followed. 
+
+\begin{conjecture}
+    If $\forall x$ there exists $y$ corresponding to such, and $(x,y)\in \mathcal{S}$, then we say we have total transparency to the concept $f$. If there exists only finite $x$ that we can have $y$ corresponding to, then we say we have limited transparency to the concept $f$. If we assume no knowledge of $f$, then we say the setting is called the \textbf{black-box setting}. 
+\end{conjecture}
+
+Secondly is the action on the dataset itself. One of the main assumption that is usually observed is that 
+
+\begin{assumption}[Fallacy]
+    We assume every bivariate pair $(x_{i},y_{i})\in f[\mathcal{S}_{n}]$, such that $f(x_{i})=y_{i}$. 
+\end{assumption}
+
+However, usually, this is not the case, as we have \textbf{noise} in addition from the dataset. The origin of the noise cannot be tracked. However, we can interpret what happens when such noise is introduced to the dataset. The noise transitions the transparency of the learned setting, on the field $\mathbb{R}$, by utilizing the dense property of the real space. Assuming we operate on $\mathbb{Z}$. Then, each discrete noise will introduce abnormality point such that no function on $\mathbb{Z}$ will be able to match, up to certain distance on $\mathbb{Z}$. This is because on such space, there exists no point $x_1, x_{2}$, for example, that lies between $d(x_{1},x_{2})=1$. If the noise is randomized on $\pm 1$, then there will exists no function that can approximate such disparity better than a random fluctuating function. However, on $\mathbb{R}$, the real number is inherently dense, such that there will always be certain point $x_{3}$ such that $x_{3}\in [x_{1},x_{2}]$, by the density of real number. By the distance metric on $\mathbb{R}$, we define $d(X,Y)=|X-Y|$ for distance between two data points. Noise intrinsically increases such distance, such that $d'(X,Y)> d(X,Y)$. Hence, the space in which density can appear increase, thus there then exists more fluctuation, and thus more uncertainty between such two points. This notion can be increased from local uncertainty to global uncertainty, hence the \textit{noisy dataset}. 
+
+We then can measure or aggregate some properties of the dataset itself, including the \textbf{uncertainty} of the dataset. We define the simple uncertainty of the dataset as followed. 
+
+\begin{definition}[Dataset uncertainty]
+    Given a closed interval $[a,b]$, for the sample set $\mathcal{S}_{n}=(X,Y)\in [a,b]$, the uncertainty $\mathcal{U}(\mathcal{S}_{n})$ is defined as 
+    \begin{equation}
+        \mathcal{U}(\mathcal{S}_{n}) = \left[ \underset{x_{i}\in X}{\mathbb{E}}\Big( x_{i+1} - x_{i} \Big)^{2} + \underset{y_{i}\in Y}{\mathbb{E}} \Big( y_{i+1}- y_{i} \Big)^{2} \right]^{1/2}
+    \end{equation}
+    We assume $X,Y$ are totally ordered sets. 
+\end{definition}
+Hence, the assumption of fallacy assumes $\mathcal{U}(\mathcal{S}_{n})=0$, though in reality it is often $\mathcal{U}(\mathcal{S}_{n})>0$. With this, we can quantify how the dataset is behaving on the scale of the bivariate form typically seen. Noise intrinsically increases this distance, usually by the $y$-axis. This dataset uncertainty increases with multivariate dataset, for example, $(\mathbf{x},y)$ of $\mathbb{R}^{n}\to\mathbb{R}$. We call the new metric as the \textit{empirical uncertainty metric}.
+
+Thirdly, is the treatment on such information. Even though information is known, such as from the assumption of transparency and the fallacy conjecture, it relies on the method in which the model uses that make use of such information. Polynomial interpolation effectively removes information about transparency, and thus the interpolation setting is a kind of \textbf{black-box absolute setting}. This setting is \textit{extremely brittle}, as to see that if $y_{i}$ is slightly wrong due to measurement noise, the interpolant oscillates wildly, which is explained by Runge phenomenon (\cite{Runge1901,CorlessSevyeri2018,AMC2009RungeDivergence}). Probability then arises from such setting naturally, though this particular degree of probabilistic setting must be quantified, which comes from the process that the model simulates upon. Regression is inherently not probabilistic, but treatment about the probabilistic assumption, for example, such that $(X,Y)$ inherently as random variables. We can then separate this into three parts - the data-level probabilistic layer (data uncertainty), the model-level layer, and the algorithm-layer that determines the solution solver within such model. We can define that as followed. 
+
+\begin{definition}[Probabilistic layer]
+    Given a learning setting with dataset $\mathcal{S}$ of bivariate pairs, $h\in \mathcal{H}$, $c\in \mathcal{C}$ as the hypothesis and concept, we have the following conceptual probabilistic setting:\footnote{Currently, we have no way to \textbf{quantify} the `probabilistic degree' of the system setting itself}
+    \begin{enumerate}[leftmargin=2cm,itemsep=1pt,topsep=1pt]
+        \item Data-level probability: Sampling assumptions (observation sample points) such that there exists the distribution $\mathcal{D}\sim (X,Y)$, intrinsic data uncertainty $\mathcal{U}(\mathcal{S}_{n})$. 
+        \item Model-level probability: Structure of the dataset is controlled by the concept structure $\{\theta\}\in c$, $c$ is modelled as a target sampler $c\equiv \mathcal{D}$, knowledge about the structure of $c$, Bayesian prior-posterior assumptions, $\mathbb{P}(Y\mid X, \{\theta\})$. For Bayesian polynomial regression, the model-level probability is formulated as \begin{equation}
+            \mathbb{P}(Y\mid X) = \int \mathbb{P}(Y\mid X,\theta)\mathbb{P}(\theta)\: d\theta, \quad \mathbb{P}(\theta_{j}) = \mathcal{N}(0,\sigma^{2})
+        \end{equation}
+        of which assumes aleatoric uncertainty and epistemic uncertainty from the weight. 
+        \item Algorithm-level probability: Stochastic method, decision conditional (dropout, MCMC), ensembles criteria, Monte-Carlo initialization, variational inference. 
+    \end{enumerate}
+\end{definition}
+
+Dynamically, in this paper, we would like to investigate this particular junction between uncertainties, to see what happens when the model transparency, the treatment of data, and so on, that exhibits the observations that we would receive from the model itself. The experimental details will infer such result. 
+
+Generally, we would be entitled to see particular trajectory specifically designed around the point of interpolating match, or $n=m$ of $n$ degree of freedom, technically, and $m$ data points. After this point, there exist two possibility of dynamic - either the model dilutes, in which case result in \textit{double descent}, or the model fluctuate strongly afterward, leading to \textit{bias-variance emergence} again later on. This conclusion however, would have to be analysed within the current framework of the possible interjection to its fluctuation strength. For example, in the monomial basis $\{x^{i}\}^{n}$, any given fluctuation contributes to the entire polynomial. In such case, fluctuation of the other $[0,n-k]$ of arbitrary $k$ and large enough $n$ would be unaccounted for by the scale. Conversely, restrict them to $[1,0]$ range will reveal something about the system, however will destroy particular properties of the prediction, which is not recommended. Nevertheless, we must conduct the test before giving in any reasonable conclusion.
+
+Previously, we said that we did indeed focus on the interpolation problem. Now, assuming we have given the interpolating algorithm $\mathcal{A}$ to approximate the interpolation, what will this look like? Firstly, solving this is \textit{very computationally expensive}, because it is a dense, $(n+1)\times(n+1)$ linear system, and even more so if we consider the overparameterized outcome. However, this can be reduced further down if we attempt to solve them using convergence bound, but will be still very expensive. That and incremental soft interpolation is somewhat out of the question since it will be kind of the same. Aside from the insight, we would still have to know what to do. Then there exists two ways - we have some version of this to optimize of simply evaluating by gradient descent optimization, or, we can use somewhat analytical fit for the case of soft interpolation modification. 
 
 A theory on such problem can be obtained of its mechanics, as will be a fairly intuitive way in consideration of the theory of interpolation, as well as the technique of interpolation by itself. For a fixed-range interpolation threshold problem, a hard-encoded interpolation solution requires $n$-degree polynomial, of which has $n+1$ degree of fitness, to fit $n+1$ distinct points. Suppose all points are distinct of the set $S$ which is finite, then this is the case. If we switch to the problem of interpolation but induce a more forgiving bound, there exists a possibility that it induces a relative \textit{density averaging path} for the points, especially if we are considering the case where $p>n$ for $p$ saddle points or degree of fitness, and $n$ the number of point to interpolate. In a more nuanced formulation, we have
 
@@ -951,7 +989,7 @@ f(x_n)
 \end{equation}
 or equivalently, $\mathsf{Flatten}(\mathbf{X}_{n\times p}\mathbf{w}_{n}-\mathbf{Y}_{n})\leq \epsilon$ where $\mathsf{Flatten}(\cdot)$ is the compression of vector to scalar, or so $\mathsf{Flatten}: \mathbb{R}^{n}\to \mathbb{R}$. This essentially is the problem of solving $n$ points approximation, toward using only $p$ saddle points available. If $\epsilon =0$, it is well known that interpolation is impossible. However, if $\epsilon\ne 0$, there are possibilities, depends on the shape of the dataset, that there will exist a data-dependent property or more that indict a particular \textit{density preference} toward those saddle points - or rather, the act of density averaging. This is reflected rather implicitly in the structure itself. In machine learning, the error measure is usually the mean average, such is to say that the criterion now would look more like $\mathbb{E}\Big[\mathsf{Flatten}(\mathbf{X}_{n\times p}\mathbf{w}_{n}-\mathbf{Y}_{n})\Big]\leq \epsilon$. Formally, we have the following hypothesis
 
-\begin{hypothesis}[Polynomial double descent]
+\begin{hypothesis}[Polynomial double descent]\label{hyp:hypothesis_poly_dd}
 For a polynomial $\{a_{i}x^{i}\}_{n}$ on Vandermonde basis, approximating on the set $\{(x_{k},y_{k})\}_{m}$, then
 \begin{enumerate}[topsep=1pt,itemsep=1pt]
   \item For $n<m$, we expect the polynomial form factor to be \textit{inherently sparse}, such that for an iterative approximation, for each $p_{i}$ saddle point of the polynomial expansion form, there exists an $\epsilon$-ball $B_{\epsilon}$ for $\epsilon>0$ with at least one data point satisfying $(x_{k},y_{k})\in B_{\epsilon}$. 
@@ -965,6 +1003,12 @@ The shift that will be hypothesized to appear here is expected to be from sparse
 \begin{conjecture}[Double descent]
   Double descent happens, for a polynomial class model $h_{n}\in\mathcal{H}_{p}$, is upper bounded to certain error deviation $\epsilon>0$ from the mean only of the generalization (test) dataset verification. 
 \end{conjecture}
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=1\textwidth]{diagram_poly_dd.png}
+    \caption{Intuition of Hypothesis~\ref{hyp:hypothesis_poly_dd}. Effectively, in the overparameterized range $(p>n)$, the problem turns into soft interpolation, where the polynomial is possible to be dense enough such that relative error remains internally low. This can also happen if the dataset itself is intrinsically large.}
+\end{figure}
 
 That is, the disparity between the test and training dataset helps in such regard. If the two dataset is partitioned in the sense that their deviation is practically the same (which can be done using synthetic generation for a control group), then this will amount to not much of it. After all, it will be the consequence of the algorithm and error landscape interpretation used. 
 
@@ -995,7 +1039,7 @@ A modification is then available.
 We then can state the model within a testing scenario listed as such, to fully capture the structural foundation of the related testing model class. 
 
 \subsubsection{Testing result}
-The testing scenario will be as followed. The following set of parameters are required for controlling the testing case: 
+The testing scenario will be as followed. The following set of parameters are required for controlling the testing case, aside from different system measures. 
 
 \begin{table}[htb]
   \centering
@@ -1012,7 +1056,7 @@ The testing scenario will be as followed. The following set of parameters are re
       \midrule
       Hypothesis model
         & $h[\mathcal{W}_{h},\mathbf{H}_{h}]\in \mathcal{H}$
-        & Hypothesis model. For simplicity, it contains $\mathcal{W}$ as the configuration parameter set, and $\mathbb{H}$ the fixed hyperparameters \\
+        & Hypothesis model. For simplicity, it contains $\mathcal{W}$ as the configuration parameter set, and $\mathbf{H}$ the fixed hyperparameters \\
       \addlinespace[1pt]
       Concept model
         & $c[\mathcal{W}_{c},\mathbf{H}_{c}]\in \mathcal{C}$
@@ -1050,6 +1094,74 @@ The testing scenario will be as followed. The following set of parameters are re
     \end{tablenotes}
   \end{threeparttable}
 \end{table}
+
+We note a few problems with both interpolation interpretation and polynomial regression of higher-degree terms. Firstly, is the intrinsic interpolation error and numerical, software issue error. Higher degree polynomial can be represented as solving for a wide Vandermonde system of $n$ degrees for $m$ sample points. Using monomial basis for interpolation, either for soft interpolation also exhibits instability and numerical garbage within the operations, as indicated by \cite{Shen_2025}. They can also be a potential source of double descent, as the majority of models tested around this range are not coded effectively for handling large data operations as such, and artifacts from such choices might be taken as the indication of double descent in some particular cases. 
+
+\clearpage
+
+\subsection{Support Vector Machine}
+
+Support vector machine, first formally originated from \cite{Vapnik1999-VAPTNO}, is a model inherently, specifically defined for pattern recognition task, and binary classification via an \textit{optimal separating hyperplane}. There are two variants for SVM, namely, for linear and nonlinear hyperplane. 
+
+\subsubsection{Introduction}
+
+The SV machine implements the following two precursor ideas: It maps the input vectors $x$, supposed of the setting, into a high-dimensional feature space $Z$ through some nonlinear mapping, chosen a priori. In this space, an optimal separating hyperplane is constructed. By statistical learning theory, Vapnik restricted the function class (as for infinite hypothesis it is impossible to learn) to the class of hyperplanes by 
+\begin{equation}
+    \langle \mathbf{w}\cdot \mathbf{x} \rangle + b = 0 ; \quad \mathbf{w}\in \mathbb{R}^{n} , b\in \mathbb{R}
+\end{equation}
+which $\mathbf{w}$ is the controlling weight, $\mathbf{x}$ is the input space to the space of all binary $\{-1,+1\}$ category. Hence, this basically divide the input space into two: one part containing vectors of the class $-1$ and the others being $+1$. If there exists such a thing, then it is said to be \textit{linearly separable}. To find the class of a particular vector $\mathbf{x}$, we use the following decision function 
+\begin{equation}
+    f(\mathbf{x}) = \mathrm{sgn}[\langle \mathbf{w}\cdot \mathbf{x}\rangle+ b]
+\end{equation}
+This is called the \textbf{hyperplane classifier} class. As can be understood simply from such, there exists many hyperplanes that can correctly classifies the classes. It has been then shown that the hyperplane that guarantees the best generalization problem performances is the one with the maximal margin of separation between two classes (\cite{Cristianini2000AnIT}). The above form of finding final classification can then be presented in dual form, which then depends only on dot products between vectors, as 
+\begin{equation}
+    f(\mathbf{x}) = \mathrm{sgn}\left(\sum^{\ell}_{i=1} y_{i}\alpha_{i} \langle \mathbf{x}\cdot \mathbf{x}_{i} \rangle+ b\right)
+\end{equation} where $\alpha_{i}\in \mathbb{R}$ is a real-valued variable that can be viewed as a \textit{measure} of how much informational value $\mathbf{x}_{i}$ has (for $x_{i}$ the support vectors we get from training)\footnote{The \textit{support vector} of a particular hyperplane $\mathbf{y}$ is the collections of all points that lies closest to the hyperplane, which is specified as condition for maximization on both side of maximal margin vector machine.}
+
+The second idea is of the \textit{kernel method}. This particular method, useful and well-known of the time SVM was created, gain a more prominent position among other techniques, including neural network. Specifically, this method is characterized by the mapping of the input vectors into a richer (usually high-dimensional) feature space where they satisfy \textit{linear separable} criteria. This prompted the possibility to solve nonlinear problem through such mapping, and indeed yields a nonlinear decision surface in the input space, which is linear in the feature space. A \textbf{kernel} (function) is then a function $k(\mathbf{x},\mathbf{y})$ that given two vectors in input space, return the dot product of their images in feature space such that $k(\mathbf{x},\mathbf{y})=\langle \phi(x), \phi(y) \rangle$ for the nonlinear mapping $\phi$. The general form of SVM is then 
+\begin{equation}
+    f(\mathbf{x}) = \mathrm{sgn} \left(\sum^{\ell}_{i=1} y_{i}\alpha_{i}k\langle \mathbf{x}\cdot \mathbf{x}_{i} \rangle\right)
+\end{equation}
+for any particular final categorization. One of the major problem for analysing SVM, is in the properties of it potentially having infinitely many parameters, depends on the size of the dataset. This makes the curve of both bias-variance and double descent not applicable in such regard - infinitely many parameters complexity, yet still finite complexity class. 
+
+From such observation, it would seem imperative that the notion of complexity based solely on the parameter counts of certain model construction is ill-equipped for certain flavours of machine learning model, in this case support vector machine (in the same type is the Gaussian Mixture Model). No double descent has been observed by empirical reports record per the author's knowledge. 
+
+
+\clearpage
+
+\subsection{Hypothesis}
+
+In learning and researching of the progress and treatment of double descent, several hypotheses, most of the time observations and insights such, is formed. Hence, there are several hypotheses for what to look out for, as well as the formulation needed to interpret certain phenomena and observations. This ranges from topics of re-evaluating the statistical learning theory, estimation and refactor of assumptions (or \textit{inductive bias} when designing models), to different interpretations and representations that can better explain, model, or gives certain insights.  
+\subsubsection{Stability of bias-variance measure}
+Stability of bias-variance measure is questionable, as it is in literature (\cite{domingos_unifeid_2000}), loosely defined by defining a 3-dimensional vector $\lambda=(\lambda_{1},\lambda_{2},\lambda_{3})$ for such: 
+\noindent 
+\begin{equation*}
+        \begin{split}
+            \mathbb{E}_{\mathcal{D}} \left[d((f,\mathbb{E}[y\mid x])\right] & = \lambda_{1} \mathrm{Bias}(f,y) + \lambda_{2}\mathrm{Var}(f,y)+ \lambda_{3}\epsilon(\mathcal{D})\\ 
+            & = \lambda_{1}\underbrace{\left\{ \mathbb{E}_{\mathcal{D}}[f(x;\mathcal{D})] , \mathbb{E}[y\mid x] \right\}}_{\text{bias term}} +\lambda_{2} \underbrace{\mathbb{E}_{\mathcal{D}} \left\{(f(x;\mathcal{D}), \mathbb{E}_{\mathcal{D}}[f(x;\mathcal{D})])\right\}}_{\text{variance term}} +\underbrace{\lambda_{3}\epsilon}_{\text{irreducible error}}
+        \end{split}
+\end{equation*}
+where $\epsilon(\mathcal{D})$ is the irreducible error of the system, depends (theoretically) on the intrinsic imperfection of the dataset $\mathcal{D}$. Assessment on stability of such decomposition is recommended. 
+\subsubsection{Alternative measures}
+We believe that the bias-variance decomposition is a poor estimation and measure for controlling, validating and choosing model from, at least from the perspective of analysing missing details. Specifically, bias and variance term, as well as their supposed expression of decomposition in the standard loss measure of model effectiveness is not representative, nor expressive of the actual, underlying notion of \textit{model complexity} $C(f)$ and its effectiveness. Furthermore, bias-variance decomposition is not straight-forward of others type of loss functions, except only for some classes of loss function (loss on Bregman divergences and exponential class). This sentiment is shared in \cite{brown2024biasvariance}.
+
+\subsubsection{Inductive bias}
+Inductive bias obviously plays a role, as mentioned by some literature \footnote{Most notably, \cite{lafon_understanding_2024}, of which raised particular point about the need of learning with inductive bias as a structural presumption. Additionally, the paper also includes an analysis on the inductive bias of gradient descent, though solutions and particular application on double descent explanation is doubtful.}, though we don't know exactly how the inductive bias can be formed to play any role in the central dynamic of the model operating process. Certain assumption, for example, the \textit{convexity of the loss function} might actually affect the model as it is, and introduce unwanted patterns in the following process. 
+\subsubsection{Randomness and probabilistic setting}
+Random initialization of parameters, as well as the initial conditions of the model initialization process might also be taken into account. Obviously, this is not a new insight, and is rather a very old one, however, this approach still has varied potential for interpreting double descent. Scaling up/down this effect might result in new insight, as well as inspecting the uncertainty and diffusion patterns in large-scale model deployment, in which from an end-to-end perspective requires several space transformation operations in successions.
+\subsubsection{Knowledge masking}
+The very ambiguous idea or treatment of statistical learning, as well as machine learning, is the idea of masked. Or, paraphrased, \textit{hidden information} regarding the underlying process of estimation. Specifically, for example, we tend to assume things to not be able to grasp - either the probability $p_{X}(c)$ of the concept class, the distribution $\mathcal{D}$ specified to such input distribution, or the concept class $\mathcal{C}$, Markov properties, etc. We would like to formalize this notion as soon and as such in the most direct way, as it is one source of the many assumptions that we have in concession of theoretical results. 
+\subsubsection{Intrinsic Data Factors}
+
+The effect that data has on the model should also be taken into account, as of fact. As far as we are concerned of, the shape, practical system that the dataset gives the setting, the factors running into the dataset, the choice of the dataset being sampled, selected in partitions, and other factors must also be analysed. Without such, we leave `gaps' in which sensitive, potentially chaotic behaviours might occur frequently and would not be identified, or being classified into irreducible errors, static of the learning setting. As such, we might as well list a few potential points of interest. 
+\begin{enumerate}[itemsep=1pt,topsep=0.5pt]
+  \item \textbf{Data distribution}: the distribution of the dataset itself affects how the concept is represented in the space. If the representation space created by using the data is large, but sparse, then the condition would make for some behaviours to occur more easily. This is one degree of freedom of the system setting. If the dataset spread is low, yet the data is very volatile, then it will lead to inconclusive picture of the actual concept, hence introducing new behaviours on the now unknown region of the distribution. As such, the majority of those unknown spaces will treat every point there as a potential outlier instead. 
+  \item \textbf{Data complexity}: The complexity of the data itself is of interest. In a controlled setting of response-inducing evaluation, identifying behaviours of the model with a glimpse on the data complexity - how the actual data works with the internal mechanics accompanied - is of specific interest, as it can affect some of the majorative effects and chaotic behaviours that occur in the learning process, especially stochastic process and probabilistic optimization patterns. 
+  \item \textbf{Data partitions}: The partitioning of data in the previously mentioned sample partitioning section might give rise to previously observed behaviours, as well as explaining particular volatility when changing the test partitioning set. The ordering of the dataset also helps in such regard. 
+\end{enumerate}
+It is also worth to note that since we emphasize the use of dataset partitioning to replicate the empirical-generalization guarantee, it is also then indicative that such partitioning would have its separate way of calculating test error on itself. 
+
+Intuitively, it can be illustrated as followed. Suppose of given two datasets $\mathcal{S}_{1},\mathcal{S}_{2}$, we can trace a pattern, if, for assumption, the partition is $k=10$. If the algorithm $\mathcal{A}$ attempt empirical learning optimization specifically, and best optimize on individual partition $\mathcal{S}_{1}^{(i)}$, then the path toward each and individual partition would potentially be very volatile, depends heavily on the partition randomization, and others factor leading to such. If the algorithm is justified in that sense, to `decelerate' the optimization to a not so tight fit, the generalization would be much better. This is also the reasoning for the technique of \textbf{regularization}, and generalization task. However, again, such procedure cannot help but having volatile dataset itself as a factor of uncertainty. More specifically, the result might work for $\mathcal{S}_{1}$, but for another dataset $\mathcal{S}_{2}$, assuming no intersection, that is, $\mathcal{S}_{1}\cap \mathcal{S}_{2}=\varnothing$, then optimization based on one dataset would not be optimal in another, more so can be counterproductive. This is also used of the reasoning for \textbf{cross-validation} technique, of which aims to stabilize the partitioning. However, analytical analysis suggests a wider role of such, in the wider setting of learning theory, particularly in double descent later on. 
 
 \clearpage
 
@@ -1104,39 +1216,7 @@ Those three fundamental conversions to neural network raise interesting insight 
 
 This way of analysing unit-wise gives us much more interpretability, and also potential for a newer kind of network specification. As far as we are concerned of, a neural network can represent an active \textit{mathematical modelling system}. This then indicates, for example in adversarial learning case between the target neural network tailored to specific concept, and the learning hypothesis network, then the process of learning itself can be loosely interpreted as a concept of mathematical modelling representation learning, even in the case of black-box model, and not just simply phenomenological modelling of statistical data. 
 
-\subsection{Hypothesis}
 
-In learning and researching of the progress and treatment of double descent, several hypotheses, most of the time observations and insights such, is formed. Hence, there are several hypotheses for what to look out for, as well as the formulation needed to interpret certain phenomena and observations. This ranges from topics of re-evaluating the statistical learning theory, estimation and refactor of assumptions (or \textit{inductive bias} when designing models), to different interpretations and representations that can better explain, model, or gives certain insights.  
-\subsubsection{Stability of bias-variance measure}
-Stability of bias-variance measure is questionable, as it is in literature (\cite{domingos_unifeid_2000}), loosely defined by defining a 3-dimensional vector $\lambda=(\lambda_{1},\lambda_{2},\lambda_{3})$ for such: 
-\noindent 
-\begin{equation*}
-        \begin{split}
-            \mathbb{E}_{\mathcal{D}} \left[d((f,\mathbb{E}[y\mid x])\right] & = \lambda_{1} \mathrm{Bias}(f,y) + \lambda_{2}\mathrm{Var}(f,y)+ \lambda_{3}\epsilon(\mathcal{D})\\ 
-            & = \lambda_{1}\underbrace{\left\{ \mathbb{E}_{\mathcal{D}}[f(x;\mathcal{D})] , \mathbb{E}[y\mid x] \right\}}_{\text{bias term}} +\lambda_{2} \underbrace{\mathbb{E}_{\mathcal{D}} \left\{(f(x;\mathcal{D}), \mathbb{E}_{\mathcal{D}}[f(x;\mathcal{D})])\right\}}_{\text{variance term}} +\underbrace{\lambda_{3}\epsilon}_{\text{irreducible error}}
-        \end{split}
-\end{equation*}
-where $\epsilon(\mathcal{D})$ is the irreducible error of the system, depends (theoretically) on the intrinsic imperfection of the dataset $\mathcal{D}$. Assessment on stability of such decomposition is recommended. 
-\subsubsection{Alternative measures}
-We believe that the bias-variance decomposition is a poor estimation and measure for controlling, validating and choosing model from, at least from the perspective of analysing missing details. Specifically, bias and variance term, as well as their supposed expression of decomposition in the standard loss measure of model effectiveness is not representative, nor expressive of the actual, underlying notion of \textit{model complexity} $C(f)$ and its effectiveness. Furthermore, bias-variance decomposition is not straight-forward of others type of loss functions, except only for some classes of loss function (loss on Bregman divergences and exponential class). This sentiment is shared in \cite{brown2024biasvariance}.
-
-\subsubsection{Inductive bias}
-Inductive bias obviously plays a role, as mentioned by some literature \footnote{Most notably, \cite{lafon_understanding_2024}, of which raised particular point about the need of learning with inductive bias as a structural presumption. Additionally, the paper also includes an analysis on the inductive bias of gradient descent, though solutions and particular application on double descent explanation is doubtful.}, though we don't know exactly how the inductive bias can be formed to play any role in the central dynamic of the model operating process. Certain assumption, for example, the \textit{convexity of the loss function} might actually affect the model as it is, and introduce unwanted patterns in the following process. 
-\subsubsection{Randomness and probabilistic setting}
-Random initialization of parameters, as well as the initial conditions of the model initialization process might also be taken into account. Obviously, this is not a new insight, and is rather a very old one, however, this approach still has varied potential for interpreting double descent. Scaling up/down this effect might result in new insight, as well as inspecting the uncertainty and diffusion patterns in large-scale model deployment, in which from an end-to-end perspective requires several space transformation operations in successions.
-\subsubsection{Knowledge masking}
-The very ambiguous idea or treatment of statistical learning, as well as machine learning, is the idea of masked. Or, paraphrased, \textit{hidden information} regarding the underlying process of estimation. Specifically, for example, we tend to assume things to not be able to grasp - either the probability $p_{X}(c)$ of the concept class, the distribution $\mathcal{D}$ specified to such input distribution, or the concept class $\mathcal{C}$, Markov properties, etc. We would like to formalize this notion as soon and as such in the most direct way, as it is one source of the many assumptions that we have in concession of theoretical results. 
-\subsubsection{Intrinsic Data Factors}
-
-The effect that data has on the model should also be taken into account, as of fact. As far as we are concerned of, the shape, practical system that the dataset gives the setting, the factors running into the dataset, the choice of the dataset being sampled, selected in partitions, and other factors must also be analysed. Without such, we leave `gaps' in which sensitive, potentially chaotic behaviours might occur frequently and would not be identified, or being classified into irreducible errors, static of the learning setting. As such, we might as well list a few potential points of interest. 
-\begin{enumerate}[itemsep=1pt,topsep=0.5pt]
-  \item \textbf{Data distribution}: the distribution of the dataset itself affects how the concept is represented in the space. If the representation space created by using the data is large, but sparse, then the condition would make for some behaviours to occur more easily. This is one degree of freedom of the system setting. If the dataset spread is low, yet the data is very volatile, then it will lead to inconclusive picture of the actual concept, hence introducing new behaviours on the now unknown region of the distribution. As such, the majority of those unknown spaces will treat every point there as a potential outlier instead. 
-  \item \textbf{Data complexity}: The complexity of the data itself is of interest. In a controlled setting of response-inducing evaluation, identifying behaviours of the model with a glimpse on the data complexity - how the actual data works with the internal mechanics accompanied - is of specific interest, as it can affect some of the majorative effects and chaotic behaviours that occur in the learning process, especially stochastic process and probabilistic optimization patterns. 
-  \item \textbf{Data partitions}: The partitioning of data in the previously mentioned sample partitioning section might give rise to previously observed behaviours, as well as explaining particular volatility when changing the test partitioning set. The ordering of the dataset also helps in such regard. 
-\end{enumerate}
-It is also worth to note that since we emphasize the use of dataset partitioning to replicate the empirical-generalization guarantee, it is also then indicative that such partitioning would have its separate way of calculating test error on itself. 
-
-Intuitively, it can be illustrated as followed. Suppose of given two datasets $\mathcal{S}_{1},\mathcal{S}_{2}$, we can trace a pattern, if, for assumption, the partition is $k=10$. If the algorithm $\mathcal{A}$ attempt empirical learning optimization specifically, and best optimize on individual partition $\mathcal{S}_{1}^{(i)}$, then the path toward each and individual partition would potentially be very volatile, depends heavily on the partition randomization, and others factor leading to such. If the algorithm is justified in that sense, to `decelerate' the optimization to a not so tight fit, the generalization would be much better. This is also the reasoning for the technique of \textbf{regularization}, and generalization task. However, again, such procedure cannot help but having volatile dataset itself as a factor of uncertainty. More specifically, the result might work for $\mathcal{S}_{1}$, but for another dataset $\mathcal{S}_{2}$, assuming no intersection, that is, $\mathcal{S}_{1}\cap \mathcal{S}_{2}=\varnothing$, then optimization based on one dataset would not be optimal in another, more so can be counterproductive. This is also used of the reasoning for \textbf{cross-validation} technique, of which aims to stabilize the partitioning. However, analytical analysis suggests a wider role of such, in the wider setting of learning theory, particularly in double descent later on. 
 
 \clearpage
 

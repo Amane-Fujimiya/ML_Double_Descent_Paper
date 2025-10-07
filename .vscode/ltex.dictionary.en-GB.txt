@@ -7,3 +7,10 @@ ResNet
 MSBE-LSTD
 DenseNet
 misspecified
+Weierstrass
+Stone-Weierstrass
+Hausdorff
+Vandermonde
+unisolvence
+approximator
+interpolant
