@@ -1,0 +1,288 @@
+\begin{thebibliography}{29}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Brevi et~al.(2024)Brevi, Mandarino, and Prati]{Brevi_2024}
+Lorenzo Brevi, Antonio Mandarino, and Enrico Prati.
+\newblock A tutorial on the use of physics-informed neural networks to compute
+  the spectrum of quantum systems.
+\newblock \emph{Technologies}, 12\penalty0 (10):\penalty0 174, September 2024.
+\newblock ISSN 2227-7080.
+\newblock \doi{10.3390/technologies12100174}.
+\newblock URL \url{http://dx.doi.org/10.3390/technologies12100174}.
+
+\bibitem[Chen et~al.(2024)Chen, Pios, Gelin, and
+  Chen]{chen2024acceleratingmolecularvibrationalspectra}
+Yuzhuo Chen, Sebastian~V. Pios, Maxim~F. Gelin, and Lipeng Chen.
+\newblock Accelerating molecular vibrational spectra simulations with a
+  physically informed deep learning model, 2024.
+\newblock URL \url{https://arxiv.org/abs/2402.06911}.
+
+\bibitem[Czaja et~al.(2018)Czaja, Baranowska, Mazurek, and
+  Szostak]{CzajaBaranowskaMazurekSzostak2018}
+Tomasz Czaja, Maria Baranowska, Sylwester Mazurek, and Roman Szostak.
+\newblock Determination of nutritional parameters of yoghurts by ft-raman
+  spectroscopy.
+\newblock \emph{Spectrochimica Acta Part A: Molecular and Biomolecular
+  Spectroscopy}, 196:\penalty0 413--417, 2018.
+\newblock \doi{10.1016/j.saa.2018.02.054}.
+\newblock URL \url{https://doi.org/10.1016/j.saa.2018.02.054}.
+
+\bibitem[et~al.(2000s)]{deep_nodate-1as}
+Ruihao et~al.
+\newblock Deep {Learning} for {Raman} {Spectroscopy}: {A} {Review}, 2000s.
+\newblock URL \url{https://www.mdpi.com/2673-4532/3/3/20}.
+
+\bibitem[Fuentes et~al.(2023)Fuentes, Narayan, Milligan, Lum, Brolo, Andrews,
+  and Jirasek]{fuentes_raman_2023}
+Alejandra~M. Fuentes, Apurva Narayan, Kirsty Milligan, Julian~J. Lum, Alex~G.
+  Brolo, Jeffrey~L. Andrews, and Andrew Jirasek.
+\newblock Raman spectroscopy and convolutional neural networks for monitoring
+  biochemical radiation response in breast tumour xenografts.
+\newblock \emph{Sci Rep}, 13\penalty0 (1):\penalty0 1530, January 2023.
+\newblock ISSN 2045-2322.
+\newblock \doi{10.1038/s41598-023-28479-2}.
+\newblock URL \url{https://www.nature.com/articles/s41598-023-28479-2}.
+\newblock Publisher: Nature Publishing Group.
+
+\bibitem[Gu et~al.(2024)Gu, Chiu, Muñoz-Jaramillo, Birkeland, Navas-Moreno,
+  and Carney]{gu_abstract_2024}
+Yifei Gu, Kwan~Lun Chiu, Andrés Muñoz-Jaramillo, Andrew~C. Birkeland, Maria
+  Navas-Moreno, and Randy Carney.
+\newblock Abstract {B056}: {Towards} a generalized machine learning model for
+  {Raman} spectroscopy-based liquid biopsy in cancer screening using
+  self-supervised learning.
+\newblock \emph{Clinical Cancer Research}, 30\penalty0
+  (21\_Supplement):\penalty0 B056, November 2024.
+\newblock ISSN 1078-0432.
+\newblock \doi{10.1158/1557-3265.LIQBIOP24-B056}.
+\newblock URL \url{https://doi.org/10.1158/1557-3265.LIQBIOP24-B056}.
+
+\bibitem[Han and Ram(2018)]{han2018bayesianmodelingcomputationanalyte}
+Ningren Han and Rajeev~J. Ram.
+\newblock Bayesian modeling and computation for analyte quantification in
+  complex mixtures using raman spectroscopy, 2018.
+\newblock URL \url{https://arxiv.org/abs/1805.07688}.
+
+\bibitem[Härkönen et~al.(2020)Härkönen, Roininen, Moores, and
+  Vartiainen]{harkonen_bayesian_2020}
+Teemu Härkönen, Lassi Roininen, Matthew~T. Moores, and Erik~M. Vartiainen.
+\newblock Bayesian {Quantification} for {Coherent} {Anti}-{Stokes} {Raman}
+  {Scattering} {Spectroscopy}.
+\newblock \emph{J. Phys. Chem. B}, 124\penalty0 (32):\penalty0 7005--7012,
+  August 2020.
+\newblock ISSN 1520-6106.
+\newblock \doi{10.1021/acs.jpcb.0c04378}.
+\newblock URL \url{https://doi.org/10.1021/acs.jpcb.0c04378}.
+\newblock Publisher: American Chemical Society.
+
+\bibitem[Ibtehaz et~al.(2023)Ibtehaz, Chowdhury, Khandakar, Zughaier, Kiranyaz,
+  and Rahman]{ibtehaz_ramannet_2023}
+Nabil Ibtehaz, Muhammad E.~H. Chowdhury, Amith Khandakar, Susu~M. Zughaier,
+  Serkan Kiranyaz, and M.~Sohel Rahman.
+\newblock {RamanNet}: {A} generalized neural network architecture for {Raman}
+  {Spectrum} {Analysis}, February 2023.
+\newblock URL \url{http://arxiv.org/abs/2201.09737}.
+\newblock arXiv:2201.09737 [cs].
+
+\bibitem[Karacaglar et~al.(2019)Karacaglar, Bulat, Boyaci, and
+  Topcu]{Karacaglar2019}
+N.\ N.\~Y. Karacaglar, T.~Bulat, I.\~H. Boyaci, and A.~Topcu.
+\newblock Raman spectroscopy coupled with chemometric methods for the
+  discrimination of foreign fats and oils in cream and yogurt.
+\newblock \emph{Journal of Food and Drug Analysis}, 27\penalty0 (1):\penalty0
+  0, 2019.
+\newblock \doi{10.1016/j.jfda.2018.06.008}.
+\newblock URL \url{https://doi.org/10.1016/j.jfda.2018.06.008}.
+
+\bibitem[Kitchenomics(2022)]{Vinamilk_YogurtDrinkMixedFruits}
+Kitchenomics.
+\newblock Del monte vinamilk mixed fruits drinkable yogurt 110 ml - nutrition
+  listing.
+\newblock
+  https://kitchenomics.com/del-monte-vinamilk-yogurt-mixed-fruits-drinkable-yogurt-110ml-bundle-of-2-2-x-110ml.html,
+  2022.
+\newblock 80 kcal per 110 mL; Protein approximately 1.3 g per 110 mL; contains
+  fruit juice; drinkable style.
+
+\bibitem[Kolesov(2021)]{Kolesov2021}
+Boris~A. Kolesov.
+\newblock Hydrogen bonds: Raman spectroscopic study.
+\newblock \emph{International Journal of Molecular Sciences}, 22\penalty0
+  (10):\penalty0 5380, 2021.
+\newblock \doi{10.3390/ijms22105380}.
+\newblock URL \url{https://doi.org/10.3390/ijms22105380}.
+
+\bibitem[Li et~al.(2022)Li, Schmidt, and Alstrøm]{li_raman_2022}
+Bo~Li, Mikkel~N. Schmidt, and Tommy~S. Alstrøm.
+\newblock Raman {Spectrum} {Matching} with {Contrastive} {Representation}
+  {Learning}.
+\newblock \emph{Analyst}, 147\penalty0 (10):\penalty0 2238--2246, 2022.
+\newblock ISSN 0003-2654, 1364-5528.
+\newblock \doi{10.1039/D2AN00403H}.
+\newblock URL \url{http://arxiv.org/abs/2202.12549}.
+\newblock arXiv:2202.12549 [cs].
+
+\bibitem[Liu et~al.(2023)Liu, Hou, Wei, and Sun]{Liu_2023}
+Jianan Liu, Qingzhi Hou, Jianguo Wei, and Zewei Sun.
+\newblock Esr-pinns: Physics-informed neural networks with expansion-shrinkage
+  resampling selection strategies.
+\newblock \emph{Chinese Physics B}, 32\penalty0 (7):\penalty0 070702, jul 2023.
+\newblock \doi{10.1088/1674-1056/acc1d5}.
+\newblock URL \url{https://dx.doi.org/10.1088/1674-1056/acc1d5}.
+
+\bibitem[Liu et~al.(2017)Liu, Osadchy, Ashton, Foster, Solomon, and
+  Gibson]{Liu_2017}
+Jinchao Liu, Margarita Osadchy, Lorna Ashton, Michael Foster, Christopher~J.
+  Solomon, and Stuart~J. Gibson.
+\newblock Deep convolutional neural networks for raman spectrum recognition: a
+  unified solution.
+\newblock \emph{The Analyst}, 142\penalty0 (21):\penalty0 4067–4074, 2017.
+\newblock ISSN 1364-5528.
+\newblock \doi{10.1039/c7an01371j}.
+\newblock URL \url{http://dx.doi.org/10.1039/C7AN01371J}.
+
+\bibitem[Moores et~al.(2018)Moores, Gracie, Carson, Faulds, Graham, and
+  Girolami]{moores2018bayesianmodellingquantificationraman}
+Matthew Moores, Kirsten Gracie, Jake Carson, Karen Faulds, Duncan Graham, and
+  Mark Girolami.
+\newblock Bayesian modelling and quantification of raman spectroscopy, 2018.
+\newblock URL \url{https://arxiv.org/abs/1604.07299}.
+
+\bibitem[MyNetDiary(2025)]{Vinamilk_YogurtPlainMyNetDiary}
+MyNetDiary.
+\newblock Vinamilk sua chua khong duong (plain yogurt) - nutrition listing
+  (mynetdiary).
+\newblock
+  https://www.mynetdiary.com/food/calories-in-sua-chua-khong-duong-plain-yoghurt-by-vinamilk,
+  2025.
+\newblock Nutrition listing shown on MyNetDiary: Protein ~4 g, Carbohydrates ~5
+  g, Fat ~3 g (per serving as listed on the page).
+
+\bibitem[Nair et~al.(2024)Nair, Walsh, Pickrell, and Semperlotti]{Nair_2024}
+Siddharth Nair, Timothy~F. Walsh, Greg Pickrell, and Fabio Semperlotti.
+\newblock Multiple scattering simulation via physics-informed neural networks.
+\newblock \emph{Engineering with Computers}, July 2024.
+\newblock ISSN 1435-5663.
+\newblock \doi{10.1007/s00366-024-02038-3}.
+\newblock URL \url{http://dx.doi.org/10.1007/s00366-024-02038-3}.
+
+\bibitem[Nutifood(2022{\natexlab{a}})]{Nutifood_NutimilkEatable2022}
+Nutifood.
+\newblock Nutimilk eatable yogurt - naturally fermented from streptococcus
+  thermophilus and lactobacillus bulgaricus; nutrition facts.
+\newblock https://nutifood.com.vn/en/products/nutimilk-eatable-yogurt,
+  2022{\natexlab{a}}.
+\newblock 100 g jar; Protein 3.1 g; Fat 2.7 g; Carbohydrate 15.7 g; storage 3-8
+  C; natural fermentation; no preservatives.
+
+\bibitem[Nutifood(2022{\natexlab{b}})]{Nutifood_NuviDrinkable2022}
+Nutifood.
+\newblock Nuvi drinkable yogurt (fruit flavors) - made from natural fermented
+  yogurt mixed with real fruit juice.
+\newblock https://nutifood.com.vn/en/products/nuvi-drinkable-yogurt,
+  2022{\natexlab{b}}.
+\newblock Protein approximately 1.3 g/100 mL; Fat approximately 0.8 g/100 mL;
+  Carbohydrates approximately 16.3 g/100 mL; pack sizes 110 mL and 180 mL.
+
+\bibitem[Nutifood(2022{\natexlab{c}})]{Nutifood_NuviLivingFerment2022}
+Nutifood.
+\newblock Nuvi drinkable yogurt with living ferment - 65 billion beneficial
+  bacteria per serving; product information.
+\newblock
+  https://nutifood.com.vn/en/products/nuvi-drinkable-yogurt-with-living-ferment,
+  2022{\natexlab{c}}.
+\newblock Manufacturer claim: 65 billion bacteria per serving; Protein
+  approximately 1.2 g/100 mL; Fat approximately 0.1 g/100 mL; store 3-8 C.
+
+\bibitem[OpenFoodFacts(2024)]{Vinamilk_LowSugarYogurt_OpenFoodFacts}
+OpenFoodFacts.
+\newblock Vinamilk low sugar yogurt - 4x100 g (open food facts) - nutrition
+  listing.
+\newblock
+  https://world.openfoodfacts.org/product/8934673500548/low-sugar-yogurt-vinamilk,
+  2024.
+\newblock Pack: 4 x 100 g; Energy 83 kcal per 100 g; Fat 3.2 g per 100 g;
+  Carbohydrates 10.5 g per 100 g; refer to linked page for full panel.
+
+\bibitem[Poppe(2024)]{poppe_deep_2024}
+Alex Poppe.
+\newblock \emph{Deep {Learning} for {Raman} {Spectroscopy}: {Bridging} the
+  {Gap} between {Experimental} {Data} and {Molecular} {Analysis}}.
+\newblock phd, University of Kent,, July 2024.
+\newblock URL \url{https://doi.org/10.22024/UniKent/01.02.106516}.
+
+\bibitem[Qi et~al.(2023)Qi, Hu, Jiang, Wu, Zheng, Chen, Liang, Sadi, Zhang, and
+  Chen]{qi_recent_2023_progress}
+Yaping Qi, Dan Hu, Yucheng Jiang, Zhenping Wu, Ming Zheng, Esther~Xinyi Chen,
+  Yong Liang, Mohammad~A. Sadi, Kang Zhang, and Yong~P. Chen.
+\newblock Recent {Progresses} in {Machine} {Learning} {Assisted} {Raman}
+  {Spectroscopy}.
+\newblock \emph{Advanced Optical Materials}, 11\penalty0 (14):\penalty0
+  2203104, 2023.
+\newblock ISSN 2195-1071.
+\newblock \doi{10.1002/adom.202203104}.
+\newblock URL
+  \url{https://onlinelibrary.wiley.com/doi/abs/10.1002/adom.202203104}.
+\newblock \_eprint:
+  https://onlinelibrary.wiley.com/doi/pdf/10.1002/adom.202203104.
+
+\bibitem[Ren et~al.(2023)Ren, Zhou, Li, Xiong, and Han]{ren_raman_2023}
+Pengju Ren, Ri-gui Zhou, Yaochong Li, Shengjun Xiong, and Bing Han.
+\newblock Raman {ConvMSANet}: {A} {High}-{Accuracy} {Neural} {Network} for
+  {Raman} {Spectroscopy} {Blood} and {Semen} {Identification}.
+\newblock \emph{ACS Omega}, 8\penalty0 (33):\penalty0 30421--30431, August
+  2023.
+\newblock \doi{10.1021/acsomega.3c03572}.
+\newblock URL \url{https://doi.org/10.1021/acsomega.3c03572}.
+\newblock Publisher: American Chemical Society.
+
+\bibitem[Silva et~al.(2021)Silva, de~Paula, Stephani, Edwards, and
+  de~Oliveira]{SilvaEtAl2021_RamanQualityDairy}
+Monisa~Gouv{\^e}a Silva, Igor~Lima de~Paula, Rodrigo Stephani, Howell G.~M.
+  Edwards, and Luiz Fernando~Cappa de~Oliveira.
+\newblock Raman spectroscopy in the quality analysis of dairy products: A
+  literature review.
+\newblock \emph{Journal of Raman Spectroscopy}, 52\penalty0 (12):\penalty0
+  2444--2478, 2021.
+\newblock \doi{10.1002/jrs.6214}.
+\newblock URL \url{https://doi.org/10.1002/jrs.6214}.
+
+\bibitem[Song et~al.(2024)Song, Zhang, Jiang, Zhang, Ju, Huang, Lau, and
+  Wang]{song_srs-net_2024}
+Yuchen Song, Min Zhang, Xiaotian Jiang, Fan Zhang, Cheng Ju, Shanguo Huang,
+  Alan Pak~Tao Lau, and Danshi Wang.
+\newblock {SRS}-{Net}: a universal framework for solving stimulated {Raman}
+  scattering in nonlinear fiber-optic systems by physics-informed deep
+  learning.
+\newblock \emph{Communications Engineering}, 3\penalty0 (1):\penalty0 109,
+  August 2024.
+\newblock ISSN 2731-3395.
+\newblock \doi{10.1038/s44172-024-00253-w}.
+\newblock URL \url{https://doi.org/10.1038/s44172-024-00253-w}.
+
+\bibitem[Xue et~al.(2012)Xue, Zou, Zhao, Huang, and Qu]{XUE2012858}
+Luyan Xue, Feixue Zou, Yin Zhao, Xirong Huang, and Yinbo Qu.
+\newblock Nitrile group as infrared probe for the characterization of the
+  conformation of bovine serum albumin solubilized in reverse micelles.
+\newblock \emph{Spectrochimica Acta Part A: Molecular and Biomolecular
+  Spectroscopy}, 97:\penalty0 858--863, 2012.
+\newblock ISSN 1386-1425.
+\newblock \doi{https://doi.org/10.1016/j.saa.2012.07.076}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S138614251200697X}.
+
+\bibitem[Zhang et~al.(2020)Zhang, Yao, Yue, and
+  Niu]{ZhangEtAl2020_BayesYogurtRaman}
+Zheng-Yong Zhang, An-Yang Yao, Tong-Tong Yue, and Min Niu.
+\newblock Bayesian discriminant analysis of yogurt products based on raman
+  spectroscopy.
+\newblock \emph{Journal of AOAC International}, 103\penalty0 (5):\penalty0
+  1435--1439, 2020.
+\newblock \doi{10.1093/jaoacint/qsaa039}.
+\newblock URL \url{https://doi.org/10.1093/jaoacint/qsaa039}.
+
+\end{thebibliography}

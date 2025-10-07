@@ -1,0 +1,55 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: paper1dd.aux
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Reallocating 'name_of_file' (item size: 1) to 20 items.
+The style file: iclr2025_conference.bst
+Database file #1: references.bib
+Warning--I didn't find a database entry for "rossi2020temporalgraphnetworksdeep"
+Warning--I didn't find a database entry for "pyg_docs"
+Warning--I didn't find a database entry for "Fey/Lenssen/2019"
+Warning--empty publisher in STL_Hajek_Maxim_2021
+Warning--empty year in GRP_Hamilton
+Warning--empty year in GRP_Hamilton
+You've used 25 entries,
+            2773 wiz_defined-function locations,
+            765 strings with 10121 characters,
+and the built_in function-call counts, 11289 in all, are:
+= -- 977
+> -- 713
+< -- 15
++ -- 241
+- -- 216
+* -- 922
+:= -- 1753
+add.period$ -- 100
+call.type$ -- 25
+change.case$ -- 143
+chr.to.int$ -- 25
+cite$ -- 53
+duplicate$ -- 481
+empty$ -- 909
+format.name$ -- 255
+if$ -- 2364
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 18
+newline$ -- 157
+num.names$ -- 100
+pop$ -- 322
+preamble$ -- 1
+purify$ -- 122
+quote$ -- 0
+skip$ -- 395
+stack$ -- 0
+substring$ -- 220
+swap$ -- 50
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 255
+warning$ -- 3
+while$ -- 85
+width$ -- 0
+write$ -- 364
+(There were 6 warnings)

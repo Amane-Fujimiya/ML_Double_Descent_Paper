@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: paper2dd.aux
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Reallocating 'name_of_file' (item size: 1) to 20 items.
+The style file: iclr2025_conference.bst
+Database file #1: references.bib
+Warning--empty publisher in STL_Hajek_Maxim_2021
+You've used 27 entries,
+            2773 wiz_defined-function locations,
+            764 strings with 10261 characters,
+and the built_in function-call counts, 11624 in all, are:
+= -- 1005
+> -- 726
+< -- 19
++ -- 246
+- -- 219
+* -- 910
+:= -- 1816
+add.period$ -- 107
+call.type$ -- 27
+change.case$ -- 147
+chr.to.int$ -- 27
+cite$ -- 55
+duplicate$ -- 506
+empty$ -- 944
+format.name$ -- 264
+if$ -- 2438
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 21
+newline$ -- 167
+num.names$ -- 108
+pop$ -- 343
+preamble$ -- 1
+purify$ -- 127
+quote$ -- 0
+skip$ -- 429
+stack$ -- 0
+substring$ -- 176
+swap$ -- 50
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 262
+warning$ -- 1
+while$ -- 88
+width$ -- 0
+write$ -- 389
+(There was 1 warning)

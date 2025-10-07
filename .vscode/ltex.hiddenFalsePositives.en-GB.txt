@@ -1,0 +1,1 @@
+{"rule":"GENERAL_XX","sentence":"^\\QWhile double descent concerns the evaluation of generalization (test) error, and the model complexity notions, the error in question is often implicitly defined or loosely considered in one way or another, and model complexity has no general consensus on its definition.\\E$"}

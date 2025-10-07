@@ -1,0 +1,54 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: paper3dd.aux
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Reallocating 'name_of_file' (item size: 1) to 20 items.
+The style file: iclr2025_conference.bst
+Database file #1: references.bib
+Warning--I didn't find a database entry for "pyg_docs"
+Warning--I didn't find a database entry for "Fey/Lenssen/2019"
+Warning--empty publisher in STL_Hajek_Maxim_2021
+Warning--empty year in GRP_Hamilton
+Warning--empty year in GRP_Hamilton
+You've used 26 entries,
+            2773 wiz_defined-function locations,
+            768 strings with 10325 characters,
+and the built_in function-call counts, 11851 in all, are:
+= -- 1020
+> -- 770
+< -- 15
++ -- 260
+- -- 234
+* -- 974
+:= -- 1843
+add.period$ -- 103
+call.type$ -- 26
+change.case$ -- 152
+chr.to.int$ -- 26
+cite$ -- 55
+duplicate$ -- 497
+empty$ -- 942
+format.name$ -- 274
+if$ -- 2477
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 18
+newline$ -- 162
+num.names$ -- 104
+pop$ -- 343
+preamble$ -- 1
+purify$ -- 130
+quote$ -- 0
+skip$ -- 414
+stack$ -- 0
+substring$ -- 222
+swap$ -- 51
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 266
+warning$ -- 3
+while$ -- 88
+width$ -- 0
+write$ -- 376
+(There were 5 warnings)

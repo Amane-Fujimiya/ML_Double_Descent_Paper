@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: paper1dd.aux
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Reallocating 'name_of_file' (item size: 1) to 20 items.
+The style file: iclr2025_conference.bst
+Database file #1: references.bib
+Warning--empty year in achlioptas_stochastic_nodate
+Warning--empty year in achlioptas_stochastic_nodate
+Warning--can't use both volume and number fields in bartlett2005local
+Warning--empty year in modelcomplex_exp
+Warning--empty publisher in STL_Hajek_Maxim_2021
+Warning--there's a number but no volume in ErdongHu2021
+Warning--can't use both volume and number fields in Mei2022TowardsBridging
+You've used 122 entries,
+            2773 wiz_defined-function locations,
+            1295 strings with 28771 characters,
+and the built_in function-call counts, 55087 in all, are:
+= -- 4880
+> -- 3332
+< -- 97
++ -- 1142
+- -- 1012
+* -- 4267
+:= -- 8459
+add.period$ -- 472
+call.type$ -- 122
+change.case$ -- 684
+chr.to.int$ -- 114
+cite$ -- 251
+duplicate$ -- 2433
+empty$ -- 4447
+format.name$ -- 1202
+if$ -- 11669
+int.to.chr$ -- 9
+int.to.str$ -- 1
+missing$ -- 84
+newline$ -- 715
+num.names$ -- 494
+pop$ -- 1539
+preamble$ -- 1
+purify$ -- 577
+quote$ -- 0
+skip$ -- 2084
+stack$ -- 0
+substring$ -- 1196
+swap$ -- 354
+text.length$ -- 25
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 1252
+warning$ -- 7
+while$ -- 439
+width$ -- 0
+write$ -- 1727
+(There were 7 warnings)

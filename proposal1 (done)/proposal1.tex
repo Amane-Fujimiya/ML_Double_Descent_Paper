@@ -1,0 +1,280 @@
+%This is a template file for use of iopjournal.cls
+
+\documentclass{iopjournal}
+
+% Options
+%  [anonymous]  Provides output without author names, affiliations or acknowledgments to facilitate double-anonymous peer-review
+%
+% The following packages are required by iopjournal.cls and do not need to be declared again:
+%  graphicx
+%  fancyhdr
+%  xcolor
+%  hyperref
+%
+
+\input{preamble.tex}
+\input{mathcommand.tex}
+\graphicspath{{media/}}  % organize your images and other figures under media/ folder
+
+\begin{document}
+
+\articletype{Review} %	 e.g. Paper, Letter, Topical Review...
+
+\title{Research Proposal - Raman Spectroscopy on dairy yogurt products}
+
+\author{Bui Gia Khanh$^1$\orcid{0000-0000-0000-0000} , Nguyen Tien Duy$^1$\orcid{0000-0000-0000-0000}, Tran Duc Anh$^1$\orcid{0000-0000-0000-0000}}
+
+\affil{$^1$Department of Physics, Hanoi University of Science, Hanoi, Vietnam}
+
+%\affil{$^2$Department, Institution, City, Country}
+
+%\affil{$^*$Author to whom any correspondence should be addressed.}
+
+\email{23000206@hus.edu.vn}
+
+\keywords{machine learning, Raman spectroscopy, vibrational spectroscopy, deep learning}
+
+
+%\begin{table}
+%\caption{Caption text describing the table. Adapt the template table below or replace with a new table. To add more %tables, copy and paste the whole {\tt \textbackslash begin\{table\}...\textbackslash end\{table\}} block.}
+%\centering
+%\begin{tabular}{l c c c}
+%\hline
+%Column heading & Column heading & Column heading & Column heading \\
+%\hline
+%Data row 1 & 1.0 & 1.5 & 2.0 \\
+%Data row 2 & 2.0 & 2.5 & 3.0 \\
+%Data row 3 & 3.0 & 3.5 & 4.0 \\
+%\hline
+%\end{tabular}
+%\label{tab1}
+%\end{table}
+
+\begin{abstract}
+       This is a research proposal on the topic of applying the (quantum) optical process of Raman (scattering) spectroscopy on specific specimen, in this case yogurt and dairy products, to analyse, monitor, differentiate, and time-series analysis with the aid of machine learning, quantum optics knowledge and deep learning model in the process. 
+\end{abstract}
+
+\section{Introduction}
+
+It is widely considered for spectroscopy, and \textbf{Raman spectroscopy} specifically, to be an important field of study and tools of analysis. The need for accurate detection, material fingerprinting, non-destructive probing, drug detections, medicine and pathological diagnosis, and various on-field examination requires tools of Raman spectroscopy and its properties in major applications. It is then natural that we can use Raman spectroscopy at large, with control environment or not, and with specimens of different kinds for application purpose in monitoring, analysis, probing, time-dependent evolution analysis, and much more. In the past, this archetype of application is fairly limited to clinical trial or in-lab analysis, because of its cost, difficulties in identifying structures and chemical compounds reliably. Furthermore, the testing dataset is also a problem, and classical approximation techniques prove to have not so optimal results to be applied, especially in more complex notions and systems. However, with the advancements of capabilities of machine learning, this is now perhaps accessible and applicable to a wide arrays of previous proposed ideas, and by large much more available. 
+\section{Motivation}
+
+The main idea for this proposal stems from the fact of choosing products and specimen of interest that fit the criteria of $(a)$ availability of the product, $(b)$ cost-effectiveness and application range, $(c)$ ability to utilize specific Raman vibrational knowledge, plus physics simulation techniques and $(d)$ applicable of machine learning applications. Yogurt and dairy-based product fit these criteria because of their popularity, demands and distribution, hence easy to acquire samples and testing. Because of its popularity and widespread usage, it is also cost-effective per sample availability. Yogurt is also a very specific and complex fermented product, which means the chemical and biological information available of a sample is nontrivial, and hence is resourceful for any potential analysis; the fermentation process also proves to be an effective testing ground for certain application, such as monitoring and controlling the states of the fermentation process, reverse-engineering from a sample of yogurt how the fermentation process went, and so on. Finally, yogurt and dairy products can be referred to a very specific class of vibrational modes. For example, Proteins in general yogurt is dominant in the \textit{amide bands} C=O stretch, and hence induce different vibration. Different information are encoded in different regions of the vibrational spectrum and scattering, for example, deuteration, which is useful for tracking lipids or exchangeable hydrogens (spectrum shift and contrast vs H sample), can be applied to extract reasonable information about lipids and chemical compositions (\cite{XUE2012858}), and so on. From such brief analysis, we can conclude that this is a particularly interesting avenue of research application. 
+
+For Raman spectroscopic classical and deep learning applications, we can refer to \cite{qi_recent_2023_progress,li_raman_2022,ren_raman_2023,poppe_deep_2024,deep_nodate-1as,fuentes_raman_2023,ibtehaz_ramannet_2023,gu_abstract_2024,moores2018bayesianmodellingquantificationraman,harkonen_bayesian_2020,han2018bayesianmodelingcomputationanalyte,chen2024acceleratingmolecularvibrationalspectra,Nair_2024,Brevi_2024,Liu_2023,Liu_2017,song_srs-net_2024} for numerous architectural applications throughout the time. Of such topic, utilizing deep learning mostly comes with CNN, Bayesian network, or the state-of-the-art PINNs. Tradeoffs are from ease of use, adaptability, maintenance, complexity, accuracy metric, computational costs, and more, but CNN is still the mainstream choice at-hand. Most of such application are non-structural, aside from PINNS, which still lead to potential difficulty in applying at-hand such method to complex analysis. Specifically, even for PINNs, the models are inherently very restricted (if not outright useless, \textit{for now}) unless it stays in the PDE configuration that it was designed to. \textbf{Discontinuous behaviours} are hard to approximated using PINNs, which sometimes fails. This is one of the main standpoint of differential system which is dynamic in parameters but not in structure. Other drawbacks simply point to the fact that it is \textbf{much more expensive, intensive} and less \textbf{interpretable} than usual, which does not help for some of the structural features that is required of the purpose. 
+
+\section{Avenue of research}
+
+Here, we propose a study of applying \textit{Raman spectroscopy} and \textit{Deep learning architectures}, with encoded \textit{physics knowledge design} for analysis, monitoring, and time-series state analysis of yogurt-based and dairy products. This research is based on observation of various possible previous works from \cite{CzajaBaranowskaMazurekSzostak2018,Karacaglar2019,Kolesov2021,ZhangEtAl2020_BayesYogurtRaman} and \cite{SilvaEtAl2021_RamanQualityDairy}. Details of application includes some very specific, basic-to-advanced application residing on how the data is extrapolated of the application platform. 
+
+\begin{enumerate}[topsep=1pt, itemsep = 2pt]
+  \item \textbf{Monitoring and extrapolation of data}: For yogurt, we can apply and try the usage of bare bone, sample-aware machine learning application to detect, analyse and identify properties and important monitoring parameters of a specified yogurt sample class. This can be done with timescale $t$ in range, for example, during best-use duration, or standard 6---8 months in different conditions. Practical application to this can include toxin identification and indication for time evolution of particular sample, quality fluctuation and surface dynamic of a sample feature. It can also be used for more advanced analysis of \textit{chemical penetration} and sample purity analysis, and hence good for non-destructive identification of chemicals in unsafe products of interest. This can couple with structural data to then identify what kind of condition, process are there that can produce such mixture. 
+  \item \textbf{Structural analysis} We can use optical properties of quantum system in complex molecular structure to examine and extract resourceful information about the environment, state of the yogurt and the underlying process, for example, protein degradation, compound breakdowns and takeover, and various other culture information. This can be used to examine and explore the fermentation process, different production process and end-result, to determine and extrapolate structural information about the system of yogurt formation (the chemical, environment, bacteria, protein, probiotics and else). 
+  \item \textbf{Time-series analysis}: Specifically on time-series application (of which we have mentioned previously), evolution and variation of sample overtimes, through various measures, environment, factors and else can help with determining which factor and effect potentially lead to adverse outcome, for example, spoiling during transportation, sanitary issues, molecular designs of preservatives, et cetera, food-related consumer issues (poisoning, diarrhea, etc) during dynamic situation (outside of lab situation). 
+\end{enumerate}
+
+Some more novel applications can be listed, such as devising new yogurt type or configuration, more correct specification and guideline for products, and so on. For machine learning application, we propose accordingly application thereof. 
+\begin{enumerate}[topsep=1pt, itemsep = 2pt]
+  \item \textbf{Regression analysis, PCA, CNN \& RamanNET, classifications}: We use different models, including regression and PCA models to extrapolate reasonable data, or using already available spectral dataset to encode spectrum-based patterns reproduction and interaction for usage in classification model for identifying and analysis of unique and characteristics components of the sample. \textit{RamanNET}, a variation of CNN, can also be used taking advantage of spectral data type. 
+  \item \textbf{Knowledge base/graph, neural network, and expert systems}: To encode sufficient and specific knowledge, we would like to also encode chemistry and physics knowledge bias to the system. This requires designing a knowledge graph system, such similar to how an expert system is formed. Furthermore, incorporation this to modern structure and application require general framework of neural network architectures, and so on, to facilitate such complex operational consideration. 
+  \item \textbf{Dual-simulation and Physics-informed NN} (PINN): A step-up of application in the above section, modifying and dual-comparing with existing simulation results and system, and also providing physics-aware neural network architectural design such as PINN provides a particularly large avenue of data and model-theoretic approach.
+\end{enumerate}
+
+Such application requires further inquiry and detailed specifications if this proposal comes to pass, for example, data availability, data processing work, data interpretation, computational resources, design implementation and blueprints, structural analysis of models, outcome and learning principles (reinforcement learning or more advanced learning method), and so on. There is also the question of cost, computational resources of requirement, time resource availability, and so on. With such, the layout of multiple application on the same framework, of specific target helps in branching out and providing several options for utilization. 
+
+\clearpage
+\appendix
+
+\section{Appendix - Normal market analysis of yogurt products}
+
+For reference purpose, we performed some market analysis of well-known, typical yogurt products and their archetype. This includes \cite{Nutifood_NutimilkEatable2022,Nutifood_NuviLivingFerment2022,Nutifood_NuviDrinkable2022,Vinamilk_LowSugarYogurt_OpenFoodFacts,Vinamilk_YogurtPlainMyNetDiary,Vinamilk_YogurtDrinkMixedFruits}. It is to be noted that more extensive and detail researches are required for such specific chemical and probiotic/bacteria culture and environment of certain types of yogurt, and also several more factors for analysis on law-abiding numerical values, available in databases of government agencies. 
+
+\begin{table}[htbp]
+  \centering
+   \footnotesize
+  \begin{threeparttable}
+  \caption{Representative yogurt products in Vietnam — prices, nutrition and starter/probiotic notes.
+    (Conversion used: 1 USD = 26,385 VND; prices and specs are illustrative snapshots from manufacturer/retailer listings.)}
+  \label{tab:yogurt-vn} 
+    \begin{longtable}{@{} Q T T T Q Q Q @{}}
+  \toprule
+  \textbf{Product} & \textbf{Pack} & \textbf{Price (VND)} & \textbf{Price (USD)} & \textbf{Nutrition (per 100 g)} & \textbf{Declared cultures / probiotics} & \textbf{Shelf life / notes / source} \\
+  \midrule
+  Vinamilk — spoonable yogurt (popular 4x100 g pack)
+    & 4 x 100 g
+    & 25,500
+    & \$0.97
+    & Protein $\approx$ 3.2 g; Fat $\approx$ 3 g
+    & ST; LB (standard yogurt starters; manufacturer marketing mentions "live cultures")
+    & Shelf life $\approx$ 45 days (store 2-8°C). Source: Vinamilk product pages / retailers. \\
+
+  Moc Chau — spoonable cup
+    & 100-120 g
+    & 12,000
+    & \$0.46
+    & Protein $\approx$ 3.0-3.6 g; Fat $\approx$ 2-4 g (variant-dependent)
+    & ST; LB; some variants list BB-12 or LA-5 (probiotic lines)
+    & Fresh-style lines: ~7-10 days; packaged lines commonly longer. Source: Moc Chau listings. \\
+
+  Nutifood (Nuvi) — drinkable probiotic yogurt
+    & ~180 mL bottle
+    & 10,000
+    & \$0.38
+    & Protein $\approx$ 2.5-4 g (drinkable formulations vary)
+    & ST; LB; marketed probiotic blends (manufacturer claims high CFU counts on some SKUs)
+    & Refrigerated shelf life: multiple weeks; check bottle label for exact date. Source: Nutifood product pages. \\
+
+  Dutch Lady — YoMost (drinkable)
+    & 170 mL bottle
+    & 7,500 (example per bottle from 4-pack)
+    & \$0.28
+    & Protein $\approx$ 2.5-3.5 g
+    & ST; LB (formulation varies by SKU)
+    & Refrigerated shelf life (weeks); check label and retailer. Source: Dutch Lady Vietnam. \\
+
+  Yakult (original small bottle)
+    & 65 mL bottle
+    & 8,000
+    & \$0.30
+    & Protein $\approx$ 1-1.5 g
+    & \textit{Lactobacillus casei} Shirota (probiotic)
+    & Typical shelf life ~30 days refrigerated; source: Yakult Vietnam / local listings. \\
+
+  TH True — spoonable yogurt (TH True Milk brand)
+    & 100 g cup
+    & 11,000
+    & \$0.42
+    & Protein $\approx$ 3 g (varies by product)
+    & ST; LB (some probiotic lines advertised)
+    & Shelf life typically 30-45 days for packaged lines; store chilled. Source: TH True product pages. \\
+
+  Moc Chau — wholesale carton (example)
+    & 48 x 100 g (carton)
+    & 294,000
+    & \$11.14
+    & (per 100 g similar to spoonable entries above)
+    & ST; LB; variant-dependent probiotic additives on some SKUs
+    & Example wholesale/retail carton snapshot — useful for bulk pricing estimates. \\
+
+  \bottomrule
+\end{longtable}
+  \end{threeparttable}
+\end{table}
+
+\section{Appendix - Cost of Raman Spectroscopy}
+
+While incomprehensive of facilities provided, we prompted to do an estimate on typical university or facilities Raman spectroscopic process, this is shown in the next table, of which we sort them into the price tag of the instrument itself, sample preparation costs, and so on. This is particularly important because we have to somehow account for computational cost and sample availability, especially for machine learning application. 
+
+\begin{table}[htbp]
+  \centering
+   \footnotesize
+  \begin{threeparttable}
+    \caption{Typical costs for Raman spectroscopy (purchase, per-use, and recurring expenses). All amounts shown in USD and are indicative ranges.}
+    \label{tab:raman-costs}
+    \begin{longtable}{@{} L P P P P @{}}
+      \toprule
+      \textbf{Category} & \textbf{Purchase / Range} & \textbf{Typical University Core (hourly)} & \textbf{Typical Commercial Per-sample / Service} & \textbf{Examples / Notes} \\
+      \midrule
+
+      Handheld / Portable Raman
+        & \$10,000 -- \$50,000
+        & N/A (often not hosted in cores)
+        & Screening service: \$50 -- \$250\textsuperscript{1}
+        & Examples: Thermo FirstDefender, Metrohm/B\&W Tek handhelds; good for field screening and ID \\
+
+      Benchtop (non-microscope)
+        & \$20,000 -- \$150,000
+        & \$30 -- \$120 / hr (instrument use)
+        & Routine ID: \$75 -- \$400; min. fees \$150 -- \$300
+        & Preconfigured 785\,nm systems often \$17k--\$45k; fiber-probe options add cost \\
+
+      Raman Microscope / Confocal
+        & \$150,000 -- \$500,000+
+        & \$60 -- \$200+ / hr (mapping/confocal rates higher)
+        & Mapping/confocal jobs: \$200 -- \$2,000+ depending on area \& depth
+        & High-performance mapping, multiple lasers, automated stages; objectives and stages add cost \\
+
+      Used / Refurbished
+        & \$10,000 -- \$70,000 (wide variance)
+        & Depends on the instrument and facility
+        & Per-job pricing comparable to benchtop or bespoke quotes
+        & Good value if specs match needs; check warranty / laser age \\
+
+      University Core: basic access
+        & (facility-owned; no purchase by user)
+        & \$20 -- \$150 / hr (internal vs external / mapping vs simple scans)
+        & Sample-prep fees often \$20 -- \$100 extra
+        & Many cores offer limited training; some include tech assistance in the rate \\
+
+      Commercial contract lab (single-sample)
+        & N/A
+        & N/A
+        & \$50 -- \$800 per sample (routine ID to in-depth mapping); common minimum \$150--\$300
+        & Turnaround, rush fees, and interpretation reports increase cost \\
+
+      Consumables
+        & \$100s per item annually
+        & Billed separately or included in facility fee
+        & Sample substrates, cuvettes, fiber probe tips billed per item
+        & Typical: objectives \$500--\$3,000; probes \$500--\$5,000; low-fluorescence slides/substrates cost extra \\
+
+      Service / Maintenance
+        & Service contracts: \$2,000 -- \$20,000 / yr (depends on system)
+        & Often covered by facility budget; may be charged to projects
+        & Per-incident repairs or laser replacement expensive
+        & Laser replacement or alignment services major cost drivers; annual calibration recommended \\
+
+      Accessories that increase cost
+        & Mapping stages, extra excitation lasers, cryostats, cooled detectors
+        & May be charged as separate-use or premium-hour rates
+        & Adds to per-sample analysis time and cost
+        & Each accessory can add \$5,000 -- \$100,000 depending on complexity \\
+
+      Training - Initial user training (1--3 hr typical)
+        & Tech assistance billed \$40 -- \$120 / hr if provided
+        & Consulting / interpretation: \$50 -- \$200 / hr
+        & Some cores include basic training; commercial labs bill for consulting
+        & \\
+
+      Sample preparation complexity
+        & Minimal (bulk solids): low cost; complex (bio, thin films, cross-sections): higher
+        & Prep time often billed separately
+        & Prep fees \$20 -- \$300+ depending on method
+        & Fluorescence mitigation, substrate cleaning, and safety (biohazard) add cost \\
+
+      Typical turnaround times
+        & Immediate (handheld) to weeks (special mapping)
+        & N/A
+        & Rush fees common (expedite)
+        & Mapping and depth profiling substantially increase total time and cost \\
+
+      Geographic / vendor variations
+        & Prices depend on country, vendor, reseller, and currency
+        & Facility rates and commercial quotes vary regionally
+        & Import/shipping/customs can add to cost
+        & Always request detailed quotes and service terms \\
+
+      \bottomrule
+    \end{longtable}
+
+    \begin{tablenotes}
+      \footnotesize
+      \item \textsuperscript{1} Screening price examples are illustrative; some service providers offer flat-rate screening under \$100 while specialized IDs may cost substantially more.
+      \item The ranges above are indicative, compiled from vendor brochures, university core rate pages, and commercial analytical-lab price lists. Actual prices change over time and vary with location and service level.
+      \item When budgeting, include: shipping for mailed samples, customs \& duties (if international), hazardous/biohazard handling fees, software license costs, and potential training or consulting fees.
+    \end{tablenotes}
+
+  \end{threeparttable}
+\end{table}
+
+\clearpage
+
+%Bibliography
+\bibliographystyle{plainnat}  % or abbrvnat, unsrtnat, etc.
+\bibliography{references}  
+
+\clearpage
+
+\end{document}
+
+
