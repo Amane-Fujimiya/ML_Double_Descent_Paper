@@ -554,13 +554,13 @@ For example, PAC-learning on ERM principle requires that, for some particular no
     \end{equation}
 \end{proposition}
 
-This bound works, under scrutiny assumption such that $c$ and $h$ effectively does not matter in such case, and only use the concentration inequalities on the estimated empirical error on loss function of a particular setting. This is by itself, not so rigorous, and not of the spirit of the PAC-learning boundary itself. The guarantee itself is, controversially, not even a good one. At least for our interest, it does not say anything about the algorithm, it does not say anything about the hypothesis internal mechanics (if the mechanistic model is exposed, like when the concept class is defined, usually, the hypothesis is supposed to work the same way, which is indeed, not the case). What we miss here, is a lot of those factors together. Nevertheless, the PAC-learning bound indicates a particular insight. We have to \textit{formalize} the instance/observational space; we will have to formalize, of it, the sample $m$, the dimension of the encoding $n$, the representation system used by $size(c)$, the concept, and indeed, of the structure of the hypothesis space $\mathcal{H}$ of which gives detail to the hypothesis itself. Such is to say, we need to somehow make the PAC-criteria to be \textit{structural-aware}, per meaning of the word. 
+This bound works, under scrutiny assumption such that $c$ and $h$ effectively does not matter in such case, and only use the concentration inequalities on the estimated empirical error on loss function of a particular setting. This is by itself, not so rigorous, and not of the spirit of the PAC-learning boundary itself. The guarantee itself is, controversially, not even a good one. At least for our interest, it does not say anything about the algorithm, or about the hypothesis internal mechanics (if the mechanistic model is exposed, like when the concept class is defined, usually, the hypothesis is supposed to work the same way, which is indeed, not the case). What we miss here, is a lot of those factors together. Nevertheless, the PAC-learning bound indicates a particular insight. We have to \textit{formalize} the instance/observational space; we will have to formalize, of it, the sample $m$, the dimension of the encoding $n$, the representation system used by $size(c)$, the concept, and indeed, of the structure of the hypothesis space $\mathcal{H}$ of which gives detail to the hypothesis itself. Such is to say, we need to somehow make the PAC-criteria to be \textit{structural-aware}, per meaning of the word. 
 
 For VC-theory and the concept of its dimension, its limit is again, well-known up to certain accordance. Classical VC-theory worked upon a fairly restricted, discrete framework of classification, usually binary classification (for SVM) for example, on \textit{shatterable concept space}. The more, fairly advanced version of \textit{fat-shattering} and multiclass-VC domain still fall short of the generality and more complex structure - in which case we mean the simpler the restriction on what the task is. Insights and ideas toward VC-theory is rather explicit of its own principle - fundamentally speaking, VC-theory conjure to the \textit{combinatorial VC-dimension} of all possible solvable system, up to certain data points, of certain class, except of special cases. Such is to say that one of the aspect that Vapnik-Chervonenkis theory focus on is one particular \textit{expressive complexity} of a specific model. This is also a problem that we have to solve. 
 
-Classical Rademacher is also very hard to justify of its use here. Classical Rademacher analysis typically refers to the application of \textit{Rademacher complexity}, a near-empirical theoretical definition of complexity class. One advantage that it poses, against VC and PAC-based structures, is that the ambiance space of Rademacher complexity is not restricted toward particular class of problem, like binary labelling of the other theoretical analysis. Nevertheless, Rademacher complexity is unstable (leading to its dilemma of having very few closed-form results) and computationally difficult. Its bounds are also of the same fate, lest to say some of the results proceeded of the Rademacher complexity are often refuted in empirical experiments. Furthermore, strong assumptions and restricted bound cases still hinders its usefulness. And best of all, it does not have anything reasonable analysis for complex structure other than the plain estimators. 
+Classical Rademacher is also very hard to justify of its use here. Classical Rademacher analysis typically refers to the application of \textit{Rademacher complexity}, a near-empirical theoretical definition of complexity class. One advantage that it poses, against VC and PAC-based structures, is that the ambiance space of Rademacher complexity is not restricted toward particular class of problem, like binary labelling of the other theoretical analysis. Nevertheless, Rademacher complexity is unstable (leading to its dilemma of having very few closed-form results) and computationally difficult. Its bounds are also of the same fate, lest to say some of the results proceeded of the Rademacher complexity are often refuted in empirical experiments. Furthermore, strong assumptions and restricted bound cases still hinders its usefulness. Moreover, it does not have anything reasonable analysis for complex structure other than the plain estimators, especially with structures that exhibit the supposed inductive bias. 
 
-Those critiques against classical analysis is not alone of us. Rather, there are indeed a lot of invoices on such matter toward new development of learning theory. Specifically so, \cite{zhang2017understandingdeeplearningrequires} inquired of the fact that bounds are often vacuous in terms of deriving for deep neural network. Of the same paper is also the opinion that expressivity is not generalization, which is, obviously true from our theoretical preliminary. \cite{truong2025rademachercomplexitybasedgeneralizationbounds} discussed the instability and hard computation of the Rademacher bound, also of threshold behaviours. On the core topic of generalization (which a lot of people pursue for obvious reason), \cite{nagarajan2021uniformconvergenceunableexplain} argued against the current uniform convergence theory that seemingly fail to garner an understanding of such behaviour, and so is \cite{tunali2019empirical}. Solutions exist, yes, but either in the form of partial solution and variation of classical theory, like PAC-Bayes, some way of experimenting, like \textit{stability-based analysis}, \textit{margin/norm measures} or localized Rademacher complexity \cite{bartlett2005local,bartlett2017spectrally,bousquet2002stability,neyshabur2015norm}, yet they are still as we said, \textit{partial of its form}, and no solution has emerged, yet. We would likely want ourselves to not follow the same path again. 
+Those critiques against classical analysis is not alone of us. Rather, there are indeed a lot of invoices on such matter toward new development of learning theory. Specifically so, \cite{zhang2017understandingdeeplearningrequires} inquired of the fact that bounds are often vacuous in terms of deriving for deep neural network. Of the same paper is also the opinion that expressivity is not generalization, which is, obviously true from our theoretical preliminary. \cite{truong2025rademachercomplexitybasedgeneralizationbounds} discussed the instability and hard computation of the Rademacher bound, also of threshold behaviours. On the core topic of generalization (which a lot of people pursue for obvious reason), \cite{nagarajan2021uniformconvergenceunableexplain} argued against the current uniform convergence theory that seemingly fail to garner an understanding of such behaviour, and so is \cite{tunali2019empirical}. Solutions exist, yes, but either in the form of partial solution and variation of classical theory, like PAC-Bayes, some way of experimenting, like \textit{stability-based analysis}, \textit{margin/norm measures} or localized Rademacher complexity, as seen in \cite{bartlett2005local,bartlett2017spectrally,bousquet2002stability,neyshabur2015norm}. Nevertheless, they are still \textit{partial solutions}, and no full solution has emerged, yet. We would likely want ourselves to not follow the same path again. 
 
 \subsection{Complexity notions}
 Even though such can be said of the pitfall of current practices, it is still not the end of the road, or at least of the principle in which we apply to our empirical study - to force double descent out. Which is rather harder than what it looks like. We might as well attempt to analyse double descent in terms of classical, non-novel theory first, before jumping straight into conclusion without personal observations. First, the issue of bias-variance and double descent is related to multiple factors, but specifically between the notion of bias-variance and complexity-accuracy. However, their definition and usage in certain contexts are obscured, thus would require a fairly thorough consideration. Most of these results contains of bounds and often discussion of random processes, and also restricted itself to mathematically well-defined setting. For now, we would like to investigate their notions and applications. Though for starter, we have to discuss the following preliminary. The hypothesis class $\mathcal{H}$ has two types of classification: either infinite hypothesis class $\mathcal{H}^{\infty}$ or finite hypothesis class $\mathcal{H}^{n}$. Based on the details of the expression of representation strings (\cite{10.5555/200548}), an infinite hypothesis class contains infinitely many specifiers of the hypothesis structure. Note that this does not correlate to an increase in parameter, as we will see with the case of axis-aligned rectangle - for only four parameters $(l_{1},l_{2},h_{1},h_2)$ we can specify all axis-aligned rectangles with their value taken from the field $\mathbb{F}=\mathbb{R}$. Finite hypothesis class is then can be understood of the number of configuration, or in discrete form combinatorial pairs that can be presented of the hypothesis class, for example, a string of all $n$-length binary numbers $\{x_{1},\dots,x_{n}\}, x_{i}\in \{0,1\}$. A subtlety that would then have to discover, is the increment in size of the hypothesis to accommodate either finite or infinite number of specifying parameters - one example can be sampled from is the class of all support vector machine (SVM, \cite{Vapnik1999-VAPTNO}), which for now we treat it as it is. The concept class can then also be treated similarly. Here, we assume a setting where unless specified, we have knowledge of the concept class structures, but not the hypothesis. 
@@ -633,6 +633,8 @@ The next complexity measures that can be taken of, comes from the learning proce
 The learning process assumes an operational space containing the structure, for example, $\mathbb{R}$-encoding space of real values, and a set of \textbf{samples} living in such space, denoted $\mathcal{S}$. Those samples are often referred to as the \textbf{observation set} of a particular objective of learning. As mentioned above, $\mathcal{S}$ belongs to the concept $c$, assumed to be of certain concept class $\mathcal{C}$. $\mathcal{S}$ is obtained by using an observing process to create or generate the result. This process can be determined or considered in multiple way, however, generally can be considered by having a deterministic interpretation (using an explicit function $c(x)$) or by probabilistic approach (modelling a distribution $\mathcal{D}$). Hence, we gain another type of complexity, with regard to the process called \textbf{sample complexity} - usually defined of cardinality - the amount of sample needed for particular purpose, for particular objective. For the complexity category up to the structure of the learning setting by itself, we call it the \textbf{sample space complexity}. 
 
 One final complexity that is worth mentioning is then the \textbf{optimization complexity}, measure on the action of the learning algorithm. By such, it investigates the construction of an optimization algorithm solely dependent on its size of the algorithm, and other non-process related measures. Optimization complexity can also be related or expressed, in situation of time complexity, which is typical in computing system. 
+
+One might ask why we need to determine and categorize complexity measures and the need to generalize and differentiate of each one. Indeed, while in usual use cases, such complexity notion can be considered sufficient in controlling and gauging the model itself. However, just as \cite{James2021} indicated in the section on deep learning double descent, such complexity might eventually, of some regions, inadequate to express and evaluate the complexity of the model in its operations anymore. Such transition is unanswered, and while the founding of complexity notion is still fragmented, it is indeed difficult to not paying attention specifically to those notions themselves. 
 
 \subsubsection{Representation complexity}
 
@@ -725,7 +727,7 @@ PAC-learning procedure gives, by assumption of a \textbf{consistent learner}, tw
 A consistent hypothesis is the hypothesis that is consistent with all the training data provided to it from the concept $c$. The two bounds then contain the debate between consistent hypothesis (i.e., for example, admitting no error on training data, almost perfect - maybe even so), and inconsistent hypothesis, of which have general defects from the actual concept, or even different by a margin. This equates to observational noise $\sigma$, typically used in simulation of noisy feature and spread, and also for randomization. Inconsistent then means the further this particular noise is increase, the higher the lower bound of the error can be for any particular measure, in comparison to the true concept $c$ in consistent case. 
 
 PAC-learning famously leaves two results on the learning bound of the learning setup. 
-\begin{theorem}[Learning bound - finite $\mathcal{H}$, consistent case]
+\begin{theorem}[Learning bound - finite $\mathcal{H}$, consistent case]\label{thm:PAC_consistent}
     Let $H$ be a finite set of functions mapping from $\mathcal{X}\to \mathcal{Y}$. Let $\mathcal{A}$ be an algorithm that for any target concept $c\in H$ and i.i.d. samples $S$ returns a consistent hypothesis $H_{S}$, such that $\hat{R}(h_{S}) = 0$. Then for any  $\epsilon,\delta>0$, the inequality $\mathrm{Pr}_{S\sim D^{m}}[R(h_{S})\leq \epsilon]\geq 1-\delta$ holds if $$m\geq \frac{1}{\epsilon}\left( \log{\lvert H \rvert }+\log{\frac{1}{\delta}} \right)$$
 This sample complexity result admits the following equivalent statement as a generation bound: for any $\epsilon,\delta>0$, with probability at least $1-\delta$, 
 
@@ -734,8 +736,14 @@ This sample complexity result admits the following equivalent statement as a gen
 \end{equation}
 \end{theorem}
 \begin{proof}
-    See \cite{10.5555/2371238}.
+    See \cite{10.5555/2371238} for the original proof.
 \end{proof}
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\textwidth]{pdf/PAC_consistent.pdf}
+    \caption{The learning bound, both generalization bound $R(h_{S})$ and the sample complexity bound $m$, from theorem~\ref{thm:PAC_consistent}}
+\end{figure}
 
 \begin{theorem}[Learning bound - finite $\mathcal{H}$, inconsistent case]\label{thm:theorem_inconsistent}
     Let $\mathcal{H}$ be a finite hypothesis set. Then, for any $\delta > 0$, with probability at least $1-\delta$, the following inequality holds: 
@@ -747,7 +755,50 @@ This sample complexity result admits the following equivalent statement as a gen
     Appendix section.
 \end{proof}
 
-For a looser bound, we can ultimately use an $\epsilon$-consistent learner criteria in such case. PAC-learning setting raises some peculiar insight toward the problem itself. 
+
+For a looser bound, we can ultimately use an $\epsilon$-consistent learner criteria in such case. PAC-learning setting raises some peculiar insight toward the problem itself. First, is the learning bound itself of which raises the importance of several factors --- the dataset size, $m$, of which is used as the \textbf{total resources required} for approximating such function. Furthermore, the set complexity $\mathcal{H}$ is also used, albeit questionably inconsistent in the term $\log{|\mathcal{H}|}$, which implies at least consideration on the cardinality of the hypothesis class. In a finite domain, we notice that PAC-learning of consistent case is exactly the case of interpolation, assuming non-smooth and noisy data, and the inconsistent case describe the wider range of approximation-based case, but does not consider an approximation-aware bound. The design of $|\mathcal{H}|$ also does not allow for certain exact hypothesis class size measurement, except for combinatorial case where $\mathcal{H}$ is indeed finite. Nevertheless, the bound indeed indicates that for $m$ increase, the hypothesis class often do much better in general. 
+
+\subsection{VC-theory}
+
+
+
+\clearpage
+
+\subsection{Hypothesis}
+
+In learning and researching of the progress and treatment of double descent, several hypotheses, most of the time observations and insights such, is formed. Hence, there are several hypotheses for what to look out for, as well as the formulation needed to interpret certain phenomena and observations. This ranges from topics of re-evaluating the statistical learning theory, estimation and refactor of assumptions (or \textit{inductive bias} when designing models), to different interpretations and representations that can better explain, model, or gives certain insights.  
+\subsubsection{Stability of bias-variance measure}
+Stability of bias-variance measure is questionable, as it is in literature (\cite{domingos_unifeid_2000}), loosely defined by defining a 3-dimensional vector $\lambda=(\lambda_{1},\lambda_{2},\lambda_{3})$ for such: 
+\noindent 
+\begin{equation*}
+        \begin{split}
+            \mathbb{E}_{\mathcal{D}} \left[d((f,\mathbb{E}[y\mid x])\right] & = \lambda_{1} \mathrm{Bias}(f,y) + \lambda_{2}\mathrm{Var}(f,y)+ \lambda_{3}\epsilon(\mathcal{D})\\ 
+            & = \lambda_{1}\underbrace{\left\{ \mathbb{E}_{\mathcal{D}}[f(x;\mathcal{D})] , \mathbb{E}[y\mid x] \right\}}_{\text{bias term}} +\lambda_{2} \underbrace{\mathbb{E}_{\mathcal{D}} \left\{(f(x;\mathcal{D}), \mathbb{E}_{\mathcal{D}}[f(x;\mathcal{D})])\right\}}_{\text{variance term}} +\underbrace{\lambda_{3}\epsilon}_{\text{irreducible error}}
+        \end{split}
+\end{equation*}
+where $\epsilon(\mathcal{D})$ is the irreducible error of the system, depends (theoretically) on the intrinsic imperfection of the dataset $\mathcal{D}$. Assessment on stability of such decomposition is recommended. 
+\subsubsection{Alternative measures}
+We believe that the bias-variance decomposition is a poor estimation and measure for controlling, validating and choosing model from, at least from the perspective of analysing missing details. Specifically, bias and variance term, as well as their supposed expression of decomposition in the standard loss measure of model effectiveness is not representative, nor expressive of the actual, underlying notion of \textit{model complexity} $C(f)$ and its effectiveness. Furthermore, bias-variance decomposition is not straight-forward of others type of loss functions, except only for some classes of loss function (loss on Bregman divergences and exponential class). This sentiment is shared in \cite{brown2024biasvariance}.
+
+\subsubsection{Inductive bias}
+Inductive bias obviously plays a role, as mentioned by some literature \footnote{Most notably, \cite{lafon_understanding_2024}, of which raised particular point about the need of learning with inductive bias as a structural presumption. Additionally, the paper also includes an analysis on the inductive bias of gradient descent, though solutions and particular application on double descent explanation is doubtful.}, though we don't know exactly how the inductive bias can be formed to play any role in the central dynamic of the model operating process. Certain assumption, for example, the \textit{convexity of the loss function} might actually affect the model as it is, and introduce unwanted patterns in the following process. 
+\subsubsection{Randomness and probabilistic setting}
+Random initialization of parameters, as well as the initial conditions of the model initialization process might also be taken into account. Obviously, this is not a new insight, and is rather a very old one, however, this approach still has varied potential for interpreting double descent. Scaling up/down this effect might result in new insight, as well as inspecting the uncertainty and diffusion patterns in large-scale model deployment, in which from an end-to-end perspective requires several space transformation operations in successions.
+\subsubsection{Knowledge masking}
+The very ambiguous idea or treatment of statistical learning, as well as machine learning, is the idea of masked. Or, paraphrased, \textit{hidden information} regarding the underlying process of estimation. Specifically, for example, we tend to assume things to not be able to grasp - either the probability $p_{X}(c)$ of the concept class, the distribution $\mathcal{D}$ specified to such input distribution, or the concept class $\mathcal{C}$, Markov properties, etc. We would like to formalize this notion as soon and as such in the most direct way, as it is one source of the many assumptions that we have in concession of theoretical results. 
+\subsubsection{Intrinsic Data Factors}
+
+The effect that data has on the model should also be taken into account, as of fact. As far as we are concerned of, the shape, practical system that the dataset gives the setting, the factors running into the dataset, the choice of the dataset being sampled, selected in partitions, and other factors must also be analysed. Without such, we leave `gaps' in which sensitive, potentially chaotic behaviours might occur frequently and would not be identified, or being classified into irreducible errors, static of the learning setting. As such, we might as well list a few potential points of interest. 
+\begin{enumerate}[itemsep=1pt,topsep=0.5pt]
+  \item \textbf{Data distribution}: the distribution of the dataset itself affects how the concept is represented in the space. If the representation space created by using the data is large, but sparse, then the condition would make for some behaviours to occur more easily. This is one degree of freedom of the system setting. If the dataset spread is low, yet the data is very volatile, then it will lead to inconclusive picture of the actual concept, hence introducing new behaviours on the now unknown region of the distribution. As such, the majority of those unknown spaces will treat every point there as a potential outlier instead. 
+  \item \textbf{Data complexity}: The complexity of the data itself is of interest. In a controlled setting of response-inducing evaluation, identifying behaviours of the model with a glimpse on the data complexity - how the actual data works with the internal mechanics accompanied - is of specific interest, as it can affect some of the majorative effects and chaotic behaviours that occur in the learning process, especially stochastic process and probabilistic optimization patterns. 
+  \item \textbf{Data partitions}: The partitioning of data in the previously mentioned sample partitioning section might give rise to previously observed behaviours, as well as explaining particular volatility when changing the test partitioning set. The ordering of the dataset also helps in such regard. 
+\end{enumerate}
+It is also worth to note that since we emphasize the use of dataset partitioning to replicate the empirical-generalization guarantee, it is also then indicative that such partitioning would have its separate way of calculating test error on itself. 
+
+Intuitively, it can be illustrated as followed. Suppose of given two datasets $\mathcal{S}_{1},\mathcal{S}_{2}$, we can trace a pattern, if, for assumption, the partition is $k=10$. If the algorithm $\mathcal{A}$ attempt empirical learning optimization specifically, and best optimize on individual partition $\mathcal{S}_{1}^{(i)}$, then the path toward each and individual partition would potentially be very volatile, depends heavily on the partition randomization, and others factor leading to such. If the algorithm is justified in that sense, to `decelerate' the optimization to a not so tight fit, the generalization would be much better. This is also the reasoning for the technique of \textbf{regularization}, and generalization task. However, again, such procedure cannot help but having volatile dataset itself as a factor of uncertainty. More specifically, the result might work for $\mathcal{S}_{1}$, but for another dataset $\mathcal{S}_{2}$, assuming no intersection, that is, $\mathcal{S}_{1}\cap \mathcal{S}_{2}=\varnothing$, then optimization based on one dataset would not be optimal in another, more so can be counterproductive. This is also used of the reasoning for \textbf{cross-validation} technique, of which aims to stabilize the partitioning. However, analytical analysis suggests a wider role of such, in the wider setting of learning theory, particularly in double descent later on. 
+
+\clearpage
 
 \section{Analysis}
 
@@ -816,7 +867,8 @@ where $\hat w_{j}$ is chosen such that it is equal $0$ for $j \notin S$, otherwi
     \label{fig:theorem_double_descent_fig2}
 \end{figure}
 
-If, however, we turn our attention to the statement itself, of which refers to the prediction error $\mathrm{MSE}_{\mathrm{pred}}$\footnote{The standard formulation in question is \begin{equation}
+If, however, we turn our attention to the statement itself, of which refers to the prediction error $\mathrm{MSE}_{\mathrm{pred}}$, defined by the equation
+\begin{equation}
 \mathrm{MSE}_{\mathrm{pred}}
 =
 \frac{1}{n}
@@ -829,7 +881,8 @@ If, however, we turn our attention to the statement itself, of which refers to t
 \left(
   y^{(i)} - x_{p}^{(i)\,T}\,\hat\beta
 \right)^{2}
-\end{equation}} on $h$ and $c$ accordingly, a strong case of this happens to be not following the pattern indicted by the theorem. Rather than being the interpolation point of return, $p=n$ is now the convergence point of the prediction error instead. Test result is shown in Figure~\ref{fig:theorem_double_descent_fig3}.
+\end{equation}
+on $h$ and $c$ accordingly, a strong case of this happens to be not following the pattern indicted by the theorem. Rather than being the interpolation point of return, $p=n$ is now the convergence point of the prediction error instead. Test result is shown in Figure~\ref{fig:theorem_double_descent_fig3}.
 
 \begin{figure}[H]
     \centering
@@ -847,6 +900,33 @@ Thence, the theorem gives us two things - the interpolation point, in this setti
 \subsection{Linear function class extension}
 
 The current theory prompted for a more general treatment of the linear function class, as in-line with exploring reasonable existing alternatives in interpretation (\cite{nakkiran2019datahurtlinearregression}).
+
+Let us states some hypothesis about the previous experimental cases. First, is the lack of the begin-tail of the prediction on double descent of linear random cutoff features model. This can be explained informally as to be resulted from the uniformity of the operating space. Specifically, all parameters of the $\mathbb{R}^{n}$ parameter space, with respect to the dual space on such $f:\mathbb{R}^{n}\to\mathbb{R}$ projection is defined, are of the same order of magnitude. That is, for $f_{i,k}(x),f_{j,k}(x)$ of arbitrary parameter indexing on the set $k$ of shared parameter choice, and $i\neq j$ being the distinct choice, then we say $f_{i,k}(x)=\mathcal{O}(f_{j,k}(x))$ of the growth of both function on value ranges. Approximately speaking, the choice of parameter does not dramatically growth to a point of no return, like in later examples of polynomial approximation model. Such special model of multi-variable linear projection of scalar output also reinforces the numeric growth of the numerical encoding expression on the hypothesis model. The behaviour of the MSE-on-parameter, the internal risk, is also explainable using the same notion, such is that for a black-box case approximation, such linear model does not allow for average parameter deviation per approximation to be oversaturated and skewed (for example, the degree of polynomial directly counteract this, by separating expressive complexity by growth degree). How such hypothesis can be evaluated, we will have to make it for the general extension experiment, which we will have to conduct. 
+
+Let us define the more general class of linear model, denoted $\mathcal{H}_{L}$, in the following structure of the linear model. We also note that the previous linear class $\mathcal{H}_{p}$ only solves for the problem of underparameterized, hidden parameters $p'$.
+
+\begin{definition}[General linear model]
+    Let us define, for $p\in\llbracket1,d\rrbracket$, $\mathcal{H}_{L}$ is the set of functions $h:\mathbb{R}^{d+1}\times R^{q}\to\mathbb{R}^{q}$ of the form: 
+    \begin{equation}
+        h(\mathbf{u}_{1},\mathbf{u}_{2},\dots,\mathbf{u}_{k}) =  \begin{cases}
+            [f_{j}(\mathbf{u}_{1},\mathbf{u}_{2},\dots,\mathbf{u}_{k})]^{\top}\mathbf{w}+b\\
+            [(u_{1}u_{2}\dots u_{n})_{j}]^{\top}\mathbf{w} +b & q=1, f_{j}(\{u_{i}\}) = u_{1}\times\dots\times u_{n}\\
+            [(u_{1}\odot u_{2}\odot\dots \odot  u_{n})_{j}]^{\top}\mathbf{w} +b & q > 1, f_{j}(\{u_{i}\}) = \mathbf{u}_{1}\odot\dots\odot \mathbf{u}_{n}
+        \end{cases}
+    \end{equation}
+    where $\odot$ is the Hadamard product, and $w\in \mathbb{R}^{d}$ the weight matrix. A subset $\mathcal{H}_{L,p}$ then consists of all set of functions $h$ with $w\in \mathbb{R}^{d}$ having exactly $p$ non-zero elements. 
+\end{definition}
+
+Preliminary model learning then will relies on theorem~\ref{thm:double_descent_lr} for its initial prediction, using least square approximation results. The testing is adversarial and consistent, of which we have $c\in \mathcal{H}_{L}$ and $h\in \mathcal{H}_{l,p}$ for $p=d$, which can then further be modified. Because of their equal expressive capacity, respect to independent consideration of the parameter space $\mathbf{X}$, we define the complexity, which will be used later on, simply as \begin{equation}
+    \mathbb{C}(h) = \frac{1}{||\overline{\mathbf{x}}-\underline{\mathbf{x}}||}\left[1+p + q + \underset{i\in S}{\mathbb{E}} (w_{i}x_{i})+b\right],\quad S = \{p_{i}\}
+\end{equation}
+Functional prediction on the classical theorem is presented below, for $n=\{1,\dots,241\}$ samples, and with $p\in[1,200]$. We set the target degree to the maximal 200, since the theorem is not defined on the overparameterized region. 
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{pdf/linear_gen.pdf}
+    \caption{Extension general experimentation, using the prediction made of theorem~\ref{thm:double_descent_lr} for verification.}
+\end{figure}
 
 \clearpage
 
@@ -1036,7 +1116,24 @@ A modification is then available.
         f_{\Theta}(x) = \sum_{i=1}^{d} \theta_i \left( \mathbf{w}^\top x \right)^i + b, \quad \Theta = (\{\theta_{i}\},\{w_{k}\},b)
     \end{equation}
 \end{definition}
-We then can state the model within a testing scenario listed as such, to fully capture the structural foundation of the related testing model class. 
+We then can state the model within a testing scenario listed as such, to fully capture the structural foundation of the related testing model class. For the notion of complexity, naively, we employ two kinds of complexity measure. First is the usual complexity measure via parameter counts. Second, is the expressive complexity on the basis of the linear transformation space. That is, an expressive complexity that take into account the fact that $\mathcal{O}(wx^{n})$ will always be stronger than $\mathcal{O}(wx^{n-1})$ for $x>1$. We have the following definition of such complexity in simple term. 
+
+\begin{definition}[Polynomial expressive complexity]
+    For $x>1$ or $\mathbf{x}_{i}>1$ of $\mathbf{x}\in\mathbb{R}^{n}$ as input. Denote the polynomial class as $\mathcal{P}_{n}$ of their highest degree $n$, then we define the total expressive complexity of $p\in \mathcal{P}_{n}$ as followed.
+    \begin{equation}
+\mathbb{C}_{E}(p)
+= \mathbb{E}\!\left[
+\|\alpha\|_{d} + 1
++ \frac{\sum_{i\in S\setminus\{p_{n}\}} w_i\,i}{\|p\|-p_{n}}
++ \frac{1}{||\overline{x}-\underline{x}||}\!\left(
+\frac{\sum_{i\in S} i}{\|p\|} + w_{n}n
+\right)
+\right],
+\end{equation}
+    where $S=\{p_{j}\}$, $||p||$ denotes the amount of different degree separable terms and $||x_{max}-x_{min}||$ is the observable range of the dataset. 
+\end{definition}
+The first term is the normalized linear parameters $\theta_{i}$ fixing and controlling the shift of the polynomial inning parameter, the second term is the sum of weight-aware complexity with degree factor, and the degree factor over operating range $||x_{max}-x_{min}||$ of the dataset, for the degree complexity. The final term is the last weight-aware complexity for the dominating degree $n$ of the polynomial function. 
+
 
 \subsubsection{Testing result}
 The testing scenario will be as followed. The following set of parameters are required for controlling the testing case, aside from different system measures. 
@@ -1127,47 +1224,16 @@ for any particular final categorization. One of the major problem for analysing 
 From such observation, it would seem imperative that the notion of complexity based solely on the parameter counts of certain model construction is ill-equipped for certain flavours of machine learning model, in this case support vector machine (in the same type is the Gaussian Mixture Model). No double descent has been observed by empirical reports record per the author's knowledge. 
 
 
-\clearpage
-
-\subsection{Hypothesis}
-
-In learning and researching of the progress and treatment of double descent, several hypotheses, most of the time observations and insights such, is formed. Hence, there are several hypotheses for what to look out for, as well as the formulation needed to interpret certain phenomena and observations. This ranges from topics of re-evaluating the statistical learning theory, estimation and refactor of assumptions (or \textit{inductive bias} when designing models), to different interpretations and representations that can better explain, model, or gives certain insights.  
-\subsubsection{Stability of bias-variance measure}
-Stability of bias-variance measure is questionable, as it is in literature (\cite{domingos_unifeid_2000}), loosely defined by defining a 3-dimensional vector $\lambda=(\lambda_{1},\lambda_{2},\lambda_{3})$ for such: 
-\noindent 
-\begin{equation*}
-        \begin{split}
-            \mathbb{E}_{\mathcal{D}} \left[d((f,\mathbb{E}[y\mid x])\right] & = \lambda_{1} \mathrm{Bias}(f,y) + \lambda_{2}\mathrm{Var}(f,y)+ \lambda_{3}\epsilon(\mathcal{D})\\ 
-            & = \lambda_{1}\underbrace{\left\{ \mathbb{E}_{\mathcal{D}}[f(x;\mathcal{D})] , \mathbb{E}[y\mid x] \right\}}_{\text{bias term}} +\lambda_{2} \underbrace{\mathbb{E}_{\mathcal{D}} \left\{(f(x;\mathcal{D}), \mathbb{E}_{\mathcal{D}}[f(x;\mathcal{D})])\right\}}_{\text{variance term}} +\underbrace{\lambda_{3}\epsilon}_{\text{irreducible error}}
-        \end{split}
-\end{equation*}
-where $\epsilon(\mathcal{D})$ is the irreducible error of the system, depends (theoretically) on the intrinsic imperfection of the dataset $\mathcal{D}$. Assessment on stability of such decomposition is recommended. 
-\subsubsection{Alternative measures}
-We believe that the bias-variance decomposition is a poor estimation and measure for controlling, validating and choosing model from, at least from the perspective of analysing missing details. Specifically, bias and variance term, as well as their supposed expression of decomposition in the standard loss measure of model effectiveness is not representative, nor expressive of the actual, underlying notion of \textit{model complexity} $C(f)$ and its effectiveness. Furthermore, bias-variance decomposition is not straight-forward of others type of loss functions, except only for some classes of loss function (loss on Bregman divergences and exponential class). This sentiment is shared in \cite{brown2024biasvariance}.
-
-\subsubsection{Inductive bias}
-Inductive bias obviously plays a role, as mentioned by some literature \footnote{Most notably, \cite{lafon_understanding_2024}, of which raised particular point about the need of learning with inductive bias as a structural presumption. Additionally, the paper also includes an analysis on the inductive bias of gradient descent, though solutions and particular application on double descent explanation is doubtful.}, though we don't know exactly how the inductive bias can be formed to play any role in the central dynamic of the model operating process. Certain assumption, for example, the \textit{convexity of the loss function} might actually affect the model as it is, and introduce unwanted patterns in the following process. 
-\subsubsection{Randomness and probabilistic setting}
-Random initialization of parameters, as well as the initial conditions of the model initialization process might also be taken into account. Obviously, this is not a new insight, and is rather a very old one, however, this approach still has varied potential for interpreting double descent. Scaling up/down this effect might result in new insight, as well as inspecting the uncertainty and diffusion patterns in large-scale model deployment, in which from an end-to-end perspective requires several space transformation operations in successions.
-\subsubsection{Knowledge masking}
-The very ambiguous idea or treatment of statistical learning, as well as machine learning, is the idea of masked. Or, paraphrased, \textit{hidden information} regarding the underlying process of estimation. Specifically, for example, we tend to assume things to not be able to grasp - either the probability $p_{X}(c)$ of the concept class, the distribution $\mathcal{D}$ specified to such input distribution, or the concept class $\mathcal{C}$, Markov properties, etc. We would like to formalize this notion as soon and as such in the most direct way, as it is one source of the many assumptions that we have in concession of theoretical results. 
-\subsubsection{Intrinsic Data Factors}
-
-The effect that data has on the model should also be taken into account, as of fact. As far as we are concerned of, the shape, practical system that the dataset gives the setting, the factors running into the dataset, the choice of the dataset being sampled, selected in partitions, and other factors must also be analysed. Without such, we leave `gaps' in which sensitive, potentially chaotic behaviours might occur frequently and would not be identified, or being classified into irreducible errors, static of the learning setting. As such, we might as well list a few potential points of interest. 
-\begin{enumerate}[itemsep=1pt,topsep=0.5pt]
-  \item \textbf{Data distribution}: the distribution of the dataset itself affects how the concept is represented in the space. If the representation space created by using the data is large, but sparse, then the condition would make for some behaviours to occur more easily. This is one degree of freedom of the system setting. If the dataset spread is low, yet the data is very volatile, then it will lead to inconclusive picture of the actual concept, hence introducing new behaviours on the now unknown region of the distribution. As such, the majority of those unknown spaces will treat every point there as a potential outlier instead. 
-  \item \textbf{Data complexity}: The complexity of the data itself is of interest. In a controlled setting of response-inducing evaluation, identifying behaviours of the model with a glimpse on the data complexity - how the actual data works with the internal mechanics accompanied - is of specific interest, as it can affect some of the majorative effects and chaotic behaviours that occur in the learning process, especially stochastic process and probabilistic optimization patterns. 
-  \item \textbf{Data partitions}: The partitioning of data in the previously mentioned sample partitioning section might give rise to previously observed behaviours, as well as explaining particular volatility when changing the test partitioning set. The ordering of the dataset also helps in such regard. 
-\end{enumerate}
-It is also worth to note that since we emphasize the use of dataset partitioning to replicate the empirical-generalization guarantee, it is also then indicative that such partitioning would have its separate way of calculating test error on itself. 
-
-Intuitively, it can be illustrated as followed. Suppose of given two datasets $\mathcal{S}_{1},\mathcal{S}_{2}$, we can trace a pattern, if, for assumption, the partition is $k=10$. If the algorithm $\mathcal{A}$ attempt empirical learning optimization specifically, and best optimize on individual partition $\mathcal{S}_{1}^{(i)}$, then the path toward each and individual partition would potentially be very volatile, depends heavily on the partition randomization, and others factor leading to such. If the algorithm is justified in that sense, to `decelerate' the optimization to a not so tight fit, the generalization would be much better. This is also the reasoning for the technique of \textbf{regularization}, and generalization task. However, again, such procedure cannot help but having volatile dataset itself as a factor of uncertainty. More specifically, the result might work for $\mathcal{S}_{1}$, but for another dataset $\mathcal{S}_{2}$, assuming no intersection, that is, $\mathcal{S}_{1}\cap \mathcal{S}_{2}=\varnothing$, then optimization based on one dataset would not be optimal in another, more so can be counterproductive. This is also used of the reasoning for \textbf{cross-validation} technique, of which aims to stabilize the partitioning. However, analytical analysis suggests a wider role of such, in the wider setting of learning theory, particularly in double descent later on. 
 
 \clearpage
 
 \section{Axiomatic formalization}
 
 Concurrent theories are inherently unstable and with many variations, making them ill-suited for instant application on analysis of different models without losing major information about the structural details and expressions. Hence, we propose a novel analysis on the basis of the axiomatization of the learning setting, under various structural assumptions. 
+
+\subsection{Learning theory formalism}
+
+
 
 \subsection{Neural network formalism}
 Previously, we have been discovering, examining past results and testing on models of different types, generally classical models. While decisive, each modelling setting requires different analysis and is often not so streamline. Hence, we propose a general analysis on the structure of a feed-forward style neural network architecture, as usual, for further analysis and identification. 
@@ -1214,7 +1280,7 @@ for a neural network of shape $(3,[n,n,1])$, and of polynomial custom scaling fu
 
 Those three fundamental conversions to neural network raise interesting insight into the neural network formalism. For linear and polynomial shallow neural network, we design the network and then provide it with a training scenario, evaluated of the proxy generalization. SVm however can be considered an adaptive data construction, where the neural network is constructed from the dataset or observation set itself, using minimization on RKHS and with constraints. This prompts exactly as such, on one side the pre-optimization construction, and one is the post-construction optimization of a neural network architecture. This interpretation is surprisingly useful when talking about neural network's unit-like structure. Hence, from such evidence prompts us to analyse a neural network, not in only the sense of managing its layers, but also by its unit components together. 
 
-This way of analysing unit-wise gives us much more interpretability, and also potential for a newer kind of network specification. As far as we are concerned of, a neural network can represent an active \textit{mathematical modelling system}. This then indicates, for example in adversarial learning case between the target neural network tailored to specific concept, and the learning hypothesis network, then the process of learning itself can be loosely interpreted as a concept of mathematical modelling representation learning, even in the case of black-box model, and not just simply phenomenological modelling of statistical data. 
+This way of analysing unit-wise gives us much more interpretability, and also potential for a newer kind of network specification. As far as we are concerned of, a neural network can represent an active \textit{mathematical modelling system}. This then indicates, for example in adversarial learning case between the target neural network tailored to specific concept, and the learning hypothesis network, then the process of learning itself can be loosely interpreted as a concept of mathematical modelling representation learning, even in the case of black-box model, and not just simply phenomenological modelling of statistical data. To do this, we will examine the structure from the perspective of a \textbf{generator}.
 
 
 

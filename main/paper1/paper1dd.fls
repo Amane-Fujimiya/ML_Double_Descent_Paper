@@ -661,6 +661,12 @@ INPUT D:\MikTek\fonts\tfm\adobe\times\ptmr8r.tfm
 INPUT D:\MikTek\fonts\tfm\adobe\times\ptmri7t.tfm
 INPUT D:\MikTek\fonts\vf\adobe\times\ptmri7t.vf
 INPUT D:\MikTek\fonts\tfm\adobe\times\ptmri8r.tfm
+INPUT .\pdf\PAC_consistent.pdf
+INPUT .\pdf\PAC_consistent.pdf
+INPUT .\pdf\PAC_consistent.pdf
+INPUT .\pdf\PAC_consistent.pdf
+INPUT .\pdf\PAC_consistent.pdf
+INPUT .\pdf\PAC_consistent.pdf
 INPUT .\pdf\theorem_1.pdf
 INPUT .\pdf\theorem_1.pdf
 INPUT .\pdf\theorem_1.pdf
@@ -686,6 +692,12 @@ INPUT .\media\dimensional_descent.png
 INPUT .\media\dimensional_descent.png
 INPUT .\media\dimensional_descent.png
 INPUT .\media\dimensional_descent.png
+INPUT .\pdf\linear_gen.pdf
+INPUT .\pdf\linear_gen.pdf
+INPUT .\pdf\linear_gen.pdf
+INPUT .\pdf\linear_gen.pdf
+INPUT .\pdf\linear_gen.pdf
+INPUT .\pdf\linear_gen.pdf
 INPUT D:\MikTek\fonts\tfm\public\cm\cmss10.tfm
 INPUT D:\MikTek\fonts\tfm\public\cm\cmss8.tfm
 INPUT D:\MikTek\fonts\tfm\public\cm\cmss8.tfm
@@ -747,8 +759,6 @@ INPUT D:\MikTek\fonts\type1\public\amsfonts\cm\cmbx9.pfb
 INPUT D:\MikTek\fonts\type1\public\amsfonts\cm\cmbx9.pfb
 INPUT D:\MikTek\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT D:\MikTek\fonts\type1\public\amsfonts\cm\cmex10.pfb
-INPUT D:\MikTek\fonts\type1\public\amsfonts\cmextra\cmex9.pfb
-INPUT D:\MikTek\fonts\type1\public\amsfonts\cmextra\cmex9.pfb
 INPUT D:\MikTek\fonts\type1\public\amsfonts\cm\cmmi10.pfb
 INPUT D:\MikTek\fonts\type1\public\amsfonts\cm\cmmi10.pfb
 INPUT D:\MikTek\fonts\type1\public\amsfonts\cm\cmmi5.pfb
