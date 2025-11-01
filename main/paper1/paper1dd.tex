@@ -884,19 +884,21 @@ If, however, we turn our attention to the statement itself, of which refers to t
 \end{equation}
 on $h$ and $c$ accordingly, a strong case of this happens to be not following the pattern indicted by the theorem. Rather than being the interpolation point of return, $p=n$ is now the convergence point of the prediction error instead. Test result is shown in Figure~\ref{fig:theorem_double_descent_fig3}.
 
-\begin{figure}[H]
+\begin{figure}[htb]
     \centering
     \includegraphics[width=0.8\textwidth]{pdf/theorem_3.pdf}
     \caption{Contrary to Theorem~\ref{thm:double_descent_lr} and both figure~\ref{fig:theorem_double_descent_fig2}, this is the behaviours on randomized setting for standard parameter-wised mean square error measure (MSE-on-prediction). Especially, we do not see double descent pattern in this setting, as it is. For this model, we have $d=100$, $\sigma = 0.5$, and variational $n$. Full test cases are for $p=[1,100]$, $n=\{12,24,36,50,76,82,90,100,106,112,121\}$ accordingly. The test function of the concept itself is the same linear model, but with different input only.}
     \label{fig:theorem_double_descent_fig3}
 \end{figure}
-\begin{figure}[H]
+\begin{figure}[htb]
   \centering
   \includegraphics[width=0.6\textwidth]{media/dimensional_descent.png}
   \caption{Similar experiment according to setting and result of Theorem~\ref{eq:linear_gaussian_erm}, where $p$ is in the range [1,5523]. Here, we can see small double descent modelled exactly at the interpolation threshold, while the later region exhibit similar phenomenon as bias-variance tradeoff.}
   \label{fig:contrarian}
 \end{figure}
 Thence, the theorem gives us two things - the interpolation point, in this setting, refers to the parameter error for their double descent behaviour. However, on the prediction results' error measure, the interpolation point correlates to the point where the defined generalization risk in such case equals zero. These patterns hold up to certain point. However, the test case is only up to $d=p$. An unexplored test case for $p>d$ indicate the surprising fact according still, to the theorem: the generalization risk takes double descent as a region with disturbance in the middle, but bias-variance appears afterward. This is illustrated in Figure~\ref{fig:contrarian}, where the same theorem is applied but in the domain which is usually called as \textit{overparameterized region}. 
+
+Such can then be seen as a prediction that double descent in certain case, can be extrapolated to be the transition between the two curvature of bias variance, or the abnormal point on the error curve measure. Such must then be verified, both in the experiment's correctness, and so on that lead to such result. Nevertheless, if true, it would mean that double descent indeed has another implication of itself. 
 \subsection{Linear function class extension}
 
 The current theory prompted for a more general treatment of the linear function class, as in-line with exploring reasonable existing alternatives in interpretation (\cite{nakkiran2019datahurtlinearregression}).
@@ -909,12 +911,13 @@ Let us define the more general class of linear model, denoted $\mathcal{H}_{L}$,
     Let us define, for $p\in\llbracket1,d\rrbracket$, $\mathcal{H}_{L}$ is the set of functions $h:\mathbb{R}^{d+1}\times R^{q}\to\mathbb{R}^{q}$ of the form: 
     \begin{equation}
         h(\mathbf{u}_{1},\mathbf{u}_{2},\dots,\mathbf{u}_{k}) =  \begin{cases}
-            [f_{j}(\mathbf{u}_{1},\mathbf{u}_{2},\dots,\mathbf{u}_{k})]^{\top}\mathbf{w}+b\\
-            [(u_{1}u_{2}\dots u_{n})_{j}]^{\top}\mathbf{w} +b & q=1, f_{j}(\{u_{i}\}) = u_{1}\times\dots\times u_{n}\\
-            [(u_{1}\odot u_{2}\odot\dots \odot  u_{n})_{j}]^{\top}\mathbf{w} +b & q > 1, f_{j}(\{u_{i}\}) = \mathbf{u}_{1}\odot\dots\odot \mathbf{u}_{n}
+            [f_{j}(\mathbf{u}_{1},\mathbf{u}_{2},\dots,\mathbf{u}_{k})]^{\top}\mathbf{w}+b & \text{general case}\\
+            [u_{1},u_{2},\dots, u_{n}]^{\top}\mathbf{w} +b & q=1, f_{j}(\{u_{i}\}) = u_{i}\\
+            [(u_{1}\odot u_{2}\odot\dots \odot  u_{n})_{j}]^{\top}\mathbf{w} +b & q > 1, f_{j}(\{u_{i}\}) = \mathbf{u}_{1}\odot\dots\odot \mathbf{u}_{n} \\
+            [(u_{1}\oplus u_{2}\oplus\dots \oplus  u_{n})_{j}]^{\top}\mathbf{w} +b & q > 1, f_{j}(\{u_{i}\}) = \mathbf{u}_{1}\oplus\dots\oplus \mathbf{u}_{n}
         \end{cases}
     \end{equation}
-    where $\odot$ is the Hadamard product, and $w\in \mathbb{R}^{d}$ the weight matrix. A subset $\mathcal{H}_{L,p}$ then consists of all set of functions $h$ with $w\in \mathbb{R}^{d}$ having exactly $p$ non-zero elements. 
+    where $\odot$ is the Hadamard product, $\oplus$ the vector addition, and $\mathbf{w}\in \mathbb{R}^{d}$ the weight matrix. A subset $\mathcal{H}_{L,p}$ then consists of all set of functions $h$ with $w\in \mathbb{R}^{d}$ having exactly $p$ non-zero elements, fixed between all iteration. 
 \end{definition}
 
 Preliminary model learning then will relies on theorem~\ref{thm:double_descent_lr} for its initial prediction, using least square approximation results. The testing is adversarial and consistent, of which we have $c\in \mathcal{H}_{L}$ and $h\in \mathcal{H}_{l,p}$ for $p=d$, which can then further be modified. Because of their equal expressive capacity, respect to independent consideration of the parameter space $\mathbf{X}$, we define the complexity, which will be used later on, simply as \begin{equation}
@@ -925,8 +928,18 @@ Functional prediction on the classical theorem is presented below, for $n=\{1,\d
 \begin{figure}[htb]
     \centering
     \includegraphics[width=0.8\textwidth]{pdf/linear_gen.pdf}
-    \caption{Extension general experimentation, using the prediction made of theorem~\ref{thm:double_descent_lr} for verification.}
+    \caption{Extension general experimentation, using the prediction made of theorem~\ref{thm:double_descent_lr} for verification. Here, $q=1$ as the general basis case of verification. }
 \end{figure}
+
+A design of the above class will require, in general, a much less straightforward implementation than the least square method, at least when it comes to circumstances and case fielding. The previous experimental result was done using a straightforward, single-time calculated theorem. To verify such, we need to adopt the non-zero class in a way that is static of the entire training procedure, and so on, for larger and larger $q$. First, we discuss of the mismatch calculation and thereof taken from the iterative error segmentation. In our cases, we have $h$ and $c$ with \textit{model mismatch}, that is, there might exist certain parameter that $h$ has, but the concept $c$ of its originality does not, and vice versa for the concept model of which the hypothesis does not have, or attain certain parameter of interest. This prompts us to make use of a type of \textbf{penalty} for such case. With respect to the mean square error on parameter, from the perspective of the supervisor, we have two ways to implement this, either of the \texttt{truncate} or \texttt{padding} mode. The truncate mode simply calculates parameter expression of those that can be compared. By default, for the learning problem to be consistent of the space, there must be at least one parameter that is not inhibited. Then, 
+\begin{equation}
+    \mathrm{MSEP}_{\text{truncate}}(h,c) = \frac{1}{k} \sum^{k}_{i=1}(p_{i}-q_{i})^{2}
+\end{equation}
+For $K=\min(n,m)$ of the overlap, or can be changed to be the set $k=\{(h_{i},c_{i})\}$ of which matches each other. Such can be changed to absolute error, if one does not want to inflate the error measure beyond its distance metric with respect to certain axis. The \texttt{padding} mode simply takes into account of all missing or surplus information and of the optimization phase. By initialization, from the hypothesis side, all surplus parameters are padded with input $1$. Hence, the measure is defined as 
+\begin{equation}\label{eq:parameter_penalty}
+    \mathrm{MSEP}_{\text{pad}}(h,c) = \frac{1}{k} \sum^{k}_{i\in k} (p_{i}-q_{i})^{2} + \lambda \left(\frac{1}{n-k}\sum^{n}_{i\not\in k}p_{i}^{2}+ \frac{1}{m-k}\sum^{m}_{i\not\in k}q_{i}^{2}\right)
+\end{equation}
+The total error then is simply the above error, is simply calculated toward all layers possible or any architectural design parameters. This design will be also used in subsequent testing, including polynomial, in which the effectiveness is enhanced significantly. 
 
 \clearpage
 
@@ -1136,7 +1149,7 @@ The first term is the normalized linear parameters $\theta_{i}$ fixing and contr
 
 
 \subsubsection{Testing result}
-The testing scenario will be as followed. The following set of parameters are required for controlling the testing case, aside from different system measures. 
+The testing scenario will be as followed. The following set of parameters are required for controlling the testing case, aside from different system measures. For parameter error, we reuse equation~\ref{eq:parameter_penalty} but with degree aware terms. 
 
 \begin{table}[htb]
   \centering
@@ -1187,12 +1200,14 @@ The testing scenario will be as followed. The following set of parameters are re
 
     \begin{tablenotes}
       \footnotesize
-      \item[] \textbf{Notes:} We output to $\{\mathbb{E}[\ell]\}$ as the expected value of the error measure on $h,c$. There are a few things possible, but under approximatio setting, we use MSE-on-parameter and MSE-on-prediction for two different insights: internal representation and external representation. 
+      \item[] \textbf{Notes:} We output to $\{\mathbb{E}[\ell]\}$ as the expected value of the error measure on $h,c$. There are a few things possible, but under approximation setting, we use MSE-on-parameter and MSE-on-prediction for two different insights: internal representation and external representation. 
     \end{tablenotes}
   \end{threeparttable}
 \end{table}
 
 We note a few problems with both interpolation interpretation and polynomial regression of higher-degree terms. Firstly, is the intrinsic interpolation error and numerical, software issue error. Higher degree polynomial can be represented as solving for a wide Vandermonde system of $n$ degrees for $m$ sample points. Using monomial basis for interpolation, either for soft interpolation also exhibits instability and numerical garbage within the operations, as indicated by \cite{Shen_2025}. They can also be a potential source of double descent, as the majority of models tested around this range are not coded effectively for handling large data operations as such, and artifacts from such choices might be taken as the indication of double descent in some particular cases. 
+
+Aside from it, and aside from the fully-connected case, we have the particular testing scenario that can be expected of the ease of implementation. First, is the mundane implementation that is of gradually increasing degree mismatch. That is, for polynomial of $h_{p}$ and $c_{p}$, one requires only $d_{h}$ and $d_{c}$ to figure out the structure as there will exist exactly $d+1$ with the constant term, terms of which of finite many degrees. The second case is where for $p$ chosen randomly, such that aside from such $p$ entry, then the other degree or nodes of input are simply scattered dependent nodes, linear algebraically. That is, for a uniformly constructed $d$-degree network, choose at random $p$ particular degree to be fixed, while the other of $d-p$ are assigned randomly of belonging to some $p_{i}\in \{p\}$ nodes given the random choice on $p$ above. Linearly algebraically, scattered and dependent nodes then mean for example, node $4$ might use node $35$'s degree, and vice versa (if they were both non-fixed). The dependency structure is deliberately randomized rather than organized. For overparameterized case, we simply design the hypothesis by the following line of justification. For a mapping $\mathbb{R}^{d}\to\mathbb{R}$, the mapping $\mathbb{R}^{d+n}\to \mathbb{R}$ for $n= 1$ requires additional information, since the source provision does not contain information to handle additional $n$ dimensional input. Hence, we design it the following. For the hypothesis $h$, such unit of which does not fit to the original input space, the \textit{internal input space} that $h$ `hypothesize' contains, for the other $n$ entries, $q\leq d$ per unit input. That is, each input of $n$ overparameterized case receives at random, $q$ inputs can be received, for example, $w_{n1}x_{j}+w_{n2}x_{k}$ for $k,j$ specific input numbering. By the simplicity argument, then $q=1$ for the simplest case. However, this creates a skewed polynomial network, of which informally, the provided structural bias or additional information, is the fact that there exists overparameterization. To prevent this, instead, the final case considers the most general structure --- for each unit, each one can take $q$ inputs controlled as hyperparameter of the network, then the set $\{p\}$ of chosen degree influence their degree choice, and is uniform if the sampling process it is not included. 
 
 \clearpage
 
@@ -1233,9 +1248,9 @@ Concurrent theories are inherently unstable and with many variations, making the
 
 \subsection{Learning theory formalism}
 
+The classical theory of learning simply does not have much to offer in terms of a unified perspective, in which important factors are analysed of its realization. Specifically speaking of such, classical theory does do worse in many parts, for example, the aspect of transparency given the model, supervisor and the concept, of which their roles are not fully understood or formulated correctly, both in controlled setting and extension to replication of real life examples. Thereby, such enquires a newer theory of learning to come forward. A new learning theory must extend beyond what constitute the basic learning model, such as the idealized PAC-learning, and statistical learning setting in general. More specifically, we want to design a learning theory that is more akin to \textbf{modelling theory} of its internalization, but also attain the learning of machine learning theory. 
 
-
-\subsection{Neural network formalism}
+\subsection{The idea of neural network formalism}
 Previously, we have been discovering, examining past results and testing on models of different types, generally classical models. While decisive, each modelling setting requires different analysis and is often not so streamline. Hence, we propose a general analysis on the structure of a feed-forward style neural network architecture, as usual, for further analysis and identification. 
 
 A neural network (\cite{goodfellow2016deep,zhang2023mathematical}) $N$ is typically specified by the dual $(L,[S])$ where $L$ is the number of processing layer of a neuron, and $[S]$ is the list of neurons configuration per layer - for example, the number of neurons per layer, and so on. For such network, the definition can be simple as followed 
@@ -1278,9 +1293,13 @@ for a neural network of shape $(3,[n,n,1])$, and of polynomial custom scaling fu
     for a specific kernel $K(x,x')$. 
 \end{definition}
 
-Those three fundamental conversions to neural network raise interesting insight into the neural network formalism. For linear and polynomial shallow neural network, we design the network and then provide it with a training scenario, evaluated of the proxy generalization. SVm however can be considered an adaptive data construction, where the neural network is constructed from the dataset or observation set itself, using minimization on RKHS and with constraints. This prompts exactly as such, on one side the pre-optimization construction, and one is the post-construction optimization of a neural network architecture. This interpretation is surprisingly useful when talking about neural network's unit-like structure. Hence, from such evidence prompts us to analyse a neural network, not in only the sense of managing its layers, but also by its unit components together. 
+Those three fundamental conversions to neural network raise interesting insight into the neural network formalism. For linear and polynomial shallow neural network, we design the network and then provide it with a training scenario, evaluated of the proxy generalization. SVM however can be considered an adaptive data construction, where the neural network is constructed from the dataset or observation set itself, using minimization on RKHS and with constraints. This prompts exactly as such, on one side the pre-optimization construction, and one is the post-construction optimization of a neural network architecture. This interpretation is surprisingly useful when talking about neural network's unit-like structure. Hence, from such evidence prompts us to analyse a neural network, not in only the sense of managing its layers, but also by its unit components together. 
 
 This way of analysing unit-wise gives us much more interpretability, and also potential for a newer kind of network specification. As far as we are concerned of, a neural network can represent an active \textit{mathematical modelling system}. This then indicates, for example in adversarial learning case between the target neural network tailored to specific concept, and the learning hypothesis network, then the process of learning itself can be loosely interpreted as a concept of mathematical modelling representation learning, even in the case of black-box model, and not just simply phenomenological modelling of statistical data. To do this, we will examine the structure from the perspective of a \textbf{generator}.
+
+\subsection{The component perspective}
+
+Let us look at neural network in a more component perspective, or rather, similar to a \textbf{resource} combination and advancement game. Let us play this game within the following sense. Generalizing neural network means working with component and unit-type framework. However, to even now of this point, we haven't turned our attention to it of the fullest. In fact, the individual neuron itself is made up of components. If one want a systematic structural analysis, one will have to consider the components' description and metric as it is, before going forward in the interpretation thereof. 
 
 
 

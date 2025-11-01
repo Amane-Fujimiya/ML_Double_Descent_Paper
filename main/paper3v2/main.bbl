@@ -1,0 +1,327 @@
+\begin{thebibliography}{10}
+
+\bibitem{lam2022graphcast}
+R Lam, et~al., {GraphCast: Learning skillful medium-range global weather forecasting}.
+\newblock {\em\protect\JournalTitle{arXiv preprint arXiv:2212.12794}} (2022).
+
+\bibitem{mandal2022robust}
+R Mandal, C Casert, P Sollich, {Robust prediction of force chains in jammed solids using graph neural networks}.
+\newblock {\em\protect\JournalTitle{Nature Communications}} \textbf{13}, 4424 (2022).
+
+\bibitem{ingraham2019generative}
+J Ingraham, V Garg, R Barzilay, T Jaakkola, Generative models for graph-based protein design.
+\newblock {\em\protect\JournalTitle{Advances in neural information processing systems}} \textbf{32} (2019).
+
+\bibitem{gligorijevic2021structure}
+V Gligorijevi{\'c}, et~al., Structure-based protein function prediction using graph convolutional networks.
+\newblock {\em\protect\JournalTitle{Nature communications}} \textbf{12}, 3168 (2021).
+
+\bibitem{jumper2021highly}
+J Jumper, et~al., {Highly accurate protein structure prediction with AlphaFold}.
+\newblock {\em\protect\JournalTitle{Nature}} \textbf{596}, 583--589 (2021).
+
+\bibitem{estrach2014spectral}
+JE Bruna, W Zaremba, A Szlam, Y LeCun, {Spectral networks and deep locally connected networks on graphs} in {\em {International Conference on Learning Representations}}.
+\newblock (2014).
+
+\bibitem{defferrard2016convolutional}
+M Defferrard, X Bresson, P Vandergheynst, {Convolutional neural networks on graphs with fast localized spectral filtering}.
+\newblock {\em\protect\JournalTitle{Advances in neural information processing systems}} \textbf{29} (2016).
+
+\bibitem{kipf2017semisupervised}
+TN Kipf, M Welling, {Semi-supervised classification with graph convolutional networks} in {\em {International Conference on Learning Representations}}.
+\newblock (2017).
+
+\bibitem{hamilton2017inductive}
+W Hamilton, Z Ying, J Leskovec, {Inductive representation learning on large graphs}.
+\newblock {\em\protect\JournalTitle{Advances in neural information processing systems}} \textbf{30} (2017).
+
+\bibitem{zhu2020beyond}
+J Zhu, et~al., Beyond homophily in graph neural networks: Current limitations and effective designs.
+\newblock {\em\protect\JournalTitle{Advances in neural information processing systems}} \textbf{33}, 7793--7804 (2020).
+
+\bibitem{pei2020geom}
+H Pei, B Wei, KCC Chang, Y Lei, B Yang, {Geom-GCN: Geometric graph convolutional networks} in {\em {International Conference on Learning Representations}}.
+\newblock (2020).
+
+\bibitem{chien2021adaptive}
+E Chien, J Peng, P Li, O Milenkovic, {Adaptive universal generalized PageRank graph neural network} in {\em {International Conference on Learning Representations}}.
+\newblock (2021).
+
+\bibitem{Oono2020Graph}
+K Oono, T Suzuki, {Graph neural networks exponentially lose expressive power for node classification} in {\em {International Conference on Learning Representations}}.
+\newblock (2020).
+
+\bibitem{nakkiran2021deep}
+P Nakkiran, et~al., {Deep double descent: Where bigger models and more data hurt}.
+\newblock {\em\protect\JournalTitle{Journal of Statistical Mechanics: Theory and Experiment}} \textbf{2021}, 124003 (2021).
+
+\bibitem{liu2013observability}
+YY Liu, JJ Slotine, AL Barab{\'a}si, Observability of complex systems.
+\newblock {\em\protect\JournalTitle{Proceedings of the National Academy of Sciences}} \textbf{110}, 2460--2465 (2013).
+
+\bibitem{chen2021multiple}
+L Chen, Y Min, M Belkin, A Karbasi, {Multiple descent: Design your own generalization curve}.
+\newblock {\em\protect\JournalTitle{Advances in Neural Information Processing Systems}} \textbf{34}, 8898--8912 (2021).
+
+\bibitem{belkin2020two}
+M Belkin, D Hsu, J Xu, {Two models of double descent for weak features}.
+\newblock {\em\protect\JournalTitle{SIAM Journal on Mathematics of Data Science}} \textbf{2}, 1167--1180 (2020).
+
+\bibitem{mcpherson2001birds}
+M McPherson, L Smith-Lovin, JM Cook, {Birds of a feather: Homophily in social networks}.
+\newblock {\em\protect\JournalTitle{Annual review of sociology}} pp. 415--444 (2001).
+
+\bibitem{wei2022understanding}
+R Wei, H Yin, J Jia, AR Benson, P Li, {Understanding non-linearity in graph neural networks from the Bayesian-inference perspective}.
+\newblock {\em\protect\JournalTitle{arXiv preprint arXiv:2207.11311}} (2022).
+
+\bibitem{baranwal2023optimality}
+A Baranwal, A Jagannath, K Fountoulakis, Optimality of message-passing architectures for sparse graphs.
+\newblock {\em\protect\JournalTitle{arXiv preprint arXiv:2305.10391}} (2023).
+
+\bibitem{garg2020generalization}
+V Garg, S Jegelka, T Jaakkola, {Generalization and representational limits of graph neural networks} in {\em {International Conference on Machine Learning}}.
+\newblock (PMLR), pp. 3419--3430 (2020).
+
+\bibitem{liao2021a}
+R Liao, R Urtasun, R Zemel, {{A PAC-Bayesian approach to generalization bounds for graph neural networks}} in {\em {International Conference on Learning Representations}}.
+\newblock (2021).
+
+\bibitem{esser2021learning}
+P Esser, L Chennuru~Vankadara, D Ghoshdastidar, {Learning theory can (sometimes) explain generalisation in graph neural networks}.
+\newblock {\em\protect\JournalTitle{Advances in Neural Information Processing Systems}} \textbf{34}, 27043--27056 (2021).
+
+\bibitem{deshpande2018contextual}
+Y Deshpande, S Sen, A Montanari, E Mossel, {Contextual stochastic block models}.
+\newblock {\em\protect\JournalTitle{Advances in Neural Information Processing Systems}} \textbf{31} (2018).
+
+\bibitem{watkin1993statistical}
+TL Watkin, A Rau, M Biehl, The statistical mechanics of learning a rule.
+\newblock {\em\protect\JournalTitle{{Reviews of Modern Physics}}} \textbf{65}, 499 (1993).
+
+\bibitem{martin2017rethinking}
+CH Martin, MW Mahoney, Rethinking generalization requires revisiting old ideas: statistical mechanics approaches and complex learning behavior.
+\newblock {\em\protect\JournalTitle{arXiv preprint arXiv:1710.09553}} (2017).
+
+\bibitem{DBLP:conf/iclr/ZhangBHRV17}
+C Zhang, S Bengio, M Hardt, B Recht, O Vinyals, Understanding deep learning requires rethinking generalization in {\em 5th International Conference on Learning Representations, {ICLR} 2017, Toulon, France, April 24-26, 2017, Conference Track Proceedings}.
+\newblock (OpenReview.net), (2017).
+
+\bibitem{hastie2009elements}
+T Hastie, R Tibshirani, JH Friedman, JH Friedman, {\em The elements of statistical learning: data mining, inference, and prediction}.
+\newblock (Springer) Vol.{}~2, (2009).
+
+\bibitem{opper1990ability}
+M Opper, W Kinzel, J Kleinz, R Nehl, On the ability of the optimal perceptron to generalise.
+\newblock {\em\protect\JournalTitle{{Journal of Physics A: Mathematical and General}}} \textbf{23}, L581 (1990).
+
+\bibitem{Engel_Van_den_Broeck_2001}
+A Engel, C Van~den Broeck, {\em Statistical Mechanics of Learning}.
+\newblock (Cambridge University Press), (2001).
+
+\bibitem{seung1992statistical}
+HS Seung, H Sompolinsky, N Tishby, Statistical mechanics of learning from examples.
+\newblock {\em\protect\JournalTitle{Physical review A}} \textbf{45}, 6056 (1992).
+
+\bibitem{opper1994learning}
+M Opper, {Learning and generalization in a two-layer neural network: The role of the Vapnik--Chervonvenkis dimension}.
+\newblock {\em\protect\JournalTitle{Physical review letters}} \textbf{72}, 2113 (1994).
+
+\bibitem{belkin2019reconciling}
+M Belkin, D Hsu, S Ma, S Mandal, {Reconciling modern machine-learning practice and the classical bias--variance trade-off}.
+\newblock {\em\protect\JournalTitle{Proceedings of the National Academy of Sciences}} \textbf{116}, 15849--15854 (2019).
+
+\bibitem{liao2020random}
+Z Liao, R Couillet, MW Mahoney, {A random matrix analysis of random Fourier features: beyond the gaussian kernel, a precise phase transition, and the corresponding double descent}.
+\newblock {\em\protect\JournalTitle{Advances in Neural Information Processing Systems}} \textbf{33}, 13939--13950 (2020).
+
+\bibitem{canatar2021spectral}
+A Canatar, B Bordelon, C Pehlevan, Spectral bias and task-model alignment explain generalization in kernel regression and infinitely wide neural networks.
+\newblock {\em\protect\JournalTitle{Nature communications}} \textbf{12}, 2914 (2021).
+
+\bibitem{li2018deeper}
+Q Li, Z Han, XM Wu, Deeper insights into graph convolutional networks for semi-supervised learning in {\em Proceedings of the AAAI conference on artificial intelligence}.
+\newblock Vol.{}~32, (2018).
+
+\bibitem{yang2021taxonomizing}
+Y Yang, et~al., Taxonomizing local versus global structure in neural network loss landscapes.
+\newblock {\em\protect\JournalTitle{Advances in Neural Information Processing Systems}} \textbf{34}, 18722--18733 (2021).
+
+\bibitem{sen2008collective}
+P Sen, et~al., {Collective classification in network data}.
+\newblock {\em\protect\JournalTitle{AI magazine}} \textbf{29}, 93--93 (2008).
+
+\bibitem{rozemberczki2021multi}
+B Rozemberczki, C Allen, R Sarkar, {Multi-scale attributed node embedding}.
+\newblock {\em\protect\JournalTitle{Journal of Complex Networks}} \textbf{9}, cnab014 (2021).
+
+\bibitem{maurya2021improving}
+SK Maurya, X Liu, T Murata, {Improving graph neural networks with simple architecture design}.
+\newblock {\em\protect\JournalTitle{arXiv preprint arXiv:2105.07634}} (2021).
+
+\bibitem{velivckovic2017graph}
+P Veličković, et~al., {Graph attention networks} in {\em {International Conference on Learning Representations}}.
+\newblock (2018).
+
+\bibitem{wu2019simplifying}
+F Wu, et~al., {Simplifying graph convolutional networks} in {\em {International conference on machine learning}}.
+\newblock (PMLR), pp. 6861--6871 (2019).
+
+\bibitem{wang2022powerful}
+X Wang, M Zhang, {How powerful are spectral graph neural networks} in {\em {International Conference on Machine Learning}}.
+\newblock (PMLR), pp. 23341--23362 (2022).
+
+\bibitem{he2021bernnet}
+M He, Z Wei, H Xu, , et~al., {Bernnet: Learning arbitrary graph spectral filters via Bernstein approximation}.
+\newblock {\em\protect\JournalTitle{Advances in Neural Information Processing Systems}} \textbf{34}, 14239--14251 (2021).
+
+\bibitem{wang1987stochastic}
+YJ Wang, GY Wong, {Stochastic blockmodels for directed graphs}.
+\newblock {\em\protect\JournalTitle{Journal of the American Statistical Association}} \textbf{82}, 8--19 (1987).
+
+\bibitem{malliaros2013clustering}
+FD Malliaros, M Vazirgiannis, {Clustering and community detection in directed networks: A survey}.
+\newblock {\em\protect\JournalTitle{Physics reports}} \textbf{533}, 95--142 (2013).
+
+\bibitem{lu2021learning}
+W Lu, Learning guarantees for graph convolutional networks on the stochastic block model in {\em {International Conference on Learning Representations}}.
+\newblock (2021).
+
+\bibitem{baranwal2021graph}
+A Baranwal, K Fountoulakis, A Jagannath, {Graph convolution for semi-supervised classification: improved linear separability and out-of-distribution generalization} in {\em {International Conference on Machine Learning}}.
+\newblock (PMLR), pp. 684--693 (2021).
+
+\bibitem{mei2022generalization}
+S Mei, A Montanari, {The generalization error of random features regression: Precise asymptotics and the double descent curve}.
+\newblock {\em\protect\JournalTitle{Communications on Pure and Applied Mathematics}} \textbf{75}, 667--766 (2022).
+
+\bibitem{li2022finding}
+X Li, et~al., {Finding global homophily in graph neural networks when meeting heterophily} in {\em {International Conference on Machine Learning}}.
+\newblock (PMLR), pp. 13242--13256 (2022).
+
+\bibitem{luan2022revisiting}
+S Luan, et~al., Revisiting heterophily for graph neural networks.
+\newblock {\em\protect\JournalTitle{Advances in neural information processing systems}} \textbf{35}, 1362--1375 (2022).
+
+\bibitem{gasteiger2018predict}
+J Gasteiger, A Bojchevski, S G{\"u}nnemann, Predict then propagate: Graph neural networks meet personalized pagerank.
+\newblock {\em\protect\JournalTitle{arXiv preprint arXiv:1810.05997}} (2018).
+
+\bibitem{sato2020survey}
+R Sato, {A survey on the expressive power of graph neural networks}.
+\newblock {\em\protect\JournalTitle{arXiv preprint arXiv:2003.04078}} (2020).
+
+\bibitem{geerts2022expressiveness}
+F Geerts, JL Reutter, {Expressiveness and approximation properties of graph neural networks} in {\em {International Conference on Learning Representations}}.
+\newblock (2022).
+
+\bibitem{xu2018how}
+K Xu, W Hu, J Leskovec, S Jegelka, {How powerful are graph neural networks?} in {\em {International Conference on Learning Representations}}.
+\newblock (2019).
+
+\bibitem{gilmer2017neural}
+J Gilmer, SS Schoenholz, PF Riley, O Vinyals, GE Dahl, {Neural message passing for quantum chemistry} in {\em {International conference on machine learning}}.
+\newblock (PMLR), pp. 1263--1272 (2017).
+
+\bibitem{vapnik1971uniform}
+V Vapnik, AY Chervonenkis, On the uniform convergence of relative frequencies of events to their probabilities.
+\newblock {\em\protect\JournalTitle{Theory of Probability \& Its Applications}} \textbf{16}, 264--280 (1971).
+
+\bibitem{vapnik1999nature}
+V Vapnik, {\em The nature of statistical learning theory}.
+\newblock (Springer science \& business media), (1999).
+
+\bibitem{scarselli2018vapnik}
+F Scarselli, AC Tsoi, M Hagenbuchner, {The Vapnik--Chervonenkis dimension of graph and recursive neural networks}.
+\newblock {\em\protect\JournalTitle{Neural Networks}} \textbf{108}, 248--259 (2018).
+
+\bibitem{oymak2013squared}
+S Oymak, C Thrampoulidis, B Hassibi, {The squared-error of generalized lasso: A precise analysis} in {\em {2013 51st Annual Allerton Conference on Communication, Control, and Computing (Allerton)}}.
+\newblock (IEEE), pp. 1002--1009 (2013).
+
+\bibitem{thrampoulidis2018precise}
+C Thrampoulidis, E Abbasi, B Hassibi, {Precise error analysis of regularized $ M $-estimators in high dimensions}.
+\newblock {\em\protect\JournalTitle{IEEE Transactions on Information Theory}} \textbf{64}, 5592--5628 (2018).
+
+\bibitem{boyd2011distributed}
+S Boyd, et~al., {Distributed optimization and statistical learning via the alternating direction method of multipliers}.
+\newblock {\em\protect\JournalTitle{Foundations and Trends in Machine learning}} \textbf{3}, 1--122 (2011).
+
+\bibitem{hu2022universality}
+H Hu, YM Lu, {Universality laws for high-dimensional learning with random features}.
+\newblock {\em\protect\JournalTitle{IEEE Transactions on Information Theory}} (2022).
+
+\bibitem{el2018detection}
+A El~Alaoui, MI Jordan, {Detection limits in the high-dimensional spiked rectangular model} in {\em {Conference On Learning Theory}}.
+\newblock (PMLR), pp. 410--438 (2018).
+
+\bibitem{macris2020all}
+J Barbier, N Macris, C Rush, {All-or-nothing statistical and computational phase transitions in sparse spiked matrix estimation}.
+\newblock {\em\protect\JournalTitle{Advances in Neural Information Processing Systems}} \textbf{33}, 14915--14926 (2020).
+
+\bibitem{mignacco2020role}
+F Mignacco, F Krzakala, Y Lu, P Urbani, L Zdeborov{\'a}, {The role of regularization in classification of high-dimensional noisy Gaussian mixture} in {\em {International Conference on Machine Learning}}.
+\newblock (PMLR), pp. 6874--6883 (2020).
+
+\bibitem{bahri2020statistical}
+Y Bahri, et~al., Statistical mechanics of deep learning.
+\newblock {\em\protect\JournalTitle{Annual Review of Condensed Matter Physics}} \textbf{11}, 501--528 (2020).
+
+\bibitem{deshpande2017asymptotic}
+Y Deshpande, E Abbe, A Montanari, {Asymptotic mutual information for the balanced binary stochastic block model}.
+\newblock {\em\protect\JournalTitle{Information and Inference: A Journal of the IMA}} \textbf{6}, 125--170 (2017).
+
+\bibitem{mossel2018proof}
+E Mossel, J Neeman, A Sly, {A proof of the block model threshold conjecture}.
+\newblock {\em\protect\JournalTitle{Combinatorica}} \textbf{38}, 665--708 (2018).
+
+\bibitem{duranthon2023optimal}
+O Duranthon, L Zdeborov{\'a}, Optimal inference in contextual stochastic block models.
+\newblock {\em\protect\JournalTitle{arXiv preprint arXiv:2306.07948}} (2023).
+
+\bibitem{zhang2014phase}
+P Zhang, C Moore, L Zdeborov{\'a}, {Phase transitions in semisupervised clustering of sparse networks}.
+\newblock {\em\protect\JournalTitle{Physical Review E}} \textbf{90}, 052802 (2014).
+
+\bibitem{mezard1987spin}
+M M{\'e}zard, G Parisi, MA Virasoro, {\em {Spin glass theory and beyond: An introduction to the replica method and its applications}}.
+\newblock (World Scientific Publishing Company) Vol.{}~9, (1987).
+
+\bibitem{talagrand2002gaussian}
+M Talagrand, {Gaussian averages, Bernoulli averages, and Gibbs' measures}.
+\newblock {\em\protect\JournalTitle{Random Structures \& Algorithms}} \textbf{21}, 197--204 (2002).
+
+\bibitem{carmona2006universality}
+P Carmona, Y Hu, {Universality in Sherrington--Kirkpatrick's spin glass model} in {\em {Annales de l'Institut Henri Poincare (B) Probability and Statistics}}.
+\newblock (Elsevier), Vol.{}~42, pp. 215--222 (2006).
+
+\bibitem{panchenko2013sherrington}
+D Panchenko, {\em {The Sherrington-Kirkpatrick model}}.
+\newblock (Springer Science \& Business Media), (2013).
+
+\bibitem{pennington2017nonlinear}
+J Pennington, P Worah, {Nonlinear random matrix theory for deep learning}.
+\newblock {\em\protect\JournalTitle{Advances in neural information processing systems}} \textbf{30} (2017).
+
+\bibitem{keriven2022not}
+N Keriven, {Not too little, not too much: A theoretical analysis of graph (over)smoothing} in {\em {Advances in Neural Information Processing Systems}}, eds.{} AH Oh, A Agarwal, D Belgrave, K Cho.
+\newblock (2022).
+
+\bibitem{voiculescu1992free}
+DV Voiculescu, KJ Dykema, A Nica, {\em {Free random variables}}.
+\newblock (American Mathematical Soc.) No.{}~1, (1992).
+
+\bibitem{dupic2014spectral}
+T Dupic, IP Castillo, {Spectral density of products of Wishart dilute random matrices. part i: the dense case}.
+\newblock {\em\protect\JournalTitle{arXiv preprint arXiv:1401.7802}} (2014).
+
+\bibitem{shuman2013emerging}
+DI Shuman, SK Narang, P Frossard, A Ortega, P Vandergheynst, {The emerging field of signal processing on graphs: Extending high-dimensional data analysis to networks and other irregular domains}.
+\newblock {\em\protect\JournalTitle{IEEE signal processing magazine}} \textbf{30}, 83--98 (2013).
+
+\bibitem{ortega2018graph}
+A Ortega, P Frossard, J Kova{\v{c}}evi{\'c}, JM Moura, P Vandergheynst, {Graph signal processing: Overview, challenges, and applications}.
+\newblock {\em\protect\JournalTitle{Proceedings of the IEEE}} \textbf{106}, 808--828 (2018).
+
+\end{thebibliography}

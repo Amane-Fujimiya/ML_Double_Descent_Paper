@@ -1,0 +1,243 @@
+\ProvidesPackage{echodefs}
+
+
+%-----------------------------------------------------------------------------
+% PROCESS PACKAGE OPTIONS
+%-----------------------------------------------------------------------------
+
+\DeclareOption{matit}{
+	\providecommand{\vect}[1]{\ensuremath{\bm{{#1}}}}
+	\providecommand{\mat}[1]{\ensuremath{\bm{{#1}}}}
+}
+
+\DeclareOption{matnotit}{
+	\providecommand{\vect}[1]{\ensuremath{\mathbf{#1}}}
+	\providecommand{\mat}[1]{\ensuremath{\mathbf{#1}}}
+}
+
+\ExecuteOptions{matit}
+\ProcessOptions\relax
+
+%-----------------------------------------------------------------------------
+% EXTERNAL PACKAGES
+%-----------------------------------------------------------------------------
+
+% Common commands and definitions
+
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{amsthm}
+\RequirePackage{latexsym}
+\RequirePackage{verbatim}
+\RequirePackage{graphicx}
+\RequirePackage{algorithm}
+\RequirePackage{algpseudocode}
+\RequirePackage{enumerate}
+\RequirePackage{bm}
+\RequirePackage{hyperref}
+\RequirePackage{mathtools}
+\RequirePackage{xcolor}
+\RequirePackage{tikz}
+\RequirePackage[framemethod=tikz]{mdframed}
+\RequirePackage{multicol}
+
+%-----------------------------------------------------------------------------
+% CUSTOM ENVIRONMENTS
+%-----------------------------------------------------------------------------
+
+\newtheorem{theorem}{Theorem}
+% \newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{proposition}{Proposition}
+\newtheorem{problem}{Problem}
+\newtheorem{definition}{Definition}
+
+% \newenvironment{eqali}{
+% 	\begin{equation}
+% 	\begin{aligned}
+% }
+% {
+% 	\end{aligned}	
+% 	\end{equation}
+% }
+
+%-----------------------------------------------------------------------------
+% REFERENCING AND CITING COMMANDS
+%-----------------------------------------------------------------------------
+
+\providecommand{\eref}[1]{\eqref{eq:#1}}
+\providecommand{\cref}[1]{Chapter~\ref{chap:#1}}
+\providecommand{\sref}[1]{Section~\ref{sec:#1}}
+\providecommand{\fref}[1]{Figure~\ref{fig:#1}}
+\providecommand{\sfref}[1]{Fig.~\ref{subfig:#1})}
+\providecommand{\tref}[1]{Table~\ref{tab:#1}}
+\providecommand{\aref}[1]{Algorithm~\ref{alg:#1}}
+\providecommand{\lref}[1]{Lemma~\ref{lem:#1}}
+\providecommand{\thref}[1]{Theorem~\ref{thm:#1}}
+
+%-----------------------------------------------------------------------------
+% SET SYMBOLS
+%-----------------------------------------------------------------------------
+
+\providecommand{\R}{\ensuremath{\mathbb{R}}}
+\providecommand{\C}{\ensuremath{\mathbb{C}}}
+\providecommand{\N}{\ensuremath{\mathbb{N}}}
+\renewcommand{\S}{\ensuremath{\mathbb{S}}}
+\providecommand{\Z}{\ensuremath{\mathbb{Z}}}
+
+%-----------------------------------------------------------------------------
+% MATH MACROS
+%-----------------------------------------------------------------------------
+
+\providecommand{\abs}[1]{{\left|#1\right|}}
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+\providecommand{\expect}[1]{\mathbb{E}\left[#1\right]}
+\providecommand{\bignorm}[1]{\left\lVert#1\right\rVert}
+\providecommand{\inprod}[1]{\left\langle#1\right\rangle}
+\providecommand{\set}[1]{\left\{#1\right\}}
+\providecommand{\seq}[1]{\left<#1\right>}
+\providecommand{\bydef}{\overset{\text{def}}{=}}
+\providecommand{\diag}{\mathop{\mathrm{diag}}}
+\providecommand{\rank}{\mathop{\mathrm{rank}}}
+\providecommand{\conv}{\ast}
+\providecommand{\circonv}[1]{\circledast_{#1}}
+\providecommand{\parder}[2]{{\partial{#1} \over \partial{#2}}}
+\providecommand{\parderr}[2]{{\partial^2{#1} \over \partial{#2}^2}}
+\providecommand{\Rint}{\int_{\R}}
+\providecommand{\di}{\ensuremath{\mathrm{d}}}
+\providecommand{\e}{\ensuremath{\mathrm{e}}}
+\providecommand{\I}{\ensuremath{\mathrm{j}}}
+\providecommand{\epi}[1]{\e^{\hspace{1pt}\I{#1}}}
+\providecommand{\eni}[1]{\e^{-\I{#1}}}
+\providecommand{\T}{\ensuremath{T}}
+\providecommand{\rect}{\ensuremath{\mathrm{rect}}}
+\providecommand{\tri}{\ensuremath{\mathrm{tri}}}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\minimize}{minimize}
+\DeclareMathOperator*{\maximize}{maximize}
+
+
+% Functions
+\providecommand{\tri}{\ensuremath{\mathrm{tri}}}
+
+
+% Vector analysis
+% \renewcommand{\div}{\nabla} % Conflicts with mathabx
+\providecommand{\grad}{\nabla}
+
+% Some calligraphic letters
+\providecommand{\calS}{\mathcal{S}}
+\providecommand{\calP}{\mathcal{P}}
+\providecommand{\calR}{\mathcal{R}}
+\providecommand{\calH}{\mathcal{H}}
+\providecommand{\calM}{\mathcal{M}}
+\providecommand{\calV}{\mathcal{V}}
+\providecommand{\calF}{\mathcal{F}}
+\providecommand{\calG}{\mathcal{G}}
+\providecommand{\calO}{\mathcal{O}}
+\providecommand{\calY}{\mathcal{Y}}
+\providecommand{\calL}{\mathcal{L}}
+\providecommand{\calJ}{\mathcal{J}}
+\providecommand{\calN}{\mathcal{N}}
+\providecommand{\calU}{\mathcal{U}}
+\providecommand{\calT}{\mathcal{T}}
+\providecommand{\calI}{\mathcal{I}}
+\providecommand{\calC}{\mathcal{C}}
+
+
+%-----------------------------------------------------------------------------
+% MATRICES AND VECTORS
+%-----------------------------------------------------------------------------
+
+\providecommand{\wh}[1]{\ensuremath{\widehat{#1}}}
+\providecommand{\wt}[1]{\ensuremath{\widetilde{#1}}}
+
+\providecommand{\mA}{\mat{A}} 
+\providecommand{\mB}{\mat{B}}
+\providecommand{\mC}{\mat{C}} 
+\providecommand{\mD}{\mat{D}}
+\providecommand{\mE}{\mat{E}} 
+\providecommand{\mF}{\mat{F}} 
+\providecommand{\mH}{\mat{H}}
+\providecommand{\mI}{\mat{I}} 
+\providecommand{\mJ}{\mat{J}} 
+\providecommand{\mK}{\mat{K}} 
+\providecommand{\mL}{\mat{L}} 
+\providecommand{\mN}{\mat{N}}
+\providecommand{\mM}{\mat{M}}
+\providecommand{\mO}{\mat{O}}
+\providecommand{\mP}{\mat{P}} 
+\providecommand{\mQ}{\mat{Q}}
+\providecommand{\mR}{\mat{R}}
+\providecommand{\mS}{\mat{S}}
+\providecommand{\mU}{\mat{U}} 
+\providecommand{\mV}{\mat{V}} 
+\providecommand{\mT}{\mat{T}}
+\providecommand{\mW}{\mat{W}}
+\providecommand{\mG}{\mat{G}}
+\providecommand{\mX}{\mat{X}}
+\providecommand{\mY}{\mat{Y}}
+\providecommand{\mZ}{\mat{Z}}
+\providecommand{\mGamma}{\mat{\Gamma}} 
+\providecommand{\mPi}{\mat{\Pi}}
+\providecommand{\mSigma}{\mat{\Sigma}}
+\providecommand{\mOmega}{\mat{\Omega}}
+\providecommand{\mXi}{\mat{\Xi}}
+\providecommand{\mDelta}{\mat{\Delta}}
+\providecommand{\mLambda}{\mat{\Lambda}}
+\providecommand{\mPhi}{\mat{\Phi}}
+
+
+\providecommand{\va}{\vect{a}} 
+\providecommand{\vb}{\vect{b}}
+\providecommand{\vc}{\vect{c}} 
+\providecommand{\vd}{\vect{d}}
+\providecommand{\ve}{\vect{e}} 
+\providecommand{\vf}{\vect{f}}
+\providecommand{\vE}{\vect{E}} 
+\providecommand{\vF}{\vect{F}}
+\providecommand{\vg}{\vect{g}}
+\providecommand{\vh}{\vect{h}} 
+\providecommand{\vk}{\vect{k}}
+\providecommand{\vm}{\vect{m}} 
+\providecommand{\vn}{\vect{n}} 
+\providecommand{\vl}{\vect{l}} 
+\providecommand{\vp}{\vect{p}}
+\providecommand{\vq}{\vect{q}} 
+\providecommand{\vr}{\vect{r}}
+\providecommand{\vs}{\vect{s}}
+\providecommand{\vt}{\vect{t}}
+\providecommand{\vu}{\vect{u}} 
+\providecommand{\vw}{\vect{w}}
+\providecommand{\vU}{\vect{U}}
+\providecommand{\vx}{\vect{x}} 
+\providecommand{\vy}{\vect{y}}
+\providecommand{\vz}{\vect{z}} 
+\providecommand{\vi}{\vect{i}}
+\providecommand{\vj}{\vect{j}} 
+\providecommand{\vv}{\vect{v}}
+\providecommand{\veta}{\vect{\eta}}
+\providecommand{\vchi}{\vect{\chi}}
+
+\providecommand{\vgamma}{\vect{\gamma}} 
+\providecommand{\vdelta}{\vect{\delta}} 
+\providecommand{\vlambda}{\vect{\lambda}}
+\providecommand{\vmu}{\vect{\mu}}
+\providecommand{\vomega}{\vect{\omega}}
+\providecommand{\vsigma}{\vect{\sigma}}
+\providecommand{\vxi}{\vect{\xi}}
+\providecommand{\valpha}{\vect{\alpha}}
+
+\providecommand{\vzero}{\vect{0}}
+\providecommand{\vone}{\vect{1}}
+
+% symbols with wide hats
+\providecommand{\whu}{\wh{u}} \providecommand{\whf}{\wh{f}}
+
+% symbols with wide tildas
+\providecommand{\w}{\omega}
+
+\endinput
