@@ -8,51 +8,50 @@ Database file #1: references.bib
 Warning--I didn't find a database entry for "James2021"
 Warning--empty year in achlioptas_stochastic_nodate
 Warning--empty year in achlioptas_stochastic_nodate
-Warning--can't use both volume and number fields in bartlett2005local
 Warning--empty booktitle in Cristianini2000AnIT
 Warning--empty year in modelcomplex_exp
 Warning--empty publisher in STL_Hajek_Maxim_2021
 Warning--there's a number but no volume in ErdongHu2021
 Warning--can't use both volume and number fields in Mei2022TowardsBridging
-You've used 127 entries,
+You've used 135 entries,
             2773 wiz_defined-function locations,
-            1337 strings with 30080 characters,
-and the built_in function-call counts, 57403 in all, are:
-= -- 5105
-> -- 3435
-< -- 101
-+ -- 1177
-- -- 1042
-* -- 4458
-:= -- 8812
-add.period$ -- 495
-call.type$ -- 127
-change.case$ -- 709
-chr.to.int$ -- 119
-cite$ -- 262
-duplicate$ -- 2535
-empty$ -- 4648
-format.name$ -- 1243
-if$ -- 12155
+            1407 strings with 31791 characters,
+and the built_in function-call counts, 60657 in all, are:
+= -- 5428
+> -- 3561
+< -- 107
++ -- 1221
+- -- 1078
+* -- 4732
+:= -- 9352
+add.period$ -- 532
+call.type$ -- 135
+change.case$ -- 744
+chr.to.int$ -- 127
+cite$ -- 277
+duplicate$ -- 2682
+empty$ -- 4943
+format.name$ -- 1297
+if$ -- 12839
 int.to.chr$ -- 9
 int.to.str$ -- 1
-missing$ -- 88
-newline$ -- 749
-num.names$ -- 514
-pop$ -- 1574
+missing$ -- 100
+newline$ -- 799
+num.names$ -- 546
+pop$ -- 1602
 preamble$ -- 1
-purify$ -- 597
+purify$ -- 625
 quote$ -- 0
-skip$ -- 2161
+skip$ -- 2240
 stack$ -- 0
-substring$ -- 1314
-swap$ -- 360
-text.length$ -- 25
+substring$ -- 1486
+swap$ -- 340
+text.length$ -- 23
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 1312
-warning$ -- 8
-while$ -- 461
+type$ -- 1395
+warning$ -- 7
+while$ -- 494
 width$ -- 0
-write$ -- 1806
-(There were 9 warnings)
+write$ -- 1934
+(There were 8 warnings)

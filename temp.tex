@@ -1,0 +1,103 @@
+\subsection{Bounding inequalities}
+
+We briefly mentioned classical learning theory in accordance to our analysis. In particularly, we would like to draw out the fundamental results that have been driving learning theory, and what they say beforehand of the analysis. Would it just only that the old theory being misrepresented, misinterpreted, or there exists some fundamental restriction of the theory that lead to bias-variance being considerate of such setting only, with certain strong assumptions that lies within the theory itself, and can be extended or removed toward generality. Such is to say quite a bold claim, but worth to consider pursuing it. 
+
+In consideration of the PAC-ERM bound, of which restrict $R(h)$ and $\hat{R}(h)$ on some particular restriction, at least for ERM, they are fairly implicit in nature. We will have to reinterpret what they are saying to us, since it does not make much sense usually so. But the general pitfall that we have to be careful of usually lies in the nature of the bounds themselves. Specifically, their fame of being rather existential guarantees but no process-based analytic. 
+
+The first point of approach comes from either the \textit{Probably Approximately Correct} framework and its variation (we would like to talk of the singular original framework) or the \textit{Vapnik-Chervonenkis} framework of learning guarantees. Both of them serve what is there to be called a learning bounds within finite hypothesis class, or by reduced optimization problem with estimators. PAC bounds typically guarantee the upper, worst-case scenario bounds, while VC-dimension of its own definition is typically used for general lower bounds. Nevertheless, we have to know how they work to interpret and use them correctly.
+
+PAC-learning criteria started by specifying a restriction bound in which, the probability that the generalization error can be achieved, for error margin $\epsilon > 0$, is less than a confidence point of $1-\delta$ for $\delta > 0$. How they did this? Well, by bounding the error under specific $m$ samples of the observation space such that the above criteria is guaranteed, given $m\geq poly(1/\epsilon, 1/\delta, n,size(c))$ where $size(c)$ is the representation space of the concept to be learnt from, and $n$ is the input-dimension on itself. Basically, the guarantee under worst-case scenario, whether the generalization error evaluated of the algorithm $\mathcal{A}$ be specifically satisfying the criterion. This, is a \textit{concept-aware} criteria - reflected by specifying the general copula, restricting the algorithm and consider the term of the \textit{ambiance space} \footnote{In general notion, the ambiance space is what we called the \textit{object collection set}, containing the system's dynamical components and what to consider of itself. Basically, the $S$ in the mathematical modelling setting} $\mathbb{A}=(\mathcal{C},\mathbb{I}(n,m))$ upon the evaluator correspondence. The advantage of this method is well-known - it bounds, for example, for how many samples would it be possible to learn, under the assumption that the algorithm $\mathcal{A}$ can indeed, learn such that $h^{*}$ of the final result is $\inf_{h\in\mathcal{H}}\hat{R}(h)$, within polynomial expression of $m$. However, the implication of PAC-learning, is large and fairly difficult to attend to, such is to say they also consider the consistent and inconsistent case already, which is good, but still fairly not so straightforward in particular expression. 
+
+For example, PAC-learning on ERM principle requires that, for some particular notion of the bounding method, such that the following bound will be true, 
+
+
+\begin{proposition}\label{prop:PAC_ERM_1_recite}
+    For any $h\in\mathcal{H}$, for any $\delta\in(0,1)$, 
+    \begin{equation}
+        \mathbb{P}_{S}\left( R(h) > \hat{R}(h)+ C\sqrt{\frac{\log{(1/\delta)}}{2n}}\right)\leq \delta
+    \end{equation}
+\end{proposition}
+
+This bound works, under scrutiny assumption such that $c$ and $h$ effectively does not matter in such case, and only use the concentration inequalities on the estimated empirical error on loss function of a particular setting. This is by itself, not so rigorous, and not of the spirit of the PAC-learning boundary itself. The guarantee itself is, controversially, not even a good one. At least for our interest, it does not say anything about the algorithm, or about the hypothesis internal mechanics (if the mechanistic model is exposed, like when the concept class is defined, usually, the hypothesis is supposed to work the same way, which is indeed, not the case). What we miss here, is a lot of those factors together. Nevertheless, the PAC-learning bound indicates a particular insight. We have to \textit{formalize} the instance/observational space; we will have to formalize, of it, the sample $m$, the dimension of the encoding $n$, the representation system used by $size(c)$, the concept, and indeed, of the structure of the hypothesis space $\mathcal{H}$ of which gives detail to the hypothesis itself. Such is to say, we need to somehow make the PAC-criteria to be \textit{structural-aware}, per meaning of the word. 
+
+For VC-theory and the concept of its dimension, its limit is again, well-known up to certain accordance. Classical VC-theory worked upon a fairly restricted, discrete framework of classification, usually binary classification (for SVM) for example, on \textit{shatterable concept space}. The more, fairly advanced version of \textit{fat-shattering} and multiclass-VC domain still fall short of the generality and more complex structure - in which case we mean the simpler the restriction on what the task is. Insights and ideas toward VC-theory is rather explicit of its own principle - fundamentally speaking, VC-theory conjure to the \textit{combinatorial VC-dimension} of all possible solvable system, up to certain data points, of certain class, except of special cases. Such is to say that one of the aspect that Vapnik-Chervonenkis theory focus on is one particular \textit{expressive complexity} of a specific model. This is also a problem that we have to solve. 
+
+Classical Rademacher is also very hard to justify of its use here. Classical Rademacher analysis typically refers to the application of \textit{Rademacher complexity}, a near-empirical theoretical definition of complexity class. One advantage that it poses, against VC and PAC-based structures, is that the ambiance space of Rademacher complexity is not restricted toward particular class of problem, like binary labelling of the other theoretical analysis. Nevertheless, Rademacher complexity is unstable (leading to its dilemma of having very few closed-form results) and computationally difficult. Its bounds are also of the same fate, lest to say some of the results proceeded of the Rademacher complexity are often refuted in empirical experiments. Furthermore, strong assumptions and restricted bound cases still hinders its usefulness. Moreover, it does not have anything reasonable analysis for complex structure other than the plain estimators, especially with structures that exhibit the supposed inductive bias. 
+
+Those critiques against classical analysis is not alone of us. Rather, there are indeed a lot of invoices on such matter toward new development of learning theory. Specifically so, \cite{zhang2017understandingdeeplearningrequires} inquired of the fact that bounds are often vacuous in terms of deriving for deep neural network. Of the same paper is also the opinion that expressivity is not generalization, which is, obviously true from our theoretical preliminary. \cite{truong2025rademachercomplexitybasedgeneralizationbounds} discussed the instability and hard computation of the Rademacher bound, also of threshold behaviours. On the core topic of generalization (which a lot of people pursue for obvious reason), \cite{nagarajan2021uniformconvergenceunableexplain} argued against the current uniform convergence theory that seemingly fail to garner an understanding of such behaviour, and so is \cite{tunali2019empirical}. Solutions exist, yes, but either in the form of partial solution and variation of classical theory, like PAC-Bayes, some way of experimenting, like \textit{stability-based analysis}, \textit{margin/norm measures} or localized Rademacher complexity, as seen in \cite{bartlett2005local,bartlett2017spectrally,bousquet2002stability,neyshabur2015norm}. Nevertheless, they are still \textit{partial solutions}, and no full solution has emerged, yet. We would likely want ourselves to not follow the same path again. 
+
+
+
+
+Even though such can be said of the pitfall of current practices, it is still not the end of the road, or at least of the principle in which we apply to our empirical study - to force double descent out. Which is rather harder than what it looks like. We might as well attempt to analyse double descent in terms of classical, non-novel theory first, before jumping straight into conclusion without personal observations. First, the issue of bias-variance and double descent is related to multiple factors, but specifically between the notion of bias-variance and complexity-accuracy. However, their definition and usage in certain contexts are obscured, thus would require a fairly thorough consideration. Most of these results contains of bounds and often discussion of random processes, and also restricted itself to mathematically well-defined setting. For now, we would like to investigate their notions and applications. Though for starter, we have to discuss the following preliminary. The hypothesis class $\mathcal{H}$ has two types of classification: either infinite hypothesis class $\mathcal{H}^{\infty}$ or finite hypothesis class $\mathcal{H}^{n}$. Based on the details of the expression of representation strings (\cite{10.5555/200548}), an infinite hypothesis class contains infinitely many specifiers of the hypothesis structure. Note that this does not correlate to an increase in parameter, as we will see with the case of axis-aligned rectangle - for only four parameters $(l_{1},l_{2},h_{1},h_2)$ we can specify all axis-aligned rectangles with their value taken from the field $\mathbb{F}=\mathbb{R}$. Finite hypothesis class is then can be understood of the number of configuration, or in discrete form combinatorial pairs that can be presented of the hypothesis class, for example, a string of all $n$-length binary numbers $\{x_{1},\dots,x_{n}\}, x_{i}\in \{0,1\}$. A subtlety that would then have to discover, is the increment in size of the hypothesis to accommodate either finite or infinite number of specifying parameters - one example can be sampled from is the class of all support vector machine (SVM, \cite{Vapnik1999-VAPTNO}), which for now we treat it as it is. The concept class can then also be treated similarly. Here, we assume a setting where unless specified, we have knowledge of the concept class structures, but not the hypothesis. 
+
+Assume the working space is the real field $\mathbb{R}^{n}$. Let us recall a model $h\in\mathcal{H}$ of certain hypothesis class $\mathcal{H}$. Then, the \textbf{complexity} refers to the complexity of the hypothesis $h$ itself; there is also the notion of class maximal complexity for $\mathcal{H}$. Complexity in this case refers to the mass of the model, or rather, to answer the following questions:
+\begin{enumerate}[itemsep=0.5pt,topsep=0.5pt]
+    \item What is the effective expression range of a hypothesis?
+    \item What is the hypothesis structured in?
+    \item If the model is constructed by parameters, how many parameters are there?
+    \item How many components are there in specific model $h$, and how would another model $h'\in \mathcal{H}$ differs from $h$?
+\end{enumerate}
+Those questions are not so easily answered. Specifically, analysis often puts the hypothesis class $\mathcal{H}$ as a class of functions. So, there exists the class $\mathcal{H}_{n}$ of $n$-th degree polynomials, or else. Effective complexity in such case means the range of expression a function can give - for example, for $n$-th polynomial class, we already have the Weierstrass's theorem that tells us that any continuous function of closed interval can be approximated by a polynomial of arbitrary order. These expressions depend on the field or space the hypothesis class lives in, for example, if the hypothesis is configured to work in the set of all functions in $\mathbb{F}=\mathbb{R}$ of algebraic field, then we call it the algebraic family. There are various hypothesis classes in such case, and usually, not a lot of them can be analysed and represented in the same way, and hence also the analysis of the `size' of the hypothesis, also between different hypothesis classes. This prompted the usage of a more general notion, called \textbf{representation complexity}.
+
+Furthermore, the above two measures only talk about the \textbf{general mass} (representation) and \textbf{general expression}. In a deeper analysis, we haven't talked about the general individual complexity of the model itself. This notion refers to the complexity computed or evaluated, by considering the process-dependent behaviours and range of a specific expression influence on the operational process itself. While expressive complexity can provide a sufficient bound of approximation strength, the individual strength that can make it happen (for example, the fact that $n^{k}$ value range versus $n^{k-1}$ value range is totally different by one power degree), the contribution and sum of individual components can only be discussed using the general individual complexity, by using \textbf{process complexity} term. Up until now, this has not been formulated as author's knowledge, hence the two standard term would then be used instead in the analysis. 
+
+
+\begin{table}[htb]
+  \centering
+  \footnotesize
+  \begin{threeparttable}
+    \caption{Descriptions of complexity measures applied to models and learning processes, from \cite{STL_Hajek_Maxim_2021,10.5555/2930837,10.5555/2371238,10.5555/200548} and \cite{Vapnik1999-VAPTNO} with some custom notions.}
+    \label{tab:polynomial_test}
+    % three columns: adaptive widths
+    \begin{tabularx}{\textwidth}{@{} L{0.2\textwidth}
+                                     L{0.15\textwidth} 
+                                     L{0.3\textwidth}
+                                     >{\RaggedRight\arraybackslash}X @{}}
+      \toprule
+      \textbf{Type} & \textbf{Notation} & \textbf{Purposes} & \textbf{Notes} \\
+      \midrule
+      Representation
+        & $\mathcal{M}_{r}$ 
+        & Complexity of encoding a model (size of representation, alphabet-dependent).
+        & Model-level measure\footnote{It depends on chosen encoding/representation and can be used to quantify storage or description length.}. \\
+      \addlinespace[1pt]
+      Expressive 
+        & $\mathcal{M}_{e}$
+        & Complexity of the model's observable behaviour (operational expressivity of the mapping it implements). 
+        & Model-level measure\footnote{This measures the variety of input-output behaviours the model can implement.}.\\
+      \addlinespace[1pt]
+      Structural
+        & $\mathcal{M}_{s}$
+        & Complexity of the model's internal architecture (how components compose and interact).
+        & Model-level measure\footnote{Decomposable into component-wise measures (e.g., per-layer, per-module) and useful for architectural comparisons.}.\\
+      \addlinespace[1pt]
+      Structural mass
+        & $\mathcal{M}_{\Sigma}$
+        & Aggregate representation size derived from representation complexity across the model.
+        & Sum of $\mathcal{M}_{r},\mathcal{M}_{e},\mathcal{M}_{s}$\\
+      \addlinespace[1pt]
+      Sample
+        & $\mathcal{M}_{p\in\mathcal{S}},\mathcal{M}_{p}$
+        & Number of samples required to reach a prescribed performance level (statistical sample-count).
+        &Process-level measure\footnote{The measure depends on hypothesis class, loss, and desired error/confidence. Further clarification must be made of a grounded definition for utilization.}.\\
+      \addlinespace[1pt]
+      Sample space
+        & $\mathcal{M}_{\mathcal{S}}$
+        & Intrinsic complexity of the data distribution / sample domain (richness, diversity, structured-ness).
+        & Global process measure\footnote{Statistical measure over the sample space; affects learnability and effective sample size.}\\
+      \addlinespace[1pt]
+      Optimization
+        & $\epsilon_{\mathcal{S}}$
+        & Complexity of the learning algorithm (convergence rate, computational/iteration cost, sensitivity) or worst-medium-best learning cost. 
+        & Process-level measure\footnote{The notion of optimization is usually hard to pin down analytically, often characterized empirically or by worst-case bounds.}.\\
+      \addlinespace[1pt]
+      \bottomrule
+    \end{tabularx}
+
+    \begin{tablenotes}
+      \footnotesize
+      \item[] \textbf{Notes:} The notion of structural mass is convoluted. In certain setting, it is simply the parameter space $\theta\in\Theta$, but in some setting, there exists fundamental difference than identically weighted parameter space complexity, as seen in multi-basis polynomial models, not taking into account homogeneous deep learning networks. Optimization complexity coincides with PAC-learning bounds for polynomial runtime, and \textit{sample complexity} sometimes can only be the dimension of the input/observation space.
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}

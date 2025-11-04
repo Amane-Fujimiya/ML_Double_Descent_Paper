@@ -1,4 +1,4 @@
-\begin{thebibliography}{127}
+\begin{thebibliography}{135}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -30,6 +30,20 @@ Oskar Allerbo.
   regression, 2025.
 \newblock URL \url{https://arxiv.org/abs/2311.01762}.
 
+\bibitem[Amari(1996)]{amari_1996_natural_riemannian_gradient}
+Shun-ichi Amari.
+\newblock Neural learning in structured parameter spaces - natural riemannian
+  gradient.
+\newblock In \emph{Advances in Neural Information Processing Systems 9
+  (NIPS'96)}, pp.\  287--293, 1996.
+\newblock Also cited as “Natural Riemannian Gradient”.
+
+\bibitem[Amari(1998)]{amari_1998_natural_gradient_works}
+Shun-ichi Amari.
+\newblock Natural gradient works efficiently in learning.
+\newblock \emph{Neural Computation}, 10\penalty0 (2):\penalty0 251--276, 1998.
+\newblock \doi{10.1162/089976698300017746}.
+
 \bibitem[Arjevani et~al.(2025)Arjevani, Bruna, Kileel, Polak, and
   Trager]{arjevani2025geometryoptimizationshallowpolynomial}
 Yossi Arjevani, Joan Bruna, Joe Kileel, Elzbieta Polak, and Matthew Trager.
@@ -40,8 +54,7 @@ Yossi Arjevani, Joan Bruna, Joe Kileel, Elzbieta Polak, and Matthew Trager.
   Wortman~Vaughan]{Balcan2010TrueSampleComplexity}
 Maria-Florina Balcan, Steve Hanneke, and Jennifer Wortman~Vaughan.
 \newblock The true sample complexity of active learning.
-\newblock \emph{Machine Learning}, 80\penalty0 (2–3):\penalty0 111--139,
-  2010.
+\newblock \emph{Machine Learning}, 80\penalty0 (2-3):\penalty0 111--139, 2010.
 \newblock \doi{10.1007/s10994-010-5174-y}.
 \newblock URL
   \url{https://link.springer.com/article/10.1007/s10994-010-5174-y}.
@@ -60,20 +73,6 @@ Pablo Barceló, Mikaël Monet, Jorge Pérez, and Bernardo Subercaseaux.
 \newblock Model interpretability through the lens of computational complexity,
   2020.
 \newblock URL \url{https://arxiv.org/abs/2010.12265}.
-
-\bibitem[Bartlett \& Mendelson(2005)Bartlett and Mendelson]{bartlett2005local}
-Peter~L. Bartlett and Shahar Mendelson.
-\newblock Empirical minimization.
-\newblock In \emph{Probability Theory and Related Fields}, volume 135, pp.\
-  311--334, 2005.
-\newblock \doi{10.1007/s00440-005-0460-0}.
-
-\bibitem[Bartlett et~al.(2017)Bartlett, Foster, and
-  Telgarsky]{bartlett2017spectrally}
-Peter~L. Bartlett, Dylan~J. Foster, and Matus Telgarsky.
-\newblock Spectrally-normalized margin bounds for neural networks.
-\newblock In \emph{Advances in Neural Information Processing Systems
-  (NeurIPS)}, pp.\  6241--6250, 2017.
 
 \bibitem[Belkin et~al.(2018)Belkin, Ma, and
   Mandal]{belkin2018understanddeeplearningneed}
@@ -98,17 +97,10 @@ Mikhail Belkin, Daniel Hsu, Siyuan Ma, and Soumik Mandal.
 Mikhail Belkin, Daniel Hsu, and Ji~Xu.
 \newblock Two models of double descent for weak features.
 \newblock \emph{SIAM Journal on Mathematics of Data Science}, 2\penalty0
-  (4):\penalty0 1167–1180, January 2020.
+  (4):\penalty0 1167--1180, January 2020.
 \newblock ISSN 2577-0187.
 \newblock \doi{10.1137/20m1336072}.
 \newblock URL \url{http://dx.doi.org/10.1137/20M1336072}.
-
-\bibitem[Bousquet \& Elisseeff(2002)Bousquet and
-  Elisseeff]{bousquet2002stability}
-Olivier Bousquet and André Elisseeff.
-\newblock Stability and generalization.
-\newblock In \emph{Journal of Machine Learning Research}, volume~2, pp.\
-  499--526, 2002.
 
 \bibitem[Bousquet et~al.(2020)Bousquet, Hanneke, Moran, van Handel, and
   Yehudayoff]{bousquet2020theoryuniversallearning}
@@ -149,6 +141,12 @@ Gavin Brown and Riccardo Ali.
 \newblock \emph{Transactions on Machine Learning Research}, 2024.
 \newblock ISSN 2835-8856.
 \newblock URL \url{https://openreview.net/forum?id=4TnFbv16hK}.
+
+\bibitem[Cauchy(1847)]{Cauchy:1847}
+Augustin-Louis Cauchy.
+\newblock General method for the resolution of simultaneous systems of
+  equations.
+\newblock \emph{Comp. Rend. Sci. Paris}, 25:\penalty0 536--538, 1847.
 
 \bibitem[Chen et~al.(2021)Chen, Huang, Nguyen, and Weng]{chen2021equivalence}
 Yilan Chen, Wei Huang, Lam~M. Nguyen, and Tsui-Wei Weng.
@@ -193,7 +191,7 @@ Stéphane d'~Ascoli, Levent Sagun, and Giulio Biroli.
 Adnan Darwiche and Pierre Marquis.
 \newblock A knowledge compilation map.
 \newblock \emph{Journal of Artificial Intelligence Research}, 17:\penalty0
-  229–264, 2002.
+  229--264, 2002.
 
 \bibitem[Davies et~al.(2023)Davies, Langosco, and
   Krueger]{davies_unifying_2023}
@@ -274,6 +272,12 @@ Molavi et~al.
 \newblock URL
   \url{https://academic.oup.com/restud/article-abstract/91/4/2462/7222145?redirectedFrom=fulltext&login=false}.
 
+\bibitem[Fletcher \& Reeves(1964)Fletcher and Reeves]{Fletcher:1964}
+R.~Fletcher and C.~M. Reeves.
+\newblock Function minimization by conjugate gradients.
+\newblock \emph{The Computer Journal}, 7\penalty0 (2):\penalty0 149--154, 1964.
+\newblock \doi{10.1093/comjnl/7.2.149}.
+
 \bibitem[Geman et~al.(1992)Geman, Bienenstock, and Doursat]{6797087}
 Stuart Geman, Elie Bienenstock, and René Doursat.
 \newblock Neural networks and the bias/variance dilemma.
@@ -285,6 +289,14 @@ Stuart Geman, Elie Bienenstock, and René Doursat.
 Ian Goodfellow, Yoshua Bengio, Aaron Courville, and Yoshua Bengio.
 \newblock \emph{Deep learning}, volume~1.
 \newblock MIT Press, 2016.
+
+\bibitem[Gunasekar et~al.(2021)Gunasekar, Woodworth, and
+  Srebro]{gunasekar_woodworth_srebro_2021_mirrorless_mirror_descent}
+Suriya Gunasekar, Blake Woodworth, and Nathan Srebro.
+\newblock Mirrorless mirror descent: A natural derivation of mirror descent.
+\newblock In \emph{Proceedings of the 24th International Conference on
+  Artificial Intelligence and Statistics (AISTATS 2021)}, volume 130, pp.\
+  2305--2313. PMLR, 2021.
 
 \bibitem[Hajek \& Raginsky(2021)Hajek and Raginsky]{STL_Hajek_Maxim_2021}
 Bruce Hajek and Maxim Raginsky.
@@ -318,6 +330,13 @@ Rebekka Heckel and Murat Yilmaz.
 \newblock arXiv preprint, 2020.
 \newblock URL \url{https://arxiv.org/abs/2007.10099}.
 \newblock discusses epoch-wise double descent and mitigation strategies.
+
+\bibitem[Hestenes \& Stiefel(1952)Hestenes and Stiefel]{Hestenes:1952}
+Magnus~R. Hestenes and Eduard Stiefel.
+\newblock Methods of conjugate gradients for solving linear systems.
+\newblock \emph{Journal of Research of the National Bureau of Standards},
+  49\penalty0 (6):\penalty0 409--436, 1952.
+\newblock \doi{10.6028/jres.049.044}.
 
 \bibitem[Hu(2021)]{ErdongHu2021}
 Erdong Hu.
@@ -448,6 +467,15 @@ Yifan Luo and Bin Dong.
   phenomenon, 2023.
 \newblock URL \url{https://arxiv.org/abs/2305.15907}.
 
+\bibitem[Luong et~al.(2016)Luong, Parpas, Rueckert, and
+  Rustem]{luong_parpas_rueckert_rustem_2016_weighted_mirror_descent}
+Duy V.~N. Luong, Panos Parpas, Daniel Rueckert, and Berç Rustem.
+\newblock A weighted mirror descent algorithm for nonsmooth convex optimization
+  problem.
+\newblock \emph{Journal of Optimization Theory and Applications}, 170\penalty0
+  (3):\penalty0 900‑915, 2016.
+\newblock \doi{10.1007/s10957-016-0963-5}.
+
 \bibitem[Manin \& Marcolli(2024)Manin and Marcolli]{Manin_2024}
 Yuri Manin and Matilde Marcolli.
 \newblock Homotopy theoretic and categorical models of neural information
@@ -504,8 +532,8 @@ Song Mei and Andrea Montanari.
   Wegener]{MiltersenRadhakrishnanWegener2005}
 Peter~B. Miltersen, Jaikumar Radhakrishnan, and Ingo Wegener.
 \newblock On converting {CNF} to {DNF}.
-\newblock \emph{Theoretical Computer Science}, 347\penalty0 (1–2):\penalty0
-  325–335, 2005.
+\newblock \emph{Theoretical Computer Science}, 347\penalty0 (1-2):\penalty0
+  325--335, 2005.
 
 \bibitem[Mohri et~al.(2012)Mohri, Rostamizadeh, and Talwalkar]{10.5555/2371238}
 Mehryar Mohri, Afshin Rostamizadeh, and Ameet Talwalkar.
@@ -517,7 +545,7 @@ Mehryar Mohri, Afshin Rostamizadeh, and Ameet Talwalkar.
   Bischl]{Molnar_2020}
 Christoph Molnar, Giuseppe Casalicchio, and Bernd Bischl.
 \newblock \emph{Quantifying Model Complexity via Functional Decomposition for
-  Better Post-hoc Interpretability}, pp.\  193–204.
+  Better Post-hoc Interpretability}, pp.\  193--204.
 \newblock Springer International Publishing, 2020{\natexlab{a}}.
 \newblock ISBN 9783030438234.
 \newblock \doi{10.1007/978-3-030-43823-4_17}.
@@ -532,13 +560,6 @@ Christoph Molnar, Gunnar König, Julia Herbinger, Timo Freiesleben, Susanne
 \newblock General pitfalls of model-agnostic interpretation methods for machine
   learning models.
 \newblock \emph{arXiv preprint arXiv:2007.04131}, 2020{\natexlab{b}}.
-
-\bibitem[Nagarajan \& Kolter(2021)Nagarajan and
-  Kolter]{nagarajan2021uniformconvergenceunableexplain}
-Vaishnavh Nagarajan and J.~Zico Kolter.
-\newblock Uniform convergence may be unable to explain generalization in deep
-  learning, 2021.
-\newblock URL \url{https://arxiv.org/abs/1902.04742}.
 
 \bibitem[Nakkiran(2019{\natexlab{a}})]{nakkiran2019datahurtlinearregression}
 Preetum Nakkiran.
@@ -588,12 +609,12 @@ Brady Neal, Sarthak Mittal, Aristide Baratin, Vinayak Tantia, Matthew Scicluna,
 \newblock A modern take on the bias-variance tradeoff in neural networks.
 \newblock \emph{arXiv preprint arXiv:1810.08591}, 2018.
 
-\bibitem[Neyshabur et~al.(2015)Neyshabur, Tomioka, and
-  Srebro]{neyshabur2015norm}
-Behnam Neyshabur, Ryota Tomioka, and Nathan Srebro.
-\newblock Norm-based capacity control in neural networks.
-\newblock In \emph{Conference on Learning Theory (COLT)}, pp.\  1376--1401,
-  2015.
+\bibitem[Nemirovski \& Yudin(1983)Nemirovski and Yudin]{nemirovski_yudin_1983}
+Arkadii~S. Nemirovski and David~B. Yudin.
+\newblock \emph{Problem Complexity and Method Efficiency in Optimization}.
+\newblock Wiley-Interscience Series in Discrete Mathematics. John Wiley \&
+  Sons, Chichester, UK, 1983.
+\newblock ISBN 9780471103455.
 
 \bibitem[Nie et~al.(2021)Nie, Yang, and Zhou]{NieYangZhou2021}
 Jiawang Nie, Zhi Yang, and Guoyin Zhou.
@@ -662,6 +683,27 @@ Victor Quétu and Enzo Tartaglione.
 \newblock URL \url{http://arxiv.org/abs/2302.13259}.
 \newblock arXiv:2302.13259 [cs].
 
+\bibitem[Raskutti \& Mukherjee(2013)Raskutti and
+  Mukherjee]{raskutti_mukherjee_2013_information_geometry_mirror_descent}
+Garvesh Raskutti and Sayan Mukherjee.
+\newblock The information geometry of mirror descent.
+\newblock \emph{arXiv Preprint}, 2013.
+\newblock arXiv:1310.7780.
+
+\bibitem[Rattray et~al.(1998)Rattray, Saad, and
+  Amari]{amari_rattray_saad_1998_natural_gradient_online}
+M.~Rattray, D.~Saad, and Shun-ichi Amari.
+\newblock Natural gradient descent for on-line learning.
+\newblock \emph{Physical Review Letters}, 81:\penalty0 5461--5464, 1998.
+\newblock \doi{10.1103/PhysRevLett.81.5461}.
+
+\bibitem[Robbins \& Monro(1951)Robbins and Monro]{Robbins:1951}
+Herbert Robbins and Sutton Monro.
+\newblock A stochastic approximation method.
+\newblock \emph{Annals of Mathematical Statistics}, 22\penalty0 (3):\penalty0
+  400--407, 1951.
+\newblock \doi{10.1214/aoms/1177729586}.
+
 \bibitem[Romer(2015)]{romer2015mathiness}
 Paul~M. Romer.
 \newblock Mathiness in the theory of economic growth.
@@ -727,7 +769,7 @@ Rahul Sharma and Alex Aiken.
 Zewen Shen and Kirill Serkh.
 \newblock On polynomial interpolation in the monomial basis.
 \newblock \emph{SIAM Journal on Numerical Analysis}, 63\penalty0 (2):\penalty0
-  469–494, March 2025.
+  469--494, March 2025.
 \newblock ISSN 1095-7170.
 \newblock \doi{10.1137/23m1623215}.
 \newblock URL \url{http://dx.doi.org/10.1137/23M1623215}.
@@ -738,6 +780,13 @@ Cheng Shi, Liming Pan, Hong Hu, and Ivan Dokmanić.
 \newblock Homophily modulates double descent generalization in graph
   convolution networks, 2024.
 \newblock URL \url{https://arxiv.org/abs/2212.13069}.
+
+\bibitem[Sohl-Dickstein(2012)]{sohl-dickstein_2012_natural_gradient_whitening}
+Jascha Sohl-Dickstein.
+\newblock The natural gradient by analogy to signal whitening, and recipes and
+  tricks for its use.
+\newblock \emph{arXiv Preprint}, 2012.
+\newblock arXiv:1205.1828.
 
 \bibitem[Soudry et~al.(2024)Soudry, Hoffer, Nacson, Gunasekar, and
   Srebro]{soudry2024implicitbiasgradientdescent}
@@ -798,18 +847,10 @@ Lan~V. Truong.
   learning, 2025.
 \newblock URL \url{https://arxiv.org/abs/2208.04284}.
 
-\bibitem[Tunali(2019)]{tunali2019empirical}
-Onur Tunali.
-\newblock Empirical rademacher complexity and its implications to deep
-  learning, February 2019.
-\newblock URL
-  \url{https://www.onurtunali.com/ml/2019/02/01/empirical-rademacher-complexity-and-its-implications-to-deep-learning.html}.
-\newblock Accessed: 2025-08-29.
-
 \bibitem[Valiant(1984)]{10.1145/1968.1972}
 L.~G. Valiant.
 \newblock A theory of the learnable.
-\newblock \emph{Commun. ACM}, 27\penalty0 (11):\penalty0 1134–1142, November
+\newblock \emph{Commun. ACM}, 27\penalty0 (11):\penalty0 1134--1142, November
   1984.
 \newblock ISSN 0001-0782.
 \newblock \doi{10.1145/1968.1972}.
@@ -856,11 +897,35 @@ Jason Wei, Yi~Tay, Rishi Bommasani, Colin Raffel, Barret Zoph, Sebastian
 \newblock Emergent abilities of large language models, 2022.
 \newblock URL \url{https://arxiv.org/abs/2206.07682}.
 
+\bibitem[Widrow \& Hoff(1960)Widrow and Hoff]{Widrow:1960}
+Bernard Widrow and Marcian~E. Hoff.
+\newblock Adaptive switching circuits.
+\newblock In \emph{1960 IRE WESCON Convention Record, Part 4}, pp.\  96--104,
+  New York, 1960. Institute of Radio Engineers.
+
+\bibitem[Xiao \& Zhang(2014)Xiao and
+  Zhang]{xiao_zhang_2014_proximal_stochastic_gradient}
+Lin Xiao and Tong Zhang.
+\newblock A proximal stochastic gradient method with progressive variance
+  reduction.
+\newblock \emph{SIAM Journal on Optimization}, 24\penalty0 (4):\penalty0
+  2057‑2075, 2014.
+\newblock \doi{10.1137/140961791}.
+
+\bibitem[Yang \& Amari(1998)Yang and
+  Amari]{yang_amari_1998_complexity_issues_natural_gradient}
+H.~H. Yang and Shun-ichi Amari.
+\newblock Complexity issues in natural gradient descent method for training
+  multilayer perceptrons.
+\newblock \emph{Neural Computation}, 10\penalty0 (8):\penalty0 2137--2157,
+  1998.
+\newblock \doi{10.1162/089976698300017007}.
+
 \bibitem[Yang \& Suzuki(2024)Yang and Suzuki]{Yang_2024}
 Tian-Le Yang and Joe Suzuki.
 \newblock Dropout drops double descent.
 \newblock \emph{Japanese Journal of Statistics and Data Science}, 7\penalty0
-  (2):\penalty0 615–632, March 2024.
+  (2):\penalty0 615--632, March 2024.
 \newblock ISSN 2520-8764.
 \newblock \doi{10.1007/s42081-024-00242-5}.
 \newblock URL \url{http://dx.doi.org/10.1007/s42081-024-00242-5}.
@@ -878,12 +943,6 @@ Zitong Yang, Yaodong Yu, Chong You, Jacob Steinhardt, and Yi~Ma.
 Aston Zhang, Zachary~C. Lipton, Mu~Li, and Alexander~J. Smola.
 \newblock Dive into deep learning, 2023.
 \newblock URL \url{https://arxiv.org/abs/2106.11342}.
-
-\bibitem[Zhang et~al.(2017)Zhang, Bengio, Hardt, Recht, and
-  Vinyals]{zhang2017understandingdeeplearningrequires}
-Chiyuan Zhang, Samy Bengio, Moritz Hardt, Benjamin Recht, and Oriol Vinyals.
-\newblock Understanding deep learning requires rethinking generalization, 2017.
-\newblock URL \url{https://arxiv.org/abs/1611.03530}.
 
 \bibitem[Zhang(2019)]{zhang_gradient_2019}
 Jiawei Zhang.

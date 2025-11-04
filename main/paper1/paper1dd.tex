@@ -3,7 +3,7 @@
 \usepackage{iclr2025_conference}
 \usepackage{times}
 
-\iclrfinalcopy
+%\iclrfinalcopy
 
 % Optional math commands from https://github.com/goodfeli/dlbook_notation.
 \input{math_commands.tex}
@@ -70,9 +70,9 @@ On itself, the phenomena \textit{double descent} has been investigated somewhat 
 
 Further literatures on double descent varies, but fairly new, ever since their discovery articles in \cite{belkin_reconciling_2019} and \cite{nakkiran_deep_2019}. Since then, we have \cite{shi2024homophilymodulatesdoubledescent,schaeffer_double_2023,quetu_can_2023,lafon_understanding_2024,neal2019biasvariancetradeofftextbooksneed,davies_unifying_2023,quetu_can_2023-1,liu2023understandingroleoptimizationdouble,mei2020generalizationerrorrandomfeatures,mei2019generalization,adlam2020understandingdoubledescentrequires,transtrum2025egaddoubledescentexplained,liu2021kernelregressionhighdimensions,allerbo2025changingkerneltrainingleads,pezeshki2021multiscalefeaturelearningdynamics,brellmann2024on,nakkiran2019moredata,mei2019randomfeatures,heckel2020early,nakkiran2020regularization,Belkin_2020,Yang_2024,spiess2023doublesingledescentcausal,nakkiran2021optimalregularizationmitigatedouble,zhang2024manipulatingsparsedoubledescent,cherkassky2024understand,nakkiran2019datahurtlinearregression}. An even more exotic version of double descent, dubbed \textit{triple descent} (or more), is discovered in \cite{d_ascoli_triple_2020}. 
 
-\section{Problem statements}
+\section{Preliminaries}
 
-Before continuing further, we must review the problem statement that led to the problem of double descent. We will have a look at the theory, the original conflict, and the illustrative phenomenon in action. In general, the learning setting in consideration of statistical learning theory is often supervised learning, for guarantee of a plausible upper bound result. 
+This section introduces and provides usable preliminary that will be used throughout this text, which include learning theory, practical consideration, algorithmic guarantees, and so on. 
 
 \subsection{Classical problem setting}
 
@@ -136,6 +136,7 @@ Then, we can partially say that generalization problem is an advancement from em
 These two stages of learning procedure comes of as the intrinsic design of machine learning setting. As opposed to interpolation, where empirical learning problem would have to be put into first priority to achieve the best possible point-through model, machine learning leans on approximation more and a separated criterion that is only visible in the learning setting - the fact that we are using $c'$ to extract $c$. This disparity is exactly the \textbf{generalization problem}, of which is then also the goal of machine learning, to approximate the general solution using the observed solution. One then can ask what is the difference between the two notions, and when we can guarantee that both will `converge' to the same point. The process of \textbf{model selection} is then the procedure that will optimize $h\in \mathcal{H}$ to a given target fixture, such as the empirical best. 
 
 One of the major assumption or observation from the point of the hypothesis class, is that the hypothesis cannot know the generalization error. Thereby, the more efficient and often used procedure/algorithm in training, is then the \textit{empirical risk minimization} (ERM) method, minimizing only the empirical risk to the empirical best; then, certain measures to `generalize' this heuristically is apprehended on the hypothesis. The process of model selection is also the place that we get the concept of \textbf{bias-variance tradeoff}. 
+
 \subsubsection{Uniform convergence}
 
 Suppose that for a concept class $\mathcal{H}$, we can then partition it to $\mathcal{H}=\bigcup_{k\in \mathbb{N}} \mathcal{H}_{k}$ for finite $k$ hypotheses. Assume that they satisfy the uniform convergence (\cite{JMLR:v11:shalev-shwartz10a}): 
@@ -196,6 +197,10 @@ Usually, underfitting is defined to be such that test error is smaller than trai
   A model $h$ is called \textbf{overfitting} if there exists a specific constant $\epsilon>0$ chosen for the setting, such that $\hat{R}_{k}(h)<\epsilon$, $\hat{R}_{p}(h_{\alpha})> \epsilon$ over the entire observation space.
 \end{definition}
 Namely, this mean that the static learning makes the generalization error worse. This draws the analogy of the student - studying explicitly for the past paper tests, yet unaware of the larger margin of questions in the large set of the test paper pool, leading to subpar performance. Similarly, overfitting is theorized to be fitting too fit to the reduced observation space - hence when it comes to the generalization observation space, it fails within such heuristic. The notion works on the mask of the risks, $\hat{R}_{k}$ and $\hat{R}_{p}(h_{\alpha})$. 
+
+\section{Problem statements}
+
+Before continuing further, we must review the problem statement that led to the problem of double descent. We will have a look at the theory, the original conflict, and the illustrative phenomenon in action. In general, the learning setting in consideration of statistical learning theory is often supervised learning, for guarantee of a plausible upper bound result. 
 
 \subsection{Bias-variance tradeoff}
 
@@ -331,10 +336,10 @@ At this point, we would like to also clarify the term interpolation threshold in
 \vspace{2mm}
 
 \begin{definition}[Interpolation threshold]
-    Assuming a typical supervised learning setting, for a hypothesis $h$ within class structure $\mathcal{H}$, and a supposed concept $c$ of the class $\mathcal{C}$. Suppose $[X,Y]\subset c\in \mathcal{C}$ being the dataset, or \textit{observable space} of $c$ on which $h$ is tested on. Under the \textbf{empirical generalization learning} procedure, partitioning $[X,Y]$ into $[X,Y]_{1}$ and $[X,Y]_{2}$, for error evaluated on the first set, $\hat{R}_{1}(h)$ called training error, and the second set, $\hat{R}_{2}(h)$ called test error, with optimization applied on the first set, then evaluated statically on the second, the \textbf{interpolation threshold} with respect to a particular complexity measure of $h$, $\mathcal{M}(h)$, is the point $\mathcal{M}_{0}(h)$ where it is possible for $\hat{R}_{1}(h)/\hat{R}_{1}(h)\approx 1$, for $\hat{R}_{1}(h)\ll \epsilon$, $\hat{R}_{2}(h)\ll \epsilon$, with $\epsilon \geq 0$. 
+    Assuming a typical supervised learning setting, for a hypothesis $h$ within class structure $\mathcal{H}$, and a supposed concept $c$ of the class $\mathcal{C}$. Suppose $[X,Y]\subset c\in \mathcal{C}$ being the dataset, or \textit{observable space} of $c$ on which $h$ is tested on. Under the \textbf{empirical generalization learning} procedure, partitioning $[X,Y]$ into $[X,Y]_{1}$ and $[X,Y]_{2}$, for error evaluated on the first set, $\hat{R}_{1}(h)$ called training error, and the second set, $\hat{R}_{2}(h)$ called test error, with optimization applied on the first set, then evaluated statically on the second, the \textbf{interpolation threshold} with respect to a particular complexity measure of $h$, $\mathcal{M}(h)$, is the point $\mathcal{M}_{0}(h)$ where it is possible for $\hat{R}_{2}(h)/\hat{R}_{1}(h)\approx 1$, for $\hat{R}_{1}(h)\ll \epsilon$, $\hat{R}_{2}(h)\ll \epsilon$, with $\epsilon \geq 0$. 
 \end{definition}
 
-This basically means that what is learnt, with respect to the model complexity that gauge \textit{how much} and \textit{what} the model can learn, perfectly fits the concept $c$ itself, from the observation space on its own. We can say that the observation space is \textit{fully representative} of the concept class, and the concept class is then fully realized by the model. Such point where that is possible, or there then such behaviour is possible, is called the interpolation point. The definition relies on the statement `where it is possible', hence it still, does not give us a particularly sound notion on to how and what constitute such possibility. The term empirical generalization learning comes from the fact that the procedure in practice of estimating and optimizing train-test-validation set in itself, is an imperfect empirical approximation of generalization testing. While the fact that we cannot gauge generalization error, in a purely blind black-box setting is settled (\cite{10.5555/2371238,10.5555/2930837,10.5555/2621980}), the method is then to try to mimic such by using generalization-via-hidden observations. To facilitate this, deliberately, the empirical learning procedure is only dynamic during training session, and static throughout the whole testing and validation testing section, and further on. 
+This basically means that what is learnt, with respect to the model complexity that gauge \textit{how much} and \textit{what} the model can learn, perfectly fits the concept $c$ itself, from the observation space on its own. We can say that, that specific sense, we gain the assumption that the observation space is \textit{fully representative} of the concept class, and the concept class is then fully realized by the model. Such point where that is possible, or there then such behaviour is possible, is called the interpolation point. The definition relies on the statement `where it is possible', hence it still, does not give us a particularly sound notion on to how and what constitute such possibility. The term empirical generalization learning comes from the fact that the procedure in practice of estimating and optimizing train-test-validation set in itself, is an imperfect empirical approximation of generalization testing. While the fact that we cannot gauge generalization error, in a purely blind black-box setting is settled (\cite{10.5555/2371238,10.5555/2930837,10.5555/2621980}), the method is then to try to mimic such by using generalization-via-hidden observations. To facilitate this, deliberately, the empirical learning procedure is only dynamic during training session, and static throughout the whole testing and validation testing section, and further on. 
 
 By default, in general theory, such interpolating point is dangerous. Not only because it is inherently difficult to know exactly what the dataset constitute, whether it is actually representative of the concept that gives rise to it, or the structural information, noises, and interferences in between. It is hence impossible, to a certain point, to truly know the effectiveness of the model beside interpolating the current dataset which forms the observable details. 
 
@@ -534,168 +539,8 @@ This is particular event or rather pattern that we often see in learning theory 
 \end{enumerate}
 While most of those are not directly related to our problem - suffice to say the general narrative is so, it particularly indicates a very serious error in the theoretical development itself, and the scope of its reach has been perhaps confirmed at hand. Attempts to solve this problem might need to be an entirely new framework, of something that unify the theory at-hand, or by relinquished attendances to the current dilemma using old and trusted foundation, yet will inevitably fail to resolve further outcome of the solution since its onset is beyond the classical theory. Such is to say, we need an entire solution to cover this particular track. One is promising of them all, being the \textit{Neural Tangent Kernel} (\cite{Jacot:2018:NTK}), but other than that, nothing much came through. 
 
-\subsection{Bounding inequalities}
 
-We briefly mentioned classical learning theory in accordance to our analysis. In particularly, we would like to draw out the fundamental results that have been driving learning theory, and what they say beforehand of the analysis. Would it just only that the old theory being misrepresented, misinterpreted, or there exists some fundamental restriction of the theory that lead to bias-variance being considerate of such setting only, with certain strong assumptions that lies within the theory itself, and can be extended or removed toward generality. Such is to say quite a bold claim, but worth to consider pursuing it. 
-
-In consideration of the PAC-ERM bound, of which restrict $R(h)$ and $\hat{R}(h)$ on some particular restriction, at least for ERM, they are fairly implicit in nature. We will have to reinterpret what they are saying to us, since it does not make much sense usually so. But the general pitfall that we have to be careful of usually lies in the nature of the bounds themselves. Specifically, their fame of being rather existential guarantees but no process-based analytic. 
-
-The first point of approach comes from either the \textit{Probably Approximately Correct} framework and its variation (we would like to talk of the singular original framework) or the \textit{Vapnik-Chervonenkis} framework of learning guarantees. Both of them serve what is there to be called a learning bounds within finite hypothesis class, or by reduced optimization problem with estimators. PAC bounds typically guarantee the upper, worst-case scenario bounds, while VC-dimension of its own definition is typically used for general lower bounds. Nevertheless, we have to know how they work to interpret and use them correctly.
-
-PAC-learning criteria started by specifying a restriction bound in which, the probability that the generalization error can be achieved, for error margin $\epsilon > 0$, is less than a confidence point of $1-\delta$ for $\delta > 0$. How they did this? Well, by bounding the error under specific $m$ samples of the observation space such that the above criteria is guaranteed, given $m\geq poly(1/\epsilon, 1/\delta, n,size(c))$ where $size(c)$ is the representation space of the concept to be learnt from, and $n$ is the input-dimension on itself. Basically, the guarantee under worst-case scenario, whether the generalization error evaluated of the algorithm $\mathcal{A}$ be specifically satisfying the criterion. This, is a \textit{concept-aware} criteria - reflected by specifying the general copula, restricting the algorithm and consider the term of the \textit{ambiance space} \footnote{In general notion, the ambiance space is what we called the \textit{object collection set}, containing the system's dynamical components and what to consider of itself. Basically, the $S$ in the mathematical modelling setting} $\mathbb{A}=(\mathcal{C},\mathbb{I}(n,m))$ upon the evaluator correspondence. The advantage of this method is well-known - it bounds, for example, for how many samples would it be possible to learn, under the assumption that the algorithm $\mathcal{A}$ can indeed, learn such that $h^{*}$ of the final result is $\inf_{h\in\mathcal{H}}\hat{R}(h)$, within polynomial expression of $m$. However, the implication of PAC-learning, is large and fairly difficult to attend to, such is to say they also consider the consistent and inconsistent case already, which is good, but still fairly not so straightforward in particular expression. 
-
-For example, PAC-learning on ERM principle requires that, for some particular notion of the bounding method, such that the following bound will be true, 
-
-
-\begin{proposition}\label{prop:PAC_ERM_1_recite}
-    For any $h\in\mathcal{H}$, for any $\delta\in(0,1)$, 
-    \begin{equation}
-        \mathbb{P}_{S}\left( R(h) > \hat{R}(h)+ C\sqrt{\frac{\log{(1/\delta)}}{2n}}\right)\leq \delta
-    \end{equation}
-\end{proposition}
-
-This bound works, under scrutiny assumption such that $c$ and $h$ effectively does not matter in such case, and only use the concentration inequalities on the estimated empirical error on loss function of a particular setting. This is by itself, not so rigorous, and not of the spirit of the PAC-learning boundary itself. The guarantee itself is, controversially, not even a good one. At least for our interest, it does not say anything about the algorithm, or about the hypothesis internal mechanics (if the mechanistic model is exposed, like when the concept class is defined, usually, the hypothesis is supposed to work the same way, which is indeed, not the case). What we miss here, is a lot of those factors together. Nevertheless, the PAC-learning bound indicates a particular insight. We have to \textit{formalize} the instance/observational space; we will have to formalize, of it, the sample $m$, the dimension of the encoding $n$, the representation system used by $size(c)$, the concept, and indeed, of the structure of the hypothesis space $\mathcal{H}$ of which gives detail to the hypothesis itself. Such is to say, we need to somehow make the PAC-criteria to be \textit{structural-aware}, per meaning of the word. 
-
-For VC-theory and the concept of its dimension, its limit is again, well-known up to certain accordance. Classical VC-theory worked upon a fairly restricted, discrete framework of classification, usually binary classification (for SVM) for example, on \textit{shatterable concept space}. The more, fairly advanced version of \textit{fat-shattering} and multiclass-VC domain still fall short of the generality and more complex structure - in which case we mean the simpler the restriction on what the task is. Insights and ideas toward VC-theory is rather explicit of its own principle - fundamentally speaking, VC-theory conjure to the \textit{combinatorial VC-dimension} of all possible solvable system, up to certain data points, of certain class, except of special cases. Such is to say that one of the aspect that Vapnik-Chervonenkis theory focus on is one particular \textit{expressive complexity} of a specific model. This is also a problem that we have to solve. 
-
-Classical Rademacher is also very hard to justify of its use here. Classical Rademacher analysis typically refers to the application of \textit{Rademacher complexity}, a near-empirical theoretical definition of complexity class. One advantage that it poses, against VC and PAC-based structures, is that the ambiance space of Rademacher complexity is not restricted toward particular class of problem, like binary labelling of the other theoretical analysis. Nevertheless, Rademacher complexity is unstable (leading to its dilemma of having very few closed-form results) and computationally difficult. Its bounds are also of the same fate, lest to say some of the results proceeded of the Rademacher complexity are often refuted in empirical experiments. Furthermore, strong assumptions and restricted bound cases still hinders its usefulness. Moreover, it does not have anything reasonable analysis for complex structure other than the plain estimators, especially with structures that exhibit the supposed inductive bias. 
-
-Those critiques against classical analysis is not alone of us. Rather, there are indeed a lot of invoices on such matter toward new development of learning theory. Specifically so, \cite{zhang2017understandingdeeplearningrequires} inquired of the fact that bounds are often vacuous in terms of deriving for deep neural network. Of the same paper is also the opinion that expressivity is not generalization, which is, obviously true from our theoretical preliminary. \cite{truong2025rademachercomplexitybasedgeneralizationbounds} discussed the instability and hard computation of the Rademacher bound, also of threshold behaviours. On the core topic of generalization (which a lot of people pursue for obvious reason), \cite{nagarajan2021uniformconvergenceunableexplain} argued against the current uniform convergence theory that seemingly fail to garner an understanding of such behaviour, and so is \cite{tunali2019empirical}. Solutions exist, yes, but either in the form of partial solution and variation of classical theory, like PAC-Bayes, some way of experimenting, like \textit{stability-based analysis}, \textit{margin/norm measures} or localized Rademacher complexity, as seen in \cite{bartlett2005local,bartlett2017spectrally,bousquet2002stability,neyshabur2015norm}. Nevertheless, they are still \textit{partial solutions}, and no full solution has emerged, yet. We would likely want ourselves to not follow the same path again. 
-
-\subsection{Complexity notions}
-Even though such can be said of the pitfall of current practices, it is still not the end of the road, or at least of the principle in which we apply to our empirical study - to force double descent out. Which is rather harder than what it looks like. We might as well attempt to analyse double descent in terms of classical, non-novel theory first, before jumping straight into conclusion without personal observations. First, the issue of bias-variance and double descent is related to multiple factors, but specifically between the notion of bias-variance and complexity-accuracy. However, their definition and usage in certain contexts are obscured, thus would require a fairly thorough consideration. Most of these results contains of bounds and often discussion of random processes, and also restricted itself to mathematically well-defined setting. For now, we would like to investigate their notions and applications. Though for starter, we have to discuss the following preliminary. The hypothesis class $\mathcal{H}$ has two types of classification: either infinite hypothesis class $\mathcal{H}^{\infty}$ or finite hypothesis class $\mathcal{H}^{n}$. Based on the details of the expression of representation strings (\cite{10.5555/200548}), an infinite hypothesis class contains infinitely many specifiers of the hypothesis structure. Note that this does not correlate to an increase in parameter, as we will see with the case of axis-aligned rectangle - for only four parameters $(l_{1},l_{2},h_{1},h_2)$ we can specify all axis-aligned rectangles with their value taken from the field $\mathbb{F}=\mathbb{R}$. Finite hypothesis class is then can be understood of the number of configuration, or in discrete form combinatorial pairs that can be presented of the hypothesis class, for example, a string of all $n$-length binary numbers $\{x_{1},\dots,x_{n}\}, x_{i}\in \{0,1\}$. A subtlety that would then have to discover, is the increment in size of the hypothesis to accommodate either finite or infinite number of specifying parameters - one example can be sampled from is the class of all support vector machine (SVM, \cite{Vapnik1999-VAPTNO}), which for now we treat it as it is. The concept class can then also be treated similarly. Here, we assume a setting where unless specified, we have knowledge of the concept class structures, but not the hypothesis. 
-
-Assume the working space is the real field $\mathbb{R}^{n}$. Let us recall a model $h\in\mathcal{H}$ of certain hypothesis class $\mathcal{H}$. Then, the \textbf{complexity} refers to the complexity of the hypothesis $h$ itself; there is also the notion of class maximal complexity for $\mathcal{H}$. Complexity in this case refers to the mass of the model, or rather, to answer the following questions:
-\begin{enumerate}[itemsep=0.5pt,topsep=0.5pt]
-    \item What is the effective expression range of a hypothesis?
-    \item What is the hypothesis structured in?
-    \item If the model is constructed by parameters, how many parameters are there?
-    \item How many components are there in specific model $h$, and how would another model $h'\in \mathcal{H}$ differs from $h$?
-\end{enumerate}
-Those questions are not so easily answered. Specifically, analysis often puts the hypothesis class $\mathcal{H}$ as a class of functions. So, there exists the class $\mathcal{H}_{n}$ of $n$-th degree polynomials, or else. Effective complexity in such case means the range of expression a function can give - for example, for $n$-th polynomial class, we already have the Weierstrass's theorem that tells us that any continuous function of closed interval can be approximated by a polynomial of arbitrary order. These expressions depend on the field or space the hypothesis class lives in, for example, if the hypothesis is configured to work in the set of all functions in $\mathbb{F}=\mathbb{R}$ of algebraic field, then we call it the algebraic family. There are various hypothesis classes in such case, and usually, not a lot of them can be analysed and represented in the same way, and hence also the analysis of the `size' of the hypothesis, also between different hypothesis classes. This prompted the usage of a more general notion, called \textbf{representation complexity}. Representation complexity refers to the number of components needed to express $h$ and generally, any hypothesis in $\mathcal{H}$. This is often the parameters count, since the parameters themselves are used in constructing the function in algebraic system. Thus, again, an $n$-th degree polynomial might have $2(n+1)$ parameters, for $n+1$ variational input (or variable), and $n+1$ coefficients. Notice that we specifically at the beginning, use the notion of algebraic structure $\mathbb{R}$ because of it. If we restrict ourselves to the expression, for example, for $\mathbb{B}=\{0,1\}$, then it can be expressed in various ways in logic theory, such as conjunctive normal form (CNF), disjunctive normal form (DNF), and else. This forbid the analysis based on the effective process itself, but rather the number of components required, hence taking them as complexity of construction. 
-
-Furthermore, the above two measures only talk about the \textbf{general mass} (representation) and \textbf{general expression}. In a deeper analysis, we haven't talked about the general individual complexity of the model itself. This notion refers to the complexity computed or evaluated, by considering the process-dependent behaviours and range of a specific expression influence on the operational process itself. While expressive complexity can provide a sufficient bound of approximation strength, the individual strength that can make it happen (for example, the fact that $n^{k}$ value range versus $n^{k-1}$ value range is totally different by one power degree), the contribution and sum of individual components can only be discussed using the general individual complexity, by using \textbf{process complexity} term. Up until now, this has not been formulated as author's knowledge, hence the two standard term would then be used instead in the analysis. 
-
-\begin{table}[htb]
-  \centering
-  \footnotesize
-  \begin{threeparttable}
-    \caption{Descriptions of complexity measures applied to models and learning processes}
-    \label{tab:complexity-measures}
-    % three columns: adaptive widths
-    \begin{tabularx}{\textwidth}{@{} >{\RaggedRight\arraybackslash}X
-                                     >{\RaggedRight\arraybackslash}X
-                                     >{\RaggedRight\arraybackslash}X @{}}
-      \toprule
-      \textbf{Measure} & \textbf{Purpose} & \textbf{Remarks / Scope} \\
-      \midrule
-      Representation complexity
-        & Complexity of encoding a model (size of representation, alphabet-dependent).
-        & Model-level measure; depends on chosen encoding/representation and can be used to quantify storage or description length. \\
-      \addlinespace[2pt]
-      Expressive complexity
-        & Complexity of the model's observable behaviour (operational expressivity of the mapping it implements).
-        & Model-level; measures the variety of input–output behaviors the model can implement. \\
-      \addlinespace[2pt]
-      Structural complexity
-        & Complexity of the model's internal architecture (how components compose and interact).
-        & Decomposable into component-wise measures (e.g., per-layer, per-module) and useful for architectural comparisons. \\
-      \addlinespace[2pt]
-      Structural mass
-        & Aggregate representation size derived from representation complexity across the model.
-        & Global model measure for total encoded size (e.g., total parameter encoding length). \\
-      \addlinespace[2pt]
-      Sample complexity
-        & Number of samples required to reach a prescribed performance level (statistical sample-count).
-        & Process-level measure; depends on hypothesis class, loss, and desired error/confidence. \\
-      \addlinespace[2pt]
-      Sample space complexity
-        & Intrinsic complexity of the data distribution / sample domain (richness, diversity, structured-ness).
-        & Statistical measure over the sample space; affects learnability and effective sample size. \\
-      \addlinespace[2pt]
-      Optimization complexity
-        & Complexity of the learning algorithm (convergence rate, computational/iteration cost, sensitivity).
-        & Process-level; hard to pin down analytically, often characterized empirically or by worst-case bounds. \\
-      \bottomrule
-    \end{tabularx}
-
-    \begin{tablenotes}
-      \footnotesize
-      \item[] \textbf{Notes:} The notion of structural mass is convoluted. In certain setting, it is simply the parameter space $\theta\in\Theta$, but in some setting, there exists fundamental difference than identically weighted parameter space complexity, as seen in multi-basis polynomial models, not taking into account homogeneous deep learning networks. Optimization complexity coincides with PAC-learning bounds for polynomial runtime, and \textit{sample complexity} sometimes can only be the dimension of the input/observation space.
-    \end{tablenotes}
-  \end{threeparttable}
-\end{table}
-
-The above complexity, aside from sample space-related measure, can also be applied onto the concept class's members itself. We also take the class complexity in such case, as the argument that maximize those measure: that is, the largest value of the measure, taken on the class as the class's complexity. 
-
-The next complexity measures that can be taken of, comes from the learning process structure itself. Usually, in statistical learning theory (\cite{STL_Hajek_Maxim_2021,10.5555/2371238,10.5555/2621980}), we often use the setting that is related to \textbf{supervised process}. This usually means the process can be configured in a feedback loop, or induced response toward the model - often come from the observational space, where the concept that is set to be the target of the process - then called as learning process - is conjured. For now, we reserve this to the classical learning theory and process, and will not inquire further of such direction. 
-
-The learning process assumes an operational space containing the structure, for example, $\mathbb{R}$-encoding space of real values, and a set of \textbf{samples} living in such space, denoted $\mathcal{S}$. Those samples are often referred to as the \textbf{observation set} of a particular objective of learning. As mentioned above, $\mathcal{S}$ belongs to the concept $c$, assumed to be of certain concept class $\mathcal{C}$. $\mathcal{S}$ is obtained by using an observing process to create or generate the result. This process can be determined or considered in multiple way, however, generally can be considered by having a deterministic interpretation (using an explicit function $c(x)$) or by probabilistic approach (modelling a distribution $\mathcal{D}$). Hence, we gain another type of complexity, with regard to the process called \textbf{sample complexity} - usually defined of cardinality - the amount of sample needed for particular purpose, for particular objective. For the complexity category up to the structure of the learning setting by itself, we call it the \textbf{sample space complexity}. 
-
-One final complexity that is worth mentioning is then the \textbf{optimization complexity}, measure on the action of the learning algorithm. By such, it investigates the construction of an optimization algorithm solely dependent on its size of the algorithm, and other non-process related measures. Optimization complexity can also be related or expressed, in situation of time complexity, which is typical in computing system. 
-
-One might ask why we need to determine and categorize complexity measures and the need to generalize and differentiate of each one. Indeed, while in usual use cases, such complexity notion can be considered sufficient in controlling and gauging the model itself. However, just as \cite{James2021} indicated in the section on deep learning double descent, such complexity might eventually, of some regions, inadequate to express and evaluate the complexity of the model in its operations anymore. Such transition is unanswered, and while the founding of complexity notion is still fragmented, it is indeed difficult to not paying attention specifically to those notions themselves. 
-
-\subsubsection{Representation complexity}
-
-Representation complexity works in assumption of the wider concept class $c\in \mathcal{C}$. However, it can also be applied onto the hypothesis class $\mathcal{H}$. To define it however, we need to define the concept of a representation scheme (\cite{10.5555/200548}). 
-
-\begin{definition}[Representation scheme]
-    For a given concept class $\mathcal{C}$, a \textbf{representation scheme} for such concept class is a function $\mathcal{R}: \Sigma^{*}\to \mathcal{C}$, where $\Sigma$ is the finite alphabet of symbols. We call any configuration $\sigma \in \Sigma^{*}$ such that $\mathcal{R}(\sigma)=c$ a \textbf{representation} of $c$, under $\mathcal{R}$. For any given $c$, the representation scheme might not be unique. \footnote{Perhaps representation scheme can be further realized by applying a Borel $\sigma$-algebra on top, and put on it a perspective measure to handle the notion of representation size. For example, in the traditional example of axis-aligned rectangle, one such representation scheme could be the real number schema $\mathcal{R}:(\Sigma \cup \mathbb{R})^{*}\to \mathcal{C}$, which then can utilize the extended notion of a Lebesgue measure over $\mathbb{R}$ and its spaces.}
-\end{definition} 
-
-The representation of a specific concept or hypothesis classes can be different. Consider the learning problem of a Boolean string. The representation can take form as the \textbf{conjunctive normal form} (CNF) or \textbf{disjunctive normal form} (DNF), with their expressiveness on equal, however string length varies exponentially, as seen by \cite{Wegener1987,MiltersenRadhakrishnanWegener2005,DarwicheMarquis2002}. Since the learning algorithm has access only to the input-output behaviour of $c$, in the worst case, it must assume that the simplest possible mechanism is generating this behaviour. Within this assumption, we can now formulate the \textbf{representation size} or \textbf{representation complexity} of particular concept, denoted $size(c)$. 
-\begin{definition}[Representation complexity]
-    Given a concept $c\in\mathcal{C}$, the \textbf{representation complexity} of $c$ is defined to be the size of the smallest representation of the concept $c$ in the underlying representation scheme $\mathcal{R}$, that is, 
-    \begin{equation*}
-    size(c) = \min_{\mathcal{R}(\sigma)=c}\{size(\sigma)\}
-\end{equation*}
-for any string $\sigma$ of the representation scheme $\mathcal{R}$ that still represents $c$.
-\end{definition}
-Under such definition, the more "complex" the concept $c$ is with the respective chosen representation scheme, the larger $size(c)$ is. This is also where the concept of the concept class $\mathcal{C}$ comes from - it comes from the \textit{representation class indiction} that we have in mind some fixed concept classes we study by their representation scheme. We note that, however, the definition works within the least-lower bound limit - we choose the infimum. In the worst-case scenario, the representation potential mismatch between $h$ and $c$ might be very large, hence the \textit{effective representation} might not be the same. We also operate on the assumption that different representations are equal, even though practically, we do not have the exact form of $c$ to be sure that problems can reduce from one representation to a smaller one - which forms the basis of the \textbf{manifold hypothesis}\footnote{The \textbf{manifold hypothesis} can be loosely expressed in the following statement by Lawrence Cayton \begin{quote}
-  [\dots] the dimensionality of many data sets is only artificially high; though each data point consists of perhaps thousands of features, it may be described as a function of only a few underlying parameters. That is, the data points are actually samples from a low-dimensional manifold that is embedded in a high-dimensional space. 
-\end{quote}}. Hence, the following assumptions are needed. 
-
-\begin{assumption}
-    For every concept $c\in\mathcal{C}$, there exists the representation family $\{\mathcal{R}\}$ of all representation with characteristic shared by each concept $c$. For each $c$, there exists one or more representation $\mathcal{R}$ such that its representation complexity can be defined. A weaker assumption assumes that for $c$ of one or more representation scheme, the more complex representation scheme can always be reduced to a lower representation scheme of minimal complexity.
-\end{assumption}
-
-\subsubsection{Optimization complexity}
-
-Optimization complexity refers to the runtime in solving the learning problem by itself. Taken for example, between polynomial and linear regression analytical-probable solution solving time, the complexity lies around $\mathcal{O}(np^{2}+p^{3})$ for the structural complexity defined by $p=d+1$ parameter count (including bias) via ordinary least square (OLS). However, this measure itself is not enough, and is not relevant to our problem, partially because of its operational level usage in runtime, which is often attributed to the learning algorithm convergence bound itself. 
-
-Still, we should give our own idea of such optimization complexity, called simply the $\epsilon$-optimization complexity, rephrased from famous variations already established in the theory of optimization (hence, not a novel definition). 
-
-\subsubsection{Sample complexity}
-
-The sample complexity can be defined in a fairly simple manner. Per usual, sample complexity, in context of learning systems, is defined as the number of training samples that it needs in order to successfully learn a target function. Certain definitions can be found, in for example, \cite{huang2025samplecomplexityrepresentationability,wegel2025samplecomplexitysemisupervisedmultiobjective,Mei2022TowardsBridging} or in a more specific context of active online learning, \cite{Balcan2010TrueSampleComplexity}.  However, such definition is usually too simplistic of the sample complexity itself, or compressed any reasonable information or properties are there of the sample set. Nevertheless, we should still recall the copulated definition, 
-\begin{definition}[Sample complexity]
-  A measure $\mathcal{M}_{S}$ gauges the \textit{sample complexity} of a learning setting on sample set $S$, if, the learning algorithm $\mathcal{A}(h,c)$ can guarantee, for $M_{S}:\mathcal{P}(S)\to\mathbb{N}$, such that $M_{S}$ outputs a particular value such that for $S_{i}$ the $i$th ordered power subset of $S$, then
-  \begin{equation}
-    \mathbb{P}_{S_{i}} \left[\hat{R}(h)\leq \epsilon\right] \geq 1 - \delta
-  \end{equation}
-  If, it can guarantee instead, such that, 
-  \begin{equation}
-    \mathbb{P}_{S_{i}} \left[\lvert \hat{R}(h) - R(h) \rvert\leq \epsilon\right] \geq 1 - \delta
-  \end{equation}
-  We call it the \textit{generalization sample complexity} on empirical data. 
-\end{definition}
-Again, we emphasize the usage of this sample complexity term, however, either we \textit{decompose it} (which is not possible), or we will need to define another notion for \textit{sample complexity} of a given learning setting entirely. Furthermore, statistical metric of the sample set should also be considered. For example, a \textit{statistical-aware sample complexity} can be defined by the $(\epsilon,\mu)$-sample complexity measure on Gaussian spread distribution, as followed. 
-\begin{definition}[$(\epsilon,\mu)$-sample complexity]
-  A measure $\mathcal{M}_{S}[\epsilon,\mu](h,c)$ gauges the \textit{sample complexity} of a learning setting on sample set $S$, if, for the sample distribution on particular $\epsilon,\mu$, of a random permutation process, the learning algorithm $\mathcal{A}(h,c)$ can guarantee, for $M_{S}:\mathcal{P}(S)\to\mathbb{N}$, such that $M_{S}$ outputs a particular value such that for $S_{i}$ the $i$th \textit{permuted power subset} of $S$, then
-  \begin{equation}
-    \mathbb{P}_{S_{i}} \left[\hat{R}(h)\leq \epsilon\right] \geq 1 - \delta
-  \end{equation}
-\end{definition}
-
-This definition sought to connect, in a sense, partially, the statistical analysis of the sample space to the complexity term with respect to the hypothesis $h$. Even though we use the statistical set $(\epsilon,\mu)$ of normal distribution process, a different set can be used, and hence changing the definition accordingly. 
-
-\subsubsection{Structural mass}
-
-
-
-
-\subsection{Classical insight}
+\subsection{Classical analysis}
 
 Classically, we can see that the problem of double descent is not inherently a problem that can be explained only by considering model complexity and the error rate. As such, it requires a framework that consider multiple factors together, and interpreting different hypothesis. Nevertheless, classical theory does indeed point to certain factors or aspect that should be of concern. For example, we have seen plenty of analysis that indicates that \textit{sample complexity} might be the biggest factor, considering the behaviour is intrinsically operable and perhaps observable in almost any model, except for certain model that is specialized of the data structure itself. Even by then, the error still can be obtained given large enough model disparity to the concept class. There are attempts to, indeed, analyze double descent from a VC perspective (\cite{lee2022vctheoreticalexplanationdouble}), however, the paper falls into the same pitfall as others in their interpretation and analysis. 
 
@@ -758,7 +603,155 @@ This sample complexity result admits the following equivalent statement as a gen
 
 For a looser bound, we can ultimately use an $\epsilon$-consistent learner criteria in such case. PAC-learning setting raises some peculiar insight toward the problem itself. First, is the learning bound itself of which raises the importance of several factors --- the dataset size, $m$, of which is used as the \textbf{total resources required} for approximating such function. Furthermore, the set complexity $\mathcal{H}$ is also used, albeit questionably inconsistent in the term $\log{|\mathcal{H}|}$, which implies at least consideration on the cardinality of the hypothesis class. In a finite domain, we notice that PAC-learning of consistent case is exactly the case of interpolation, assuming non-smooth and noisy data, and the inconsistent case describe the wider range of approximation-based case, but does not consider an approximation-aware bound. The design of $|\mathcal{H}|$ also does not allow for certain exact hypothesis class size measurement, except for combinatorial case where $\mathcal{H}$ is indeed finite. Nevertheless, the bound indeed indicates that for $m$ increase, the hypothesis class often do much better in general. 
 
+
 \subsection{VC-theory}
+
+\subsection{Complexity notions}
+Assume the working space is the real field $\mathbb{R}^{n}$. Let us recall a model $h\in\mathcal{H}$ of certain hypothesis class $\mathcal{H}$. Then, the \textbf{complexity} refers to the complexity of the hypothesis $h$ itself; there is also the notion of class maximal complexity for $\mathcal{H}$. Complexity in this case refers to the mass of the model, or rather, to answer the following questions:
+\begin{enumerate}[itemsep=0.5pt,topsep=0.5pt]
+    \item What is the effective expression range of a hypothesis?
+    \item What is the hypothesis structured in?
+    \item If the model is constructed by parameters, how many parameters are there?
+    \item How many components are there in specific model $h$, and how would another model $h'\in \mathcal{H}$ differs from $h$?
+\end{enumerate}
+
+Those questions are not so easily answered. Specifically, analysis often puts the hypothesis class $\mathcal{H}$ as a class of functions. So, there exists the class $\mathcal{H}_{n}$ of $n$-th degree polynomials, or else. Effective complexity in such case means the range of expression a function can give - for example, for $n$-th polynomial class, we already have the Weierstrass's theorem that tells us that any continuous function of closed interval can be approximated by a polynomial of arbitrary order. These expressions depend on the field or space the hypothesis class lives in, for example, if the hypothesis is configured to work in the set of all functions in $\mathbb{F}=\mathbb{R}$ of algebraic field, then we call it the algebraic family. There are various hypothesis classes in such case, and usually, not a lot of them can be analysed and represented in the same way, and hence also the analysis of the `size' of the hypothesis, also between different hypothesis classes, prompted the usage of a more general notion, called \textbf{representation complexity}\footnote{Representation complexity refers to the number of components needed to express $h$ and generally, any hypothesis in $\mathcal{H}$. This is often the parameters count, since the parameters themselves are used in constructing the function in algebraic system. Thus, again, an $n$-th degree polynomial might have $2(n+1)$ parameters, for $n+1$ variational input (or variable), and $n+1$ coefficients. Notice that we specifically at the beginning, use the notion of algebraic structure $\mathbb{R}$ because of it. If we restrict ourselves to the expression, for example, for $\mathbb{B}=\{0,1\}$, then it can be expressed in various ways in logic theory, such as conjunctive normal form (CNF), disjunctive normal form (DNF), and else. This forbid the analysis based on the effective process itself, but rather the number of components required, hence taking them as complexity of construction.}.
+
+We would like to recite the preliminary setting of this section. The hypothesis class $\mathcal{H}$ has two types of classification: either infinite hypothesis class $\mathcal{H}^{\infty}$ or finite hypothesis class $\mathcal{H}^{n}$. Based on the details of the expression of representation strings (\cite{10.5555/200548}), an infinite hypothesis class contains infinitely many specifiers of the hypothesis structure. Note that this does not correlate to an increase in parameter, as we will see with the case of axis-aligned rectangle - for only four parameters $(l_{1},l_{2},h_{1},h_2)$ we can specify all axis-aligned rectangles with their value taken from the field $\mathbb{F}=\mathbb{R}$. Finite hypothesis class is then can be understood of the number of configuration, or in discrete form combinatorial pairs that can be presented of the hypothesis class, for example, a string of all $n$-length binary numbers $\{x_{1},\dots,x_{n}\}, x_{i}\in \{0,1\}$. A subtlety that would then have to discover, is the increment in size of the hypothesis to accommodate either finite or infinite number of specifying parameters - one example can be sampled from is the class of all support vector machine (SVM, \cite{Vapnik1999-VAPTNO}), which for now we treat it as it is. The concept class can then also be treated similarly. Here, we assume a setting where unless specified, we have knowledge of the concept class structures, but not the hypothesis. 
+
+\begin{table}[htb]
+  \centering
+  \footnotesize
+  \begin{threeparttable}
+    \caption{Descriptions of complexity measures applied to models and learning processes, from \cite{STL_Hajek_Maxim_2021,10.5555/2930837,10.5555/2371238,10.5555/200548} and \cite{Vapnik1999-VAPTNO} with some custom notions.}
+    \label{tab:polynomial_test}
+    % three columns: adaptive widths
+    \begin{tabularx}{\textwidth}{@{} L{0.15\textwidth}
+                                     L{0.1\textwidth} 
+                                     L{0.4\textwidth}
+                                     >{\RaggedRight\arraybackslash}X @{}}
+      \toprule
+      \textbf{Type} & \textbf{Notation} & \textbf{Purposes} & \textbf{Notes} \\
+      \midrule
+      Representation
+        & $\mathcal{M}_{r}$ 
+        & Complexity of encoding a model (size of representation, alphabet-dependent).
+        & Model-level measure. \\
+      \addlinespace[1pt]
+      Expressive 
+        & $\mathcal{M}_{e}$
+        & Complexity of the model's observable behaviour (operational expressivity of the mapping it implements). 
+        & Model-level measure.\\
+      \addlinespace[1pt]
+      Structural
+        & $\mathcal{M}_{s}$
+        & Complexity of the model's internal architecture (how components compose and interact).
+        & Model-level measure.\\
+      \addlinespace[1pt]
+      Structural mass
+        & $\mathcal{M}_{\Sigma}$
+        & Aggregate representation size derived from representation complexity across the model.
+        & Sum of $\mathcal{M}_{r},\mathcal{M}_{e},\mathcal{M}_{s}$\\
+      \addlinespace[1pt]
+      Sample
+        & $\mathcal{M}_{p\in\mathcal{S}},\mathcal{M}_{p}$
+        & Number of samples required to reach a prescribed performance level (statistical sample-count).
+        &Process-level measure.\\
+      \addlinespace[1pt]
+      Sample space
+        & $\mathcal{M}_{\mathcal{S}}$
+        & Intrinsic complexity of the data distribution / sample domain (richness, diversity, structured-ness).
+        & Global process measure.\\
+      \addlinespace[1pt]
+      Optimization
+        & $\mathcal{M}_{\epsilon}$
+        & Complexity of the learning algorithm (convergence rate, computational/iteration cost, sensitivity) or worst-medium-best learning cost. 
+        & Process-level measure.\\
+      \addlinespace[1pt]
+      \bottomrule
+    \end{tabularx}
+
+    \begin{tablenotes}
+      \footnotesize
+      \item[] \textbf{Notes:} The notion of structural mass is convoluted. In certain setting, it is simply the parameter space $\theta\in\Theta$, but in some setting, there exists fundamental difference than identically weighted parameter space complexity, as seen in multi-basis polynomial models, not taking into account homogeneous deep learning networks. Optimization complexity coincides with PAC-learning bounds for polynomial runtime, and \textit{sample complexity} sometimes can only be the dimension of the input/observation space.
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+The above complexity, aside from sample space-related measure, can also be applied onto the concept class's members itself. We also take the class complexity in such case, as the argument that maximize those measure: that is, the largest value of the measure, taken on the class as the class's complexity.\footnote{Expressive complexity measures the variety of input-output behaviours the model can implement.}\footnote{Structural complexity is decomposable into component-wise measures (e.g., per-layer, per-module) and useful for architectural comparisons.}\footnote{Sample complexity depends on hypothesis class, loss, and desired error/confidence. Further clarification must be made of a grounded definition for utilization.}\footnote{Sample space complexity infers the statistical measure over the sample space; affects learnability and effective sample size.}\footnote{We also note that the notion of optimization is usually hard to pin down analytically, often characterized empirically or by worst-case bounds.}
+
+The next complexity measures that can be taken of, comes from the learning process structure itself. Usually, in statistical learning theory (\cite{STL_Hajek_Maxim_2021,10.5555/2371238,10.5555/2621980}), we often use the setting that is related to \textbf{supervised process}. This usually means the process can be configured in a feedback loop, or induced response toward the model - often come from the observational space, where the concept that is set to be the target of the process - then called as learning process - is conjured. For now, we reserve this to the classical learning theory and process, and will not inquire further of such direction. 
+
+The learning process assumes an operational space containing the structure, for example, $\mathbb{R}$-encoding space of real values, and a set of \textbf{samples} living in such space, denoted $\mathcal{S}$. Those samples are often referred to as the \textbf{observation set} of a particular objective of learning. As mentioned above, $\mathcal{S}$ belongs to the concept $c$, assumed to be of certain concept class $\mathcal{C}$. $\mathcal{S}$ is obtained by using an observing process to create or generate the result. This process can be determined or considered in multiple way, however, generally can be considered by having a deterministic interpretation (using an explicit function $c(x)$) or by probabilistic approach (modelling a distribution $\mathcal{D}$). Hence, we gain another type of complexity, with regard to the process called \textbf{sample complexity} - usually defined of cardinality - the amount of sample needed for particular purpose, for particular objective. For the complexity category up to the structure of the learning setting by itself, we call it the \textbf{sample space complexity}. 
+
+One final complexity that is worth mentioning is then the \textbf{optimization complexity}, measure on the action of the learning algorithm. By such, it investigates the construction of an optimization algorithm solely dependent on its size of the algorithm, and other non-process related measures. Optimization complexity can also be related or expressed, in situation of time complexity, which is typical in computing system. 
+
+One might ask why we need to determine and categorize complexity measures and the need to generalize and differentiate of each one. Indeed, while in usual use cases, such complexity notion can be considered sufficient in controlling and gauging the model itself. However, just as \cite{James2021} indicated in the section on deep learning double descent, such complexity might eventually, of some regions, inadequate to express and evaluate the complexity of the model in its operations anymore. Such transition is unanswered, and while the founding of complexity notion is still fragmented, it is indeed difficult to not paying attention specifically to those notions themselves. 
+
+\subsubsection{Representation complexity}
+
+Representation complexity works in assumption of the wider concept class $c\in \mathcal{C}$. However, it can also be applied onto the hypothesis class $\mathcal{H}$. To define it however, we need to define the concept of a representation scheme (\cite{10.5555/200548}). 
+
+\begin{definition}[Representation scheme]
+    For a given concept class $\mathcal{C}$, a \textbf{representation scheme} for such concept class is a function $\mathcal{R}: \Sigma^{*}\to \mathcal{C}$, where $\Sigma$ is the finite alphabet of symbols. We call any configuration $\sigma \in \Sigma^{*}$ such that $\mathcal{R}(\sigma)=c$ a \textbf{representation} of $c$, under $\mathcal{R}$. For any given $c$, the representation scheme might not be unique. \footnote{Perhaps representation scheme can be further realized by applying a Borel $\sigma$-algebra on top, and put on it a perspective measure to handle the notion of representation size. For example, in the traditional example of axis-aligned rectangle, one such representation scheme could be the real number schema $\mathcal{R}:(\Sigma \cup \mathbb{R})^{*}\to \mathcal{C}$, which then can utilize the extended notion of a Lebesgue measure over $\mathbb{R}$ and its spaces.}
+\end{definition} 
+
+The representation of a specific concept or hypothesis classes can be different. Consider the learning problem of a Boolean string. The representation can take form as the \textbf{conjunctive normal form} (CNF) or \textbf{disjunctive normal form} (DNF), with their expressiveness on equal, however string length varies exponentially, as seen by \cite{Wegener1987,MiltersenRadhakrishnanWegener2005,DarwicheMarquis2002}. Since the learning algorithm has access only to the input-output behaviour of $c$, in the worst case, it must assume that the simplest possible mechanism is generating this behaviour. Within this assumption, we can now formulate the \textbf{representation size} or \textbf{representation complexity} of particular concept, denoted $size(c)$. 
+\begin{definition}[Representation complexity]
+    Given a concept $c\in\mathcal{C}$, the \textbf{representation complexity} of $c$ is defined to be the size of the smallest representation of the concept $c$ in the underlying representation scheme $\mathcal{R}$, that is, 
+    \begin{equation}
+    \mathcal{M}_{r}(c) = \min_{\mathcal{R}(\sigma)=c}\{size(\sigma)\}
+\end{equation}
+for any string $\sigma$ of the representation scheme $\mathcal{R}$ that still represents $c$.
+\end{definition}
+Under such definition, the more "complex" the concept $c$ is with the respective chosen representation scheme, the larger $size(c)$ is. This is also where the concept of the concept class $\mathcal{C}$ comes from - it comes from the \textit{representation class indiction} that we have in mind some fixed concept classes we study by their representation scheme. We note that, however, the definition works within the least-lower bound limit - we choose the infimum. In the worst-case scenario, the representation potential mismatch between $h$ and $c$ might be very large, hence the \textit{effective representation} might not be the same. We also operate on the assumption that different representations are equal, even though practically, we do not have the exact form of $c$ to be sure that problems can reduce from one representation to a smaller one - which forms the basis of the \textbf{manifold hypothesis}\footnote{The \textbf{manifold hypothesis} can be loosely expressed in the following statement by Lawrence Cayton \begin{quote}
+  [\dots] the dimensionality of many data sets is only artificially high; though each data point consists of perhaps thousands of features, it may be described as a function of only a few underlying parameters. That is, the data points are actually samples from a low-dimensional manifold that is embedded in a high-dimensional space. 
+\end{quote}}. Hence, the following assumptions are needed. 
+
+\begin{assumption}
+    For every concept $c\in\mathcal{C}$, there exists the representation family $\{\mathcal{R}\}$ of all representation with characteristic shared by each concept $c$. For each $c$, there exists one or more representation $\mathcal{R}$ such that its representation complexity can be defined. A weaker assumption assumes that for $c$ of one or more representation scheme, the more complex representation scheme can always be reduced to a lower representation scheme of minimal complexity.
+\end{assumption}
+
+\subsubsection{Optimization complexity}
+
+Optimization complexity refers to the runtime in solving the learning problem by itself. Taken for example, between polynomial and linear regression analytical-probable solution solving time, the complexity lies around $\mathcal{O}(np^{2}+p^{3})$ for the structural complexity defined by $p=d+1$ parameter count (including bias) via ordinary least square (OLS). However, this measure itself is not enough, and is not relevant to our problem, partially because of its operational level usage in runtime, which is often attributed to the learning algorithm convergence bound itself. 
+
+Still, we should give our own idea of such optimization complexity, called simply the $\epsilon$-optimization complexity, rephrased from famous variations already established in the theory of optimization (hence, not a novel definition). The idea of the procedure is simple. We simply define $k$-ensembles on a fixed landscape $\mathcal{S}$, and calculate the worst-case, medium-case, and best-case scenario gauge of them. Before that, we need a notion on which to configure what to optimize. 
+
+Under the optimization setting, we are concerned of the optimization problem on time, $\mathcal{M}_{\epsilon,t}$, the structural mass $\mathcal{M}_{\epsilon,\Sigma}$ or decomposition of the structural mass, constrained on arbitrary $\epsilon$. Of all those above measure, the choice of choosing specific complexity measure can be applied for the following definition. 
+
+\begin{definition}[$\epsilon$-optimization]
+    For random initialization optimization algorithm $\mathcal{A}_{R}(\mathcal{H})$ on class $\mathcal{H}$ of criteria $R$, Let the procedure $\mathcal{P}(n,\mathcal{A}_{R},\mathcal{H},M)$ of $n$-ensembles, and setting $M$, for $\epsilon>0$, denote the complexity measure as $\mathcal{M}_{\epsilon}$, and the set of structural optimization method, $\mathcal{M}'=\{\mathcal{M}_{\epsilon,t},\mathcal{M}_{\epsilon,\Sigma},(\mathcal{M}_{\epsilon,t},\mathcal{M}_{\epsilon,\Sigma})\}$ we have: 
+    \begin{itemize}[topsep=1pt,itemsep=1pt,leftmargin = 1cm]
+        \item \textbf{Worst-case $\epsilon$} Given $\epsilon$, then the worst-case scenario means $\mathcal{M}_{\epsilon}(h)\leq \epsilon$ for $h\in \mathcal{H}$ for the maximum average of any $\mathcal{M}\in\mathcal{M}'$. 
+        \item \textbf{Medium-case $\epsilon$} Given $\epsilon$, then the worst-case scenario means $\mathcal{M}_{\epsilon}(h)\leq \epsilon$ for $h\in \mathcal{H}$ for the average of all ensembles of any $\mathcal{M}\in\mathcal{M}'$ that satisfy the $\epsilon$-criteria.
+        \item \textbf{Best-case $\epsilon$} Given $\epsilon$, then the worst-case scenario means $\mathcal{M}_{\epsilon}(h)\leq \epsilon$ for $h\in \mathcal{H}$ for the minimum average of any $\mathcal{M}\in\mathcal{M}'$ that satisfy the $\epsilon$-criteria.
+    \end{itemize}
+\end{definition}
+
+\subsubsection{Sample complexity}
+
+The sample complexity can be defined in a fairly simple manner. Per usual, sample complexity, in context of learning systems, is defined as the number of training samples that it needs in order to successfully learn a target function. Certain definitions can be found, in for example, \cite{huang2025samplecomplexityrepresentationability,wegel2025samplecomplexitysemisupervisedmultiobjective,Mei2022TowardsBridging} or in a more specific context of active online learning, \cite{Balcan2010TrueSampleComplexity}.  However, such definition is usually too simplistic of the sample complexity itself, or compressed any reasonable information or properties are there of the sample set. Nevertheless, we should still recall the copulated definition, 
+\begin{definition}[Sample complexity]
+  A measure $\mathcal{M}_{S}$ gauges the \textit{sample complexity} of a learning setting on sample set $S$, if, the learning algorithm $\mathcal{A}(h,c)$ can guarantee, for $M_{S}:\mathcal{P}(S)\to\mathbb{N}$, such that $M_{S}$ outputs a particular value such that for $S_{i}$ the $i$th ordered power subset of $S$, then
+  \begin{equation}
+    \mathbb{P}_{S_{i}} \left[\hat{R}(h)\leq \epsilon\right] \geq 1 - \delta
+  \end{equation}
+  If, it can guarantee instead, such that, 
+  \begin{equation}
+    \mathbb{P}_{S_{i}} \left[\lvert \hat{R}(h) - R(h) \rvert\leq \epsilon\right] \geq 1 - \delta
+  \end{equation}
+  We call it the \textit{generalization sample complexity} on empirical data. 
+\end{definition}
+Again, we emphasize the usage of this sample complexity term, however, either we \textit{decompose it} (which is not possible), or we will need to define another notion for \textit{sample complexity} of a given learning setting entirely. Furthermore, statistical metric of the sample set should also be considered. For example, a \textit{statistical-aware sample complexity} can be defined by the $(\epsilon,\mu)$-sample complexity measure on Gaussian spread distribution, as followed. 
+\begin{definition}[$(\epsilon,\mu)$-sample complexity]
+  A measure $\mathcal{M}_{S}[\epsilon,\mu](h,c)$ gauges the \textit{sample complexity} of a learning setting on sample set $S$, if, for the sample distribution on particular $\epsilon,\mu$, of a random permutation process, the learning algorithm $\mathcal{A}(h,c)$ can guarantee, for $M_{S}:\mathcal{P}(S)\to\mathbb{N}$, such that $M_{S}$ outputs a particular value such that for $S_{i}$ the $i$th \textit{permuted power subset} of $S$, then
+  \begin{equation}
+    \mathbb{P}_{S_{i}} \left[\hat{R}(h)\leq \epsilon\right] \geq 1 - \delta
+  \end{equation}
+\end{definition}
+
+This definition sought to connect, in a sense, partially, the statistical analysis of the sample space to the complexity term with respect to the hypothesis $h$. Even though we use the statistical set $(\epsilon,\mu)$ of normal distribution process, a different set can be used, and hence changing the definition accordingly. 
 
 
 
@@ -806,7 +799,28 @@ For understanding and analysing double descent and bias-variance trade-off, and 
 
 Our major focus is on three types of model. First two are classical models and system, linear-polynomial models on the real space $\mathbb{R}^{n}$. Second, is the type of \textbf{support vector machine} (SVM) models to highlight the analysis toward data-based fundamental analysis. The third one is the class and collection of different \textit{neural network structures} (MLP, or variations). Our goal is then to expansively analyse, formalize, making conjectures and hypothesis and test them, to find, force double descent out, or identify it on the learning landscape. We note that structures of those models are not well-generalized, hence analysis from one might not apply or apply only in small conjunction. This approach is rather quite helpful in its own merit, as its choice and preference will gauge our parameters than we gauge the phenomena of the parameter it induces. 
 
-\subsection{Linear function class}
+\subsection{Gradient-based optimization}
+
+In our usual experiment, we would most specifically, use a closely-regarded family of gradient-based algorithms, such as gradient descent (\cite{Cauchy:1847,Robbins:1951,Widrow:1960,Hestenes:1952,Fletcher:1964}), mirror descent, natural descent, and so on (\cite{nemirovski_yudin_1983,amari_1996_natural_riemannian_gradient,amari_1998_natural_gradient_works,yang_amari_1998_complexity_issues_natural_gradient,amari_rattray_saad_1998_natural_gradient_online,gunasekar_woodworth_srebro_2021_mirrorless_mirror_descent,luong_parpas_rueckert_rustem_2016_weighted_mirror_descent,xiao_zhang_2014_proximal_stochastic_gradient,sohl-dickstein_2012_natural_gradient_whitening,raskutti_mukherjee_2013_information_geometry_mirror_descent}). While implementation and details of the specific algorithm can be different, they all shares some of the same concepts of which making them possible for optimization in the specified iterative domain. The most general formulation possible is the following algorithm on convexity:
+
+\RestyleAlgo{ruled}
+\SetKwComment{Comment}{}{}
+\begin{algorithm}[htb]
+    \caption{Gradient descent on general convex function}
+    \KwData{$(x_{i},y_{i})\in\mathcal{S}$, $\eta$, $\nabla(\cdot)$ operator.}
+    \KwResult{Expected optimization to the minimal error on $\ell(\cdot,\cdot)$.}
+    \Begin
+    {
+    $x_{1}\gets$ randomly initialized points\;
+    \For{$t\gets 1$ to $T$}{
+        $x_{t+1}\gets x_{t}-\eta\nabla f(x_{t})$
+    }
+    }
+    \Return{$\hat{x}=1/T \sum^{T}_{t=1}x_{i}$}
+    \label{algo:algo_gd}
+\end{algorithm}
+
+\subsection{Linear function class $h(u)$}
 
 Linear-linear scenario learning is one particularly well-studied case of representing double descent or not, usually through simplicity in analysis (of the similar ease of proof compared to binary classification). Models in this setting can be said to share the same \textit{parameter space} with no additional structure or scaling mask (like in monomial basis). The model that is representative of this preliminary observation is from \cite{lafon_understanding_2024}, specifically, linear regression (function approximation) with Gaussian noise, and of univariate case. Consider the family class $(\mathcal{H}_p)_{p\in\llbracket1,d\rrbracket}$ of linear functions $h:\R^d\mapsto \R$ where exactly $p$ components are non-zero ($1\leq p\leq d$), we have the following model.
 
@@ -893,7 +907,7 @@ on $h$ and $c$ accordingly, a strong case of this happens to be not following th
 \begin{figure}[htb]
   \centering
   \includegraphics[width=0.6\textwidth]{media/dimensional_descent.png}
-  \caption{Similar experiment according to setting and result of Theorem~\ref{eq:linear_gaussian_erm}, where $p$ is in the range [1,5523]. Here, we can see small double descent modelled exactly at the interpolation threshold, while the later region exhibit similar phenomenon as bias-variance tradeoff.}
+  \caption{Similar experiment according to setting and result of Theorem~\ref{eq:linear_gaussian_erm}, where $p$ is in the range $[1,5523]$. Here, we can see small double descent modelled exactly at the interpolation threshold, while the later region exhibit similar phenomenon as bias-variance tradeoff.}
   \label{fig:contrarian}
 \end{figure}
 Thence, the theorem gives us two things - the interpolation point, in this setting, refers to the parameter error for their double descent behaviour. However, on the prediction results' error measure, the interpolation point correlates to the point where the defined generalization risk in such case equals zero. These patterns hold up to certain point. However, the test case is only up to $d=p$. An unexplored test case for $p>d$ indicate the surprising fact according still, to the theorem: the generalization risk takes double descent as a region with disturbance in the middle, but bias-variance appears afterward. This is illustrated in Figure~\ref{fig:contrarian}, where the same theorem is applied but in the domain which is usually called as \textit{overparameterized region}. 
@@ -931,11 +945,11 @@ Functional prediction on the classical theorem is presented below, for $n=\{1,\d
     \caption{Extension general experimentation, using the prediction made of theorem~\ref{thm:double_descent_lr} for verification. Here, $q=1$ as the general basis case of verification. }
 \end{figure}
 
-A design of the above class will require, in general, a much less straightforward implementation than the least square method, at least when it comes to circumstances and case fielding. The previous experimental result was done using a straightforward, single-time calculated theorem. To verify such, we need to adopt the non-zero class in a way that is static of the entire training procedure, and so on, for larger and larger $q$. First, we discuss of the mismatch calculation and thereof taken from the iterative error segmentation. In our cases, we have $h$ and $c$ with \textit{model mismatch}, that is, there might exist certain parameter that $h$ has, but the concept $c$ of its originality does not, and vice versa for the concept model of which the hypothesis does not have, or attain certain parameter of interest. This prompts us to make use of a type of \textbf{penalty} for such case. With respect to the mean square error on parameter, from the perspective of the supervisor, we have two ways to implement this, either of the \texttt{truncate} or \texttt{padding} mode. The truncate mode simply calculates parameter expression of those that can be compared. By default, for the learning problem to be consistent of the space, there must be at least one parameter that is not inhibited. Then, 
+A design of the above class will require, in general, a much less straightforward implementation than the least square method, at least when it comes to circumstances and case fielding. The previous experimental result was done using a straightforward, single-time calculated theorem. To verify such, we need to adopt the non-zero class in a way that is static of the entire training procedure, and so on, for larger and larger $q$. First, we discuss of the mismatch calculation and thereof taken from the iterative error segmentation. In our cases, we have $h$ and $c$ with \textit{model mismatch}, that is, there might exist certain parameter that $h$ has, but the concept $c$ of its originality does not, and vice versa for the concept model of which the hypothesis does not have, or attain certain parameter of interest. This prompts us to make use of a type of \textbf{penalty} for such case. With respect to the mean square error on parameter, from the perspective of the supervisor, we have two ways to implement this, either of the \textsf{truncate} or \textsf{padding} mode. The truncate mode simply calculates parameter expression of those that can be compared. By default, for the learning problem to be consistent of the space, there must be at least one parameter that is not inhibited. Then, 
 \begin{equation}
     \mathrm{MSEP}_{\text{truncate}}(h,c) = \frac{1}{k} \sum^{k}_{i=1}(p_{i}-q_{i})^{2}
 \end{equation}
-For $K=\min(n,m)$ of the overlap, or can be changed to be the set $k=\{(h_{i},c_{i})\}$ of which matches each other. Such can be changed to absolute error, if one does not want to inflate the error measure beyond its distance metric with respect to certain axis. The \texttt{padding} mode simply takes into account of all missing or surplus information and of the optimization phase. By initialization, from the hypothesis side, all surplus parameters are padded with input $1$. Hence, the measure is defined as 
+For $K=\min(n,m)$ of the overlap, or can be changed to be the set $k=\{(h_{i},c_{i})\}$ of which matches each other. Such can be changed to absolute error, if one does not want to inflate the error measure beyond its distance metric with respect to certain axis. The \textsf{padding} mode simply takes into account of all missing or surplus information and of the optimization phase. By initialization, from the hypothesis side, all surplus parameters are padded with input $1$. Hence, the measure is defined as 
 \begin{equation}\label{eq:parameter_penalty}
     \mathrm{MSEP}_{\text{pad}}(h,c) = \frac{1}{k} \sum^{k}_{i\in k} (p_{i}-q_{i})^{2} + \lambda \left(\frac{1}{n-k}\sum^{n}_{i\not\in k}p_{i}^{2}+ \frac{1}{m-k}\sum^{m}_{i\not\in k}q_{i}^{2}\right)
 \end{equation}
@@ -1091,7 +1105,7 @@ For a polynomial $\{a_{i}x^{i}\}_{n}$ on Vandermonde basis, approximating on the
 \end{enumerate}
 \end{hypothesis}
 
-The shift that will be hypothesized to appear here is expected to be from sparse in the polynomial term sense, out to globally dense with enough model complexity, over an iterative process. One also main point of clarity is, at certain point right now, we haven't discovered the effect of error deviation, yet. For such, I theorized the following. 
+The shift that will be hypothesized to appear here is expected to be from sparse in the polynomial term sense, out to globally dense with enough model complexity, over an iterative process. One also main point of clarity is, at certain point right now, we haven't discovered the effect of error deviation, yet. For such, we theorize the following. 
 
 \begin{conjecture}[Double descent]
   Double descent happens, for a polynomial class model $h_{n}\in\mathcal{H}_{p}$, is upper bounded to certain error deviation $\epsilon>0$ from the mean only of the generalization (test) dataset verification. 
@@ -1234,7 +1248,7 @@ The second idea is of the \textit{kernel method}. This particular method, useful
 \begin{equation}
     f(\mathbf{x}) = \mathrm{sgn} \left(\sum^{\ell}_{i=1} y_{i}\alpha_{i}k\langle \mathbf{x}\cdot \mathbf{x}_{i} \rangle\right)
 \end{equation}
-for any particular final categorization. One of the major problem for analysing SVM, is in the properties of it potentially having infinitely many parameters, depends on the size of the dataset. This makes the curve of both bias-variance and double descent not applicable in such regard - infinitely many parameters complexity, yet still finite complexity class. 
+for any particular final categorization. One of the major problem for analysing SVM, is in the properties of it potentially having infinitely many parameters, depends on the size of the dataset. This makes the curve of both bias-variance and double descent not applicable in such regard - infinitely many parameters' complexity, yet still finite complexity class. 
 
 From such observation, it would seem imperative that the notion of complexity based solely on the parameter counts of certain model construction is ill-equipped for certain flavours of machine learning model, in this case support vector machine (in the same type is the Gaussian Mixture Model). No double descent has been observed by empirical reports record per the author's knowledge. 
 
@@ -1248,7 +1262,9 @@ Concurrent theories are inherently unstable and with many variations, making the
 
 \subsection{Learning theory formalism}
 
-The classical theory of learning simply does not have much to offer in terms of a unified perspective, in which important factors are analysed of its realization. Specifically speaking of such, classical theory does do worse in many parts, for example, the aspect of transparency given the model, supervisor and the concept, of which their roles are not fully understood or formulated correctly, both in controlled setting and extension to replication of real life examples. Thereby, such enquires a newer theory of learning to come forward. A new learning theory must extend beyond what constitute the basic learning model, such as the idealized PAC-learning, and statistical learning setting in general. More specifically, we want to design a learning theory that is more akin to \textbf{modelling theory} of its internalization, but also attain the learning of machine learning theory. 
+The classical theory of learning simply does not have much to offer in terms of a unified perspective, in which important factors are analysed of its realization. Specifically speaking of such, classical theory does do worse in many parts, for example, the aspect of transparency given the model, supervisor and the concept, of which their roles are not fully understood or formulated correctly, both in controlled setting and extension to replication of real life examples. Thereby, the problem requires a newer theory of learning to come forward. A new learning theory must extend beyond what constitute the basic learning model, such as the idealized PAC-learning, and statistical learning setting in general. More specifically, we want to design a learning theory that is more akin to \textbf{modelling theory} of its internalization, but also attain the learning of machine learning theory. 
+
+Within the constraints of such theoretical framing, we can then construct a different notion in which the generalization and the empirical learning problem can possibly relate to each other, at least from the statistical framework. Let us consider the problem of mathematical modelling in such sense. Beside the model class construction, which will be discussed in further sections, 
 
 \subsection{The idea of neural network formalism}
 Previously, we have been discovering, examining past results and testing on models of different types, generally classical models. While decisive, each modelling setting requires different analysis and is often not so streamline. Hence, we propose a general analysis on the structure of a feed-forward style neural network architecture, as usual, for further analysis and identification. 
