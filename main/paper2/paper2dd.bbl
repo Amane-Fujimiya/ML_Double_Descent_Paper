@@ -1,9 +1,16 @@
-\begin{thebibliography}{27}
+\begin{thebibliography}{46}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Ackley et~al.(1985)Ackley, Hinton, and Sejnowski]{ackley1985learning}
+D.~H. Ackley, G.~E. Hinton, and T.~J. Sejnowski.
+\newblock A learning algorithm for boltzmann machines.
+\newblock \emph{Cognitive Science}, 9\penalty0 (1):\penalty0 147--169, 1985.
+\newblock \doi{10.1016/0364-0213(85)90014-6}.
+\newblock URL \url{https://doi.org/10.1016/0364-0213(85)90014-6}.
 
 \bibitem[Adlam \& Pennington(2020)Adlam and
   Pennington]{adlam2020understandingdoubledescentrequires}
@@ -12,12 +19,44 @@ Ben Adlam and Jeffrey Pennington.
   decomposition, 2020.
 \newblock URL \url{https://arxiv.org/abs/2011.03321}.
 
-\bibitem[Advani \& Saxe(2017)Advani and
+\bibitem[Advani \& Saxe(2017{\natexlab{a}})Advani and Saxe]{advani2017high}
+Madhu~S. Advani and Andrew~M. Saxe.
+\newblock High-dimensional dynamics of generalization error in neural networks.
+\newblock 2017{\natexlab{a}}.
+\newblock URL \url{https://arxiv.org/abs/1710.03667}.
+\newblock arXiv:1710.03667; (published versions/derivatives exist).
+
+\bibitem[Advani \& Saxe(2017{\natexlab{b}})Advani and
   Saxe]{advani2017highdimensionaldynamicsgeneralizationerror}
 Madhu~S. Advani and Andrew~M. Saxe.
 \newblock High-dimensional dynamics of generalization error in neural networks,
-  2017.
+  2017{\natexlab{b}}.
 \newblock URL \url{https://arxiv.org/abs/1710.03667}.
+
+\bibitem[Advani et~al.(2013)Advani, Lahiri, and Ganguli]{advani2013statistical}
+Madhu~S. Advani, Subhaneil Lahiri, and Surya Ganguli.
+\newblock Statistical mechanics of complex neural systems and high dimensional
+  data.
+\newblock \emph{Journal of Statistical Mechanics: Theory and Experiment}, 2013.
+\newblock URL \url{https://arxiv.org/abs/1301.7115}.
+\newblock arXiv:1301.7115.
+
+\bibitem[Amit et~al.(1985)Amit, Gutfreund, and Sompolinsky]{amit1985spin}
+D.~J. Amit, H.~Gutfreund, and H.~Sompolinsky.
+\newblock Spin-glass models of neural networks.
+\newblock \emph{Physical Review A}, 32\penalty0 (2):\penalty0 1007--1018, 1985.
+\newblock \doi{10.1103/PhysRevA.32.1007}.
+\newblock URL \url{https://doi.org/10.1103/PhysRevA.32.1007}.
+
+\bibitem[Bahri et~al.(2020)Bahri, Kadmon, Pennington, Schoenholz,
+  Sohl-Dickstein, and Ganguli]{bahri2020statmech}
+Yasaman Bahri, Jonathan Kadmon, Jeffrey Pennington, Sam~S. Schoenholz, Jascha
+  Sohl-Dickstein, and Surya Ganguli.
+\newblock Statistical mechanics of deep learning.
+\newblock \emph{Annual Review of Condensed Matter Physics}, 11:\penalty0
+  501--528, 2020.
+\newblock \doi{10.1146/annurev-conmatphys-031119-050745}.
+\newblock URL \url{https://doi.org/10.1146/annurev-conmatphys-031119-050745}.
 
 \bibitem[Belkin et~al.(2018)Belkin, Ma, and
   Mandal]{belkin2018understanddeeplearningneed}
@@ -69,6 +108,15 @@ Xander Davies, Lauro Langosco, and David Krueger.
 \newblock URL \url{http://arxiv.org/abs/2303.06173}.
 \newblock arXiv:2303.06173 [cs].
 
+\bibitem[Del~Ferraro et~al.(various)]{cavity_tutorial_delFerraro}
+G.~Del~Ferraro et~al.
+\newblock Cavity method / message passing tutorials and surveys.
+\newblock various.
+\newblock URL \url{https://arxiv.org/}.
+\newblock See e.g. surveys and arXiv tutorials on the cavity method and message
+  passing (search ``cavity method tutorial'' / ``message passing physics'') for
+  applied introductions.
+
 \bibitem[Domingos(2000)]{Domingos2000AUB}
 Pedro~M. Domingos.
 \newblock A unified bias-variance decomposition for zero-one and squared loss.
@@ -82,6 +130,21 @@ George~Casella E.~L.~Lehmann.
 \newblock ISBN 978-0-387-98502-2.
 \newblock \doi{10.1007/b98854}.
 \newblock URL \url{http://link.springer.com/10.1007/b98854}.
+
+\bibitem[Engel \& Van~den Broeck(2001)Engel and Van~den
+  Broeck]{engel2001statistical}
+A.~Engel and C.~Van~den Broeck.
+\newblock \emph{Statistical Mechanics of Learning}.
+\newblock Cambridge University Press, Cambridge, 2001.
+\newblock ISBN 978-0521773072.
+
+\bibitem[Gardner \& Derrida(1988)Gardner and Derrida]{gardner1988optimal}
+E.~Gardner and B.~Derrida.
+\newblock Optimal storage properties of neural network models.
+\newblock \emph{Journal of Physics A: Mathematical and General}, 21\penalty0
+  (1):\penalty0 271--284, 1988.
+\newblock \doi{10.1088/0305-4470/21/1/031}.
+\newblock URL \url{https://doi.org/10.1088/0305-4470/21/1/031}.
 
 \bibitem[Geman et~al.(1992)Geman, Bienenstock, and Doursat]{6797087}
 Stuart Geman, Elie Bienenstock, and René Doursat.
@@ -100,6 +163,23 @@ Bruce Hajek and Maxim Raginsky.
 \newblock \emph{Statistical Learning Theory}, volume~1.
 \newblock 2021.
 \newblock URL \url{https://maxim.ece.illinois.edu/teaching/SLT/}.
+
+\bibitem[Hinton(2012)]{hinton2012practical}
+G.~E. Hinton.
+\newblock A practical guide to training restricted boltzmann machines.
+\newblock In G.~Montavon, G.~B. Orr, and K.-R. Müller (eds.), \emph{Neural
+  Networks: Tricks of the Trade (2nd ed.)}, pp.\  599--619. Springer, 2012.
+\newblock \doi{10.1007/978-3-642-35289-8\_32}.
+\newblock URL \url{https://doi.org/10.1007/978-3-642-35289-8_32}.
+
+\bibitem[Hopfield(1982)]{hopfield1982neural}
+J.~J. Hopfield.
+\newblock Neural networks and physical systems with emergent collective
+  computational abilities.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 79\penalty0
+  (8):\penalty0 2554--2558, 1982.
+\newblock \doi{10.1073/pnas.79.8.2554}.
+\newblock URL \url{https://www.pnas.org/doi/10.1073/pnas.79.8.2554}.
 
 \bibitem[Jacot et~al.(2018)Jacot, Gabriel, and Hongler]{Jacot:2018:NTK}
 Arthur Jacot, Fran\c~cois Gabriel, and Clément Hongler.
@@ -124,11 +204,36 @@ Marc Lafon and Alexandre Thomas.
 \newblock URL \url{http://arxiv.org/abs/2403.10459}.
 \newblock arXiv:2403.10459 [cs, stat].
 
+\bibitem[Li \& Sompolinsky(2021)Li and Sompolinsky]{li2021statmechdeep}
+Qianyi Li and Haim Sompolinsky.
+\newblock Statistical mechanics of deep linear neural networks: The
+  backpropagating kernel renormalization.
+\newblock \emph{Physical Review X}, 11\penalty0 (3):\penalty0 031059, 2021.
+\newblock \doi{10.1103/PhysRevX.11.031059}.
+\newblock URL \url{https://doi.org/10.1103/PhysRevX.11.031059}.
+
 \bibitem[Liu \& Flanigan(2023)Liu and
   Flanigan]{liu2023understandingroleoptimizationdouble}
 Chris~Yuhao Liu and Jeffrey Flanigan.
 \newblock Understanding the role of optimization in double descent, 2023.
 \newblock URL \url{https://arxiv.org/abs/2312.03951}.
+
+\bibitem[Manin \& Marcolli(2024)Manin and Marcolli]{Manin_2024}
+Yuri Manin and Matilde Marcolli.
+\newblock Homotopy theoretic and categorical models of neural information
+  networks.
+\newblock \emph{Compositionality}, Volume 6 (2024), September 2024.
+\newblock ISSN 2631-4444.
+\newblock \doi{10.46298/compositionality-6-4}.
+\newblock URL \url{http://dx.doi.org/10.46298/compositionality-6-4}.
+
+\bibitem[Mehta \& Schwab(2014)Mehta and Schwab]{mehta2014exact}
+Pankaj Mehta and David~J. Schwab.
+\newblock An exact mapping between the variational renormalization group and
+  deep learning.
+\newblock 2014.
+\newblock URL \url{https://arxiv.org/abs/1410.3831}.
+\newblock arXiv:1410.3831.
 
 \bibitem[Mei \& Montanari(2020)Mei and
   Montanari]{mei2020generalizationerrorrandomfeatures}
@@ -136,6 +241,20 @@ Song Mei and Andrea Montanari.
 \newblock The generalization error of random features regression: Precise
   asymptotics and double descent curve, 2020.
 \newblock URL \url{https://arxiv.org/abs/1908.05355}.
+
+\bibitem[M{\'e}zard et~al.(1987)M{\'e}zard, Parisi, and
+  Virasoro]{mezard1987spin}
+M.~M{\'e}zard, G.~Parisi, and M.~A. Virasoro.
+\newblock \emph{Spin Glass Theory and Beyond}.
+\newblock World Scientific, Singapore, 1987.
+\newblock ISBN 978-9971501533.
+
+\bibitem[M{\'e}zard \& Montanari(2009)M{\'e}zard and
+  Montanari]{mezard2009information}
+Marc M{\'e}zard and Andrea Montanari.
+\newblock \emph{Information, Physics, and Computation}.
+\newblock Oxford University Press, Oxford, 2009.
+\newblock ISBN 978-0199233210.
 
 \bibitem[Mohri et~al.(2012)Mohri, Rostamizadeh, and Talwalkar]{10.5555/2371238}
 Mehryar Mohri, Afshin Rostamizadeh, and Ameet Talwalkar.
@@ -169,6 +288,19 @@ David Pfau.
 \newblock A generalized bias-variance decomposition for bregman divergences.
 \newblock Technical report, 2013.
 
+\bibitem[Roberts et~al.(2021)Roberts, Yaida, and Hanin]{roberts2021principles}
+Daniel~A. Roberts, Sho Yaida, and Boris Hanin.
+\newblock The principles of deep learning theory.
+\newblock Technical report, 2021.
+\newblock URL \url{https://arxiv.org/abs/2106.10165}.
+\newblock arXiv:2106.10165; expanded into a Cambridge Univ. Press book.
+
+\bibitem[Russo \& Zou(2016)Russo and Zou]{RussoZou:2016:InformationTheory}
+Daniel Russo and James Zou.
+\newblock Controlling bias in adaptive data analysis using information theory.
+\newblock In \emph{Proceedings of AISTATS}, 2016.
+\newblock Introduced info-theoretic generalization bounds.
+
 \bibitem[Schaeffer et~al.(2023)Schaeffer, Khona, Robertson, Boopathy,
   Pistunova, Rocks, Fiete, and Koyejo]{schaeffer_double_2023}
 Rylan Schaeffer, Mikail Khona, Zachary Robertson, Akhilan Boopathy, Kateryna
@@ -177,6 +309,14 @@ Rylan Schaeffer, Mikail Khona, Zachary Robertson, Akhilan Boopathy, Kateryna
   {Ablating} the {Sources} of a {Deep} {Learning} {Puzzle}, March 2023.
 \newblock URL \url{http://arxiv.org/abs/2303.14151}.
 \newblock arXiv:2303.14151 [cs, stat].
+
+\bibitem[Seung et~al.(1992)Seung, Sompolinsky, and
+  Tishby]{seung1992statistical}
+H.~S. Seung, H.~Sompolinsky, and N.~Tishby.
+\newblock Statistical mechanics of learning from examples.
+\newblock \emph{Physical Review A}, 45\penalty0 (8):\penalty0 6056--6091, 1992.
+\newblock \doi{10.1103/PhysRevA.45.6056}.
+\newblock URL \url{https://doi.org/10.1103/PhysRevA.45.6056}.
 
 \bibitem[Shalev-Shwartz \& Ben-David(2014)Shalev-Shwartz and
   Ben-David]{10.5555/2621980}
@@ -198,5 +338,12 @@ L.~G. Valiant.
 Vladimir Vapnik.
 \newblock \emph{The Nature of Statistical Learning Theory}.
 \newblock Springer: New York, 1999.
+
+\bibitem[Xu \& Raginsky(2017)Xu and Raginsky]{XuRaginsky:2017:InfoGen}
+An~Xu and Maxim Raginsky.
+\newblock Information-theoretic analysis of generalization capability of
+  learning algorithms.
+\newblock In \emph{NeurIPS}, 2017.
+\newblock Mutual information bounds.
 
 \end{thebibliography}

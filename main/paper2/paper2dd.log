@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.6.17)  6 OCT 2025 23:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.6.17)  5 NOV 2025 15:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1123,90 +1123,97 @@ LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <10> not available
 [1{C:/Users/Admin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{D:/MikTek/fonts/enc/dvips/base/8r.enc}
 
 ]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 [2]
-Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 86.
+Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 88.
 
 
 [3]
-<pdf/u-shaped.pdf, id=170, 114.32813pt x 75.23106pt>
+<pdf/u-shaped.pdf, id=226, 114.32813pt x 75.23106pt>
 File: pdf/u-shaped.pdf Graphic file (type pdf)
 <use pdf/u-shaped.pdf>
-Package pdftex.def Info: pdf/u-shaped.pdf  used on input line 128.
+Package pdftex.def Info: pdf/u-shaped.pdf  used on input line 130.
 (pdftex.def)             Requested size: 128.51065pt x 84.55907pt.
-<pdf/doubledescent.pdf, id=171, 203.12387pt x 75.23106pt>
+<pdf/doubledescent.pdf, id=227, 203.12387pt x 75.23106pt>
 File: pdf/doubledescent.pdf Graphic file (type pdf)
 <use pdf/doubledescent.pdf>
-Package pdftex.def Info: pdf/doubledescent.pdf  used on input line 129.
+Package pdftex.def Info: pdf/doubledescent.pdf  used on input line 131.
 (pdftex.def)             Requested size: 228.32161pt x 84.55907pt.
-<media/errorvscomplexity.png, id=181, 986.7264pt x 263.5446pt>
+
+
+[4]
+<media/errorvscomplexity.png, id=250, 986.7264pt x 263.5446pt>
 File: media/errorvscomplexity.png Graphic file (type png)
 <use media/errorvscomplexity.png>
-Package pdftex.def Info: media/errorvscomplexity.png  used on input line 150.
+Package pdftex.def Info: media/errorvscomplexity.png  used on input line 152.
 (pdftex.def)             Requested size: 397.48499pt x 106.16394pt.
-<media/Intro-ocean-test.png, id=187, 885.0666pt x 493.3632pt>
+<media/Intro-ocean-test.png, id=256, 885.0666pt x 493.3632pt>
 File: media/Intro-ocean-test.png Graphic file (type png)
 <use media/Intro-ocean-test.png>
-Package pdftex.def Info: media/Intro-ocean-test.png  used on input line 173.
+Package pdftex.def Info: media/Intro-ocean-test.png  used on input line 175.
 (pdftex.def)             Requested size: 203.50969pt x 113.44102pt.
-<media/Rn-cifar10-p15-adam-aug-train.png, id=188, 869.1672pt x 493.3632pt>
+<media/Rn-cifar10-p15-adam-aug-train.png, id=257, 869.1672pt x 493.3632pt>
 File: media/Rn-cifar10-p15-adam-aug-train.png Graphic file (type png)
 <use media/Rn-cifar10-p15-adam-aug-train.png>
-Package pdftex.def Info: media/Rn-cifar10-p15-adam-aug-train.png  used on input line 177.
+Package pdftex.def Info: media/Rn-cifar10-p15-adam-aug-train.png  used on input line 179.
 (pdftex.def)             Requested size: 193.97528pt x 110.10608pt.
+Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 193.
 
 
-[4 <./pdf/u-shaped.pdf> <./pdf/doubledescent.pdf>]
-Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 191.
-Package hyperref Info: bookmark level for unknown hypothesis defaults to 0 on input line 203.
+[5 <./pdf/u-shaped.pdf> <./pdf/doubledescent.pdf> <./media/errorvscomplexity.png>]
+Package hyperref Info: bookmark level for unknown hypothesis defaults to 0 on input line 205.
 
 
-[5 <./media/errorvscomplexity.png> <./media/Intro-ocean-test.png> <./media/Rn-cifar10-p15-adam-aug-train.png>]
-
-[6] (paper2dd.bbl
-Underfull \hbox (badness 7925) in paragraph at lines 57--64
+[6 <./media/Intro-ocean-test.png> <./media/Rn-cifar10-p15-adam-aug-train.png>] (paper2dd.bbl
+Underfull \hbox (badness 7925) in paragraph at lines 96--103
 []\OT1/ptm/m/n/10 (+20) St[]ephane d' As-coli, Lev-ent Sa-gun, and Giulio Biroli.  Triple de-scent and the
  []
 
 
-Underfull \hbox (badness 5667) in paragraph at lines 57--64
+Underfull \hbox (badness 5667) in paragraph at lines 96--103
 \OT1/ptm/m/n/10 (+20) two kinds of over-fit-ting: where & why do they ap-pear?  In \OT1/ptm/m/it/10 (+20) Ad-vances in
  []
 
 
-Underfull \hbox (badness 5388) in paragraph at lines 57--64
+Underfull \hbox (badness 5388) in paragraph at lines 96--103
 \OT1/ptm/m/it/10 (+20) Neu-ral In-for-ma-tion Pro-cess-ing Sys-tems\OT1/ptm/m/n/10 (+20) , vol-ume 33, pp. 3058--3069. Cur-ran As-so-
  []
 
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 117.
-(D:\MikTek\tex/latex/psnfss\ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-)
+
 
 [7
 
-])
+]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 197.
+ (D:\MikTek\tex/latex/psnfss\ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)
 
-[8] (paper2dd.aux)
+[8])
+
+[9] (paper2dd.aux)
  ***********
 LaTeX2e <2025-06-01>
 L3 programming layer <2025-05-26>
  ***********
 Package rerunfilecheck Info: File `paper2dd.out' has not changed.
-(rerunfilecheck)             Checksum: C653103D03D9F4B06E6DD5CD420FB5DE;774.
+(rerunfilecheck)             Checksum: 6DA2A7CC6D2D6FAD7CA581435FBC9BA8;915.
  ) 
 Here is how much of TeX's memory you used:
- 62902 strings out of 468187
- 1548198 string characters out of 5448667
- 2374150 words of memory out of 5000000
- 90296 multiletter control sequences out of 15000+600000
- 669177 words of font info for 271 fonts, out of 8000000 for 9000
+ 63053 strings out of 468187
+ 1550895 string characters out of 5448667
+ 2373206 words of memory out of 5000000
+ 90360 multiletter control sequences out of 15000+600000
+ 675495 words of font info for 315 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 121i,24n,124p,1881b,671s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 121i,24n,124p,3006b,704s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <D:/MikTek/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi5.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/MikTek/fonts/type1/public/amsfonts/symbols/msbm10.pfb><D:/MikTek/fonts/type1/public/urw-base35/ucrr8a.pfb><D:/MikTek/fonts/type1/public/urw-base35/utmb8a.pfb><D:/MikTek/fonts/type1/public/urw-base35/utmr8a.pfb><D:/MikTek/fonts/type1/public/urw-base35/utmri8a.pfb>
-Output written on paper2dd.pdf (8 pages, 1020596 bytes).
+Output written on paper2dd.pdf (9 pages, 1045775 bytes).
 PDF statistics:
- 391 PDF objects out of 1000 (max. 8388607)
- 59 named destinations out of 1000 (max. 500000)
- 56910 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 485 PDF objects out of 1000 (max. 8388607)
+ 81 named destinations out of 1000 (max. 500000)
+ 65110 words of extra memory for PDF output out of 74296 (max. 10000000)
 
