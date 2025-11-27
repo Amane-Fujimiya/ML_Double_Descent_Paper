@@ -1,4 +1,4 @@
-\begin{thebibliography}{135}
+\begin{thebibliography}{137}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -405,6 +405,15 @@ Michael~J. Kearns and Umesh~V. Vazirani.
 \newblock \emph{An introduction to computational learning theory}.
 \newblock MIT Press, Cambridge, MA, USA, 1994.
 \newblock ISBN 0262111934.
+
+\bibitem[Khouma et~al.(2019)Khouma, Diop, Fall, Ndiaye, Farssi, Oussamatou, and
+  Diouf]{khouma2019novel}
+Ousmane Khouma, Idy Diop, Papa~Alioune Fall, Mamadou~Lamine Ndiaye, Sidi~M.
+  Farssi, Abdou~M. Oussamatou, and Birahime Diouf.
+\newblock Novel classification method of spikes morphology in eeg signal using
+  machine learning.
+\newblock \emph{Procedia Computer Science}, 148:\penalty0 70--79, 2019.
+\newblock \doi{10.1016/j.procs.2019.01.010}.
 
 \bibitem[Lafon \& Thomas(2024)Lafon and Thomas]{lafon_understanding_2024}
 Marc Lafon and Alexandre Thomas.
@@ -866,6 +875,13 @@ Gido~M. van~de Ven, Nicholas Soures, and Dhireesha Kudithipudi.
 Vladimir Vapnik.
 \newblock \emph{The Nature of Statistical Learning Theory}.
 \newblock Springer: New York, 1999.
+
+\bibitem[Wang et~al.(2017)Wang, Xiong, Yao, Lin, and Ren]{wang2017research}
+Huibing Wang, Jinbo Xiong, Zhiqiang Yao, Mingwei Lin, and Jun Ren.
+\newblock Research survey on support vector machine.
+\newblock In \emph{Proceedings of the 10th EAI International Conference on
+  Mobile Multimedia Communications (MOBIMEDIA)}. EAI, December 2017.
+\newblock \doi{10.4108/eai.13-7-2017.2270596}.
 
 \bibitem[Wang et~al.(2019)Wang, Feng, and Wu]{wang2019svmdsn}
 Jingyuan Wang, Kai Feng, and Junjie Wu.

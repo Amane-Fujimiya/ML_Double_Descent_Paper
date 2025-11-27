@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.6.17)  5 NOV 2025 03:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.13)  27 NOV 2025 18:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -957,9 +957,16 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 \c@hypothesis=\count424
 \c@question=\count425
 \c@note=\count426
- (D:\MikTek\tex/latex/threeparttable\threeparttable.sty
+ (D:\MikTek\tex/latex/wrapfig\wrapfig.sty
+\wrapoverhang=\dimen412
+\WF@size=\dimen413
+\c@WF@wrappedlines=\count427
+\WF@box=\box86
+\WF@everypar=\toks62
+Package: wrapfig 2003/01/31  v 3.6
+) (D:\MikTek\tex/latex/threeparttable\threeparttable.sty
 Package: threeparttable 2003/06/13  v 3.0
-\@tempboxb=\box86
+\@tempboxb=\box87
 ) (D:\MikTek\tex/latex/ragged2e\ragged2e.sty
 Package: ragged2e 2023/06/22 v3.6 ragged2e Package
 \CenteringLeftskip=\skip104
@@ -978,46 +985,46 @@ Package: ragged2e 2023/06/22 v3.6 ragged2e Package
 \JustifyingParindent=\skip117
 ) (D:\MikTek\tex/latex/sidecap\sidecap.sty
 Package: sidecap 2023/01/24 v1.7a SideCap Package (RN/HjG)
-\SC@BOXWD=\dimen412
-\SC@CAPWD=\dimen413
-\SC@tempdima=\dimen414
-\SC@tempdimb=\dimen415
-\c@SC@C=\count427
-\SC@BOX=\box87
+\SC@BOXWD=\dimen414
+\SC@CAPWD=\dimen415
+\SC@tempdima=\dimen416
+\SC@tempdimb=\dimen417
+\c@SC@C=\count428
+\SC@BOX=\box88
 ) (D:\MikTek\tex/latex/tcolorbox\tcolorbox.sty
 Package: tcolorbox 2025/06/04 version 6.6.0 text color boxes
  (D:\MikTek\tex/latex/tools\verbatim.sty
 Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks62
-\verbatim@line=\toks63
+\every@verbatim=\toks63
+\verbatim@line=\toks64
 \verbatim@in@stream=\read3
 ) (D:\MikTek\tex/latex/environ\environ.sty
 Package: environ 2014/05/04 v0.3 A new way to define environments
  (D:\MikTek\tex/latex/trimspaces\trimspaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ))
-\tcb@titlebox=\box88
-\tcb@upperbox=\box89
-\tcb@lowerbox=\box90
-\tcb@phantombox=\box91
-\c@tcbbreakpart=\count428
-\c@tcblayer=\count429
-\c@tcolorbox@number=\count430
-\l__tcobox_tmpa_box=\box92
-\l__tcobox_tmpa_dim=\dimen416
-\tcb@temp=\box93
+\tcb@titlebox=\box89
+\tcb@upperbox=\box90
+\tcb@lowerbox=\box91
+\tcb@phantombox=\box92
+\c@tcbbreakpart=\count429
+\c@tcblayer=\count430
+\c@tcolorbox@number=\count431
+\l__tcobox_tmpa_box=\box93
+\l__tcobox_tmpa_dim=\dimen418
 \tcb@temp=\box94
 \tcb@temp=\box95
 \tcb@temp=\box96
+\tcb@temp=\box97
  (D:\MikTek\tex/latex/tcolorbox\tcbbreakable.code.tex
 Library (tcolorbox): 'tcbbreakable.code.tex' version '6.6.0'
 (D:\MikTek\tex/latex/pdfcol\pdfcol.sty
 Package: pdfcol 2022-09-21 v1.7 Handle new color stacks for pdfTeX (HO)
 )
 Package pdfcol Info: New color stack `tcb@breakable' = 1 on input line 23.
-\tcb@testbox=\box97
-\tcb@totalupperbox=\box98
-\tcb@totallowerbox=\box99
+\tcb@testbox=\box98
+\tcb@totalupperbox=\box99
+\tcb@totallowerbox=\box100
 ) (D:\MikTek\tex/latex/tcolorbox\tcbtheorems.code.tex
 Library (tcolorbox): 'tcbtheorems.code.tex' version '6.6.0'
 ) (D:\MikTek\tex/latex/tcolorbox\tcbskins.code.tex
@@ -1028,7 +1035,7 @@ Package: tikzfill.image 2023/08/08 v1.0.1 Image filling library for TikZ
 Package: tikzfill-common 2023/08/08 v1.0.1 Auxiliary code for tikzfill
 ) (D:\MikTek\tex/latex/tikzfill\tikzlibraryfill.image.code.tex
 File: tikzlibraryfill.image.code.tex 2023/08/08 v1.0.1 Image filling library
-\l__tikzfill_img_box=\box100
+\l__tikzfill_img_box=\box101
 )) (D:\MikTek\tex/latex/tcolorbox\tcbskinsjigsaw.code.tex
 Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.6.0'
 ))))
@@ -1039,7 +1046,7 @@ LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 46
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 ) (D:\MikTek\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-04-14 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count431
+\l__color_backend_stack_int=\count432
 ) (paper1dd.aux
 
 LaTeX Warning: Label `tab:polynomial_test' multiply defined.
@@ -1067,17 +1074,17 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 46.
 LaTeX Font Info:    ... okay on input line 46.
  (D:\MikTek\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count432
-\scratchdimen=\dimen417
-\scratchbox=\box101
-\nofMPsegments=\count433
-\nofMParguments=\count434
-\everyMPshowfont=\toks64
-\MPscratchCnt=\count435
-\MPscratchDim=\dimen418
-\MPnumerator=\count436
-\makeMPintoPDFobject=\count437
-\everyMPtoPDFconversion=\toks65
+\scratchcounter=\count433
+\scratchdimen=\dimen419
+\scratchbox=\box102
+\nofMPsegments=\count434
+\nofMParguments=\count435
+\everyMPshowfont=\toks65
+\MPscratchCnt=\count436
+\MPscratchDim=\dimen420
+\MPnumerator=\count437
+\makeMPintoPDFobject=\count438
+\everyMPtoPDFconversion=\toks66
 ) (D:\MikTek\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -1089,6 +1096,7 @@ Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: sidecap package is loaded.
 Package caption Info: threeparttable package is loaded.
+Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Info: Redefining \microtypecontext on input line 46.
 Package microtype Info: Applying patch `item' on input line 46.
@@ -1115,13 +1123,13 @@ Package microtype Info: No adjustment of character kerning.
 (D:\MikTek\tex/latex/microtype\mt-ptm.cfg
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
-\c__nicematrix_shift_Ldots_last_row_dim=\dimen419
-\c__nicematrix_shift_exterior_Vdots_dim=\dimen420
-\c__nicematrix_innersep_middle_dim=\dimen421
-\c@tabularnotesi=\count438
-\enitdp@tabularnotes=\count439
-\c@tabularnotes*i=\count440
-\enitdp@tabularnotes*=\count441
+\c__nicematrix_shift_Ldots_last_row_dim=\dimen421
+\c__nicematrix_shift_exterior_Vdots_dim=\dimen422
+\c__nicematrix_innersep_middle_dim=\dimen423
+\c@tabularnotesi=\count439
+\enitdp@tabularnotes=\count440
+\c@tabularnotes*i=\count441
+\enitdp@tabularnotes*=\count442
 
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
@@ -1149,153 +1157,190 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 50.
  (D:\MikTek\tex/latex/stmaryrd\ustmry.fd)
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 50.
+ (D:\MikTek\tex/latex/psnfss\ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `pcr' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Trying to load font information for OMS+pcr on input line 50.
+ (D:\MikTek\tex/latex/psnfss\omspcr.fd
+File: omspcr.fd 
+)
+LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 50.
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--50
+[][]
+ []
+
+
+Underfull \vbox (badness 1596) has occurred while \output is active []
+
+
 
 [1{C:/Users/Admin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{D:/MikTek/fonts/enc/dvips/base/8r.enc}
 
 ]
 Package hyperref Info: bookmark level for unknown assumption defaults to 0 on input line 86.
-Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 94.
 
 
 [2]
-<media/g10.png, id=380, 384.0749pt x 142.5325pt>
+Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 94.
+<media/g10.png, id=394, 384.0749pt x 142.5325pt>
 File: media/g10.png Graphic file (type png)
 <use media/g10.png>
 Package pdftex.def Info: media/g10.png  used on input line 111.
 (pdftex.def)             Requested size: 390.25534pt x 144.82878pt.
 
-Underfull \vbox (badness 3333) has occurred while \output is active []
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[3 <./media/g10.png>]
+[3]
 
-[4]
-Underfull \vbox (badness 1838) has occurred while \output is active []
-
-
+[4 <./media/g10.png>]
 
 [5]
-Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 227.
-<media/error_decomposition.png, id=470, 174.1707pt x 87.4467pt>
-File: media/error_decomposition.png Graphic file (type png)
-<use media/error_decomposition.png>
-Package pdftex.def Info: media/error_decomposition.png  used on input line 238.
-(pdftex.def)             Requested size: 216.81pt x 108.86241pt.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmss' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 259.
+
+Underfull \vbox (badness 1400) has occurred while \output is active []
+
 
 
 [6]
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 270.
+ (D:\MikTek\tex/latex/bbm\ubbm.fd
+File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
+)
 
-[7 <./media/error_decomposition.png>]
+[7]
+<media/error_decomposition.png, id=526, 174.1707pt x 87.4467pt>
+File: media/error_decomposition.png Graphic file (type png)
+<use media/error_decomposition.png>
+Package pdftex.def Info: media/error_decomposition.png  used on input line 336.
+(pdftex.def)             Requested size: 216.81pt x 108.86241pt.
+
 
 [8]
-<pdf/u-shaped.pdf, id=551, 114.32813pt x 75.23106pt>
+
+[9 <./media/error_decomposition.png>]
+
+[10]
+<pdf/u-shaped.pdf, id=607, 114.32813pt x 75.23106pt>
 File: pdf/u-shaped.pdf Graphic file (type pdf)
 <use pdf/u-shaped.pdf>
-Package pdftex.def Info: pdf/u-shaped.pdf  used on input line 315.
+Package pdftex.def Info: pdf/u-shaped.pdf  used on input line 421.
 (pdftex.def)             Requested size: 128.51065pt x 84.55907pt.
-<pdf/doubledescent.pdf, id=552, 203.12387pt x 75.23106pt>
+<pdf/doubledescent.pdf, id=608, 203.12387pt x 75.23106pt>
 File: pdf/doubledescent.pdf Graphic file (type pdf)
 <use pdf/doubledescent.pdf>
-Package pdftex.def Info: pdf/doubledescent.pdf  used on input line 316.
+Package pdftex.def Info: pdf/doubledescent.pdf  used on input line 422.
 (pdftex.def)             Requested size: 228.32161pt x 84.55907pt.
 
 pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.337     A
+l.443     A
            ssuming a typical supervised learning setting, for a hypothesis $...
+Underfull \vbox (badness 2556) has occurred while \output is active []
 
-[9 <./pdf/u-shaped.pdf> <./pdf/doubledescent.pdf>]
-<media/errorvscomplexity.png, id=620, 986.7264pt x 263.5446pt>
+
+
+[11 <./pdf/u-shaped.pdf> <./pdf/doubledescent.pdf>]
+<media/errorvscomplexity.png, id=676, 986.7264pt x 263.5446pt>
 File: media/errorvscomplexity.png Graphic file (type png)
 <use media/errorvscomplexity.png>
-Package pdftex.def Info: media/errorvscomplexity.png  used on input line 348.
+Package pdftex.def Info: media/errorvscomplexity.png  used on input line 454.
 (pdftex.def)             Requested size: 433.62pt x 115.8152pt.
-<media/Intro-ocean-test.png, id=625, 885.0666pt x 493.3632pt>
+<media/Intro-ocean-test.png, id=681, 885.0666pt x 493.3632pt>
 File: media/Intro-ocean-test.png Graphic file (type png)
 <use media/Intro-ocean-test.png>
-Package pdftex.def Info: media/Intro-ocean-test.png  used on input line 371.
+Package pdftex.def Info: media/Intro-ocean-test.png  used on input line 477.
 (pdftex.def)             Requested size: 222.01057pt x 123.75453pt.
-<media/Rn-cifar10-p15-adam-aug-train.png, id=626, 869.1672pt x 493.3632pt>
+<media/Rn-cifar10-p15-adam-aug-train.png, id=682, 869.1672pt x 493.3632pt>
 File: media/Rn-cifar10-p15-adam-aug-train.png Graphic file (type png)
 <use media/Rn-cifar10-p15-adam-aug-train.png>
-Package pdftex.def Info: media/Rn-cifar10-p15-adam-aug-train.png  used on input line 375.
+Package pdftex.def Info: media/Rn-cifar10-p15-adam-aug-train.png  used on input line 481.
 (pdftex.def)             Requested size: 211.6094pt x 120.11093pt.
 
 pdfTeX warning (ext4): destination with the same identifier (name{definition.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.390 T
+l.496 T
        he \emph{Effective Model Complexity} (EMC) of a training procedure $\...
-Package hyperref Info: bookmark level for unknown hypothesis defaults to 0 on input line 401.
+Underfull \vbox (badness 4713) has occurred while \output is active []
 
 
-[10 <./media/errorvscomplexity.png> <./media/Intro-ocean-test.png> <./media/Rn-cifar10-p15-adam-aug-train.png>]
+
+[12 <./media/errorvscomplexity.png> <./media/Intro-ocean-test.png> <./media/Rn-cifar10-p15-adam-aug-train.png>]
+Package hyperref Info: bookmark level for unknown hypothesis defaults to 0 on input line 507.
+
 pdfTeX warning (ext4): destination with the same identifier (name{theorem.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.426     F
-           or fixed $\mathcal{H}$, for fixed and sufficiently large $\mathca...
-LaTeX Font Info:    Trying to load font information for U+bbm on input line 436.
- (D:\MikTek\tex/latex/bbm\ubbm.fd
-File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-)
-pdfTeX warning (ext4): destination with the same identifier (name{theorem.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.458     L
+l.536     L
            et $A$ be any learning algorithm for the task of binary classific...
-
-[11]
-Package hyperref Info: bookmark level for unknown conjecture defaults to 0 on input line 482.
-
-Underfull \vbox (badness 2012) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[12]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 490.
+[13]
+Package hyperref Info: bookmark level for unknown conjecture defaults to 0 on input line 560.
+
+
+[14]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 568.
  (D:\MikTek\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 
-[13]
-
-[14]
-
 [15]
+
+[16]
+
+[17]
 pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.554     A
+l.632     A
             concept class $\mathcal{C}$ is said to be \textbf{PAC-learnable}...
 pdfTeX warning (ext4): destination with the same identifier (name{definition.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.563     W
+l.641     W
            e say that an algorithm is a consistent learner for a concept cla...
 
-[16]
+[18]
 pdfTeX warning (ext4): destination with the same identifier (name{theorem.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.574     L
+l.652     L
            et $H$ be a finite set of functions mapping from $\mathcal{X}\to ...
-<pdf/PAC_consistent.pdf, id=897, 462.96765pt x 176.7955pt>
+<pdf/PAC_consistent.pdf, id=950, 462.96765pt x 176.7955pt>
 File: pdf/PAC_consistent.pdf Graphic file (type pdf)
 <use pdf/PAC_consistent.pdf>
-Package pdftex.def Info: pdf/PAC_consistent.pdf  used on input line 587.
+Package pdftex.def Info: pdf/PAC_consistent.pdf  used on input line 665.
 (pdftex.def)             Requested size: 433.62pt x 165.59698pt.
 
 pdfTeX warning (ext4): destination with the same identifier (name{theorem.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.592     L
+l.670     L
            et $\mathcal{H}$ be a finite hypothesis set. Then, for any $\delt...
 
-[17 <./pdf/PAC_consistent.pdf>]
-Overfull \hbox (1.57565pt too wide) in paragraph at lines 670--670
+[19 <./pdf/PAC_consistent.pdf>]
+Overfull \hbox (1.57565pt too wide) in paragraph at lines 748--748
 []|$\OMS/cmsy/m/n/9 M[]\OML/cmm/m/it/9 ; \OMS/cmsy/m/n/9 M[]$|  
  []
 
@@ -1304,107 +1349,107 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[18]
+[20]
 Underfull \vbox (badness 1314) has occurred while \output is active []
 
 
 
-[19]
+[21]
 
-Package natbib Warning: Citation `James2021' on page 20 undefined on input line 687.
+Package natbib Warning: Citation `James2021' on page 22 undefined on input line 765.
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{definition.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.694     F
+l.772     F
            or a given concept class $\mathcal{C}$, a \textbf{representation ...
 pdfTeX warning (ext4): destination with the same identifier (name{definition.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.699     G
+l.777     G
            iven a concept $c\in\mathcal{C}$, the \textbf{representation comp...
 
-[20]
+[22]
 pdfTeX warning (ext4): destination with the same identifier (name{definition.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.722     F
+l.800     F
            or random initialization optimization algorithm $\mathcal{A}_{R}(...
 pdfTeX warning (ext4): destination with the same identifier (name{definition.6}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.734   A
+l.812   A
           measure $\mathcal{M}_{S}$ gauges the \textit{sample complexity} of...
 pdfTeX warning (ext4): destination with the same identifier (name{definition.7}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.746   A
+l.824   A
           measure $\mathcal{M}_{S}[\epsilon,\mu](h,c)$ gauges the \textit{sa...
 
-[21]
-
-[22]
-
-[23
-
-]
+[23]
 
 [24]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 821.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 821.
-
-
-pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.826 F
-       or $p \in \llbracket1,d\rrbracket$, $\mathcal{H}_p$ is the set of fun...
 
 [25
 
 ]
 
+[26]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 899.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 899.
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.904 F
+       or $p \in \llbracket1,d\rrbracket$, $\mathcal{H}_p$ is the set of fun...
+
+[27
+
+]
+
 LaTeX Font Warning: Font shape `U/stmry/b/n' undefined
-(Font)              using `U/stmry/m/n' instead on input line 835.
+(Font)              using `U/stmry/m/n' instead on input line 913.
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{theorem.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.840 L
+l.918 L
        et $(x, \epsilon)\in \R^d\times\R$ independent random variables with ...
-<pdf/theorem_1.pdf, id=1106, 462.96765pt x 279.93083pt>
+<pdf/theorem_1.pdf, id=1158, 462.96765pt x 279.93083pt>
 File: pdf/theorem_1.pdf Graphic file (type pdf)
 <use pdf/theorem_1.pdf>
-Package pdftex.def Info: pdf/theorem_1.pdf  used on input line 858.
+Package pdftex.def Info: pdf/theorem_1.pdf  used on input line 936.
 (pdftex.def)             Requested size: 346.89731pt x 209.75964pt.
-<pdf/theorem_2.pdf, id=1112, 462.96765pt x 267.93098pt>
+<pdf/theorem_2.pdf, id=1164, 462.96765pt x 267.93098pt>
 File: pdf/theorem_2.pdf Graphic file (type pdf)
 <use pdf/theorem_2.pdf>
-Package pdftex.def Info: pdf/theorem_2.pdf  used on input line 877.
+Package pdftex.def Info: pdf/theorem_2.pdf  used on input line 955.
 (pdftex.def)             Requested size: 346.89731pt x 200.76784pt.
 
 
-[26]
-<pdf/theorem_3.pdf, id=1132, 462.96765pt x 269.35028pt>
+[28]
+<pdf/theorem_3.pdf, id=1184, 462.96765pt x 269.35028pt>
 File: pdf/theorem_3.pdf Graphic file (type pdf)
 <use pdf/theorem_3.pdf>
-Package pdftex.def Info: pdf/theorem_3.pdf  used on input line 901.
+Package pdftex.def Info: pdf/theorem_3.pdf  used on input line 979.
 (pdftex.def)             Requested size: 346.89731pt x 201.83138pt.
-<media/dimensional_descent.png, id=1137, 792.9625pt x 491.8375pt>
+<media/dimensional_descent.png, id=1189, 792.9625pt x 491.8375pt>
 File: media/dimensional_descent.png Graphic file (type png)
 <use media/dimensional_descent.png>
-Package pdftex.def Info: media/dimensional_descent.png  used on input line 907.
+Package pdftex.def Info: media/dimensional_descent.png  used on input line 985.
 (pdftex.def)             Requested size: 260.17464pt x 161.37627pt.
 
 
-[27 <./pdf/theorem_1.pdf> <./pdf/theorem_2.pdf
+[29 <./pdf/theorem_1.pdf> <./pdf/theorem_2.pdf
 
 pdfTeX warning: pdflatex (file ./pdf/theorem_2.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >]
@@ -1412,168 +1457,183 @@ Underfull \vbox (badness 1014) has occurred while \output is active []
 
 
 
-[28 <./pdf/theorem_3.pdf> <./media/dimensional_descent.png>]
+[30 <./pdf/theorem_3.pdf> <./media/dimensional_descent.png>]
 pdfTeX warning (ext4): destination with the same identifier (name{definition.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.923     L
-           et us define, for $p\in\llbracket1,d\rrbracket$, $\mathcal{H}_{L}...
-<pdf/linear_gen.pdf, id=1266, 462.96765pt x 398.67043pt>
+l.1001     L
+            et us define, for $p\in\llbracket1,d\rrbracket$, $\mathcal{H}_{L...
+<pdf/linear_gen.pdf, id=1318, 462.96765pt x 398.67043pt>
 File: pdf/linear_gen.pdf Graphic file (type pdf)
 <use pdf/linear_gen.pdf>
-Package pdftex.def Info: pdf/linear_gen.pdf  used on input line 942.
+Package pdftex.def Info: pdf/linear_gen.pdf  used on input line 1020.
 (pdftex.def)             Requested size: 346.89731pt x 298.7344pt.
-LaTeX Font Info:    Trying to load font information for OT1+phv on input line 946.
- (D:\MikTek\tex/latex/psnfss\ot1phv.fd
-File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
-)
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `phv' (encoding: OT1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
 
 
-[29]
+[31]
 
-[30 <./pdf/linear_gen.pdf>]
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1033.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1033.
+
+
+
+[32 <./pdf/linear_gen.pdf>]
 pdfTeX warning (ext4): destination with the same identifier (name{definition.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.965     A
-            function of a single variable $t$ is a polynomial on its domain ...
+l.1044     A
+             function of a single variable $t$ is a polynomial on its domain...
 pdfTeX warning (ext4): destination with the same identifier (name{definition.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.975     L
-           et $K$ be a field. We then denote $K[x_{1},\dots,x_{n}]$ the spac...
+l.1054     L
+            et $K$ be a field. We then denote $K[x_{1},\dots,x_{n}]$ the spa...
 pdfTeX warning (ext4): destination with the same identifier (name{theorem.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.984     L
-           et $f\in C[a,b]$ of all continuously differentiable functions on ...
+l.1063     L
+            et $f\in C[a,b]$ of all continuously differentiable functions on...
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1072   L
+          et $S$ be a locally compact Hausdorff space. Let $A$ be the subset...
 
-[31
+[33
 
 ]
 pdfTeX warning (ext4): destination with the same identifier (name{definition.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.997     A
-            function class $\mathcal{F}$ is said to \textbf{interpolate} a d...
+l.1076     A
+             function class $\mathcal{F}$ is said to \textbf{interpolate} a ...
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1081     G
+            iven $n+1$ bivariate data points $(x_{0},y_{0}),(x_{1},y_{1}),\d...
 pdfTeX warning (ext4): destination with the same identifier (name{definition.6}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1008     L
+l.1087     L
             et $X\subseteq \mathbb{R}^{n}$, $Y\subseteq \mathbb{R}^{m}$ be t...
 pdfTeX warning (ext4): destination with the same identifier (name{conjecture.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1024     I
+l.1103     I
             f $\forall x$ there exists $y$ corresponding to such, and $(x,y)...
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[32]
+[34]
 pdfTeX warning (ext4): destination with the same identifier (name{definition.7}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1038     G
+l.1117     G
             iven a closed interval $[a,b]$, for the sample set $\mathcal{S}_...
 pdfTeX warning (ext4): destination with the same identifier (name{definition.8}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1049     G
+l.1132     G
             iven a learning setting with dataset $\mathcal{S}$ of bivariate ...
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[33]
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `cmss' (encoding: OT1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-
+[35]
 pdfTeX warning (ext4): destination with the same identifier (name{hypothesis.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1098 F
+l.1181 F
         or a polynomial $\{a_{i}x^{i}\}_{n}$ on Vandermonde basis, approxima...
-Underfull \vbox (badness 2799) has occurred while \output is active []
 
-
-
-[34]
-<media/diagram_poly_dd.png, id=1413, 896.8707pt x 234.8775pt>
+[36]
+<media/diagram_poly_dd.png, id=1461, 896.8707pt x 234.8775pt>
 File: media/diagram_poly_dd.png Graphic file (type png)
 <use media/diagram_poly_dd.png>
-Package pdftex.def Info: media/diagram_poly_dd.png  used on input line 1114.
-(pdftex.def)             Requested size: 433.62pt x 113.56064pt.
+Package pdftex.def Info: media/diagram_poly_dd.png  used on input line 1202.
+(pdftex.def)             Requested size: 260.17464pt x 68.13782pt.
 
 pdfTeX warning (ext4): destination with the same identifier (name{definition.9}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1129     A
+l.1217     A
              shallow polynomial is a neural network of one layer that are fu...
 pdfTeX warning (ext4): destination with the same identifier (name{definition.10}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1139     T
+l.1227     T
             he polynomial network based on Model~\ref{def:poly_structure1} i...
-Underfull \vbox (badness 2065) has occurred while \output is active []
+Underfull \vbox (badness 7064) has occurred while \output is active []
 
 
 
-[35 <./media/diagram_poly_dd.png>]
+[37 <./media/diagram_poly_dd.png>]
+<media/diagram_poly_model.png, id=1484, 3332.45pt x 2148.025pt>
+File: media/diagram_poly_model.png Graphic file (type png)
+<use media/diagram_poly_model.png>
+Package pdftex.def Info: media/diagram_poly_model.png  used on input line 1236.
+(pdftex.def)             Requested size: 260.17464pt x 167.68294pt.
+
 pdfTeX warning (ext4): destination with the same identifier (name{definition.11}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1147     F
+l.1256     F
             or $x>1$ or $\mathbf{x}_{i}>1$ of $\mathbf{x}\in\mathbb{R}^{n}$ ...
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[36]
 
-[37]
 
-[38
+[38 <./media/diagram_poly_model.png>]
 
-]
+[39]
+
+[40]
 pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1273     W
+l.1350     W
             e define a $K$-layer fully-connected deep neural network with re...
-<media/structure_network_1.png, id=1473, 474.0912pt x 95.3964pt>
+<media/structure_network_1.png, id=1519, 474.0912pt x 95.3964pt>
 File: media/structure_network_1.png Graphic file (type png)
 <use media/structure_network_1.png>
-Package pdftex.def Info: media/structure_network_1.png  used on input line 1284.
+Package pdftex.def Info: media/structure_network_1.png  used on input line 1361.
 (pdftex.def)             Requested size: 390.25534pt x 78.5312pt.
 
 
-[39
+[41
 
 ]
 pdfTeX warning (ext4): destination with the same identifier (name{definition.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1301     F
+l.1378     F
             or any given optimization problem on input space $x_{i}\in \math...
 
-[40 <./media/structure_network_1.png>]
-
-[41] (paper1dd.bbl
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 18.
- (D:\MikTek\tex/latex/psnfss\ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `pcr' (encoding: OT1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
+[42 <./media/structure_network_1.png>]
+<media/SVMIllus.png, id=1564, 572.1375pt x 529.98pt>
+File: media/SVMIllus.png Graphic file (type png)
+<use media/SVMIllus.png>
+Package pdftex.def Info: media/SVMIllus.png  used on input line 1413.
+(pdftex.def)             Requested size: 173.44534pt x 160.6611pt.
 
 
-[42
+[43
+
+ <./media/SVMIllus.png (PNG copy)>]
+
+[44]
+
+[45
+
+] (paper1dd.bbl
+
+[46
 
 ]
 Underfull \hbox (badness 5133) in paragraph at lines 230--235
@@ -1598,129 +1658,129 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 270.
 
 
-[43]
-
-[44]
-
-[45]
-
-[46]
-
 [47]
-Underfull \hbox (badness 1320) in paragraph at lines 827--831
+
+[48]
+
+[49]
+
+[50]
+
+[51]
+Underfull \hbox (badness 1320) in paragraph at lines 836--840
 []\OT1/ptm/m/n/10 (+20) Richard S. Sut-ton.  The bit-ter les-son.  Web es-say / blog post, 2019.  URL []$\OT1/pcr/m/n/10 https : / / www .
  []
 
 
-Underfull \hbox (badness 3343) in paragraph at lines 965--971
+
+[52]
+Underfull \hbox (badness 3343) in paragraph at lines 981--987
 []\OT1/ptm/m/n/10 (+20) Tong Zhang.  \OT1/ptm/m/it/10 (+20) Math-e-mat-i-cal Anal-y-sis of Ma-chine Learn-ing Al-go-rithms\OT1/ptm/m/n/10 (+20) .  Cam-bridge Uni-ver-
  []
 
 
-Underfull \hbox (badness 2088) in paragraph at lines 965--971
+Underfull \hbox (badness 2088) in paragraph at lines 981--987
 \OT1/ptm/m/n/10 (+20) sity Press, 2023.  doi: $10 . 1017 / 9781009093057$.  URL []$\OT1/pcr/m/n/10 https : / / www . cambridge . org /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 965--971
+Underfull \hbox (badness 10000) in paragraph at lines 981--987
 \OT1/pcr/m/n/10 core / books / mathematical-[]analysis-[]of-[]machine-[]learning-[]algorithms /
  []
 
+)
 
+[53]
 
-[48])
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 1517.
 
-[49]
-
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 1368.
-
-<pdf/theorem_4_verify.pdf, id=1680, 462.96765pt x 356.13351pt>
+<pdf/theorem_4_verify.pdf, id=1764, 462.96765pt x 356.13351pt>
 File: pdf/theorem_4_verify.pdf Graphic file (type pdf)
 <use pdf/theorem_4_verify.pdf>
-Package pdftex.def Info: pdf/theorem_4_verify.pdf  used on input line 1378.
+Package pdftex.def Info: pdf/theorem_4_verify.pdf  used on input line 1527.
 (pdftex.def)             Requested size: 346.89731pt x 266.86037pt.
 
 Underfull \vbox (badness 7326) has occurred while \output is active []
 
 
 
-[50
+[54
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[51 <./pdf/theorem_4_verify.pdf>]
+[55 <./pdf/theorem_4_verify.pdf>]
 pdfTeX warning (ext4): destination with the same identifier (name{definition.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1396     F
+l.1549     F
             or a system and its object, an object's \textbf{representation s...
 
-[52]
-<media/Diagramatic_Modelling_View.png, id=1755, 9144.1625pt x 5560.775pt>
+[56]
+<media/Diagramatic_Modelling_View.png, id=1840, 9144.1625pt x 5560.775pt>
 File: media/Diagramatic_Modelling_View.png Graphic file (type png)
 <use media/Diagramatic_Modelling_View.png>
-Package pdftex.def Info: media/Diagramatic_Modelling_View.png  used on input line 1439.
+Package pdftex.def Info: media/Diagramatic_Modelling_View.png  used on input line 1592.
 (pdftex.def)             Requested size: 281.85034pt x 171.39798pt.
 
 
-LaTeX Warning: Reference `fig:vapnik_scheme_1' on page 53 undefined on input line 1444.
+LaTeX Warning: Reference `fig:vapnik_scheme_1' on page 57 undefined on input line 1597.
 
 
 
-[53 <./media/Diagramatic_Modelling_View.png>]
-<pdf/VennFig2.pdf, id=1773, 1824.8175pt x 527.9725pt>
+[57]
+<pdf/VennFig2.pdf, id=1859, 1824.8175pt x 527.9725pt>
 File: pdf/VennFig2.pdf Graphic file (type pdf)
 <use pdf/VennFig2.pdf>
-Package pdftex.def Info: pdf/VennFig2.pdf  used on input line 1472.
+Package pdftex.def Info: pdf/VennFig2.pdf  used on input line 1625.
 (pdftex.def)             Requested size: 433.62pt x 125.45116pt.
 
 
-[54]
+[58 <./media/Diagramatic_Modelling_View.png>]
 
-[55 <./pdf/VennFig2.pdf>]
+[59 <./pdf/VennFig2.pdf>]
 
-[56]
+[60]
 pdfTeX warning (ext4): destination with the same identifier (name{definition.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1591     A
+l.1744     A
              \textbf{deterministic model} $h_{d}$ assumes its internal space...
 pdfTeX warning (ext4): destination with the same identifier (name{definition.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1596     A
+l.1749     A
              \textbf{probabilistic model} $h_{p}$ assumes its internal space...
 pdfTeX warning (ext4): destination with the same identifier (name{definition.6}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1607         A
+l.1760         A
                  loss function is a non-negative function $\ell :\mathcal{Y}...
 
-[57]
+[61]
 pdfTeX warning (ext4): destination with the same identifier (name{conjecture.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1612     F
+l.1765     F
             or any supervisor $\nabla$ of a learner framework $\mathcal{L}(\...
 pdfTeX warning (ext4): destination with the same identifier (name{definition.7}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1625         A
+l.1778         A
                  \textbf{parametric model} is one that can be parameterized ...
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[58]
+[62]
 
 Package natbib Warning: There were undefined citations.
 
 
 
-[59] (paper1dd.aux)
+[63] (paper1dd.aux)
  ***********
 LaTeX2e <2025-06-01>
 L3 programming layer <2025-05-26>
@@ -1736,20 +1796,20 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `paper1dd.out' has not changed.
-(rerunfilecheck)             Checksum: C11D2615EE35CA8A4DD95A2A39BB7E43;7864.
+(rerunfilecheck)             Checksum: E83EE2556437AFB7B5CD81D7BFF26403;8647.
  ) 
 Here is how much of TeX's memory you used:
- 68430 strings out of 468187
- 1692701 string characters out of 5448667
- 2539090 words of memory out of 5000000
- 95004 multiletter control sequences out of 15000+600000
- 701641 words of font info for 519 fonts, out of 8000000 for 9000
+ 68551 strings out of 468187
+ 1695075 string characters out of 5448666
+ 2539517 words of memory out of 5000000
+ 95084 multiletter control sequences out of 15000+600000
+ 699217 words of font info for 520 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 121i,25n,124p,2480b,1095s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbm/dpi600\bbm10.pk><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbx9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi5.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmib10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmmib9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr5.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmss10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmss9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy5.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy9.pfb><D:/MikTek/fonts/type1/public/amsfonts/symbols/msam7.pfb><D:/MikTek/fonts/type1/public/amsfonts/symbols/msbm10.pfb><D:/MikTek/fonts/type1/public/amsfonts/symbols/msbm7.pfb><D:/MikTek/fonts/type1/public/cm-super/sfrm0800.pfb><D:/MikTek/fonts/type1/public/hoekwater/stmary10.pfb><D:/MikTek/fonts/type1/public/hoekwater/stmary7.pfb><D:/MikTek/fonts/type1/public/urw-base35/ucrr8a.pfb><D:/MikTek/fonts/type1/public/urw-base35/uhvb8a.pfb><D:/MikTek/fonts/type1/public/urw-base35/uhvr8a.pfb><D:/MikTek/fonts/type1/public/urw-base35/utmb8a.pfb><D:/MikTek/fonts/type1/public/urw-base35/utmbi8a.pfb><D:/MikTek/fonts/type1/public/urw-base35/utmr8a.pfb><D:/MikTek/fonts/type1/public/urw-base35/utmri8a.pfb>
-Output written on paper1dd.pdf (59 pages, 7726601 bytes).
+ 121i,25n,124p,2480b,1121s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbm/dpi600\bbm10.pk><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbx9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi5.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmib10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmmib9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr5.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmss10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmss8.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmss9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy5.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy9.pfb><D:/MikTek/fonts/type1/public/amsfonts/symbols/msam7.pfb><D:/MikTek/fonts/type1/public/amsfonts/symbols/msbm10.pfb><D:/MikTek/fonts/type1/public/amsfonts/symbols/msbm7.pfb><D:/MikTek/fonts/type1/public/cm-super/sfrm0800.pfb><D:/MikTek/fonts/type1/public/hoekwater/stmary10.pfb><D:/MikTek/fonts/type1/public/hoekwater/stmary7.pfb><D:/MikTek/fonts/type1/public/urw-base35/ucrr8a.pfb><D:/MikTek/fonts/type1/public/urw-base35/utmb8a.pfb><D:/MikTek/fonts/type1/public/urw-base35/utmbi8a.pfb><D:/MikTek/fonts/type1/public/urw-base35/utmr8a.pfb><D:/MikTek/fonts/type1/public/urw-base35/utmri8a.pfb>
+Output written on paper1dd.pdf (63 pages, 8324087 bytes).
 PDF statistics:
- 2258 PDF objects out of 2487 (max. 8388607)
- 473 named destinations out of 1000 (max. 500000)
- 90599 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 2346 PDF objects out of 2487 (max. 8388607)
+ 510 named destinations out of 1000 (max. 500000)
+ 86545 words of extra memory for PDF output out of 89155 (max. 10000000)
 

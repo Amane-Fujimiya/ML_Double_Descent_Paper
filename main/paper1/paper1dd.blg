@@ -13,45 +13,45 @@ Warning--empty year in modelcomplex_exp
 Warning--empty publisher in STL_Hajek_Maxim_2021
 Warning--there's a number but no volume in ErdongHu2021
 Warning--can't use both volume and number fields in Mei2022TowardsBridging
-You've used 135 entries,
+You've used 137 entries,
             2773 wiz_defined-function locations,
-            1407 strings with 31791 characters,
-and the built_in function-call counts, 60657 in all, are:
-= -- 5428
-> -- 3561
+            1420 strings with 32358 characters,
+and the built_in function-call counts, 61927 in all, are:
+= -- 5535
+> -- 3675
 < -- 107
-+ -- 1221
-- -- 1078
-* -- 4732
-:= -- 9352
-add.period$ -- 532
-call.type$ -- 135
-change.case$ -- 744
-chr.to.int$ -- 127
-cite$ -- 277
-duplicate$ -- 2682
-empty$ -- 4943
-format.name$ -- 1297
-if$ -- 12839
++ -- 1259
+- -- 1114
+* -- 4853
+:= -- 9557
+add.period$ -- 541
+call.type$ -- 137
+change.case$ -- 762
+chr.to.int$ -- 129
+cite$ -- 281
+duplicate$ -- 2727
+empty$ -- 5022
+format.name$ -- 1335
+if$ -- 13097
 int.to.chr$ -- 9
 int.to.str$ -- 1
-missing$ -- 100
-newline$ -- 799
-num.names$ -- 546
-pop$ -- 1602
+missing$ -- 102
+newline$ -- 811
+num.names$ -- 554
+pop$ -- 1637
 preamble$ -- 1
-purify$ -- 625
+purify$ -- 641
 quote$ -- 0
-skip$ -- 2240
+skip$ -- 2274
 stack$ -- 0
-substring$ -- 1486
-swap$ -- 340
+substring$ -- 1509
+swap$ -- 344
 text.length$ -- 23
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 1395
+type$ -- 1417
 warning$ -- 7
-while$ -- 494
+while$ -- 502
 width$ -- 0
-write$ -- 1934
+write$ -- 1964
 (There were 8 warnings)

@@ -3,7 +3,7 @@
 \usepackage{iclr2025_conference}
 \usepackage{times}
 
-%\iclrfinalcopy
+\iclrfinalcopy
 
 % Optional math commands from https://github.com/goodfeli/dlbook_notation.
 \input{math_commands.tex}
@@ -20,7 +20,7 @@
 % Non-anonymous submissions will be rejected without review.
 
 \author{Bui Gia Khanh  \& Luong Van Tam\\
-Department of Physics\
+Department of Physics\\
 Hanoi University of Science, Vietnam National University\\
 Hanoi, Vietnam\\
 \texttt{\{fujimiyaamane\}@outlook.com,tam0309cnvl@gmail.com} \\
@@ -62,7 +62,7 @@ Our main focus is to review on the topic of the umbrella term classical learning
 
 \section{Outline}
 
-
+The main contributions of the paper lie in the heart of the problem of \textit{machine learning theoretical}, and specifically \textit{double descent}. As such, we focus on the following:
 
 \section{Related Work}
 
@@ -128,14 +128,37 @@ The generalization best $\bm{h}$ is also called in literature as the \textit{Bay
     We present the formal form of the generalization learning problem. Suppose we have a \textbf{target}, $c\in\mathcal{C}$, where $\mathcal{C}$ is an arbitrary concept class that captures targets of the same type. Suppose we are provided a set of observations $\mathcal{S}$. Supposed we have an algorithm $\mathcal{A}$ that for fixed hypothesis space $\mathcal{H}$, \eqref{eq:lp1} holds true. The problem is to use certain algorithm $\mathcal{A}'$ such that, under limited availability, to obtain $\bm{h}$, satisfies: \begin{equation}
         R(\bm{h}) = \min_{h\in \mathcal{H}} R(\bm{h}) \leq \{\epsilon\}, \quad \epsilon > 0 
     \end{equation}
-    For a set of risk bounds $\epsilon$. If the setting is deterministic, then there exists $\epsilon=0$. 
+    For a set of risk bounds $\epsilon$. If the setting is deterministic, then there exists $\epsilon=0$ accordingly. 
 \end{definition}
 
 Then, we can partially say that generalization problem is an advancement from empirical solution. As such, empirical solution imposes the observed concept, and not the concept itself. This is reflected in modern machine learning landscape, by modelling the concept as distributions, and then using notions such as KL-divergence to measure such relative disparity. 
 
+\RestyleAlgo{ruled}
+\SetKwComment{Comment}{}{}
+\SetKwBlock{Objective}{Objective}{}
+\begin{algorithm}[htb]
+    \renewcommand{\algorithmcfname}{Optimization problem}
+    \caption{Empirical-generalization learning dynamics (non-proxy)}
+    \KwData{$(x_{i},y_{i})\in\mathcal{S}, \Gamma \supset \mathcal{S}$, objective $\ell(y,f(x))$, $\nabla(\cdot)$ differentiable gradient field on $\ell$.}
+    \KwResult{Expected optimized model to the minimal error on the objective $\ell(\cdot,\cdot)$, dependent on $\mathcal{S}$.}
+    \Begin
+    {
+        $\Gamma\supset \mathcal{S}$, the general set\;
+        $R(\cdot),\hat{R}(\cdot)\gets\ell$ as objective functional\;
+        \For{Fixed $\mathcal{H}$, with $h\in\mathcal{H}$, for $\epsilon > 0$}{
+            Find $h\to \bm{h}'$, using algorithm $\mathcal{A}$ for minimization objective, such that 
+            \begin{equation}
+                \mathcal{A}\left(\min_{h\in\mathcal{H}} \hat{R}_{\mathcal{S}}(h) + R(h)\right) \leq \epsilon 
+            \end{equation}for procedure $\mathcal{A}(\cdot,\cdot)$ of structural constraints.\;
+        }
+    }
+    \Return{Optimized model $h$ on arbitrary objective space $(\ell,\nabla)$.}
+    \label{algo:algo_optim_ideal}
+\end{algorithm}
+
 These two stages of learning procedure comes of as the intrinsic design of machine learning setting. As opposed to interpolation, where empirical learning problem would have to be put into first priority to achieve the best possible point-through model, machine learning leans on approximation more and a separated criterion that is only visible in the learning setting - the fact that we are using $c'$ to extract $c$. This disparity is exactly the \textbf{generalization problem}, of which is then also the goal of machine learning, to approximate the general solution using the observed solution. One then can ask what is the difference between the two notions, and when we can guarantee that both will `converge' to the same point. The process of \textbf{model selection} is then the procedure that will optimize $h\in \mathcal{H}$ to a given target fixture, such as the empirical best. 
 
-One of the major assumption or observation from the point of the hypothesis class, is that the hypothesis cannot know the generalization error. Thereby, the more efficient and often used procedure/algorithm in training, is then the \textit{empirical risk minimization} (ERM) method, minimizing only the empirical risk to the empirical best; then, certain measures to `generalize' this heuristically is apprehended on the hypothesis. The process of model selection is also the place that we get the concept of \textbf{bias-variance tradeoff}. 
+One of the major assumption or observation from the point of the hypothesis class, is that the hypothesis cannot know the generalization error. Thereby, the more efficient and often used procedure/algorithm in training, is then the \textit{empirical risk minimization} (ERM) method, minimizing only the empirical risk to the empirical best; then, certain measures to `generalize' this heuristically is apprehended on the hypothesis. The process of model selection is also the place that we get the concept of \textbf{bias-variance tradeoff}.  
 
 \subsubsection{Uniform convergence}
 
@@ -145,7 +168,7 @@ Suppose that for a concept class $\mathcal{H}$, we can then partition it to $\ma
     \sup_{\mathcal{D}} \underset{S\sim\mathcal{D}^{m}}{\mathbb{E}} \left[ \sup_{h\in\mathcal{H}} [R(h) - R_{S}(h)] \right] \overset{m\to\infty}{\longrightarrow} 0
 \end{equation}
 
-This uniform convergence holds for a learning problem, if the empirical risks of hypotheses in the hypothesis class converges to their population risk uniformly, with a distribution-independent rate. The result of this is that a problem then can be considered learnable with the ERM rule, for any given characterization. We state the following definition.
+This uniform convergence holds for a learning problem, if the empirical risks of hypotheses in the hypothesis class converges to their population risk uniformly, with a distribution-independent rate. The result of this is that a problem then can be considered learnable with the ERM rule, for any given characterization. We state the following definition.\footnote{The reason why $r(\cdot)$ is not characterized in this preliminary section, is because of their uncertainty of effect. Hypothetically, $r(\cdot)$ is an additional structure (bias) of which apply a new gradient field in conjunction to the loss gradient field itself. This addition is uncertain of its content and analysis, since it depends on various stochastic dynamic of the model. We reserve from using regularization for now because of such reason.}
 
 \begin{definition}
     A learning problem is learnable if there exist a learning rule $\mathcal{A}$ and a monotonically decreasing sequence $\epsilon_{cons}(m)$ such that $\epsilon_{cons}(m)\overset{m\to\infty}{\longrightarrow} 0$ and \begin{equation}
@@ -178,7 +201,12 @@ In this paper, we would like to presume the ERM method in question as the famous
 
 \subsection{Overfitting and underfitting}
 
-Following the above framework of statistical probabilistic learning theory, one understanding about the concept of underfitting and overfitting (similar to \cite{gareth_james_introduction_2013}) can be reached, using the notion of \textit{partitioning} of observation space. We can define the heuristic for better definition, as followed. 
+Following the above framework of statistical probabilistic learning theory, one understanding about the concept of underfitting and overfitting (similar to \cite{gareth_james_introduction_2013}) can be reached, using the notion of \textit{partitioning} of observation space. Such work is typically done because of \textbf{practical condition}, in which the following constraints is applied.
+\begin{assumption}\label{assume:cpi_transparency}
+    No knowledge of $c\in\mathcal{C}$ is provided. \footnote{Few points need to be said about this assumption. This assumption represents the \textit{worst-case possible} of a system dynamic. From the perspective of a designer, inherent leakage of information can be provided in the design of a model. In such, case we are operating in the mode of a \textit{resource-constrained, closed} game, in which the model with further assumptions of fixed class, operates on. The problem space itself is inherently large and penalize any additional structural changes. If one is to occur, we usually mention it as \textit{implicit bias}, but another name that would be more fitting would be \textit{structural attractor}, after the notion of gradient attractor in chaotic systems.}
+\end{assumption}
+
+Without such knowledge, $R(h)$ cannot be computed, accordingly. We specify such approach as \textit{heuristic}, as it is only an approximation, and for better definition, we define it as followed. 
 
 \begin{definition}[Heuristic empirical risk]
   Given a dataset $\mathcal{S}$ of size $m$, supposedly of the concept $c\in \mathcal{C}$, and the hypothesis $h\in \mathcal{H}$, then the \textbf{heuristic empirical risk} take a partitioning $k<m$ with $k/m\geq 1/2$, hence defining the heuristic empirical loss on $k$, denoted $\hat{R}_{k}(h)$. 
@@ -189,7 +217,7 @@ Following the above framework of statistical probabilistic learning theory, one 
 \end{definition}
 The two heuristic definition however, can be noted to not be equal to the true generalization risk - empirical risk pair in reality. Nevertheless, one can then define overfitting and underfitting in such manner. 
 \begin{definition}[Underfitting]
-  A model $h$ is called \textbf{underfitting} if for a constant $\epsilon > 0$ chosen for the setting, then $\hat{R}_{k}(h)>\epsilon$, $\hat{R}_{p}(h_{\alpha})> \epsilon$ over the entire observation space. 
+  A model $h$ is called \textbf{underfitting} if for a constant $\epsilon > 0$ chosen for the setting, then $\hat{R}_{k}(h_{\mathcal{A}})>\epsilon$, $\hat{R}_{p}(h_{\alpha})> \epsilon$ over the entire observation space. 
 \end{definition}
 Usually, underfitting is defined to be such that test error is smaller than training error partition, however, we do not think that is a good definition. Especially since, at least in this setting, the empirical error under algorithm $\mathcal{A}$ is reduced to the representative smallest error that $\mathcal{A}$ can achieve on that particular model, within particular setting of $h$, then come the heuristic generalization error. Considering also that $k/m\geq 1/2$, that is, at least the training partition is half of the observation set, then only under very specific case will $\hat{R}_{p}(h_{\alpha})$ be smaller than $\hat{R}_{k}(h)$, statistically speaking. Thence this line of thought also reinforces the idea that both of them will be larger than the threshold $\epsilon$. Usually, heuristically, this threshold of error is $0.3$, normalized. Next, we define the notion of overfitting. 
 
@@ -198,6 +226,76 @@ Usually, underfitting is defined to be such that test error is smaller than trai
 \end{definition}
 Namely, this mean that the static learning makes the generalization error worse. This draws the analogy of the student - studying explicitly for the past paper tests, yet unaware of the larger margin of questions in the large set of the test paper pool, leading to subpar performance. Similarly, overfitting is theorized to be fitting too fit to the reduced observation space - hence when it comes to the generalization observation space, it fails within such heuristic. The notion works on the mask of the risks, $\hat{R}_{k}$ and $\hat{R}_{p}(h_{\alpha})$. 
 
+\subsubsection{Practical proxy}
+
+In practice, Assumption~\ref{assume:cpi_transparency} means we cannot have $c\in\mathcal{C}$, or its probabilistic interpretation $\mathcal{D}$ such that $x\sim\mathcal{D}$, or in the extreme non-structured case, $(x,y)\sim \mathcal{D}$. In such case, the typical practical fix relies on the partitioning of the available partitioning space, that is, the empirical-generalization proxy. For large enough singleton count of $|\{(X_{k},Y_{k})\}|$, we assume that $\hat{R}_{\mathsf{Gen}}(h)\approx R(h)$. Thus, the algorithm can be stated in a form as followed.
+
+\RestyleAlgo{ruled}
+\SetKwComment{Comment}{}{}
+\SetKwBlock{Objective}{Objective}{}
+\begin{algorithm}[htb]
+    \renewcommand{\algorithmcfname}{Optimization problem}
+    \caption{Empirical-generalization learning dynamics (proxy)}
+    \KwData{$(x_{i},y_{i})\in\mathcal{S}, y_{i}=\{\pm 1\}$, hinge objective $\ell(y,f(x))$, $\nabla(\cdot)$ differentiable gradient field on $\ell$.}
+    \KwResult{Expected optimized model to the minimal error on the objective $\ell(\cdot,\cdot)$, dependent on $\mathcal{S}$.}
+    \Begin
+    {
+        $((X_{1},Y_{1}),\dots)_{n}\gets\mathsf{Partition}_{n}(\mathcal{S})$\;
+        $\{(X_{j},Y_{j})\}\gets \mathsf{Train}$\;
+        $\{(X_{k},Y_{k})\}\gets \mathsf{Gen}$ for $k\ne j$\;
+        \For{Fixed $\mathcal{H}$, with $h\in\mathcal{H}$, for $\epsilon > 0$}{
+            (Optimistically) achieve $h\to \bm{h}'$, using algorithm $\mathcal{A}$ for minimization objective, such that 
+            \begin{equation}
+                \mathcal{A}\left(\min_{h\in\mathcal{H}} \hat{R}_{\mathsf{Train}}(h) + \hat{R}_{\mathsf{Gen}}(h)\right) \leq \epsilon 
+            \end{equation}for procedure $\mathcal{A}(\cdot,\cdot)$ of structural constraints.\;
+        }
+    }
+    \Return{Optimized model $h_{\mathcal{A}}$ on arbitrary objective space $(\ell,\nabla)$.}
+    \label{algo:algo_optim_no_c}
+\end{algorithm}
+
+The assumption above of the generalization set to the generalization truth error is apparent in the usual system theorem, Theorem~\ref{thm:minimalNeu}.
+
+\begin{theorem}[\cite{10.5555/2371238}]\label{thm:minimalNeu}
+    For fixed $\mathcal{H}$, for fixed and sufficiently large $\mathcal{S}$, and no observation errors, the empirical risk is the generalization risk: \begin{equation}
+        \underset{\mathcal{S}\sim \mathcal{D}^{m}}{\mathbb{E}}[\hat{R}_{\mathcal{S}}(h)]  = R(h)
+    \end{equation} 
+\end{theorem}
+\begin{proof}
+    By linearity of the expectation, and the fact that we assume the sample is given i.i.d., we can write: 
+\[
+\underset{S \sim \mathcal{D}^m}{\mathbb{E}}[\hat{R}_S(h)] 
+= \frac{1}{m} \sum_{i=1}^m 
+\underset{S \sim \mathcal{D}^m}{\mathbb{E}} 
+\left[ \mathbbm{1}_{h(x_i) \ne c(x_i)} \right] 
+= \frac{1}{m} \sum_{i=1}^m 
+\underset{S \sim \mathcal{D}^m}{\mathbb{E}} 
+\left[ \mathbbm{1}_{h(x) \ne c(x)} \right],
+\]
+for any \( x \) in sample \( S \). Thus,
+\[
+\underset{S \sim \mathcal{D}^m}{\mathbb{E}}[\hat{R}_S(h)] 
+= \underset{S \sim \mathcal{D}^m}{\mathbb{E}} 
+\left[ \mathbbm{1}_{h(x) \ne c(x)} \right] 
+= \underset{x \sim \mathcal{D}}{\mathbb{E}} 
+\left[ \mathbbm{1}_{h(x) \ne c(x)} \right] 
+= R(h).
+\]
+which yields the desired result. 
+\end{proof}
+
+The above procedure still attains a lot of assumptions, of which we settle for the next section. Optimization procedure~\ref{algo:algo_optim_ideal} and procedure~\ref{algo:algo_optim_no_c} define the precursor tradeoff in the problem space, or rather, the heuristic-generalization tradeoff. We can state it as the following. 
+
+\begin{theorem}[Heuristic-generalization tradeoff, model selection]
+    An algorithm $\mathcal{A}$ on the system $(\mathcal{H},\mathcal{C},\mathcal{A})$, for the expected empirical heuristic $\hat{R}_{\mathsf{Train}}(h)$ and generalization heuristic $\hat{R}_{\mathsf{Gen}}(h)$ on $\mathcal{S}$, on the measure landscape of $\mathcal{L}[\ell]$ for $\hat{R}(\cdot)$, of which $\mathcal{A}$ runs separately on $\mathcal{A}'(\mathsf{Train},h)$ and $\mathcal{A}'(\mathsf{Gen},h)$ for the above heuristic, there exists \begin{equation}
+        \left\{ \underset{h\in \mathcal{H}}{\argmin}\:\hat{R}_{\mathsf{Train}}(h), \underset{h\in \mathcal{H}}{\argmin}\:\hat{R}_{\mathsf{Gen}}(h)\right\}\in \mathcal{L}[\ell]
+    \end{equation}
+    as \textbf{convex attractor} on the measure landscape. Then, algorithm $\mathcal{A}$ \textbf{solves} the generalization if for the transition $\mathcal{T}:\mathcal{L}_{\mathsf{Train}}[\ell]\to\mathcal{L}_{\mathsf{Gen}}[\ell]$ for separated loss-landscape, it satisfies for $\mathcal{A}(\mathcal{S},h)\to h'$, that 
+    \begin{equation}
+        h' = \underset{h'\in \mathcal{H}}{\argmin}\: \left(\hat{R}_{\mathsf{Train}}(h) + \hat{R}_{\mathsf{Gen}}(h)\right)
+    \end{equation}
+\end{theorem}
+This tradeoff relies on the precursor concept of the \textbf{attractor} landscape, of which is observable within the objective-space expansion from $\mathcal{L}_{\mathsf{Train}}[\ell]$ to $\mathcal{L}_{\mathsf{Gen}}[\ell]$ of the heuristic space. The partition $\{(X_{j},Y_{j})\}$ and $\{(X_{k},Y_{k})\}$ covers the practical notion of cross-validation, though the cross-validating procedure itself works much different, as it covers multiple re-shuffling, i.e. unordered re-partition of the default permutating groups. 
 \section{Problem statements}
 
 Before continuing further, we must review the problem statement that led to the problem of double descent. We will have a look at the theory, the original conflict, and the illustrative phenomenon in action. In general, the learning setting in consideration of statistical learning theory is often supervised learning, for guarantee of a plausible upper bound result. 
@@ -256,11 +354,11 @@ In all, almost all representation of bias-variance decomposition are the same. F
 A main common theme of criticism toward bias-variance tradeoff is the fact that the decomposition is much more general, and intrinsic for the class of \textit{mean squared loss}. However, when considering the naturalness of an error measure and then its direct applicant, mean square error on real space of sufficient support and measure comes of as a very natural choice of an error measure, at least in consideration of the regression setting; for that, we then can also define classification as another top-layer above a regression's similar real continuous space, i.e. a decision layer. Furthermore, it can also be shown \cite{brown2024biasvariance,PfauBregmanDivergence} that it also holds for the class of Bregman divergence measure. 
 
 What does the decomposition say about model selection principle in general? In general, bias-variance is typically presented of its decomposition only, and the asymptotic prediction of its behaviours. In fact, one of the reason that it became the rule-of-thumb for ML practitioner, as well as generally statistical learning (\cite{lafon_understanding_2024} provides a quite rigorous treatment of bias-variance tradeoff in the section on statistical learning theory) solidify the trade-off as a particular model selection principle. Generally, this tradeoff can be summarized as followed: 
-\begin{theorem}[Bias-variance tradeoff]
+\begin{theorem}[Bias-variance tradeoff]\label{thm:bias-variance}
     For the expected loss of any given hypothesis $h$, the bias $\mathcal{B}(f,y)$ and variance $\mathcal{V}(f,y)$ is inversely proportional, that is, $\mathcal{B}(f,y)\propto \lambda^{-1} \mathcal{V}(f,y)$ for some proportionality $\lambda$ that may or may not be constant. In the most general case possible, $\lambda = -1$ on the entire error range. 
 \end{theorem}
 
-The tradeoff is then of inverse proportionality. Indeed, statistically, we have such tradeoff on a statistical framework in a more concrete sense. For the bias to increase, variance will increase, of which the criterion is inverse - we would like to have more bias but lower variance, and vice versa, according to such theory. 
+The tradeoff is then of inverse proportionality. Indeed, statistically, we have such tradeoff on a statistical framework in a more concrete sense. For the bias to increase, variance will increase, of which the criterion is inverse - we would like to have more bias but lower variance, and vice versa, according to such theory.
 
 \subsubsection{Expansion and variations}
 
@@ -288,6 +386,14 @@ According to \cite{domingos_unified_aaai_2000,domingos_unified_2000}, the bias-v
         \end{split}
         \end{equation*}
 where $\epsilon(\mathcal{D})$ is the irreducible error of the system, depends (theoretically) on the intrinsic imperfection of the dataset $\mathcal{D}$. This method of which the bias-variance-irreducible error are `fit' into the total error by three coefficients $\lambda_{1},\lambda_{2},\lambda_{3}$ instead. This does not only scale up the B-V-IE triplet, but also leaves out the inexplainable gap between the scaling, and the actual normal measure. 
+
+\subsubsection{Bias-variance algorithm}
+
+\subsubsection{Functional approximation algorithm}
+
+Usually, the optimization problem is evaluated empirically of its bias-variance metric. That is, we test singular models successively, and then choose the generally best --- usually within bias-variance tradeoff. This can be expressed as a function for theorem \ref{thm:bias-variance}. 
+
+
 
 \subsubsection{Approximation-Estimation tradeoff}
 
@@ -420,35 +526,7 @@ The fact that double descent is not well-defined itself is a problem on its own.
 
 \section{No-free-lunch}
 
-There is an interesting observation that can be made using the above formalism of the learning theory. From what we can see, if we can guarantee that $\hat{R}(h)\approx R(h)$ by their resolution, then we apparently can generalize the model fairly well, since it is approximately looking at a clear picture of the concept itself. Thereby, the following theorem is guaranteed in such case. 
-
-\begin{theorem}[\cite{10.5555/2371238}]\label{thm:minimalNeu}
-    For fixed $\mathcal{H}$, for fixed and sufficiently large $\mathcal{S}$, and no observation errors, the empirical risk is the generalization risk: \begin{equation}
-        \underset{\mathcal{S}\sim \mathcal{D}^{m}}{\mathbb{E}}[\hat{R}_{\mathcal{S}}(h)]  = R(h)
-    \end{equation} 
-\end{theorem}
-\begin{proof}
-    By linearity of the expectation, and the fact that we assume the sample is given i.i.d., we can write: 
-\[
-\underset{S \sim \mathcal{D}^m}{\mathbb{E}}[\hat{R}_S(h)] 
-= \frac{1}{m} \sum_{i=1}^m 
-\underset{S \sim \mathcal{D}^m}{\mathbb{E}} 
-\left[ \mathbbm{1}_{h(x_i) \ne c(x_i)} \right] 
-= \frac{1}{m} \sum_{i=1}^m 
-\underset{S \sim \mathcal{D}^m}{\mathbb{E}} 
-\left[ \mathbbm{1}_{h(x) \ne c(x)} \right],
-\]
-for any \( x \) in sample \( S \). Thus,
-\[
-\underset{S \sim \mathcal{D}^m}{\mathbb{E}}[\hat{R}_S(h)] 
-= \underset{S \sim \mathcal{D}^m}{\mathbb{E}} 
-\left[ \mathbbm{1}_{h(x) \ne c(x)} \right] 
-= \underset{x \sim \mathcal{D}}{\mathbb{E}} 
-\left[ \mathbbm{1}_{h(x) \ne c(x)} \right] 
-= R(h).
-\]
-which yields the desired result. 
-\end{proof}
+There is an interesting observation that can be made using the above formalism of the learning theory. From what we can see, if we can guarantee that $\hat{R}(h)\approx R(h)$ by their resolution, then we apparently can generalize the model fairly well, since it is approximately looking at a clear picture of the concept itself. Thereby, Theorem~\ref{thm:minimalNeu} is guaranteed in such case. 
 
 However, this theorem is fairly optimistic. By default, it assumes that the observations provided on $c$, given by the distribution $\mathcal{D}(x)$ represents such mapping $c:X\to Y$ is not fallible, that is, the observation is of $c(x)$ itself. Furthermore, it assumes of a fixed dataset with sufficient size, suggesting only in such case that for $|\mathcal{S}|\to +\infty$ of all discrete, non-overlapping sample size, then $\hat{R}(h)=R(h)$ and hence optimization can be conducted on the exact measure of the general concept itself. This can be considered the \textit{best-case scenario}, in a sense. In reality, this is not always a guarantee. 
 
@@ -943,15 +1021,16 @@ Functional prediction on the classical theorem is presented below, for $n=\{1,\d
     \caption{Extension general experimentation, using the prediction made of theorem~\ref{thm:double_descent_lr} for verification. Here, $q=1$ as the general basis case of verification. }
 \end{figure}
 
-A design of the above class will require, in general, a much less straightforward implementation than the least square method, at least when it comes to circumstances and case fielding. The previous experimental result was done using a straightforward, single-time calculated theorem. To verify such, we need to adopt the non-zero class in a way that is static of the entire training procedure, and so on, for larger and larger $q$. First, we discuss of the mismatch calculation and thereof taken from the iterative error segmentation. In our cases, we have $h$ and $c$ with \textit{model mismatch}, that is, there might exist certain parameter that $h$ has, but the concept $c$ of its originality does not, and vice versa for the concept model of which the hypothesis does not have, or attain certain parameter of interest. This prompts us to make use of a type of \textbf{penalty} for such case. With respect to the mean square error on parameter, from the perspective of the supervisor, we have two ways to implement this, either of the \textsf{truncate} or \textsf{padding} mode. The truncate mode simply calculates parameter expression of those that can be compared. By default, for the learning problem to be consistent of the space, there must be at least one parameter that is not inhibited. Then, 
+A design of the above class will require, in general, a much less straightforward implementation than the least square method, at least when it comes to circumstances and case fielding. The previous experimental result was done using a straightforward, single-time calculated theorem. To verify such, we need to adopt the non-zero class in a way that is static of the entire training procedure, and so on, for larger and larger $q$. First, we discuss of the mismatch calculation and thereof taken from the iterative error segmentation. In our cases, we have $h$ and $c$ with \textit{model mismatch}, that is, there might exist certain parameter that $h$ has, but the concept $c$ of its originality does not, and vice versa for the concept model of which the hypothesis does not have, or attain certain parameter of interest. This prompts us to make use of a type of \textbf{penalty} for such case. With respect to the mean square error on parameter, from the perspective of the supervisor, we have two ways to implement this, either of the $\mathsf{truncate}$ or $\mathsf{padding}$ mode. The truncate mode simply calculates parameter expression of those that can be compared. By default, for the learning problem to be consistent of the space, there must be at least one parameter that is not inhibited. Then, 
 \begin{equation}
     \mathrm{MSEP}_{\text{truncate}}(h,c) = \frac{1}{k} \sum^{k}_{i=1}(p_{i}-q_{i})^{2}
 \end{equation}
-For $K=\min(n,m)$ of the overlap, or can be changed to be the set $k=\{(h_{i},c_{i})\}$ of which matches each other. Such can be changed to absolute error, if one does not want to inflate the error measure beyond its distance metric with respect to certain axis. The \textsf{padding} mode simply takes into account of all missing or surplus information and of the optimization phase. By initialization, from the hypothesis side, all surplus parameters are padded with input $1$. Hence, the measure is defined as 
+For $K=\min(n,m)$ of the overlap, or can be changed to be the set $k=\{(h_{i},c_{i})\}$ of which matches each other. Such can be changed to absolute error, if one does not want to inflate the error measure beyond its distance metric with respect to certain axis. The $\mathsf{padding}$ mode simply takes into account of all missing or surplus information and of the optimization phase. By initialization, from the hypothesis side, all surplus parameters are padded with input $1$. Hence, the measure is defined as 
 \begin{equation}\label{eq:parameter_penalty}
     \mathrm{MSEP}_{\text{pad}}(h,c) = \frac{1}{k} \sum^{k}_{i\in k} (p_{i}-q_{i})^{2} + \lambda \left(\frac{1}{n-k}\sum^{n}_{i\not\in k}p_{i}^{2}+ \frac{1}{m-k}\sum^{m}_{i\not\in k}q_{i}^{2}\right)
 \end{equation}
 The total error then is simply the above error, is simply calculated toward all layers possible or any architectural design parameters. This design will be also used in subsequent testing, including polynomial, in which the effectiveness is enhanced significantly. 
+\subsubsection{Case 1. $q=1$}
 
 \clearpage
 
@@ -1041,7 +1120,11 @@ We then can measure or aggregate some properties of the dataset itself, includin
     \end{equation}
     We assume $X,Y$ are totally ordered sets. 
 \end{definition}
-Hence, the assumption of fallacy assumes $\mathcal{U}(\mathcal{S}_{n})=0$, though in reality it is often $\mathcal{U}(\mathcal{S}_{n})>0$. With this, we can quantify how the dataset is behaving on the scale of the bivariate form typically seen. Noise intrinsically increases this distance, usually by the $y$-axis. This dataset uncertainty increases with multivariate dataset, for example, $(\mathbf{x},y)$ of $\mathbb{R}^{n}\to\mathbb{R}$. We call the new metric as the \textit{empirical uncertainty metric}.
+Hence, the assumption of fallacy assumes $\mathcal{U}(\mathcal{S}_{n})=0$, though in reality it is often $\mathcal{U}(\mathcal{S}_{n})>0$. With this, we can quantify how the dataset is behaving on the scale of the bivariate form typically seen. Noise intrinsically increases this distance, usually by the $y$-axis. This dataset uncertainty increases with multivariate dataset, for example, $(\mathbf{x},y)$ of $\mathbb{R}^{n}\to\mathbb{R}$. We call the new metric as the \textit{empirical uncertainty metric}. From this, we can have the theorem:
+
+\begin{theorem}[Uncertainty tradeoff]
+    
+\end{theorem}
 
 Thirdly, is the treatment on such information. Even though information is known, such as from the assumption of transparency and the fallacy conjecture, it relies on the method in which the model uses that make use of such information. Polynomial interpolation effectively removes information about transparency, and thus the interpolation setting is a kind of \textbf{black-box absolute setting}. This setting is \textit{extremely brittle}, as to see that if $y_{i}$ is slightly wrong due to measurement noise, the interpolant oscillates wildly, which is explained by Runge phenomenon (\cite{Runge1901,CorlessSevyeri2018,AMC2009RungeDivergence}). Probability then arises from such setting naturally, though this particular degree of probabilistic setting must be quantified, which comes from the process that the model simulates upon. Regression is inherently not probabilistic, but treatment about the probabilistic assumption, for example, such that $(X,Y)$ inherently as random variables. We can then separate this into three parts - the data-level probabilistic layer (data uncertainty), the model-level layer, and the algorithm-layer that determines the solution solver within such model. We can define that as followed. 
 
@@ -1109,11 +1192,16 @@ The shift that will be hypothesized to appear here is expected to be from sparse
   Double descent happens, for a polynomial class model $h_{n}\in\mathcal{H}_{p}$, is upper bounded to certain error deviation $\epsilon>0$ from the mean only of the generalization (test) dataset verification. 
 \end{conjecture}
 
-\begin{figure}[htb]
-    \centering
-    \includegraphics[width=1\textwidth]{diagram_poly_dd.png}
-    \caption{Intuition of Hypothesis~\ref{hyp:hypothesis_poly_dd}. Effectively, in the overparameterized range $(p>n)$, the problem turns into soft interpolation, where the polynomial is possible to be dense enough such that relative error remains internally low. This can also happen if the dataset itself is intrinsically large.}
-\end{figure}
+%\begin{figure}[htb]
+%    \centering
+%    \includegraphics[width=1\textwidth]{diagram_poly_dd.png}
+%    \caption{Intuition of Hypothesis~\ref{hyp:hypothesis_poly_dd}. Effectively, in the overparameterized range $(p>n)%$, the problem turns into soft interpolation, where the polynomial is possible to be dense enough such that %relative error remains internally low. This can also happen if the dataset itself is intrinsically large.}
+%\end{figure}
+
+\begin{SCfigure}[0.6][htb]
+  \includegraphics[width=0.6\textwidth]{diagram_poly_dd.png}
+  \caption{\small\textbf{Intuition of Hypothesis~\ref{hyp:hypothesis_poly_dd}}. Effectively, in the overparameterized range $(p>n)$, the problem turns into soft interpolation, where the polynomial is possible to be dense enough such that relative error remains internally low. This can also happen if the dataset itself is intrinsically large.}
+\end{SCfigure}
 
 That is, the disparity between the test and training dataset helps in such regard. If the two dataset is partitioned in the sense that their deviation is practically the same (which can be done using synthetic generation for a control group), then this will amount to not much of it. After all, it will be the consequence of the algorithm and error landscape interpretation used. 
 
@@ -1134,16 +1222,37 @@ $\mathbb R^d \rightarrow \mathbb{R}$ of the form
 \end{equation} 
 where $d \in \mathbb{N}$.
 \end{definition}
-A modification is then available. 
-\begin{definition}[Polynomial neural network, testing]
+A modification is then available, in which we simply add $b(\cdot)$ for random initialization process. We note that this introduces certain flexibility to the model initial interpolation curvature.   
+\begin{definition}[Polynomial neural network, general]\label{def:poly_model_test}
     The polynomial network based on Model~\ref{def:poly_structure1} is modified as 
     \begin{equation}
         f_{\Theta}(x) = \sum_{i=1}^{d} \theta_i \left( \mathbf{w}^\top x \right)^i + b, \quad \Theta = (\{\theta_{i}\},\{w_{k}\},b)
     \end{equation}
 \end{definition}
-We then can state the model within a testing scenario listed as such, to fully capture the structural foundation of the related testing model class. For the notion of complexity, naively, we employ two kinds of complexity measure. First is the usual complexity measure via parameter counts. Second, is the expressive complexity on the basis of the linear transformation space. That is, an expressive complexity that take into account the fact that $\mathcal{O}(wx^{n})$ will always be stronger than $\mathcal{O}(wx^{n-1})$ for $x>1$. We have the following definition of such complexity in simple term. 
 
-\begin{definition}[Polynomial expressive complexity]
+From this, we can state the model within a testing scenario listed as such, to fully capture the structural foundation of the related testing model class. For the notion of complexity, naively, we employ two kinds of complexity measure. First is the usual complexity measure via parameter counts. Second, is the expressive complexity on the basis of the linear transformation space. That is, an expressive complexity that take into account the fact that $\mathcal{O}(wx^{n})$ will always be stronger than $\mathcal{O}(wx^{n-1})$ for $x>1$. All of which can be contained in a singular expression, as seen in definition~\ref{def:pec}. However, we would have to analyse what is happening inside the metric itself. 
+\begin{wrapfigure}{r}{0.6\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{diagram_poly_model.png}
+    \caption{Illustration of polynomial model in definition~\ref{def:poly_model_test}.}
+    \label{fig:plm}
+\end{wrapfigure}
+In the equation for expressive complexity, the first term is the normalized linear parameters $\theta_{i}$ fixing and controlling the shift of the polynomial inning parameter, the second term is the sum of weight-aware complexity with degree factor, and the degree factor over operating range $||x_{max}-x_{min}||$ of the dataset, for the degree complexity. The final term is the last weight-aware complexity for the dominating degree $n$ of the polynomial function. Let us begin with the gauge on coefficient norm, i.e. the term $||\alpha_{d}||+1$. Here, we set $1$ as baseline, and the arbitrary norm on $\alpha$ there coefficient effect. The terms coefficient in this expression matters because, for a function $f:[a,b]\to\mathbb{R}$, the Lipschitz constant $L$ for polynomial $f$ goes by 
+\begin{equation}
+\begin{split}
+L_{p} 
+&= \sup_{x\neq y}\frac{|f(x)-f(y)|}{|x-y|} \\
+&= \sup_{x\neq y}\frac{|f_{\Theta}(x)-f_{\Theta}(y)|}{|x-y|}, \quad 
+f_{\Theta}(x)=\sum_{i=1}^{d} \theta_i \left( \mathbf{w}^\top x \right)^i + b \\
+&\leq \sup_{x \in [a,b]} \| f_{\Theta}'(x) \|_2 \\
+&= \sup_{x \in [a,b]} \left\| \sum_{i=1}^{d} i \, \theta_i \, (\mathbf{w}^\top x)^{i-1} \, \mathbf{w} \right\|_2 \\
+&\le \|\mathbf{w}\|_2 \, \sup_{x \in [a,b]} \sum_{i=1}^{d} i \, |\theta_i| \, |\mathbf{w}^\top x|^{i-1} \\
+&\le \|\mathbf{w}\|_2 \sum_{i=1}^{d} i \, |\theta_i| \, \max \{ |\mathbf{w}^\top a|, |\mathbf{w}^\top b| \}^{i-1}.
+\end{split}
+\end{equation}
+Where $||\mathbf{w}||_{2}$ is the Euclidean $\ell^{2}$ norm. The magnitude of $f_{\Theta}'(x)$ depends directly on the coefficient size $\alpha_{i}$, and also on how big is $x$ on the domain. All of this mean for large expression and value range on $f_{\Theta}$, the Lipschitz constant of that model is accordingly large. Defining $\alpha$-norm that way is a cheap proxy for Lipschitz constant, since it gauges stability, and rate of change of the functional expression itself. 
+
+\begin{definition}[Polynomial expressive complexity]\label{def:pec}
     For $x>1$ or $\mathbf{x}_{i}>1$ of $\mathbf{x}\in\mathbb{R}^{n}$ as input. Denote the polynomial class as $\mathcal{P}_{n}$ of their highest degree $n$, then we define the total expressive complexity of $p\in \mathcal{P}_{n}$ as followed.
     \begin{equation}
 \mathbb{C}_{E}(p)
@@ -1157,9 +1266,6 @@ We then can state the model within a testing scenario listed as such, to fully c
 \end{equation}
     where $S=\{p_{j}\}$, $||p||$ denotes the amount of different degree separable terms and $||x_{max}-x_{min}||$ is the observable range of the dataset. 
 \end{definition}
-The first term is the normalized linear parameters $\theta_{i}$ fixing and controlling the shift of the polynomial inning parameter, the second term is the sum of weight-aware complexity with degree factor, and the degree factor over operating range $||x_{max}-x_{min}||$ of the dataset, for the degree complexity. The final term is the last weight-aware complexity for the dominating degree $n$ of the polynomial function. 
-
-
 \subsubsection{Testing result}
 The testing scenario will be as followed. The following set of parameters are required for controlling the testing case, aside from different system measures. For parameter error, we reuse equation~\ref{eq:parameter_penalty} but with degree aware terms. 
 
@@ -1220,35 +1326,6 @@ The testing scenario will be as followed. The following set of parameters are re
 We note a few problems with both interpolation interpretation and polynomial regression of higher-degree terms. Firstly, is the intrinsic interpolation error and numerical, software issue error. Higher degree polynomial can be represented as solving for a wide Vandermonde system of $n$ degrees for $m$ sample points. Using monomial basis for interpolation, either for soft interpolation also exhibits instability and numerical garbage within the operations, as indicated by \cite{Shen_2025}. They can also be a potential source of double descent, as the majority of models tested around this range are not coded effectively for handling large data operations as such, and artifacts from such choices might be taken as the indication of double descent in some particular cases. 
 
 Aside from it, and aside from the fully-connected case, we have the particular testing scenario that can be expected of the ease of implementation. First, is the mundane implementation that is of gradually increasing degree mismatch. That is, for polynomial of $h_{p}$ and $c_{p}$, one requires only $d_{h}$ and $d_{c}$ to figure out the structure as there will exist exactly $d+1$ with the constant term, terms of which of finite many degrees. The second case is where for $p$ chosen randomly, such that aside from such $p$ entry, then the other degree or nodes of input are simply scattered dependent nodes, linear algebraically. That is, for a uniformly constructed $d$-degree network, choose at random $p$ particular degree to be fixed, while the other of $d-p$ are assigned randomly of belonging to some $p_{i}\in \{p\}$ nodes given the random choice on $p$ above. Linearly algebraically, scattered and dependent nodes then mean for example, node $4$ might use node $35$'s degree, and vice versa (if they were both non-fixed). The dependency structure is deliberately randomized rather than organized. For overparameterized case, we simply design the hypothesis by the following line of justification. For a mapping $\mathbb{R}^{d}\to\mathbb{R}$, the mapping $\mathbb{R}^{d+n}\to \mathbb{R}$ for $n= 1$ requires additional information, since the source provision does not contain information to handle additional $n$ dimensional input. Hence, we design it the following. For the hypothesis $h$, such unit of which does not fit to the original input space, the \textit{internal input space} that $h$ `hypothesize' contains, for the other $n$ entries, $q\leq d$ per unit input. That is, each input of $n$ overparameterized case receives at random, $q$ inputs can be received, for example, $w_{n1}x_{j}+w_{n2}x_{k}$ for $k,j$ specific input numbering. By the simplicity argument, then $q=1$ for the simplest case. However, this creates a skewed polynomial network, of which informally, the provided structural bias or additional information, is the fact that there exists overparameterization. To prevent this, instead, the final case considers the most general structure --- for each unit, each one can take $q$ inputs controlled as hyperparameter of the network, then the set $\{p\}$ of chosen degree influence their degree choice, and is uniform if the sampling process it is not included. 
-
-\clearpage
-
-\subsection{Support Vector Machine}
-
-Support vector machine, first formally originated from \cite{Vapnik1999-VAPTNO}, is a model inherently, specifically defined for pattern recognition task, and binary classification via an \textit{optimal separating hyperplane}. There are two variants for SVM, namely, for linear and nonlinear hyperplane. 
-
-\subsubsection{Introduction}
-
-The SV machine implements the following two precursor ideas: It maps the input vectors $x$, supposed of the setting, into a high-dimensional feature space $Z$ through some nonlinear mapping, chosen a priori. In this space, an optimal separating hyperplane is constructed. By statistical learning theory, Vapnik restricted the function class (as for infinite hypothesis it is impossible to learn) to the class of hyperplanes by 
-\begin{equation}
-    \langle \mathbf{w}\cdot \mathbf{x} \rangle + b = 0 ; \quad \mathbf{w}\in \mathbb{R}^{n} , b\in \mathbb{R}
-\end{equation}
-which $\mathbf{w}$ is the controlling weight, $\mathbf{x}$ is the input space to the space of all binary $\{-1,+1\}$ category. Hence, this basically divide the input space into two: one part containing vectors of the class $-1$ and the others being $+1$. If there exists such a thing, then it is said to be \textit{linearly separable}. To find the class of a particular vector $\mathbf{x}$, we use the following decision function 
-\begin{equation}
-    f(\mathbf{x}) = \mathrm{sgn}[\langle \mathbf{w}\cdot \mathbf{x}\rangle+ b]
-\end{equation}
-This is called the \textbf{hyperplane classifier} class. As can be understood simply from such, there exists many hyperplanes that can correctly classifies the classes. It has been then shown that the hyperplane that guarantees the best generalization problem performances is the one with the maximal margin of separation between two classes (\cite{Cristianini2000AnIT}). The above form of finding final classification can then be presented in dual form, which then depends only on dot products between vectors, as 
-\begin{equation}
-    f(\mathbf{x}) = \mathrm{sgn}\left(\sum^{\ell}_{i=1} y_{i}\alpha_{i} \langle \mathbf{x}\cdot \mathbf{x}_{i} \rangle+ b\right)
-\end{equation} where $\alpha_{i}\in \mathbb{R}$ is a real-valued variable that can be viewed as a \textit{measure} of how much informational value $\mathbf{x}_{i}$ has (for $x_{i}$ the support vectors we get from training)\footnote{The \textit{support vector} of a particular hyperplane $\mathbf{y}$ is the collections of all points that lies closest to the hyperplane, which is specified as condition for maximization on both side of maximal margin vector machine.}
-
-The second idea is of the \textit{kernel method}. This particular method, useful and well-known of the time SVM was created, gain a more prominent position among other techniques, including neural network. Specifically, this method is characterized by the mapping of the input vectors into a richer (usually high-dimensional) feature space where they satisfy \textit{linear separable} criteria. This prompted the possibility to solve nonlinear problem through such mapping, and indeed yields a nonlinear decision surface in the input space, which is linear in the feature space. A \textbf{kernel} (function) is then a function $k(\mathbf{x},\mathbf{y})$ that given two vectors in input space, return the dot product of their images in feature space such that $k(\mathbf{x},\mathbf{y})=\langle \phi(x), \phi(y) \rangle$ for the nonlinear mapping $\phi$. The general form of SVM is then 
-\begin{equation}
-    f(\mathbf{x}) = \mathrm{sgn} \left(\sum^{\ell}_{i=1} y_{i}\alpha_{i}k\langle \mathbf{x}\cdot \mathbf{x}_{i} \rangle\right)
-\end{equation}
-for any particular final categorization. One of the major problem for analysing SVM, is in the properties of it potentially having infinitely many parameters, depends on the size of the dataset. This makes the curve of both bias-variance and double descent not applicable in such regard - infinitely many parameters' complexity, yet still finite complexity class. 
-
-From such observation, it would seem imperative that the notion of complexity based solely on the parameter counts of certain model construction is ill-equipped for certain flavours of machine learning model, in this case support vector machine (in the same type is the Gaussian Mixture Model). No double descent has been observed by empirical reports record per the author's knowledge. 
 
 
 
@@ -1311,9 +1388,81 @@ Those three fundamental conversions to neural network raise interesting insight 
 
 This way of analysing unit-wise gives us much more interpretability, and also potential for a newer kind of network specification. As far as we are concerned of, a neural network can represent an active \textit{mathematical modelling system}. This then indicates, for example in adversarial learning case between the target neural network tailored to specific concept, and the learning hypothesis network, then the process of learning itself can be loosely interpreted as a concept of mathematical modelling representation learning, even in the case of black-box model, and not just simply phenomenological modelling of statistical data. To do this, we will examine the structure from the perspective of a \textbf{generator}.
 
+\clearpage
+
+\subsection{Support Vector Machine}
+
+Support vector machine, first formally originated from \cite{Vapnik1999-VAPTNO}, is a model inherently, specifically defined for pattern recognition task, and binary classification via an \textit{optimal separating hyperplane}. There are two variants for SVM, namely, for linear and nonlinear hyperplane, but the main general aspect of SVM is its reversal of the direction on model building - instead, it aims to minimize the structure of a model, using the data-dependent structure, or \textit{support vectors}. 
+
+The SV machine implements the following two precursor ideas: It maps the input vectors $x$, supposed of the setting, into a high-dimensional feature space $Z$ through some nonlinear mapping, chosen a priori. In this space, an optimal separating hyperplane is constructed. By statistical learning theory, Vapnik restricted the function class (as for infinite hypothesis it is impossible to learn) to the class of hyperplanes by 
+\begin{equation}
+    \langle \mathbf{w}\cdot \mathbf{x} \rangle + b = 0 ; \quad \mathbf{w}\in \mathbb{R}^{n} , b\in \mathbb{R}
+\end{equation}
+which $\mathbf{w}$ is the controlling weight, $\mathbf{x}$ is the input space to the space of all binary $\{-1,+1\}$ category. Hence, this basically divide the input space into two: one part containing vectors of the class $-1$ and the others being $+1$. If there exists such a thing, then it is said to be \textit{linearly separable}. To find the class of a particular vector $\mathbf{x}$, we use the following decision function 
+\begin{equation}
+    f(\mathbf{x}) = \mathrm{sgn}[\langle \mathbf{w}\cdot \mathbf{x}\rangle+ b]
+\end{equation}
+This is called the \textbf{hyperplane classifier} class\footnote{As can be understood simply from such, there exists many hyperplanes that can correctly classifies the classes. It has been then shown that the hyperplane that guarantees the best generalization problem performances is the one with the maximal margin of separation between two classes (\cite{Cristianini2000AnIT}).}. The above form of finding final classification can then be presented in dual form, which then depends only on dot products between vectors, as 
+\begin{equation}
+    f(\mathbf{x}) = \mathrm{sgn}\left(\sum^{\ell}_{i=1} y_{i}\alpha_{i} \langle \mathbf{x}\cdot \mathbf{x}_{i} \rangle+ b\right)
+\end{equation} 
+
+\begin{figure}[htb]
+    \centering
+    \small
+    \includegraphics[width=0.4\textwidth]{SVMIllus.png}
+    \caption{Illustration of support vector machine (SVM) on the observable latent space, with the goal to generalize the optimal separation hyperspace in linear separable data or via a proxy kernel space, as introduced. Reused from \cite{khouma2019novel}.}
+\end{figure}
+where $\alpha_{i}\in \mathbb{R}$ is a real-valued variable that can be viewed as a \textit{measure} of how much informational value $\mathbf{x}_{i}$ has (for $x_{i}$ the support vectors we get from training)\footnote{The \textit{support vector} of a particular hyperplane $\mathbf{y}$ is the collections of all points that lies closest to the hyperplane, which is specified as condition for maximization on both side of maximal margin vector machine.} The second idea is of the \textit{kernel method}. This particular method, useful and well-known of the time SVM was created, gain a more prominent position among other techniques, including neural network. Specifically, this method is characterized by the mapping of the input vectors into a richer (usually high-dimensional) feature space where they satisfy \textit{linear separable} criteria. This prompted the possibility to solve nonlinear problem through such mapping, and indeed yields a nonlinear decision surface in the input space, which is linear in the feature space. A \textbf{kernel} (function) is then a function $k(\mathbf{x},\mathbf{y})$ that given two vectors in input space, return the dot product of their images in feature space such that $k(\mathbf{x},\mathbf{y})=\langle \phi(x), \phi(y) \rangle$ for the nonlinear mapping $\phi$. The general form of SVM is then 
+\begin{equation}
+    f(\mathbf{x}) = \mathrm{sgn} \left(\sum^{\ell}_{i=1} y_{i}\alpha_{i}k\langle \mathbf{x}\cdot \mathbf{x}_{i} \rangle\right)\quad \ell \leq n
+\end{equation}
+for any particular final categorization. One of the major problem for analysing SVM, is in the properties of it potentially having infinitely many parameters, depends on the size of the dataset. This makes the curve of both bias-variance and double descent not applicable in such regard - infinitely many parameters' complexity, yet still finite complexity class\footnote{From such observation, it would seem imperative that the notion of complexity based solely on the parameter counts of certain model construction is ill-equipped for certain flavours of machine learning model, in this case support vector machine (in the same type is the Gaussian Mixture Model). No double descent has been observed by empirical reports record per the author's knowledge.}. 
+
+\subsection{Forward-backward construction}
+
+With respect to the observable space, SVM and neural network, we can call the construction scheme of SVM a type of \textit{backward construction} from data $\mathcal{S}$. Or rather, the following algorithm represents SVM construction problem: 
+
+\RestyleAlgo{ruled}
+\SetKwComment{Comment}{}{}
+\SetKwBlock{Objective}{Objective}{}
+\begin{algorithm}[htb]
+    \renewcommand{\algorithmcfname}{Factory}
+    \caption{Support Vector Machine - backward construction.}
+    \KwData{$(x_{i},y_{i})\in\mathcal{S}, y_{i}=\{\pm 1\}$, hinge objective $\ell(y,f(x))$, $\nabla(\cdot)$ differentiable gradient field on $\ell$.}
+    \KwResult{Expected optimized model to the minimal error on the objective $\ell(\cdot,\cdot)$, dependent on $\mathcal{S}$.}
+    \Begin
+    {
+        $d\gets \dim|\mathcal{S}|$\;
+        $n\gets|\mathcal{S}|$\;
+        $\ell(y,f(x))=\max(0,1-yf(x))$\;
+        Kernalization $\phi:\mathbf{x}\to\mathbf{x}'$\;
+        $f(\mathbf{x})\gets \mathbf{w}^{\top}\phi(\mathbf{x})+b$\;
+        \Objective
+        {
+            Attain the minimization 
+            \begin{equation}
+                \min_{w,b\in f} \frac{1}{2}||w||^{2} + C \sum_{1\leq i\leq n}\ell(y_{i},f(x_{i}))
+            \end{equation}
+            Ideally for $y_{i}(\mathbf{w}^{\top}\phi(\mathbf{x}_i)+b)\geq 1, \: \forall i, y_{i}\in\mathcal{S}$, penalized by $\ell$.\;
+        }
+    }
+    \Return{Optimized model $\mathsf{SVM}(f)$ on objective $\ell$ of $\nabla$ field.}
+    \label{algo:algo_SVM_no_kernel}
+\end{algorithm}
+
+Such a factory is reversed inherently, and with its formulation constrained in the form $\mathbf{w}^{\top}\phi(\mathbf{x})+b$, of which is equivalent to a non-linear shallow neural network with infinite width (\cite{wang2017research,chen2021equivalence}), but is not a full-fledged neural network in technicality, hence it is only a functional equivalence. That is, such result only indicates that for $N\to \infty$ of the number of neurons of a single-hidden layer neural network, $\sum_{j=1}^{N}a_{j}(w_{j}^{\top}x+b_{j})$, then 
+\begin{equation}
+    \mathsf{NN}(x) \approx \mathsf{SVM}(x) = \sum^{\ell}_{i}\alpha_{i}k\langle x,x_{i}\rangle, \ell \leq n
+\end{equation}
+The support vector, $\ell$ list, is inherently implicit of the factory itself. On the other hand, typical deep learning or neural network constructions are rather \textit{forward-constructed}, that is, the model is in a sense, prefabricated then tested of its efficacy, and thus the effective performance of the model is limited by iterations of its restricted frame. We can easily visualize the factory of which neural network are constructed, different of the SVM factory case:
+
+
+\clearpage
+
 \subsection{The component perspective}
 
-Let us look at neural network in a more component perspective, or rather, similar to a \textbf{resource} combination and advancement game. Let us play this game within the following sense. Generalizing neural network means working with component and unit-type framework. However, to even now of this point, we haven't turned our attention to it of the fullest. In fact, the individual neuron itself is made up of components. If one want a systematic structural analysis, one will have to consider the components' description and metric as it is, before going forward in the interpretation thereof. 
+Let us look at neural network in a more component perspective, or rather, similar to a \textbf{resource} combination and advancement game. Let us play this game within the following sense. Generalizing neural network means working with component and unit-type framework, since much of our current understanding relies on the basis of hard-coding the flow of operations (feed-forward), external update on global space (backpropagation), fixed domain of construction into horizontal scaffolding and vertical stretching (layers and neurons per such unit). However, to even now of this point, we haven't turned our attention to it of the fullest. In fact, the individual neuron itself is made up of components. If one want a systematic structural analysis, one will have to consider the components' description and metric as it is, before going forward in the interpretation thereof. Furthermore, perhaps there would be a way to link the learning process, right now being interpreted as external of the model, into the system that the model is considered. Such requires a prototype of a new kind of consideration in modelling theory, and as well to the fact that it would be well-supported by many bounds that are usually there in statistical learning theory, which makes this implication a non-trivial yet natural argument.
 
 
 
@@ -1387,6 +1536,10 @@ At least from this experiment, overall, results gathered using Theorem~\ref{thm:
 Specifically, the interpretation of the result is not perfect. Under such setting, then for the concept of the same class, so $d=150$, any concept of $p>d$ would result in the metric taking zero value of the `truncated region' where $d$ is literally flat on the $d+1$ onward space. Hence, the error being added on top of such error measure is the component distance of $p$ to the flat sub $p-d$ space itself - which explains the curve going upward, as more and more risks are configured. Nevertheless, the amount of data provided, at least in terms of this model, does indeed have non-trivial effect on the model itself, and the least square solution of best fit which gives the potential minimal, hence the empirical best. Considering the results, we can see regions where the theorem `breaks' of its bias-variance pattern. Further experiment to verify such claim and reconfiguration is needed. Worryingly, in this particular case, there exists no saddle point that was theorized by bias-variance tradeoff, which must then be explained accordingly. Furthermore, we also notice the troublesome fact that this particular pattern works on \textit{same operational space} models, that is, linear models approximating linear models. This setting is fairly limited, and would not generalize well. However, we also do not know what kind of measure to take in such case. Conflicting notions and reports aid into the confusion of such topic more than can be normally observed, and the anomalous behaviours in some researches (for example, in \cite{shi2024homophilymodulatesdoubledescent}, we received that in GNN, there exists no trace of double descent) makes it even harder. As such, both the status of bias-variance being false, albeit in a given range only, and double descent in masking certain behaviours of the modelling process, have taken a mysterious stance in the modern machine learning community.
 
 While discovering the double descent phenomena, it also exposes theoretical concepts that are not organized or formalized, portions of the theory and empirical observations that are within conflict of each others, issues with definitions, theorems, and interpretation of them. Those problems would then ultimately hinder further research in such direction, as well as broader theoretical requirement of the theory of machine learning, and specifically to a larger and more complex system of deep learning. 
+
+\section*{Appendix A.1. Stress testing schema}
+
+We introduce the concept of \textbf{stress testing}, at least in this paper setting of which we are countering at. 
 
 \section*{Appendix B. A way of defining representation scheme}
 
