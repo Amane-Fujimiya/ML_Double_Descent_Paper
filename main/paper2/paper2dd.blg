@@ -12,34 +12,34 @@ Warning--empty journal in mehta2014exact
 Warning--empty institution in roberts2021principles
 You've used 46 entries,
             2773 wiz_defined-function locations,
-            897 strings with 14322 characters,
-and the built_in function-call counts, 20313 in all, are:
-= -- 1822
-> -- 1203
-< -- 32
-+ -- 407
-- -- 360
-* -- 1615
-:= -- 3190
-add.period$ -- 199
+            895 strings with 14194 characters,
+and the built_in function-call counts, 20416 in all, are:
+= -- 1826
+> -- 1222
+< -- 31
++ -- 413
+- -- 366
+* -- 1635
+:= -- 3206
+add.period$ -- 198
 call.type$ -- 46
-change.case$ -- 247
+change.case$ -- 250
 chr.to.int$ -- 45
 cite$ -- 97
-duplicate$ -- 902
-empty$ -- 1638
-format.name$ -- 443
-if$ -- 4258
+duplicate$ -- 903
+empty$ -- 1639
+format.name$ -- 448
+if$ -- 4275
 int.to.chr$ -- 2
 int.to.str$ -- 1
 missing$ -- 42
-newline$ -- 296
+newline$ -- 295
 num.names$ -- 186
-pop$ -- 512
+pop$ -- 518
 preamble$ -- 1
-purify$ -- 210
+purify$ -- 213
 quote$ -- 0
-skip$ -- 725
+skip$ -- 726
 stack$ -- 0
 substring$ -- 432
 swap$ -- 79
@@ -50,5 +50,5 @@ type$ -- 456
 warning$ -- 5
 while$ -- 162
 width$ -- 0
-write$ -- 695
+write$ -- 693
 (There were 5 warnings)

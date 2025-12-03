@@ -1,20 +1,20 @@
 # Fdb version 4
-["bibtex paper2dd"] 1762324830.52785 "paper2dd.aux" "paper2dd.bbl" "paper2dd" 1762324837.99643 0
+["bibtex paper2dd"] 1764784090.2242 "paper2dd.aux" "paper2dd.bbl" "paper2dd" 1764784097.72104 0
   "./iclr2025_conference.bst" 1759811019 28413 af983813ca1a1414954dbceae7baa2a1 ""
-  "./references.bib" 1762276403 120239 41c335080984a31cd55376f5611a1bdf ""
-  "paper2dd.aux" 1762324836 11615 3b6947b2b59b3e5bbe84e581a732bebf "pdflatex"
+  "./references.bib" 1764784080 120191 ef0c07048335e69ecab6282d698450f9 ""
+  "paper2dd.aux" 1764784095 11626 fc9a6d1bfa5fa36079a369616d865801 "pdflatex"
   (generated)
   "paper2dd.bbl"
   "paper2dd.blg"
   (rewritten before read)
-["pdflatex"] 1762324831.23522 "e:/Code Repository/Paper Series/main/paper2/paper2dd.tex" "paper2dd.pdf" "paper2dd" 1762324837.99737 0
+["pdflatex"] 1764784090.89996 "e:/Code Repository/Paper Series/main/paper2/paper2dd.tex" "paper2dd.pdf" "paper2dd" 1764784097.72196 0
   "C:/Users/Admin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1750169815 6792824 25ff5451ad5ac637fccabe56e3c57ec9 ""
   "C:/Users/Admin/AppData/Local/MiKTeX/fonts/tfm/public/stmaryrd/stmary10.tfm" 1752636001 848 f478e0761563bbc369eca609a1741348 ""
   "C:/Users/Admin/AppData/Local/MiKTeX/fonts/tfm/public/stmaryrd/stmary5.tfm" 1752636011 848 e1bc58a31b9ed9c3729ffea165acfaac ""
   "C:/Users/Admin/AppData/Local/MiKTeX/fonts/tfm/public/stmaryrd/stmary6.tfm" 1752636008 848 068dd119e13b75777e62821af7d4f2a6 ""
   "C:/Users/Admin/AppData/Local/MiKTeX/fonts/tfm/public/stmaryrd/stmary7.tfm" 1752636013 848 26631fcb3e4cb6757598b9cda7967b63 ""
   "C:/Users/Admin/AppData/Local/MiKTeX/fonts/tfm/public/stmaryrd/stmary9.tfm" 1752636017 848 594c171945930dfc7cc52fb30457c803 ""
-  "C:/Users/Admin/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1750169804 13970273 6a0e51656a1d1abd4077c5eaf6d85d02 ""
+  "C:/Users/Admin/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1763009800 13970274 b3c2131258a9af11e6796e135999e6c7 ""
   "D:/MikTek/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
   "D:/MikTek/fonts/tfm/adobe/courier/pcrr7t.tfm" 1136765053 960 379cc0019370a9e0208a0a3f949f847a ""
   "D:/MikTek/fonts/tfm/adobe/courier/pcrr8r.tfm" 1136765053 1292 bd42be2f344128bff6d35d98474adfe3 ""
@@ -332,7 +332,7 @@
   "D:/MikTek/tex/latex/xcolor/svgnam.def" 1729265222 4705 34614fec2d4cfd7794c82198c9076871 ""
   "D:/MikTek/tex/latex/xcolor/x11nam.def" 1729265222 9125 edad0294b4f7dd6df8c57b02b40a0855 ""
   "D:/MikTek/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "e:/Code Repository/Paper Series/main/paper2/paper2dd.tex" 1762324822 29371 0c91b8986e91cabb692d3da92be6ca76 ""
+  "e:/Code Repository/Paper Series/main/paper2/paper2dd.tex" 1764784080 29371 0c91b8986e91cabb692d3da92be6ca76 ""
   "fancyhdr.sty" 1759811019 21006 e5d13d98d57bd53d4fed3aa61bd29c86 ""
   "iclr2025_conference.sty" 1759811019 9200 8a74918bf390bdc91ce36638a79d942c ""
   "math_commands.tex" 1759811019 15750 459b42063249cd94f9e4596dd28b6f58 ""
@@ -340,10 +340,10 @@
   "media/Rn-cifar10-p15-adam-aug-train.png" 1759811019 158865 e38214469f60ab34e6eec305d7ce9d4f ""
   "media/errorvscomplexity.png" 1759811019 365032 90ec40b1bcb6b089fb9836b77920ed08 ""
   "natbib.sty" 1759811019 46400 40088ce024445d7ee2bca59e704cdd01 ""
-  "paper2dd.aux" 1762324836 11615 3b6947b2b59b3e5bbe84e581a732bebf "pdflatex"
-  "paper2dd.bbl" 1762324831 15595 76c996990e2f5b9539c96dd658c283a3 "bibtex paper2dd"
-  "paper2dd.out" 1762324836 915 6da2a7cc6d2d6fad7ca581435fbc9ba8 "pdflatex"
-  "paper2dd.tex" 1762324822 29371 0c91b8986e91cabb692d3da92be6ca76 ""
+  "paper2dd.aux" 1764784095 11626 fc9a6d1bfa5fa36079a369616d865801 "pdflatex"
+  "paper2dd.bbl" 1764784090 15461 3e781ac483d5311a8faafd56e21039ec "bibtex paper2dd"
+  "paper2dd.out" 1764784095 915 6da2a7cc6d2d6fad7ca581435fbc9ba8 "pdflatex"
+  "paper2dd.tex" 1764784080 29371 0c91b8986e91cabb692d3da92be6ca76 ""
   "pdf/doubledescent.pdf" 1759811019 38445 60283e2c63c9d0e98cde07b91fa73660 ""
   "pdf/u-shaped.pdf" 1759811019 36271 8c6ae090b959513c3720eb07c77e0955 ""
   "preamble.tex" 1759811019 6270 559432b596ffda49bef5957069adb42f ""

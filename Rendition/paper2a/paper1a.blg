@@ -1,0 +1,19 @@
+[0] Config.pm:308> INFO - This is Biber 2.20
+[0] Config.pm:311> INFO - Logfile is 'paper1a.blg'
+[181] biber-MSWIN64:340> INFO - === 
+[242] Biber.pm:420> INFO - Reading 'paper1a.bcf'
+[612] Biber.pm:991> INFO - Using all citekeys in bib section 0
+[638] Biber.pm:4463> INFO - Processing section 0
+[658] Biber.pm:4654> INFO - Looking for bibtex file 'references.bib' for section 0
+[729] bibtex.pm:1713> INFO - LaTeX decoding ...
+[980] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
+[2412] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'level = 4' with 'level = 2'
+[2412] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[2412] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[2412] Biber.pm:4283> INFO - Sorting list 'cms/global//global/global/global' of type 'entry' with template 'cms' and locale 'en-US'
+[2412] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[2623] bbl.pm:676> INFO - Writing 'paper1a.bbl' with encoding 'UTF-8'
+[2777] bbl.pm:779> INFO - Output to paper1a.bbl
+[2778] Biber.pm:131> WARN - ISBN '978-0199233210' in entry 'mezard2009information' is invalid - run biber with '--validate_datamodel' for details.
+[2778] Biber.pm:131> WARN - ISBN '978-9971501533' in entry 'mezard1987spin' is invalid - run biber with '--validate_datamodel' for details.
+[2778] Biber.pm:133> INFO - WARNINGS: 2

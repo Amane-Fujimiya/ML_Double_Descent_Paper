@@ -1,0 +1,433 @@
+\relax 
+\nicematrix@redefine@check@rerun 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{10.1145/1968.1972}
+\citation{Vapnik1999-VAPTNO}
+\citation{6797087}
+\citation{belkin_reconciling_2019}
+\citation{Vapnik1999-VAPTNO,10.5555/2371238,10.5555/2621980,STL_Hajek_Maxim_2021,bousquet2020theoryuniversallearning}
+\citation{6797087,Domingos2000AUB}
+\citation{belkin_reconciling_2019,schaeffer_double_2023,nakkiran_deep_2019,lafon_understanding_2024}
+\citation{davies_unifying_2023,d_ascoli_triple_2020}
+\providecommand \oddpage@label [2]{}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\citation{belkin_reconciling_2019}
+\citation{nakkiran_deep_2019}
+\citation{Jacot:2018:NTK}
+\citation{lafon_understanding_2024}
+\citation{schaeffer_double_2023}
+\citation{liu2023understandingroleoptimizationdouble}
+\citation{davies_unifying_2023}
+\citation{olmin2024understandingepochwisedoubledescent}
+\citation{belkin_reconciling_2019}
+\citation{nakkiran_deep_2019}
+\citation{shi2024homophilymodulatesdoubledescent,schaeffer_double_2023,quetu_can_2023,lafon_understanding_2024,neal2019biasvariancetradeofftextbooksneed,davies_unifying_2023,quetu_can_2023-1,liu2023understandingroleoptimizationdouble,mei2020generalizationerrorrandomfeatures,mei2019generalization,adlam2020understandingdoubledescentrequires,transtrum2025egaddoubledescentexplained,liu2021kernelregressionhighdimensions,allerbo2025changingkerneltrainingleads,pezeshki2021multiscalefeaturelearningdynamics,brellmann2024on,nakkiran2019moredata,mei2019randomfeatures,heckel2020early,nakkiran2020regularization,Belkin_2020,Yang_2024,spiess2023doublesingledescentcausal,nakkiran2021optimalregularizationmitigatedouble,zhang2024manipulatingsparsedoubledescent,cherkassky2024understand,nakkiran2019datahurtlinearregression}
+\citation{d_ascoli_triple_2020}
+\citation{Sterkenburg_2024,Vapnik1999-VAPTNO,STL_Hajek_Maxim_2021}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Outline}{2}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Related Work}{2}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Preliminaries}{2}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Classical problem setting}{2}{subsection.4.1}\protected@file@percent }
+\@writefile{loe}{\contentsline {assumption}{\ifthmt@listswap Assumption~4.1\else \numberline {4.1}Assumption\fi }{3}{assumption.1}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~4.1\else \numberline {4.1}Definition\fi \thmtformatoptarg {Empirical risk}}{3}{definition.1}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~4.2\else \numberline {4.2}Definition\fi \thmtformatoptarg {Generalization risk}}{3}{definition.2}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~4.3\else \numberline {4.3}Definition\fi \thmtformatoptarg {Empirical learning problem}}{3}{definition.3}\protected@file@percent }
+\newlabel{eq:lp1}{{3}{3}{Empirical learning problem}{equation.3}{}}
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~4.4\else \numberline {4.4}Definition\fi \thmtformatoptarg {Generalization learning problem}}{3}{definition.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces {\relax \fontsize  {9}{10pt}\selectfont  \textbf  {Illustrative dynamic of the learning problem.} For an incremental hypothesis space sequence $\mathcal  {H}_{1},\mathcal  {H}_{2},\mathcal  {H}_{3}$, we aim to obtain the procedure $\mathcal  {T}$ that would either reach the \textit  {generalization solution} $\bm  {h}$, or the \textit  {empirical solution} $h^{*}$ for a particular hypothesis class, with respect to the concept $c$ and its observed concept $c'$. Model selection hence dictates how an algorithm or procedure than choose the best possible hypothesis to approximate the generalization solution from the empirical solution set. Do notice that here we explicitly state that the data would create a \textbf  {proxy concept} that overlaps with the concept class and of some arbitrary `distance' from the true concept by $d(c,c')$. In case the two classes overlap, there still exists the arbitrary distance. Also, we can also observe the intuitive notion of increasing hypothesis class - while it indeed can help in getting closer to the concept class, the somewhat intrinsic property of current learning theory being the relative random procedure class make it probabilistically unstable.}}}{4}{figure.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:statlearnclassical}{{1}{4}{\small \textbf {Illustrative dynamic of the learning problem.} For an incremental hypothesis space sequence $\mathcal {H}_{1},\mathcal {H}_{2},\mathcal {H}_{3}$, we aim to obtain the procedure $\mathcal {T}$ that would either reach the \textit {generalization solution} $\bm {h}$, or the \textit {empirical solution} $h^{*}$ for a particular hypothesis class, with respect to the concept $c$ and its observed concept $c'$. Model selection hence dictates how an algorithm or procedure than choose the best possible hypothesis to approximate the generalization solution from the empirical solution set. Do notice that here we explicitly state that the data would create a \textbf {proxy concept} that overlaps with the concept class and of some arbitrary `distance' from the true concept by $d(c,c')$. In case the two classes overlap, there still exists the arbitrary distance. Also, we can also observe the intuitive notion of increasing hypothesis class - while it indeed can help in getting closer to the concept class, the somewhat intrinsic property of current learning theory being the relative random procedure class make it probabilistically unstable}{figure.caption.1}{}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces Empirical-generalization learning dynamics (non-proxy)}}{4}{algocf.1}\protected@file@percent }
+\newlabel{algo:algo_optim_ideal}{{1}{4}{Classical problem setting}{equation.5}{}}
+\citation{JMLR:v11:shalev-shwartz10a}
+\citation{achlioptas_stochastic_nodate,ruder_overview_2017}
+\citation{zhang_gradient_2019}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1}Uniform convergence}{5}{subsubsection.4.1.1}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~4.5\else \numberline {4.5}Definition\fi }{5}{definition.5}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~4.6\else \numberline {4.6}Definition\fi }{5}{definition.6}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~4.7\else \numberline {4.7}Definition\fi }{5}{definition.7}\protected@file@percent }
+\citation{gareth_james_introduction_2013}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Overfitting and underfitting}{6}{subsection.4.2}\protected@file@percent }
+\@writefile{loe}{\contentsline {assumption}{\ifthmt@listswap Assumption~4.2\else \numberline {4.2}Assumption\fi }{6}{assumption.2}\protected@file@percent }
+\newlabel{assume:cpi_transparency}{{4.2}{6}{}{assumption.2}{}}
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~4.8\else \numberline {4.8}Definition\fi \thmtformatoptarg {Heuristic empirical risk}}{6}{definition.8}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~4.9\else \numberline {4.9}Definition\fi \thmtformatoptarg {Heuristical generalization risk}}{6}{definition.9}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~4.10\else \numberline {4.10}Definition\fi \thmtformatoptarg {Underfitting}}{6}{definition.10}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~4.11\else \numberline {4.11}Definition\fi \thmtformatoptarg {Overfitting}}{6}{definition.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Practical proxy}{6}{subsubsection.4.2.1}\protected@file@percent }
+\citation{10.5555/2371238}
+\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces Empirical-generalization learning dynamics (proxy)}}{7}{algocf.2}\protected@file@percent }
+\newlabel{algo:algo_optim_no_c}{{2}{7}{Practical proxy}{equation.11}{}}
+\@writefile{loe}{\contentsline {theorem}{\ifthmt@listswap Theorem~4.3\else \numberline {4.3}Theorem\fi \thmtformatoptarg {\cite  {10.5555/2371238}}}{7}{theorem.3}\protected@file@percent }
+\newlabel{thm:minimalNeu}{{4.3}{7}{\cite {10.5555/2371238}}{theorem.3}{}}
+\@writefile{loe}{\contentsline {conjecture}{\ifthmt@listswap Conjecture~4.1\else \numberline {4.1}Conjecture\fi }{7}{conjecture.1}\protected@file@percent }
+\citation{gareth_james_introduction_2013,goodfellow2016deep,STL_Hajek_Maxim_2021,10.5555/2371238,10.5555/2621980}
+\citation{LehmannCasella_theory_1998,liam_statistics_2005}
+\citation{6797087}
+\citation{6797087}
+\citation{brown2024biasvariance}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Problem statements}{8}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Bias-variance tradeoff}{8}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.1}Precursor (Geman et al., 1992)}{8}{subsubsection.5.1.1}\protected@file@percent }
+\@writefile{loe}{\contentsline {theorem}{\ifthmt@listswap Theorem~5.1\else \numberline {5.1}Theorem\fi \thmtformatoptarg {Bias-variance decomposition}}{8}{theorem.1}\protected@file@percent }
+\citation{adlam2020understandingdoubledescentrequires}
+\citation{brown2024biasvariance,PfauBregmanDivergence}
+\citation{lafon_understanding_2024}
+\citation{6797087,sharma_bias-variance_2014,domingos_unifeid_2000,adlam2020understandingdoubledescentrequires,yang_rethinking_2020}
+\citation{adlam2020understandingdoubledescentrequires}
+\newlabel{SC@1}{{\caption@xref {??}{ on input line 345}}{9}{Precursor (Geman et al., 1992)}{figure.caption.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \textbf  {Decomposition of the error term into 3 parts}. Respectively, the irreducible error $\mathbb  {V}[y(\mathbf  {x})]$, the variance (blue) and the bias (dark yellow). All of them are assumed to take up 100\% of the error observed in such composition. The proportion is included using the three coefficient $\lambda _{\epsilon },\lambda _{V},\lambda _{B}$ where $\lambda _{\epsilon }+\lambda _{V}+\lambda _{B}=1$.}}{9}{figure.caption.4}\protected@file@percent }
+\@writefile{loe}{\contentsline {theorem}{\ifthmt@listswap Theorem~5.2\else \numberline {5.2}Theorem\fi \thmtformatoptarg {Bias-variance tradeoff}}{9}{theorem.2}\protected@file@percent }
+\newlabel{thm:bias-variance}{{5.2}{9}{Bias-variance tradeoff}{theorem.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.2}Expansion and variations}{9}{subsubsection.5.1.2}\protected@file@percent }
+\citation{domingos_unified_aaai_2000,domingos_unified_2000}
+\citation{10.5555/2371238,lafon_understanding_2024}
+\citation{brown2024biasvariance}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.3}Generalized decomposition}{10}{subsubsection.5.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.4}Bias-variance algorithm}{10}{subsubsection.5.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.5}Functional approximation algorithm}{10}{subsubsection.5.1.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.6}Approximation-Estimation tradeoff}{10}{subsubsection.5.1.6}\protected@file@percent }
+\citation{belkin_reconciling_2019}
+\citation{belkin_reconciling_2019}
+\citation{belkin_reconciling_2019}
+\citation{belkin_reconciling_2019}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Double descent}{11}{subsection.5.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces {\bf  Curves for training risk (dashed line) and test risk (solid line).} ({\bf  a}) The classical \emph  {U-shaped risk curve} arising from the bias-variance trade-off. ({\bf  b}) The \emph  {double descent risk curve}, which incorporates the U-shaped risk curve (i.e., the ``classical'' regime) together with the observed behaviour from using high capacity function classes (i.e., the ``modern'' interpolating regime), separated by the interpolation threshold. The predictors to the right of the interpolation threshold have zero training risk. Reproduced from \cite  {belkin_reconciling_2019}.}}{11}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:double-descent}{{3}{11}{{\bf Curves for training risk (dashed line) and test risk (solid line).} ({\bf a}) The classical \emph {U-shaped risk curve} arising from the bias-variance trade-off. ({\bf b}) The \emph {double descent risk curve}, which incorporates the U-shaped risk curve (i.e., the ``classical'' regime) together with the observed behaviour from using high capacity function classes (i.e., the ``modern'' interpolating regime), separated by the interpolation threshold. The predictors to the right of the interpolation threshold have zero training risk. Reproduced from \cite {belkin_reconciling_2019}}{figure.caption.5}{}}
+\citation{10.5555/2371238,10.5555/2930837,10.5555/2621980}
+\citation{nakkiran_deep_2019}
+\citation{nakkiran_deep_2019}
+\citation{nakkiran_deep_2019}
+\citation{nakkiran_deep_2019}
+\citation{nakkiran_deep_2019}
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~5.1\else \numberline {5.1}Definition\fi \thmtformatoptarg {Interpolation threshold}}{12}{definition.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces {\bf  Left:} Train and test error as a function of model size, for ResNet18s of varying width on CIFAR-10 with 15\% label noise. {\bf  Right:} Test error, shown for varying train epochs. All models trained using Adam for 4K epochs. The largest model (width $64$) corresponds to standard ResNet18. Resued from \cite  {nakkiran_deep_2019}. }}{12}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:errorvscomplexity}{{4}{12}{{\bf Left:} Train and test error as a function of model size, for ResNet18s of varying width on CIFAR-10 with 15\% label noise. {\bf Right:} Test error, shown for varying train epochs. All models trained using Adam for 4K epochs. The largest model (width $64$) corresponds to standard ResNet18. Resued from \cite {nakkiran_deep_2019}}{figure.caption.6}{}}
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~5.2\else \numberline {5.2}Definition\fi \thmtformatoptarg {Effective Model Complexity}}{12}{definition.2}\protected@file@percent }
+\@writefile{loe}{\contentsline {hypothesis}{\ifthmt@listswap Hypothesis~5.1\else \numberline {5.1}Hypothesis\fi \thmtformatoptarg {Generalized Double Descent hypothesis, informal}}{12}{hypothesis.1}\protected@file@percent }
+\newlabel{hyp:informaldd}{{5.1}{12}{Generalized Double Descent hypothesis, informal}{hypothesis.1}{}}
+\citation{nakkiran_deep_2019}
+\citation{belkin_reconciling_2019}
+\citation{advani2017highdimensionaldynamicsgeneralizationerror}
+\citation{belkin2018understanddeeplearningneed}
+\citation{mei2020generalizationerrorrandomfeatures}
+\citation{belkin_reconciling_2019}
+\citation{nakkiran_deep_2019}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces {\bf  Left:} Test error as a function of model size and train epochs. The horizontal line corresponds to model-wise double descent--varying model size while training for as long as possible. The vertical line corresponds to epoch-wise double descent, with test error undergoing double-descent as train time increases. {\bf  Right} Train error of the corresponding models. All models are Resnet18s trained on CIFAR-10 with 15\% label noise, data-augmentation, and Adam for up to 4K epochs. Reused from \cite  {nakkiran_deep_2019}}}{13}{figure.caption.7}\protected@file@percent }
+\newlabel{fig:unified}{{5}{13}{{\bf Left:} Test error as a function of model size and train epochs. The horizontal line corresponds to model-wise double descent--varying model size while training for as long as possible. The vertical line corresponds to epoch-wise double descent, with test error undergoing double-descent as train time increases. {\bf Right} Train error of the corresponding models. All models are Resnet18s trained on CIFAR-10 with 15\% label noise, data-augmentation, and Adam for up to 4K epochs. Reused from \cite {nakkiran_deep_2019}}{figure.caption.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Previous attempts}{13}{section.6}\protected@file@percent }
+\@writefile{loe}{\contentsline {conjecture}{\ifthmt@listswap Conjecture~6.1\else \numberline {6.1}Conjecture\fi }{13}{conjecture.1}\protected@file@percent }
+\citation{belkin_reconciling_2019}
+\citation{nakkiran_deep_2019}
+\citation{Yang_2024,nakkiran2019moredata,schaeffer_double_2023,lafon_understanding_2024}
+\citation{NEURIPS2024_2d43f7a6}
+\citation{liu2021kernelregressionhighdimensions}
+\citation{zhang2024manipulatingsparsedoubledescent,allerbo2025changingkerneltrainingleads}
+\citation{brellmann2024on}
+\citation{harzli2023doubledescentcurvesneuralnetworks}
+\citation{belkin_reconciling_2019}
+\citation{luo2023doubledescentdiscrepancytask,Yang_2024,pezeshki2021multiscalefeaturelearningdynamics}
+\citation{nakkiran_deep_2019}
+\citation{shi2024homophilymodulatesdoubledescent}
+\citation{schaeffer_double_2023,ErdongHu2021}
+\citation{shi2024homophilymodulatesdoubledescent}
+\citation{cherkassky2024understand}
+\citation{lee2022vctheoreticalexplanationdouble}
+\citation{hastie2019surprises}
+\citation{allerbo2025changingkerneltrainingleads}
+\citation{modelcomplex_exp,hu_model_2021,janik2021complexitydeepneuralnetworks,truong2025rademachercomplexitybasedgeneralizationbounds,luo2024investigatingimpactmodelcomplexity}
+\citation{neal2018modern}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Discovery of double descent}{14}{subsection.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Theoretical attacks}{14}{subsection.6.2}\protected@file@percent }
+\citation{power2022grokkinggeneralizationoverfittingsmall}
+\citation{wei2022emergentabilitieslargelanguage}
+\citation{soudry2024implicitbiasgradientdescent}
+\citation{kaplan2020scalinglawsneurallanguage,wei2022emergentabilitieslargelanguage}
+\citation{vandeven2024continuallearningcatastrophicforgetting}
+\citation{Manin_2024}
+\citation{hu2021modelcomplexitydeeplearning,luo2024investigatingimpactmodelcomplexity,barceló2020modelinterpretabilitylenscomputational,Molnar_2020,janik2021complexitydeepneuralnetworks}
+\citation{hu2021modelcomplexitydeeplearning}
+\citation{Molnar_2020}
+\citation{belkin_reconciling_2019}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Problems}{15}{subsection.6.3}\protected@file@percent }
+\citation{nakkiran_deep_2019}
+\citation{10.5555/2371238}
+\citation{electronics13020416}
+\citation{lipton2016mythos,doshi2017towards,molnar2020general}
+\citation{molnar2020general}
+\citation{dreyfus1965alchemy,dreyfus1972what,dreyfus1986mind,suchman1987plans,brooks1991intelligence,searle1980minds,mccarthy1969philosophical,harnad1990symbol}
+\citation{pearl2009causality,marcus2018deep,sutton2019bitter}
+\citation{lipton2018troublingtrendsmachinelearning}
+\citation{romer2015mathiness,syll2024postreal}
+\citation{kapoor2022leakage}
+\citation{Jacot:2018:NTK}
+\citation{lee2022vctheoreticalexplanationdouble}
+\citation{10.5555/2621980,10.5555/2371238,STL_Hajek_Maxim_2021}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Classical analysis}{17}{subsection.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.4.1}PAC-learning setup}{17}{subsubsection.6.4.1}\protected@file@percent }
+\citation{10.5555/2371238}
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~6.1\else \numberline {6.1}Definition\fi \thmtformatoptarg {PAC-learning}}{18}{definition.1}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~6.2\else \numberline {6.2}Definition\fi \thmtformatoptarg {Consistent Learner}}{18}{definition.2}\protected@file@percent }
+\@writefile{loe}{\contentsline {theorem}{\ifthmt@listswap Theorem~6.1\else \numberline {6.1}Theorem\fi \thmtformatoptarg {Learning bound - finite $\mathcal  {H}$, consistent case}}{18}{theorem.1}\protected@file@percent }
+\newlabel{thm:PAC_consistent}{{6.1}{18}{Learning bound - finite $\mathcal {H}$, consistent case}{theorem.1}{}}
+\@writefile{loe}{\contentsline {theorem}{\ifthmt@listswap Theorem~6.2\else \numberline {6.2}Theorem\fi \thmtformatoptarg {Learning bound - finite $\mathcal  {H}$, inconsistent case}}{18}{theorem.2}\protected@file@percent }
+\newlabel{thm:theorem_inconsistent}{{6.2}{18}{Learning bound - finite $\mathcal {H}$, inconsistent case}{theorem.2}{}}
+\citation{10.5555/200548}
+\citation{Vapnik1999-VAPTNO}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces {\relax \fontsize  {9}{10pt}\selectfont  The learning bound, both generalization bound $R(h_{S})$ and the sample complexity bound $m$, from theorem~\ref {thm:PAC_consistent}}}}{19}{figure.caption.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5}VC-theory}{19}{subsection.6.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.6}Complexity notions}{19}{subsection.6.6}\protected@file@percent }
+\citation{STL_Hajek_Maxim_2021,10.5555/2930837,10.5555/2371238,10.5555/200548}
+\citation{Vapnik1999-VAPTNO}
+\citation{STL_Hajek_Maxim_2021,10.5555/2930837,10.5555/2371238,10.5555/200548}
+\citation{Vapnik1999-VAPTNO}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Descriptions of complexity measures applied to models and learning processes, from \cite  {STL_Hajek_Maxim_2021,10.5555/2930837,10.5555/2371238,10.5555/200548} and \cite  {Vapnik1999-VAPTNO} with some custom notions.}}{20}{table.caption.10}\protected@file@percent }
+\newlabel{tab:polynomial_test}{{1}{20}{Descriptions of complexity measures applied to models and learning processes, from \cite {STL_Hajek_Maxim_2021,10.5555/2930837,10.5555/2371238,10.5555/200548} and \cite {Vapnik1999-VAPTNO} with some custom notions}{table.caption.10}{}}
+\citation{STL_Hajek_Maxim_2021,10.5555/2371238,10.5555/2621980}
+\citation{James2021}
+\citation{10.5555/200548}
+\citation{Wegener1987,MiltersenRadhakrishnanWegener2005,DarwicheMarquis2002}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.6.1}Representation complexity}{21}{subsubsection.6.6.1}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~6.3\else \numberline {6.3}Definition\fi \thmtformatoptarg {Representation scheme}}{21}{definition.3}\protected@file@percent }
+\citation{huang2025samplecomplexityrepresentationability,wegel2025samplecomplexitysemisupervisedmultiobjective,Mei2022TowardsBridging}
+\citation{Balcan2010TrueSampleComplexity}
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~6.4\else \numberline {6.4}Definition\fi \thmtformatoptarg {Representation complexity}}{22}{definition.4}\protected@file@percent }
+\@writefile{loe}{\contentsline {assumption}{\ifthmt@listswap Assumption~6.3\else \numberline {6.3}Assumption\fi }{22}{assumption.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.6.2}Optimization complexity}{22}{subsubsection.6.6.2}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~6.5\else \numberline {6.5}Definition\fi \thmtformatoptarg {$\epsilon $-optimization}}{22}{definition.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.6.3}Sample complexity}{23}{subsubsection.6.6.3}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~6.6\else \numberline {6.6}Definition\fi \thmtformatoptarg {Sample complexity}}{23}{definition.6}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~6.7\else \numberline {6.7}Definition\fi \thmtformatoptarg {$(\epsilon ,\mu )$-sample complexity}}{23}{definition.7}\protected@file@percent }
+\citation{domingos_unifeid_2000}
+\citation{brown2024biasvariance}
+\citation{lafon_understanding_2024}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.7}Hypothesis}{24}{subsection.6.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.7.1}Stability of bias-variance measure}{24}{subsubsection.6.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.7.2}Alternative measures}{24}{subsubsection.6.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.7.3}Inductive bias}{24}{subsubsection.6.7.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.7.4}Randomness and probabilistic setting}{24}{subsubsection.6.7.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.7.5}Knowledge masking}{24}{subsubsection.6.7.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.7.6}Intrinsic Data Factors}{24}{subsubsection.6.7.6}\protected@file@percent }
+\citation{Cauchy:1847,Robbins:1951,Widrow:1960,Hestenes:1952,Fletcher:1964}
+\citation{nemirovski_yudin_1983,amari_1996_natural_riemannian_gradient,amari_1998_natural_gradient_works,yang_amari_1998_complexity_issues_natural_gradient,amari_rattray_saad_1998_natural_gradient_online,gunasekar_woodworth_srebro_2021_mirrorless_mirror_descent,luong_parpas_rueckert_rustem_2016_weighted_mirror_descent,xiao_zhang_2014_proximal_stochastic_gradient,sohl-dickstein_2012_natural_gradient_whitening,raskutti_mukherjee_2013_information_geometry_mirror_descent}
+\citation{lafon_understanding_2024}
+\citation{lafon_understanding_2024}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Analysis}{26}{section.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Gradient-based optimization}{26}{subsection.7.1}\protected@file@percent }
+\@writefile{loa}{\contentsline {algocf}{\numberline {3}{\ignorespaces Gradient descent on general convex function}}{26}{algocf.3}\protected@file@percent }
+\newlabel{algo:algo_gd}{{3}{26}{Gradient-based optimization}{algocf.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Linear function class $h(u)$ - \cite  {lafon_understanding_2024}}{26}{subsection.7.2}\protected@file@percent }
+\citation{lafon_understanding_2024}
+\citation{lafon_understanding_2024}
+\citation{lafon_understanding_2024}
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~7.1\else \numberline {7.1}Definition\fi \thmtformatoptarg {\cite  {lafon_understanding_2024}}}{27}{definition.1}\protected@file@percent }
+\newlabel{eq:linear_gaussian_erm}{{31}{27}{Linear function class $h(u)$ - \cite {lafon_understanding_2024}}{equation.31}{}}
+\@writefile{loe}{\contentsline {theorem}{\ifthmt@listswap Theorem~7.1\else \numberline {7.1}Theorem\fi \thmtformatoptarg {Double descent on linear regression - \cite  {lafon_understanding_2024}}}{27}{theorem.1}\protected@file@percent }
+\newlabel{thm:double_descent_lr}{{7.1}{27}{Double descent on linear regression - \cite {lafon_understanding_2024}}{theorem.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Theorem~\ref {thm:double_descent_lr} behaviours on randomized setting. For this model, we have $d=100$, $\sigma = 0.5$, and variational $n$. Full test cases are for $p=[1,100]$, $n=\{12,24,36,50,76,82,90,100,106,112,121\}$ accordingly. The test function of the concept itself is the same linear model, but with different input only.}}{28}{figure.caption.12}\protected@file@percent }
+\newlabel{fig:theorem_double_descent_fig}{{7}{28}{Theorem~\ref {thm:double_descent_lr} behaviours on randomized setting. For this model, we have $d=100$, $\sigma = 0.5$, and variational $n$. Full test cases are for $p=[1,100]$, $n=\{12,24,36,50,76,82,90,100,106,112,121\}$ accordingly. The test function of the concept itself is the same linear model, but with different input only}{figure.caption.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Contrary to Theorem~\ref {thm:double_descent_lr}, this is the behaviours on randomized setting for standard parameter-wised mean square error measure (MSE-on-parameter). For this model, we have $d=100$, $\sigma = 0.5$, and variational $n$. Full test cases are for $p=[1,100]$, $n=\{12,24,36,50,76,82,90,100,106,112,121\}$ accordingly. The test function of the concept itself is the same linear model, but with different input only.}}{28}{figure.caption.13}\protected@file@percent }
+\newlabel{fig:theorem_double_descent_fig2}{{8}{28}{Contrary to Theorem~\ref {thm:double_descent_lr}, this is the behaviours on randomized setting for standard parameter-wised mean square error measure (MSE-on-parameter). For this model, we have $d=100$, $\sigma = 0.5$, and variational $n$. Full test cases are for $p=[1,100]$, $n=\{12,24,36,50,76,82,90,100,106,112,121\}$ accordingly. The test function of the concept itself is the same linear model, but with different input only}{figure.caption.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Contrary to Theorem~\ref {thm:double_descent_lr} and both figure~\ref {fig:theorem_double_descent_fig2}, this is the behaviours on randomized setting for standard parameter-wised mean square error measure (MSE-on-prediction). Especially, we do not see double descent pattern in this setting, as it is. For this model, we have $d=100$, $\sigma = 0.5$, and variational $n$. Full test cases are for $p=[1,100]$, $n=\{12,24,36,50,76,82,90,100,106,112,121\}$ accordingly. The test function of the concept itself is the same linear model, but with different input only.}}{29}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:theorem_double_descent_fig3}{{9}{29}{Contrary to Theorem~\ref {thm:double_descent_lr} and both figure~\ref {fig:theorem_double_descent_fig2}, this is the behaviours on randomized setting for standard parameter-wised mean square error measure (MSE-on-prediction). Especially, we do not see double descent pattern in this setting, as it is. For this model, we have $d=100$, $\sigma = 0.5$, and variational $n$. Full test cases are for $p=[1,100]$, $n=\{12,24,36,50,76,82,90,100,106,112,121\}$ accordingly. The test function of the concept itself is the same linear model, but with different input only}{figure.caption.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Similar experiment according to setting and result of Theorem~\ref {eq:linear_gaussian_erm}, where $p$ is in the range $[1,5523]$. Here, we can see small double descent modelled exactly at the interpolation threshold, while the later region exhibit similar phenomenon as bias-variance tradeoff.}}{29}{figure.caption.15}\protected@file@percent }
+\newlabel{fig:contrarian}{{10}{29}{Similar experiment according to setting and result of Theorem~\ref {eq:linear_gaussian_erm}, where $p$ is in the range $[1,5523]$. Here, we can see small double descent modelled exactly at the interpolation threshold, while the later region exhibit similar phenomenon as bias-variance tradeoff}{figure.caption.15}{}}
+\citation{nakkiran2019datahurtlinearregression}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.2.1}Extended analysis}{30}{subsubsection.7.2.1}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~7.2\else \numberline {7.2}Definition\fi \thmtformatoptarg {Linear class, $q=1$}}{30}{definition.2}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~7.3\else \numberline {7.3}Definition\fi \thmtformatoptarg {Hadamard convolution, $q>1$}}{30}{definition.3}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~7.4\else \numberline {7.4}Definition\fi \thmtformatoptarg {Pooling addition-based aggregation, $q>1$}}{31}{definition.4}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~7.5\else \numberline {7.5}Definition\fi \thmtformatoptarg {General feature, kernel linear model}}{31}{definition.5}\protected@file@percent }
+\@writefile{loe}{\contentsline {remark}{\ifthmt@listswap Remark~7.2\else \numberline {7.2}Remark\fi \thmtformatoptarg {Unified perspective}}{32}{remark.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Extension general experimentation, using the prediction made of theorem~\ref {thm:double_descent_lr} for verification. Here, $q=1$ as the general basis case of verification. }}{33}{figure.caption.16}\protected@file@percent }
+\newlabel{eq:parameter_penalty}{{49}{34}{Extended analysis}{equation.49}{}}
+\citation{hastie2019surprises}
+\citation{hastie2019surprises}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}High-dimensional ridgeless interpolation - \cite  {hastie2019surprises}}{35}{subsection.7.3}\protected@file@percent }
+\citation{liu2021kernelregressionhighdimensions}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.4}Kernel regression dynamics - \cite  {liu2021kernelregressionhighdimensions}}{36}{subsection.7.4}\protected@file@percent }
+\citation{nakkiran2019moredata}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.5}Sample-wise double descent - \cite  {nakkiran2019moredata}}{37}{subsection.7.5}\protected@file@percent }
+\citation{pezeshki2021multiscalefeaturelearningdynamics}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.6}Multiscale feature learning dynamics - \cite  {pezeshki2021multiscalefeaturelearningdynamics}}{38}{subsection.7.6}\protected@file@percent }
+\citation{brellmann2024on}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.7}Reinforcement learning and double descent - \cite  {brellmann2024on}}{39}{subsection.7.7}\protected@file@percent }
+\citation{ammar2025doubledescentmeetsoutofdistribution}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.8}Out-of-Distribution Detection - \cite  {ammar2025doubledescentmeetsoutofdistribution}}{40}{subsection.7.8}\protected@file@percent }
+\citation{harzli2023doubledescentcurvesneuralnetworks}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.9}Gaussian processes and neural network - \cite  {harzli2023doubledescentcurvesneuralnetworks}}{41}{subsection.7.9}\protected@file@percent }
+\citation{shi2024homophilymodulatesdoubledescent}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.10}Double descent on GNN - \cite  {shi2024homophilymodulatesdoubledescent}}{42}{subsection.7.10}\protected@file@percent }
+\citation{Belkin_2020}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.11}Weak feature double descent - \cite  {Belkin_2020}}{43}{subsection.7.11}\protected@file@percent }
+\citation{huang2025samplecomplexityrepresentationability}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.12}Grokking, Emergence, and Double Descent - ~\cite  {huang2025samplecomplexityrepresentationability}}{44}{subsection.7.12}\protected@file@percent }
+\citation{Yang_2024}
+\citation{srivastava2014dropout}
+\citation{Yang_2024}
+\citation{Yang_2024}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.13}Variations on analysis}{45}{subsection.7.13}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.13.1}Dropout and double descent - \cite  {Yang_2024}}{45}{subsubsection.7.13.1}\protected@file@percent }
+\@writefile{loe}{\contentsline {theorem}{\ifthmt@listswap Theorem~7.3\else \numberline {7.3}Theorem\fi \thmtformatoptarg {Expected test error, \cite  {Yang_2024}}}{45}{theorem.3}\protected@file@percent }
+\bibdata{references}
+\bibcite{achlioptas_stochastic_nodate}{{1}{}{{Achlioptas}}{{}}}
+\bibcite{adlam2020understandingdoubledescentrequires}{{2}{2020}{{Adlam \& Pennington}}{{Adlam and Pennington}}}
+\bibcite{advani2017highdimensionaldynamicsgeneralizationerror}{{3}{2017}{{Advani \& Saxe}}{{Advani and Saxe}}}
+\bibcite{allerbo2025changingkerneltrainingleads}{{4}{2025}{{Allerbo}}{{}}}
+\bibcite{amari_1996_natural_riemannian_gradient}{{5}{1996}{{Amari}}{{}}}
+\bibcite{amari_1998_natural_gradient_works}{{6}{1998}{{Amari}}{{}}}
+\bibcite{ammar2025doubledescentmeetsoutofdistribution}{{7}{2025}{{Ammar et~al.}}{{Ammar, Brellmann, Mendoza, Manzanera, and Franchi}}}
+\bibcite{Balcan2010TrueSampleComplexity}{{8}{2010}{{Balcan et~al.}}{{Balcan, Hanneke, and Wortman~Vaughan}}}
+\bibcite{electronics13020416}{{9}{2024}{{Barbierato \& Gatti}}{{Barbierato and Gatti}}}
+\bibcite{barceló2020modelinterpretabilitylenscomputational}{{10}{2020}{{Barceló et~al.}}{{Barceló, Monet, Pérez, and Subercaseaux}}}
+\bibcite{belkin2018understanddeeplearningneed}{{11}{2018}{{Belkin et~al.}}{{Belkin, Ma, and Mandal}}}
+\bibcite{belkin_reconciling_2019}{{12}{2019}{{Belkin et~al.}}{{Belkin, Hsu, Ma, and Mandal}}}
+\bibcite{Belkin_2020}{{13}{2020}{{Belkin et~al.}}{{Belkin, Hsu, and Xu}}}
+\bibcite{bousquet2020theoryuniversallearning}{{14}{2020}{{Bousquet et~al.}}{{Bousquet, Hanneke, Moran, van Handel, and Yehudayoff}}}
+\bibcite{brellmann2024on}{{15}{2024}{{Brellmann et~al.}}{{Brellmann, Berthier, Filliat, and Frehse}}}
+\bibcite{brooks1991intelligence}{{16}{1991}{{Brooks}}{{}}}
+\bibcite{brown2024biasvariance}{{17}{2024}{{Brown \& Ali}}{{Brown and Ali}}}
+\bibcite{Cauchy:1847}{{18}{1847}{{Cauchy}}{{}}}
+\bibcite{cherkassky2024understand}{{19}{2024}{{Cherkassky \& Lee}}{{Cherkassky and Lee}}}
+\bibcite{d_ascoli_triple_2020}{{20}{2020}{{d'~Ascoli et~al.}}{{d'~Ascoli, Sagun, and Biroli}}}
+\bibcite{DarwicheMarquis2002}{{21}{2002}{{Darwiche \& Marquis}}{{Darwiche and Marquis}}}
+\bibcite{davies_unifying_2023}{{22}{2023}{{Davies et~al.}}{{Davies, Langosco, and Krueger}}}
+\bibcite{domingos_unified_2000}{{23}{2000{a}}{{Domingos}}{{}}}
+\bibcite{domingos_unified_aaai_2000}{{24}{2000{b}}{{Domingos}}{{}}}
+\bibcite{Domingos2000AUB}{{25}{2000{c}}{{Domingos}}{{}}}
+\bibcite{domingos_unifeid_2000}{{26}{2000{d}}{{Domingos}}{{}}}
+\bibcite{doshi2017towards}{{27}{2017}{{Doshi-Velez \& Kim}}{{Doshi-Velez and Kim}}}
+\bibcite{dreyfus1965alchemy}{{28}{1965}{{Dreyfus}}{{}}}
+\bibcite{dreyfus1972what}{{29}{1972}{{Dreyfus}}{{}}}
+\bibcite{dreyfus1986mind}{{30}{1986}{{Dreyfus \& Dreyfus}}{{Dreyfus and Dreyfus}}}
+\bibcite{LehmannCasella_theory_1998}{{31}{1998}{{E.~L.~Lehmann}}{{}}}
+\bibcite{modelcomplex_exp}{{32}{}{{et~al.}}{{}}}
+\bibcite{Fletcher:1964}{{33}{1964}{{Fletcher \& Reeves}}{{Fletcher and Reeves}}}
+\bibcite{6797087}{{34}{1992}{{Geman et~al.}}{{Geman, Bienenstock, and Doursat}}}
+\bibcite{goodfellow2016deep}{{35}{2016}{{Goodfellow et~al.}}{{Goodfellow, Bengio, Courville, and Bengio}}}
+\bibcite{gunasekar_woodworth_srebro_2021_mirrorless_mirror_descent}{{36}{2021}{{Gunasekar et~al.}}{{Gunasekar, Woodworth, and Srebro}}}
+\bibcite{STL_Hajek_Maxim_2021}{{37}{2021}{{Hajek \& Raginsky}}{{Hajek and Raginsky}}}
+\bibcite{harnad1990symbol}{{38}{1990}{{Harnad}}{{}}}
+\bibcite{harzli2023doubledescentcurvesneuralnetworks}{{39}{2023}{{Harzli et~al.}}{{Harzli, Grau, Valle-Pérez, and Louis}}}
+\bibcite{hastie2019surprises}{{40}{2019}{{Hastie et~al.}}{{Hastie, Montanari, Rosset, and Tibshirani}}}
+\bibcite{heckel2020early}{{41}{2020}{{Heckel \& Yilmaz}}{{Heckel and Yilmaz}}}
+\bibcite{Hestenes:1952}{{42}{1952}{{Hestenes \& Stiefel}}{{Hestenes and Stiefel}}}
+\bibcite{ErdongHu2021}{{43}{2021}{{Hu}}{{}}}
+\bibcite{hu2021modelcomplexitydeeplearning}{{44}{2021{a}}{{Hu et~al.}}{{Hu, Chu, Pei, Liu, and Bian}}}
+\bibcite{hu_model_2021}{{45}{2021{b}}{{Hu et~al.}}{{Hu, Chu, Pei, Liu, and Bian}}}
+\bibcite{huang2025samplecomplexityrepresentationability}{{46}{2025}{{Huang et~al.}}{{Huang, Li, Wu, Yang, Talwalkar, Ramchandran, Jordan, and Jiao}}}
+\bibcite{Jacot:2018:NTK}{{47}{2018}{{Jacot et~al.}}{{Jacot, Gabriel, and Hongler}}}
+\bibcite{James2021}{{48}{2009}{{James et~al.}}{{James, Hastie, Tibshirani, and Friedman}}}
+\bibcite{gareth_james_introduction_2013}{{49}{2013}{{James et~al.}}{{James, Hastie, Tibshirani, and Witten}}}
+\bibcite{janik2021complexitydeepneuralnetworks}{{50}{2021}{{Janik \& Witaszczyk}}{{Janik and Witaszczyk}}}
+\bibcite{kaplan2020scalinglawsneurallanguage}{{51}{2020}{{Kaplan et~al.}}{{Kaplan, McCandlish, Henighan, Brown, Chess, Child, Gray, Radford, Wu, and Amodei}}}
+\bibcite{kapoor2022leakage}{{52}{2022}{{Kapoor \& Narayanan}}{{Kapoor and Narayanan}}}
+\bibcite{10.5555/200548}{{53}{1994}{{Kearns \& Vazirani}}{{Kearns and Vazirani}}}
+\bibcite{lafon_understanding_2024}{{54}{2024}{{Lafon \& Thomas}}{{Lafon and Thomas}}}
+\bibcite{lee2022vctheoreticalexplanationdouble}{{55}{2022}{{Lee \& Cherkassky}}{{Lee and Cherkassky}}}
+\bibcite{NEURIPS2024_2d43f7a6}{{56}{2024}{{Li \& Sonthalia}}{{Li and Sonthalia}}}
+\bibcite{lipton2016mythos}{{57}{2018}{{Lipton}}{{}}}
+\bibcite{lipton2018troublingtrendsmachinelearning}{{58}{2018}{{Lipton \& Steinhardt}}{{Lipton and Steinhardt}}}
+\bibcite{liu2023understandingroleoptimizationdouble}{{59}{2023}{{Liu \& Flanigan}}{{Liu and Flanigan}}}
+\bibcite{liu2021kernelregressionhighdimensions}{{60}{2021}{{Liu et~al.}}{{Liu, Liao, and Suykens}}}
+\bibcite{luo2024investigatingimpactmodelcomplexity}{{61}{2024}{{Luo et~al.}}{{Luo, Wang, and Huang}}}
+\bibcite{luo2023doubledescentdiscrepancytask}{{62}{2023}{{Luo \& Dong}}{{Luo and Dong}}}
+\bibcite{luong_parpas_rueckert_rustem_2016_weighted_mirror_descent}{{63}{2016}{{Luong et~al.}}{{Luong, Parpas, Rueckert, and Rustem}}}
+\bibcite{Manin_2024}{{64}{2024}{{Manin \& Marcolli}}{{Manin and Marcolli}}}
+\bibcite{marcus2018deep}{{65}{2018}{{Marcus}}{{}}}
+\bibcite{mccarthy1969philosophical}{{66}{1969}{{McCarthy \& Hayes}}{{McCarthy and Hayes}}}
+\bibcite{Mei2022TowardsBridging}{{67}{2022}{{Mei et~al.}}{{Mei, Zhao, Yuan, and Ni}}}
+\bibcite{mei2019generalization}{{68}{2019{a}}{{Mei \& Montanari}}{{Mei and Montanari}}}
+\bibcite{mei2019randomfeatures}{{69}{2019{b}}{{Mei \& Montanari}}{{Mei and Montanari}}}
+\bibcite{mei2020generalizationerrorrandomfeatures}{{70}{2020}{{Mei \& Montanari}}{{Mei and Montanari}}}
+\bibcite{MiltersenRadhakrishnanWegener2005}{{71}{2005}{{Miltersen et~al.}}{{Miltersen, Radhakrishnan, and Wegener}}}
+\bibcite{10.5555/2371238}{{72}{2012}{{Mohri et~al.}}{{Mohri, Rostamizadeh, and Talwalkar}}}
+\bibcite{Molnar_2020}{{73}{2020{a}}{{Molnar et~al.}}{{Molnar, Casalicchio, and Bischl}}}
+\bibcite{molnar2020general}{{74}{2020{b}}{{Molnar et~al.}}{{Molnar, König, Herbinger, Freiesleben, Dandl, Scholbeck, Casalicchio, Grosse-Wentrup, and Bischl}}}
+\bibcite{nakkiran2019datahurtlinearregression}{{75}{2019{a}}{{Nakkiran}}{{}}}
+\bibcite{nakkiran2019moredata}{{76}{2019{b}}{{Nakkiran}}{{}}}
+\bibcite{nakkiran_deep_2019}{{77}{2019}{{Nakkiran et~al.}}{{Nakkiran, Kaplun, Bansal, Yang, Barak, and Sutskever}}}
+\bibcite{nakkiran2020regularization}{{78}{2020}{{Nakkiran et~al.}}{{Nakkiran, Venkat, Kakade, and Ma}}}
+\bibcite{nakkiran2021optimalregularizationmitigatedouble}{{79}{2021}{{Nakkiran et~al.}}{{Nakkiran, Venkat, Kakade, and Ma}}}
+\bibcite{neal2019biasvariancetradeofftextbooksneed}{{80}{2019}{{Neal}}{{}}}
+\bibcite{neal2018modern}{{81}{2018}{{Neal et~al.}}{{Neal, Mittal, Baratin, Tantia, Scicluna, Lacoste-Julien, and Mitliagkas}}}
+\bibcite{nemirovski_yudin_1983}{{82}{1983}{{Nemirovski \& Yudin}}{{Nemirovski and Yudin}}}
+\bibcite{olmin2024understandingepochwisedoubledescent}{{83}{2024}{{Olmin \& Lindsten}}{{Olmin and Lindsten}}}
+\bibcite{liam_statistics_2005}{{84}{2005}{{Paninski}}{{}}}
+\bibcite{pearl2009causality}{{85}{2009}{{Pearl}}{{}}}
+\bibcite{pezeshki2021multiscalefeaturelearningdynamics}{{86}{2021}{{Pezeshki et~al.}}{{Pezeshki, Mitra, Bengio, and Lajoie}}}
+\bibcite{PfauBregmanDivergence}{{87}{2013}{{Pfau}}{{}}}
+\bibcite{power2022grokkinggeneralizationoverfittingsmall}{{88}{2022}{{Power et~al.}}{{Power, Burda, Edwards, Babuschkin, and Misra}}}
+\bibcite{quetu_can_2023}{{89}{2023{a}}{{Quétu \& Tartaglione}}{{Quétu and Tartaglione}}}
+\bibcite{quetu_can_2023-1}{{90}{2023{b}}{{Quétu \& Tartaglione}}{{Quétu and Tartaglione}}}
+\bibcite{raskutti_mukherjee_2013_information_geometry_mirror_descent}{{91}{2013}{{Raskutti \& Mukherjee}}{{Raskutti and Mukherjee}}}
+\bibcite{amari_rattray_saad_1998_natural_gradient_online}{{92}{1998}{{Rattray et~al.}}{{Rattray, Saad, and Amari}}}
+\bibcite{Robbins:1951}{{93}{1951}{{Robbins \& Monro}}{{Robbins and Monro}}}
+\bibcite{romer2015mathiness}{{94}{2015}{{Romer}}{{}}}
+\bibcite{ruder_overview_2017}{{95}{2017}{{Ruder}}{{}}}
+\bibcite{schaeffer_double_2023}{{96}{2023}{{Schaeffer et~al.}}{{Schaeffer, Khona, Robertson, Boopathy, Pistunova, Rocks, Fiete, and Koyejo}}}
+\bibcite{searle1980minds}{{97}{1980}{{Searle}}{{}}}
+\bibcite{10.5555/2621980}{{98}{2014}{{Shalev-Shwartz \& Ben-David}}{{Shalev-Shwartz and Ben-David}}}
+\bibcite{JMLR:v11:shalev-shwartz10a}{{99}{2010}{{Shalev-Shwartz et~al.}}{{Shalev-Shwartz, Shamir, Srebro, and Sridharan}}}
+\bibcite{sharma_bias-variance_2014}{{100}{2014}{{Sharma \& Aiken}}{{Sharma and Aiken}}}
+\bibcite{shi2024homophilymodulatesdoubledescent}{{101}{2024}{{Shi et~al.}}{{Shi, Pan, Hu, and Dokmanić}}}
+\bibcite{sohl-dickstein_2012_natural_gradient_whitening}{{102}{2012}{{Sohl-Dickstein}}{{}}}
+\bibcite{soudry2024implicitbiasgradientdescent}{{103}{2024}{{Soudry et~al.}}{{Soudry, Hoffer, Nacson, Gunasekar, and Srebro}}}
+\bibcite{spiess2023doublesingledescentcausal}{{104}{2023}{{Spiess et~al.}}{{Spiess, Imbens, and Venugopal}}}
+\bibcite{srivastava2014dropout}{{105}{2014}{{Srivastava et~al.}}{{Srivastava, Hinton, Krizhevsky, Sutskever, and Salakhutdinov}}}
+\bibcite{Sterkenburg_2024}{{106}{2024}{{Sterkenburg}}{{}}}
+\bibcite{suchman1987plans}{{107}{1987}{{Suchman}}{{}}}
+\bibcite{10.5555/2930837}{{108}{2015}{{Sugiyama}}{{}}}
+\bibcite{sutton2019bitter}{{109}{2019}{{Sutton}}{{}}}
+\bibcite{syll2024postreal}{{110}{2024}{{Syll}}{{}}}
+\bibcite{transtrum2025egaddoubledescentexplained}{{111}{2025}{{Transtrum et~al.}}{{Transtrum, Hart, Jarvis, and Whitehead}}}
+\bibcite{truong2025rademachercomplexitybasedgeneralizationbounds}{{112}{2025}{{Truong}}{{}}}
+\bibcite{10.1145/1968.1972}{{113}{1984}{{Valiant}}{{}}}
+\bibcite{vandeven2024continuallearningcatastrophicforgetting}{{114}{2024}{{van~de Ven et~al.}}{{van~de Ven, Soures, and Kudithipudi}}}
+\bibcite{Vapnik1999-VAPTNO}{{115}{1999}{{Vapnik}}{{}}}
+\bibcite{wegel2025samplecomplexitysemisupervisedmultiobjective}{{116}{2025}{{Wegel et~al.}}{{Wegel, So, Park, and Yang}}}
+\bibcite{Wegener1987}{{117}{1987}{{Wegener}}{{}}}
+\bibcite{wei2022emergentabilitieslargelanguage}{{118}{2022}{{Wei et~al.}}{{Wei, Tay, Bommasani, Raffel, Zoph, Borgeaud, Yogatama, Bosma, Zhou, Metzler, Chi, Hashimoto, Vinyals, Liang, Dean, and Fedus}}}
+\bibcite{Widrow:1960}{{119}{1960}{{Widrow \& Hoff}}{{Widrow and Hoff}}}
+\bibcite{xiao_zhang_2014_proximal_stochastic_gradient}{{120}{2014}{{Xiao \& Zhang}}{{Xiao and Zhang}}}
+\bibcite{yang_amari_1998_complexity_issues_natural_gradient}{{121}{1998}{{Yang \& Amari}}{{Yang and Amari}}}
+\bibcite{Yang_2024}{{122}{2024}{{Yang \& Suzuki}}{{Yang and Suzuki}}}
+\bibcite{yang_rethinking_2020}{{123}{2020}{{Yang et~al.}}{{Yang, Yu, You, Steinhardt, and Ma}}}
+\bibcite{zhang_gradient_2019}{{124}{2019}{{Zhang}}{{}}}
+\bibcite{zhang2024manipulatingsparsedoubledescent}{{125}{2024}{{Zhang}}{{}}}
+\bibstyle{iclr2025_conference}
+\@writefile{loa}{\contentsline {algocf}{\numberline {4}{\ignorespaces Linear regression with Gaussian white noise, full control.}}{53}{algocf.4}\protected@file@percent }
+\newlabel{algo:algo_reg_lin_1}{{4}{53}{}{algocf.4}{}}
+\citation{shi2024homophilymodulatesdoubledescent}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Risk curves for varying sample size $n$ (dimension $d=100$, noise $\sigma =0.5$). Double descent is determined in similar sequence, even though the interpolation theoretical $p=n$ is actually shifted over to the right from the actual interpolation observables, in parameterization. Afterward, correlation fails, and the theoretical $p$ is ineffective, similar to previous theorem-based test run. Sample set size range is $n\in \{12,24,36,50,76,82,90,100,106,112,121,150,231,250,256,280\}$. One additional remark is that the error landscape is relatively thin in either side, making it abnormal in comparison to actual bias-variance curvature.}}{54}{figure.caption.18}\protected@file@percent }
+\newlabel{fig:theorem_double_descent_fig4}{{12}{54}{Risk curves for varying sample size $n$ (dimension $d=100$, noise $\sigma =0.5$). Double descent is determined in similar sequence, even though the interpolation theoretical $p=n$ is actually shifted over to the right from the actual interpolation observables, in parameterization. Afterward, correlation fails, and the theoretical $p$ is ineffective, similar to previous theorem-based test run. Sample set size range is $n\in \{12,24,36,50,76,82,90,100,106,112,121,150,231,250,256,280\}$. One additional remark is that the error landscape is relatively thin in either side, making it abnormal in comparison to actual bias-variance curvature}{figure.caption.18}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {.0.2}Remark}{54}{subsubsection.Alph0.0.2}\protected@file@percent }
+\citation{10.5555/200548}
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~.6\else \numberline {.6}Definition\fi \thmtformatoptarg {Representation scheme, structural definition}}{55}{definition.6}\protected@file@percent }
+\citation{brown2024biasvariance}
+\citation{10.5555/2371238}
+\citation{10.5555/2371238,lafon_understanding_2024}
+\citation{adlam2020understandingdoubledescentrequires}
+\citation{hastie2019surprises,mei2019generalization}
+\citation{neal2018modern}
+\citation{adlam2020understandingdoubledescentrequires}
+\citation{hastie2019surprises,mei2019generalization}
+\citation{neal2018modern}
+\citation{adlam2020understandingdoubledescentrequires}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces \textbf  {Diagrammatic view for the ambiance space of the modelling scenario setting.} Under classical learning theory and consideration, such scheme is used for almost every aspect possible of the learner's action. $c\in \mathcal  {C}, h\in \mathcal  {H}$ described by the tuple $(\mathbf  {w},\mathbf  {s})$ of main (weight) parameters and special parameters (for example, bias), $\mathbf  {I}$ as the input space. The 3-tuple $(\omega , k,m)$ is used for controlling the partitioning (for $k=2$ is the train-test split). Others include $P(\mathbf  {I},c,h,\mathcal  {D}_{c})$ as the theorized action sequence (where the concept is exhibited, or the where the observational space is formed) of supposed distribution $\mathcal  {D}_{c}$, the supervisor $\text  {Supervisor}(\nabla , \mathcal  {A}, \{\Theta _{S}\})$ for the loss class $\nabla $, algorithm $\mathcal  {A}$, and $\{\Theta _{S}\}$ of special parameters for the supervisor. Additionally, we also include the supposed randomized state generation, $\mathsf  {RAND}_{i}(\theta _{i,j,k})$ of distinct controlling parameters and arbitrary pseudo-random shape.}}{57}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:vapnik_scheme}{{13}{57}{\textbf {Diagrammatic view for the ambiance space of the modelling scenario setting.} Under classical learning theory and consideration, such scheme is used for almost every aspect possible of the learner's action. $c\in \mathcal {C}, h\in \mathcal {H}$ described by the tuple $(\mathbf {w},\mathbf {s})$ of main (weight) parameters and special parameters (for example, bias), $\mathbf {I}$ as the input space. The 3-tuple $(\omega , k,m)$ is used for controlling the partitioning (for $k=2$ is the train-test split). Others include $P(\mathbf {I},c,h,\mathcal {D}_{c})$ as the theorized action sequence (where the concept is exhibited, or the where the observational space is formed) of supposed distribution $\mathcal {D}_{c}$, the supervisor $\text {Supervisor}(\nabla , \mathcal {A}, \{\Theta _{S}\})$ for the loss class $\nabla $, algorithm $\mathcal {A}$, and $\{\Theta _{S}\}$ of special parameters for the supervisor. Additionally, we also include the supposed randomized state generation, $\mathsf {RAND}_{i}(\theta _{i,j,k})$ of distinct controlling parameters and arbitrary pseudo-random shape}{figure.caption.19}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces (\textbf  {a-e) The different bias-variance decompositions.} (f-j) Corresponding theoretical predictions for $\gamma =0$, $\phi =1/16$ and $\sigma = \tanh $ with $\text  {SNR} = 100$ as the model capacity varies across the interpolation threshold (dashed red). (a,f) The semi-classical decomposition of~\cite  {hastie2019surprises,mei2019generalization} has a nonmonotonic and divergent bias term, conflicting with standard definitions of the bias. (b,g) The decomposition of~\cite  {neal2018modern} utilizing the law of total variance interprets the diverging term $V_D^\textsc  {c}$ as ``variance due to optimization''. (c,h) An alternative application of the law of total variance suggests the opposite, \emph  {i.e.} the diverging term $V_P^\textsc  {c}$ comes from ``variance due to sampling''. (d,i) A bivariate symmetric decomposition of the variance resolves this ambiguity and shows that the diverging term is actually $V_{PD}$, \emph  {i.e.} ``the variance explained by the parameters and data together beyond what they explain individually.'' (e,j) A trivariate symmetric decomposition reveals that the divergence comes from two terms, $V_{PX}$ and $V_{PX\bm  {\varepsilon }}$ (outlined in dashed red), and shows that label noise exacerbates but does not cause double descent. Since $V_{\varepsilon }=V_{P{\varepsilon }}=0$, they are not shown in (j). Taken from \cite  {adlam2020understandingdoubledescentrequires}}}{58}{figure.caption.20}\protected@file@percent }
+\newlabel{fig:venn_variance}{{14}{58}{(\textbf {a-e) The different bias-variance decompositions.} (f-j) Corresponding theoretical predictions for $\gamma =0$, $\phi =1/16$ and $\fs = \tanh $ with $\text {SNR} = 100$ as the model capacity varies across the interpolation threshold (dashed red). (a,f) The semi-classical decomposition of~\cite {hastie2019surprises,mei2019generalization} has a nonmonotonic and divergent bias term, conflicting with standard definitions of the bias. (b,g) The decomposition of~\cite {neal2018modern} utilizing the law of total variance interprets the diverging term $V_D^\textsc {c}$ as ``variance due to optimization''. (c,h) An alternative application of the law of total variance suggests the opposite, \emph {i.e.} the diverging term $V_P^\textsc {c}$ comes from ``variance due to sampling''. (d,i) A bivariate symmetric decomposition of the variance resolves this ambiguity and shows that the diverging term is actually $V_{PD}$, \emph {i.e.} ``the variance explained by the parameters and data together beyond what they explain individually.'' (e,j) A trivariate symmetric decomposition reveals that the divergence comes from two terms, $V_{PX}$ and $V_{PX\bfe }$ (outlined in dashed red), and shows that label noise exacerbates but does not cause double descent. Since $V_\e =V_{P\e }=0$, they are not shown in (j). Taken from \cite {adlam2020understandingdoubledescentrequires}}{figure.caption.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces An illustration of the (supervised) statistical process. Phase III contains two parts: First is the evaluation $\nabla (h,c)$ according to the data $\mathcal  {D}$, and second is the $\mathsf  {Update}$ process to re-align $c$ to the actual target.}}{60}{figure.caption.21}\protected@file@percent }
+\newlabel{fig:PhaseDiagram}{{15}{60}{An illustration of the (supervised) statistical process. Phase III contains two parts: First is the evaluation $\nabla (h,c)$ according to the data $\mathcal {D}$, and second is the $\mathsf {Update}$ process to re-align $c$ to the actual target}{figure.caption.21}{}}
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~.7\else \numberline {.7}Definition\fi \thmtformatoptarg {Deterministic - \textit  {discriminative modelling}}}{60}{definition.7}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~.8\else \numberline {.8}Definition\fi \thmtformatoptarg {Probabilistic - \textit  {generative modelling}}}{60}{definition.8}\protected@file@percent }
+\citation{10.5555/2930837,10.5555/200548}
+\citation{6797087}
+\citation{6797087}
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~.9\else \numberline {.9}Definition\fi \thmtformatoptarg {Loss function}}{61}{definition.9}\protected@file@percent }
+\@writefile{loe}{\contentsline {conjecture}{\ifthmt@listswap Conjecture~.1\else \numberline {.1}Conjecture\fi \thmtformatoptarg {Loss function convexity}}{61}{conjecture.1}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~.10\else \numberline {.10}Definition\fi \thmtformatoptarg {Parameterization}}{61}{definition.10}\protected@file@percent }
+\gdef \@abspage@last{62}

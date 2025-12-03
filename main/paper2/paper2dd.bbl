@@ -108,15 +108,6 @@ Xander Davies, Lauro Langosco, and David Krueger.
 \newblock URL \url{http://arxiv.org/abs/2303.06173}.
 \newblock arXiv:2303.06173 [cs].
 
-\bibitem[Del~Ferraro et~al.(various)]{cavity_tutorial_delFerraro}
-G.~Del~Ferraro et~al.
-\newblock Cavity method / message passing tutorials and surveys.
-\newblock various.
-\newblock URL \url{https://arxiv.org/}.
-\newblock See e.g. surveys and arXiv tutorials on the cavity method and message
-  passing (search ``cavity method tutorial'' / ``message passing physics'') for
-  applied introductions.
-
 \bibitem[Domingos(2000)]{Domingos2000AUB}
 Pedro~M. Domingos.
 \newblock A unified bias-variance decomposition for zero-one and squared loss.
@@ -137,6 +128,13 @@ A.~Engel and C.~Van~den Broeck.
 \newblock \emph{Statistical Mechanics of Learning}.
 \newblock Cambridge University Press, Cambridge, 2001.
 \newblock ISBN 978-0521773072.
+
+\bibitem[Ferraro et~al.(2014)Ferraro, Wang, Martí, and
+  Mézard]{cavity_tutorial_delFerraro}
+Gino~Del Ferraro, Chuang Wang, Dani Martí, and Marc Mézard.
+\newblock Cavity method: Message passing from a physics perspective.
+\newblock 2014.
+\newblock URL \url{https://arxiv.org/abs/1409.3048}.
 
 \bibitem[Gardner \& Derrida(1988)Gardner and Derrida]{gardner1988optimal}
 E.~Gardner and B.~Derrida.
@@ -242,16 +240,14 @@ Song Mei and Andrea Montanari.
   asymptotics and double descent curve, 2020.
 \newblock URL \url{https://arxiv.org/abs/1908.05355}.
 
-\bibitem[M{\'e}zard et~al.(1987)M{\'e}zard, Parisi, and
-  Virasoro]{mezard1987spin}
-M.~M{\'e}zard, G.~Parisi, and M.~A. Virasoro.
+\bibitem[Mezard et~al.(1987)Mezard, Parisi, and Virasoro]{mezard1987spin}
+M.~Mezard, G.~Parisi, and M.~A. Virasoro.
 \newblock \emph{Spin Glass Theory and Beyond}.
 \newblock World Scientific, Singapore, 1987.
 \newblock ISBN 978-9971501533.
 
-\bibitem[M{\'e}zard \& Montanari(2009)M{\'e}zard and
-  Montanari]{mezard2009information}
-Marc M{\'e}zard and Andrea Montanari.
+\bibitem[Mezard \& Montanari(2009)Mezard and Montanari]{mezard2009information}
+Marc Mezard and Andrea Montanari.
 \newblock \emph{Information, Physics, and Computation}.
 \newblock Oxford University Press, Oxford, 2009.
 \newblock ISBN 978-0199233210.
