@@ -5,3 +5,5 @@ anharmonicity
 SERS
 chemisorption
 multicomponent
+Weierstrass
+Hausdorff

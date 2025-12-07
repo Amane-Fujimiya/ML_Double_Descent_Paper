@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.13)  29 NOV 2025 11:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.13)  7 DEC 2025 18:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1392,23 +1392,23 @@ Package pdftex.def Info: media/diagram_poly_dd.png  used on input line 682.
 [17 <./media/diagram_poly_dd.png>]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 692.
+(hyperref)                than one, level fixed on input line 690.
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{definition.7}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.697     A
+l.695     A
             shallow polynomial is a neural network of one layer that are fun...
 pdfTeX warning (ext4): destination with the same identifier (name{definition.8}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.707     T
+l.705     T
            he polynomial network based on Model~\ref{def:poly_structure1} is...
 <media/diagram_poly_model.png, id=701, 3332.45pt x 2148.025pt>
 File: media/diagram_poly_model.png Graphic file (type png)
 <use media/diagram_poly_model.png>
-Package pdftex.def Info: media/diagram_poly_model.png  used on input line 716.
+Package pdftex.def Info: media/diagram_poly_model.png  used on input line 714.
 (pdftex.def)             Requested size: 260.17464pt x 167.68294pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1419,10 +1419,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 pdfTeX warning (ext4): destination with the same identifier (name{definition.9}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.736     F
+l.734     F
            or $x>1$ or $\mathbf{x}_{i}>1$ of $\mathbf{x}\in\mathbb{R}^{n}$ a...
 
-LaTeX Warning: Reference `eq:parameter_penalty' on page 19 undefined on input line 750.
+LaTeX Warning: Reference `eq:parameter_penalty' on page 19 undefined on input line 748.
 
 
 
@@ -1432,12 +1432,12 @@ LaTeX Warning: Reference `eq:parameter_penalty' on page 19 undefined on input li
 pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.830     W
+l.828     W
            e define a $K$-layer fully-connected deep neural network with rea...
 <media/structure_network_1.png, id=740, 474.0912pt x 95.3964pt>
 File: media/structure_network_1.png Graphic file (type png)
 <use media/structure_network_1.png>
-Package pdftex.def Info: media/structure_network_1.png  used on input line 841.
+Package pdftex.def Info: media/structure_network_1.png  used on input line 839.
 (pdftex.def)             Requested size: 390.25534pt x 78.5312pt.
 
 
@@ -1447,14 +1447,14 @@ Package pdftex.def Info: media/structure_network_1.png  used on input line 841.
 pdfTeX warning (ext4): destination with the same identifier (name{definition.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.858     F
+l.856     F
            or any given optimization problem on input space $x_{i}\in \mathb...
 
 [22 <./media/structure_network_1.png>]
 <media/SVMIllus.png, id=786, 572.1375pt x 529.98pt>
 File: media/SVMIllus.png Graphic file (type png)
 <use media/SVMIllus.png>
-Package pdftex.def Info: media/SVMIllus.png  used on input line 893.
+Package pdftex.def Info: media/SVMIllus.png  used on input line 891.
 (pdftex.def)             Requested size: 173.44534pt x 160.6611pt.
 
 
@@ -1525,7 +1525,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 558--564
 pdfTeX warning (ext4): destination with the same identifier (name{definition.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.964         A
+l.962         A
                 \textbf{parametric model} is one that can be parameterized b...
 
 [30
@@ -1551,7 +1551,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  121i,25n,124p,2480b,1095s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbm/dpi600\bbm10.pk><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbx9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi5.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmib10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmmib9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr5.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmss10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmss8.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy5.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy9.pfb><D:/MikTek/fonts/type1/public/amsfonts/symbols/msbm10.pfb><D:/MikTek/fonts/type1/public/amsfonts/symbols/msbm7.pfb><D:/MikTek/fonts/type1/public/urw-base35/ucrr8a.pfb><D:/MikTek/fonts/type1/public/urw-base35/utmb8a.pfb><D:/MikTek/fonts/type1/public/urw-base35/utmbi8a.pfb><D:/MikTek/fonts/type1/public/urw-base35/utmr8a.pfb><D:/MikTek/fonts/type1/public/urw-base35/utmri8a.pfb>
-Output written on paper1dd.pdf (30 pages, 3036773 bytes).
+Output written on paper1dd.pdf (30 pages, 3036872 bytes).
 PDF statistics:
  1128 PDF objects out of 1200 (max. 8388607)
  288 named destinations out of 1000 (max. 500000)

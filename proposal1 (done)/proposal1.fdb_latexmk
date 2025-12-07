@@ -1,20 +1,20 @@
 # Fdb version 4
-["bibtex proposal1"] 1757921473.71292 "proposal1.aux" "proposal1.bbl" "proposal1" 1757922990.63796 0
-  "./references.bib" 1757907686 62221 1022f6eb71bea4d850741fb98c42bd5b ""
+["bibtex proposal1"] 1764857292.80566 "proposal1.aux" "proposal1.bbl" "proposal1" 1764857299.38135 0
+  "./references.bib" 1764857281 56242 e43d735e3c9d5898d384ca44109c8b9c ""
   "D:/MikTek/bibtex/bst/natbib/plainnat.bst" 1284455456 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "proposal1.aux" 1757922988 4667 aa901831b23c8fc0623df46dfcd9522a "pdflatex"
+  "proposal1.aux" 1764857297 4667 aa901831b23c8fc0623df46dfcd9522a "pdflatex"
   (generated)
   "proposal1.bbl"
   "proposal1.blg"
   (rewritten before read)
-["pdflatex"] 1757922984.72375 "e:/Code Repository/Paper Series/proposal1/proposal1.tex" "proposal1.pdf" "proposal1" 1757922990.6388 0
+["pdflatex"] 1764857293.54989 "e:/Code Repository/Paper Series/proposal1 (done)/proposal1.tex" "proposal1.pdf" "proposal1" 1764857299.38224 0
   "C:/Users/Admin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1750169815 6792824 25ff5451ad5ac637fccabe56e3c57ec9 ""
   "C:/Users/Admin/AppData/Local/MiKTeX/fonts/tfm/public/stmaryrd/stmary10.tfm" 1752636001 848 f478e0761563bbc369eca609a1741348 ""
   "C:/Users/Admin/AppData/Local/MiKTeX/fonts/tfm/public/stmaryrd/stmary5.tfm" 1752636011 848 e1bc58a31b9ed9c3729ffea165acfaac ""
   "C:/Users/Admin/AppData/Local/MiKTeX/fonts/tfm/public/stmaryrd/stmary6.tfm" 1752636008 848 068dd119e13b75777e62821af7d4f2a6 ""
   "C:/Users/Admin/AppData/Local/MiKTeX/fonts/tfm/public/stmaryrd/stmary7.tfm" 1752636013 848 26631fcb3e4cb6757598b9cda7967b63 ""
   "C:/Users/Admin/AppData/Local/MiKTeX/fonts/tfm/public/stmaryrd/stmary8.tfm" 1752636004 848 6125cdd3627e68d3db8013b98e587508 ""
-  "C:/Users/Admin/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1750169804 13970273 6a0e51656a1d1abd4077c5eaf6d85d02 ""
+  "C:/Users/Admin/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1763009800 13970274 b3c2131258a9af11e6796e135999e6c7 ""
   "D:/MikTek/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1001775420 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "D:/MikTek/fonts/tfm/jknappen/ec/tcrm0800.tfm" 993062506 1444 e35ead393df86aae37b5564284d9aa05 ""
   "D:/MikTek/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1233951848 1120 1e8878807317373affa7f7bba4cf2f6a ""
@@ -324,15 +324,15 @@
   "D:/MikTek/tex/latex/xcolor/svgnam.def" 1729265222 4705 34614fec2d4cfd7794c82198c9076871 ""
   "D:/MikTek/tex/latex/xcolor/x11nam.def" 1729265222 9125 edad0294b4f7dd6df8c57b02b40a0855 ""
   "D:/MikTek/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "e:/Code Repository/Paper Series/proposal1/proposal1.tex" 1757922983 20783 ae5259c96d3147d48538c0b9d5ed4c19 ""
-  "iopjournal.cls" 1757818746 5757 6c613e5f33ae8245e99576728f529684 ""
-  "mathcommand.tex" 1757819069 15750 459b42063249cd94f9e4596dd28b6f58 ""
-  "orcid.pdf" 1757724262 6631 2c2df978b7b7f6dfbec0fb35cb310650 ""
-  "preamble.tex" 1757907253 7076 ea8091bf16ea5b553053984ce838efdf ""
-  "proposal1.aux" 1757922988 4667 aa901831b23c8fc0623df46dfcd9522a "pdflatex"
-  "proposal1.bbl" 1757921474 13709 982b9bab468640ed7aeb510b65f5111e "bibtex proposal1"
-  "proposal1.out" 1757922988 904 715517014d4697c83837c330c0e2959d "pdflatex"
-  "proposal1.tex" 1757922983 20783 ae5259c96d3147d48538c0b9d5ed4c19 ""
+  "e:/Code Repository/Paper Series/proposal1 (done)/proposal1.tex" 1764857281 21063 717c0893383d31fb532fada36a23d566 ""
+  "iopjournal.cls" 1759811020 5941 6c613e5f33ae8245e99576728f529684 ""
+  "mathcommand.tex" 1759811020 15750 459b42063249cd94f9e4596dd28b6f58 ""
+  "orcid.pdf" 1759811020 6631 2c2df978b7b7f6dfbec0fb35cb310650 ""
+  "preamble.tex" 1759811020 7076 ea8091bf16ea5b553053984ce838efdf ""
+  "proposal1.aux" 1764857297 4667 aa901831b23c8fc0623df46dfcd9522a "pdflatex"
+  "proposal1.bbl" 1764857293 13709 982b9bab468640ed7aeb510b65f5111e "bibtex proposal1"
+  "proposal1.out" 1764857297 904 715517014d4697c83837c330c0e2959d "pdflatex"
+  "proposal1.tex" 1764857281 21063 717c0893383d31fb532fada36a23d566 ""
   (generated)
   "proposal1.aux"
   "proposal1.log"
