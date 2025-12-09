@@ -96,6 +96,49 @@
       \verb Achlioptas - Stochastic Gradient Descent in Theory and Practice.pdf:C\:\\Users\\Admin\\Zotero\\storage\\7B7AKI5E\\Achlioptas - Stochastic Gradient Descent in Theory and Practice.pdf:application/pdf
       \endverb
     \endentry
+    \entry{adcock2021gaptheorypracticefunction}{misc}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=4ecb3bcc1c153392575ca0c07b6c50d7}{%
+           family={Adcock},
+           familyi={A\bibinitperiod},
+           given={Ben},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6eacb2b8eff901563805099806083e6e}{%
+           family={Dexter},
+           familyi={D\bibinitperiod},
+           given={Nick},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{2d90cee411833b915fa7b9bd19af545a}
+      \strng{fullhash}{2d90cee411833b915fa7b9bd19af545a}
+      \strng{fullhashraw}{2d90cee411833b915fa7b9bd19af545a}
+      \strng{bibnamehash}{2d90cee411833b915fa7b9bd19af545a}
+      \strng{authorbibnamehash}{2d90cee411833b915fa7b9bd19af545a}
+      \strng{authornamehash}{2d90cee411833b915fa7b9bd19af545a}
+      \strng{authorfullhash}{2d90cee411833b915fa7b9bd19af545a}
+      \strng{authorfullhashraw}{2d90cee411833b915fa7b9bd19af545a}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.LG}
+      \field{eprinttype}{arXiv}
+      \field{title}{The gap between theory and practice in function approximation with deep neural networks}
+      \field{year}{2021}
+      \verb{eprint}
+      \verb 2001.07523
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2001.07523
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2001.07523
+      \endverb
+    \endentry
     \entry{adlam2020understandingdoubledescentrequires}{misc}{}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=b84a229b1fee5471317a8e8262e691b4}{%
@@ -608,6 +651,57 @@
       \endverb
       \verb{url}
       \verb https://arxiv.org/abs/2010.12265
+      \endverb
+    \endentry
+    \entry{behrouz2025nested}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=fda9bcdee304295b17342b718fb07ea9}{%
+           family={Behrouz},
+           familyi={B\bibinitperiod},
+           given={Ali},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8f4fc5330b22362030e16942ab534994}{%
+           family={Razaviyayn},
+           familyi={R\bibinitperiod},
+           given={Meisam},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=472103e277d34ee281ee6a867552a158}{%
+           family={Zhong},
+           familyi={Z\bibinitperiod},
+           given={Peilin},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2403978c38056af7a74b3ef42192cc46}{%
+           family={Mirrokni},
+           familyi={M\bibinitperiod},
+           given={Vahab},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{46cb188e32a2af2a9f82500312b0bedd}
+      \strng{fullhash}{68ebc54ae2ee59ab2c89074b3a4c9e32}
+      \strng{fullhashraw}{68ebc54ae2ee59ab2c89074b3a4c9e32}
+      \strng{bibnamehash}{68ebc54ae2ee59ab2c89074b3a4c9e32}
+      \strng{authorbibnamehash}{68ebc54ae2ee59ab2c89074b3a4c9e32}
+      \strng{authornamehash}{46cb188e32a2af2a9f82500312b0bedd}
+      \strng{authorfullhash}{68ebc54ae2ee59ab2c89074b3a4c9e32}
+      \strng{authorfullhashraw}{68ebc54ae2ee59ab2c89074b3a4c9e32}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{The Thirty-ninth Annual Conference on Neural Information Processing Systems}
+      \field{title}{Nested Learning: The Illusion of Deep Learning Architectures}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://openreview.net/forum?id=nbMeRvNb7A
+      \endverb
+      \verb{url}
+      \verb https://openreview.net/forum?id=nbMeRvNb7A
       \endverb
     \endentry
     \entry{belkin_reconciling_2019}{article}{}{}
@@ -1575,6 +1669,65 @@
       \verb https://doi.org/10.1016/j.neunet.2023.10.014
       \endverb
     \endentry
+    \entry{COLLANGE201583}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=17bda88149e482ce4d4a7d43dbca2fa7}{%
+           family={Collange},
+           familyi={C\bibinitperiod},
+           given={Caroline},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5751107bc1bfa743f7840b7ce8751a98}{%
+           family={Defour},
+           familyi={D\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8f94a385068e4110391c109ff4b71733}{%
+           family={Graillat},
+           familyi={G\bibinitperiod},
+           given={Stef},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=db0207bcb3cff425d8136d2fa27ef0d4}{%
+           family={Iakymchuk},
+           familyi={I\bibinitperiod},
+           given={Roman},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{d2de60c98e116454036e9b03f952eecd}
+      \strng{fullhash}{638dbec27c7573da8070a06c63a69544}
+      \strng{fullhashraw}{638dbec27c7573da8070a06c63a69544}
+      \strng{bibnamehash}{638dbec27c7573da8070a06c63a69544}
+      \strng{authorbibnamehash}{638dbec27c7573da8070a06c63a69544}
+      \strng{authornamehash}{d2de60c98e116454036e9b03f952eecd}
+      \strng{authorfullhash}{638dbec27c7573da8070a06c63a69544}
+      \strng{authorfullhashraw}{638dbec27c7573da8070a06c63a69544}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{author}
+      \field{issn}{0167-8191}
+      \field{journaltitle}{Parallel Computing}
+      \field{title}{Numerical reproducibility for the parallel reduction on multi- and many-core architectures}
+      \field{volume}{49}
+      \field{year}{2015}
+      \field{pages}{83\bibrangedash 97}
+      \range{pages}{15}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.parco.2015.09.001
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0167819115001155
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0167819115001155
+      \endverb
+      \keyw{Parallel floating-point summation,Reproducibility,Accuracy,Long accumulator,Error-free transformations,Multi- and many-core architectures}
+    \endentry
     \entry{CorlessSevyeri2018}{article}{}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=431dc265b57030499206d3be464663ac}{%
@@ -1814,6 +1967,46 @@
       \endverb
       \verb{url}
       \verb https://arxiv.org/abs/1810.04805
+      \endverb
+    \endentry
+    \entry{Diethelm2012}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=53aaead5c1de2579af71c2142527ed8c}{%
+           family={Diethelm},
+           familyi={D\bibinitperiod},
+           given={Kai},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{53aaead5c1de2579af71c2142527ed8c}
+      \strng{fullhash}{53aaead5c1de2579af71c2142527ed8c}
+      \strng{fullhashraw}{53aaead5c1de2579af71c2142527ed8c}
+      \strng{bibnamehash}{53aaead5c1de2579af71c2142527ed8c}
+      \strng{authorbibnamehash}{53aaead5c1de2579af71c2142527ed8c}
+      \strng{authornamehash}{53aaead5c1de2579af71c2142527ed8c}
+      \strng{authorfullhash}{53aaead5c1de2579af71c2142527ed8c}
+      \strng{authorfullhashraw}{53aaead5c1de2579af71c2142527ed8c}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{author}
+      \field{journaltitle}{Computing in Science and Engineering}
+      \field{number}{1}
+      \field{title}{The Limits of Reproducibility in Numerical Simulation}
+      \field{volume}{14}
+      \field{year}{2012}
+      \field{pages}{64\bibrangedash 72}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1109/MCSE.2011.21
+      \endverb
+      \verb{urlraw}
+      \verb https://opus4.kobv.de/opus4-fhws/frontdoor/deliver/index/docId/2063/file/Diethelm_Limits_reproducibility_numerical_sim.pdf
+      \endverb
+      \verb{url}
+      \verb https://opus4.kobv.de/opus4-fhws/frontdoor/deliver/index/docId/2063/file/Diethelm_Limits_reproducibility_numerical_sim.pdf
       \endverb
     \endentry
     \entry{domingos_unified_2000}{inproceedings}{}{}
@@ -2794,6 +2987,55 @@
       \verb 10.1162/neco.1997.9.8.1735
       \endverb
     \endentry
+    \entry{holk2025statisticalguaranteesdenoisingreflected}{misc}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=c54793e96f542755b10e2fca9c08488f}{%
+           family={Holk},
+           familyi={H\bibinitperiod},
+           given={Asbjørn},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=92ebf702f29242561299730e252708f9}{%
+           family={Strauch},
+           familyi={S\bibinitperiod},
+           given={Claudia},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6642c12895e619fe1f79a71ed2bc01ed}{%
+           family={Trottner},
+           familyi={T\bibinitperiod},
+           given={Lukas},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{d32f1214e13fb2e5ab7ad7733c78fe47}
+      \strng{fullhash}{d32f1214e13fb2e5ab7ad7733c78fe47}
+      \strng{fullhashraw}{d32f1214e13fb2e5ab7ad7733c78fe47}
+      \strng{bibnamehash}{d32f1214e13fb2e5ab7ad7733c78fe47}
+      \strng{authorbibnamehash}{d32f1214e13fb2e5ab7ad7733c78fe47}
+      \strng{authornamehash}{d32f1214e13fb2e5ab7ad7733c78fe47}
+      \strng{authorfullhash}{d32f1214e13fb2e5ab7ad7733c78fe47}
+      \strng{authorfullhashraw}{d32f1214e13fb2e5ab7ad7733c78fe47}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{math.ST}
+      \field{eprinttype}{arXiv}
+      \field{title}{Statistical guarantees for denoising reflected diffusion models}
+      \field{year}{2025}
+      \verb{eprint}
+      \verb 2411.01563
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2411.01563
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2411.01563
+      \endverb
+    \endentry
     \entry{hopfield_1982}{article}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=9358686fc958d08cb3cffdebe832f513}{%
@@ -3105,6 +3347,30 @@
       \verb https://arxiv.org/abs/2506.05295
       \endverb
     \endentry
+    \entry{bgpt2024}{inproceedings}{}{}
+      \list{location}{1}{%
+        {Vienna, Austria}%
+      }
+      \list{organization}{1}{%
+        {International Conference on Learning Representations}%
+      }
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{ICLR 2024 Workshop}
+      \field{month}{5}
+      \field{note}{Workshop held on May 11, 2024}
+      \field{title}{Bridging the Gap Between Practice and Theory in Deep Learning}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://sites.google.com/view/bgpt-iclr24
+      \endverb
+      \verb{url}
+      \verb https://sites.google.com/view/bgpt-iclr24
+      \endverb
+    \endentry
     \entry{Jacot:2018:NTK}{inproceedings}{}{}
       \name{author}{3}{}{%
         {{un=0,uniquepart=base,hash=1111c3e5fbd5fbb1b1cb45bca2136642}{%
@@ -3328,6 +3594,103 @@
       \verb https://arxiv.org/abs/2001.08361
       \endverb
     \endentry
+    \entry{KAPOOR2023100804}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=d8f567f02ba9a9531285bd06846298de}{%
+           family={Kapoor},
+           familyi={K\bibinitperiod},
+           given={Sayash},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=95dc795a2be14c50fb6a924acc135ff8}{%
+           family={Narayanan},
+           familyi={N\bibinitperiod},
+           given={Arvind},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c082cfb1d4f4958edb5dbe40d2a6d814}
+      \strng{fullhash}{c082cfb1d4f4958edb5dbe40d2a6d814}
+      \strng{fullhashraw}{c082cfb1d4f4958edb5dbe40d2a6d814}
+      \strng{bibnamehash}{c082cfb1d4f4958edb5dbe40d2a6d814}
+      \strng{authorbibnamehash}{c082cfb1d4f4958edb5dbe40d2a6d814}
+      \strng{authornamehash}{c082cfb1d4f4958edb5dbe40d2a6d814}
+      \strng{authorfullhash}{c082cfb1d4f4958edb5dbe40d2a6d814}
+      \strng{authorfullhashraw}{c082cfb1d4f4958edb5dbe40d2a6d814}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{author}
+      \field{issn}{2666-3899}
+      \field{journaltitle}{Patterns}
+      \field{number}{9}
+      \field{title}{Leakage and the reproducibility crisis in machine-learning-based science}
+      \field{volume}{4}
+      \field{year}{2023}
+      \field{pages}{100804}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.patter.2023.100804
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S2666389923001599
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S2666389923001599
+      \endverb
+      \keyw{reproducibility,machine learning,leakage}
+    \endentry
+    \entry{Kaskenpalo_2012}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=79bd7dfd4264d128cd093d55ec3da668}{%
+           family={Kaskenpalo},
+           familyi={K\bibinitperiod},
+           given={Petteri},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=17207a9c1bb13f754d9c499234849aab}{%
+           family={MacDonell},
+           familyi={M\bibinitperiod},
+           given={Stephen\bibnamedelima G.},
+           giveni={S\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{e4021f3afaa2c7e31b89f7e1076c3a60}
+      \strng{fullhash}{e4021f3afaa2c7e31b89f7e1076c3a60}
+      \strng{fullhashraw}{e4021f3afaa2c7e31b89f7e1076c3a60}
+      \strng{bibnamehash}{e4021f3afaa2c7e31b89f7e1076c3a60}
+      \strng{authorbibnamehash}{e4021f3afaa2c7e31b89f7e1076c3a60}
+      \strng{authornamehash}{e4021f3afaa2c7e31b89f7e1076c3a60}
+      \strng{authorfullhash}{e4021f3afaa2c7e31b89f7e1076c3a60}
+      \strng{authorfullhashraw}{e4021f3afaa2c7e31b89f7e1076c3a60}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2nd international workshop on Evidential assessment of software technologies}
+      \field{month}{9}
+      \field{series}{ESEM '12}
+      \field{title}{Valuing evaluation: methodologies to bridge research and practice}
+      \field{year}{2012}
+      \field{pages}{27\bibrangedash 32}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1145/2372233.2372242
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1145/2372233.2372242
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1145/2372233.2372242
+      \endverb
+    \endentry
     \entry{10.5555/200548}{book}{}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=d6e0fc1e9d08f7c702ebed66002adeef}{%
@@ -3422,6 +3785,56 @@
       \verb http://arxiv.org/abs/2107.04562
       \endverb
       \keyw{Computer Science - Machine Learning,Statistics - Machine Learning}
+    \endentry
+    \entry{Kliemann2016}{book}{}{}
+      \name{editor}{2}{}{%
+        {{un=0,uniquepart=base,hash=69a77fd5a3809c4ff3c4b339246d135d}{%
+           family={Kliemann},
+           familyi={K\bibinitperiod},
+           given={Lasse},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=be6c7f12620ef1a8d1d85d96d476a158}{%
+           family={Sanders},
+           familyi={S\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Cham}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{862e9004d4d43d24db8687f1c8b94149}
+      \strng{fullhash}{862e9004d4d43d24db8687f1c8b94149}
+      \strng{fullhashraw}{862e9004d4d43d24db8687f1c8b94149}
+      \strng{bibnamehash}{862e9004d4d43d24db8687f1c8b94149}
+      \strng{editorbibnamehash}{862e9004d4d43d24db8687f1c8b94149}
+      \strng{editornamehash}{862e9004d4d43d24db8687f1c8b94149}
+      \strng{editorfullhash}{862e9004d4d43d24db8687f1c8b94149}
+      \strng{editorfullhashraw}{862e9004d4d43d24db8687f1c8b94149}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{editor}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-319-49487-6}
+      \field{series}{Lecture Notes in Computer Science}
+      \field{title}{Algorithm Engineering: Selected Results and Surveys}
+      \field{volume}{9220}
+      \field{year}{2016}
+      \verb{doi}
+      \verb 10.1007/978-3-319-49487-6
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/978-3-319-49487-6
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/978-3-319-49487-6
+      \endverb
     \endentry
     \entry{kohonen_1982}{article}{}{}
       \name{author}{1}{}{%
@@ -4302,6 +4715,56 @@
       \endverb
       \verb{url}
       \verb https://arxiv.org/abs/1908.05355
+      \endverb
+    \endentry
+    \entry{mendling2021theorypracticealgorithmengineering}{misc}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=77c03f6db0b7101e4efabda4bd436ce4}{%
+           family={Mendling},
+           familyi={M\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=640542d855fc92e7dfa67f84a67327fc}{%
+           family={Depaire},
+           familyi={D\bibinitperiod},
+           given={Benoît},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=685de5db04ba434fb83441a38177fe6c}{%
+           family={Leopold},
+           familyi={L\bibinitperiod},
+           given={Henrik},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ec7246759128cc92c2df890596f3e70f}
+      \strng{fullhash}{ec7246759128cc92c2df890596f3e70f}
+      \strng{fullhashraw}{ec7246759128cc92c2df890596f3e70f}
+      \strng{bibnamehash}{ec7246759128cc92c2df890596f3e70f}
+      \strng{authorbibnamehash}{ec7246759128cc92c2df890596f3e70f}
+      \strng{authornamehash}{ec7246759128cc92c2df890596f3e70f}
+      \strng{authorfullhash}{ec7246759128cc92c2df890596f3e70f}
+      \strng{authorfullhashraw}{ec7246759128cc92c2df890596f3e70f}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.DS}
+      \field{eprinttype}{arXiv}
+      \field{title}{Theory and Practice of Algorithm Engineering}
+      \field{year}{2021}
+      \true{nocite}
+      \verb{eprint}
+      \verb 2107.10675
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2107.10675
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2107.10675
       \endverb
     \endentry
     \entry{minsky_papert_1969}{book}{}{}
@@ -5450,6 +5913,58 @@
       \verb 10.1103/PhysRevLett.81.5461
       \endverb
     \endentry
+    \entry{Revol_2014}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=b44dc1bae9e1707c0478c2a680c76dd5}{%
+           family={Revol},
+           familyi={R\bibinitperiod},
+           given={Nathalie},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=063108d5ba39474fd3b14c23e78b92d6}{%
+           family={Theveny},
+           familyi={T\bibinitperiod},
+           given={Philippe},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{2}{%
+        {Institute of Electrical}%
+        {Electronics Engineers (IEEE)}%
+      }
+      \strng{namehash}{9ac0d1ae80f088e6ff3f38e5877566c0}
+      \strng{fullhash}{9ac0d1ae80f088e6ff3f38e5877566c0}
+      \strng{fullhashraw}{9ac0d1ae80f088e6ff3f38e5877566c0}
+      \strng{bibnamehash}{9ac0d1ae80f088e6ff3f38e5877566c0}
+      \strng{authorbibnamehash}{9ac0d1ae80f088e6ff3f38e5877566c0}
+      \strng{authornamehash}{9ac0d1ae80f088e6ff3f38e5877566c0}
+      \strng{authorfullhash}{9ac0d1ae80f088e6ff3f38e5877566c0}
+      \strng{authorfullhashraw}{9ac0d1ae80f088e6ff3f38e5877566c0}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{author}
+      \field{issn}{2326-3814}
+      \field{journaltitle}{IEEE Transactions on Computers}
+      \field{month}{8}
+      \field{number}{8}
+      \field{title}{Numerical Reproducibility and Parallel Computations: Issues for Interval Algorithms}
+      \field{volume}{63}
+      \field{year}{2014}
+      \field{pages}{1915\bibrangedash 1924}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1109/tc.2014.2322593
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1109/TC.2014.2322593
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1109/TC.2014.2322593
+      \endverb
+    \endentry
     \entry{Robbins:1951}{article}{}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=163566b92b332258782e61e3d217a2bb}{%
@@ -5690,6 +6205,67 @@
       \field{pages}{224\bibrangedash 243}
       \range{pages}{20}
     \endentry
+    \entry{saxena2025aimismatchesidentifyingpotential}{misc}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=3fc43aaae2aee022df09827555795d1c}{%
+           family={Saxena},
+           familyi={S\bibinitperiod},
+           given={Devansh},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=89582649dc7c76012f99c5297d034cf8}{%
+           family={Jung},
+           familyi={J\bibinitperiod},
+           given={Ji-Youn},
+           giveni={J\bibinithyphendelim Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c1e75e70764d099efdaa6d2bd84cd1d6}{%
+           family={Forlizzi},
+           familyi={F\bibinitperiod},
+           given={Jodi},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=31d903563fe400e68b1e9bbf6468aca3}{%
+           family={Holstein},
+           familyi={H\bibinitperiod},
+           given={Kenneth},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c7816320068b1c0525a0cf4ed21668b5}{%
+           family={Zimmerman},
+           familyi={Z\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c2dec95a0c09e6e81a15d0bc8b56d307}
+      \strng{fullhash}{c424d7ceb7e7ee2ed9b043d63729c74e}
+      \strng{fullhashraw}{c424d7ceb7e7ee2ed9b043d63729c74e}
+      \strng{bibnamehash}{c424d7ceb7e7ee2ed9b043d63729c74e}
+      \strng{authorbibnamehash}{c424d7ceb7e7ee2ed9b043d63729c74e}
+      \strng{authornamehash}{c2dec95a0c09e6e81a15d0bc8b56d307}
+      \strng{authorfullhash}{c424d7ceb7e7ee2ed9b043d63729c74e}
+      \strng{authorfullhashraw}{c424d7ceb7e7ee2ed9b043d63729c74e}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.HC}
+      \field{eprinttype}{arXiv}
+      \field{title}{AI Mismatches: Identifying Potential Algorithmic Harms Before AI Development}
+      \field{year}{2025}
+      \verb{eprint}
+      \verb 2502.18682
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2502.18682
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2502.18682
+      \endverb
+    \endentry
     \entry{schaeffer_double_2023}{misc}{}{}
       \name{author}{8}{}{%
         {{un=0,uniquepart=base,hash=141bacfb93384c35c172c22f8f069afb}{%
@@ -5762,7 +6338,7 @@
       \field{month}{3}
       \field{note}{arXiv:2303.14151 [cs, stat]}
       \field{shorttitle}{Double {Descent} {Demystified}}
-      \field{title}{Double {Descent} {Demystified}: {Identifying}, {Interpreting} \& {Ablating} the {Sources} of a {Deep} {Learning} {Puzzle}}
+      \field{title}{Double {Descent} {Demystified}: {Identifying}, {Interpreting} and {Ablating} the {Sources} of a {Deep} {Learning} {Puzzle}}
       \field{urlday}{16}
       \field{urlmonth}{7}
       \field{urlyear}{2024}
@@ -5817,6 +6393,67 @@
       \endverb
       \verb{url}
       \verb https://people.math.sc.edu/schep/weierstrass.pdf
+      \endverb
+    \endentry
+    \entry{semmelrock2023reproducibilitymachinelearningdrivenresearch}{misc}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=37292d073520a49623f9ea6bac609048}{%
+           family={Semmelrock},
+           familyi={S\bibinitperiod},
+           given={Harald},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=85eac1e7199e6b8b30f7725241585c13}{%
+           family={Kopeinik},
+           familyi={K\bibinitperiod},
+           given={Simone},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ae0609f892606e45e56f4909c2ffb97f}{%
+           family={Theiler},
+           familyi={T\bibinitperiod},
+           given={Dieter},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=081278efca0a092707adb1c0da74e096}{%
+           family={Ross-Hellauer},
+           familyi={R\bibinithyphendelim H\bibinitperiod},
+           given={Tony},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2e5bc9391a30668dee4577420ef1e127}{%
+           family={Kowald},
+           familyi={K\bibinitperiod},
+           given={Dominik},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b16be32a00a5f00b1eb7b392f7cb1f2b}
+      \strng{fullhash}{67ccada1723d0490ebec0f28f86094bc}
+      \strng{fullhashraw}{67ccada1723d0490ebec0f28f86094bc}
+      \strng{bibnamehash}{67ccada1723d0490ebec0f28f86094bc}
+      \strng{authorbibnamehash}{67ccada1723d0490ebec0f28f86094bc}
+      \strng{authornamehash}{b16be32a00a5f00b1eb7b392f7cb1f2b}
+      \strng{authorfullhash}{67ccada1723d0490ebec0f28f86094bc}
+      \strng{authorfullhashraw}{67ccada1723d0490ebec0f28f86094bc}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.LG}
+      \field{eprinttype}{arXiv}
+      \field{title}{Reproducibility in Machine Learning-Driven Research}
+      \field{year}{2023}
+      \verb{eprint}
+      \verb 2307.10320
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2307.10320
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2307.10320
       \endverb
     \endentry
     \entry{10.5555/2621980}{book}{}{}
@@ -6568,6 +7205,45 @@
       \verb https://arxiv.org/abs/1409.4842
       \endverb
     \endentry
+    \entry{Tamassia1997ACS}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=73002fbcaa8fe0ee76011401f23f2ab3}{%
+           family={Tamassia},
+           familyi={T\bibinitperiod},
+           given={Roberto},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f9cfa1ee6dd11cc4832c4ba37d5bcb45}{%
+           family={Vismara},
+           familyi={V\bibinitperiod},
+           given={Luca},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{925d50156e29d890cb65c56a565a6383}
+      \strng{fullhash}{925d50156e29d890cb65c56a565a6383}
+      \strng{fullhashraw}{925d50156e29d890cb65c56a565a6383}
+      \strng{bibnamehash}{925d50156e29d890cb65c56a565a6383}
+      \strng{authorbibnamehash}{925d50156e29d890cb65c56a565a6383}
+      \strng{authornamehash}{925d50156e29d890cb65c56a565a6383}
+      \strng{authorfullhash}{925d50156e29d890cb65c56a565a6383}
+      \strng{authorfullhashraw}{925d50156e29d890cb65c56a565a6383}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{International journal of computational geometry and applications}
+      \field{title}{A Case Study in Algorithm Engineering for Geometric Computing}
+      \field{year}{1997}
+      \verb{urlraw}
+      \verb https://api.semanticscholar.org/CorpusID:5770657
+      \endverb
+      \verb{url}
+      \verb https://api.semanticscholar.org/CorpusID:5770657
+      \endverb
+    \endentry
     \entry{transtrum2025egaddoubledescentexplained}{misc}{}{}
       \name{author}{4}{}{%
         {{un=0,uniquepart=base,hash=3066a112fa95652264e94be15d5fbcab}{%
@@ -6863,6 +7539,64 @@
       \endverb
       \verb{url}
       \verb https://arxiv.org/abs/2403.05175
+      \endverb
+    \endentry
+    \entry{wang2017research}{inproceedings}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=e2b476d02cb8c4d72620146c96066c58}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Huibing},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bf49f840a442aa191b014a9026db4b6d}{%
+           family={Xiong},
+           familyi={X\bibinitperiod},
+           given={Jinbo},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f191964ba54d31ca9e27269774bea78c}{%
+           family={Yao},
+           familyi={Y\bibinitperiod},
+           given={Zhiqiang},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f0486f47c1887d8238c36a58579e4360}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Mingwei},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=334f08a24a9618769596c0aca19e8713}{%
+           family={Ren},
+           familyi={R\bibinitperiod},
+           given={Jun},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {EAI}%
+      }
+      \strng{namehash}{676170d08a76d4212cdac122de88059a}
+      \strng{fullhash}{40281a81edb2848eed14973bd0ec6148}
+      \strng{fullhashraw}{40281a81edb2848eed14973bd0ec6148}
+      \strng{bibnamehash}{40281a81edb2848eed14973bd0ec6148}
+      \strng{authorbibnamehash}{40281a81edb2848eed14973bd0ec6148}
+      \strng{authornamehash}{676170d08a76d4212cdac122de88059a}
+      \strng{authorfullhash}{40281a81edb2848eed14973bd0ec6148}
+      \strng{authorfullhashraw}{40281a81edb2848eed14973bd0ec6148}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 10th EAI International Conference on Mobile Multimedia Communications (MOBIMEDIA)}
+      \field{month}{12}
+      \field{title}{Research Survey on Support Vector Machine}
+      \field{year}{2017}
+      \verb{doi}
+      \verb 10.4108/eai.13-7-2017.2270596
       \endverb
     \endentry
     \entry{wang2019svmdsn}{inproceedings}{}{}

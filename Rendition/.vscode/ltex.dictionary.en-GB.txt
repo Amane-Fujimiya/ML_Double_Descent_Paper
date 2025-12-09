@@ -7,3 +7,6 @@ chemisorption
 multicomponent
 Weierstrass
 Hausdorff
+underparameterized
+supremum
+Prerequisition
