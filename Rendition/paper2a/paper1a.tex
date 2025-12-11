@@ -435,6 +435,434 @@ The behaviour itself has been particularly investigated, in certain settings. Fo
 
 The fact that double descent is not well-defined itself is a problem on its own. Up to the author's knowledge and of myself, there has been no effective definition or given description that outlines specifically how double descent can be structured. Instability in reproducing experiments and the effective range of the phenomena remains a question on its own. 
 
+\section{Statistical Physics: From Analogy to Isomorphism}
+
+In this section, we critically examine the intersection of statistical physics and machine learning. We posit that while statistical physics provides a rigorous framework for analyzing complex systems with many degrees of freedom, its application in machine learning has often been hindered by superficial analogies rather than mathematical isomorphisms. To truly leverage this framework, one must move beyond metaphorical comparisons and establish a dictionary of strict correspondence between physical quantities and learning dynamics.
+
+\subsection{Reasons for Statistical Physics in Machine Learning}
+
+The primary motivation for applying statistical physics to machine learning lies in the ``curse of dimensionality'' and the emergent phenomena observed in deep neural networks. Just as thermodynamics describes the macroscopic behavior of $10^{23}$ particles without tracking individual trajectories, statistical learning theory seeks to describe the generalization performance of models with billions of parameters. However, a critical mismatch often occurs in the abstraction level.
+
+Common approaches often equate the ``learning rate'' in Stochastic Gradient Descent (SGD) to ``temperature'' in Langevin dynamics. We argue that this abstraction is insufficient and often misleading. In equilibrium physics, temperature is an isotropic scalar field. In contrast, the noise introduced by SGD is inherently anisotropic and state-dependent, scaled by the gradient covariance matrix. Therefore, a direct application of equilibrium concepts (like canonical distributions) without accounting for this structural mismatch leads to incorrect predictions about the system's stationary state.
+
+To be more precise, let us consider the standard Langevin dynamics:
+\begin{equation}
+    dW = -\nabla L(W) \, dt + \sqrt{2T} \, dB_t
+\end{equation}
+where $T$ is the temperature and $dB_t$ is a Wiener process. The stationary distribution is the Boltzmann distribution $\rho(W) \propto \exp(-L(W)/T)$. However, SGD dynamics are fundamentally different:
+\begin{equation}
+    W_{t+1} = W_t - \eta \nabla L_{\mathcal{B}}(W_t)
+\end{equation}
+where $\mathcal{B}$ is a mini-batch. The noise covariance is:
+\begin{equation}
+    \Sigma(W) = \mathbb{E}_{\mathcal{B}}\left[(\nabla L_{\mathcal{B}} - \nabla L)(\nabla L_{\mathcal{B}} - \nabla L)^\top\right]
+\end{equation}
+This covariance is \textbf{state-dependent} and \textbf{anisotropic}, fundamentally different from isotropic thermal noise.
+
+\subsection{Axioms and Formulation}
+
+Statistical physics is built upon fundamental axioms, most notably the \textit{Ergodic Hypothesis}, which assumes that a system evolves over time to explore all accessible microstates with a probability proportional to their Boltzmann weight.
+
+\paragraph{The Mismatch.} Deep learning dynamics, particularly under SGD, are fundamentally non-ergodic on practical timescales. The system does not explore the entire weight space but is confined to specific trajectories determined by the initialization and the landscape geometry.
+
+\paragraph{The Isomorphism.} To resolve this, we propose a strict isomorphism:
+\begin{itemize}
+    \item \textbf{Microstate:} A specific configuration of weights $W \in \mathbb{R}^P$.
+    \item \textbf{Hamiltonian (Energy):} The Loss function $L(W, \mathcal{D})$.
+    \item \textbf{Quenched Disorder:} The dataset $\mathcal{D}$, which remains fixed during the training dynamics, analogous to the random interactions $J_{ij}$ in spin-glass models.
+\end{itemize}
+
+This mapping situates machine learning not in the realm of simple ideal gases, but squarely within the physics of \textit{disordered systems}, where the energy landscape is rugged, multi-valleyed, and dominated by metastability. The disorder average over datasets corresponds to the quenched average in spin-glass theory:
+\begin{equation}
+    \overline{\langle O \rangle} = \int d\mathcal{D} \, P(\mathcal{D}) \langle O \rangle_{\mathcal{D}}
+\end{equation}
+where $\langle \cdot \rangle_{\mathcal{D}}$ denotes the thermal average for fixed dataset $\mathcal{D}$.
+
+\subsection{Assumptions and Incompatibilities}
+
+Standard statistical mechanical treatments (e.g., the Replica Method) assume the system reaches thermodynamic equilibrium. This implies that the final solution is independent of the training path. However, the phenomenon of double descent---and specifically epoch-wise double descent---demonstrates that the ``solution'' is a transient state of a non-equilibrium process. 
+
+\begin{assumption}[Equilibrium Assumption]
+The system reaches a stationary distribution $\rho^*(W)$ independent of initial conditions and training trajectory.
+\end{assumption}
+
+This assumption is violated in practical deep learning for several reasons:
+\begin{enumerate}
+    \item \textbf{Finite training time:} Training is stopped before equilibration.
+    \item \textbf{Non-convex landscape:} Multiple local minima prevent ergodic exploration.
+    \item \textbf{Time-dependent dynamics:} Learning rate schedules break time-translation invariance.
+\end{enumerate}
+
+Forcing an equilibrium assumption onto a dynamic process like SGD is the fundamental error we aim to correct in subsequent sections.
+
+\section{Problem and Settings: Limitations of Equilibrium Theories}
+
+Here, we identify the specific failures of current theoretical frameworks when addressing the Double Descent (DD) phenomenon. While significant progress has been made, a comprehensive theory remains elusive due to a reliance on static analysis.
+
+\subsection{The Failure of Classical Bias-Variance}
+
+As established in Theorem~\ref{thm:bias-variance}, the classical U-shaped curve predicts that as model complexity increases beyond the optimal point, the variance term dominates and test error monotonically increases. Formally, for the decomposition:
+\begin{equation}
+    \mathbb{E}[\mathcal{M}(f,y)] = \mathcal{B}(f,y) + \mathcal{V}(f,y) + \sigma^2_{\text{noise}}
+\end{equation}
+classical theory predicts $\mathcal{V}(f,y) \to \infty$ as model complexity $\to \infty$. However, empirical evidence from \cite{belkin_reconciling_2019,nakkiran_deep_2019} shows a second descent in test error for over-parameterized models ($P > N$).
+
+\subsection{The Limitation of RMT and Replica Theory}
+
+Recent applications of Random Matrix Theory (RMT) and Replica Theory have successfully derived the ``peak'' of the double descent curve at the interpolation threshold ($P \approx N$). For linear regression with random features, the expected test error takes the form:
+\begin{equation}
+    R_{\text{test}} = \sigma^2 \frac{P}{N - P - 1} + \text{bias terms}, \quad P < N
+\end{equation}
+which diverges as $P \to N$. However, these successes are limited to ``static'' or ``shallow'' models. They treat the solution as a global minimum (min-norm solution) found in a convex landscape:
+\begin{equation}
+    W^* = \argmin_W \|W\|^2 \quad \text{s.t.} \quad XW = Y
+\end{equation}
+
+\paragraph{The Identification of Errors.} The critical error in these approaches is the neglect of \textit{feature learning dynamics}. Deep neural networks do not merely fit fixed features; they evolve their representation space. Furthermore, the existence of \textit{epoch-wise double descent}---where the test error exhibits non-monotonic behavior over time even with fixed model size---proves that DD is a dynamical phenomenon. Equilibrium theories, by definition, cannot explain transient dynamical effects.
+
+\section{Identification: The Dynamic-Landscape Interaction}
+
+We categorize the Double Descent problem not merely as a statistical anomaly, but as a complex interaction between \textit{multi-scale dynamics} and a \textit{critical landscape}.
+
+\subsection{The Gap Between Statics and Dynamics}
+
+There exists a ``gap'' between the static description of the loss landscape and the dynamic trajectory of the optimizer. We identify three distinct regimes that must be unified:
+
+\begin{description}
+    \item[Under-parameterized Regime ($P \ll N$):] Dominated by simple signal learning. The landscape is relatively smooth with a unique global minimum.
+    
+    \item[Critical Regime ($P \approx N$) --- Jamming:] At $P \approx N$, the system undergoes a ``Jamming Transition''. The landscape becomes rugged with sharp minima, corresponding to satisfying a precise number of constraints equal to the degrees of freedom. The condition number of the Hessian diverges:
+    \begin{equation}
+        \kappa(H) = \frac{\lambda_{\max}}{\lambda_{\min}} \to \infty \quad \text{as} \quad P \to N
+    \end{equation}
+    
+    \item[Over-parameterized Regime ($P \gg N$):] The system becomes ``floppy'' or unjammed. There exists a continuous manifold of zero-loss solutions, and the geometry of this manifold determines generalization.
+\end{description}
+
+\subsection{Hypothesis: Double Descent as Phase Transition Navigation}
+
+\begin{hypothesis}[Dynamic Origin of Double Descent]
+Double Descent is the result of the SGD algorithm navigating through phase transitions in the loss landscape. Specifically:
+\begin{enumerate}
+    \item The ``peak'' at $P \approx N$ is a trapping event in the jammed phase (sharp minima).
+    \item The second descent is a relaxation process driven by the specific noise structure of SGD, which allows the system to escape sharp minima and settle into flat, generalizing minima.
+\end{enumerate}
+\end{hypothesis}
+
+The key insight is that SGD noise is not merely a nuisance but an \textit{implicit regularizer} that performs geometric selection among the manifold of solutions.
+
+\section{Reformulation: Non-Equilibrium Statistical Physics Framework}
+
+To address the identified gaps, we reformulate the learning problem using a Non-Equilibrium Statistical Physics (NESP) framework. We move from describing static probability distributions to modeling the evolution of the probability density $\rho(W,t)$.
+
+\subsection{The Fokker-Planck Description}
+
+The evolution of the probability density over weight space is governed by the Fokker-Planck equation:
+\begin{equation}
+    \frac{\partial \rho(W, t)}{\partial t} = \nabla \cdot \left(\rho \nabla L\right) + \nabla \cdot \left(D(W) \nabla \rho\right)
+\end{equation}
+
+Crucially, the diffusion tensor $D(W)$ is not constant (as in thermal equilibrium) but is \textbf{state-dependent}, defined by the covariance of the stochastic gradients:
+\begin{equation}
+    D(W) = \frac{\eta}{2B} \Sigma(W)
+\end{equation}
+where $\eta$ is the learning rate, $B$ is the batch size, and $\Sigma(W)$ is the gradient noise covariance.
+
+\subsection{Noise-Driven Entropic Selection}
+
+This reformulation leads to a new mechanism for generalization. The SGD noise is anisotropic and approximately proportional to the Hessian (curvature) of the loss landscape:
+\begin{equation}
+    \Sigma(W) \approx \frac{1}{N} \sum_{i=1}^N \nabla \ell_i \nabla \ell_i^\top \sim H(W) \quad \text{near minima}
+\end{equation}
+
+This leads to curvature-dependent diffusion:
+\begin{itemize}
+    \item \textbf{In Sharp Minima} (associated with the interpolation peak/jamming): The curvature is high, so $D(W)$ is large. This creates a strong effective ``repulsive force'' that drives the system out of these non-generalizing states.
+    
+    \item \textbf{In Flat Minima} (associated with the second descent): The curvature is low, so $D(W)$ is small. These states are dynamically stable under SGD.
+\end{itemize}
+
+\begin{figure}[htb]
+    \centering
+    \begin{tikzpicture}[scale=0.7, >=Stealth]
+        % --- Axes ---
+        \draw[->] (-0.5,0) -- (9,0) node[right] {Weight Space ($W$)};
+        \draw[->] (0,-0.5) -- (0,5) node[above] {Loss / Energy $L(W)$};
+
+        % --- Landscape Curve ---
+        \draw[thick, blue, smooth, domain=0.5:8.5, samples=100] 
+            plot (\x, {0.05*(\x-2)^2 * (\x-6.5)^2 + 2*exp(-10*(\x-2)^2) + 0.5});
+            
+        % --- Sharp Minima Elements ---
+        \node at (2, 2.6) [circle, fill=red, inner sep=2pt] (sharp_particle) {};
+        \draw[->, red, thick, decorate, decoration={snake, amplitude=.4mm, segment length=2mm}] (2, 2.6) -- (1, 3.5) node[midway, left, font=\scriptsize] {High Noise};
+        \draw[->, red, thick, decorate, decoration={snake, amplitude=.4mm, segment length=2mm}] (2, 2.6) -- (3, 3.5);
+        \node[align=center, font=\small] at (2, -1.2) {\textbf{Sharp Minima} \\ (Jamming Phase) \\ High Curvature};
+        \draw[dashed] (2, 2.5) -- (2, 0);
+
+        % --- Flat Minima Elements ---
+        \node at (6.5, 0.6) [circle, fill=green!60!black, inner sep=2pt] (flat_particle) {};
+        \draw[->, green!60!black, thin] (6.5, 0.6) -- (6.2, 0.9);
+        \draw[->, green!60!black, thin] (6.5, 0.6) -- (6.8, 0.9) node[midway, right, font=\scriptsize] {Low Noise};
+        \node[align=center, font=\small] at (6.5, -1.2) {\textbf{Flat Minima} \\ (Relaxation Phase) \\ Low Curvature};
+        \draw[dashed] (6.5, 0.5) -- (6.5, 0);
+
+        % --- Transition Arrow ---
+        \draw[->, dashed, thick, purple] (2.2, 3) to[bend left=30] node[above, align=center, font=\small] {\textbf{NESP Transition}\\(Annealing)} (5.5, 1.5);
+        
+        % --- Annotations ---
+        \node[align=left, font=\scriptsize, draw] at (6, 5) {
+            \textbf{Mechanism:} \\
+            Noise $\propto$ Curvature \\
+            $D(W) \sim \nabla^2 L$
+        };
+    \end{tikzpicture}
+    \caption{{\small \textbf{NESP Mechanism of Double Descent.} At the interpolation threshold (Sharp Minima), high curvature induces strong anisotropic SGD noise (red wavy arrows), driving the system to escape. The system then relaxes to flat minima where low noise ensures stability. This process explains the second descent in test error.}}
+    \label{fig:nesp_mechanism}
+\end{figure}
+
+\subsection{The Mechanism of Double Descent}
+
+This framework reinterprets the Double Descent curve as a dynamical timeline:
+
+\begin{enumerate}
+    \item \textbf{Descent 1 (Signal Learning):} Fast learning of dominant signal components (low-frequency modes). The model captures the primary structure in the data.
+    
+    \item \textbf{Ascent (Peak/Jamming):} The system attempts to fit high-frequency noise but encounters the ``Jamming transition'' at the interpolation threshold. The landscape is rugged, and the trajectory is temporarily trapped in sharp, overfitting minima.
+    
+    \item \textbf{Descent 2 (Relaxation):} In the over-parameterized regime, the ``entropic selection'' mechanism of SGD dominates. The landscape-dependent noise ``anneals'' the system, driving it out of sharp minima and into flat minima. This \textit{implicit regularization} via non-equilibrium dynamics is the physical origin of the second descent.
+\end{enumerate}
+
+Mathematically, the escape rate from a sharp minimum with curvature $\lambda$ scales as:
+\begin{equation}
+    \Gamma_{\text{escape}} \sim \exp\left(-\frac{\Delta L}{D_{\text{eff}}}\right) \sim \exp\left(-\frac{\Delta L \cdot B}{\eta \lambda}\right)
+\end{equation}
+where $\Delta L$ is the barrier height. For sharp minima with large $\lambda$, the escape rate is high, explaining the instability of overfitting solutions.
+
+\subsection{Predictions and Implications}
+
+The NESP framework makes several testable predictions:
+
+\begin{enumerate}
+    \item \textbf{Batch size dependence:} Larger batch sizes reduce noise ($D \propto 1/B$), making sharp minima more stable and potentially suppressing the second descent.
+    
+    \item \textbf{Learning rate dependence:} Higher learning rates increase noise ($D \propto \eta$), accelerating escape from sharp minima and enhancing the second descent.
+    
+    \item \textbf{Epoch-wise double descent:} The non-monotonic behavior over training time is a natural consequence of the system first falling into sharp minima (fast convergence) then slowly escaping (relaxation).
+\end{enumerate}
+
+These predictions align with empirical observations in \cite{nakkiran_deep_2019} and provide a unified explanation for both model-wise and epoch-wise double descent phenomena.
+
+\section{Experimental Verification: A Toy Model Proposal}
+
+The theoretical framework developed in preceding sections---positing that Double Descent arises from a Non-Equilibrium phase transition between Jammed and Relaxed states, mediated by anisotropic SGD noise---demands empirical validation. However, the complexity of modern deep neural networks obscures the fundamental mechanisms we seek to isolate. Therefore, we propose a series of \textit{Gedankenexperimente} utilizing minimal, analytically tractable toy models that preserve the essential physics while eliminating confounding factors.
+
+\subsection{The Teacher-Student Protocol}
+
+We propose the \textbf{Teacher-Student framework} as our primary experimental testbed. This paradigm, extensively employed in the statistical physics of learning \cite{engel2001statistical,advani2013statistical}, provides the crucial advantage of a known ground truth, enabling precise measurement of generalization error without resort to heuristic train-test splits.
+
+\paragraph{Setup.} Consider a \textit{Teacher network} $f^*(x) = \sigma(W^* x)$ with fixed, randomly drawn weights $W^* \in \mathbb{R}^{P^* \times d}$, where $\sigma(\cdot)$ denotes a nonlinearity (e.g., ReLU or $\tanh$). The Teacher generates labels:
+\begin{equation}
+    y = f^*(x) + \xi, \quad \xi \sim \mathcal{N}(0, \sigma_\xi^2)
+\end{equation}
+where $\xi$ represents irreducible label noise---a critical ingredient for inducing the interpolation peak.
+
+The \textit{Student network} $\hat{f}(x; W) = \sigma(W x)$ with $W \in \mathbb{R}^{P \times d}$ is trained on $N$ samples $\{(x_i, y_i)\}_{i=1}^N$ drawn i.i.d. from the Teacher's distribution. By varying the Student's capacity $P$ while holding $N$ fixed, we sweep across the interpolation threshold $P/N \approx 1$.
+
+\paragraph{The Critical Control Parameter.} The ratio $\alpha = P/N$ serves as our control parameter, analogous to the ``packing fraction'' in jamming physics. Our NESP framework predicts:
+\begin{itemize}
+    \item $\alpha \ll 1$: Under-parameterized regime. Classical bias-dominated behavior.
+    \item $\alpha \approx 1$: Critical/Jammed regime. Interpolation threshold.
+    \item $\alpha \gg 1$: Over-parameterized regime. Entropic selection dominates.
+\end{itemize}
+
+\subsection{Physical Observables: Beyond Test Error}
+
+To validate the NESP mechanism---rather than merely confirming the existence of Double Descent---we must measure \textit{physical observables} that directly probe the landscape geometry and noise structure. We propose three such observables:
+
+\subsubsection{Observable I: The Hessian Trace (Sharpness)}
+
+The trace of the Hessian, $\mathrm{Tr}(H) = \mathrm{Tr}(\nabla^2 L)$, provides a scalar summary of the local curvature at the solution $W^*_{\text{SGD}}$. This quantity is computationally accessible via Hutchinson's trace estimator:
+\begin{equation}
+    \mathrm{Tr}(H) \approx \frac{1}{K} \sum_{k=1}^K v_k^\top H v_k, \quad v_k \sim \mathcal{N}(0, I)
+\end{equation}
+where the Hessian-vector products $Hv$ can be computed efficiently via automatic differentiation.
+
+\begin{hypothesis}[Sharpness Peak at Jamming]
+The Hessian trace, measured at the end of training, exhibits a pronounced maximum at the interpolation threshold:
+\begin{equation}
+    \mathrm{Tr}(H)|_{\alpha \approx 1} \gg \mathrm{Tr}(H)|_{\alpha \ll 1} \quad \text{and} \quad \mathrm{Tr}(H)|_{\alpha \approx 1} \gg \mathrm{Tr}(H)|_{\alpha \gg 1}
+\end{equation}
+Furthermore, in the over-parameterized regime, we predict a \textbf{monotonic decay}:
+\begin{equation}
+    \frac{d}{d\alpha} \mathrm{Tr}(H) < 0 \quad \text{for} \quad \alpha > 1
+\end{equation}
+This decay directly evidences the system's migration from sharp (Jammed) to flat (Relaxed) minima as capacity increases.
+\end{hypothesis}
+
+\subsubsection{Observable II: Noise-Hessian Alignment}
+
+The central claim of our NESP framework is that SGD noise is \textit{not} thermal (isotropic) but rather \textit{geometric} (aligned with the Hessian). To test this, we propose measuring the alignment between the noise covariance matrix $\Sigma(W)$ and the Hessian $H(W)$:
+\begin{equation}
+    \mathcal{A}(\Sigma, H) = \frac{\mathrm{Tr}(\Sigma H)}{\|\Sigma\|_F \|H\|_F}
+\end{equation}
+where $\|\cdot\|_F$ denotes the Frobenius norm. For thermal noise, $\Sigma = \sigma^2 I$ and thus $\mathcal{A} \propto \mathrm{Tr}(H)/\|H\|_F$, which is independent of the noise structure. For geometry-dependent noise, we expect strong positive correlation.
+
+\begin{hypothesis}[Anisotropic Noise Alignment]
+The alignment $\mathcal{A}(\Sigma, H)$ is significantly elevated compared to the null hypothesis of isotropic noise:
+\begin{equation}
+    \mathcal{A}(\Sigma, H) \gg \mathcal{A}(\sigma^2 I, H) \quad \text{across all } \alpha
+\end{equation}
+Moreover, this alignment should \textbf{strengthen} near the interpolation threshold, where the curvature structure is most pronounced. This would provide direct evidence that SGD performs geometric, not thermal, exploration of the loss landscape.
+\end{hypothesis}
+
+\subsubsection{Observable III: Eigenspectrum Evolution}
+
+The full eigenspectrum of the Hessian, $\{\lambda_i\}_{i=1}^P$, encodes richer information than the trace alone. We propose tracking the spectral density $\rho(\lambda) = (1/P)\sum_i \delta(\lambda - \lambda_i)$ across the $\alpha$-sweep.
+
+\begin{hypothesis}[Spectral Signature of Phase Transition]
+At the Jamming transition ($\alpha \approx 1$), the spectral density exhibits:
+\begin{enumerate}
+    \item A \textbf{hard edge} at $\lambda = 0$, corresponding to the vanishing of the null space as constraints saturate degrees of freedom.
+    \item \textbf{Outlier eigenvalues} at large $\lambda$, corresponding to sharp directions associated with fitting noise.
+\end{enumerate}
+In the Relaxed phase ($\alpha \gg 1$), the spectrum should exhibit:
+\begin{enumerate}
+    \item An extensive \textbf{null space} (bulk of eigenvalues at $\lambda \approx 0$), corresponding to flat directions in the solution manifold.
+    \item Suppression of outliers, indicating the system has escaped sharp directions.
+\end{enumerate}
+\end{hypothesis}
+
+\subsection{Experimental Protocol}
+
+To empirically validate the Entropic Selection mechanism, we propose the following experimental protocol:
+
+\begin{algorithm}[htb]
+\renewcommand{\algorithmcfname}{Experimental Protocol}
+\caption{NESP Validation via Teacher-Student Model}
+\KwData{Teacher weights $W^*$, noise level $\sigma_\xi$, sample sizes $N$, capacity range $P \in [P_{\min}, P_{\max}]$.}
+\KwResult{Measurements of $R_{\text{test}}(\alpha)$, $\mathrm{Tr}(H)(\alpha)$, $\mathcal{A}(\Sigma, H)(\alpha)$, $\rho(\lambda; \alpha)$.}
+\Begin{
+    \For{$P \in \{P_{\min}, \ldots, P_{\max}\}$}{
+        Initialize Student network with random weights $W_0$\;
+        Train via SGD: $W_{t+1} = W_t - \eta \nabla L_{\mathcal{B}}(W_t)$\;
+        \tcp*[l]{At convergence:}
+        Compute $R_{\text{test}}(W_T) = \mathbb{E}_{x}[(f^*(x) - \hat{f}(x; W_T))^2]$\;
+        Compute $\mathrm{Tr}(H)$ via Hutchinson estimator\;
+        Estimate $\Sigma(W_T)$ from mini-batch gradient variance\;
+        Compute alignment $\mathcal{A}(\Sigma, H)$\;
+        (Optional) Compute top-$k$ Hessian eigenvalues via Lanczos iteration\;
+    }
+}
+\Return{Observables as functions of $\alpha = P/N$.}
+\end{algorithm}
+
+\paragraph{Predicted Signatures.} If our NESP framework is correct, the experimental results should exhibit the following correlated signatures:
+\begin{enumerate}
+    \item $R_{\text{test}}(\alpha)$ displays the characteristic Double Descent curve.
+    \item $\mathrm{Tr}(H)(\alpha)$ peaks at $\alpha \approx 1$ and decays for $\alpha > 1$, \textit{anti-correlated} with the second descent.
+    \item $\mathcal{A}(\Sigma, H)$ remains elevated throughout, peaking near $\alpha \approx 1$.
+    \item The spectral density transitions from hard-edge (Jammed) to bulk-zero (Relaxed) as $\alpha$ crosses unity.
+\end{enumerate}
+
+The simultaneous observation of these four signatures would constitute strong evidence for the NESP interpretation of Double Descent as a dynamical phase transition driven by geometry-dependent noise.
+
+\subsection{Alternative Minimal Model: Two-Layer Linear Networks}
+
+For maximal analytical tractability, we also propose the \textbf{two-layer linear network}:
+\begin{equation}
+    \hat{f}(x; U, V) = U V^\top x, \quad U \in \mathbb{R}^{d_{\text{out}} \times k}, \; V \in \mathbb{R}^{d_{\text{in}} \times k}
+\end{equation}
+Despite being linear in the input-output map (equivalent to $W = UV^\top$), this model exhibits \textit{nonlinear dynamics} under gradient descent due to the factorization. Recent work \cite{advani2017highdimensionaldynamicsgeneralizationerror,saxe2014exact} has shown that this model captures essential features of deep learning dynamics, including staged learning and critical slowdowns.
+
+The advantage of this model is that the Hessian and noise covariance can be computed \textit{analytically} in certain regimes, enabling precise theoretical predictions against which experimental measurements can be compared. The NESP predictions for this model are:
+\begin{itemize}
+    \item The ``effective temperature'' $T_{\text{eff}} = \eta \cdot \mathrm{Tr}(\Sigma)/P$ should exhibit non-monotonic behavior, peaking at the interpolation threshold.
+    \item The condition number $\kappa(H) = \lambda_{\max}/\lambda_{\min}$ should diverge as $\alpha \to 1$, signaling the Jamming transition.
+\end{itemize}
+
+\section{Conclusion and Future Horizons}
+
+\subsection{Synthesis: From Equilibrium to Non-Equilibrium}
+
+In this work, we have undertaken a critical re-examination of the theoretical foundations underlying the Double Descent phenomenon. Our central thesis is that the apparent ``anomaly'' of Double Descent---its violation of the classical bias-variance tradeoff---is not a failure of statistical physics \textit{per se}, but rather a failure of \textbf{equilibrium} statistical physics inappropriately applied to an inherently \textbf{non-equilibrium} dynamical process.
+
+We have argued that the dominant theoretical approaches---Random Matrix Theory, Replica Methods, and classical bias-variance decomposition---share a common, often implicit, assumption: that the learning algorithm converges to a stationary state characterized by a Boltzmann-like distribution over weight space. This equilibrium assumption, while mathematically convenient, fundamentally mischaracterizes the nature of Stochastic Gradient Descent.
+
+Our reformulation, grounded in Non-Equilibrium Statistical Physics (NESP), makes three key departures from the equilibrium paradigm:
+
+\begin{enumerate}
+    \item \textbf{From static distributions to dynamical evolution:} We model the probability density $\rho(W,t)$ via the Fokker-Planck equation, treating the ``solution'' as a transient state rather than an equilibrium configuration.
+    
+    \item \textbf{From isotropic to anisotropic noise:} We recognize that SGD noise is not thermal but geometric---its covariance $\Sigma(W)$ is state-dependent and aligned with the loss landscape curvature $H(W)$.
+    
+    \item \textbf{From energy minimization to entropic selection:} We posit that generalization arises not from finding the global minimum, but from the \textit{dynamical stability} of flat minima under geometry-dependent noise. Sharp minima, despite potentially lower loss, are rendered unstable by their own curvature.
+\end{enumerate}
+
+\subsection{Bridging the Gap: The Play and The Stage}
+
+A persistent tension in theoretical machine learning has been the disconnect between two perspectives:
+\begin{itemize}
+    \item \textbf{The Stage (Landscape):} Static analysis of the loss surface---its minima, saddle points, and global structure.
+    \item \textbf{The Play (Dynamics):} The trajectory of the optimizer through weight space---its convergence, oscillations, and implicit biases.
+\end{itemize}
+
+Equilibrium theories privilege the Stage: they characterize the set of possible solutions and assume the optimizer will find them. But they cannot explain \textit{which} solution is selected, nor \textit{how} the selection depends on hyperparameters like learning rate and batch size.
+
+The NESP framework bridges this gap by coupling the Stage to the Play. The landscape geometry (Hessian) determines the noise structure (diffusion tensor), which in turn shapes the dynamical trajectory. Double Descent emerges naturally from this coupling: the interpolation peak corresponds to a \textit{Jamming transition} where landscape constraints saturate available degrees of freedom, and the second descent corresponds to \textit{entropic relaxation} as the system escapes sharp minima driven by its own noise.
+
+This perspective offers a resolution to the longstanding puzzle: \textit{Why do over-parameterized models generalize?} Our answer: not because they find better minima (they often do not), but because SGD dynamics are \textit{geometrically biased} toward flat regions of the solution manifold. Generalization is an emergent property of non-equilibrium dynamics, not a static property of the loss landscape.
+
+\subsection{Future Horizons}
+
+The NESP framework, if validated, opens several exciting avenues for future research:
+
+\subsubsection{Grokking as Extreme Relaxation}
+
+The phenomenon of ``Grokking''---wherein models exhibit delayed generalization long after achieving zero training error \cite{power2022grokking}---presents a striking challenge to equilibrium theories. From the NESP perspective, we speculate that Grokking represents an \textit{extreme} instance of the Jamming-Relaxation transition.
+
+Specifically, certain data structures (e.g., modular arithmetic) may induce loss landscapes where the Jammed phase is \textit{metastable} over extended timescales. The system achieves interpolation (zero training loss) but remains trapped in sharp, non-generalizing minima. Generalization occurs only after sufficient time for the noise-driven annealing process to escape these metastable states.
+
+This interpretation predicts that Grokking should be:
+\begin{itemize}
+    \item \textbf{Accelerated} by increasing learning rate or decreasing batch size (higher effective noise).
+    \item \textbf{Suppressed} by explicit regularization that pre-selects flat minima.
+    \item \textbf{Accompanied} by a monotonic decrease in Hessian trace during the ``grokking'' phase.
+\end{itemize}
+
+\subsubsection{Transformers and Large Language Models}
+
+The training dynamics of Large Language Models (LLMs) represent perhaps the most consequential---and least understood---application of deep learning. The NESP framework suggests several speculative connections:
+
+\paragraph{Temperature in Sampling vs. Training.} LLMs employ a ``temperature'' parameter $T$ during inference to control the sharpness of the output distribution. Intriguingly, our framework identifies an ``effective temperature'' $T_{\text{eff}} = \eta \cdot \mathrm{Tr}(\Sigma)/(2B)$ that governs training dynamics. We pose the question: \textit{Is there a principled relationship between these two temperatures?}
+
+One speculative hypothesis: models trained with higher $T_{\text{eff}}$ (larger learning rate, smaller batch) may naturally produce sharper internal representations, requiring lower inference temperature for coherent outputs. This would establish a non-trivial link between training dynamics and inference behavior.
+
+\paragraph{Scaling Laws and Phase Transitions.} Empirical ``scaling laws'' \cite{kaplan2020scaling} describe how LLM performance improves with model size, data, and compute. From the NESP perspective, these smooth power-law scalings may obscure underlying \textit{phase transitions} in the training dynamics. As model capacity crosses critical thresholds relative to data complexity, the system may undergo Jamming-Relaxation transitions analogous to Double Descent.
+
+Understanding these transitions could inform more efficient training schedules: rather than smooth scaling of learning rate, one might employ \textit{punctuated} schedules that exploit phase boundaries---high noise to escape Jammed phases, low noise to stabilize in Relaxed phases.
+
+\subsubsection{Toward a Unified Theory of Implicit Regularization}
+
+The NESP framework provides a candidate mechanism for ``implicit regularization''---the empirical observation that SGD finds generalizing solutions without explicit regularization terms. Our entropic selection mechanism offers a \textit{dynamical} explanation: SGD implicitly regularizes by destabilizing sharp minima.
+
+A unified theory would connect this mechanism to other forms of implicit bias:
+\begin{itemize}
+    \item \textbf{Minimum-norm solutions} in linear regression.
+    \item \textbf{Max-margin classifiers} in linearly separable problems.
+    \item \textbf{Low-rank bias} in matrix factorization.
+\end{itemize}
+
+We conjecture that all these biases arise from the same underlying principle: the geometry-dependent noise of SGD preferentially stabilizes solutions with specific structural properties (low norm, large margin, low rank) because these properties correlate with flat loss landscape geometry.
+
+\subsection{Concluding Remarks}
+
+Double Descent is not merely a curiosity of over-parameterized models; it is a \textit{window} into the non-equilibrium physics of learning. The classical bias-variance tradeoff, while a valuable heuristic in the under-parameterized regime, represents an equilibrium approximation that breaks down precisely where modern deep learning operates.
+
+We have proposed that the correct theoretical framework is Non-Equilibrium Statistical Physics, wherein the learner is not a thermodynamic system seeking equilibrium, but a driven system whose steady state is determined by the interplay of deterministic forces (gradient descent) and state-dependent fluctuations (SGD noise). The Double Descent curve is the macroscopic signature of a microscopic phase transition from Jammed to Relaxed states, mediated by the entropic selection mechanism.
+
+This perspective---if borne out by the experimental protocols we have proposed---would represent a significant shift in how we understand generalization in deep learning: not as a property of the solution, but as an emergent phenomenon of the dynamics that found it.
+
 \clearpage
 
 \section{Organization (paper writing only)}
