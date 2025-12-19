@@ -8,6 +8,7 @@
 \input{preamble.tex}
 \input{math_commands.tex}
 
+
 \addbibresource{references.bib}
 
 \title{Double descent, and statistical learning/physics}
@@ -584,7 +585,8 @@ This leads to curvature-dependent diffusion:
 
 \begin{figure}[htb]
     \centering
-    \begin{tikzpicture}[scale=0.7, >=Stealth]
+    \resizebox{\textwidth}{!}{%
+    \begin{tikzpicture}[scale=1, >=Stealth]
         % --- Axes ---
         \draw[->] (-0.5,0) -- (9,0) node[right] {Weight Space ($W$)};
         \draw[->] (0,-0.5) -- (0,5) node[above] {Loss / Energy $L(W)$};
@@ -616,10 +618,12 @@ This leads to curvature-dependent diffusion:
             Noise $\propto$ Curvature \\
             $D(W) \sim \nabla^2 L$
         };
-    \end{tikzpicture}
+    \end{tikzpicture}%
+    }% end \resizebox
     \caption{{\small \textbf{NESP Mechanism of Double Descent.} At the interpolation threshold (Sharp Minima), high curvature induces strong anisotropic SGD noise (red wavy arrows), driving the system to escape. The system then relaxes to flat minima where low noise ensures stability. This process explains the second descent in test error.}}
     \label{fig:nesp_mechanism}
 \end{figure}
+
 
 \subsection{The Mechanism of Double Descent}
 
@@ -671,7 +675,7 @@ The \textit{Student network} $\hat{f}(x; W) = \sigma(W x)$ with $W \in \mathbb{R
 
 \paragraph{The Critical Control Parameter.} The ratio $\alpha = P/N$ serves as our control parameter, analogous to the ``packing fraction'' in jamming physics. Our NESP framework predicts:
 \begin{itemize}
-    \item $\alpha \ll 1$: Under-parameterized regime. Classical bias-dominated behavior.
+    \item $\alpha \ll 1$: Under-parameterized regime. Classical bias dominated behavior.
     \item $\alpha \approx 1$: Critical/Jammed regime. Interpolation threshold.
     \item $\alpha \gg 1$: Over-parameterized regime. Entropic selection dominates.
 \end{itemize}

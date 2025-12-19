@@ -1303,11 +1303,50 @@ We then can measure or aggregate some properties of the dataset itself, includin
     \end{equation}
     We assume $X,Y$ are totally ordered sets. 
 \end{definition}
-Hence, the assumption of fallacy assumes $\mathcal{U}(\mathcal{S}_{n})=0$, though in reality it is often $\mathcal{U}(\mathcal{S}_{n})>0$. With this, we can quantify how the dataset is behaving on the scale of the bivariate form typically seen. Noise intrinsically increases this distance, usually by the $y$-axis. This dataset uncertainty increases with multivariate dataset, for example, $(\mathbf{x},y)$ of $\mathbb{R}^{n}\to\mathbb{R}$. We call the new metric as the \textit{empirical uncertainty metric}. From this, we can have the theorem:
 
-\begin{theorem}[Uncertainty tradeoff]
-    
+Hence, the assumption of fallacy assumes $\mathcal{U}(\mathcal{S}_{n})=0$, though in reality it is often $\mathcal{U}(\mathcal{S}_{n})>0$. We would like to clarify, that such definition is currently reserved for only polynomial-like functional class; though, this can be extended pretty easily for any $\mathbb{R}^{n}\to\mathbb{R}^{m}$ functional concepts. Furthermore, it is \textit{operational}, in the sense that it measures the numerical encoding inherent uncertainty, of which is also the space used of algorithms traversing in stochasticity. It affects cross-validation, gradient-based algorithm path finding, and roughness of the learning processes. Certain concerns must also be addressed, such as the definition, which assumes \textit{sequential processing} and pair-wise measurement (which can also be extended to tri-fold measurement and so on). Indeed, modern deep learning use parallel batch processing, mini-batch sampling, or distributed learning across devices for optimization. Nevertheless, such includes sequential-based learning optimization, and so on, where mini-batch still inherently includes batch ordering; algorithms like RNNs and so on also are sequential. The computational cost per dataset, if not, is $\mathcal{O}(n)$ after initial order, or with mundane immediate measurement on the way that the dataset was configured at start, since the system and stochastic algorithms sequentially go through them.
+
+Certain others aspects can be expected to be clarified. While indeed, this is order-dependent measure, and one might expect to go against it and say it is not real dataset property, but the key point is that dataset are measurements, captured and recorded into the encoded space that is used upon the learning regime (supervised or semi-supervised or so on), or the learning algorithms. In a classical algorithmic world, such must be done in discrete steps, and hence ordering strongly matters as well as the processing pipeline relevant to it. There exists natural ordering of data within noise $\epsilon$, because if now, the projection on embedded space $\mathbb{R}^{n}\times \mathbb{R}^{m}$ of any given concept functional $c$ holds no value, as the function itself, plus the distribution, with respect to the encoding space where the function mapping is defined already contains structural information encoded within 'value range' as the most basic form. A weaker posture we can adopt is that it is an operational uncertainty measure, given presentation order to a finite discrete processing machine, and is indeed \textit{pre-training} diagnostic. There is also the issue in which $X$ and $Y$ might not be measurable or comparable. Indeed, since the range of value can jump intermittently between different concept class and form, but even then, it will only highlight the disparity between the contributing terms. For example, if we have three pairs, $(130,1)$, $(150,1)$ and $(225,0)$ as the data, then the volativity is not that bad, and stable on $Y$, but \textit{very high on $X$}, as there are missing information in large gap. From the machine-algorithmic, this matters. if we take the $130,225$ points as a case of shuffling, then the machine experiences a 95-to-1 volatility ratio. Nevertheless, one can attempt a normalized metric, i.e. 
+\begin{equation}
+    \mathcal{U}_{\mathrm{norm}}(\mathcal{S}_{n}) = \sqrt{\mathbb{E}[(\Delta x_{i})/r(X)]^{2}+\mathbb{E}[(\Delta y_{i})/r(Y)]^{2}}
+\end{equation}
+for relative jumpiness accorss different problems with normalized morphism. 
+
+With this, we can quantify how the dataset is behaving on the scale of the bivariate form typically seen. Noise intrinsically increases this distance, usually by the $y$-axis. This dataset uncertainty increases with multivariate dataset, for example, $(\mathbf{x},y)$ of $\mathbb{R}^{n}\to\mathbb{R}$. We call the new metric as the \textit{empirical uncertainty metric}. The basis of such argument on the concept of a tradeoff comes from \cite{nakkiran2019datahurtlinearregression}, in which linear regression is affected, at least in such setting and consideration, such that dataset will both hurt and benefit the learning process. 
+
+Overall, however, this allows us to state of the following theorem: 
+
+\begin{theorem}[Separation encoding]
+    We fix the encoding space on $\mathbb{D}=\mathbb{R}^{q}\times\mathbb{R}^{p}$ for a $(q,p)$ conjunction space. For $\mathcal{S}_{n}\in\mathbb{D}$ of $n$ samples $(x_{i},y_{i})$, we assume such set is output from an oracle $EX(\theta)$. Then, for a diffused set $\mathcal{S}_{n}'=\mathcal{S}_{n}+\eta$, for $\eta=\mathcal{D}\approx \mathcal{N}(0,\lambda\sigma^{2})$, then
+    \begin{equation}
+        \underset{\eta \in \{\mathcal{N}\}}{\mathbb{E}} [\mathcal{S}_{n}'] \geq \mathcal{U}(S)
+    \end{equation}
+    for $\lambda \sigma^{2}$ the $x$-aware deviation. Fix $\lambda=1$ for consistent enclosure $0$-based error, or $\mathcal{N}(\cdot,\sigma^{2})$ for consistent data deviation. 
 \end{theorem}
+
+\begin{proof}[Proof 1. Simple proof]
+    Using normed metric, $\mathcal{U}_{\mathrm{norm}}$. For noised data, that is, \begin{equation}
+        \mathcal{S}_{n}' = \{(x_{i}+\eta^{(x)}_{i}, y_{i}+\eta^{(y)}_{i})\}^{n}_{i=1}
+    \end{equation}
+    where the noise vector on encoding space is orthogonal, such that \begin{equation}
+        \eta_{i}=(\eta_{i}^{(x)},\eta_{i}^{(y)})\sim\mathcal{D}\approx \mathcal{N}\left(a,\lambda\mathrm{Cov}(\eta)\right)
+    \end{equation}
+    where we can fix $\mathcal{D}=\mathcal{N}(a,\lambda\sigma^{2})$ for $a=0$ as normalized around the zero value. If we assume independent noise, then we have the covariance as 
+    \begin{equation}
+        \lambda \mathrm{Cov}(\eta)= \lambda\begin{pmatrix}
+            \sigma_x^2 I_q & 0 \\
+            0 & \sigma_y^2 I_p
+        \end{pmatrix}
+    \end{equation}
+    We can simplify slightly, as to have the case in consideration that $\sigma^{2}_{x}=\sigma^{2}_{y}=\sigma^{2}$, then the notation would effectively be such that $\lambda\sigma^{2}I_{d+p}$ is enough. The uncertainty metric then should be expressed as 
+    \begin{equation}
+        \begin{split}
+            &\mathbb{E}[\mathcal{U}(\mathcal{S}_{n})^{2} ] \\
+            &= \mathbb{E}\left[\underset{x_{i}\in X}{\mathbb{E}}\Big( x_{i+1} - x_{i} \Big)^{2} + \underset{y_{i}\in Y}{\mathbb{E}} \Big( y_{i+1}- y_{i} \Big)^{2}\right]\\
+            & = \mathbb{E}_{i}
+        \end{split}
+    \end{equation}
+\end{proof}
 
 Thirdly, is the treatment on such information. Even though information is known, such as from the assumption of transparency and the fallacy conjecture, it relies on the method in which the model uses that make use of such information. Polynomial interpolation effectively removes information about transparency, and thus the interpolation setting is a kind of \textbf{black-box absolute setting}. This setting is \textit{extremely brittle}, as to see that if $y_{i}$ is slightly wrong due to measurement noise, the interpolant oscillates wildly, which is explained by Runge phenomenon (\cite{Runge1901,CorlessSevyeri2018,AMC2009RungeDivergence}). Probability then arises from such setting naturally, though this particular degree of probabilistic setting must be quantified, which comes from the process that the model simulates upon. Regression is inherently not probabilistic, but treatment about the probabilistic assumption, for example, such that $(X,Y)$ inherently as random variables. We can then separate this into three parts - the data-level probabilistic layer (data uncertainty), the model-level layer, and the algorithm-layer that determines the solution solver within such model. We can define that as followed. 
 
@@ -1522,6 +1561,7 @@ It is evident that we need another theory to explain what we are seeing, of plai
 Specifically, in the first few sections, the fragmented insight would have to be considered, namely of the following dilemma: 
 
 \begin{enumerate}
+    \item We need a more general consideration between the environment and the agent, i.e. between the structures $c$ required to extrapolate, and the modulus in which $h$ explicitly exhibits such 'replica' trace. 
     \item 
 \end{enumerate}
 

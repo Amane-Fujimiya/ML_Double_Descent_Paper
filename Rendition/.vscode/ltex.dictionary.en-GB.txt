@@ -10,3 +10,4 @@ Hausdorff
 underparameterized
 supremum
 Prerequisition
+stochasticity

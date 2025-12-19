@@ -1,0 +1,773 @@
+\chapter{Experimental investigations}
+
+For understanding and analysing double descent and bias-variance trade-off, and furthermore in later section on identifying double descent, we would like to use test models specifically for exhibiting bias-variance, as well as testing hypothesis and forming theoretical conjectures. This is because of the troublesome nature of the phenomena itself, which proves difficult to analyse without sufficient experimental observations. Furthermore, specific analysis on these types of model might prove useful for generalization toward more difficult and complex structure. 
+
+Our major focus is on three types of model. First two are classical models and system, linear models on the real space $\mathbb{R}^{n}\to\mathbb{R}$. Second, is the type of \textbf{support vector machine} (SVM) models to highlight the analysis toward data-based fundamental analysis. The third one is the class and collection of different \textit{neural network structures} (MLP, or variations). Our goal is then to expansively analyse, formalize, making conjectures and hypothesis and test them, to find, force double descent out, or identify it on the learning landscape. We note that structures of those models are not well-generalized, hence analysis from one might not apply or apply only in small conjunction. This approach is rather quite helpful in its own merit, as its choice and preference will gauge our parameters than we gauge the phenomena of the parameter it induces.
+\section{Experimental planning}
+
+This section of the manuscript will explicitly contain instructions, setup, methodology, and so on, with regard to the experimental details of the experiments itself. 
+
+\subsection{Setting: gradient-based optimization}
+
+In our usual experiment, we would most specifically, use a closely-regarded family of gradient-based algorithms, such as gradient descent (\cite{Cauchy:1847,Robbins:1951,Widrow:1960,Hestenes:1952,Fletcher:1964}), mirror descent, natural descent, and so on (\cite{nemirovski_yudin_1983,amari_1996_natural_riemannian_gradient,amari_1998_natural_gradient_works,yang_amari_1998_complexity_issues_natural_gradient,amari_rattray_saad_1998_natural_gradient_online,gunasekar_woodworth_srebro_2021_mirrorless_mirror_descent,luong_parpas_rueckert_rustem_2016_weighted_mirror_descent,xiao_zhang_2014_proximal_stochastic_gradient,sohl-dickstein_2012_natural_gradient_whitening,raskutti_mukherjee_2013_information_geometry_mirror_descent}). While implementation and details of the specific algorithm can be different, they all shares some of the same concepts of which making them possible for optimization in the specified iterative domain. The most general formulation possible is the following algorithm on convexity:
+
+\RestyleAlgo{ruled}
+\SetKwComment{Comment}{}{}
+\begin{algorithm}[htb]
+    \caption{Gradient descent on general convex function}
+    \KwData{$(x_{i},y_{i})\in\mathcal{S}$, $\eta$, $\nabla(\cdot)$ operator.}
+    \KwResult{Expected optimization to the minimal error on $\ell(\cdot,\cdot)$.}
+    \Begin
+    {
+    $x_{1}\gets$ randomly initialized points\;
+    \For{$t\gets 1$ to $T$}{
+        $x_{t+1}\gets x_{t}-\eta\nabla f(x_{t})$
+    }
+    }
+    \Return{$\hat{x}=1/T \sum^{T}_{t=1}x_{i}$}
+    \label{algo:algo_gd}
+\end{algorithm}
+Nevertheless, one should be cautioned of the intrinsic assumption on which gradient descent of this type assumes. It assumes \textit{convexity}, which can only be possible, if the landscape itself is supposedly, assumed to contain such global minima. Said global minima in a richer language can be described as the epistemic collapse of the learning structure, under the arbitrary optimization space. This is a \textit{very serious assumption}, and should it fail, as seen in a lot of non-populated or general observation space, the entire procedure is invalid. It is also troublesome as to rely on the singular objective (numerically encoded) space in which it is trivial to realise that there are indeed, local minima. This scaling, with respect to both locality and global consideration, must be considered carefully, since \textit{every single contribution} might distort the experiment in a very unexpected way. 
+
+\subsection{Gradient descent and the implicit encoding structure}
+
+\subsection{Experiments list}
+
+The following describes and outline specific requirements updated of experiments, aside from done experiments. Currently, there remains the \textit{neural network} in plain form functional approximator experiment, \textit{polynomial neural network (customized)} experiments, validation of \textit{support vector machine (SVM)} on generalized task space experiments, different large-scale neural networks (VGG, ResNET, LLM) experiments set, and toy model for investigations. Specifically:
+
+\begin{enumerate}[itemsep=1pt,topsep=1pt]
+    \item \textbf{Linear models on abstract $\mathbb{R}$-conjunction space\footnote{Conjunction space simply means that the full numerical encoding space of all activities involved}}: Different kind of components-based on linear behaviours, in different setting and so on, of different testing scenario (regression, classification). 
+    \item \textbf{Polynomial-type models on abstract conjunction space}: Similar to the above linear case, this one however allow for polynomial-style components, i.e. degree $k$ terms up to $n$th degree. 
+    \item \textbf{Support Vector Machine (SVM) on abstract spaces and sample space}: The SVM model is rather interesting (within which it has regression and classification as main functionality), because it goes reverse from perspective - instead of creating models to fit data, it uses data to create fitting model. 
+    \item \textbf{Neural network on-layer, abstract functional spaces}: This is the set of experiments for layer-based neural networks, on abstract functional spaces of analysis. The list includes vanilla $(l,n)$-mass neural network with mixed activation patterns, CNN, VGG, ResNet, spatial neural networks, RNN, and if able, certain precursor of LLM systems. 
+\end{enumerate}
+
+All of those models base their purposes in \textit{component-based interpretation}, such that the scope in which their components are allowed, change the dynamics and so on of the model. The theoretical problem of which those experiments are targeted on is to mark the singular hindsight - \textit{simply how} model behaves under controlled structural changes and setting changes. Because of the lacking in such deference of approaches, it also depends heavily on how the adversarial set (dataset, concept) itself is targeted of, or coverage of such. Such is to say, we also need the \textit{precursor theory} of component treatments. Which is explained above, but such is also particularly extensible to explain also grokking (\cite{Power2022Grokking,Liu2023GrokkingExplained}), benign overfitting (\cite{Bartlett2020BenignOverfitting,Muthukumar2021Interpolation}), \textit{neural collapse} (\cite{Papyan2020NeuralCollapse,Han2022NeuralCollapseSurvey}), optimization-based anomaly or phase-transition similar form (\cite{Cohen2021EdgeOfStability,Fort2019DeepLossLandscape}), and the fuzzy, diverged front of explanations in deep learning phenomena, as criticized by \cite{Razeghi2025ExplanationCritique}. 
+
+\subsubsection{Polynomial neural networks}
+
+Because of the sensitive context of double descent, polynomial suffers the same fate of design, as so is many of the experiments. Its design implementation details must be explicit. That is, of which can be seen in the polynomial transition model. That said, the setting itself is rather more difficult to assess. 
+
+Originally, it is asked of the experimental team to set up \textbf{adversarial testing}, i.e. testing two mismatched polynomial models together, in a singular testing system. So, we will have $(p_{k},p_{c})$ for $k\in[a,b]$ of complexity specification, in this case, the number of initialized degree of interest. As such, the experimental system is between two polynomials. But this turns out to have certain problem: \textit{domain range}. The domain value, when admitted of the input $x\in\mathbb{R}$ or $\mathbf{x}\in\mathbb{R}^{n}$ of $n$-dimensional input sequence, is rather difficult to control, especially for $[a,b]$ that is nonstandard in $[-1,1]$, and not of normalized unit. Usually, we understand the polynomial transition space as the modular $\mathbb{R}\to\mathbb{R}^{h}\to\mathbb{R}$ mapping for singular $n$-dimensional hidden field, the polynomial basis terms. However, if we are to upgrade it to multivariate polynomial, such changes dramatically, and so is the structure itself. Thereby, so is the behaviours on ranges. The justification for nonstandard, free monomial is that for increased value range, the pattern is not chaotic, but rather smoothed out by dominant terms, for example, the $n$-degree terms contribution in univariate case. Similar case happens when taken into consideration $n$-dimensional polynomial mapping on $\mathbb{R}^{n}\to\mathbb{R}^{m}$, but only this time the dominance is local to individual dimension itself. In general,
+
+\begin{conjecture}
+    The probability of dataset representing wrong $n$-univariate polynomial $p_{n}$, on finite arbitrary space $\mathcal{D}=[a,b]$, for $|\mathcal{D}|\to\infty$, increases, in presence of $\epsilon\sim\mathcal{N}(a,\sigma)$ noise. 
+\end{conjecture}
+
+The main fundamental reason is because of the ill-conditioned Vandermonde basis, in which is typically used in polynomial expression. Elsewhere, on finite space $[a,b]_{m}$ on $m$ samples, it is then conjectured that the chance of interpolation is much greater, and much more deviated from the actual concept shape if stray over large enough $[a,b]$, thus also influence the error rate and gradient-based learning form of different weights. The goal is then, to construct rich enough polynomial concept class, based in this new discrete, finite range and initialization goals, with the main goal is to find sufficient polynomial construction on arbitrary $[a,b]\in\mathbb{R}$ that $y$ foes not explode. This is fundamentally hard, and if unable to procure, we would have to choose to go for the normalized space on $[-1,1]$. This is also for computational purpose, since \texttt{float128}, of which is the main data point form, is numerically unstable with large operations and the density of operations as such without sufficient safety control, in which it is very hard to reconcile. 
+
+One more point to note. What we have seen is based on the perception of typical machine learning setting that \textbf{monomial Vandermonde basis} is the polynomial representation space. In fact, this is not true, as there are many as Lagrange polynomial, Newtonian basis, Legendre polynomials, and different classes of orthogonal polynomials. However, without structural operational analysis, such addition and generalization is hard to tract of the structural droplet they introduce. 
+
+The following will list the amount or configuration that test should be taken into consideration, first with the guideline. 
+
+\begin{enumerate}[topsep=1pt,itemsep=1pt]
+    \item \textbf{Carefulness on numerical processing}: Introducing polynomial models meaning that for each component, it is reducibly equivalent to $n$ linear components, for each component, with multiplicative combinator. So for example, a system of full $n$-degree model sequentially, would have $n!+1$ linear equivalent mass size, including the bias on numerical space. Therefore, the value in practical calculation can be very large, even in $[-1,1]$ as the pairwise normalized. Cares then must be taken to draw that out. 
+    \item \textbf{Minimal implementation}: Use the least, but consistent code possible. Each code must be recommended to be designed modularly, such that you can snap it in others with only relevant knowledge as to \textit{what it does} and \textit{what is the typing allowed} of the unit itself, aside from utility systems. 
+    \item \textbf{Loop collapse}: The order of loop, or changing test case is very necessary to be taken into account of. First one, is the \textbf{system test loop}, where the setting of the environment for operation, i.e. noise, concept allowed (dimension or description or class of types), number of samples, and so on. The second one is the \textbf{hypothesis-action loop}, of the empirical action of \textit{train-test-validate-cross} partition of the observational space $\mathcal{S}_{n}$ to mimic generalization in oracle setting, the hypothesis spaces, and so on. The final one is the \textbf{operational level}, where you specify the loss-landscape, learning metric, aggregated measures, loss function measure, actions on learning algorithms, the learning algorithm configurations (for example, learning rate, etc.), and so on. 
+\end{enumerate}
+Aside from such, each layer in the final point \textit{procure measures and statistics}. For example, at system test loop, you have properties of the dataset itself. Distribution and shape or form of the model as the second loop, and so is the jump path, approaches, pathology of the reconstructed loss space. Such should be taken into consideration. The list of model is then:
+
+\begin{enumerate}[topsep=1pt,itemsep=1pt]
+    \item Polynomials, function concept set: This is where we do not require the setting of two-polynomial model configuration together and to study them using a class of different elementary function, only fit the input-output space. For example, singular $sin(\cdot)$ class that fits $\mathbb{R}\to\mathbb{R}$ is ideal, or else, or different pathological systems. 
+    \item Polynomial, adversarial $[-1,1]$ range: Construct both, only in $[-1,1]$ range for evaluation, since higher range collapses into smoother values. 
+    \item Polynomial, changing basis construction, $[-1,1]$ range: Use modules, like \texttt{numpy.polynomial.legendre}, or \texttt{scipy.special.legendre}, and so on. 
+    \item Polynomial, changing basis (plus monomial), $[-1,1]$ range, input-dropout (filter): Filter out, in the form of hidden information from the hypothesis polynomial, and not the concept polynomial, to simulate ordered information mismatch. 
+\end{enumerate}
+
+\subsection{Preliminaries on observations - \cite{schaeffer_double_2023}}
+
+Conveniently, one of the few analytical sufficient experimental analysis that we can get, is from \cite{schaeffer_double_2023} paper on demystifying double descent. While the experimental setup is rather well-defined and interesting, it is also rather limited in scope, of which we want to dive deeper into it and further the analysis that was provided. 
+
+\subsection{Linear function class $h(u)$ - \cite{lafon_understanding_2024}}
+
+Linear-linear scenario learning is one particularly well-studied case of representing double descent or not, usually through simplicity in analysis (of the similar ease of proof compared to binary classification). Models in this setting can be said to share the same \textit{parameter space} with no additional structure or scaling mask (like in monomial basis). The model that is representative of this preliminary observation is from \cite{lafon_understanding_2024}, specifically, linear regression (function approximation) with Gaussian noise, and of univariate case. Consider the family class $(\mathcal{H}_p)_{p\in\llbracket1,d\rrbracket}$ of linear functions $h:\R^d\mapsto \R$ where exactly $p$ components are non-zero ($1\leq p\leq d$), we have the following model.
+
+\begin{definition}[\cite{lafon_understanding_2024}]
+For $p \in \llbracket1,d\rrbracket$, $\mathcal{H}_p$ is the set of functions $h:\R^d\mapsto \R$ of the form:
+$$
+h(u)=u^Tw,\quad \text{for }u \in \R^d
+$$
+With $w \in \R^d$ having exactly $p$ non-zero elements. The complexity here itself can be interpreted as the effective random initialization, trimming down data of hidden details instead - this is indicated by the amount of information it observes given $d$ dimension, and $p$-hypothesis dimension. \footnote{According to the \textit{manifold hypothesis}, there are chances where the actual concept can be interpreted and mimicked by seeing that it lies on a lower-dimension manifold inside its actual expressive dimensional space. }
+\end{definition}
+Using such model, they consider the setting of minimizing the customized mean square loss, 
+\begin{equation}
+\label{eq:linear_gaussian_erm}
+\min_{w\in \R^d} \frac{1}{2}\norm{\bm{X} w - \bm{Y}}^2 \to \min_{w\in \R^p} \frac{1}{2}\norm{\bm{\Xp} w - y}^2
+\end{equation}
+of the sub-problem on $p$ cardinality, where again $p$ is the dimensionality or independent degree of freedom. This results in the following theorem that 'mimic' double descent on this linear regression model.
+
+\begin{theorem}[Double descent on linear regression - \cite{lafon_understanding_2024}]
+\label{thm:double_descent_lr}
+Let $(x, \epsilon)\in \R^d\times\R$ independent random variables with $x \sim \mathcal{N}(0,I)$  and $\epsilon \sim \mathcal{N}(0,\sigma^2)$, and $w \in \R^d$. we assume that the response variable $y$ is defined as $y=x^Tw +\sigma \epsilon$. Let $(p,q) \in \llbracket 1, d\rrbracket^2$ such that $p+q=d$, $\bm{\Xp}$ the randomly selected $p$ columns sub-matrix of X. Defining $\hat w:=\phi_p(\p{\hat w},\q{\hat w})$ with $\p{\hat w}=\bm{\Xp}^+y$ and $\q{\hat w} = 0$.\\
+The risk of the predictor associated to $\hat w$ is:
+\begin{equation}
+    \begin{split}
+        &\E[(y-x^T\hat w)^2] \\
+        & = \begin{cases}
+(\norm{\wq}^2+\sigma^2)(1+\frac{p}{n-p-1}) & p\leq  n-2\\
++\infty &n-1 \leq p\leq  n+1\\
+\begin{split}
+    &\norm{\wp}^2(1-\frac{n}{p}) \\
+    &\quad +  (\norm{\wq}^2+\sigma^2)(1+\frac{n}{p-n-1})
+\end{split} &p\geq n+2\end{cases}
+    \end{split} 
+\end{equation}
+The point $p=n$ is representative of the interpolation threshold from underparameterization to overparameterization. 
+\end{theorem}
+
+We present two parts - first are those fundamentals predicted by the theorem, and second are verifications of the theorem with our own version of testing. The first experimental setting is then conducted with fixed $d$, varying $p$ for each varying $n$ samples. Since this is a least square result, preliminary run is conducted using one-shot error-risk measure on least square closed-form approximation. Note that $p\leq d$, hence we are regarding the domain of the term underparameterized and equal parameterization setting. The result is presented in Figure~\ref{fig:theorem_double_descent_fig}
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{pdf/theorem_1.pdf}
+    \caption{Theorem~\ref{thm:double_descent_lr} behaviours on randomized setting. For this model, we have $d=100$, $\sigma = 0.5$, and variational $n$. Full test cases are for $p=[1,100]$, $n=\{12,24,36,50,76,82,90,100,106,112,121\}$ accordingly. The test function of the concept itself is the same linear model, but with different input only.}
+    \label{fig:theorem_double_descent_fig}
+\end{figure}
+
+As we see from this particular experimental result, the theorem predicted a loose, left-peak absent, double descent curve estimation for a variety of test case with more and more samples in increment. There exist some fundamental conclusion that we have about the shift of the interpolation threshold upon to $p=n$, which is reflected in the piecewise prediction. However, this pattern breaks down for $n$ higher than specific constant, for this case, starting from $n\approx 100$ to beyond. From here, at least from testing scenario, the test indicates that predictions suggest a breakdown of the double descent estimation. Beyond this, a simple semi-chaotic convergences is observed, from $n=106,112, 121$. 
+
+Interestingly, verifying this notion of easy enough to simplify it into what the statement holds under particular notion. Namely, as we find out, the above double-descent replicating formula can actually be realized by the parameter-wised error, comparing the parameter between the least-square solution and the actual concept. The formula for this is expressed by the exposed MSE on parameter function, for $\beta_{p,k}$ the coefficient value estimated for the $k$-th selected feature when the model is restricted for randomization of $p$ features, 
+\begin{equation}
+\mathrm{MSE}_{\mathrm{param}}=\left\lvert \hat w - w \right\rvert _{2}^{2}=
+\sum_{j=1}^{d}
+\left(
+  \hat w_{j} - w_{j}
+\right)^{2}
+\end{equation}
+where $\hat w_{j}$ is chosen such that it is equal $0$ for $j \notin S$, otherwise $\beta_{p,k}$ for \(S=\{i_1,\dots,i_p\}\) is the set of selected feature indices. Nevertheless, it is then found dubious why this is true, as for the original statement of \cite{lafon_understanding_2024} indicates correlation to the prediction error of the result, $x^{\top}\hat{w}$ instead. The result of evaluating $\mathrm{MSE}_{\mathrm{param}}$ is presented in Figure~\ref{fig:theorem_double_descent_fig2}.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{pdf/theorem_2.pdf}
+    \caption{Contrary to Theorem~\ref{thm:double_descent_lr}, this is the behaviours on randomized setting for standard parameter-wised mean square error measure (MSE-on-parameter). For this model, we have $d=100$, $\sigma = 0.5$, and variational $n$. Full test cases are for $p=[1,100]$, $n=\{12,24,36,50,76,82,90,100,106,112,121\}$ accordingly. The test function of the concept itself is the same linear model, but with different input only.}
+    \label{fig:theorem_double_descent_fig2}
+\end{figure}
+
+If, however, we turn our attention to the statement itself, of which refers to the prediction error $\mathrm{MSE}_{\mathrm{pred}}$, defined by the equation
+\begin{equation}
+\mathrm{MSE}_{\mathrm{pred}}
+=
+\frac{1}{n}
+\left\lVert
+  y - X_{p}\,\hat\beta
+\right\rVert_{2}^{2}
+=
+\frac{1}{n}
+\sum_{i=1}^{n}
+\left(
+  y^{(i)} - x_{p}^{(i)\,T}\,\hat\beta
+\right)^{2}
+\end{equation}
+on $h$ and $c$ accordingly, a strong case of this happens to be not following the pattern indicted by the theorem. Rather than being the interpolation point of return, $p=n$ is now the convergence point of the prediction error instead. Test result is shown in Figure~\ref{fig:theorem_double_descent_fig3}.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{pdf/theorem_3.pdf}
+    \caption{Contrary to Theorem~\ref{thm:double_descent_lr} and both figure~\ref{fig:theorem_double_descent_fig2}, this is the behaviours on randomized setting for standard parameter-wised mean square error measure (MSE-on-prediction). Especially, we do not see double descent pattern in this setting, as it is. For this model, we have $d=100$, $\sigma = 0.5$, and variational $n$. Full test cases are for $p=[1,100]$, $n=\{12,24,36,50,76,82,90,100,106,112,121\}$ accordingly. The test function of the concept itself is the same linear model, but with different input only.}
+    \label{fig:theorem_double_descent_fig3}
+\end{figure}
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.6\textwidth]{media/dimensional_descent.png}
+  \caption{Similar experiment according to setting and result of Theorem~\ref{eq:linear_gaussian_erm}, where $p$ is in the range $[1,5523]$. Here, we can see small double descent modelled exactly at the interpolation threshold, while the later region exhibit similar phenomenon as bias-variance tradeoff.}
+  \label{fig:contrarian}
+\end{figure}
+Thence, the theorem gives us two things - the interpolation point, in this setting, refers to the parameter error for their double descent behaviour. However, on the prediction results' error measure, the interpolation point correlates to the point where the defined generalization risk in such case equals zero. These patterns hold up to certain point. However, the test case is only up to $d=p$. An unexplored test case for $p>d$ indicate the surprising fact according still, to the theorem: the generalization risk takes double descent as a region with disturbance in the middle, but bias-variance appears afterward. This is illustrated in Figure~\ref{fig:contrarian}, where the same theorem is applied but in the domain which is usually called as \textit{overparameterized region}. 
+
+Such can then be seen as a prediction that double descent in certain case, can be extrapolated to be the transition between the two curvature of bias variance, or the abnormal point on the error curve measure. Such must then be verified, both in the experiment's correctness, and so on that lead to such result. Nevertheless, if true, it would mean that double descent indeed has another implication of itself. 
+
+\subsection{Extension}
+
+The current theory prompted for a more general treatment of the linear function class, as in-line with exploring reasonable existing alternatives in interpretation (\cite{nakkiran2019datahurtlinearregression}).
+
+Let us states some hypothesis about the previous experimental cases. First, is the lack of the begin-tail of the prediction on double descent of linear random cutoff features model. This can be explained informally as to be resulted from the uniformity of the operating space. Specifically, all parameters of the $\mathbb{R}^{n}$ parameter space, with respect to the dual space on such $f:\mathbb{R}^{n}\to\mathbb{R}$ projection is defined, are of the same order of magnitude. That is, for $f_{i,k}(x),f_{j,k}(x)$ of arbitrary parameter indexing on the set $k$ of shared parameter choice, and $i\neq j$ being the distinct choice, then we say $f_{i,k}(x)=\mathcal{O}(f_{j,k}(x))$ of the growth of both function on value ranges. Approximately speaking, the choice of parameter does not dramatically growth to a point of no return, like in later examples of polynomial approximation model. Such special model of multi-variable linear projection of scalar output also reinforces the numeric growth of the numerical encoding expression on the hypothesis model. The behaviour of the MSE-on-parameter, the internal risk, is also explainable using the same notion, such is that for a black-box case approximation, such linear model does not allow for average parameter deviation per approximation to be oversaturated and skewed (for example, the degree of polynomial directly counteract this, by separating expressive complexity by growth degree). How such hypothesis can be evaluated, we will have to make it for the general extension experiment, which we will have to conduct. 
+
+Let us define the more general class of linear model, denoted $\mathcal{H}_{L}$, in the following structure of the linear model. We also note that the previous linear class $\mathcal{H}_{p}$ only solves for the problem of underparameterized, hidden parameters $p'$. Let $k \in \mathbb{N}$ denote the number of input vectors, and let $\mathbf{u}_1, \mathbf{u}_2, \ldots, \mathbf{u}_k$ represent the input vectors where each $\mathbf{u}_i \in \mathbb{R}^{q}$ for $i \in \{1, 2, \ldots, k\}$. Here, $q \in \mathbb{N}$ denotes the dimensionality of each input vector, with the convention that $q = 1$ corresponds to scalar inputs (i.e., $u_i \in \mathbb{R}$).
+
+For a given dimension parameter $d \in \mathbb{N}$, we define $\mathcal{H}_{L}$ as the set of all functions $h: (\mathbb{R}^{q})^k \to \mathbb{R}$ that can be expressed in the unified form:
+\begin{equation}\label{eq:lin_extension}
+        h(\mathbf{u}_1, \mathbf{u}_2, \ldots, \mathbf{u}_k) = \sum_{j=1}^{d} w_j \cdot \phi_j(\mathbf{u}_1, \mathbf{u}_2, \ldots, \mathbf{u}_k) + b
+    \end{equation}
+where $\mathbf{w} = [w_1, w_2, \ldots, w_d]^{\top} \in \mathbb{R}^{d}$ is the weight vector, $b \in \mathbb{R}$ is the bias term, $\phi_j: (\mathbb{R}^{q})^k \to \mathbb{R}$ is a feature map for $j \in \{1, 2, \ldots, d\}$ that transforms the input vectors into a scalar feature, we consider the following important special cases, distinguished by their choice of feature map $\phi_j$. If we do not have such feature mapping of which preserves relative linearity, then we said it is the basic linear class dynamic. 
+
+\begin{definition}[Linear class, $q=1$]
+    Consider class $h: (\mathbb{R}^{d+1})^{q}\to \mathbb{R}\in\mathcal{H}_{\mathsf{Lin}}$ of all functionals of the form as Equation~\ref{eq:lin_extension}. Then, when $q=1$ of scalar observables, i.e., $u_i \in \mathbb{R}$ for $i \in \{1, \ldots, k\}$, then the function is simply as:
+    \begin{equation}
+            h(u_1, u_2, \ldots, u_k) = \sum_{j=1}^{k} w_j \cdot u_j + b
+    \end{equation}
+    for $\phi_j(u_1, \ldots, u_k) = u_j$ for $j \in \{1, 2, \ldots, k\}$, i.e. deactive feature map. 
+\end{definition}
+Such class can be extended rigorously, through a varied change in dynamics, specifically, considering the general feature representation on $\phi$. 
+
+\begin{definition}[General feature, kernel linear model]
+    Consider class $\mathcal{H}_{\mathsf{Lin}}$. For maximum flexibility, allow arbitrary feature maps $\phi: (\mathbb{R}^{d+1})^{q}\times \mathbb{R}^{k}$ for $k=\{1,2,\dots\}$ as of hidden or feature mapping processor internally. The functional form is then expressed by 
+    \begin{equation}
+            h(\mathbf{u}_1, \mathbf{u}_2, \ldots, \mathbf{u}_k) = \sum_{j=1}^{d} w_j \cdot \phi_j(\mathbf{u}_1, \mathbf{u}_2, \ldots, \mathbf{u}_k) + b
+        \end{equation}
+        for $j\leq d$ as the iterative form. 
+\end{definition}
+
+Common choices for such kernel mapping includes:
+\begin{itemize}[topsep=1pt,itemsep=1pt]
+    \item \textit{Polynomial features}: $\phi_j(\mathbf{u}) = u_{i_1} u_{i_2} \cdots u_{i_m}$ for various index combinations
+    \item \textit{Radial basis functions}: $\phi_j(\mathbf{u}_1, \mathbf{u}_2) = \exp(-\gamma \|\mathbf{u}_1 - \mathbf{u}_2\|^2)$
+    \item \textit{Fourier features}: $\phi_j(\mathbf{u}) = \sin(\boldsymbol{\omega}_j^{\top}\mathbf{u})$ or $\cos(\boldsymbol{\omega}_j^{\top}\mathbf{u})$
+    \item \textit{Neural network activations}: $\phi_j(\mathbf{u}) = \sigma(\mathbf{v}_j^{\top}\mathbf{u} + c_j)$ for activation $\sigma$,
+\end{itemize}
+thus basically hints at the generality of, at least being a \textit{linear approximation} on various hypothesis spaces, while not actually being similar. Then, our setting of sparsity being synthetically induced introduces the basin of subclasses. For any $p \in \{1, 2, \ldots, d\}$, we can then simply define the sparse subclass $\mathcal{H}_{L,p} \subseteq \mathcal{H}_{L}$ as the set of all functions $h \in \mathcal{H}_{L}$ where the weight vector $\mathbf{w} \in \mathbb{R}^{d}$ has exactly $p$ non-zero entries. Formally, per \cite{lafon_understanding_2024},
+\begin{equation}
+        \mathcal{H}_{L,p} = \left\{ h \in \mathcal{H}_{L} : |\{j : w_j \neq 0\}| = p \right\}
+\end{equation}
+The subset $S \subseteq \{1, 2, \ldots, d\}$ of indices with $|S| = p$ corresponding to non-zero weights is assumed to be fixed throughout the learning process (i.e., the sparsity pattern is predetermined). This constraint yields:
+\begin{equation}
+    h(\mathbf{u}_1, \ldots, \mathbf{u}_k) = \sum_{j \in S} w_j \cdot \phi_j(\mathbf{u}_1, \ldots, \mathbf{u}_k) + b
+\end{equation}
+where only $p$ features contribute to the final prediction. This effectively masks the data randomly, simulating the general observation-based information corruptions, without inducing specific bias like \textit{dropout}, though potentially leads to strong perturbation in cases of meaningful information threshold for different function classes.
+
+\subsubsection{Baseline investigations}
+
+Preliminary model learning then will relies on theorem~\ref{thm:double_descent_lr} for its initial prediction, using least square approximation results. The testing is adversarial and consistent, of which we have $c\in \mathcal{H}_{L}$ and $h\in \mathcal{H}_{l,p}$ for $p=d$, which can then further be modified. Because of their equal expressive capacity, respect to independent consideration of the parameter space $\mathbf{X}$, we define the complexity, which will be used later on, simply as \begin{equation}
+    \mathbb{C}(h) = \frac{1}{||\overline{\mathbf{x}}-\underline{\mathbf{x}}||}\left[1+p + q + \underset{i\in S}{\mathbb{E}} (w_{i}x_{i})+b\right],\quad S = \{p_{i}\} 
+\end{equation}
+Functional prediction on the classical theorem is presented below, for $n=\{1,\dots,241\}$ samples, and with $p\in[1,200]$. We set the target degree to the maximal 200, since the theorem is not defined on the overparameterized region. 
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{pdf/linear_gen.pdf}
+    \caption{Extension general experimentation, using the prediction made of theorem~\ref{thm:double_descent_lr} for verification. Here, $q=1$ as the general basis case of verification. }
+\end{figure}
+
+A design of the above class will require, in general, a much less straightforward implementation than the least square method, at least when it comes to circumstances and case fielding. The previous experimental result was done using a straightforward, single-time calculated theorem. To verify such, we need to adopt the non-zero class in a way that is static of the entire training procedure, and so on, for larger and larger $q$. First, we discuss of the mismatch calculation and thereof taken from the iterative error segmentation. In our cases, we have $h$ and $c$ with \textit{model mismatch}, that is, there might exist certain parameter that $h$ has, but the concept $c$ of its originality does not, and vice versa for the concept model of which the hypothesis does not have, or attain certain parameter of interest. This prompts us to make use of a type of \textbf{penalty} for such case. With respect to the mean square error on parameter, from the perspective of the supervisor, we have two ways to implement this, either of the $\mathsf{truncate}$ or $\mathsf{padding}$ mode. The truncate mode simply calculates parameter expression of those that can be compared. By default, for the learning problem to be consistent of the space, there must be at least one parameter that is not inhibited. Then, 
+\begin{equation}
+    \mathrm{MSEP}_{\text{truncate}}(h,c) = \frac{1}{k} \sum^{k}_{i=1}(p_{i}-q_{i})^{2}
+\end{equation}
+For $K=\min(n,m)$ of the overlap, or can be changed to be the set $k=\{(h_{i},c_{i})\}$ of which matches each other. Such can be changed to absolute error, if one does not want to inflate the error measure beyond its distance metric with respect to certain axis. The $\mathsf{padding}$ mode simply takes into account of all missing or surplus information and of the optimization phase. By initialization, from the hypothesis side, all surplus parameters are padded with input $1$. Hence, the measure is defined as 
+\begin{equation}\label{eq:parameter_penalty}
+    \mathrm{MSEP}_{\text{pad}}(h,c) = \frac{1}{k} \sum^{k}_{i\in k} (p_{i}-q_{i})^{2} + \lambda \left(\frac{1}{n-k}\sum^{n}_{i\not\in k}p_{i}^{2}+ \frac{1}{m-k}\sum^{m}_{i\not\in k}q_{i}^{2}\right)
+\end{equation}
+The total error then is simply the above error, is simply calculated toward all layers possible or any architectural design parameters. This design will be also used in subsequent testing, including polynomial, in which the effectiveness is enhanced significantly. 
+
+\section{The polynomial transition problem}
+
+Polynomial space is one of those famous example that is often cited of the bias-variance tradeoff, for example, in \cite{goodfellow2016deep,10.5555/2930837}. Indeed, it is considered, usually, a very effective and high-volatility construct class. Let us reiterate what we know about polynomial class. 
+
+There exists two type of elementary polynomial classification, based on their (i) variable count or (ii) its domain range. We first define the univariate polynomial function.
+
+\begin{definition}[Univariate polynomial]
+    A function of a single variable $t$ is a polynomial on its domain if we can put it in the form 
+    \begin{equation}
+        a_{n}t^{n} + a_{n-1}t^{n-1} + \dots + a_{1}t + a_{0}t^{0}
+    \end{equation}
+    where $\{a_{i}\}$ are constants, and of a singular variable $t$.  
+\end{definition}
+
+From this, we can extend to polynomial of multiple variables. In general, a function $f(x,y)$ is a \textit{multivariate polynomial} in $x,y$ if and only if it can be represented as a finite sum of terms of the form $cx^{k}y^{m}$, where $c$ is a coefficient and $k$ an $m$ are nonnegative integers. The number $k+m$ is called the degree of the term, and the degree of the polynomial $f(x,y)$ is equal to the highest degree of its own terms. We can then generalize multivariate polynomial and univariate polynomial in the same kind. 
+
+\begin{definition}[Polynomial, multivariate generalization]
+    Let $K$ be a field. We then denote $K[x_{1},\dots,x_{n}]$ the space of all polynomials in $n$ variables, $x_{1},\dots,x_{n}$. A \textbf{multivariate monomial} is then an expression $x_{1}^{\alpha_{1}}\dots x_{n}^{\alpha_{n}}$ where $\alpha_{1},\dots,\alpha_{n}$ are integers. The degree ò such multivariate polynomial is the largest degree of terms of any monomial term.
+\end{definition}
+Effectively, we can see that multivariate polynomial can take on many forms, and also unconventional forms. In order to capture any reasonable details, most of the time focus are on symmetric polynomials $f(x,y)$ in which $f(x,y)=f(y,x)$, or homogeneous polynomials in which all the terms are of the same degree. 
+
+Given such, operationally, polynomial is used for expressing other functions, due to their usefulness because of such simplicity and versatility. In fact, applications ranges, even to a polynomial basis on $n$-dimensional space, $(p_{1},\dots,p_{n})\in K[x,\dots,x_{n}]$; their growth rate being polynomial also added more to their strength of approximating fast increasing function, usually expressed and used in setting, for example, polynomial growth class $\mathcal{O}(p(x))$ in computer science. Two applications stand out for such properties: function approximation of arbitrary criteria $\ell$, or polynomial interpolation on arbitrary points. Those two are interconnected, though their objective and object of concern is much different. 
+
+We can define the application of analytical polynomial on arbitrary function by using the criteria on approximation. Usually, this is expressed in the theory of approximation, and requires a guarantee that polynomial can indeed approximate to arbitrary accuracy, of arbitrary function on specific interval. This is the statement of Weierstrass theorem. 
+
+\begin{theorem}[Weierstrass Approximation Theorem]\label{thm:Weierstrass_AT}
+    Let $f\in C[a,b]$ of all continuously differentiable functions on the closed interval $[a,b]$. Then, for every $\epsilon > 0$, there is a polynomial $p$ such that $||f-p||< \epsilon$, for $||f-p||=\sum_{i=1}^{\infty}|(f(x_{i})-p(x_{i}))|$ \footnote{We again note the disparity between $h(x)-c(x)$ or $c(x)-h(x)$ for clarity. In essence, $c(x)-h(c)$ is looking from the perspective of the concept itself. While $h(x)-c(x)$ is comparison on difference from the perspective of the hypothesis.}
+\end{theorem}
+
+
+\begin{proof}
+    This is one of the many standard proofs for WAT (\cite{Schep2007} to be specific). We begin by extending $f$ to a bounded uniformly continuous function on $\mathbb{R}$, defining $f(x)$ as to be $f(a)(x-a+1)$ on the domain $[a-1,a)$, for $f(x)=-f(b)(x-b-1)$ on the domain $(b,b+1]$, and $f(x)=0$ on $\mathbb{R}\setminus [a-1,b+1]$. There exists, in particular, $R>0$ such that $f(x)=0$ for $|x|>R$. Let $\epsilon>0$ and $M$ such that $|f(x)|\leq M$ for all $|x|$. let $\epsilon > 0$ and $M$ such that $|f(x)|\leq M$ for all $x$. Then by the above theorem there exists $h_{0}>0$ such that for all $x\in\mathbb{R}$, we have 
+    \begin{equation}
+        |S_{h_{0}}f(x)-f(x)| < \frac{\epsilon}{2}
+    \end{equation}
+    Since we also have $f(u)=0$ for $|u|>R$, we can write 
+    \begin{equation}
+        S_{h_{0}}f(x) = \frac{1}{h_{0}\sqrt{\pi}} \int^{R}_{-R} f(u)\exp{-\left(\frac{u-x}{h_{0}}\right)^{2}} \: du
+    \end{equation}
+    On $\left[-\frac{2R}{h_0},\, \frac{2R}{h_0}\right]$ the power series of $e^{-v^2}$ 
+converges uniformly, so there exists $N$ such that
+\begin{equation}
+\left|
+\frac{1}{h_0\sqrt{\pi}} e^{-\left(\frac{u-x}{h_0}\right)^2}
+-
+\frac{1}{h_0\sqrt{\pi}}
+\sum_{k=0}^{N} \frac{(-1)^k}{k!}
+\left( \frac{u-x}{h_0} \right)^{2k}
+\right|
+< \frac{\varepsilon}{4RM}.
+\end{equation}
+for all $\lvert x\rvert \le R$ and all $\lvert u\rvert \le R$, since in that case 
+$\lvert u-x\rvert \le 2R$.  
+This implies that
+\begin{equation}
+    \left|
+    S_{h_0} f(x)
+    -
+    \frac{1}{h_0\sqrt{\pi}}
+    \int_{-R}^{R}
+    f(u)
+    \sum_{k=0}^{N} \frac{(-1)^k}{k!}
+    \left( \frac{u-x}{h_0} \right)^{2k}
+    \, du
+    \right|
+    < \frac{\varepsilon}{2}.
+    \end{equation}
+
+    for all $\lvert x\rvert \le R$.  
+    If we put
+    \begin{equation}
+    P(x)
+    =
+    \frac{1}{h_0\sqrt{\pi}}
+    \int_{-R}^{R}
+    f(u)
+    \sum_{k=0}^{N} \frac{(-1)^k}{k!}
+    \left( \frac{u-x}{h_0} \right)^{2k}
+    \, du,
+\end{equation}
+    then $P(x)$ is a polynomial in $x$ of degree at most $2N$ such that $\lvert S_{h_0} f(x) - P(x) \rvert < \varepsilon/2$ for all $\lvert x\rvert \le R$. This implies that $\lvert f(x) - P(x) \rvert < \varepsilon$ for all $x \in [a,b]$.
+\end{proof}
+
+Here, $\epsilon$ is defined to be the \textit{global error} of the polynomial with respect to the arbitrary function, and with uniform approximation. Another variation works on the squared error, such that $||f-p||=\sum_{i=1}^{\infty}(f(x_{i})-p(x_{i}))^{2}$, or the mean absolute $$||f-p||=\lim_{n\to\infty}\frac{1}{n}\sum_{i=1}^{n}(f(x_{i})-p(x_{i}))$$
+Weierstrass Approximation Theorem provides tighter bound for the mean absolute error, but not the square error, or the mean square case. Nevertheless, they are natural measure on the uniform metric space $C(X)$ with measure $d(f,g)=\sup_{x\in X}|f(x)-g(x)|$. If said metric also use the $L^{p}$ metric instead, which is defined by 
+\begin{equation}
+    d_{p}(f,g) = \left(\int_{X}|f(x)-f(g)|^{p}\:dx\right)^{1/p}
+\end{equation}
+we can also see that it is weaker than the bound given by Weierstrass theorem. Generalization of Weierstrass theorem can be made by Stone-Weierstrass theorem instead, of which is state in real space as followed, though generally Weierstrass theorem is sufficed.
+\begin{theorem}[Stone-Weierstrass Theorem (real version)]
+  Let $S$ be a locally compact Hausdorff space. Let $A$ be the subset of bounded continuous real functions on $X$, or of subalgebras $\mathcal{C}(X,\mathbb{R})$ which contains a non-zero constant function, then $A$ is uniformly dense in $\mathcal{C}(X,\mathbb{R})$ if and only if it separates points. 
+\end{theorem}
+
+In the rigorous proof, or so is the proof for Theorem~\ref{thm:Weierstrass_AT}, the only objective is to establish the existence in which such polynomial might exist, but talk nothing effectively about how to obtain such polynomial, or the feasibility of such model. Indeed, in Bernstein's construtive proof (\cite{sury2019weierstrass,bernsprob2023}), the proof utilized the construction of the monomial-basis spanning sub-family of the Bernstein polynomial, and show that converges uniformly to $f$ arbitrarily defined on the mapping space. Such is a sufficient proof, in which Bernstein's family is dense in $C[0,1]$ and thus specify the polynomial structures itself; but overall, there exists no necessity proof on such matter. Such a necessity theorem does not exist, because WAT is usually expressed as \textit{far too weak} to enforce such generality. A heavier version must be used, for example, Korovkin's on the sequence of positive linear operators, but otherwise this is inherently lacking. Expressively, this is the same for the dynamics and how different families of polynomial will emerge or moves under dynamical process and true approximation. However, the theorem is still useful in its sense of the universality, thus we will still use it, but \textbf{only} so. 
+
+The setting of polynomial interpolation is rather different from the setting of function approximation. The setting of interpolation gives an $n$ samples set $\mathcal{S}$, of which in this case we restrict to $\mathbb{R}\to\mathbb{R}$. Then, we are required to fit exactly the entire dataset, such that the following setting is sufficed. 
+\begin{definition}[Interpolation]
+    A function class $\mathcal{F}$ is said to \textbf{interpolate} a distinct dataset $\mathcal{S}_{n}=(x_{n},y_{n})$ of $n$ samples, if there exists $f\in \mathcal{F}$ such that $\mathbb{E}||S_{i}-|f(x_{i})||= 0$. Such $f$ is then called the \textbf{interpolating function} of $\mathcal{S}_{n}$. 
+\end{definition}
+Under such definition, the question is then if the polynomial class $\mathcal{P}_{n}$ of any given polynomial with the highest degree $n$ is sufficed to approximate such dataset. The answer can be found using unisolvence theorem.
+
+\begin{theorem}[Unisolvence theorem]
+    Given $n+1$ bivariate data points $(x_{0},y_{0}),(x_{1},y_{1}),\dots,(x_{n},y_{n})\in \mathcal{S}_{n}\subset \mathbb{R}^{n}$, with all $x_{i}$ distinct, there exists a unique polynomial $p_{n}(x)$ of degree at most $n$ such that $p(x_{i})=y_{i}$ for $i=0,1,\dots,n$.
+\end{theorem}
+
+In determining such problem, we can also say that there exists a unique $n$-saddle point function represented here as polynomial, such that to fit $n$ points perfectly by the definition of the saddle point. The process in obtaining such formula is difficult, however, and finding the perfect interpolation polynomial would be computationally significant, and erroneous. The following defintion specifies the concept of such saddle point. 
+
+\begin{definition}[Saddle point,\cite{NieYangZhou2021}]
+    Let $X\subseteq \mathbb{R}^{n}$, $Y\subseteq \mathbb{R}^{m}$ be two sets (for dimension $n,m>0$) and let $F(x,y)$ be a continuous function in $(x,y)\in X\times Y$. A pair $(x^{*},y^{*})\in X\times Y$ is said to be a saddle point of $F(x,y)$ over $X\times Y$ if \begin{equation}
+        F(x^{*},y) \leq F(x^{*},y^{*})\leq F(x,y^{*}), \quad \forall x\in X, \forall y\in Y
+    \end{equation}
+\end{definition}
+
+Effectively speaking, each interpolation degree of the polynomial interpolation scheme admits a specific $(x^{*},y^{*})$ of which that the convexity is absolved. Thus, the reason why you require $n$ saddle points for $n$ points, or $d$-degree polynomial for $d+1$ points. The landscape of such interpolation is "wiggling", as indicted, since for any two interpolation point, the macroscopic details would be similar as Figure~\ref{fig:monotonicity_test}, of such extend for any local monotonicity on $n$ saddle points, or basically a secant line. 
+
+\begin{figure}[htb]
+    \centering
+    \resizebox{0.8\textwidth}{!}{
+        \begin{tikzpicture}[font=\footnotesize]
+            \tkzTabInit[nocadre, lgt=0.9, espcl=3, deltacl=0.35]
+                {$x$/0.35, $\mathcal{D}_1[p]$/0.5, $p_1(x)$/1, $\mathcal{D}_2[p]$/0.5, $f_2(x)$/1}
+                {$a$, $x^*_i$, $x^*_{i+1}$, $b$}
+
+                % derivative D1[p]
+                \tkzTabLine{ ,-, 0 ,+, 0 ,-, }
+
+                % p1(x) variation
+                \tkzTabVar{ +/$p(a)$, -/$y_i^*$, +/$y_{i+1}^*$, -/$p(b)$ }
+
+                % derivative D2[p]
+                \tkzTabLine{ ,+, 0 ,-, 0 ,+, }
+
+                % f2(x) variation
+                \tkzTabVar{ -/$p(a)$, +/$y_i^*$, -/$y_{i+1}^*$, +/$p(b)$ }
+        \end{tikzpicture}
+}
+\caption{\small Table of monotonicity for the saddle point landscape between $[a,b]$, for both cases of the landscape.}
+\label{fig:monotonicity_test}
+\end{figure}
+
+Polynomial regression is then one such analytical solution to function approximation task, using Weierstrass theorem as its basis. From such, we can also observe that polynomial regression, and hence polynomial interpolation, are correlated and can be reduced to each other. Polynomial regression can be reduced to interpolation via stating the criteria such that, denoting it as $\ell$, then $\ell(f,p)=0$, and interpolation can be reduced to regression via the condition that $p(x_{i})-y_{i}\leq \epsilon$ for arbitrary $\epsilon>0$. Hence, the regression formulae lie between the two extreme: the Weierstrass setting and the interpolation setting. 
+
+We then have to identify such extreme and what kind of extreme they represent. Fortunately, we know this as the problem of \textbf{transparency}, in the setting of approximation, which certainly correlates to the learning theory. According to such, the Stone-Weierstrass represents the total transparency case, where the function $f$ is known to the approximator with polynomial class. Interpolation represents total black box, where the goal is only to interpolate the sample point by itself. In between such interpretation, there exists a fundamental assumption, hence the structural assumption. 
+
+\begin{assumption}[Transparency]
+    For any bivariate pair $(x,y)$, we assume each pair depends on and originate from a based concept $y=f(x)$. 
+\end{assumption}
+
+Two kinds of knowledge is then available, which correlates to the degree of freedom the observation space can have. First is the knowledge of $f$. This knowledge of $f$ is encoded directly by the number of sample point and their distribution in certain case. Accordingly, the worst case is as followed. 
+
+\begin{conjecture}
+    If $\forall x$ there exists $y$ corresponding to such, and $(x,y)\in \mathcal{S}$, then we say we have total transparency to the concept $f$. If there exists only finite $x$ that we can have $y$ corresponding to, then we say we have limited transparency to the concept $f$. If we assume no knowledge of $f$, then we say the setting is called the \textbf{black-box setting}. 
+\end{conjecture}
+
+Secondly is the action on the dataset itself. One of the main assumption that is usually observed is that 
+
+\begin{assumption}[Fallacy]
+    We assume there exists every specific bivariate pair $(x_{i},y_{i})\in f[\mathcal{S}_{n}]$, such that $f(x_{i})=y_{i}$. 
+\end{assumption}
+
+However, usually, this is not the case, as we have \textbf{noise} in addition from the dataset. The origin of the noise cannot be tracked. However, we can interpret what happens when such noise is introduced to the dataset. The noise transitions the transparency of the learned setting, on the field $\mathbb{R}$, by utilizing the dense property of the real space. Assuming we operate on $\mathbb{Z}$. Then, each discrete noise will introduce abnormality point such that no function on $\mathbb{Z}$ will be able to match, up to certain distance on $\mathbb{Z}$. This is because on such space, there exists no point $x_1, x_{2}$, for example, that lies between $d(x_{1},x_{2})=1$. If the noise is randomized on $\pm 1$, then there will exists no function that can approximate such disparity better than a random fluctuating function. However, on $\mathbb{R}$, the real number is inherently dense, such that there will always be certain point $x_{3}$ such that $x_{3}\in [x_{1},x_{2}]$, by the density of real number. By the distance metric on $\mathbb{R}$, we define $d(X,Y)=|X-Y|$ for distance between two data points. Noise intrinsically increases such distance, such that $d'(X,Y)> d(X,Y)$. Hence, the space in which density can appear increase, thus there then exists more fluctuation, and thus more uncertainty between such two points. This notion can be increased from local uncertainty to global uncertainty, hence the \textit{noisy dataset}. 
+
+We then can measure or aggregate some properties of the dataset itself, including the \textbf{uncertainty} of the dataset. We define the simple uncertainty of the dataset as followed. 
+
+\begin{definition}[Dataset uncertainty]
+    Given a closed interval $[a,b]$, for the sample set $\mathcal{S}_{n}=(X,Y)\in [a,b]$, the uncertainty $\mathcal{U}(\mathcal{S}_{n})$ is defined as 
+    \begin{equation}
+        \mathcal{U}(\mathcal{S}_{n}) = \left[ \underset{x_{i}\in X}{\mathbb{E}}\Big( x_{i+1} - x_{i} \Big)^{2} + \underset{y_{i}\in Y}{\mathbb{E}} \Big( y_{i+1}- y_{i} \Big)^{2} \right]^{1/2}
+    \end{equation}
+    We assume $X,Y$ are totally ordered sets. 
+\end{definition}
+
+Hence, the assumption of fallacy assumes $\mathcal{U}(\mathcal{S}_{n})=0$, though in reality it is often $\mathcal{U}(\mathcal{S}_{n})>0$. We would like to clarify, that such definition is currently reserved for only polynomial-like functional class; though, this can be extended pretty easily for any $\mathbb{R}^{n}\to\mathbb{R}^{m}$ functional concepts. Furthermore, it is \textit{operational}, in the sense that it measures the numerical encoding inherent uncertainty, of which is also the space used of algorithms traversing in stochasticity. It affects cross-validation, gradient-based algorithm path finding, and roughness of the learning processes. Certain concerns must also be addressed, such as the definition, which assumes \textit{sequential processing} and pair-wise measurement (which can also be extended to tri-fold measurement and so on). Indeed, modern deep learning use parallel batch processing, mini-batch sampling, or distributed learning across devices for optimization. Nevertheless, such includes sequential-based learning optimization, and so on, where mini-batch still inherently includes batch ordering; algorithms like RNNs and so on also are sequential. The computational cost per dataset, if not, is $\mathcal{O}(n)$ after initial order, or with mundane immediate measurement on the way that the dataset was configured at start, since the system and stochastic algorithms sequentially go through them.
+
+Certain others aspects can be expected to be clarified. While indeed, this is order-dependent measure, and one might expect to go against it and say it is not real dataset property, but the key point is that dataset are measurements, captured and recorded into the encoded space that is used upon the learning regime (supervised or semi-supervised or so on), or the learning algorithms. In a classical algorithmic world, such must be done in discrete steps, and hence ordering strongly matters as well as the processing pipeline relevant to it. There exists natural ordering of data within noise $\epsilon$, because if now, the projection on embedded space $\mathbb{R}^{n}\times \mathbb{R}^{m}$ of any given concept functional $c$ holds no value, as the function itself, plus the distribution, with respect to the encoding space where the function mapping is defined already contains structural information encoded within 'value range' as the most basic form. A weaker posture we can adopt is that it is an operational uncertainty measure, given presentation order to a finite discrete processing machine, and is indeed \textit{pre-training} diagnostic. There is also the issue in which $X$ and $Y$ might not be measurable or comparable. Indeed, since the range of value can jump intermittently between different concept class and form, but even then, it will only highlight the disparity between the contributing terms. For example, if we have three pairs, $(130,1)$, $(150,1)$ and $(225,0)$ as the data, then the volativity is not that bad, and stable on $Y$, but \textit{very high on $X$}, as there are missing information in large gap. From the machine-algorithmic, this matters. if we take the $130,225$ points as a case of shuffling, then the machine experiences a 95-to-1 volatility ratio. Nevertheless, one can attempt a normalized metric, i.e. 
+\begin{equation}
+    \mathcal{U}_{\mathrm{norm}}(\mathcal{S}_{n}) = \sqrt{\mathbb{E}[(\Delta x_{i})/r(X)]^{2}+\mathbb{E}[(\Delta y_{i})/r(Y)]^{2}}
+\end{equation}
+for relative jumpiness accorss different problems with normalized morphism. 
+
+With this, we can quantify how the dataset is behaving on the scale of the bivariate form typically seen. Noise intrinsically increases this distance, usually by the $y$-axis. This dataset uncertainty increases with multivariate dataset, for example, $(\mathbf{x},y)$ of $\mathbb{R}^{n}\to\mathbb{R}$. We call the new metric as the \textit{empirical uncertainty metric}. The basis of such argument on the concept of a tradeoff comes from \cite{nakkiran2019datahurtlinearregression}, in which linear regression is affected, at least in such setting and consideration, such that dataset will both hurt and benefit the learning process. 
+
+Overall, however, this allows us to state of the following theorem: 
+
+\begin{theorem}[Separation encoding]
+    We fix the encoding space on $\mathbb{D}=\mathbb{R}^{q}\times\mathbb{R}^{p}$ for a $(q,p)$ conjunction space. For $\mathcal{S}_{n}\in\mathbb{D}$ of $n$ samples $(x_{i},y_{i})$, we assume such set is output from an oracle $EX(\theta)$. Then, for a diffused set $\mathcal{S}_{n}'=\mathcal{S}_{n}+\eta$, for $\eta=\mathcal{D}\approx \mathcal{N}(0,\lambda\sigma^{2})$, then
+    \begin{equation}
+        \underset{\eta \in \{\mathcal{N}\}}{\mathbb{E}} [\mathcal{S}_{n}'] \geq \mathcal{U}(S)
+    \end{equation}
+    for $\lambda \sigma^{2}$ the $x$-aware deviation. Fix $\lambda=1$ for consistent enclosure $0$-based error, or $\mathcal{N}(\cdot,\sigma^{2})$ for consistent data deviation. 
+\end{theorem}
+
+\begin{proof}[Proof 1. Simple proof]
+    Using normed metric, $\mathcal{U}_{\mathrm{norm}}$. For noised data, that is, \begin{equation}
+        \mathcal{S}_{n}' = \{(x_{i}+\eta^{(x)}_{i}, y_{i}+\eta^{(y)}_{i})\}^{n}_{i=1}
+    \end{equation}
+    where the noise vector on encoding space is orthogonal, such that \begin{equation}
+        \eta_{i}=(\eta_{i}^{(x)},\eta_{i}^{(y)})\sim\mathcal{D}\approx \mathcal{N}\left(a,\lambda\mathrm{Cov}(\eta)\right)
+    \end{equation}
+    where we can fix $\mathcal{D}=\mathcal{N}(a,\lambda\sigma^{2})$ for $a=0$ as normalized around the zero value. If we assume independent noise, then we have the covariance as 
+    \begin{equation}
+        \lambda \mathrm{Cov}(\eta)= \lambda\begin{pmatrix}
+            \sigma_x^2 I_q & 0 \\
+            0 & \sigma_y^2 I_p
+        \end{pmatrix}
+    \end{equation}
+    We can simplify slightly, as to have the case in consideration that $\sigma^{2}_{x}=\sigma^{2}_{y}=\sigma^{2}$, then the notation would effectively be such that $\lambda\sigma^{2}I_{d+p}$ is enough. The uncertainty metric then should be expressed as 
+    \begin{equation}
+        \begin{split}
+            &\mathbb{E}[\mathcal{U}(\mathcal{S}_{n})^{2} ] \\
+            &= \mathbb{E}\left[\underset{x_{i}\in X}{\mathbb{E}}\Big( x_{i+1} - x_{i} \Big)^{2} + \underset{y_{i}\in Y}{\mathbb{E}} \Big( y_{i+1}- y_{i} \Big)^{2}\right]\\
+            & = \mathbb{E}_{i}
+        \end{split}
+    \end{equation}
+\end{proof}
+
+Thirdly, is the treatment on such information. Even though information is known, such as from the assumption of transparency and the fallacy conjecture, it relies on the method in which the model uses that make use of such information. Polynomial interpolation effectively removes information about transparency, and thus the interpolation setting is a kind of \textbf{black-box absolute setting}. This setting is \textit{extremely brittle}, as to see that if $y_{i}$ is slightly wrong due to measurement noise, the interpolant oscillates wildly, which is explained by Runge phenomenon (\cite{Runge1901,CorlessSevyeri2018,AMC2009RungeDivergence}). Probability then arises from such setting naturally, though this particular degree of probabilistic setting must be quantified, which comes from the process that the model simulates upon. Regression is inherently not probabilistic, but treatment about the probabilistic assumption, for example, such that $(X,Y)$ inherently as random variables. We can then separate this into three parts - the data-level probabilistic layer (data uncertainty), the model-level layer, and the algorithm-layer that determines the solution solver within such model. We can define that as followed. 
+
+\begin{conjecture}[Probabilistic layer]
+    Given a learning setting with dataset $\mathcal{S}$ of bivariate pairs, $h\in \mathcal{H}$, $c\in \mathcal{C}$ as the hypothesis and concept, we have the following conceptual probabilistic setting:\footnote{Currently, we have no way to \textbf{quantify} the `probabilistic degree' of the system setting itself}
+    \begin{enumerate}
+        \item Data-level probability: Sampling assumptions (observation sample points) such that there exists the distribution $\mathcal{D}\sim (X,Y)$, intrinsic data uncertainty $\mathcal{U}(\mathcal{S}_{n})$. 
+        \item Model-level probability: Structure of the dataset is controlled by the concept structure $\{\theta\}\in c$, $c$ is modelled as a target sampler $c\equiv \mathcal{D}$, knowledge about the structure of $c$, Bayesian prior-posterior assumptions, $\mathbb{P}(Y\mid X, \{\theta\})$. For Bayesian polynomial regression, the model-level probability is formulated as \begin{equation}
+            \mathbb{P}(Y\mid X) = \int \mathbb{P}(Y\mid X,\theta)\mathbb{P}(\theta)\: d\theta, \quad \mathbb{P}(\theta_{j}) = \mathcal{N}(0,\sigma^{2})
+        \end{equation}
+        of which assumes aleatoric uncertainty and epistemic uncertainty from the weight. 
+        \item Algorithm-level probability: Stochastic method, decision conditional (dropout, MCMC), ensembles criteria, Monte-Carlo initialization, variational inference. 
+    \end{enumerate}
+\end{conjecture}
+
+Dynamically, in this paper, we would like to investigate this particular junction between uncertainties, to see what happens when the model transparency, the treatment of data, and so on, that exhibits the observations that we would receive from the model itself. The experimental details will infer such result. 
+
+Generally, we would be entitled to see particular trajectory specifically designed around the point of interpolating match, or $n=m$ of $n$ degree of freedom, technically, and $m$ data points. After this point, there exist two possibility of dynamic - either the model dilutes, in which case result in \textit{double descent}, or the model fluctuate strongly afterward, leading to \textit{bias-variance emergence} again later on. This conclusion however, would have to be analysed within the current framework of the possible interjection to its fluctuation strength. For example, in the monomial basis $\{x^{i}\}^{n}$, any given fluctuation contributes to the entire polynomial. In such case, fluctuation of the other $[0,n-k]$ of arbitrary $k$ and large enough $n$ would be unaccounted for by the scale. Conversely, restrict them to $[1,0]$ range will reveal something about the system, however will destroy particular properties of the prediction, which is not recommended. Nevertheless, we must conduct the test before giving in any reasonable conclusion.
+
+Previously, we said that we did indeed focus on the interpolation problem. Now, assuming we have given the interpolating algorithm $\mathcal{A}$ to approximate the interpolation, what will this look like? Firstly, solving this is \textit{very computationally expensive}, because it is a dense, $(n+1)\times(n+1)$ linear system, and even more so if we consider the overparameterized outcome. However, this can be reduced further down if we attempt to solve them using convergence bound, but will be still very expensive. That and incremental soft interpolation is somewhat out of the question since it will be kind of the same. Aside from the insight, we would still have to know what to do. Then there exists two ways - we have some version of this to optimize of simply evaluating by gradient descent optimization, or, we can use somewhat analytical fit for the case of soft interpolation modification. 
+
+A theory on such problem can be obtained of its mechanics, as will be a fairly intuitive way in consideration of the theory of interpolation, as well as the technique of interpolation by itself. For a fixed-range interpolation threshold problem, a hard-encoded interpolation solution requires $n$-degree polynomial, of which has $n+1$ degree of fitness, to fit $n+1$ distinct points. Suppose all points are distinct of the set $S$ which is finite, then this is the case. If we switch to the problem of interpolation but induce a more forgiving bound, there exists a possibility that it induces a relative \textit{density averaging path} for the points, especially if we are considering the case where $p>n$ for $p$ saddle points or degree of fitness, and $n$ the number of point to interpolate. In a more nuanced formulation, we have
+
+\begin{equation}\label{eq:soft_hard_interpolation_role}
+\mathsf{Flatten}\left(\begin{bmatrix}
+1 & x_0 & x_0^2 & \cdots & x_0^p \\
+1 & x_1 & x_1^2 & \cdots & x_1^p \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+1 & x_p & x_p^2 & \cdots & x_p^p \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+1 & x_n & x_n^2 & \cdots & x_n^p
+\end{bmatrix}_{n\times p}
+\begin{bmatrix}
+a_0 \\
+a_1 \\
+a_2 \\
+\vdots \\
+a_p
+\end{bmatrix}
+- 
+\begin{bmatrix}
+f(x_0) \\
+f(x_1) \\
+f(x_2) \\
+f(x_3) \\
+\vdots \\
+f(x_n)
+\end{bmatrix}\right)
+\leq \epsilon
+\end{equation}
+or equivalently, $\mathsf{Flatten}(\mathbf{X}_{n\times p}\mathbf{w}_{n}-\mathbf{Y}_{n})\leq \epsilon$ where $\mathsf{Flatten}(\cdot)$ is the compression of vector to scalar, or so $\mathsf{Flatten}: \mathbb{R}^{n}\to \mathbb{R}$. This essentially is the problem of solving $n$ points approximation, toward using only $p$ saddle points available. If $\epsilon =0$, it is well known that interpolation is impossible. However, if $\epsilon\ne 0$, there are possibilities, depends on the shape of the dataset, that there will exist a data-dependent property or more that indict a particular \textit{density preference} toward those saddle points - or rather, the act of density averaging. This is reflected rather implicitly in the structure itself. In machine learning, the error measure is usually the mean average, such is to say that the criterion now would look more like $\mathbb{E}\Big[\mathsf{Flatten}(\mathbf{X}_{n\times p}\mathbf{w}_{n}-\mathbf{Y}_{n})\Big]\leq \epsilon$. Formally, we have the following hypothesis
+
+\begin{hypothesis}[Polynomial double descent]\label{hyp:hypothesis_poly_dd}
+For a polynomial $\{a_{i}x^{i}\}_{n}$ on Vandermonde basis, approximating on the set $\{(x_{k},y_{k})\}_{m}$, then
+\begin{enumerate}[topsep=1pt,itemsep=1pt]
+  \item For $n<m$, we expect the polynomial form factor to be \textit{inherently sparse}, such that for an iterative approximation, for each $p_{i}$ saddle point of the polynomial expansion form, there exists an $\epsilon$-ball $B_{\epsilon}$ for $\epsilon>0$ with at least one data point satisfying $(x_{k},y_{k})\in B_{\epsilon}$. 
+  \item For $n=m$, we expect the polynomial to be able to fit all points, up to hard interpolation threshold such that $\hat{R}_{S}\approx 0$. 
+  \item For $n>m$, we expect the polynomial form factor to be \textit{locally dense} then turning to \textit{globally dense}, over random ensembles. That is, for every point $(x_{k},y_{k})$ there exists a $\beta$-ball $B_{\beta}$ such that there is at least one saddle point of the polynomial belong to the ball. 
+\end{enumerate}
+\end{hypothesis}
+
+The shift that will be hypothesized to appear here is expected to be from sparse in the polynomial term sense, out to globally dense with enough model complexity, over an iterative process. One also main point of clarity is, at certain point right now, we haven't discovered the effect of error deviation, yet. For such, we theorize the following. 
+
+\begin{conjecture}[Double descent]
+  Double descent happens, for a polynomial class model $h_{n}\in\mathcal{H}_{p}$, is upper bounded to certain error deviation $\epsilon>0$ from the mean only of the generalization (test) dataset verification. 
+\end{conjecture}
+
+\begin{figure}[htb]
+    \centering
+  \includegraphics[width=0.7\textwidth]{media/diagram_poly_dd.png}
+  \caption{\small\textbf{Intuition of Hypothesis~\ref{hyp:hypothesis_poly_dd}}. Effectively, in the overparameterized range $(p>n)$, the problem turns into soft interpolation, where the polynomial is possible to be dense enough such that relative error remains internally low. This can also happen if the dataset itself is intrinsically large.}
+\end{figure}
+
+That is, the disparity between the test and training dataset helps in such regard. If the two dataset is partitioned in the sense that their deviation is practically the same (which can be done using synthetic generation for a control group), then this will amount to not much of it. After all, it will be the consequence of the algorithm and error landscape interpretation used. 
+
+For this, we propose another speculative observation beside such, as to consider adjourned transform of the Vandermonde basis to the Newtonian or similar basis, in which the effects and motion can be easily observed, as least easy. This is because aside from mapping down to $[-1,1]$, normal polynomial on monomial basis gives suboptimal result because of intrinsic high-degree term domination. This will become more relevant later on in the analysis. 
+
+\subsection{Structure}
+
+For mathematical analysis and experimental design, we would like to state the current main structure of a polynomial model. Specifically, in such example, we are concerned of the shallow polynomial neural network, of which is stated as such in \cite{arjevani2025geometryoptimizationshallowpolynomial}. Notice that it is defined on the normal Vandermonde basis, where an expression of such polynomial model under Newtonian or Lagrangian basis is not so clear-cut of an analysis. 
+
+\begin{definition}[Shallow polynomial neural network]\label{def:poly_structure1}
+    A shallow polynomial is a neural network of one layer that are functions $f_{\mathcal W}$, defined such as:
+$\mathbb R^d \rightarrow \mathbb{R}$ of the form
+\begin{equation}\label{eq:network_model} 
+    \begin{split}
+        &f_{\mathcal W}(x) = \sum_{i=1}^r
+\alpha_{i} (w_i \cdot x)^d,\\  
+&\mathcal W = (\alpha,w_1,\ldots,w_k) \in
+\mathbb{R}^r \times (\mathbb{R}^{n})^k,
+    \end{split}
+\end{equation} 
+where $d \in \mathbb{N}$.
+\end{definition}
+
+A modification is then available, in which we simply add $b(\cdot)$ for random initialization process. We note that this introduces certain flexibility to the model initial interpolation curvature.   
+\begin{definition}[Polynomial neural network, general]\label{def:poly_model_test}
+    The polynomial network based on Model~\ref{def:poly_structure1} is modified as 
+    \begin{equation}
+        f_{\Theta}(x) = \sum_{i=1}^{d} \theta_i \left( \mathbf{w}^\top x \right)^i + b,
+    \end{equation}
+    where $\Theta = (\{\theta_{i}\},\{w_{k}\},b)$.
+\end{definition}
+
+From this, we can state the model within a testing scenario listed as such, to fully capture the structural foundation of the related testing model class. For the notion of complexity, naively, we employ two kinds of complexity measure. First is the usual complexity measure via parameter counts. Second, is the expressive complexity on the basis of the linear transformation space. That is, an expressive complexity that take into account the fact that $\mathcal{O}(wx^{n})$ will always be stronger than $\mathcal{O}(wx^{n-1})$ for $x>1$. All of which can be contained in a singular expression, as seen in definition~\ref{def:pec}. However, we would have to analyse what is happening inside the metric itself. The model itself is illustrated in Figure~\ref{fig:plm}.
+
+\begin{table*}
+  \centering
+  \footnotesize
+  \begin{threeparttable}
+    \caption{Controllable parameters and hyperparameters for polynomial class analysis}
+    \label{tab:polynomial_test}
+    % three columns: adaptive widths
+    \begin{tabularx}{\textwidth}{ L{0.25\textwidth}
+                                     L{0.2\textwidth}
+                                     >{\RaggedRight\arraybackslash}X }
+      \toprule
+      \textbf{Information} & \textbf{Notation} & \textbf{Details} \\
+      \midrule
+      Hypothesis model
+        & $h[\mathcal{W}_{h},\mathbf{H}_{h}]\in \mathcal{H}$
+        & Hypothesis model. For simplicity, it contains $\mathcal{W}$ as the configuration parameter set, and $\mathbf{H}$ the fixed hyperparameters \\
+      \addlinespace[1pt]
+      Concept model
+        & $c[\mathcal{W}_{c},\mathbf{H}_{c}]\in \mathcal{C}$
+        & Concept or target model. Similar configuration as the hypothesis model \\
+      \addlinespace[1pt]
+      Complexity measure(s)
+        & $\{\mathbb{C}(\cdot)\}$
+        & Set of complexity measure of choice for any arbitrary model taken in. \\
+      \addlinespace[1pt]
+      Sample count
+        & $m$
+        & The number of sample available for hypothesis model of $c$, for $m=|\mathcal{S}|$ dataset\\
+      \addlinespace[1pt]
+      Hypothesis dimension (hyperparameter)
+        & $[d_{h}]$
+        & An explicit hyperparameter contains the list of all in-testing polynomial degree for the hypothesis model. \\
+      \addlinespace[1pt]
+      Concept dimension (hyperparameter)
+        & $d_{c}$
+        & An explicit hyperparameter of the concept's true dimension. Theorized such that $d_{c}=d_{h,i}$ for arbitrary $i$ will reduce to possible low-error problem.\\
+      \addlinespace[1pt]
+      Data noise
+        & $\epsilon_{\mathcal{S}}$
+        & Dataset-wide noise with relative strength to the value of the sample point. This is to reduce vanishing noise with higher-degree polynomial sample points. \\
+      \addlinespace[1pt]
+      Learning parameters
+        & $\mathrm{epoch}, lr, \mathrm{bs}$
+        & Two main parameters for gradient-descent, iterative-based algorithm - the epoch, the learning rate, and the batch size.\\
+      \bottomrule
+    \end{tabularx}
+
+    \begin{tablenotes}
+      \footnotesize
+      \item[] \textbf{Notes:} We output to $\{\mathbb{E}[\ell]\}$ as the expected value of the error measure on $h,c$. There are a few things possible, but under approximation setting, we use MSE-on-parameter and MSE-on-prediction for two different insights: internal representation and external representation. 
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table*}
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.5\linewidth]{media/diagram_poly_model.png}
+    \caption{Illustration of polynomial model in definition~\ref{def:poly_model_test}.}
+    \label{fig:plm}
+\end{figure}
+
+In the equation for expressive complexity, the first term is the normalized linear parameters $\theta_{i}$ fixing and controlling the shift of the polynomial inning parameter, the second term is the sum of weight-aware complexity with degree factor, and the degree factor over operating range $||x_{max}-x_{min}||$ of the dataset, for the degree complexity. The final term is the last weight-aware complexity for the dominating degree $n$ of the polynomial function. Let us begin with the gauge on coefficient norm, i.e. the term $||\alpha_{d}||+1$. Here, we set $1$ as baseline, and the arbitrary norm on $\alpha$ there coefficient effect. The terms coefficient in this expression matters because, for a function $f:[a,b]\to\mathbb{R}$, the Lipschitz constant $L$ for polynomial $f$ goes by 
+\begin{align}
+L_{p} 
+&= \sup_{x \neq y} \frac{|f(x) - f(y)|}{|x - y|} \\
+&= \sup_{x \neq y} \frac{|f_{\Theta}(x) - f_{\Theta}(y)|}{|x - y|} \\
+&\leq \sup_{x \in [a,b]} \left\lVert f_{\Theta}'(x) \right\rVert_{2} \\
+&= \sup_{x \in [a,b]} \left\lVert \sum_{i=1}^{d} i\,\theta_i\,(\mathbf{w}^\top x)^{\,i-1}\,\mathbf{w} \right\rVert_{2} \\
+&\le \lVert \mathbf{w} \rVert_{2}\; \sup_{x \in [a,b]} \sum_{i=1}^{d} i\,|\theta_i|\,|\mathbf{w}^\top x|^{\,i-1} \\
+&\le \lVert \mathbf{w} \rVert_{2}\; \sum_{i=1}^{d} i\,|\theta_i|\,\max\!\big\{ |\mathbf{w}^\top a|,\,|\mathbf{w}^\top b| \big\}^{\,i-1}.
+\end{align}
+
+
+Where we note that $f_{\Theta}(x)=\sum_{i=1}^{d} \theta_i \left( \mathbf{w}^\top x \right)^i + b$, and $||\mathbf{w}||_{2}$ is the Euclidean $\ell^{2}$ norm. The magnitude of $f_{\Theta}'(x)$ depends directly on the coefficient size $\alpha_{i}$, and also on how big is $x$ on the domain. All of this mean for large expression and value range on $f_{\Theta}$, the Lipschitz constant of that model is accordingly large. Defining $\alpha$-norm that way is a cheap proxy for Lipschitz constant, since it gauges stability, and rate of change of the functional expression itself. 
+
+\begin{definition}[Polynomial expressive complexity]\label{def:pec}
+    For $x>1$ or $\mathbf{x}_{i}>1$ of $\mathbf{x}\in\mathbb{R}^{n}$ as input. Denote the polynomial class as $\mathcal{P}_{n}$ of their highest degree $n$, then we define the total expressive complexity of $p\in \mathcal{P}_{n}$ as followed.
+\begin{equation}
+    \begin{split}
+        &\mathbb{C}_{E}(p)\\
+& \quad = \mathbb{E}\!\Bigg[
+\lVert \alpha \rVert_{d} + 1\\
+& \quad + \frac{\sum_{i\in S\setminus\{p_{n}\}} w_i\,i}{\|p\|-p_{n}}\\
+&\quad + \frac{1}{||\overline{x}-\underline{x}||}\!\left(
+\frac{\sum_{i\in S} i}{\lVert p\rVert } + w_{n}n
+\right)
+\Bigg],
+    \end{split}
+\end{equation}
+    where $S=\{p_{j}\}$, $||p||$ denotes the amount of different degree separable terms and $||x_{max}-x_{min}||$ is the observable range of the dataset. 
+\end{definition}
+
+\subsection{Scenario schema}
+The scenario schema will be as followed. The following set of parameters are required for controlling the testing case, aside from different system measures. For parameter error, we reuse equation from Definition~\ref{def:pec} but with degree aware terms. This is covered in Table~\ref{tab:polynomial_test}.
+
+We note a few problems with both interpolation interpretation and polynomial regression of higher-degree terms. Firstly, is the intrinsic interpolation error and numerical, software issue error. Higher degree polynomial can be represented as solving for a wide Vandermonde system of $n$ degrees for $m$ sample points. Using monomial basis for interpolation, either for soft interpolation also exhibits instability and numerical garbage within the operations, as indicated by \cite{Shen_2025}. They can also be a potential source of double descent, as the majority of models tested around this range are not coded effectively for handling large data operations as such, and artifacts from such choices might be taken as the indication of double descent in some particular cases. 
+
+Aside from it, and aside from the fully-connected case, we have the particular testing scenario that can be expected of the ease of implementation. First, is the mundane implementation that is of gradually increasing degree mismatch. That is, for polynomial of $h_{p}$ and $c_{p}$, one requires only $d_{h}$ and $d_{c}$ to figure out the structure as there will exist exactly $d+1$ with the constant term, terms of which of finite many degrees. The second case is where for $p$ chosen randomly, such that aside from such $p$ entry, then the other degree or nodes of input are simply scattered dependent nodes, linear algebraically. That is, for a uniformly constructed $d$-degree network, choose at random $p$ particular degree to be fixed, while the other of $d-p$ are assigned randomly of belonging to some $p_{i}\in \{p\}$ nodes given the random choice on $p$ above. Linearly algebraically, scattered and dependent nodes then mean for example, node $4$ might use node $35$'s degree, and vice versa (if they were both non-fixed). The dependency structure is deliberately randomized rather than organized. For overparameterized case, we simply design the hypothesis by the following line of justification. For a mapping $\mathbb{R}^{d}\to\mathbb{R}$, the mapping $\mathbb{R}^{d+n}\to \mathbb{R}$ for $n= 1$ requires additional information, since the source provision does not contain information to handle additional $n$ dimensional input. Hence, we design it the following. For the hypothesis $h$, such unit of which does not fit to the original input space, the \textit{internal input space} that $h$ `hypothesize' contains, for the other $n$ entries, $q\leq d$ per unit input. That is, each input of $n$ overparameterized case receives at random, $q$ inputs can be received, for example, $w_{n1}x_{j}+w_{n2}x_{k}$ for $k,j$ specific input numbering. By the simplicity argument, then $q=1$ for the simplest case. However, this creates a skewed polynomial network, of which informally, the provided structural bias or additional information, is the fact that there exists overparameterization. To prevent this, instead, the final case considers the most general structure --- for each unit, each one can take $q$ inputs controlled as hyperparameter of the network, then the set $\{p\}$ of chosen degree influence their degree choice, and is uniform if the sampling process it is not included. 
+
+\clearpage
+
+\section{Graph Neural Network (GNN) - \cite{shi2024homophilymodulatesdoubledescent}}
+To confirm and observe particular insights on the problem, experimentally, we focus more on the results given by the analysis on a particular type of neural network, the graph neural network (GNN). However, preliminary experiments are also needed, for example, with various complexity and function class, though most of them are algorithm based on ERM, which typically can be called derivation of gradient descent. 
+
+According to major literature, for example, \cite{shi2024homophilymodulatesdoubledescent}, double descent is absent usually in GNN, for example, GCN networks. However, in fact, it is relatively unstable, as for certain papers and researches point out its existence and variation of it being ubiquitous to the network, some reports none of such occurrence in their experiments. Thereby, our first strategy would be to encounter this absence, and the way to force it to exhibit itself, if the phenomenon is perceived non-existent. In experiments by \cite{shi2024homophilymodulatesdoubledescent,buschjager_generalized_2020}, we know that graph network are inherently sensitive to data configuration. The graph MPNN in \cite{GRP_Hamilton}, for example, depends heavily on the configuration of data to present its neighbourhood aggregation for each layer. However, we would like to first claim the dichotomy of bias-variance holds for it to be presented as the first interpolation point.
+
+We would use, and utilizes a hybrid setting between MPNN, GCN and GAN (attention network), to configure out network in itself. However, heterogeneous network - either consists of only MPNN or GCN layers, is somewhat preferred for ease of analysis, and potency of experimental learning control. Because double descent lies between the concept of test error and training error, either supervised or semi-supervised would be used. According to \cite{shi2024homophilymodulatesdoubledescent}, semi-supervised setting gives better flexibility and overall 'range' of operation. Other than GNN, certain more abstract, 'vanilla' neural network formalism as specified in the above section treatment will also be conducted, in a supplementary manner. 
+
+\subsection{Methodolody}
+
+Because of the irregularity in the statement that GNN does not exhibit any phenomena that is related to double descent \cite{shi2024homophilymodulatesdoubledescent}, we would be investigating this phenomenon the most. This particularly means that a lot of our focus will be to analyse the GNN network by itself. 
+
+\subsubsection{Quick introduction to graph theory}
+
+A \textbf{graph} $G$ is a 2-tuple $(V,E)$ where $V$ is the set of \textbf{vertices}(or nodes) and $E$ is the set of \textbf{edges}. The set $ne[n]$ stands for the neighbour of vertex $n$, while $co[n]$ is the set of edges that have $n$ as vertex. Edge is often denoted by $(u,v)$ for vertices $u$ and $v$. We said that $(u,v)$ \textbf{joins} $u$ and $v$, and it can be directed or undirected. A graph is called a \textit{directed graph} if all edges are direct or \textit{undirected graph} if all edges are \textit{undirected}. The \textbf{degree} of vertices $v$, denoted by $d(v)$, is $t$ number of edges connected with $v$.
+The graph data can be loosely (not specifically in cases) as followed. Let $\mathcal{G}=(\mathcal{V},\mathcal{E},\mathcal{W})$ be a graph, where $\mathcal{V}=\{1,\dots,n\}$ is the set of nodes, $\mathcal{E}=\{1,\dots,M\}\subseteq \mathcal{N}\times \mathcal{N}$ is the set of edges, and $\mathcal{W}: \mathcal{E}\to \mathbb{R}$ is the edge's weight function. There is also the optional weight $\mathcal{W}': \mathcal{V}\to \mathbb{R}$ for each vertex. In this case, it is for certain problem like TVP, where all cities have certain properties for the path. We say that a data sample $\mathbf{x}$ is a graph data, if its entries are related through the graph $\mathcal{G}$. 
+
+Our 2-tuple $(V,E)$ and the collection of all such tuple forms a group of \textit{simple graph} (undirected) and \textit{directed graph}, where the only change is that $(u,v)\neq (v,u)$ for any given edge on a graph. From such, a typical setting, if we are to apply a machine learning setting on graph-theoretical problems, can be described as the following
+
+%\begin{definition}[Graph-theoretical edge learning]
+%    Given a graph $G(V,E,\psi_{E})$ for $\psi_{E}$ the edge proprietary classification, there exists an encoding space %$\mathsf{ENC}(G)$ that the graph lives in, and a function $\phi: (E,\psi_{E})\to (E',\psi_{E}')$ such that to change %the configuration of the connector space. The \textbf{learning problem} is for a learner $\mathcal{L}$ to learn a %function $\phi$ that is appropriate of the intended use case, such that for any given data $D(V^{*},\odot)$, either:
+%    \begin{enumerate}
+%        \item Assign $E^{*}$ and transform to $\psi_{E}^{*}$. 
+%        \item For existing $E^{*}$, transform to $\psi^{*}_{E}$. 
+%    \end{enumerate}
+%    All within the marginal error evaluation of $L$. 
+%\end{definition}
+
+
+
+Much information can be packed on a graph. Typically, the graph $\mathcal{G}= (\mathcal{V},\mathcal{E},\mathcal{M})$ will contains node information and edge information. Edge information can be the path-only, or weight-specific, that is, there exists for an edge $(u,v)$ a property $\phi_{uv}\in [0,1]$ acting like a weight to gauge a walk on the graph. This can also be used for the \textit{distance measure} of a graph, for such graph being represented with values per position, that is, each node/vertice has position, and similarly there exists arbitrary distance $\lvert (u,v)\rvert$ between $u$ and $v$. Any space that encode a graph's information in such way is called an \textbf{embedding space}. For node information, connections to other nodes are one type of information; however, it also retains its own properties, typically inferred through the \textit{node embedding space} which contains features of a node and the graph itself. There are a few restrictions of such embedding space, such as to define the node embedding space to be of the same shape $n$, to avoid `edge cases' in the process. 
+
+The reason for choosing an encoding can be justified as followed. Typically, graphs can be classified and categorized into a specific type of data representation, called \textit{non-Euclidean data}. More specifically, there exists a topological space encapsulating the graph, but exists no fundamental measure on such topological space housing it. For example, there exists no notion of a \textit{discrete distance} on a graph, but only the induced notion of \textit{graph distance} by counting the shortest path from one node to another in a specific graph. Because machine learning works on the assumption that the space of the system gives \textit{measurable space}, a natural response is to encode the system into an encoding space of arbitrary meaning. One, for example, simple encoding is the degree map, where nodes are mapped into an $n\times n$ matrix of nodes and valued by the number of neighbour they have. 
+
+This type of encoding then creates, for each graph, a versatiel number of arbitrary properties space they can have, stacked on each other. Typically, for a hypothesis $h$ to work on a graph $\mathcal{G}$, then it will have two main targets that act directly on the graph, as illustrated in Illustration~\ref{fig:graphdecom}.
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.7\textwidth]{media/img/graphdecom.png}
+    \caption{Illustrative decomposition of the graph on its simplexes edges and vertices: Each of the decomposed space $\mathcal{V}$ and $\mathcal{E}$ can be encoded separately to their own ordeal, for example, of the edge connection through incident matrix.}
+    \label{fig:graphdecom}
+\end{figure}
+There are many ways or aspect of a graph to be `extracted' from the graph features itself. Classically, this is done using feature engineering (\cite{GRP_Hamilton}) and hence the learner is also configured to utilize such features. Nowadays, it is mostly abstracted into an arbitrary representation space of the graph encoding, used in neural network architectures (\cite{Oono2020Graph,lopushanskyy2024graphneuralnetworksgraph,Scar04,GRP_Hamilton}). The only different between the classical encoding and the deep learning encoding is on the arbitrary properties of deep learning encoder, of which the transformed feature might not be well-defined feature engineering as the classical case. 
+
+This prompts two types of main learning targets: either to have the hypothesis $h$ to learn the edge connections and properties, or to learn on the vertices/node. They are, however, not separated, as to learn about which connections $e\in \mathcal{E}$ to make between two nodes requires information about the general graph's node itself, to predict which node would be connected under obscured information (removing edges). So, there are: 
+\begin{itemize}[topsep=0pt,noitemsep]
+    \item \textbf{Edge reconstruction}: predict if there exists an edge at an arbitrary segment of the graph, for example, between $u,v\in \mathcal{V}$. 
+    \item \textbf{Edge classification}: An edge $e\in \mathcal{E}$ is endowed a label, and we will then try to classify it based on the actions, or properties it has on the graph. 
+    \item \textbf{Node classification}: Classify a node $v\in \mathcal{V}$ of certain class of labels. 
+    \item \textbf{Node regression}: Estimate values of certain nodes. In turns, it might also be used for ranking certain nodes based of specific criteria. 
+\end{itemize}
+It is helpful to see that a graph can also be classified into two more main archetypes, based off their actions: either \textbf{static}, where the node and edges remains the same, or \textit{dynamic}, where deletion of nodes and edges and vice versa are taken into account. The problem revolving a dynamically changing graph (as more prominent in real-life cases) is resolved using temporal methods for graph learning (\cite{rossi2020temporalgraphnetworksdeep}), however, it is much more difficult to analyse, and hence we would restrict ourselves in the case of static graph analysis. 
+
+We then state our problems in regard. 
+
+\begin{definition}[Graph learning problem]
+    Given a graph $\mathcal{G}(\mathcal{V},\mathcal{E})$, for any type of graph-theoretical subtype (multigraph, digraph, etc.) by $m$ contraints. There then exist two topologies: the \textbf{graph-theoretical topology} of connections and nodes appearances, and the \textbf{encoded topology} of various measured properties for all $v\in \mathcal{V}, e\in \mathcal{E}$, denoted by $(\phi_{G},\phi_{E})$. A hypothesis $h\in \mathcal{H}$ is then tasked to learn its own encoding, or loosely speaking \textbf{interpretation} of the hypothesis about $\mathcal{G}$ based on the topological space given by $\mathcal{G}$, and use it to target or solve problems related to both $\phi_{G}$ and $\phi_{E}$. 
+\end{definition}
+
+From this, we might derive various problems setting as it is, and considering the set $\{\phi\}$ of encoding intrinsic to the graph. 
+
+\subsubsection{Graph Neural Network}
+
+We target the graph neural network structure (GNN), specifically a neural network implementation for solving graph data problems. A more detailed description can follow from \cite{GRP_Hamilton,Scar04}. Typically, graph neural network (\cite{Scar04,Veli_kovi__2023,tanis2024introductiongraphneuralnetworks,lopushanskyy2024graphneuralnetworksgraph}) follows the instruction flow of the \textit{encoder-decoder} architecture. A GNN is formulated and structured by analysing a graph data system by conceptually apply a \textit{neighbour-dependent} neural input arrangement on top of the data. That is, in principle, it reserves on its own a particular extractor and modifiers on the graph interpretation itself, through its layers. 
+
+Structurally, the description of a GNN is defined by the overall \textit{message-passing neural network} (MPNN), defined by (\cite{pyg_docs,Fey/Lenssen/2019}): 
+
+\begin{equation}
+    \mathbf{x}_i^{(k)} = \gamma^{(k)} \left( \mathbf{x}_i^{(k-1)}, \bigoplus_{j \in \mathcal{N}(i)} \, \phi^{(k)}\left(\mathbf{x}_i^{(k-1)}, \mathbf{x}_j^{(k-1)},\mathbf{e}_{j,i}\right) \right),
+\end{equation}
+
+for $\bigoplus$ the differentiable, permutation invariant function, usually called the aggregator, $\mathbf{x}^{(k-1)}_i \in \mathbb{R}^F$ the node features of node $i$ in passing layer $k-1$, $\mathbf{e}_{j,i} \in \mathbb{R}^D$ the optional edge features from node $j$ to node $i$. Additionally, $\gamma$ denotes the nonlinearity differentiable function (usually ReLU, or sigmoid) $\phi$ denote the MLP layer accompanied They are often called the \textbf{updater} and the \textbf{messenger}, respectively. A simplified example of this structure in \cite{Scar04,GRP_Hamilton} as 
+\begin{equation}
+    \mathbf{x}_i^{(k)} = \sigma \left( \mathbf{W}_{\mathrm{self}}^{(k)} \mathbf{x}_i^{(k-1)} +  \mathbf{W}_{\mathrm{neigh}}^{(k)} \sum_{v\in \mathcal{N}(i)} \mathbf{x}_v^{(k-1)} + \mathbf{b}^{(k)} \right)
+\end{equation}
+
+where $\mathbf{W}_{\mathrm{self}}^{(k)}, \mathbf{W}_{\mathrm{neigh}}^{(k)}$ are trainable parameter matrices, and $\sigma$ denotes an elementwise nonlinearity, and an optional bias term $\mathbf{b}^{(k)}$. Different flavours of the differentiable aggregator create the \textit{graph convolutional networks} (GCNs), defined by: 
+\begin{equation}
+    \mathbf{x}_i^{(k)} = \sigma \left( \mathbf{W}^{(k)} \sum_{v\in \mathcal{N}(i)\cup \{i\}} \frac{\mathbf{x}_{v}}{\sqrt{\lvert \mathcal{N}(i)\rvert \lvert \mathcal{N}(v)\rvert }} \right)
+\end{equation}
+
+A somewhat popular approach is to apply attentional layer and weights to facilitate neighbourhood attention, which is called graph attention network.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/What.png}
+    \caption{A conceptual illustration on the running flow of an $n$-layer GNN on particular structure of interest. Note that the data section itself has particular embedding structure on its own.}
+\end{figure}
+
+As noted by \cite{GRP_Hamilton}, node features are often required to be inputted into the GNN. Usually, this is of the form $\mathbf{x}_{u}$ for all $u\in \mathcal{V}$. The same can be said for edge in specific tasks required of them. However, if there are no sufficient node representation possible in the first glance, then we can use node/edge statistics as classical techniques. 
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{media/img/gnn_encoding.png}
+    \caption{Encoding space and the change of encoding inbetween a static graph (or snapshot-wise) GNN. The encoding space is warped toward arbitrary notions inside a GNN, to the point that after certain layers of processing, the encoding outputs different from expected encoding space (native to the model, not to the designer), though there might be universal notions preserved, like the degree of node represented in a different way.}
+\end{figure}
+
+A GNN is, when fitting into the framework of learning system and modeling, is a feature mask generation and adaptation mechanism of the modelling pipeline. What this means is that GNN \textit{assumes} every data point has its own feature-embedded space, and according relationships. By this, we further mean that it creates an embedding space of the aggregator, or the GNN-embedding space within such. While input embedding space captures and represents the best possible interpretation of the input space, GNN-embedding space captures what is required of the aggregation properties that the GNN layers specify. Hence, we can assume relative fallacy in such embedded space. Those $n$-embedded space of data aggregated at the $n$th final layer, would then be fed into another straightforward - task-based and structured network, such as a pass to a single-layer sigmoid network, Hamming network, or generally an FCN. 
+
+\subsection{Double descent and GNN}
+
+As of date, there has been no reports on double descent on GNN. This can be taken accounted of the complex and often difficult analysis for graph and the neural network adopted for such task. Because of this, we will have to attempt to force double descent appears instead of simply observing it. To do this, we need to specify both the task for evaluation for the error measure, and model complexity for the other axis. For such, we would often reserve to node-level or edge-level task, and not graph-level tasks. 
+
+Aside from layer-wised complexity, GNN also has two types of complexity: the size of the graph itself, and the size of the encoding in specification. Thence, the complexity would then at least be the tuple $(m,n,l)$ for $m$-size of the original graph, $n$-depth of the GNN layers, and $l$ layers of GNN. If $n$ varies between layers, then we will have the index set instead. However, for simplicity, we would likely want to have constant $n$ throughout all layer. 

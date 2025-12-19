@@ -1,0 +1,119 @@
+\documentclass[
+    9pt,
+    oldfontcommands
+]{memoir}
+
+%\let\cleardoublepage\clearpage
+%################################################################################
+%# CONFIGURATION #
+%########################################
+%# Package
+\input{setting/package.tex}
+%########################################
+%# Configuration
+\input{setting/config.tex}
+%########################################
+%# Theorem definitions
+\input{setting/theorem.tex}
+%########################################
+%# Tcolorbox and theorems (environment for maths and theorems)
+\input{setting/tcb_env.tex}
+%########################################
+%# Document configuration (macro and displaying - titles etc)
+\input{setting/document_config.tex}
+%########################################
+%# Math commands
+\input{setting/mathcommand.tex}
+%########################################
+%# Include control
+\includeonly{
+	content/introduction,
+	content/c1,
+	%content/c2,
+	content/c3,
+	content/c4,
+	content/c5,
+	content/c6,
+	content/c7,
+	content/c8,
+	content/c9
+}
+%################################################################################
+% END OF CONFIGURATION (PREAMBLE)
+
+%################################################################################%
+% BEGIN DOCUMENT
+\begin{document}
+%########################################
+% TITLE PAGE
+\newgeometry{left=3cm, right=3cm}
+\begin{titlingpage} % Suppresses headers and footers on the title page
+	\raggedleft % Right align everything
+	\vspace*{\baselineskip} % Whitespace at the top of the page
+	%------------------------------------------------
+	%	Author
+	%------------------------------------------------
+	{\Large Khanh Gia Bui\footnotemark[1], Luong Van Tam\footnotemark[1], Dang Tri Trung\footnotemark[2], Daud Shahbaz\footnotemark[3]} % Author name 
+
+	\vspace*{0.167\textheight} % Whitespace before the title
+	%------------------------------------------------
+	%	Title and subtitle
+	%------------------------------------------------
+	\textbf{\LARGE Total Draft Documents}\\[\baselineskip] % First title line
+	{\textcolor{customTeal}{\Huge Theoretical Learning}}\\[\baselineskip] % Main title line which draws the focus of the reader
+	{\Large \textit{Theoretical and novel analysis, second draft fixture}} % Subtitle
+	\vfill % Whitespace between the titles and the publisher
+	%------------------------------------------------
+	%	Publisher
+	%------------------------------------------------
+	{\large Waiting for publication~~\plogo} % Publisher and logo
+	
+	\vspace*{3\baselineskip} % Whitespace at the bottom of the page
+	\footnotetext[1]{\raggedright Department of Physics, Hanoi University of Science, Vietnam National University, Hanoi, Vietnam}
+	\footnotetext[2]{\raggedright Monash University, Department of Computer Science, Melbourne, Australia}
+	\footnotetext[3]{\raggedright COMSATS University Islamabad, Islamabad, Pakistan}
+\end{titlingpage}
+\restoregeometry
+%########################################
+%# TOC
+\frontmatter
+\tableofcontents
+\clearpage
+\listoffigures
+\clearpage
+%########################################
+%# Preface
+\include{content/introduction}
+\mainmatter
+\include{content/c1}
+%\include{content/c2}
+\include{content/c3}
+\include{content/c4}
+\include{content/c5}
+\include{content/c6}
+\include{content/c7}
+\include{content/c8}
+\include{content/c9}
+%# APPENDIX SECTION 
+%########################################
+%# Index 
+\backmatter
+\printindex
+%########################################
+%# Appendix
+\appendix
+\input{appendix/appendix}
+%########################################
+%# Bibliography
+{
+\small
+\nocite{*}
+\bibliography{reference}
+% modification to natbib citations
+\setcitestyle{authoryear,open={[},close={]}}
+\bibliographystyle{plainnat}
+%\setcitestyle{authoryear,round,citesep={;},aysep={,},yysep={;}}
+}
+%################################################################################%
+%# End document
+\end{document}

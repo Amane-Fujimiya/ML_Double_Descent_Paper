@@ -1,0 +1,95 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+Reallocating 'name_of_file' (item size: 1) to 25 items.
+A level-1 auxiliary file: content/introduction.aux
+Reallocating 'name_of_file' (item size: 1) to 15 items.
+A level-1 auxiliary file: content/c1.aux
+Reallocating 'name_of_file' (item size: 1) to 15 items.
+A level-1 auxiliary file: content/c3.aux
+Reallocating 'name_of_file' (item size: 1) to 15 items.
+A level-1 auxiliary file: content/c4.aux
+Reallocating 'name_of_file' (item size: 1) to 15 items.
+A level-1 auxiliary file: content/c5.aux
+Reallocating 'name_of_file' (item size: 1) to 15 items.
+A level-1 auxiliary file: content/c6.aux
+Reallocating 'name_of_file' (item size: 1) to 15 items.
+A level-1 auxiliary file: content/c7.aux
+Reallocating 'name_of_file' (item size: 1) to 15 items.
+A level-1 auxiliary file: content/c8.aux
+Reallocating 'name_of_file' (item size: 1) to 15 items.
+A level-1 auxiliary file: content/c9.aux
+Reallocating 'name_of_file' (item size: 1) to 10 items.
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: plainnat.bst
+Reallocating 'field_info' (item size: 4) to 12672 items.
+Database file #1: reference.bib
+Warning--I didn't find a database entry for "OstaszewskaZajkowski2014"
+Warning--I didn't find a database entry for "GRP_Hamilton"
+Warning--I didn't find a database entry for "lopushanskyy2024graphneuralnetworksgraph"
+Warning--I didn't find a database entry for "rossi2020temporalgraphnetworksdeep"
+Warning--I didn't find a database entry for "Veli_kovi__2023"
+Warning--I didn't find a database entry for "tanis2024introductiongraphneuralnetworks"
+Warning--I didn't find a database entry for "pyg_docs"
+Warning--I didn't find a database entry for "Fey/Lenssen/2019"
+Warning--I didn't find a database entry for "Cristianini2000AnIT"
+Warning--I didn't find a database entry for "mcculloch_logical_1943"
+Warning--I didn't find a database entry for "NJacot:2018:NTK"
+Warning--I didn't find a database entry for "Cartuyvels_2021"
+Warning--I didn't find a database entry for "M_ller_2022"
+Warning--to sort, need author or key in bgpt2024
+Warning--to sort, need author or key in noauthor_bias-variance_nodate
+Warning--to sort, need author or key in unified_bias_composition
+Warning--to sort, need author or key in noauthor_pdf_nodate-1
+Warning--empty year in noauthor_bias-variance_nodate
+Warning--empty year in noauthor_pdf_nodate-1
+Warning--empty year in unified_bias_composition
+Warning--empty author in bgpt2024
+Warning--empty year in achlioptas_stochastic_nodate
+Warning--empty year in achlioptas_stochastic_nodate
+Warning--empty year in modelcomplex_exp
+Warning--empty publisher in STL_Hajek_Maxim_2021
+Warning--there's a number but no volume in ErdongHu2021
+Warning--empty publisher in kaelbling1996reinforcement
+You've used 271 entries,
+            2773 wiz_defined-function locations,
+            2190 strings with 61994 characters,
+and the built_in function-call counts, 129962 in all, are:
+= -- 11536
+> -- 8368
+< -- 187
++ -- 2865
+- -- 2575
+* -- 10517
+:= -- 20287
+add.period$ -- 1095
+call.type$ -- 271
+change.case$ -- 1625
+chr.to.int$ -- 252
+cite$ -- 560
+duplicate$ -- 5560
+empty$ -- 9983
+format.name$ -- 2982
+if$ -- 27191
+int.to.chr$ -- 20
+int.to.str$ -- 1
+missing$ -- 239
+newline$ -- 1626
+num.names$ -- 1075
+pop$ -- 3366
+preamble$ -- 1
+purify$ -- 1383
+quote$ -- 0
+skip$ -- 4561
+stack$ -- 0
+substring$ -- 3364
+swap$ -- 662
+text.length$ -- 40
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 2796
+warning$ -- 14
+while$ -- 1012
+width$ -- 0
+write$ -- 3948
+(There were 27 warnings)

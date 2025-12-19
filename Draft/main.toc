@@ -1,0 +1,114 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{Contents}{i}{section*.1}%
+\contentsline {chapter}{List of Figures}{iv}{section*.2}%
+\contentsline {chapter}{Introduction}{vii}{chapter*.3}%
+\contentsline {section}{Background and motivation}{vii}{section*.4}%
+\contentsline {chapter}{\chapternumberline {1}Preliminaries}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Concentration inequalities}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}What are concentration inequalities?}{1}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Relevant toolset}{2}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Markov's inequality}{2}{subsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.1.4}Chebyshev's inequality}{2}{subsection.1.1.4}%
+\contentsline {subsection}{\numberline {1.1.5}McDiarmid's inequality}{3}{subsection.1.1.5}%
+\contentsline {subsection}{\numberline {1.1.6}The Cramer-Chernoff method}{5}{subsection.1.1.6}%
+\contentsline {chapter}{\chapternumberline {2}Classical learning theory}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Precursors to learning theoretic}{7}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Inference learning}{8}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Classical setup}{9}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Optimal learning - PAC-learning}{12}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Representation size and PAC-configuration}{14}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Generalization bounds}{16}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Agnostic-general PAC-learning}{17}{subsection.2.4.3}%
+\contentsline {section}{\numberline {2.5}Simplistic learning - Occam's Razor}{18}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Occam Learning and Succinctness}{18}{subsection.2.5.1}%
+\contentsline {section}{\numberline {2.6}Discrete space empiricism - Rademacher complexity}{20}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Rademacher descriptions}{21}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}Growth function}{25}{subsection.2.6.2}%
+\contentsline {section}{\numberline {2.7}Equivalent spatial separation - VC-theory}{26}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Summary}{27}{section.2.8}%
+\contentsline {chapter}{\chapternumberline {3}Introduction to Double Descent}{29}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introduction}{29}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Outline}{30}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Related works}{30}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Foundational investigation}{31}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Classical notion of learning}{31}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Phenomenological aberration}{32}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Setup specialization - PAC-learning}{34}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Empirical and structural algorithms}{41}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}The PAC-ERM notion}{43}{subsection.3.2.5}%
+\contentsline {subsection}{\numberline {3.2.6}Noise, \cite {10.5555/2371238}}{45}{subsection.3.2.6}%
+\contentsline {section}{\numberline {3.3}The bias-variance - double descent dilemma}{45}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Bias-variance tradeoff}{45}{subsection.3.3.1}%
+\contentsline {subsubsection}{Precursor (\cite {6797087})}{45}{subsubsection*.9}%
+\contentsline {subsubsection}{Expansion and variations}{47}{subsubsection*.11}%
+\contentsline {subsubsection}{Generalized decomposition}{48}{subsubsection*.12}%
+\contentsline {subsubsection}{Bias-variance algorithm}{48}{subsubsection*.13}%
+\contentsline {subsubsection}{Functional approximation algorithm}{48}{subsubsection*.14}%
+\contentsline {subsubsection}{Approximation-estimation tradeoff}{48}{subsubsection*.15}%
+\contentsline {subsection}{\numberline {3.3.2}Double descent}{48}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4}Current researches}{51}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Discovery of double descent}{52}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Theoretical attacks}{53}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}High-dimensional ridgeless interpolation - \cite {hastie2019surprises}}{53}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Sample-wise double descent - \cite {nakkiran2019moredata}}{53}{subsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.4.5}Multiscale feature learning dynamics - \cite {pezeshki2021multiscalefeaturelearningdynamics}}{54}{subsection.3.4.5}%
+\contentsline {subsection}{\numberline {3.4.6}Reinforcement learning and double descent - \cite {brellmann2024on}}{54}{subsection.3.4.6}%
+\contentsline {subsection}{\numberline {3.4.7}Out-of-Distribution Detection - \cite {ammar2025doubledescentmeetsoutofdistribution}}{54}{subsection.3.4.7}%
+\contentsline {subsection}{\numberline {3.4.8}Gaussian processes and neural network - \cite {harzli2023doubledescentcurvesneuralnetworks}}{54}{subsection.3.4.8}%
+\contentsline {subsection}{\numberline {3.4.9}Double descent on GNN - \cite {shi2024homophilymodulatesdoubledescent}}{54}{subsection.3.4.9}%
+\contentsline {subsection}{\numberline {3.4.10}Weak feature double descent - \cite {Belkin_2020}}{54}{subsection.3.4.10}%
+\contentsline {subsection}{\numberline {3.4.11}Grokking, Emergence, and Double Descent - ~\cite {huang2025samplecomplexityrepresentationability}}{54}{subsection.3.4.11}%
+\contentsline {subsection}{\numberline {3.4.12}Variations on analysis}{54}{subsection.3.4.12}%
+\contentsline {subsubsection}{Dropout and double descent - \cite {Yang_2024}}{54}{subsubsection*.19}%
+\contentsline {section}{\numberline {3.5}Problems}{55}{section.3.5}%
+\contentsline {chapter}{\chapternumberline {4}Experimental investigations}{59}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Experimental planning}{59}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Setting: gradient-based optimization}{59}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Gradient descent and the implicit encoding structure}{60}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Experiments list}{60}{subsection.4.1.3}%
+\contentsline {subsubsection}{Polynomial neural networks}{60}{subsubsection*.21}%
+\contentsline {subsection}{\numberline {4.1.4}Preliminaries on observations - \cite {schaeffer_double_2023}}{62}{subsection.4.1.4}%
+\contentsline {subsection}{\numberline {4.1.5}Linear function class $h(u)$ - \cite {lafon_understanding_2024}}{62}{subsection.4.1.5}%
+\contentsline {subsection}{\numberline {4.1.6}Extension}{64}{subsection.4.1.6}%
+\contentsline {subsubsection}{Baseline investigations}{67}{subsubsection*.26}%
+\contentsline {section}{\numberline {4.2}The polynomial transition problem}{68}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Structure}{75}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Scenario schema}{77}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Graph Neural Network (GNN) - \cite {shi2024homophilymodulatesdoubledescent}}{79}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Methodolody}{79}{subsection.4.3.1}%
+\contentsline {subsubsection}{Quick introduction to graph theory}{79}{subsubsection*.33}%
+\contentsline {subsubsection}{Graph Neural Network}{81}{subsubsection*.35}%
+\contentsline {subsection}{\numberline {4.3.2}Double descent and GNN}{82}{subsection.4.3.2}%
+\contentsline {chapter}{\chapternumberline {5}Intersectional insights}{83}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Interpreting the learning theory}{84}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Domain and process}{84}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}The learner's encoded setting}{85}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Overfitting and underfitting}{87}{subsection.5.1.3}%
+\contentsline {section}{\numberline {5.2}System-wide structuralization}{90}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}The idea of neural network formalism}{90}{subsection.5.2.1}%
+\contentsline {subsubsection}{Basic understanding}{90}{subsubsection*.41}%
+\contentsline {subsubsection}{The SVM generator}{92}{subsubsection*.42}%
+\contentsline {section}{\numberline {5.3}Complexity notion}{93}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Attractor-based insights}{95}{section.5.4}%
+\contentsline {chapter}{\chapternumberline {6}Theoretical reformulated frameworks}{97}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Motivation}{97}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Principle}{98}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Structures}{98}{subsection.6.2.1}%
+\contentsline {part}{\numberline {I}Environmental framing}{98}{part.1}%
+\contentsline {section}{\numberline {6.3}System space}{98}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Groundwork of systems}{100}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Cardinality space}{101}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}Probability}{101}{subsection.6.3.3}%
+\contentsline {section}{\numberline {6.4}The concept of learning}{101}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Neurons perspective}{102}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Analysis}{104}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}Why we call it minimal}{105}{subsection.6.5.2}%
+\contentsline {section}{\numberline {6.6}Formalisation}{105}{section.6.6}%
+\contentsline {chapter}{Index}{107}{section*.48}%
+\contentsline {section}{Reevaluation of theorem~\ref {eq:linear_gaussian_erm}}{108}{section*.49}%
+\contentsline {subsection}{Remark}{109}{subsection*.52}%
+\contentsline {section}{Observing gradient descent decomposition}{110}{section*.53}%
+\contentsline {section}{Details of supervised learning structure}{112}{section*.55}%
+\contentsline {section}{Practical consideration}{115}{section*.57}%
+\contentsline {subsection}{Observational space partitioning}{116}{subsection*.58}%
+\contentsline {chapter}{Bibliography}{117}{appendix*.59}%

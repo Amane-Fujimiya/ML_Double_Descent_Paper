@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.13)  3 DEC 2025 22:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.13)  16 DEC 2025 15:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1261,6 +1261,10 @@ Underfull \vbox (badness 1122) has occurred while \output is active []
 
 [14{D:/MikTek/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 
+Package natbib Warning: Citation `barceló2020modelinterpretabilitylenscomputational' on page 15 undefined on input line 596.
+
+
+
 [15]
 
 [16]
@@ -1281,7 +1285,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{theorem.1}) ha
                    \relax 
 l.659     L
            et $H$ be a finite set of functions mapping from $\mathcal{X}\to ...
-<pdf/PAC_consistent.pdf, id=942, 462.96765pt x 176.7955pt>
+<pdf/PAC_consistent.pdf, id=940, 462.96765pt x 176.7955pt>
 File: pdf/PAC_consistent.pdf Graphic file (type pdf)
 <use pdf/PAC_consistent.pdf>
 Package pdftex.def Info: pdf/PAC_consistent.pdf  used on input line 672.
@@ -1407,12 +1411,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{theorem.1}) ha
                    \relax 
 l.923 L
        et $(x, \epsilon)\in \R^d\times\R$ independent random variables with ...
-<pdf/theorem_1.pdf, id=1160, 462.96765pt x 279.93083pt>
+<pdf/theorem_1.pdf, id=1158, 462.96765pt x 279.93083pt>
 File: pdf/theorem_1.pdf Graphic file (type pdf)
 <use pdf/theorem_1.pdf>
 Package pdftex.def Info: pdf/theorem_1.pdf  used on input line 943.
 (pdftex.def)             Requested size: 346.89731pt x 209.75964pt.
-<pdf/theorem_2.pdf, id=1166, 462.96765pt x 267.93098pt>
+<pdf/theorem_2.pdf, id=1164, 462.96765pt x 267.93098pt>
 File: pdf/theorem_2.pdf Graphic file (type pdf)
 <use pdf/theorem_2.pdf>
 Package pdftex.def Info: pdf/theorem_2.pdf  used on input line 962.
@@ -1428,12 +1432,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 pdfTeX warning: pdflatex (file ./pdf/theorem_2.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >]
-<pdf/theorem_3.pdf, id=1264, 462.96765pt x 269.35028pt>
+<pdf/theorem_3.pdf, id=1262, 462.96765pt x 269.35028pt>
 File: pdf/theorem_3.pdf Graphic file (type pdf)
 <use pdf/theorem_3.pdf>
 Package pdftex.def Info: pdf/theorem_3.pdf  used on input line 986.
 (pdftex.def)             Requested size: 346.89731pt x 201.83138pt.
-<media/dimensional_descent.png, id=1269, 792.9625pt x 491.8375pt>
+<media/dimensional_descent.png, id=1267, 792.9625pt x 491.8375pt>
 File: media/dimensional_descent.png Graphic file (type png)
 <use media/dimensional_descent.png>
 Package pdftex.def Info: media/dimensional_descent.png  used on input line 992.
@@ -1469,7 +1473,7 @@ Package hyperref Info: bookmark level for unknown remark defaults to 0 on input 
 [31]
 
 [32]
-<pdf/linear_gen.pdf, id=1350, 462.96765pt x 398.67043pt>
+<pdf/linear_gen.pdf, id=1348, 462.96765pt x 398.67043pt>
 File: pdf/linear_gen.pdf Graphic file (type pdf)
 <use pdf/linear_gen.pdf>
 Package pdftex.def Info: pdf/linear_gen.pdf  used on input line 1126.
@@ -1866,26 +1870,26 @@ Package microtype Info: Loading generic protrusion settings for font family
 [46
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 195--200
+Underfull \hbox (badness 10000) in paragraph at lines 188--193
 []\OT1/cmr/m/n/10 (+20) Pedro M. Domin-gos.  A Unifeid Bias-Variance De-com-po-si-tion and its Ap-pli-ca-
  []
 
 
-Underfull \hbox (badness 5954) in paragraph at lines 195--200
+Underfull \hbox (badness 5954) in paragraph at lines 188--193
 \OT1/cmr/m/n/10 (+20) tions.  In \OT1/cmr/m/it/10 (+20) Se-man-tic Scholar\OT1/cmr/m/n/10 (+20) , June 2000d.  URL []$\OT1/cmtt/m/n/10 https : / / www . semanticscholar .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 195--200
+Underfull \hbox (badness 10000) in paragraph at lines 188--193
 \OT1/cmtt/m/n/10 org / paper / A-[]Unifeid-[]Bias-[]Variance-[]Decomposition-[]and-[]its-[]Domingos /
  []
 
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 235.
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 228.
 (D:\MikTek\tex/latex/base\omscmr.fd
 File: omscmr.fd 2024/11/19 v2.5n Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 235.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 228.
 
 
 [47]
@@ -1902,7 +1906,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 
 LaTeX Warning: Command \textellipsis invalid in math mode on input line 1253.
 
-<pdf/theorem_4_verify.pdf, id=1652, 462.96765pt x 356.13351pt>
+<pdf/theorem_4_verify.pdf, id=1649, 462.96765pt x 356.13351pt>
 File: pdf/theorem_4_verify.pdf Graphic file (type pdf)
 <use pdf/theorem_4_verify.pdf>
 Package pdftex.def Info: pdf/theorem_4_verify.pdf  used on input line 1263.
@@ -1924,7 +1928,7 @@ l.1285     F
             or a system and its object, an object's \textbf{representation s...
 
 [55]
-<media/Diagramatic_Modelling_View.png, id=1729, 9144.1625pt x 5560.775pt>
+<media/Diagramatic_Modelling_View.png, id=1726, 9144.1625pt x 5560.775pt>
 File: media/Diagramatic_Modelling_View.png Graphic file (type png)
 <use media/Diagramatic_Modelling_View.png>
 Package pdftex.def Info: media/Diagramatic_Modelling_View.png  used on input line 1328.
@@ -1936,7 +1940,7 @@ LaTeX Warning: Reference `fig:vapnik_scheme_1' on page 56 undefined on input lin
 
 
 [56]
-<pdf/VennFig2.pdf, id=1747, 1824.8175pt x 527.9725pt>
+<pdf/VennFig2.pdf, id=1744, 1824.8175pt x 527.9725pt>
 File: pdf/VennFig2.pdf Graphic file (type pdf)
 <use pdf/VennFig2.pdf>
 Package pdftex.def Info: pdf/VennFig2.pdf  used on input line 1361.
@@ -1981,6 +1985,10 @@ l.1514         A
 
 [61]
 
+Package natbib Warning: There were undefined citations.
+
+
+
 [62] (paper1.1.aux)
  ***********
 LaTeX2e <2025-06-01>
@@ -1997,17 +2005,17 @@ Package rerunfilecheck Info: File `paper1.1.out' has not changed.
 (rerunfilecheck)             Checksum: 70112F382E3EA52EF78844A3F65892FF;11180.
  ) 
 Here is how much of TeX's memory you used:
- 67641 strings out of 468187
- 1676355 string characters out of 5448666
- 2531539 words of memory out of 5000000
- 94487 multiletter control sequences out of 15000+600000
+ 67635 strings out of 468187
+ 1676104 string characters out of 5448666
+ 2531507 words of memory out of 5000000
+ 94482 multiletter control sequences out of 15000+600000
  659842 words of font info for 305 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  121i,25n,124p,2539b,948s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbm/dpi600\bbm10.pk><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbx9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi5.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmib10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmmib9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr5.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmss10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmss8.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmss9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmti10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmti7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmti9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmtt10.pfb><D:/MikTek/fonts/type1/public/amsfonts/symbols/msam7.pfb><D:/MikTek/fonts/type1/public/amsfonts/symbols/msbm10.pfb><D:/MikTek/fonts/type1/public/amsfonts/symbols/msbm7.pfb><D:/MikTek/fonts/type1/public/cm-super/sfrm0800.pfb><D:/MikTek/fonts/type1/public/cm-super/sfrm1000.pfb><D:/MikTek/fonts/type1/public/hoekwater/stmary10.pfb><D:/MikTek/fonts/type1/public/hoekwater/stmary7.pfb><D:/MikTek/fonts/type1/public/urw-base35/uhvb8a.pfb>
-Output written on paper1.1.pdf (62 pages, 7064480 bytes).
+Output written on paper1.1.pdf (62 pages, 7063750 bytes).
 PDF statistics:
- 2229 PDF objects out of 2487 (max. 8388607)
- 446 named destinations out of 1000 (max. 500000)
+ 2226 PDF objects out of 2487 (max. 8388607)
+ 445 named destinations out of 1000 (max. 500000)
  58365 words of extra memory for PDF output out of 61914 (max. 10000000)
 

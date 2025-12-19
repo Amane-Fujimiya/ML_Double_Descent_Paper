@@ -1,4 +1,4 @@
-\begin{thebibliography}{125}
+\begin{thebibliography}{124}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -68,13 +68,6 @@ Enrico Barbierato and Alice Gatti.
 \newblock ISSN 2079-9292.
 \newblock \doi{10.3390/electronics13020416}.
 \newblock URL \url{https://www.mdpi.com/2079-9292/13/2/416}.
-
-\bibitem[Barceló et~al.(2020)Barceló, Monet, Pérez, and
-  Subercaseaux]{barceló2020modelinterpretabilitylenscomputational}
-Pablo Barceló, Mikaël Monet, Jorge Pérez, and Bernardo Subercaseaux.
-\newblock Model interpretability through the lens of computational complexity,
-  2020.
-\newblock URL \url{https://arxiv.org/abs/2010.12265}.
 
 \bibitem[Belkin et~al.(2018)Belkin, Ma, and
   Mandal]{belkin2018understanddeeplearningneed}

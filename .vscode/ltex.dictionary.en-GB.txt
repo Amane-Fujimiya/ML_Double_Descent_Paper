@@ -14,3 +14,13 @@ Vandermonde
 unisolvence
 approximator
 interpolant
+de-facto
+restructuralization
+overparameterization
+constructivity
+representability
+Massart
+halfspaces
+halfspace
+ResNET
+combinator
