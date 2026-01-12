@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.13)  19 DEC 2025 23:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.13)  13 JAN 2026 02:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"e:/Code Repository/Paper Series/Draft/main.tex"
-(e:/Code Repository/Paper Series/Draft/main.tex
+**"e:/Core/Main Directory/Paper Series/Draft/main.tex"
+(e:/Core/Main Directory/Paper Series/Draft/main.tex
 LaTeX2e <2025-06-01>
 L3 programming layer <2025-05-26>
 (D:\MikTek\tex/latex/memoir\memoir.cls
@@ -1664,14 +1664,14 @@ Writing index file main.idx
 LaTeX Font Info:    Overwriting math alphabet `\mathsfit' in version `bold'
 (Font)                  T1/cmss/m/sl --> T1/cmss/bx/n on input line 314.
 )
-LaTeX Font Info:    Trying to load font information for T1+ETbb-TLF on input line 46.
+LaTeX Font Info:    Trying to load font information for T1+ETbb-TLF on input line 47.
  (D:\MikTek\tex/latex/etbb\t1etbb-tlf.fd
 File: T1ETbb-TLF.fd 2020/02/15 Font definitions for T1/ETbb-TLF.
 )
 LaTeX Font Info:    Font shape `T1/ETbb-TLF/m/n' aliased to
-(Font)              `T1/ETbb-TLF/regular/n' on input line 46.
+(Font)              `T1/ETbb-TLF/regular/n' on input line 47.
 LaTeX Font Info:    Font shape `T1/ETbb-TLF/regular/n' will be
-(Font)              scaled to size 9.0pt on input line 46.
+(Font)              scaled to size 9.0pt on input line 47.
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
  (main.aux (content/introduction.aux) (content/c1.aux) (content/c3.aux) (content/c4.aux) (content/c5.aux) (content/c6.aux) (content/c7.aux) (content/c8.aux
@@ -1681,39 +1681,39 @@ LaTeX Warning: Label `eq:lp1' multiply defined.
 
 LaTeX Warning: Label `tab:polynomial_test' multiply defined.
 
-) (content/c9.aux))
+) (content/c9.aux) (content/c10.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 46.
-LaTeX Font Info:    Trying to load font information for LY1+ptm on input line 46.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 47.
+LaTeX Font Info:    Trying to load font information for LY1+ptm on input line 47.
  (D:\MikTek\tex/latex/ly1\ly1ptm.fd
 File: ly1ptm.fd 2001/02/01 font definitions for LY1/ptm using Berry names.
 )
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
 
 
 Class memoir Warning: \addtodef is marked deprecated and will be
 (memoir)              removed in 2026, use instead \patchcmd,
 (memoir)              \pretocmd or \apptocmd from the etoolbox package
-(memoir)              (which is autoloaded by the class) on input line 46.
+(memoir)              (which is autoloaded by the class) on input line 47.
 
 \c@mv@tabular=\count509
 \c@mv@boldtabular=\count510
@@ -1736,9 +1736,9 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (D:\MikTek\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package crop Info: requested driver: `' on input line 46.
-Package crop Info: detected driver: `pdftex' on input line 46.
-Package crop Info: using `pdftex' graphics driver on input line 46.
+Package crop Info: requested driver: `' on input line 47.
+Package crop Info: detected driver: `pdftex' on input line 47.
+Package crop Info: using `pdftex' graphics driver on input line 47.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1788,7 +1788,7 @@ Package caption Info: End \AtBeginDocument code.
 \enitdp@tabularnotes=\count518
 \c@tabularnotes*i=\count519
 \enitdp@tabularnotes*=\count520
-Package hyperref Info: Link coloring ON on input line 46.
+Package hyperref Info: Link coloring ON on input line 47.
 (main.out) (main.out)
 \@outlinefile=\write7
 \openout7 = `main.out'.
@@ -1796,7 +1796,7 @@ Package hyperref Info: Link coloring ON on input line 46.
 
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
- on input line 46.
+ on input line 47.
 
 \Etoc@tf=\read4
 Package etoc Info: Regarding `memoir' class command \settocdepth, consider
@@ -1837,35 +1837,35 @@ Package etoc Info: Regarding `memoir' class command \settocdepth, consider
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    Font shape `T1/ETbb-TLF/regular/n' will be
-(Font)              scaled to size 10.95pt on input line 56.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 56.
+(Font)              scaled to size 10.95pt on input line 57.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 57.
 (D:\MikTek\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 56.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 57.
  (D:\MikTek\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+esvect on input line 56.
+LaTeX Font Info:    Trying to load font information for U+esvect on input line 57.
  (D:\MikTek\tex/latex/esvect\uesvect.fd
 File: uesvect.fd 
 )
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 56.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 57.
  (D:\MikTek\tex/latex/stmaryrd\ustmry.fd)
 LaTeX Font Info:    Font shape `T1/ETbb-TLF/regular/n' will be
-(Font)              scaled to size 8.0pt on input line 56.
+(Font)              scaled to size 8.0pt on input line 57.
 LaTeX Font Info:    Font shape `T1/ETbb-TLF/bold/n' will be
-(Font)              scaled to size 9.0pt on input line 62.
+(Font)              scaled to size 9.0pt on input line 63.
 LaTeX Font Info:    Font shape `T1/ETbb-TLF/bold/n' will be
-(Font)              scaled to size 12.0pt on input line 62.
+(Font)              scaled to size 12.0pt on input line 63.
 LaTeX Font Info:    Font shape `T1/ETbb-TLF/regular/n' will be
-(Font)              scaled to size 17.28pt on input line 63.
+(Font)              scaled to size 17.28pt on input line 64.
 LaTeX Font Info:    Font shape `T1/ETbb-TLF/regular/it' will be
-(Font)              scaled to size 10.95pt on input line 64.
+(Font)              scaled to size 10.95pt on input line 65.
 LaTeX Font Info:    Font shape `T1/ETbb-TLF/regular/n' will be
-(Font)              scaled to size 10.0pt on input line 69.
+(Font)              scaled to size 10.0pt on input line 70.
 LaTeX Font Info:    Font shape `T1/ETbb-TLF/regular/n' will be
-(Font)              scaled to size 6.0pt on input line 72.
+(Font)              scaled to size 6.0pt on input line 73.
 
 
 [1
@@ -1885,22 +1885,24 @@ LaTeX Font Info:    Font shape `T1/ETbb-TLF/regular/n' will be
 
 
 {D:/MikTek/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
-LaTeX Font Info:    Font shape `T1/ETbb-TLF/bold/n' will be
-(Font)              scaled to size 10.0pt on input line 81.
-
 
 LaTeX Font Info:    Font shape `T1/ETbb-TLF/regular/sl' in size <9> not available
-(Font)              Font shape `T1/ETbb-TLF/regular/it' tried instead on input line 81.
+(Font)              Font shape `T1/ETbb-TLF/regular/it' tried instead on input line 82.
 LaTeX Font Info:    Font shape `T1/ETbb-TLF/regular/it' will be
-(Font)              scaled to size 9.0pt on input line 81.
+(Font)              scaled to size 9.0pt on input line 82.
 [2]
-Overfull \hbox (1.04631pt too wide) detected at line 81
+Overfull \hbox (1.04631pt too wide) detected at line 82
  \T1/cmss/m/n/10 107
  []
 
 
-Overfull \hbox (1.04631pt too wide) detected at line 81
- \T1/cmss/m/n/10 117
+Overfull \hbox (1.04631pt too wide) detected at line 82
+ \T1/cmss/m/n/10 121
+ []
+
+
+Overfull \hbox (1.04631pt too wide) detected at line 82
+ \T1/cmss/m/n/10 131
  []
 
 
@@ -1920,29 +1922,36 @@ LaTeX Font Info:    Font shape `T1/ETbb-TLF/regular/it' will be
 
 ]
 LaTeX Font Info:    Font shape `T1/ETbb-TLF/regular/n' will be
-(Font)              scaled to size 5.0pt on input line 31.
+(Font)              scaled to size 5.0pt on input line 33.
 LaTeX Font Info:    Font shape `T1/ETbb-TLF/regular/sc' will be
-(Font)              scaled to size 9.0pt on input line 31.
-)
-
-[5{D:/MikTek/fonts/enc/dvips/etbb/etbb_6bhqsy.enc}]
-\openout2 = `content/introduction.aux'.
-
- (content/introduction.tex
-
-[6
-
-
-
-]
-LaTeX Font Info:    Font shape `T1/ETbb-TLF/regular/n' will be
-(Font)              scaled to size 14.4pt on input line 1.
+(Font)              scaled to size 9.0pt on input line 33.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[7])
+[5])
+
+[6{D:/MikTek/fonts/enc/dvips/etbb/etbb_6bhqsy.enc}]
+\openout2 = `content/introduction.aux'.
+
+ (content/introduction.tex
+LaTeX Font Info:    Font shape `T1/ETbb-TLF/regular/n' will be
+(Font)              scaled to size 14.4pt on input line 1.
+
+
+Package natbib Warning: Citation `kaplan2020scaling' on page vii undefined on input line 9.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[7
+
+
+
+])
 
 [8]
 \openout2 = `content/c1.aux'.
@@ -2045,7 +2054,7 @@ Package marginnote Info: xpos seems to be 110.57425pt on input line 60.
 
 
 [10]
-<pdf/figfig-crop.pdf, id=1189, 191.71625pt x 135.50626pt>
+<pdf/figfig-crop.pdf, id=1246, 191.71625pt x 135.50626pt>
 File: pdf/figfig-crop.pdf Graphic file (type pdf)
 <use pdf/figfig-crop.pdf>
 Package pdftex.def Info: pdf/figfig-crop.pdf  used on input line 92.
@@ -2326,12 +2335,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{theorem.3}) ha
                    \relax 
 l.176     L
            et $H$ be a finite set of functions mapping from $\mathcal{X}\to ...
-<pdf/PAC_sample_complexity.pdf, id=1715, 601.84767pt x 608.34558pt>
+<pdf/PAC_sample_complexity.pdf, id=1772, 601.84767pt x 608.34558pt>
 File: pdf/PAC_sample_complexity.pdf Graphic file (type pdf)
 <use pdf/PAC_sample_complexity.pdf>
 Package pdftex.def Info: pdf/PAC_sample_complexity.pdf  used on input line 191.
 (pdftex.def)             Requested size: 301.00192pt x 304.2463pt.
-<pdf/PAC_generalization_bound.pdf, id=1716, 708.24597pt x 491.436pt>
+<pdf/PAC_generalization_bound.pdf, id=1773, 708.24597pt x 491.436pt>
 File: pdf/PAC_generalization_bound.pdf Graphic file (type pdf)
 <use pdf/PAC_generalization_bound.pdf>
 Package pdftex.def Info: pdf/PAC_generalization_bound.pdf  used on input line 198.
@@ -2356,7 +2365,7 @@ l.273     F
 
 [39]
 Package hyperref Info: bookmark level for unknown hypothesis defaults to 0 on input line 330.
-<media/interpolation_threshold_tau.png, id=1852, 1084.05pt x 481.8pt>
+<media/interpolation_threshold_tau.png, id=1909, 1084.05pt x 481.8pt>
 File: media/interpolation_threshold_tau.png Graphic file (type png)
 <use media/interpolation_threshold_tau.png>
 Package pdftex.def Info: media/interpolation_threshold_tau.png  used on input line 347.
@@ -2423,7 +2432,7 @@ LaTeX Font Info:    Font shape `T1/ETbb-TLF/regular/it' will be
 (Font)              scaled to size 6.0pt on input line 545.
 LaTeX Font Info:    Font shape `T1/ETbb-TLF/regular/it' will be
 (Font)              scaled to size 5.0pt on input line 545.
-<media/error_decomposition.png, id=1973, 174.1707pt x 87.4467pt>
+<media/error_decomposition.png, id=2030, 174.1707pt x 87.4467pt>
 File: media/error_decomposition.png Graphic file (type png)
 <use media/error_decomposition.png>
 Package pdftex.def Info: media/error_decomposition.png  used on input line 550.
@@ -2443,12 +2452,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [47]
 
 [48]
-<pdf/u-shaped.pdf, id=2050, 114.32813pt x 75.23106pt>
+<pdf/u-shaped.pdf, id=2107, 114.32813pt x 75.23106pt>
 File: pdf/u-shaped.pdf Graphic file (type pdf)
 <use pdf/u-shaped.pdf>
 Package pdftex.def Info: pdf/u-shaped.pdf  used on input line 643.
 (pdftex.def)             Requested size: 109.94737pt x 72.34467pt.
-<pdf/doubledescent.pdf, id=2051, 203.12387pt x 75.23106pt>
+<pdf/doubledescent.pdf, id=2108, 203.12387pt x 75.23106pt>
 File: pdf/doubledescent.pdf Graphic file (type pdf)
 <use pdf/doubledescent.pdf>
 Package pdftex.def Info: pdf/doubledescent.pdf  used on input line 644.
@@ -2461,17 +2470,17 @@ l.664     A
            ssuming a typical supervised learning setting, for a hypothesis $...
 
 [49 <./pdf/u-shaped.pdf> <./pdf/doubledescent.pdf>]
-<media/errorvscomplexity.png, id=2118, 986.7264pt x 263.5446pt>
+<media/errorvscomplexity.png, id=2175, 986.7264pt x 263.5446pt>
 File: media/errorvscomplexity.png Graphic file (type png)
 <use media/errorvscomplexity.png>
 Package pdftex.def Info: media/errorvscomplexity.png  used on input line 675.
 (pdftex.def)             Requested size: 430.00462pt x 114.85008pt.
-<media/introroc1.png, id=2123, 885.0666pt x 493.3632pt>
+<media/introroc1.png, id=2180, 885.0666pt x 493.3632pt>
 File: media/introroc1.png Graphic file (type png)
 <use media/introroc1.png>
 Package pdftex.def Info: media/introroc1.png  used on input line 698.
 (pdftex.def)             Requested size: 220.15953pt x 122.72319pt.
-<media/introroc2.png, id=2124, 869.1672pt x 493.3632pt>
+<media/introroc2.png, id=2181, 869.1672pt x 493.3632pt>
 File: media/introroc2.png Graphic file (type png)
 <use media/introroc2.png>
 Package pdftex.def Info: media/introroc2.png  used on input line 702.
@@ -2890,7 +2899,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{theorem.1}) ha
                    \relax 
 l.101 L
        et $(x, \epsilon)\in \R^d\times\R$ independent random variables with ...
-<pdf/theorem_1.pdf, id=2470, 462.96765pt x 279.93083pt>
+<pdf/theorem_1.pdf, id=2527, 462.96765pt x 279.93083pt>
 File: pdf/theorem_1.pdf Graphic file (type pdf)
 <use pdf/theorem_1.pdf>
 Package pdftex.def Info: pdf/theorem_1.pdf  used on input line 122.
@@ -2898,7 +2907,7 @@ Package pdftex.def Info: pdf/theorem_1.pdf  used on input line 122.
 
 
 [62]
-<pdf/theorem_2.pdf, id=2489, 462.96765pt x 267.93098pt>
+<pdf/theorem_2.pdf, id=2546, 462.96765pt x 267.93098pt>
 File: pdf/theorem_2.pdf Graphic file (type pdf)
 <use pdf/theorem_2.pdf>
 Package pdftex.def Info: pdf/theorem_2.pdf  used on input line 141.
@@ -2906,12 +2915,12 @@ Package pdftex.def Info: pdf/theorem_2.pdf  used on input line 141.
 
 
 [63 <./pdf/theorem_1.pdf>]
-<pdf/theorem_3.pdf, id=2536, 462.96765pt x 269.35028pt>
+<pdf/theorem_3.pdf, id=2593, 462.96765pt x 269.35028pt>
 File: pdf/theorem_3.pdf Graphic file (type pdf)
 <use pdf/theorem_3.pdf>
 Package pdftex.def Info: pdf/theorem_3.pdf  used on input line 165.
 (pdftex.def)             Requested size: 344.005pt x 200.1504pt.
-<media/dimensional_descent.png, id=2541, 792.9625pt x 491.8375pt>
+<media/dimensional_descent.png, id=2598, 792.9625pt x 491.8375pt>
 File: media/dimensional_descent.png Graphic file (type png)
 <use media/dimensional_descent.png>
 Package pdftex.def Info: media/dimensional_descent.png  used on input line 171.
@@ -2936,7 +2945,7 @@ l.203     C
            onsider class $\mathcal{H}_{\mathsf{Lin}}$. For maximum flexibili...
 
 [66]
-<pdf/linear_gen.pdf, id=2644, 462.96765pt x 398.67043pt>
+<pdf/linear_gen.pdf, id=2701, 462.96765pt x 398.67043pt>
 File: pdf/linear_gen.pdf Graphic file (type pdf)
 <use pdf/linear_gen.pdf>
 Package pdftex.def Info: pdf/linear_gen.pdf  used on input line 236.
@@ -3031,7 +3040,7 @@ l.518 F
        or a polynomial $\{a_{i}x^{i}\}_{n}$ on Vandermonde basis, approximat...
 
 [74]
-<media/diagram_poly_dd.png, id=2823, 896.8707pt x 234.8775pt>
+<media/diagram_poly_dd.png, id=2880, 896.8707pt x 234.8775pt>
 File: media/diagram_poly_dd.png Graphic file (type png)
 <use media/diagram_poly_dd.png>
 Package pdftex.def Info: media/diagram_poly_dd.png  used on input line 534.
@@ -3049,7 +3058,7 @@ l.562     T
            he polynomial network based on Model~\ref{def:poly_structure1} is...
 
 [75 <./media/diagram_poly_dd.png>]
-<media/diagram_poly_model.png, id=2843, 3332.45pt x 2148.025pt>
+<media/diagram_poly_model.png, id=2900, 3332.45pt x 2148.025pt>
 File: media/diagram_poly_model.png Graphic file (type png)
 <use media/diagram_poly_model.png>
 Package pdftex.def Info: media/diagram_poly_model.png  used on input line 627.
@@ -3105,7 +3114,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [79
 
 ]
-<media/img/graphdecom.png, id=2896, 237.22627pt x 68.11447pt>
+<media/img/graphdecom.png, id=2953, 237.22627pt x 68.11447pt>
 File: media/img/graphdecom.png Graphic file (type png)
 <use media/img/graphdecom.png>
 Package pdftex.def Info: media/img/graphdecom.png  used on input line 708.
@@ -3153,7 +3162,7 @@ Package natbib Warning: Citation `Fey/Lenssen/2019' on page 81 undefined on inpu
 
 Package natbib Warning: Citation `GRP_Hamilton' on page 81 undefined on input line 741.
 
-<img/What.png, id=2915, 738.3585pt x 351.714pt>
+<img/What.png, id=2972, 738.3585pt x 351.714pt>
 File: img/What.png Graphic file (type png)
 <use img/What.png>
 Package pdftex.def Info: img/What.png  used on input line 755.
@@ -3164,7 +3173,7 @@ Package natbib Warning: Citation `GRP_Hamilton' on page 81 undefined on input li
 
 
 [81 <./img/What.png>]
-<media/img/gnn_encoding.png, id=2929, 328.8285pt x 126.11115pt>
+<media/img/gnn_encoding.png, id=2986, 328.8285pt x 126.11115pt>
 File: media/img/gnn_encoding.png Graphic file (type png)
 <use media/img/gnn_encoding.png>
 Package pdftex.def Info: media/img/gnn_encoding.png  used on input line 763.
@@ -3201,7 +3210,7 @@ l.70     G
           iven a hypothesis $h\in\mathcal{H}$, a target concept $c\in\mathca...
 
 [85]
-<media/g10.png, id=3009, 384.0749pt x 142.5325pt>
+<media/g10.png, id=3066, 384.0749pt x 142.5325pt>
 File: media/g10.png Graphic file (type png)
 <use media/g10.png>
 Package pdftex.def Info: media/g10.png  used on input line 84.
@@ -3295,7 +3304,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{theorem.1}) ha
                    \relax 
 l.434     A
            n algorithm $\mathcal{A}$ on the system $(\mathcal{H},\mathcal{C}...)
-Overfull \hbox (0.19548pt too wide) in paragraph at lines 442--95
+Overfull \hbox (0.19548pt too wide) in paragraph at lines 442--96
 []\T1/ETbb-TLF/regular/n/9 This trade-off re-lies on the pre-cur-sor con-cept of the \T1/ETbb-TLF/bold/n/9 at-trac-tor \T1/ETbb-TLF/regular/n/9 land-scape, of which is ob-serv-able within the objective-
  []
 
@@ -3327,130 +3336,172 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [97]
 
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 33.
-
-
-
 [98]
 pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.39   F
+l.37   F
         or any `procedural' structures, objects, realization \footnote{In th...
 pdfTeX warning (ext4): destination with the same identifier (name{definition.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.45     T
+l.43     T
           he encoding space $\mathcal{E}$ of particular system space $\mathc...
 pdfTeX warning (ext4): destination with the same identifier (name{definition.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.51     T
+l.49     T
           he ambiance space $\mathcal{A}$ is defined as the collection of ob...
-<img/model_representation.png, id=3283, 289.8027pt x 181.3977pt>
+<img/model_representation.png, id=3339, 289.8027pt x 181.3977pt>
 File: img/model_representation.png Graphic file (type png)
 <use img/model_representation.png>
-Package pdftex.def Info: img/model_representation.png  used on input line 58.
+Package pdftex.def Info: img/model_representation.png  used on input line 56.
 (pdftex.def)             Requested size: 215.0023pt x 134.57817pt.
 
 
 [99 <./img/model_representation.png>]
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 68.
-
-
 pdfTeX warning (ext4): destination with the same identifier (name{definition.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.81   T
+l.79   T
         he language $\mathcal{L}^{*}$ of the ambiance space $\mathcal{A}$ of...
 
 [100]
 pdfTeX warning (ext4): destination with the same identifier (name{definition.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.95   T
+l.93   T
         he cardinality space, denoted $\mathcal{C}$, is a 2-tuple $(I,\mathb...
 pdfTeX warning (ext4): destination with the same identifier (name{definition.6}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.100 \end{definition}
-                      
+l.97   T
+        he ambiance space, denoted $\mathcal{A}$ contains the abstract notio...
 pdfTeX warning (ext4): destination with the same identifier (name{definition.7}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.105 \end{definition}
-                      
-
-Package natbib Warning: Citation `NJacot:2018:NTK' on page 101 undefined on input line 117.
-
-
-Underfull \vbox (badness 1077) has occurred while \output is active []
-
-
+l.101   T
+         he encoding space, denoted $\mathrm{ENC}(\mathcal{A},\cdot)$ of any...
 
 [101]
+
+Package natbib Warning: Citation `NJacot:2018:NTK' on page 102 undefined on input line 114.
+
+
 pdfTeX warning (ext4): destination with the same identifier (name{note.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.128 F
+l.125 F
        rom such, we can conclude that, we have to have some classification t...
 pdfTeX warning (ext4): destination with the same identifier (name{theorem.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.136 L
-       et $\mathcal{S}$ be an automated artificial intelligence system admit...
+l.133 L
+       et $\mathcal{S}$ be an automated operational system with internal com...
 pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.148     G
+l.145     G
            iven the neural network formalism. Define a construct $x$. Then $...
+
+[102]
 pdfTeX warning (ext4): destination with the same identifier (name{definition.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.154     G
+l.151     G
            iven the neural network formalism. Then, for $x\in \mathcal{N}$, ...
-
-[102]
 pdfTeX warning (ext4): destination with the same identifier (name{definition.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.162     G
+l.159     G
            iven the \textit{neural network formalism}. Then, we define a \te...
 
 [103]
 
 [104]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Package natbib Warning: Citation `Cartuyvels_2021' on page 105 undefined on input line 236.
 
 
-Package natbib Warning: Citation `M_ller_2022' on page 105 undefined on input line 236.
+[105]
+
+Package natbib Warning: Citation `Cartuyvels_2021' on page 106 undefined on input line 233.
+
+
+Package natbib Warning: Citation `M_ller_2022' on page 106 undefined on input line 233.
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.239     L
+l.236     L
            et us define the primitive framework $\mathcal{P}_{0}$ of the dua...
-
-[105]
 pdfTeX warning (ext4): destination with the same identifier (name{definition.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.249     W
+l.246     W
            e define the base neuron class $\mathcal{N}_{1}\equiv L_{1}$ as f...
-Package marginnote Info: Margin note 116.1 is on absolute page 116 on input line 252.
-Package marginnote Info: xpos seems to be 312.79224pt on input line 252.
+Package marginnote Info: Margin note 116.1 is on absolute page 116 on input line 249.
+Package marginnote Info: xpos seems to be 312.79224pt on input line 249.
 )
 
-[106] (main.ind
+[106]
+\openout2 = `content/c10.aux'.
+
+ (content/c10.tex
+Underfull \vbox (badness 2573) has occurred while \output is active []
 
 
 
 [107
+
+
+
+
+]
+
+[108]
+
+[109]
+
+[110]
+
+[111]
+
+[112]
+pdfTeX warning (ext4): destination with the same identifier (name{assumption.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.159 T
+       he system reaches a stationary distribution $\rho^*(W)$ independent o...
+
+[113]
+pdfTeX warning (ext4): destination with the same identifier (name{hypothesis.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.218 D
+       ouble Descent is the result of the SGD algorithm navigating through p...
+
+[114]
+LaTeX Font Info:    Font shape `T1/ETbb-TLF/bold/n' will be
+(Font)              scaled to size 6.0pt on input line 294.
+
+
+[115]
+
+[116]
+
+[117]
+
+[118]
+
+[119])
+
+[120] (main.ind
+
+
+
+[121
 
 
 
@@ -3461,22 +3512,22 @@ Package marginnote Info: xpos seems to be 312.79224pt on input line 252.
 
 LaTeX Warning: Command \textellipsis invalid in math mode on input line 41.
 
-<pdf/theorem_4_verify.pdf, id=3418, 462.96765pt x 356.13351pt>
+<pdf/theorem_4_verify.pdf, id=3736, 462.96765pt x 356.13351pt>
 File: pdf/theorem_4_verify.pdf Graphic file (type pdf)
 <use pdf/theorem_4_verify.pdf>
 Package pdftex.def Info: pdf/theorem_4_verify.pdf  used on input line 51.
 (pdftex.def)             Requested size: 258.00539pt x 198.47699pt.
 
 
-[108
+[122
 
 ]
 Underfull \vbox (badness 2922) has occurred while \output is active []
 
 
 
-[109 <./pdf/theorem_4_verify.pdf>]
-<pdf/VennFig2.pdf, id=3483, 1824.8175pt x 527.9725pt>
+[123 <./pdf/theorem_4_verify.pdf>]
+<pdf/VennFig2.pdf, id=3802, 1824.8175pt x 527.9725pt>
 File: pdf/VennFig2.pdf Graphic file (type pdf)
 <use pdf/VennFig2.pdf>
 Package pdftex.def Info: pdf/VennFig2.pdf  used on input line 70.
@@ -3488,32 +3539,32 @@ Underfull \vbox (badness 1502) has occurred while \output is active []
 
 
 
-[110 <./pdf/VennFig2.pdf>]
+[124 <./pdf/VennFig2.pdf>]
 
-[111
-pdfTeX warning (ext4): destination with the same identifier (name{equation.Alph0.5}) has been already used, duplicate ignored
+[125
+pdfTeX warning (ext4): destination with the same identifier (name{equation.Alph0.23}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.155 \end{align}
                  ]
 
-[112]
+[126]
 LaTeX Font Info:    Font shape `T1/ETbb-TLF/m/it' aliased to
 (Font)              `T1/ETbb-TLF/regular/it' on input line 207.
 LaTeX Font Info:    Font shape `T1/ETbb-TLF/regular/it' will be
 (Font)              scaled to size 9.0pt on input line 207.
 
-pdfTeX warning (ext4): destination with the same identifier (name{definition.3}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.208     A
             \textbf{deterministic model} $h_{d}$ assumes its internal space ...
-pdfTeX warning (ext4): destination with the same identifier (name{definition.4}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{definition.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.213     A
             \textbf{probabilistic model} $h_{p}$ assumes its internal space ...
-pdfTeX warning (ext4): destination with the same identifier (name{definition.5}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{definition.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.224         A
@@ -3524,18 +3575,18 @@ pdfTeX warning (ext4): destination with the same identifier (name{conjecture.1})
 l.229     F
            or any supervisor $\nabla$ of a learner framework $\mathcal{L}(\m...
 
-[113]
-pdfTeX warning (ext4): destination with the same identifier (name{definition.6}) has been already used, duplicate ignored
+[127]
+pdfTeX warning (ext4): destination with the same identifier (name{definition.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.242         A
                 \textbf{parametric model} is one that can be parameterized b...
 
-[114]
+[128]
 
-[115]) (main.bbl
+[129]) (main.bbl
 
-[116]
+[130]
 Underfull \hbox (badness 10000) in paragraph at lines 15--19
 []\T1/ETbb-TLF/regular/n/8 [PDF] A Unifeid Bias-Variance De-com-po-si-tion and its Ap-pli-ca-tions | Se-man-tic Scholar, b.  URL [][]$\T1/cmtt/m/n/8 https :
  []
@@ -3557,64 +3608,78 @@ Underfull \hbox (badness 10000) in paragraph at lines 21--25
 
 
 
-[117
+[131
 
 ]
+Underfull \hbox (badness 1502) in paragraph at lines 156--163
+\T1/ETbb-TLF/regular/n/8 tis-ti-cal me-chan-ics of deep learn-ing.  \T1/ETbb-TLF/regular/it/8 An-nual Re-view of Con-densed Mat-ter Physics\T1/ETbb-TLF/regular/n/8 , 11:501--528, 2020.  doi: $10 . 1146 /
+ []
 
-[118]
 
-[119]
-Underfull \hbox (badness 1314) in paragraph at lines 505--510
+
+[132]
+
+[133]
+Underfull \hbox (badness 1314) in paragraph at lines 572--577
 []\T1/ETbb-TLF/regular/n/8 Pedro M. Domin-gos.  A Unifeid Bias-Variance De-com-po-si-tion and its Ap-pli-ca-tions.  In \T1/ETbb-TLF/regular/it/8 Se-man-tic Scholar\T1/ETbb-TLF/regular/n/8 , June 2000d.
  []
 
 
-Underfull \hbox (badness 2865) in paragraph at lines 505--510
+Underfull \hbox (badness 2865) in paragraph at lines 572--577
 \T1/ETbb-TLF/regular/n/8 URL [][]$\T1/cmtt/m/n/8 https : / / www . semanticscholar . org / paper / A-[]Unifeid-[]Bias-[]Variance-[]Decomposition-[]and-[]its-[]Domingos /
  []
 
 
-Underfull \hbox (badness 4832) in paragraph at lines 559--564
+Underfull \hbox (badness 1389) in paragraph at lines 580--584
+[]\T1/ETbb-TLF/regular/n/8 David L. Donoho, Ar-ian Maleki, and An-drea Mon-ta-nari.  Mes-sage pass-ing al-go-rithms for com-pressed sens-ing.  2009.
+ []
+
+
+
+[134]
+Underfull \hbox (badness 4832) in paragraph at lines 648--653
 []\T1/ETbb-TLF/regular/n/8 Molavi et al.  Model Com-plex-ity, Ex-pec-ta-tions, and As-set Prices | The Re-view of Eco-nomic Stud-ies | Ox-ford
  []
 
 
-Underfull \hbox (badness 3323) in paragraph at lines 559--564
+Underfull \hbox (badness 3323) in paragraph at lines 648--653
 \T1/ETbb-TLF/regular/n/8 Aca-demic.  URL [][]$\T1/cmtt/m/n/8 https : / / academic . oup . com / restud / article-[]abstract / 91 / 4 / 2462 / 7222145 ? redirectedFrom =
  []
 
 
 
-[120]
+[135]
 
-[121]
+[136]
 
-[122]
-Underfull \hbox (badness 1142) in paragraph at lines 897--903
+[137]
+Underfull \hbox (badness 1142) in paragraph at lines 1044--1050
 []\T1/ETbb-TLF/regular/n/8 Alex Krizhevsky, Ilya Sutskever, and Ge-of-frey E. Hin-ton.  Im-a-genet clas-si-fi-ca-tion with deep con-vo-lu-tional neu-ral net-
  []
 
 
 
-[123]
-Underfull \hbox (badness 2941) in paragraph at lines 1146--1151
+[138]
+
+[139]
+Underfull \hbox (badness 2941) in paragraph at lines 1333--1338
 []\T1/ETbb-TLF/regular/n/8 Christoph Mol-nar.  In-ter-pretable ma-chine learn-ing.  \T1/ETbb-TLF/regular/it/8 On-line book\T1/ETbb-TLF/regular/n/8 , 2020.  URL [][]$\T1/cmtt/m/n/8 https : / / christophm . github . io /
  []
 
 
 
-[124]
+[140]
 
-[125]
+[141]
 
-[126]
+[142]
 
-[127]
+[143]
 
-[128]
+[144]
 
-[129]
-Underfull \hbox (badness 10000) in paragraph at lines 1987--1993
+[145]
+Underfull \hbox (badness 10000) in paragraph at lines 2238--2244
 \T1/ETbb-TLF/regular/n/8 URL [][]$\T1/cmtt/m/n/8 https : / / www . cambridge . org / core / books / mathematical-[]analysis-[]of-[]machine-[]learning-[]algorithms /
  []
 
@@ -3624,11 +3689,11 @@ Package natbib Warning: There were undefined citations.
 
 
 
-[130]
+[146]
 \tf@lof=\write9
 \openout9 = `main.lof'.
 
- (main.aux (content/introduction.aux) (content/c1.aux) (content/c3.aux) (content/c4.aux) (content/c5.aux) (content/c6.aux) (content/c7.aux) (content/c8.aux) (content/c9.aux))
+ (main.aux (content/introduction.aux) (content/c1.aux) (content/c3.aux) (content/c4.aux) (content/c5.aux) (content/c6.aux) (content/c7.aux) (content/c8.aux) (content/c9.aux) (content/c10.aux))
  ***********
 LaTeX2e <2025-06-01>
 L3 programming layer <2020/03/25>
@@ -3641,20 +3706,20 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D5FA9085F2EBDAA14CBB82C845988410;20181.
+(rerunfilecheck)             Checksum: 30F2BF5CA214B384E30E89D5803DAA6C;22492.
  ) 
 Here is how much of TeX's memory you used:
- 75447 strings out of 468187
- 1812119 string characters out of 5448666
- 2696688 words of memory out of 5000000
- 101793 multiletter control sequences out of 15000+600000
- 881302 words of font info for 187 fonts, out of 8000000 for 9000
+ 76021 strings out of 468187
+ 1825022 string characters out of 5448666
+ 2714663 words of memory out of 5000000
+ 102182 multiletter control sequences out of 15000+600000
+ 881367 words of font info for 187 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 103i,27n,120p,3845b,1233s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbm/dpi600\bbm9.pk><D:/MikTek/fonts/type1/public/etbb/ETbb-Bold.pfb><D:/MikTek/fonts/type1/public/etbb/ETbb-BoldItalic.pfb><D:/MikTek/fonts/type1/public/etbb/ETbb-Italic.pfb><D:/MikTek/fonts/type1/public/etbb/ETbb-Regular.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmbsy6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmbsy9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbx6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbx7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbx8.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbx9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi12.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi5.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmmib6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmmib9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr5.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmss8.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmss9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy5.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy9.pfb><D:/MikTek/fonts/type1/public/amsfonts/euler/eufm10.pfb><D:/MikTek/fonts/type1/public/amsfonts/symbols/msbm10.pfb><D:/MikTek/fonts/type1/public/amsfonts/symbols/msbm7.pfb><D:/MikTek/fonts/type1/public/cm-super/sfrm0800.pfb><D:/MikTek/fonts/type1/public/cm-super/sfss1000.pfb><D:/MikTek/fonts/type1/public/cm-super/sfss1095.pfb><D:/MikTek/fonts/type1/public/cm-super/sfss1440.pfb><D:/MikTek/fonts/type1/public/cm-super/sfss1728.pfb><D:/MikTek/fonts/type1/public/cm-super/sfsx0900.pfb><D:/MikTek/fonts/type1/public/cm-super/sfsx1000.pfb><D:/MikTek/fonts/type1/public/cm-super/sftt0800.pfb><D:/MikTek/fonts/type1/public/cm-super/sftt0900.pfb><D:/MikTek/fonts/type1/public/hoekwater/stmary6.pfb><D:/MikTek/fonts/type1/public/hoekwater/stmary9.pfb>
-Output written on main.pdf (140 pages, 8907740 bytes).
+ 103i,27n,120p,3849b,1317s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbm/dpi600\bbm9.pk><D:/MikTek/fonts/type1/public/etbb/ETbb-Bold.pfb><D:/MikTek/fonts/type1/public/etbb/ETbb-BoldItalic.pfb><D:/MikTek/fonts/type1/public/etbb/ETbb-Italic.pfb><D:/MikTek/fonts/type1/public/etbb/ETbb-Regular.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmbsy6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmbsy9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbx6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbx7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbx8.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbx9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi12.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi5.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmmib6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmmib9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr5.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmss8.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmss9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy5.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy9.pfb><D:/MikTek/fonts/type1/public/amsfonts/euler/eufm10.pfb><D:/MikTek/fonts/type1/public/amsfonts/symbols/msbm10.pfb><D:/MikTek/fonts/type1/public/amsfonts/symbols/msbm7.pfb><D:/MikTek/fonts/type1/public/cm-super/sfrm0800.pfb><D:/MikTek/fonts/type1/public/cm-super/sfsi0900.pfb><D:/MikTek/fonts/type1/public/cm-super/sfss1000.pfb><D:/MikTek/fonts/type1/public/cm-super/sfss1095.pfb><D:/MikTek/fonts/type1/public/cm-super/sfss1440.pfb><D:/MikTek/fonts/type1/public/cm-super/sfss1728.pfb><D:/MikTek/fonts/type1/public/cm-super/sfsx0900.pfb><D:/MikTek/fonts/type1/public/cm-super/sftt0800.pfb><D:/MikTek/fonts/type1/public/cm-super/sftt0900.pfb><D:/MikTek/fonts/type1/public/hoekwater/stmary6.pfb><D:/MikTek/fonts/type1/public/hoekwater/stmary9.pfb>
+Output written on main.pdf (156 pages, 9043689 bytes).
 PDF statistics:
- 4435 PDF objects out of 5155 (max. 8388607)
- 1082 named destinations out of 1200 (max. 500000)
- 933 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 4838 PDF objects out of 5155 (max. 8388607)
+ 1260 named destinations out of 1440 (max. 500000)
+ 1021 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,4 +1,4 @@
-\begin{thebibliography}{271}
+\begin{thebibliography}{310}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -35,6 +35,21 @@ Panos Achlioptas.
 \newblock Stochastic {Gradient} {Descent} in {Theory} and {Practice}.
 \newblock \emph{Lecture note, Stanford's AI}.
 
+\bibitem[Ackley et~al.(1985{\natexlab{a}})Ackley, Hinton, and
+  Sejnowski]{ackley1985learning}
+D.~H. Ackley, G.~E. Hinton, and T.~J. Sejnowski.
+\newblock A learning algorithm for boltzmann machines.
+\newblock \emph{Cognitive Science}, 9\penalty0 (1):\penalty0 147--169,
+  1985{\natexlab{a}}.
+\newblock \doi{10.1016/0364-0213(85)90014-6}.
+\newblock URL \url{https://doi.org/10.1016/0364-0213(85)90014-6}.
+
+\bibitem[Ackley et~al.(1985{\natexlab{b}})Ackley, Hinton, and
+  Sejnowski]{ackley_hinton_sejnowski_1985}
+D.~H. Ackley, G.~E. Hinton, and T.~J. Sejnowski.
+\newblock A learning algorithm for boltzmann machines.
+\newblock \emph{Cognitive Science}, 9:\penalty0 147--169, 1985{\natexlab{b}}.
+
 \bibitem[Adcock and Dexter(2021)]{adcock2021gaptheorypracticefunction}
 Ben Adcock and Nick Dexter.
 \newblock The gap between theory and practice in function approximation with
@@ -48,12 +63,27 @@ Ben Adlam and Jeffrey Pennington.
   decomposition, 2020.
 \newblock URL \url{https://arxiv.org/abs/2011.03321}.
 
+\bibitem[Advani and Saxe(2017{\natexlab{a}})]{advani2017high}
+Madhu~S. Advani and Andrew~M. Saxe.
+\newblock High-dimensional dynamics of generalization error in neural networks.
+\newblock 2017{\natexlab{a}}.
+\newblock URL \url{https://arxiv.org/abs/1710.03667}.
+\newblock arXiv:1710.03667; (published versions/derivatives exist).
+
 \bibitem[Advani and
-  Saxe(2017)]{advani2017highdimensionaldynamicsgeneralizationerror}
+  Saxe(2017{\natexlab{b}})]{advani2017highdimensionaldynamicsgeneralizationerror}
 Madhu~S. Advani and Andrew~M. Saxe.
 \newblock High-dimensional dynamics of generalization error in neural networks,
-  2017.
+  2017{\natexlab{b}}.
 \newblock URL \url{https://arxiv.org/abs/1710.03667}.
+
+\bibitem[Advani et~al.(2013)Advani, Lahiri, and Ganguli]{advani2013statistical}
+Madhu~S. Advani, Subhaneil Lahiri, and Surya Ganguli.
+\newblock Statistical mechanics of complex neural systems and high dimensional
+  data.
+\newblock \emph{Journal of Statistical Mechanics: Theory and Experiment}, 2013.
+\newblock URL \url{https://arxiv.org/abs/1301.7115}.
+\newblock arXiv:1301.7115.
 
 \bibitem[Allerbo(2025)]{allerbo2025changingkerneltrainingleads}
 Oskar Allerbo.
@@ -83,6 +113,13 @@ Shun-ichi Amari.
 \newblock Natural gradient works efficiently in learning.
 \newblock \emph{Neural Computation}, 10\penalty0 (2):\penalty0 251--276, 1998.
 \newblock \doi{10.1162/089976698300017746}.
+
+\bibitem[Amit et~al.(1985)Amit, Gutfreund, and Sompolinsky]{amit1985spin}
+D.~J. Amit, H.~Gutfreund, and H.~Sompolinsky.
+\newblock Spin-glass models of neural networks.
+\newblock \emph{Physical Review A}, 32\penalty0 (2):\penalty0 1007--1018, 1985.
+\newblock \doi{10.1103/PhysRevA.32.1007}.
+\newblock URL \url{https://doi.org/10.1103/PhysRevA.32.1007}.
 
 \bibitem[Ammar et~al.(2025)Ammar, Brellmann, Mendoza, Manzanera, and
   Franchi]{ammar2025doubledescentmeetsoutofdistribution}
@@ -114,6 +151,16 @@ Kai Arulkumaran, Marc~Peter Deisenroth, Miles Brundage, and Anil~Anthony
 \newblock URL \url{https://arxiv.org/abs/1708.05866}.
 \newblock Useful survey and roadmap for deep-RL research.
 
+\bibitem[Bahri et~al.(2020)Bahri, Kadmon, Pennington, Schoenholz,
+  Sohl-Dickstein, and Ganguli]{bahri2020statmech}
+Yasaman Bahri, Jonathan Kadmon, Jeffrey Pennington, Sam~S. Schoenholz, Jascha
+  Sohl-Dickstein, and Surya Ganguli.
+\newblock Statistical mechanics of deep learning.
+\newblock \emph{Annual Review of Condensed Matter Physics}, 11:\penalty0
+  501--528, 2020.
+\newblock \doi{10.1146/annurev-conmatphys-031119-050745}.
+\newblock URL \url{https://doi.org/10.1146/annurev-conmatphys-031119-050745}.
+
 \bibitem[Bai et~al.(2022)Bai, Kadavath, Kundu, Askell, Kernion, Jones, Chen,
   Goldie, Mirhoseini, McKinnon, et~al.]{bai2022constitutional}
 Yuntao Bai, Saurav Kadavath, Sandipan Kundu, Amanda Askell, Jackson Kernion,
@@ -123,6 +170,14 @@ Yuntao Bai, Saurav Kadavath, Sandipan Kundu, Amanda Askell, Jackson Kernion,
 \newblock \emph{arXiv preprint arXiv:2212.08073}, 2022.
 \newblock URL \url{https://arxiv.org/abs/2212.08073}.
 \newblock Anthropic's approach to AI alignment using AI-generated feedback.
+
+\bibitem[Barbier et~al.(2025)Barbier, Camilli, Nguyen, Pastore, and
+  Skerk]{barbier2025statisticalphysicsdeeplearning}
+Jean Barbier, Francesco Camilli, Minh-Toan Nguyen, Mauro Pastore, and Rudy
+  Skerk.
+\newblock Statistical physics of deep learning: Optimal learning of a
+  multi-layer perceptron near interpolation, 2025.
+\newblock URL \url{https://arxiv.org/abs/2510.24616}.
 
 \bibitem[Barceló et~al.(2020)Barceló, Monet, Pérez, and
   Subercaseaux]{barcelo2020modelinterpretabilitylenscomputational}
@@ -348,6 +403,13 @@ Nicol{\`o} Cesa-Bianchi and G{\'a}bor Lugosi.
 \newblock URL
   \url{https://www.cambridge.org/core/books/prediction-learning-and-games/8C6D3E2F7D9D1C7F7A98C9F1C9C5E2F2}.
 
+\bibitem[Chaudhari et~al.(2016)Chaudhari, Choromanska, Soatto, and
+  et~al.]{chaudhari_entropy_sgd_2016}
+Pratik Chaudhari, Anna Choromanska, Stefano Soatto, and et~al.
+\newblock Entropy-sgd: Biasing gradient descent into wide valleys.
+\newblock 2016.
+\newblock arXiv:1611.01838; JSTAT 2019.
+
 \bibitem[Chen et~al.(2021)Chen, Huang, Nguyen, and Weng]{chen2021equivalence}
 Yilan Chen, Wei Huang, Lam~M. Nguyen, and Tsui-Wei Weng.
 \newblock On the equivalence between neural network and support vector machine.
@@ -409,6 +471,11 @@ Robert~M. Corless and Leili~Rafiee Sevyeri.
 \newblock \emph{arXiv preprint}, 0\penalty0 (arXiv:1804.08561), 2018.
 \newblock URL \url{https://arxiv.org/abs/1804.08561}.
 \newblock Modern analysis of Runge's phenomenon and conditioning.
+
+\bibitem[Crisanti and Sommers(1992)]{crisanti_sommers_1992}
+A.~Crisanti and H.-J. Sommers.
+\newblock The spherical p-spin interaction spin glass model: the statics.
+\newblock \emph{Zeitschrift f{\"u}r Physik B}, 87:\penalty0 341--354, 1992.
 
 \bibitem[Curth et~al.(2023)Curth, Jeffares, and van~der
   Schaar]{curth2023uturndoubledescentrethinking}
@@ -508,6 +575,13 @@ Pedro~M. Domingos.
 \newblock URL
   \url{https://www.semanticscholar.org/paper/A-Unifeid-Bias-Variance-Decomposition-and-its-Domingos/e1ed9d24db5e8f7ab326aeb797e965a94f5ad6d3}.
 
+\bibitem[Donoho et~al.(2009)Donoho, Maleki, and
+  Montanari]{donoho_maleki_montanari_2009}
+David~L. Donoho, Arian Maleki, and Andrea Montanari.
+\newblock Message passing algorithms for compressed sensing.
+\newblock 2009.
+\newblock arXiv:0907.3574; Proc. Natl. Acad. Sci. 2009.
+
 \bibitem[Doshi-Velez and Kim(2017)]{doshi2017towards}
 Finale Doshi-Velez and Been Kim.
 \newblock Towards a rigorous science of interpretable machine learning.
@@ -533,6 +607,15 @@ Hubert~L. Dreyfus and Stuart~E. Dreyfus.
 \newblock Free Press, 1986.
 \newblock ISBN 0029080606.
 
+\bibitem[Duranthon and Zdeborová(2025)]{Duranthon_2025}
+O.~Duranthon and L.~Zdeborová.
+\newblock Statistical physics analysis of graph neural networks: Approaching
+  optimality in the contextual stochastic block model.
+\newblock \emph{Physical Review X}, 15\penalty0 (4), November 2025.
+\newblock ISSN 2160-3308.
+\newblock \doi{10.1103/lfxj-hbsk}.
+\newblock URL \url{http://dx.doi.org/10.1103/lfxj-hbsk}.
+
 \bibitem[E.~L.~Lehmann(1998)]{LehmannCasella_theory_1998}
 George~Casella E.~L.~Lehmann.
 \newblock \emph{Theory of {Point} {Estimation}}.
@@ -549,6 +632,12 @@ C.~Elliot.
   \url{https://research.tilburguniversity.edu/en/publications/on-de-finettis-philosophy-of-probability}.
 \newblock Available from Tilburg University repository.
 
+\bibitem[Engel and Van~den Broeck(2001)]{engel2001statistical}
+A.~Engel and C.~Van~den Broeck.
+\newblock \emph{Statistical Mechanics of Learning}.
+\newblock Cambridge University Press, Cambridge, 2001.
+\newblock ISBN 978-0521773072.
+
 \bibitem[Ernst et~al.(2005)Ernst, Geurts, and Wehenkel]{ernst2005tree}
 Damien Ernst, Pierre Geurts, and Louis Wehenkel.
 \newblock Tree-backup and batch-mode reinforcement learning.
@@ -561,6 +650,29 @@ Molavi et~al.
   {The} {Review} of {Economic} {Studies} {\textbar} {Oxford} {Academic}.
 \newblock URL
   \url{https://academic.oup.com/restud/article-abstract/91/4/2462/7222145?redirectedFrom=fulltext&login=false}.
+
+\bibitem[Faulkner and Livingstone(2024)]{Faulkner_2024}
+Michael~F. Faulkner and Samuel Livingstone.
+\newblock Sampling algorithms in statistical physics: A guide for statistics
+  and machine learning.
+\newblock \emph{Statistical Science}, 39\penalty0 (1), February 2024.
+\newblock ISSN 0883-4237.
+\newblock \doi{10.1214/23-sts893}.
+\newblock URL \url{http://dx.doi.org/10.1214/23-STS893}.
+
+\bibitem[Ferrari et~al.(2024)Ferrari, Gupta, and
+  Iqbal]{ferrari2024machinelearningoptimizationbasedapproaches}
+Andrea E.~V. Ferrari, Prateek Gupta, and Nabil Iqbal.
+\newblock Machine learning and optimization-based approaches to duality in
+  statistical physics, 2024.
+\newblock URL \url{https://arxiv.org/abs/2411.04838}.
+
+\bibitem[Ferraro et~al.(2014)Ferraro, Wang, Martí, and
+  Mézard]{cavity_tutorial_delFerraro}
+Gino~Del Ferraro, Chuang Wang, Dani Martí, and Marc Mézard.
+\newblock Cavity method: Message passing from a physics perspective.
+\newblock 2014.
+\newblock URL \url{https://arxiv.org/abs/1409.3048}.
 
 \bibitem[Fletcher and Reeves(1964)]{Fletcher:1964}
 R.~Fletcher and C.~M. Reeves.
@@ -595,6 +707,20 @@ Kunihiko Fukushima.
   of pattern recognition unaffected by shift in position.
 \newblock \emph{Biological Cybernetics}, 36:\penalty0 193--202, 1980.
 \newblock \doi{10.1007/BF00344251}.
+
+\bibitem[Gardner and Derrida(1988)]{gardner1988optimal}
+E.~Gardner and B.~Derrida.
+\newblock Optimal storage properties of neural network models.
+\newblock \emph{Journal of Physics A: Mathematical and General}, 21\penalty0
+  (1):\penalty0 271--284, 1988.
+\newblock \doi{10.1088/0305-4470/21/1/031}.
+\newblock URL \url{https://doi.org/10.1088/0305-4470/21/1/031}.
+
+\bibitem[Gardner(1988)]{gardner_1988}
+Elizabeth Gardner.
+\newblock The space of interactions in neural network models.
+\newblock \emph{Journal of Physics A: Mathematical and General}, 21:\penalty0
+  257--270, 1988.
 
 \bibitem[Geman et~al.(1992)Geman, Bienenstock, and Doursat]{6797087}
 Stuart Geman, Elie Bienenstock, and Rene Doursat.
@@ -718,12 +844,32 @@ Magnus~R. Hestenes and Eduard Stiefel.
   49\penalty0 (6):\penalty0 409--436, 1952.
 \newblock \doi{10.6028/jres.049.044}.
 
+\bibitem[Hinton(2012)]{hinton2012practical}
+G.~E. Hinton.
+\newblock A practical guide to training restricted boltzmann machines.
+\newblock In G.~Montavon, G.~B. Orr, and K.-R. Müller, editors, \emph{Neural
+  Networks: Tricks of the Trade (2nd ed.)}, pages 599--619. Springer, 2012.
+\newblock \doi{10.1007/978-3-642-35289-8\_32}.
+\newblock URL \url{https://doi.org/10.1007/978-3-642-35289-8_32}.
+
+\bibitem[Hinton(2002)]{hinton_2002_cd}
+Geoffrey~E. Hinton.
+\newblock Training products of experts by minimizing contrastive divergence.
+\newblock \emph{Neural Computation}, 14\penalty0 (8):\penalty0 1771--1800,
+  2002.
+
 \bibitem[Hinton et~al.(2006)Hinton, Osindero, and
   Teh]{hinton_osindero_teh_2006}
 Geoffrey~E. Hinton, Simon Osindero, and Yee-Whye Teh.
 \newblock A fast learning algorithm for deep belief nets.
 \newblock \emph{Neural Computation}, 18:\penalty0 1527--1554, 2006.
 \newblock URL \url{https://www.cs.toronto.edu/~fritz/absps/ncfast.pdf}.
+
+\bibitem[Ho et~al.(2020)Ho, Jain, and Abbeel]{ho2020ddpm}
+Jonathan Ho, Ajay Jain, and Pieter Abbeel.
+\newblock Denoising diffusion probabilistic models.
+\newblock 2020.
+\newblock arXiv:2006.11239.
 
 \bibitem[Hochreiter and Schmidhuber(1997)]{hochreiter_schmidhuber_1997}
 Sepp Hochreiter and J{\"u}rgen Schmidhuber.
@@ -761,6 +907,11 @@ J.~J. Hopfield.
 Kurt Hornik.
 \newblock Approximation capabilities of multilayer feedforward networks.
 \newblock \emph{Neural Networks}, 4\penalty0 (2):\penalty0 251--257, 1991.
+
+\bibitem[Hou and You(2023)]{hou2023machinelearningrenormalizationgroup}
+Wanda Hou and Yi-Zhuang You.
+\newblock Machine learning renormalization group for statistical physics, 2023.
+\newblock URL \url{https://arxiv.org/abs/2306.11054}.
 
 \bibitem[Hu(2021)]{ErdongHu2021}
 Erdong Hu.
@@ -816,21 +967,11 @@ Leslie~P. Kaelbling, Michael~L. Littman, and Andrew~W. Moore.
 \newblock 1996.
 \newblock Classic early survey (also useful historically).
 
-\bibitem[Kaplan et~al.(2020{\natexlab{a}})Kaplan, McCandlish, Henighan, Brown,
-  Chess, Child, Gray, Radford, Wu, and Amodei]{kaplan2020scaling}
-Jared Kaplan, Sam McCandlish, Tom Henighan, Tom~B Brown, Benjamin Chess, Rewon
-  Child, Scott Gray, Alec Radford, Jeffrey Wu, and Dario Amodei.
-\newblock Scaling laws for neural language models.
-\newblock \emph{arXiv preprint arXiv:2001.08361}, 2020{\natexlab{a}}.
-\newblock URL \url{https://arxiv.org/abs/2001.08361}.
-\newblock Established empirical scaling laws for language model performance.
-
-\bibitem[Kaplan et~al.(2020{\natexlab{b}})Kaplan, McCandlish, Henighan, Brown,
-  Chess, Child, Gray, Radford, Wu, and
-  Amodei]{kaplan2020scalinglawsneurallanguage}
+\bibitem[Kaplan et~al.(2020)Kaplan, McCandlish, Henighan, Brown, Chess, Child,
+  Gray, Radford, Wu, and Amodei]{kaplan2020scalinglawsneurallanguage}
 Jared Kaplan, Sam McCandlish, Tom Henighan, Tom~B. Brown, Benjamin Chess, Rewon
   Child, Scott Gray, Alec Radford, Jeffrey Wu, and Dario Amodei.
-\newblock Scaling laws for neural language models, 2020{\natexlab{b}}.
+\newblock Scaling laws for neural language models, 2020.
 \newblock URL \url{https://arxiv.org/abs/2001.08361}.
 
 \bibitem[Kapoor and Narayanan(2023)]{KAPOOR2023100804}
@@ -863,6 +1004,12 @@ Mohammad~Emtiyaz Khan and H\r~avard Rue.
 \newblock The {Bayesian} {Learning} {Rule}, June 2024.
 \newblock URL \url{http://arxiv.org/abs/2107.04562}.
 \newblock arXiv:2107.04562 [cs, stat] version: 4.
+
+\bibitem[Kingma and Welling(2013)]{kingma_welling_2013}
+Diederik~P. Kingma and Max Welling.
+\newblock Auto-encoding variational bayes.
+\newblock 2013.
+\newblock arXiv:1312.6114.
 
 \bibitem[Kliemann and Sanders(2016)]{Kliemann2016}
 Lasse Kliemann and Peter Sanders, editors.
@@ -942,6 +1089,14 @@ Jaehoon Lee, Lechao Xiao, Samuel~S. Schoenholz, Yasaman Bahri, Roman Novak,
   gradient descent.
 \newblock In \emph{Advances in Neural Information Processing Systems
   (NeurIPS)}, pages 8572--8583, 2019.
+
+\bibitem[Li and Sompolinsky(2021)]{li2021statmechdeep}
+Qianyi Li and Haim Sompolinsky.
+\newblock Statistical mechanics of deep linear neural networks: The
+  backpropagating kernel renormalization.
+\newblock \emph{Physical Review X}, 11\penalty0 (3):\penalty0 031059, 2021.
+\newblock \doi{10.1103/PhysRevX.11.031059}.
+\newblock URL \url{https://doi.org/10.1103/PhysRevX.11.031059}.
 
 \bibitem[Li and Sonthalia(2024)]{NEURIPS2024_2d43f7a6}
 Xinyue Li and Rishi Sonthalia.
@@ -1039,6 +1194,12 @@ Duy V.~N. Luong, Panos Parpas, Daniel Rueckert, and Berc Rustem.
   (3):\penalty0 900--915, 2016.
 \newblock \doi{10.1007/s10957-016-0963-5}.
 
+\bibitem[Mandt et~al.(2017)Mandt, Hoffman, and Blei]{mandt_2017}
+Stephan Mandt, Matthew~D. Hoffman, and David~M. Blei.
+\newblock Stochastic gradient descent as approximate bayesian inference.
+\newblock \emph{Journal of Machine Learning Research}, 2017.
+\newblock arXiv:1704.04289.
+
 \bibitem[Manin and Marcolli(2024)]{Manin_2024}
 Yuri Manin and Matilde Marcolli.
 \newblock Homotopy theoretic and categorical models of neural information
@@ -1076,6 +1237,14 @@ Ninareh Mehrabi, Fred Morstatter, Nripsuta Saxena, Kristina Lerman, and Aram
 \newblock URL \url{http://arxiv.org/abs/1908.09635}.
 \newblock arXiv:1908.09635 [cs].
 
+\bibitem[Mehta and Schwab(2014)]{mehta2014exact}
+Pankaj Mehta and David~J. Schwab.
+\newblock An exact mapping between the variational renormalization group and
+  deep learning.
+\newblock 2014.
+\newblock URL \url{https://arxiv.org/abs/1410.3831}.
+\newblock arXiv:1410.3831.
+
 \bibitem[Mei and Montanari(2019{\natexlab{a}})]{mei2019generalization}
 Song Mei and Andrea Montanari.
 \newblock The generalization error of random features regression: Precise
@@ -1095,11 +1264,29 @@ Song Mei and Andrea Montanari.
   asymptotics and double descent curve, 2020.
 \newblock URL \url{https://arxiv.org/abs/1908.05355}.
 
+\bibitem[Mei et~al.(2018)Mei, Montanari, and Nguyen]{mei_montanari_2018}
+Song Mei, Andrea Montanari, and Phan-Minh Nguyen.
+\newblock A mean field view of the landscape of two-layer neural networks.
+\newblock \emph{Proc. Natl. Acad. Sci. USA}, 2018.
+\newblock arXiv:1804.06561.
+
 \bibitem[Mendling et~al.(2021)Mendling, Depaire, and
   Leopold]{mendling2021theorypracticealgorithmengineering}
 Jan Mendling, Benoît Depaire, and Henrik Leopold.
 \newblock Theory and practice of algorithm engineering, 2021.
 \newblock URL \url{https://arxiv.org/abs/2107.10675}.
+
+\bibitem[Mezard et~al.(1987)Mezard, Parisi, and Virasoro]{mezard1987spin}
+M.~Mezard, G.~Parisi, and M.~A. Virasoro.
+\newblock \emph{Spin Glass Theory and Beyond}.
+\newblock World Scientific, Singapore, 1987.
+\newblock ISBN 978-9971501533.
+
+\bibitem[Mezard and Montanari(2009)]{mezard2009information}
+Marc Mezard and Andrea Montanari.
+\newblock \emph{Information, Physics, and Computation}.
+\newblock Oxford University Press, Oxford, 2009.
+\newblock ISBN 978-0199233210.
 
 \bibitem[Minsky and Papert(1969)]{minsky_papert_1969}
 Marvin Minsky and Seymour Papert.
@@ -1311,6 +1498,11 @@ Judea Pearl.
 \newblock ISBN 9780521895606.
 \newblock \doi{10.1017/CBO9780511803161}.
 
+\bibitem[Pei(2025)]{pei2025statisticalphysicsartificialneural}
+Zongrui Pei.
+\newblock Statistical physics for artificial neural networks, 2025.
+\newblock URL \url{https://arxiv.org/abs/2512.06518}.
+
 \bibitem[Pezeshki et~al.(2021)Pezeshki, Mitra, Bengio, and
   Lajoie]{pezeshki2021multiscalefeaturelearningdynamics}
 Mohammad Pezeshki, Amartya Mitra, Yoshua Bengio, and Guillaume Lajoie.
@@ -1441,12 +1633,25 @@ Marco~Tulio Ribeiro, Sameer Singh, and Carlos Guestrin.
 \newblock \doi{10.1145/2939672.2939778}.
 \newblock URL \url{https://arxiv.org/abs/1602.04938}.
 
+\bibitem[Ringel et~al.(2025)Ringel, Rubin, Mor, Helias, and
+  Seroussi]{ringel2025applicationsstatisticalfieldtheory}
+Zohar Ringel, Noa Rubin, Edo Mor, Moritz Helias, and Inbar Seroussi.
+\newblock Applications of statistical field theory in deep learning, 2025.
+\newblock URL \url{https://arxiv.org/abs/2502.18553}.
+
 \bibitem[Robbins and Monro(1951)]{Robbins:1951}
 Herbert Robbins and Sutton Monro.
 \newblock A stochastic approximation method.
 \newblock \emph{Annals of Mathematical Statistics}, 22\penalty0 (3):\penalty0
   400--407, 1951.
 \newblock \doi{10.1214/aoms/1177729586}.
+
+\bibitem[Roberts et~al.(2021)Roberts, Yaida, and Hanin]{roberts2021principles}
+Daniel~A. Roberts, Sho Yaida, and Boris Hanin.
+\newblock The principles of deep learning theory.
+\newblock Technical report, 2021.
+\newblock URL \url{https://arxiv.org/abs/2106.10165}.
+\newblock arXiv:2106.10165; expanded into a Cambridge Univ. Press book.
 
 \bibitem[Roberts et~al.(2022)Roberts, Yaida, and Hanin]{roberts2022principles}
 Daniel~A. Roberts, Sho Yaida, and Boris Hanin.
@@ -1492,6 +1697,12 @@ Carl Runge.
 \newblock The original Runge example showing divergence with equispaced
   interpolation.
 
+\bibitem[Russo and Zou(2016)]{RussoZou:2016:InformationTheory}
+Daniel Russo and James Zou.
+\newblock Controlling bias in adaptive data analysis using information theory.
+\newblock In \emph{Proceedings of AISTATS}, 2016.
+\newblock Introduced info-theoretic generalization bounds.
+
 \bibitem[Sachs et~al.(2023)Sachs, van Erven, Hodgkinson, Khanna, and
   Simsekli]{sachs2023algorithm}
 Sarah Sachs, Tim van Erven, Liam Hodgkinson, Rajiv Khanna, and Umut Simsekli.
@@ -1507,6 +1718,13 @@ N.~Sauer.
 \newblock \emph{Journal of Combinatorial Theory, Series A}, 13\penalty0
   (1):\penalty0 145--147, 1972.
 \newblock \doi{10.1016/0097-3165(72)90033-X}.
+
+\bibitem[Saxe et~al.(2014)Saxe, McClelland, and Ganguli]{saxe2014exact}
+Andrew~M. Saxe, James~L. McClelland, and Surya Ganguli.
+\newblock Exact solutions to the nonlinear dynamics of learning in deep linear
+  neural networks.
+\newblock \emph{arXiv preprint arXiv:1312.6120}, 2014.
+\newblock ICLR 2014.
 
 \bibitem[Saxena et~al.(2025)Saxena, Jung, Forlizzi, Holstein, and
   Zimmerman]{saxena2025aimismatchesidentifyingpotential}
@@ -1571,6 +1789,14 @@ Harald Semmelrock, Simone Kopeinik, Dieter Theiler, Tony Ross-Hellauer, and
 \newblock Reproducibility in machine learning-driven research, 2023.
 \newblock URL \url{https://arxiv.org/abs/2307.10320}.
 
+\bibitem[Seung et~al.(1992)Seung, Sompolinsky, and
+  Tishby]{seung1992statistical}
+H.~S. Seung, H.~Sompolinsky, and N.~Tishby.
+\newblock Statistical mechanics of learning from examples.
+\newblock \emph{Physical Review A}, 45\penalty0 (8):\penalty0 6056--6091, 1992.
+\newblock \doi{10.1103/PhysRevA.45.6056}.
+\newblock URL \url{https://doi.org/10.1103/PhysRevA.45.6056}.
+
 \bibitem[Shalev-Shwartz(2012)]{shalev2012online}
 Shai Shalev-Shwartz.
 \newblock Online learning and online convex optimization.
@@ -1618,6 +1844,11 @@ Zewen Shen and Kirill Serkh.
 \newblock \doi{10.1137/23m1623215}.
 \newblock URL \url{http://dx.doi.org/10.1137/23M1623215}.
 
+\bibitem[Sherrington and Kirkpatrick(1975)]{sherrington_kirkpatrick_1975}
+D.~Sherrington and S.~Kirkpatrick.
+\newblock Solvable model of a spin-glass.
+\newblock \emph{Physical Review Letters}, 35:\penalty0 1792--1796, 1975.
+
 \bibitem[Shi et~al.(2024)Shi, Pan, Hu, and
   Dokmani\'c]{shi2024homophilymodulatesdoubledescent}
 Cheng Shi, Liming Pan, Hong Hu, and Ivan Dokmani\'c.
@@ -1648,6 +1879,13 @@ Jascha Sohl-Dickstein.
   tricks for its use.
 \newblock \emph{arXiv Preprint}, 2012.
 \newblock arXiv:1205.1828.
+
+\bibitem[Song and Ermon(2020)]{song2019score}
+Yang Song and Stefano Ermon.
+\newblock Score-based generative modeling through stochastic differential
+  equations.
+\newblock 2020.
+\newblock arXiv:2011.13456.
 
 \bibitem[Soudry et~al.(2024)Soudry, Hoffer, Nacson, Gunasekar, and
   Srebro]{soudry2024implicitbiasgradientdescent}
@@ -1838,6 +2076,12 @@ Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones,
   (NeurIPS)}, 2017{\natexlab{b}}.
 \newblock URL \url{https://arxiv.org/abs/1706.03762}.
 
+\bibitem[Wainwright and Jordan(2008)]{wainwright_jordan_2008}
+Martin~J. Wainwright and Michael~I. Jordan.
+\newblock Graphical models, exponential families, and variational inference.
+\newblock \emph{Foundations and Trends in Machine Learning}, 1\penalty0
+  (1-2):\penalty0 1--305, 2008.
+
 \bibitem[Wang et~al.(2017)Wang, Xiong, Yao, Lin, and Ren]{wang2017research}
 Huibing Wang, Jinbo Xiong, Zhiqiang Yao, Mingwei Lin, and Jun Ren.
 \newblock Research survey on support vector machine.
@@ -1926,12 +2170,19 @@ Lin Xiao and Tong Zhang.
   2057--2075, 2014.
 \newblock \doi{10.1137/140961791}.
 
-\bibitem[Xu and Raginsky(2017)]{xu2017information}
+\bibitem[Xu and Raginsky(2017{\natexlab{a}})]{XuRaginsky:2017:InfoGen}
+An~Xu and Maxim Raginsky.
+\newblock Information-theoretic analysis of generalization capability of
+  learning algorithms.
+\newblock In \emph{NeurIPS}, 2017{\natexlab{a}}.
+\newblock Mutual information bounds.
+
+\bibitem[Xu and Raginsky(2017{\natexlab{b}})]{xu2017information}
 Ankit Xu and Maxim Raginsky.
 \newblock Information-theoretic analysis of generalization capability of
   learning algorithms.
 \newblock \emph{Advances in Neural Information Processing Systems},
-  30:\penalty0 2524--2533, 2017.
+  30:\penalty0 2524--2533, 2017{\natexlab{b}}.
 
 \bibitem[Yang(2019)]{yang2019scaling}
 Greg Yang.
@@ -2022,6 +2273,19 @@ Martin Zinkevich.
   Learning (ICML)}, pages 928--936, 2003.
 \newblock URL
   \url{https://www.cs.cmu.edu/~zinkevich/publications/onlineconvexprog.pdf}.
+
+\bibitem[Ziyin and Ueda(2022)]{ziyin2022exactphasetransitionsdeep}
+Liu Ziyin and Masahito Ueda.
+\newblock Exact phase transitions in deep learning, 2022.
+\newblock URL \url{https://arxiv.org/abs/2205.12510}.
+
+\bibitem[Ziyin and Ueda(2023)]{PhysRevResearch.5.043243}
+Liu Ziyin and Masahito Ueda.
+\newblock Zeroth, first, and second-order phase transitions in deep neural
+  networks.
+\newblock \emph{Phys. Rev. Res.}, 5:\penalty0 043243, Dec 2023.
+\newblock \doi{10.1103/PhysRevResearch.5.043243}.
+\newblock URL \url{https://link.aps.org/doi/10.1103/PhysRevResearch.5.043243}.
 
 \bibitem[Zou et~al.(2019)Zou, Cao, Zhou, and Gu]{zou2019implicit}
 Difan Zou, Yuan Cao, Dongruo Zhou, and Quanquan Gu.

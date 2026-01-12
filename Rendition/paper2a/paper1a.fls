@@ -1,6 +1,6 @@
-PWD e:\Code Repository\Paper Series\Rendition\paper2a
+PWD e:\Core\Main Directory\Paper Series\Rendition\paper2a
 INPUT C:\Users\Admin\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT e:\Code Repository\Paper Series\Rendition\paper2a\paper1a.tex
+INPUT e:\Core\Main Directory\Paper Series\Rendition\paper2a\paper1a.tex
 OUTPUT paper1a.log
 INPUT .\cup-journal.cls
 INPUT cup-journal.cls

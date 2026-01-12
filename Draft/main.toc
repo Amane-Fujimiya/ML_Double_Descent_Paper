@@ -94,21 +94,62 @@
 \contentsline {section}{\numberline {6.1}Motivation}{97}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Principle}{98}{section.6.2}%
 \contentsline {subsection}{\numberline {6.2.1}Structures}{98}{subsection.6.2.1}%
-\contentsline {part}{\numberline {I}Environmental framing}{98}{part.1}%
-\contentsline {section}{\numberline {6.3}System space}{98}{section.6.3}%
+\contentsline {section}{\numberline {6.3}Precursor}{98}{section.6.3}%
 \contentsline {subsection}{\numberline {6.3.1}Groundwork of systems}{100}{subsection.6.3.1}%
 \contentsline {subsection}{\numberline {6.3.2}Cardinality space}{101}{subsection.6.3.2}%
-\contentsline {subsection}{\numberline {6.3.3}Probability}{101}{subsection.6.3.3}%
-\contentsline {section}{\numberline {6.4}The concept of learning}{101}{section.6.4}%
+\contentsline {section}{\numberline {6.4}The concept of learning}{102}{section.6.4}%
 \contentsline {section}{\numberline {6.5}Neurons perspective}{102}{section.6.5}%
 \contentsline {subsection}{\numberline {6.5.1}Analysis}{104}{subsection.6.5.1}%
 \contentsline {subsection}{\numberline {6.5.2}Why we call it minimal}{105}{subsection.6.5.2}%
-\contentsline {section}{\numberline {6.6}Formalisation}{105}{section.6.6}%
-\contentsline {chapter}{Index}{107}{section*.48}%
-\contentsline {section}{Reevaluation of theorem~\ref {eq:linear_gaussian_erm}}{108}{section*.49}%
-\contentsline {subsection}{Remark}{109}{subsection*.52}%
-\contentsline {section}{Observing gradient descent decomposition}{110}{section*.53}%
-\contentsline {section}{Details of supervised learning structure}{112}{section*.55}%
-\contentsline {section}{Practical consideration}{115}{section*.57}%
-\contentsline {subsection}{Observational space partitioning}{116}{subsection*.58}%
-\contentsline {chapter}{Bibliography}{117}{appendix*.59}%
+\contentsline {section}{\numberline {6.6}Formalization}{106}{section.6.6}%
+\contentsline {chapter}{\chapternumberline {7}Statistical physics}{107}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Note for team writing member}{108}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Main structure}{108}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Notices}{109}{subsection.7.1.2}%
+\contentsline {subsection}{\numberline {7.1.3}In detail systematic projection}{110}{subsection.7.1.3}%
+\contentsline {section}{\numberline {7.2}Approach A - Isomorphism}{112}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}From Analogy to Isomorphism}{112}{subsection.7.2.1}%
+\contentsline {subsubsection}{Reasons for Statistical Physics in Machine Learning}{112}{subsubsection*.48}%
+\contentsline {subsubsection}{Axioms and Formulation}{112}{subsubsection*.49}%
+\contentsline {paragraph}{The Mismatch.}{113}{paragraph*.50}%
+\contentsline {paragraph}{The Isomorphism.}{113}{paragraph*.51}%
+\contentsline {subsubsection}{Assumptions and Incompatibilities}{113}{subsubsection*.52}%
+\contentsline {subsection}{\numberline {7.2.2}Limitations of Equilibrium Theories}{113}{subsection.7.2.2}%
+\contentsline {subsubsection}{The Failure of Classical Bias-Variance}{113}{subsubsection*.53}%
+\contentsline {subsubsection}{The Limitation of RMT and Replica Theory}{113}{subsubsection*.54}%
+\contentsline {paragraph}{The Identification of Errors.}{114}{paragraph*.55}%
+\contentsline {section}{\numberline {7.3}Identification: The Dynamic-Landscape Interaction}{114}{section.7.3}%
+\contentsline {subsubsection}{The Gap Between Statics and Dynamics}{114}{subsubsection*.56}%
+\contentsline {subsubsection}{Hypothesis: Double Descent as Phase Transition Navigation}{114}{subsubsection*.57}%
+\contentsline {subsubsection}{Reformulation: Non-Equilibrium Statistical Physics Framework}{114}{subsubsection*.58}%
+\contentsline {subsubsection}{The Fokker-Planck Description}{115}{subsubsection*.59}%
+\contentsline {subsubsection}{Noise-Driven Entropic Selection}{115}{subsubsection*.60}%
+\contentsline {subsubsection}{The Mechanism of Double Descent}{115}{subsubsection*.62}%
+\contentsline {subsubsection}{Predictions and Implications}{116}{subsubsection*.63}%
+\contentsline {subsection}{\numberline {7.3.1}Experimental Verification: A Toy Model Proposal}{116}{subsection.7.3.1}%
+\contentsline {subsubsection}{The Teacher-Student Protocol}{116}{subsubsection*.64}%
+\contentsline {paragraph}{Setup.}{116}{paragraph*.65}%
+\contentsline {paragraph}{The Critical Control Parameter.}{116}{paragraph*.66}%
+\contentsline {subsection}{\numberline {7.3.2}Physical Observables: Beyond Test Error}{117}{subsection.7.3.2}%
+\contentsline {subsubsection}{Observable I: The Hessian Trace (Sharpness)}{117}{subsubsection*.67}%
+\contentsline {subsubsection}{Observable II: Noise-Hessian Alignment}{117}{subsubsection*.68}%
+\contentsline {subsubsection}{Observable III: Eigenspectrum Evolution}{117}{subsubsection*.69}%
+\contentsline {subsection}{\numberline {7.3.3}Experimental Protocol}{118}{subsection.7.3.3}%
+\contentsline {paragraph}{Predicted Signatures.}{118}{paragraph*.71}%
+\contentsline {subsubsection}{Alternative Minimal Model: Two-Layer Linear Networks}{118}{subsubsection*.72}%
+\contentsline {subsection}{\numberline {7.3.4}Extension}{119}{subsection.7.3.4}%
+\contentsline {subsubsection}{Synthesis: From Equilibrium to Non-Equilibrium}{119}{subsubsection*.73}%
+\contentsline {subsubsection}{Bridging the Gap: The Play and The Stage}{119}{subsubsection*.74}%
+\contentsline {subsubsection}{Grokking as Extreme Relaxation}{119}{subsubsection*.75}%
+\contentsline {subsubsection}{Transformers and Large Language Models}{120}{subsubsection*.76}%
+\contentsline {paragraph}{Temperature in Sampling vs. Training.}{120}{paragraph*.77}%
+\contentsline {paragraph}{Scaling Laws and Phase Transitions.}{120}{paragraph*.78}%
+\contentsline {subsubsection}{Toward a Unified Theory of Implicit Regularization}{120}{subsubsection*.79}%
+\contentsline {chapter}{Index}{121}{section*.80}%
+\contentsline {section}{Reevaluation of theorem~\ref {eq:linear_gaussian_erm}}{122}{section*.81}%
+\contentsline {subsection}{Remark}{123}{subsection*.84}%
+\contentsline {section}{Observing gradient descent decomposition}{124}{section*.85}%
+\contentsline {section}{Details of supervised learning structure}{126}{section*.87}%
+\contentsline {section}{Practical consideration}{129}{section*.89}%
+\contentsline {subsection}{Observational space partitioning}{130}{subsection*.90}%
+\contentsline {chapter}{Bibliography}{131}{appendix*.91}%

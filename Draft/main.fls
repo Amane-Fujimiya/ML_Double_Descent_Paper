@@ -1,6 +1,6 @@
-PWD e:\Code Repository\Paper Series\Draft
+PWD e:\Core\Main Directory\Paper Series\Draft
 INPUT C:\Users\Admin\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT e:\Code Repository\Paper Series\Draft\main.tex
+INPUT e:\Core\Main Directory\Paper Series\Draft\main.tex
 OUTPUT main.log
 INPUT D:\MikTek\tex\latex\memoir\memoir.cls
 INPUT D:\MikTek\tex\latex\memoir\memoir.cls
@@ -560,6 +560,8 @@ INPUT .\content\introduction.tex
 INPUT .\content\introduction.tex
 INPUT .\content\c1.tex
 INPUT .\content\c1.tex
+INPUT .\content\c2.tex
+INPUT .\content\c2.tex
 INPUT .\content\c3.tex
 INPUT .\content\c3.tex
 INPUT .\content\c4.tex
@@ -574,6 +576,8 @@ INPUT .\content\c8.tex
 INPUT .\content\c8.tex
 INPUT .\content\c9.tex
 INPUT .\content\c9.tex
+INPUT .\content\c10.tex
+INPUT .\content\c10.tex
 INPUT D:\MikTek\tex\latex\etbb\t1etbb-tlf.fd
 INPUT D:\MikTek\tex\latex\etbb\t1etbb-tlf.fd
 INPUT D:\MikTek\tex\latex\etbb\t1etbb-tlf.fd
@@ -608,6 +612,9 @@ INPUT content\c8.aux
 INPUT .\content\c9.aux
 INPUT .\content\c9.aux
 INPUT content\c9.aux
+INPUT .\content\c10.aux
+INPUT .\content\c10.aux
+INPUT content\c10.aux
 OUTPUT main.aux
 INPUT D:\MikTek\tex\latex\ly1\ly1ptm.fd
 INPUT D:\MikTek\tex\latex\ly1\ly1ptm.fd
@@ -739,12 +746,9 @@ INPUT C:\Users\Admin\AppData\Local\MiKTeX\fonts\tfm\public\stmaryrd\stmary9.tfm
 INPUT D:\MikTek\fonts\enc\dvips\cm-super\cm-super-t1.enc
 INPUT D:\MikTek\fonts\vf\public\etbb\ETbb-Regular-tlf-t1.vf
 INPUT D:\MikTek\fonts\tfm\public\etbb\ETbb-Regular-tlf-t1--base.tfm
-INPUT D:\MikTek\fonts\tfm\public\etbb\ETbb-Bold-tlf-t1.tfm
 INPUT D:\MikTek\fonts\tfm\public\etbb\ETbb-Italic-tlf-t1.tfm
 INPUT D:\MikTek\fonts\vf\public\etbb\ETbb-Italic-tlf-t1.vf
 INPUT D:\MikTek\fonts\tfm\public\etbb\ETbb-Italic-tlf-t1--base.tfm
-INPUT D:\MikTek\fonts\vf\public\etbb\ETbb-Bold-tlf-t1.vf
-INPUT D:\MikTek\fonts\tfm\public\etbb\ETbb-Bold-tlf-t1--base.tfm
 INPUT .\main.lof
 INPUT .\main.lof
 INPUT main.lof
@@ -1013,7 +1017,6 @@ OUTPUT content\c9.aux
 INPUT .\content\c9.tex
 INPUT .\content\c9.tex
 INPUT content\c9.tex
-INPUT D:\MikTek\fonts\tfm\jknappen\ec\ecsx1000.tfm
 INPUT .\img\model_representation.png
 INPUT .\img\model_representation.png
 INPUT .\img\model_representation.png
@@ -1024,6 +1027,16 @@ INPUT .\img\model_representation.png
 INPUT D:\MikTek\fonts\tfm\public\cm\cmss10.tfm
 INPUT D:\MikTek\fonts\tfm\public\amsfonts\euler\eufm10.tfm
 INPUT C:\Users\Admin\AppData\Local\MiKTeX\fonts\tfm\public\bbm\bbm10.tfm
+INPUT .\content\c10.tex
+INPUT .\content\c10.tex
+OUTPUT content\c10.aux
+INPUT .\content\c10.tex
+INPUT .\content\c10.tex
+INPUT content\c10.tex
+INPUT D:\MikTek\fonts\tfm\jknappen\ec\ecsi0900.tfm
+INPUT D:\MikTek\fonts\tfm\public\etbb\ETbb-Bold-tlf-t1.tfm
+INPUT D:\MikTek\fonts\vf\public\etbb\ETbb-Bold-tlf-t1.vf
+INPUT D:\MikTek\fonts\tfm\public\etbb\ETbb-Bold-tlf-t1--base.tfm
 INPUT .\main.ind
 INPUT .\main.ind
 INPUT main.ind
@@ -1078,6 +1091,9 @@ INPUT content\c8.aux
 INPUT .\content\c9.aux
 INPUT .\content\c9.aux
 INPUT content\c9.aux
+INPUT .\content\c10.aux
+INPUT .\content\c10.aux
+INPUT content\c10.aux
 INPUT .\main.out
 INPUT .\main.out
 INPUT C:\Users\Admin\AppData\Local\MiKTeX\fonts\pk\ljfour\public\bbm\dpi600\bbm9.pk
@@ -1170,6 +1186,8 @@ INPUT D:\MikTek\fonts\type1\public\amsfonts\symbols\msbm7.pfb
 INPUT D:\MikTek\fonts\type1\public\amsfonts\symbols\msbm7.pfb
 INPUT D:\MikTek\fonts\type1\public\cm-super\sfrm0800.pfb
 INPUT D:\MikTek\fonts\type1\public\cm-super\sfrm0800.pfb
+INPUT D:\MikTek\fonts\type1\public\cm-super\sfsi0900.pfb
+INPUT D:\MikTek\fonts\type1\public\cm-super\sfsi0900.pfb
 INPUT D:\MikTek\fonts\type1\public\cm-super\sfss1000.pfb
 INPUT D:\MikTek\fonts\type1\public\cm-super\sfss1000.pfb
 INPUT D:\MikTek\fonts\type1\public\cm-super\sfss1095.pfb
@@ -1180,8 +1198,6 @@ INPUT D:\MikTek\fonts\type1\public\cm-super\sfss1728.pfb
 INPUT D:\MikTek\fonts\type1\public\cm-super\sfss1728.pfb
 INPUT D:\MikTek\fonts\type1\public\cm-super\sfsx0900.pfb
 INPUT D:\MikTek\fonts\type1\public\cm-super\sfsx0900.pfb
-INPUT D:\MikTek\fonts\type1\public\cm-super\sfsx1000.pfb
-INPUT D:\MikTek\fonts\type1\public\cm-super\sfsx1000.pfb
 INPUT D:\MikTek\fonts\type1\public\cm-super\sftt0800.pfb
 INPUT D:\MikTek\fonts\type1\public\cm-super\sftt0800.pfb
 INPUT D:\MikTek\fonts\type1\public\cm-super\sftt0900.pfb

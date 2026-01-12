@@ -28,11 +28,9 @@ Then, what is the plan? The goal is to \textit{systematically introduce} the con
 \end{enumerate}
 From the scope of it, it might seem not too practical to call as novel. But as far as we are considered, there should be something to take account on, and we need to do them carefully, such is to say there has been none, of which partake in said direction. There is a reason why messy construction being the worst nightmare of any people using the house, and we are the one to fix it, or at least attempted so. 
 
-\partlike{Environmental framing}
+\section{Precursor}
 
-\section{System space}
-
-The goal of the system space is to specify everything that contributes to the system dynamic. Or rather, any component, objects, subject structures, and so forth that acts, that exist, that is considered of interest in a given context. The principle is simple, to separate between the \textit{assumed shape} of an object from it representation or encoding. This can be done by specifying two parts - the \textit{ambiance space}, of which contains all the object in consideration, minus their properties and so of, and the \textit{encoding space}, which as its name implies, encodes all relevant structural information and properties that is considered, of said object. Just consider the very simple example of a car, specifying the barebone existence of it in an operational space, and the encoding space of the specific details of such cars, and factors affecting such. 
+We begin by the analysis on the concept of \textbf{system space}. Fundamentally, the purpose of system space is to specify everything that contributes to the system dynamic. Or rather, any component, objects, subject structures, and so forth that acts, that exist, that is considered of interest in a given context. The principle is simple, to separate between the \textit{assumed shape} of an object from it representation or encoding. This can be done by specifying two parts - the \textit{ambiance space}, of which contains all the object in consideration, minus their properties and so of, and the \textit{encoding space}, which as its name implies, encodes all relevant structural information and properties that is considered, of said object. Just consider the very simple example of a car, specifying the barebone existence of it in an operational space, and the encoding space of the specific details of such cars, and factors affecting such. 
 
 Before doing anything, let us define what is meant by ambiance space, and subsequently, encoding space, via a more statement-form definition. First, let us define the \textit{system space}. 
 \begin{definition}[System space, Preliminary version]
@@ -89,28 +87,27 @@ Finally, we would like to talk about the correspondence in actuality between the
 
 It is fairly subjective, but well-needed partition. We have been speaking of the encoding space and ambiance for a while now, but there is a problem. We have subconsciously removed the aspect of the object not being encoded in the way that we actually entitled it to be in the same way. What is this? 
 
-For starter, an object itself must exist. Of a system in consideration, entities within it has their own rules, their own structures, their own properties and behaviours that one then might take it as of its own, not quantized by experiments but intrinsic of itself, like volumes. Thereby. it would be lacking to presume every system to conform to the ambiance-encoding form, since sometimes what we only need is the existence specification of the system, and then the structure is encoded and governed, given a correct representation and encoding, of the encoding space. Thereby, it would be better to redefine what has been done above into a three-component system instead. Hence, we introduce the generalized system, with the following definition. 
+For starter, an object itself must exist. Of a system in consideration, entities within it has their own rules, their own structures, their own properties and behaviours that one then might take it as of its own, not quantized by experiments but intrinsic of itself, like volumes. Thereby. it would be lacking to presume every system to conform to the ambiance-encoding form, since sometimes what we only need is the existence specification of the system, and then the structure is encoded and governed, given a correct representation and encoding, of the encoding space. Thereby, it would be better to redefine what has been done above into a three-component system instead. Hence, we introduce the generalized system, with the following definition. We note that the following definitions are \textbf{not mathematical}, but system and modelling theoretic, as aligning with \textit{model precedes axioms} view. Hence, we use the term `space' in the modelling sense: a domain of admissible system descriptions, prior to any topological, algebraic, or measure-theoretic structure.
 
 \begin{definition}[Cardinality space]
   The cardinality space, denoted $\mathcal{C}$, is a 2-tuple $(I,\mathbb{N})^{n}$ where $I$ is the type of $n$ arbitrary objects, and $\mathbb{N}$ the cardinality of each type with respect to the $n$ set itself. 
 \end{definition}
 
 \begin{definition}[Ambiance space, formal definition]
-  
+  The ambiance space, denoted $\mathcal{A}$ contains the abstract notion on which all objects are held upon. $\mathcal{A}$ then is a 2-tuple on $(\mathcal{C},\mathcal{G})$ where $\mathcal{G}$ is a causal or relational, connective relations or ruleset, typically can be considered a \textbf{graph} structure for simplicity, for $\mathcal{G}(c,E)$ of $c\in\mathcal{C}$ of components in the ambiance space. 
 \end{definition}
-
-
+Such definition is deliberately arbitrary, as to suggest of the conceptual relational observation we typically see, as of data, concepts, and so on. The advantage is to recognize that the system itself is not simply of singular pair $(x,y)$ as typical machine learning, but also contains sufficient richness to argue that such view is the \textit{directional compression} of components in the ambiance space, and so on. However, ambiance space does not take into account the structural and quantitative properties, of the quantification scheme (i.e. numerical fixation, as simple as number counting), so the effect of graph theoretical actions is not typically present, but isolated of different objects itself. In usual, such is expressed by constructing an \textit{encoding space}, which is defined as followed.  
 \begin{definition}[Encoding space, formal definition]
-  
+  The encoding space, denoted $\mathrm{ENC}(\mathcal{A},\cdot)$ of any arbitrary structural argument, has the minimal fixation on the 2-tuple $(\mathcal{A},\cdot)$, for the second argument be the \textit{minimally representative encoding space} of the ambiance dual term. Options includes $\mathbb{F}$-based analytical/geometrical space, such as $(\mathcal{A},\mathbb{F}^{n})$ for decomposable $n$ on index $I$, $(\mathcal{A},[X,\langle\cdot,\cdot\rangle])$ or $(\mathcal{A},[\mathcal{H},\langle\cdot,\cdot\rangle])$ for inner product space and Hilbert-based space encoding, $(\mathcal{A},[X,||\cdot||])$ for Banach-based encoding space, analytical/geometrical manifold on $(\mathcal{A},[M,A])$ of the topological atlas $A$, Hilbert manifold encoding $(\mathcal{A},[M,A,\varphi])$ for $\varphi:U_{\alpha}\to\mathcal{H}$; in more generalized notion, encoded on \textbf{torsor}-based space, for example, the encoding $(\mathcal{A},[\mathcal{O}_{G},\cdot])$ for $G$-torsor with additional structures to move it to field-level torsor-based structure. Most generally, encoding space admits the form $(\mathcal{A},[X,\{\mathcal{S}_{i}\}])$ for based objects set structure $X$ with metric dimensions on $\mathcal{S}_{i}$. 
 \end{definition}
 
-In a sense, if we talk about a functional perspective, then $\mathcal{S}:(\mathcal{A}\to y)(\mathcal{E}\to x,f)(\mathcal{C}\to (I,\mathbb{N}))$ where $(I,\mathbb{N})$ is the cardinality of each type of category, suggested by $I$, together with the discrete number of them in natural number set. We assume the mathematical structure already defined of its foundation. 
+In a sense, if we talk about a functional perspective, then $\mathcal{S}:(\mathcal{A}\to y)(\mathcal{E}\to x,f)(\mathcal{C}\to (I,\mathbb{N}))$ where $(I,\mathbb{N})$ is the cardinality of each type of category, suggested by $I$, together with the discrete number of them in natural number set. We assume the mathematical structure already defined of its foundation. Encoding spaces introduce additional mathematical structure and should be understood as representations, not identities, thus put it distinctively outside. The view here, as model precedes axioms, is that typically, we reserve our deference to \textbf{structural foundational minimization}, thus admits the primitive languages, such as \textit{set,collection,relational actions}, and logical procedures, without any \textit{structural algebra} or else. The axioms in those space can be considered pre-structure or pre-encoding axioms, and thus the language is hence pre-structure expression alphabet, i.e. the domain in which the assumptions of the primitive language are \textbf{existence} and \textbf{organizational relations} only. 
 
-\subsection{Probability}
-
-Probability is a loose concept, most generally speaking. Usually, it refers to the uncertainty in our action, hence taken of virtue of subjectivity given certainty being not absolute. As reconciled by \cite{Nau2001_DeFinettiWasRight,deFinetti1990_TheoryProbability,Elliot2019_DeFinettiPhilosophy}, probability can be described to be of the \textit{degree of belief} of certain agent abstraction - an object or specimen that receives and act on the environment it beholds. In such sense, we can also interpret our system to explain the uncertainty that unfolds. 
-
-Taken as an observer tasked with predicting and interpreting the system $\mathcal{S}_{0}$, then, by the standard definition of ambiance space. A system that is \textit{total predictable} and \textit{deterministic} if, the encoding space is empty, $\mathcal{E}=\varnothing$, and $\mathcal{L}^{*}=\mathcal{L}_{E}$. What this means is that all descriptions are known, the language is observable from such, and there are no encoding. This is the \textit{ideal system}. 
+%\subsection{Probability}
+%
+%Probability is a loose concept, most generally speaking. Usually, it refers to the uncertainty in our action, hence %taken of virtue of subjectivity given certainty being not absolute. As reconciled by \cite{Nau2001_DeFinettiWasRight,%deFinetti1990_TheoryProbability,Elliot2019_DeFinettiPhilosophy}, probability can be described to be of the \textit%{degree of belief} of certain agent abstraction - an object or specimen that receives and act on the environment it %beholds. In such sense, we can also interpret our system to explain the uncertainty that unfolds. 
+%
+%Taken as an observer tasked with predicting and interpreting the system $\mathcal{S}_{0}$, then, by the standard %definition of ambiance space. A system that is \textit{total predictable} and \textit{deterministic} if, the encoding %space is empty, $\mathcal{E}=\varnothing$, and $\mathcal{L}^{*}=\mathcal{L}_{E}$. What this means is that all %descriptions are known, the language is observable from such, and there are no encoding. This is the \textit{ideal %system}. 
 
 \section{The concept of learning}
 
@@ -130,16 +127,16 @@ From such, we can conclude that, we have to have some classification that requir
 
 One of the most fundamental thing of the structure of the \textit{neural network formalism}, hence, is the notion of a \textit{unit neuron}. Specifically, a neuron $x$ is defined, and designed to be a discrete operating unit on its own. The word \textit{operating} here means that it has all the facility requires for an input-output process - the most simple one includes the input receiver, the processing formulae, and the output transmitter. 
 
-The neural network formalism is best expressed by the following principle. 
+The neural network formalism is best expressed by the following principle. This theorem is by design, and thus our design is to fix the foundational minimization to a specific neuronal basis module. Such is to say, we state the principle for \textit{inductive recursion} of neuronal system collapse. 
 
-\begin{theorem}[Fundamental theorem of neural formalism]
-Let $\mathcal{S}$ be an automated artificial intelligence system admitting
+\begin{theorem}[Fundamental theorem of neural formalism]\label{thm:fundamental_neuron}
+Let $\mathcal{S}$ be an automated operational system with internal composition system, admitting
 \begin{enumerate}[topsep=1pt,itemsep=1pt]
     \item nontrivial input-output interaction,
     \item internal closure under composition, and
     \item irreducibility with respect to its operational primitives.
 \end{enumerate}
-Then any minimal operational component of $\mathcal{S}$ must admit a representation whose cardinality and analytic structure are equivalent to that of the minimally defined neural structure $\mathfrak{N}(\mathcal{N},\mathcal{C})$.
+Then any minimal operational component of $\mathcal{S}$ must admit a representation whose cardinality and arbitrary (analytic, topological, etc.) structures are equivalent to that of the minimally defined neural structure $\mathfrak{N}(\mathcal{N},\mathcal{C})$.
 \end{theorem}
 
 We begin by examining the model of a typical neuron. Note that, this is the simplest one, but also is the fundamental block. We have the following. 
@@ -202,7 +199,7 @@ There are several assumptions and properties accompanied by this type of neuron 
     
     \item By extension of the point above, the neuron order in a cluster will also be \textit{fixed}. Usually, this follows a single dimension, or, for example, if there exists a singular span directional vector $\vec{dr}$ that indicates the direction of operation in the cluster.
     
-    \item We suppose the \textit{independence} of any components inside a neuron.
+    \item We suppose the \textit{independence} of any components inside a neuron. This is meant for both \textit{operational independence} for non-connective and resultant actions case. If subcomponents are connected in a causal form and so on, then such independence is violated, but not otherwise. 
     
     \item The neuron is expressed in a \textit{parameterized manner}. That is, the behaviour of the neuron can be expressed, controlled, and designed by modifying and constructing a set of non-realized parameters. If this set of parameters is finite, we say that it is \textit{closed parameterization}. If not—i.e., there can be infinitely many parameters—we call it \textit{open parameterization}.
     
@@ -227,9 +224,9 @@ of which here we use the word \textit{hyperparameter} for $\mathcal{H}$ a bit di
 Therefore, the minimally defined neuron, or what we can take as the \textbf{fundamental model of neural processing unit} works well, and provides us with the first iteration of the constructing brick for our larger, wider implementation. Though our aim is to advance this structure, first, we must take a look to the formalization and propositional-nation of the rudimentary concept of the neuron, even of the fundamental, minimal neuron. And this will happen at the end of this chapter. Until then, examining the maximal usage of the current structure will be more than enough as it aligns with historical literature's neuron and neural network formalism. Following sections will see how far we can go with this. 
 \subsection{Why we call it minimal}
 
-It seems a bit weird why we call our construction on its own a \textit{minimal construction}. To see this, though, we have to go back to the definition of a neuron, and the historical viewpoint on the constructing principle. 
+It seems a bit weird why we call our construction on its own a \textit{minimal construction}. To see this, though, we have to go back to the definition of a neuron, and the historical viewpoint on the constructing principle. The need for structuralization and complexity measure is impending on the theory itself, for example, the fact that there exists no current singular class of measure for any specific structures of feedforward networks, as seen of \cite{hu_model_2021}. Often, the minimal construction in typical layered network is the neuron unit only, of which is simply understood as a function with changing activation function. However, this is a limited approach, as it only satisfy mathematical elegance or simplicity of form, which it does well on standard systems, without targeting specific automaton-reliant and actual ergodic properties. For example, take the polynomial neuron. By certain structural minimization as we defined of the fundamental theorem
 
-\section{Formalisation}
+\section{Formalization}
 
 The structure of our theory on the neural formalism is influenced by the object-abstracted treatment of mathematically embedded structures, and the unit-wise principle of particular neuron. Before we meet ourselves into the notion of epistemic circularity\footnote{Also called bootstrapping, where to understand or define certain notion, requires the knowledge of the object wishes to be defined itself - for example, defining the size of a finite natural number set, using the elements of the number set itself.} problem, we might as well clarify a few prerequisites for such structure to exhibit. 
 
