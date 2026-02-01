@@ -1,0 +1,551 @@
+% ============================================================================
+% COMPREHENSIVE REVIEW NOTES: VƯỚNG MẮC VÀ INSIGHTS
+% Paper: Double Descent and Statistical Learning/Physics
+% Date: February 1, 2026
+% Purpose: Section-by-section analysis identifying gaps, hand-waving,
+%          overclaiming, and opportunities for rigorous improvement
+% ============================================================================
+% Philosophy: "vướng mắc hay bất cứ cái vấn đề gì gặp phải đều là 1 insight"
+% ============================================================================
+
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\usepackage{amsmath}
+
+\definecolor{vuongmac}{RGB}{220,53,69}    % Red - Critical issues
+\definecolor{insight}{RGB}{40,167,69}      % Green - Potential insights
+\definecolor{handwave}{RGB}{255,193,7}     % Yellow - Hand-waving
+\definecolor{missing}{RGB}{0,123,255}      % Blue - Missing content
+
+\newtcolorbox{vuongmacbox}[1][]{colback=vuongmac!10, colframe=vuongmac!80, title=#1}
+\newtcolorbox{insightbox}[1][]{colback=insight!10, colframe=insight!80, title=#1}
+\newtcolorbox{handwavebox}[1][]{colback=handwave!10, colframe=handwave!80, title=#1}
+\newtcolorbox{missingbox}[1][]{colback=missing!10, colframe=missing!80, title=#1}
+
+\title{\textbf{Comprehensive Review Notes}\\
+\Large Obstacles and Insights for Paper2a.tex\\
+\small ``Double Descent and Statistical Learning/Physics''}
+\author{Review Session: February 1, 2026}
+\date{}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+\newpage
+
+% ============================================================================
+\section{Executive Summary: Critical Assessment}
+% ============================================================================
+
+\begin{tcolorbox}[colback=blue!5, colframe=blue!60, title=Draft Status Note]
+\textbf{Important Context:} This is a \textbf{draft in progress}. The research workflow follows:
+\begin{center}
+\textbf{Theory Development} $\to$ \textbf{Experiment Design} $\to$ \textbf{Experiment Execution} $\to$ \textbf{Theory Adjustment}
+\end{center}
+The theoretical framework is being finalized first. Experiments will be the \textbf{final phase} to validate and refine the theory. This is a legitimate research approach---the notes below should be read as guidance for the upcoming experimental phase, not as criticism of an incomplete paper.
+\end{tcolorbox}
+
+\begin{vuongmacbox}[Core Challenge to Address]
+The paper attempts to bridge two fields (statistical physics and learning theory) where one ``assumes higher authority'' (physics). The key risks to mitigate:
+\begin{itemize}
+    \item Misrepresentation of physics tools when applied to ML
+    \item Overclaiming theoretical predictions before experimental validation
+    \item ``Nice-looking'' hand-waving that obscures testable claims
+    \item Good ideas underdeveloped while mediocre ideas look polished
+\end{itemize}
+\textbf{Mitigation strategy:} The Friction Log and honest acknowledgment of limitations already address much of this. The experimental phase will provide the final validation.
+\end{vuongmacbox}
+
+\subsection{Key Points for Experimental Phase}
+
+\begin{enumerate}[label=\textbf{P\arabic*.}]
+    \item \textbf{Authority Asymmetry:} Physics tools (Replica, Fokker-Planck) carry implicit rigor expectations. Experiments must demonstrate these tools apply validly to ML, not just analogically.
+    
+    \item \textbf{Analogy $\to$ Isomorphism:} The experiments should distinguish ``suggestive analogy'' from ``proven correspondence.'' Quantitative agreement will strengthen claims.
+    
+    \item \textbf{Quantitative Predictions Needed:} Transform qualitative claims (``sharp minima are bad'') into testable numerical predictions before running experiments.
+    
+    \item \textbf{Toy Model $\to$ Nonlinear Extension:} The linear teacher-student model is solved analytically. Experiments should test whether results extend to nonlinear networks (Experiment 4).
+    
+    \item \textbf{Experimental Validation (Upcoming):} The proposed experimental agenda is well-designed. Execution will be the final step to complete the research.
+\end{enumerate}
+
+% ============================================================================
+\section{Section-by-Section Analysis}
+% ============================================================================
+
+% ----------------------------------------------------------------------------
+\subsection{Abstract and Introduction (Lines 1--70)}
+% ----------------------------------------------------------------------------
+
+\begin{handwavebox}[Abstract Issues]
+\textbf{Problem:} The abstract mentions ``various anomalies'' without specifying them. Claims to ``review progress'' but the paper is more theoretical speculation than review.
+
+\textbf{Obstacle:} The scope is unclear---is this a review, a theoretical contribution, or a manifesto?
+
+\textbf{Fix needed:} State explicitly: ``We propose a non-equilibrium framework and derive predictions for a toy model. Extension to deep networks remains conjectural.''
+\end{handwavebox}
+
+\begin{insightbox}[Potential Insight]
+The footnote on ``domain bias'' (lines 60--75) is actually the most honest part of the introduction. It acknowledges that applying physics to ML requires either:
+\begin{itemize}
+    \item Adapting notions (like ``temperature'')
+    \item Restricting the domain (like Boltzmann machines)
+\end{itemize}
+This should be \textbf{promoted to the main text} and made a central methodological principle.
+\end{insightbox}
+
+% ----------------------------------------------------------------------------
+\subsection{Section 1: Foundational Works (Lines 76--100)}
+% ----------------------------------------------------------------------------
+
+\begin{missingbox}[Missing Content]
+\textbf{Gap:} This section is a literature list, not a critical review. It doesn't:
+\begin{itemize}
+    \item Explain \emph{why} different papers disagree
+    \item Identify which results are robust vs. fragile
+    \item State what remains unsolved
+\end{itemize}
+
+\textbf{Fix needed:} Add a table comparing papers on key dimensions:
+\begin{itemize}
+    \item Model class (linear/random features/deep)
+    \item Theoretical framework (RMT/Replica/empirical)
+    \item Whether double descent is model-wise, epoch-wise, or sample-wise
+    \item Reproducibility status
+\end{itemize}
+\end{missingbox}
+
+% ----------------------------------------------------------------------------
+\subsection{Section 2: Foundation of Learning Theory (Lines 100--250)}
+% ----------------------------------------------------------------------------
+
+\begin{insightbox}[Strength]
+The SLT foundation is reasonably complete. Definitions of empirical risk, generalization risk, ERM, SRM are standard and correct.
+\end{insightbox}
+
+\begin{vuongmacbox}[Critical Gap: Regularization]
+\textbf{Quote (lines 180--185):} ``The reason why $r(\cdot)$ is not characterized... is because of their uncertainty of effect.''
+
+\textbf{Problem:} This is a cop-out. Regularization is \emph{central} to double descent (it can suppress or shift the peak). By avoiding it, the paper sidesteps a core mechanism.
+
+\textbf{Insight:} The ``uncertainty of effect'' IS the interesting research question! Different regularizers (L2, dropout, data augmentation) interact differently with the interpolation threshold. This should be investigated, not avoided.
+\end{vuongmacbox}
+
+\begin{handwavebox}[Conjecture Without Proof]
+\textbf{Location:} Lines 260--280, the ``conjecture'' about empirical-generalization proxy.
+
+\textbf{Problem:} This is stated as a conjecture but treated as established fact in later sections. No proof attempt, no conditions under which it might fail.
+
+\textbf{Fix needed:} Either prove it for specific cases or clearly mark downstream results as conditional on this conjecture.
+\end{handwavebox}
+
+% ----------------------------------------------------------------------------
+\subsection{Section 3: Bias-Variance Tradeoff (Lines 280--400)}
+% ----------------------------------------------------------------------------
+
+\begin{insightbox}[Solid Foundation]
+The bias-variance decomposition derivation is correct and well-presented. The extension to Bregman divergences is appropriately cited.
+\end{insightbox}
+
+\begin{vuongmacbox}[Overclaim Alert]
+\textbf{Theorem 3.2 (Bias-Variance Tradeoff):} ``$\mathcal{B}(f,y) \propto \lambda^{-1} \mathcal{V}(f,y)$''
+
+\textbf{Problem:} This is NOT a theorem---it's an empirical observation dressed as mathematics. The ``proportionality constant $\lambda$'' is undefined and model-dependent.
+
+\textbf{Fix needed:} Rename to ``Empirical Observation'' or ``Working Hypothesis.'' State conditions under which it holds (e.g., specific model families, specific complexity measures).
+\end{vuongmacbox}
+
+% ----------------------------------------------------------------------------
+\subsection{Section 4: Double Descent (Lines 400--540)}
+% ----------------------------------------------------------------------------
+
+\begin{missingbox}[Missing: Reproducibility Analysis]
+\textbf{Gap:} The section reviews Belkin and Nakkiran's observations but doesn't address:
+\begin{itemize}
+    \item How robust is double descent across random seeds?
+    \item What hyperparameter ranges are needed to observe it?
+    \item Are there architectures/datasets where it doesn't appear?
+\end{itemize}
+
+\textbf{Why this matters:} If double descent is a ``fragile'' phenomenon, the NESP explanation may be solving a non-problem.
+\end{missingbox}
+
+\begin{vuongmacbox}[Definition Circularity]
+\textbf{Problem with EMC definition:} EMC is defined as ``maximum $n$ such that training error $\leq \epsilon$.'' But:
+\begin{itemize}
+    \item What is $\epsilon$? (Arbitrary threshold)
+    \item EMC depends on the training procedure $\mathcal{T}$, not just the model
+    \item This makes ``EMC causes double descent'' circular: the definition already encodes the phenomenon
+\end{itemize}
+
+\textbf{Insight:} We need a definition of ``effective complexity'' that is \emph{independent} of the double descent curve itself. Perhaps based on Hessian spectrum, or information-theoretic measures.
+\end{vuongmacbox}
+
+% ----------------------------------------------------------------------------
+\subsection{Section 5: Foundational Definitions for Statistical Physics (Lines 540--900)}
+% ----------------------------------------------------------------------------
+
+\begin{insightbox}[Excellent Addition: Theoretical Requirements Table]
+Table 1 (lines 495--510) is a model of intellectual honesty. It explicitly categorizes tools as:
+\begin{itemize}
+    \item \textcolor{green!60!black}{Established}
+    \item \textcolor{orange!80!black}{Partial/Heuristic}
+    \item \textcolor{red!70!black}{Conjectured/Open}
+\end{itemize}
+This should be referenced throughout the paper when using each tool.
+\end{insightbox}
+
+\begin{handwavebox}[Translation Protocol: Needs Tightening]
+\textbf{Section 5.1.2:} The 5-step translation protocol is conceptually useful but glosses over key difficulties:
+
+\textbf{Step 3 (Quenched Disorder):} ``Dataset $\mathcal{S}$ is fixed during training.'' But:
+\begin{itemize}
+    \item Data augmentation makes $\mathcal{S}$ effectively stochastic
+    \item Online learning has $\mathcal{S}$ evolving
+    \item Even ``fixed'' $\mathcal{S}$ is accessed via random mini-batches
+\end{itemize}
+
+\textbf{Step 4 (Thermal Fluctuations):} $T_{\mathrm{eff}} = \eta/B$ is a scalar, but SGD noise is a matrix $\Sigma(W)$. The reduction to a scalar temperature is a \textbf{major approximation} that should be flagged.
+
+\textbf{Fix needed:} Add ``validity conditions'' for each step and consequences when violated.
+\end{handwavebox}
+
+\begin{vuongmacbox}[Critical Issue: Equilibrium Definition]
+\textbf{Definition 5.7 (ML Equilibrium):} $P(W|\mathcal{D}) \propto \exp(-\beta \mathcal{L}(W;\mathcal{D}))$
+
+\textbf{Problem:} This is presented as an ``assumption'' but then used as a baseline without checking whether SGD ever satisfies it.
+
+\textbf{What's missing:}
+\begin{itemize}
+    \item Under what conditions does SGD converge to this distribution?
+    \item How long does convergence take?
+    \item What observable would indicate we're \emph{not} at equilibrium?
+\end{itemize}
+
+\textbf{Insight:} The deviation from equilibrium is claimed to explain generalization. But we never quantify the deviation! This is the central claim of the paper, and it's left as an assertion.
+\end{vuongmacbox}
+
+% ----------------------------------------------------------------------------
+\subsection{Section 6: Classical Explanations (Lines 900--1100)}
+% ----------------------------------------------------------------------------
+
+\begin{handwavebox}[Replica Method: Insufficient Detail]
+\textbf{Section 6.2:} The replica calculation is now expanded with 5 steps, which is good. However:
+
+\textbf{Step 5 (The $n \to 0$ limit):} The text says ``this step is not rigorous'' but then proceeds to use replica results as benchmarks.
+
+\textbf{Obstacle:} How can non-rigorous results serve as benchmarks? The paper needs to either:
+\begin{itemize}
+    \item Provide conditions under which replica is validated by other methods
+    \item Use replica results with explicit uncertainty quantification
+    \item Abandon replica in favor of rigorous alternatives (cavity method)
+\end{itemize}
+\end{handwavebox}
+
+\begin{missingbox}[Missing: RSB in ML Context]
+The remark on Replica Symmetry Breaking (RSB) is crucial but underdeveloped. Questions unaddressed:
+\begin{itemize}
+    \item When does RSB occur in neural network loss landscapes?
+    \item Does RSB correlate with poor generalization?
+    \item Can we detect RSB empirically (e.g., by training multiple replicas)?
+\end{itemize}
+
+\textbf{Insight:} RSB detection could be an experimental test of the NESP framework!
+\end{missingbox}
+
+% ----------------------------------------------------------------------------
+\subsection{Section 7: Conceptual Bridges (Lines 1100--1200)}
+% ----------------------------------------------------------------------------
+
+\begin{insightbox}[Strong Addition]
+The 5 ``Conceptual Bridges'' with explicit justifications and caveats are valuable. This is exactly the ``completeness of details in a sensitive setting'' that was requested.
+\end{insightbox}
+
+\begin{vuongmacbox}[Bridge 5: Flatness $\leftrightarrow$ Generalization]
+\textbf{Caveat acknowledged:} Flatness is not reparameterization-invariant.
+
+\textbf{Problem:} This caveat undermines the entire NESP framework! If ``flatness'' is ill-defined, then ``noise selects flat minima'' is meaningless.
+
+\textbf{What's needed:}
+\begin{itemize}
+    \item A reparameterization-invariant measure of flatness
+    \item Or: restrict to ``natural'' parameterizations with justification
+    \item Or: acknowledge that ``flatness'' is a placeholder for a yet-unknown quantity
+\end{itemize}
+\end{vuongmacbox}
+
+% ----------------------------------------------------------------------------
+\subsection{Section 7: NESP Framework (Lines 1300--1600)}
+% ----------------------------------------------------------------------------
+
+\begin{insightbox}[Strong Theoretical Motivation]
+The ``Motivation: Why Non-Equilibrium?'' section is well-written. It correctly identifies:
+\begin{itemize}
+    \item The borrowing of frameworks often imports hidden assumptions
+    \item Double descent is a \emph{symptom} of framework failure
+    \item SGD is a \emph{driven} system, not an equilibrium one
+\end{itemize}
+\end{insightbox}
+
+\begin{vuongmacbox}[Central Hypothesis: Curvature-Noise Coupling]
+\textbf{Hypothesis 7.2.1:} $\Sigma(W) \approx \alpha H(W) + \mathcal{O}(H^2)$
+
+\textbf{Critical Analysis:}
+\begin{itemize}
+    \item This is the \textbf{core claim} of the NESP framework
+    \item It is \textbf{analytically verified} only for the linear teacher-student model
+    \item For nonlinear networks, it is \textbf{conjectured} without evidence
+\end{itemize}
+
+\textbf{Obstacle:} The paper builds an elaborate framework on this hypothesis but never tests it empirically. Even a single experiment showing $\Sigma \propto H$ in a ReLU network would dramatically strengthen the paper.
+
+\textbf{Insight:} This hypothesis is \textbf{falsifiable}. If we find networks where $\Sigma$ and $H$ are uncorrelated, the framework fails. This is good science---but the test hasn't been done.
+\end{vuongmacbox}
+
+% ----------------------------------------------------------------------------
+\subsection{Section 7.4: Toy Model (Lines 1600--1900)}
+% ----------------------------------------------------------------------------
+
+\begin{insightbox}[Analytical Strength]
+The linear teacher-student derivation is rigorous. The key results:
+\begin{itemize}
+    \item Gradient: $g(U) = e(x) \cdot (v x^T)$ --- rank-1 structure
+    \item Noise: $\Sigma(U) = (vv^T) \otimes E[e(x)^2 \cdot xx^T]$
+    \item Hessian: $H(U) = (vv^T) \otimes I_d$ --- constant!
+\end{itemize}
+The structural similarity between $\Sigma$ and $H$ is a genuine result, not hand-waving.
+\end{insightbox}
+
+\begin{vuongmacbox}[Limitation 1: Linearity]
+\textbf{Explicitly acknowledged (good!)} but the consequences are severe:
+
+\begin{itemize}
+    \item In linear models, $H$ is constant---no position-dependence
+    \item In nonlinear models, $H(W)$ varies dramatically across weight space
+    \item The ``coupling'' $\Sigma \approx \alpha H$ may break when $H$ itself changes
+\end{itemize}
+
+\textbf{Author's Conjecture:} ``The coupling likely persists qualitatively.''
+
+\textbf{Obstacle:} ``Qualitatively'' is not a scientific claim. What does it mean precisely? 
+\begin{itemize}
+    \item Same eigenvector alignment?
+    \item Same eigenvalue ordering?
+    \item Positive correlation?
+\end{itemize}
+Each of these is testable and should be stated as a separate hypothesis.
+\end{vuongmacbox}
+
+\begin{missingbox}[Missing: Escape Time Derivation]
+\textbf{Equation 7.escape\_time:} $\tau(W) \sim \exp(-\beta_{\mathrm{eff}} \cdot \lambda_{\max})$
+
+\textbf{Problem:} This is called a ``qualitative scaling argument'' but it's the key mechanistic prediction!
+
+\textbf{What's needed:}
+\begin{itemize}
+    \item Derivation from Fokker-Planck (even approximate)
+    \item Numerical verification in the toy model
+    \item Comparison with Kramers' classical result
+\end{itemize}
+
+Without this, the ``dynamical selection'' mechanism is asserted, not derived.
+\end{missingbox}
+
+% ----------------------------------------------------------------------------
+\subsection{Section 7.5: Open Problems (Lines 1900--2100)}
+% ----------------------------------------------------------------------------
+
+\begin{insightbox}[Excellent Intellectual Honesty]
+The Open Problems section is comprehensive. Particularly valuable:
+\begin{itemize}
+    \item Fokker-Planck stability problem stated precisely
+    \item Mode coupling / basis rotation acknowledged
+    \item Finite-size scaling question raised
+\end{itemize}
+\end{insightbox}
+
+\begin{handwavebox}[``Connection to Information Theory'']
+\textbf{Section 7.5.6:} ``A rigorous connection to information-theoretic quantities would strengthen the framework.''
+
+\textbf{Problem:} This is a placeholder, not a research direction. What specifically should be connected?
+\begin{itemize}
+    \item Mutual information $I(X; W)$?
+    \item Rate-distortion function?
+    \item Compression of representations?
+\end{itemize}
+
+\textbf{Fix needed:} Either develop this connection or remove the section.
+\end{handwavebox}
+
+% ----------------------------------------------------------------------------
+\subsection{Section 7.6: Experimental Agenda (Lines 2100--2200)}
+% ----------------------------------------------------------------------------
+
+\begin{insightbox}[Experimental Phase Planning]
+The ``Experimental Agenda'' provides a well-structured validation plan. Key observations:
+
+\textbf{Current status:} Theory and experiment design complete. Execution pending.
+
+\textbf{Priority order for execution:}
+\begin{enumerate}
+    \item \textbf{Experiment 1 (Toy Model):} Highest priority---validates core hypothesis in tractable setting. Described as ``straightforward, <100 lines of code.''
+    \item \textbf{Experiment 2 (Eigenvalue Correlation):} Direct visualization of curvature-noise coupling.
+    \item \textbf{Experiment 3 (Batch Size):} Tests noise amplitude effects on double descent peak.
+    \item \textbf{Experiment 4 (ReLU Extension):} Stretch goal---tests generalization to nonlinear networks.
+\end{enumerate}
+
+\textbf{Strategic note:} Even if Experiment 4 shows the coupling doesn't persist in ReLU networks, this is a \textit{publishable negative result} that bounds the scope of the theory.
+\end{insightbox}
+
+% ----------------------------------------------------------------------------
+\subsection{Section 7.7: Philosophical Reflections (Lines 2200--2350)}
+% ----------------------------------------------------------------------------
+
+\begin{handwavebox}[Philosophy vs Science Balance]
+The philosophical reflections are interesting but occupy too much space relative to the scientific content.
+
+\textbf{Specific issues:}
+\begin{itemize}
+    \item ``From What to How'' --- good framing, but stated multiple times
+    \item ``Unreasonable Effectiveness of SGD'' --- the paper claims to explain it but doesn't demonstrate the explanation works
+    \item ``Interdisciplinarity risks'' --- acknowledged but not mitigated
+\end{itemize}
+
+\textbf{Fix needed:} Shorten to 1 page. Move detailed reflections to an appendix.
+\end{handwavebox}
+
+% ----------------------------------------------------------------------------
+\subsection{Section 7.7.8: Friction Log (Lines 2350--2450)}
+% ----------------------------------------------------------------------------
+
+\begin{insightbox}[Model of Transparency]
+The 15-item Friction Log across 5 categories is excellent. Each item has:
+\begin{itemize}
+    \item Status assessment
+    \item Description of the obstacle
+    \item Insight potential
+\end{itemize}
+
+This should be \textbf{highlighted in the abstract} as a contribution.
+\end{insightbox}
+
+\begin{vuongmacbox}[A2: Fokker-Planck --- Central Unsolved Problem]
+\textbf{Item A2:} ``Fokker-Planck with State-Dependent Diffusion --- Analytically intractable in general''
+
+\textbf{Problem:} This is not just a friction point; it's the \textbf{foundation} of the entire NESP claim. Without solving (or approximating) the Fokker-Planck equation, we cannot:
+\begin{itemize}
+    \item Compute $P_{\mathrm{NESS}}(W)$
+    \item Verify that flat minima are favored
+    \item Predict which minima SGD finds
+\end{itemize}
+
+\textbf{Insight:} Perhaps the toy model \emph{can} be solved. For linear models with constant $H$, the Fokker-Planck becomes a standard Ornstein-Uhlenbeck process. This should be explicitly computed.
+\end{vuongmacbox}
+
+% ----------------------------------------------------------------------------
+\subsection{Section 7.7.9: Research Roadmap (Lines 2450--2545)}
+% ----------------------------------------------------------------------------
+
+\begin{insightbox}[Actionable Plan]
+The 4-phase, 12-week roadmap is concrete. Success criteria are defined.
+\end{insightbox}
+
+\begin{vuongmacbox}[Timeline Mismatch]
+\textbf{Problem:} The roadmap starts with ``Task 1.1: Complete literature review'' but the paper already has 100+ citations. Is this a new paper or a revision?
+
+\textbf{Fix needed:} Clarify the state of completion. What fraction of the roadmap has been executed?
+\end{vuongmacbox}
+
+% ============================================================================
+\section{Synthesis: Prioritized Action Items}
+% ============================================================================
+
+Based on the analysis above, here are the prioritized items organized by research phase:
+
+\subsection{Phase A: Theory Finalization (Current)}
+
+\begin{enumerate}[label=\textbf{TF\arabic*.}]
+    \item \textbf{Define ``flatness'' rigorously.} Either use a reparameterization-invariant measure (PAC-Bayes volume, Fisher information) or explicitly restrict to canonical parameterization with justification.
+    
+    \item \textbf{Quantify equilibrium deviation.} Propose an observable that measures ``distance from Gibbs distribution.'' Candidates: entropy production rate, detailed balance violation measure, KL divergence from Boltzmann.
+    
+    \item \textbf{State Hypothesis 7.2.1 as testable.} Transform $\Sigma \approx \alpha H$ into specific predictions:
+    \begin{itemize}
+        \item Eigenvector alignment: $|v_i(H)^\top v_i(\Sigma)|^2 > \theta$ for threshold $\theta$
+        \item Eigenvalue correlation: Pearson $r(\lambda(H), \lambda(\Sigma)) > 0.5$
+        \item Failure condition: If correlation $< 0.2$, hypothesis is falsified
+    \end{itemize}
+    
+    \item \textbf{Derive escape time for linear model.} The Fokker-Planck reduces to Ornstein-Uhlenbeck---this should be solvable.
+\end{enumerate}
+
+\subsection{Phase B: Experiment Execution (Next)}
+
+\begin{enumerate}[label=\textbf{EX\arabic*.}]
+    \item \textbf{Run Experiment 1 (Toy Model).} Plot $\mathrm{Tr}(\Sigma)$ vs. test error vs. $k/d$. This single figure anchors the paper.
+\end{enumerate}
+
+\subsection{Should Fix (For Quality)}
+
+\begin{enumerate}[label=\textbf{SF\arabic*.}]
+    \item \textbf{Shorten philosophical sections.} Move to appendix.
+    
+    \item \textbf{Add comparison table for literature.} Which papers agree? Which disagree? On what?
+    
+    \item \textbf{Derive escape time.} At least for the linear model where Fokker-Planck is tractable.
+    
+    \item \textbf{Address regularization.} It's central to double descent and currently avoided.
+\end{enumerate}
+
+\subsection{Could Fix (Stretch Goals)}
+
+\begin{enumerate}[label=\textbf{CF\arabic*.}]
+    \item Run Experiment 4 (ReLU extension) to test if coupling persists.
+    
+    \item Connect to NTK literature more precisely.
+    
+    \item Develop the RSB detection idea as an experimental test.
+\end{enumerate}
+
+% ============================================================================
+\section{Conclusion: The Path Forward}
+% ============================================================================
+
+This paper has \textbf{strong theoretical foundations} with a clear path to completion. The research follows a sound methodology:
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Phase} & \textbf{Status} & \textbf{Estimated Time} \\
+\hline
+Theory Development & \textcolor{green!60!black}{$\approx$ Complete} & --- \\
+Experiment Design & \textcolor{green!60!black}{Complete} & --- \\
+Theory Refinement & \textcolor{orange!80!black}{In Progress} & 1--2 weeks \\
+Experiment Execution & \textcolor{blue!70}{Planned} & 2--3 weeks \\
+Theory Adjustment & \textcolor{blue!70}{Pending Results} & 1 week \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Key insight for experimental phase:}
+\begin{enumerate}
+    \item If experiments confirm the theory $\rightarrow$ strengthen claims, emphasize predictive power
+    \item If experiments contradict $\rightarrow$ revise theory, document what was learned
+    \item \textbf{Either outcome is publishable and scientifically valuable}
+\end{enumerate}
+
+The Friction Log, Research Roadmap, and honest self-assessment demonstrate intellectual maturity. The theoretical foundation is solid. The experimental phase will complete the scientific contribution.
+
+\vspace{1cm}
+\hrule
+\vspace{0.5cm}
+\textit{``Obstacles are insights.'' The obstacles have been documented. Now they become the experimental hypotheses to test.}
+
+\end{document}

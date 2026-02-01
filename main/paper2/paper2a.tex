@@ -452,6 +452,196 @@ The fact that double descent is not well-defined itself is a problem on its own.
 
 Before applying tools from statistical physics to analyze learning dynamics, we must establish a rigorous foundation. This section provides formal definitions for key concepts, explains the mathematical components, and---critically---justifies \textit{why} these concepts are appropriate for understanding machine learning systems.
 
+% ============================================================================
+% AUTHOR'S NOTE: THEORETICAL REQUIREMENTS AND RESEARCH GAPS
+% ============================================================================
+% [The following subsection is intentionally placed at the beginning to provide
+% transparency about what theoretical tools we require, what we have rigorously
+% established, and where gaps remain. This follows the "Scientific Humility"
+% principle: acknowledge what we don't know as clearly as what we do know.]
+% ============================================================================
+
+\subsection*{Theoretical Requirements and Current Gaps (Author's Note)}
+
+\textit{Before proceeding, we explicitly enumerate the theoretical machinery required for this research program, along with an honest assessment of the current status of each component. This transparency is essential for maintaining intellectual integrity and guiding future work.}
+
+\begin{table}[htb]
+\centering
+\footnotesize
+\caption{Theoretical tools required for NESP framework: status and gaps}
+\label{tab:theoretical_requirements}
+\begin{tabular}{@{}p{3.5cm}p{2cm}p{6cm}@{}}
+\toprule
+\textbf{Theoretical Tool} & \textbf{Status} & \textbf{Notes / Gaps} \\
+\midrule
+Statistical Learning Theory (SLT) & \textcolor{green!60!black}{Established} & Classical framework; reviewed in Section 2. VC-dimension, Rademacher complexity well-defined. \\
+\addlinespace[2pt]
+Bias-Variance Decomposition & \textcolor{green!60!black}{Established} & Valid for MSE loss and Bregman divergences; Section 3. \\
+\addlinespace[2pt]
+Langevin/SDE Approximation of SGD & \textcolor{orange!80!black}{Partial} & Valid for small $\eta$, large $B$. Discretization effects and non-Gaussian noise require further analysis. \\
+\addlinespace[2pt]
+Fokker-Planck Equation & \textcolor{orange!80!black}{Partial} & Stationary distribution for state-dependent $D(W)$ not analytically solved in general. \\
+\addlinespace[2pt]
+Replica Method & \textcolor{orange!80!black}{Partial} & Mathematically non-rigorous ($n\to 0$ limit); works empirically. Used as heuristic benchmark. \\
+\addlinespace[2pt]
+Random Matrix Theory (RMT) & \textcolor{green!60!black}{Established} & Marchenko-Pastur law, spectral edge behavior well-characterized for linear models. \\
+\addlinespace[2pt]
+Curvature-Noise Coupling (Hypothesis~\ref{hyp:curvature_noise}) & \textcolor{red!70!black}{Conjectured} & Analytically verified for linear toy model only. Extension to nonlinear networks remains \textbf{OPEN}. \\
+\addlinespace[2pt]
+Escape Time Calculation & \textcolor{red!70!black}{Incomplete} & Kramers theory for isotropic noise known; anisotropic case requires further derivation. \\
+\addlinespace[2pt]
+Jamming Transition Analogy & \textcolor{orange!80!black}{Heuristic} & Qualitative analogy established; quantitative mapping (critical exponents, universality class) \textbf{OPEN}. \\
+\addlinespace[2pt]
+Non-Equilibrium Steady State (NESS) & \textcolor{red!70!black}{Framework} & Conceptual framework proposed; rigorous characterization of $P_{\text{NESS}}(W)$ is a \textbf{key open problem}. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent\textbf{Legend:} \textcolor{green!60!black}{Established} = rigorous mathematical foundation exists; \textcolor{orange!80!black}{Partial/Heuristic} = valid under certain assumptions or used as working approximation; \textcolor{red!70!black}{Conjectured/Open} = central to our framework but not yet rigorously proven.
+
+\begin{remark}[Research Philosophy]
+The gaps identified above are not defects to be hidden but \textbf{research frontiers} to be explored. Each ``red'' item represents a potential contribution. The value of this framework lies not in having all answers, but in asking the right questions and providing a coherent language in which progress can be made.
+\end{remark}
+
+\begin{remark}[Methodological stance: scientific humility]\label{rem:scientific_humility}
+Throughout this chapter, our goal is not to ``prove'' that deep learning \emph{is} a spin glass, but to construct a translation layer that is \emph{consistent with} what we can rigorously define on the learning side. When a step relies on an approximation (e.g., Langevin limits, equilibrium assumptions, replica calculations), we state it as such and treat the resulting predictions as \textit{testable hypotheses} rather than final verdicts. In this spirit, points of friction (missing assumptions, non-rigorous limits, empirical instabilities) are not merely defects to hide, but may indicate where a new theory is needed.
+\end{remark}
+
+% ============================================================================
+% SECTION: THE MACHINE LEARNING SYSTEM - COMPLETE SPECIFICATION
+% ============================================================================
+% [Author's Note: This section responds to the requirement of specifying the
+% "machine learning system" BEFORE introducing statistical physics language.
+% We enumerate ALL components of the learning system in its native form,
+% without any physics interpretation. This is the "honest starting point."
+% Only after this complete specification do we introduce the physical analogies.]
+% ============================================================================
+
+\subsection{A Minimal Machine Learning \textit{System} (Pre-Physics Setting)}\label{sec:ml_system_pre_physics}
+
+\textit{Before we introduce physical language (Hamiltonians, temperatures, quenched disorder), we first specify the machine learning system \emph{in its native form}. This is intentionally a ``boring'' list---but it is the only safe way to avoid accidental over-interpretation.}
+
+% [CRITICAL: The following enumeration must be EXHAUSTIVE. Every component
+% that will later be mapped to a physical concept must be defined here FIRST
+% in purely ML terms. This prevents the circular reasoning of "defining"
+% ML concepts through physics analogies.]
+
+\subsubsection{Complete Enumeration of System Components}
+
+We define a learning system by the following exhaustive specification. Each component is defined in purely machine learning terms, without reference to statistical physics.
+
+\begin{setting}[Learning System Components]\label{set:ml_system_components}
+We define a learning system by the tuple
+\begin{equation}
+    \boxed{\mathfrak{S} \equiv (\mathcal{D},\, \mathcal{S},\, \mathcal{H},\, f_\theta,\, \Theta,\, \ell,\, \mathcal{A},\, \Pi)}
+\end{equation}
+where each component is specified as follows:
+
+\paragraph{Data Layer:}
+\begin{itemize}
+    \item $\mathcal{D}$ is the (unknown) \textbf{data-generating distribution} on $\mathcal{X}\times\mathcal{Y}$, equivalently encoding a ``teacher'' conditional $p(y\mid x)$ (possibly noisy and/or misspecified). This is the \textit{ground truth} that the learner attempts to approximate.
+    \item $\mathcal{S}=\{(x_i,y_i)\}_{i=1}^n$ is the \textbf{observed dataset}, typically sampled i.i.d.\ from $\mathcal{D}$. This is the \textit{only} information available to the learner about $\mathcal{D}$.
+\end{itemize}
+
+\paragraph{Model Layer:}
+\begin{itemize}
+    \item $\mathcal{H}$ is the \textbf{hypothesis class} (e.g., a neural network architecture family). This defines the \textit{space of possible models} the learner can consider.
+    \item $f_\theta\in\mathcal{H}$ denotes a \textbf{particular model instance}, where $f_\theta: \mathcal{X}\to\mathcal{Y}$.
+    \item $\Theta\subset\mathbb{R}^P$ is the \textbf{parameter space}, with $P$ the number of trainable degrees of freedom (weights, biases, etc.).
+\end{itemize}
+
+\paragraph{Objective Layer:}
+\begin{itemize}
+    \item $\ell(\theta; x,y)$ is the \textbf{per-sample loss function}, measuring the discrepancy between $f_\theta(x)$ and $y$. Common choices include:
+    \begin{itemize}
+        \item Mean Squared Error (MSE): $\ell(\theta; x,y) = \frac{1}{2}(f_\theta(x) - y)^2$
+        \item Cross-Entropy: $\ell(\theta; x,y) = -y\log f_\theta(x) - (1-y)\log(1-f_\theta(x))$
+        \item Hinge loss: $\ell(\theta; x,y) = \max(0, 1 - y \cdot f_\theta(x))$
+    \end{itemize}
+    \item The \textbf{empirical risk} (training objective) is:
+    \begin{equation}
+        \mathcal{L}_{\mathcal{S}}(\theta) \equiv \frac{1}{n}\sum_{i=1}^n \ell(\theta; x_i,y_i)\quad (+\;\text{optional regularization } \lambda r(\theta)).
+    \end{equation}
+    \item The \textbf{population risk} (generalization objective) is:
+    \begin{equation}
+        \mathcal{L}(\theta)\equiv\mathbb{E}_{(x,y)\sim\mathcal{D}}[\ell(\theta;x,y)].
+    \end{equation}
+\end{itemize}
+
+\paragraph{Optimization Layer:}
+\begin{itemize}
+    \item $\mathcal{A}$ is the \textbf{optimization/training procedure}, producing an iterate sequence $(\theta_t)_{t\ge 0}$. In this paper, we focus primarily on:
+    \begin{itemize}
+        \item \textbf{Stochastic Gradient Descent (SGD):} $\theta_{t+1} = \theta_t - \eta \cdot \frac{1}{|\mathcal{B}_t|}\sum_{(x,y)\in\mathcal{B}_t} \nabla_\theta \ell(\theta_t; x,y)$
+        \item Variants: SGD with momentum, Adam, AdaGrad, etc.
+    \end{itemize}
+    \item \textbf{Hyperparameters} associated with $\mathcal{A}$:
+    \begin{itemize}
+        \item Step size (learning rate): $\eta > 0$
+        \item Batch size: $B = |\mathcal{B}_t|$
+        \item Number of epochs/iterations: $T$
+        \item Momentum coefficient: $\beta$ (if applicable)
+        \item Weight decay (explicit $\ell_2$ regularization): $\lambda$
+        \item Learning rate schedule: $\eta(t)$ (warmup, decay, cyclical, etc.)
+        \item Stopping criteria: early stopping, convergence threshold
+    \end{itemize}
+\end{itemize}
+
+\paragraph{Stochasticity Layer:}
+\begin{itemize}
+    \item $\Pi$ denotes the \textbf{collection of randomness sources} that make training outcomes non-deterministic:
+    \begin{itemize}
+        \item \textbf{Initialization:} Random initial weights $\theta_0$ (e.g., Xavier, He, Kaiming)
+        \item \textbf{Mini-batch sampling:} Random selection of $\mathcal{B}_t \subset \mathcal{S}$ at each step
+        \item \textbf{Data augmentation:} Random transformations applied to inputs
+        \item \textbf{Label noise:} Intentional or unintentional noise in $y$
+        \item \textbf{Dropout:} Random neuron masking during training
+        \item \textbf{Numerical nondeterminism:} Hardware-level floating-point variations
+    \end{itemize}
+\end{itemize}
+\end{setting}
+
+\begin{remark}[Scope of This Paper]
+In subsequent analysis, we will primarily focus on:
+\begin{itemize}
+    \item \textbf{Loss function:} MSE ($\ell_2$ loss), as it admits clean bias-variance decomposition.
+    \item \textbf{Optimizer:} Vanilla SGD (without momentum), as it permits Langevin approximation.
+    \item \textbf{Architecture:} Linear models and two-layer networks, as they permit analytical Hessian computation.
+\end{itemize}
+Extensions to cross-entropy loss, Adam optimizer, and deep nonlinear networks are discussed as \textbf{open problems} in Section~\ref{sec:open_problems}.
+\end{remark}
+
+\begin{remark}[What This Setting Does \emph{Not} Assume]
+This definition does \emph{not} assume convexity, realizability ($\exists\theta$ with zero population risk), a well-specified teacher, or that SGD converges to a unique limit. It only fixes the objects we will later translate into statistical physics language.
+\end{remark}
+
+\subsubsection{The Translation Protocol: From ML to Physics}
+
+\textit{With the ML system fully specified, we now articulate the protocol by which physical concepts will be introduced. This is not a claim that ML ``is'' physics, but a controlled translation with explicit validity conditions.}
+
+\begin{enumerate}
+    \item \textbf{Step 1: Identify the dynamical variables.} In physics: spin configurations $\sigma_i$. In ML: weight parameters $\theta \in \Theta \subset \mathbb{R}^P$.
+    
+    \item \textbf{Step 2: Identify the energy function.} In physics: Hamiltonian $\mathcal{H}(\sigma; J)$. In ML: loss function $\mathcal{L}(\theta; \mathcal{S})$.
+    
+    \item \textbf{Step 3: Identify the quenched disorder.} In physics: random couplings $J_{ij}$. In ML: the dataset $\mathcal{S}$ (fixed during training but random in its generation).
+    
+    \item \textbf{Step 4: Identify the thermal fluctuations.} In physics: temperature $T$ and Boltzmann factor $e^{-\beta H}$. In ML: SGD noise characterized by $T_{\text{eff}} = \eta/B$.
+    
+    \item \textbf{Step 5: Identify the order parameters.} In physics: magnetization, overlap between replicas. In ML: test error, weight alignment, generalization gap.
+\end{enumerate}
+
+\begin{remark}[Validity Conditions for the Translation]
+The physical translation is most reliable when:
+\begin{itemize}
+    \item The learning rate $\eta$ is small (continuous-time approximation valid).
+    \item The batch size $B$ is large enough for Gaussian noise approximation.
+    \item The system has reached a quasi-stationary state (not in early transient dynamics).
+    \item The loss landscape is locally smooth (second-order Taylor expansion valid).
+\end{itemize}
+When these conditions are violated, the translation becomes a \textbf{heuristic} rather than a rigorous correspondence. We will flag such cases explicitly.
+\end{remark}
+
 \subsection{Stochastic Gradient Descent as a Physical Process}
 
 \subsubsection{Why View SGD as a Stochastic Process?}
@@ -520,7 +710,7 @@ This quantity controls the ratio of stochastic fluctuations to deterministic des
 \begin{remark}[Why ``Temperature''?]
 In thermal physics, temperature quantifies the average kinetic energy of random molecular motion. In SGD, $T_{\text{eff}} = \eta/B$ quantifies the average magnitude of random weight updates due to mini-batch sampling. The analogy is precise: both control the balance between \textit{exploration} (random motion) and \textit{exploitation} (directed motion toward energy/loss minima).
 
-This is \textbf{not} merely a metaphor. The mathematical structure---Langevin equation, Fokker-Planck equation, fluctuation-dissipation relations---transfers directly from statistical physics to optimization theory.
+In regimes where the Langevin approximation is accurate (small step size, weak discretization effects, and an appropriate noise model), several mathematical tools from statistical physics---Langevin dynamics and the associated Fokker--Planck description in particular---become \emph{consistent with} the optimization picture. Outside these regimes, the ``temperature'' terminology should be read as an \textit{effective} descriptor rather than a literal thermodynamic temperature.
 \end{remark}
 
 \subsubsection{The Fokker-Planck Equation: From Trajectories to Distributions}
@@ -777,33 +967,44 @@ The physicist's attitude is: \textit{the method works, even if we don't fully un
 To apply replica theory to neural networks, we establish a precise mapping between concepts.
 
 \begin{definition}[Spin Glass---Neural Network Dictionary]\label{def:spin_glass_dictionary}
-The following table establishes the isomorphism between spin glass physics and neural network learning:
-
-\begin{center}
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|p{4cm}|p{5cm}|p{5cm}|}
-\hline
-\textbf{Concept} & \textbf{Spin Glass (Physics)} & \textbf{Neural Network (ML)} \\
-\hline
-Degrees of freedom & Spin variables $\sigma_i \in \{-1, +1\}$ & Weight parameters $W_i \in \mathbb{R}$ \\
-\hline
-Energy function & Hamiltonian $\mathcal{H}(\sigma; J)$ & Loss function $\mathcal{L}(W; \mathcal{D})$ \\
-\hline
-Quenched disorder & Random couplings $J_{ij}$ (fixed but random) & Dataset $\mathcal{D} = \{(x_i, y_i)\}$ (fixed but random sample) \\
-\hline
-Temperature $T$ & Thermal fluctuations & Effective temperature $T_{\text{eff}} = \eta/B$ \\
-\hline
-Thermal average $\langle \cdot \rangle$ & $\int (\cdot) P_{\text{eq}}(\sigma) d\sigma$ & Expectation over weight distribution \\
-\hline
-Disorder average $\overline{(\cdot)}$ & $\mathbb{E}_J[(\cdot)]$ & $\mathbb{E}_{\mathcal{D}}[(\cdot)]$ \\
-\hline
-Order parameter & Overlap $q = \frac{1}{N}\sum_i \sigma_i^{(1)} \sigma_i^{(2)}$ & Weight alignment between replicas \\
-\hline
-Phase transition & Paramagnetic $\leftrightarrow$ Spin glass & Under- $\leftrightarrow$ Over-parameterized \\
-\hline
-\end{tabular}
-\end{center}
+The table in Table~\ref{tab:spin_glass_nn_analogy} provides a \emph{working dictionary} between the two domains. Importantly, this dictionary should be read as a translation layer between questions and observables, not as an unconditional claim that neural network training \emph{is} a spin glass.
 \end{definition}
+
+% In two-column layout: use table* for full-width floats.
+\begin{table*}[t]
+\centering
+\footnotesize
+\begin{threeparttable}
+\caption{Analogy between spin glass physics and neural network training}
+\label{tab:spin_glass_nn_analogy}
+\begin{tabularx}{\textwidth}{ L{0.25\textwidth} L{0.35\textwidth} >{\RaggedRight\arraybackslash}X }
+\toprule
+\textbf{Concept} & \textbf{Spin Glass (Physics)} & \textbf{Neural Network (ML)} \\
+\midrule
+Degrees of freedom & Spin variables $\sigma_i \in \{-1,+1\}$ & Weight parameters $W_i\in\mathbb{R}$ (components of $W\in\mathbb{R}^P$) \\
+\addlinespace[1pt]
+Energy function & Hamiltonian $\mathcal{H}(\sigma; J)$ & Loss function $\mathcal{L}(W; \mathcal{S})$ (or population loss $\mathcal{L}(W;\mathcal{D})$) \\
+\addlinespace[1pt]
+Quenched disorder & Random couplings $J_{ij}$ (fixed but random) & Dataset $\mathcal{S}=\{(x_i,y_i)\}_{i=1}^n$ (fixed but random sample from $\mathcal{D}$) \\
+\addlinespace[1pt]
+Temperature $T$ & Thermal fluctuations & Effective temperature $T_{\text{eff}}\approx\eta/B$ (SGD noise level) \\
+\addlinespace[1pt]
+Thermal average $\langle\cdot\rangle$ & $\int (\cdot) P_{\text{eq}}(\sigma)\,d\sigma$ & Expectation over the training-induced weight distribution (e.g., stationary $P_\infty(W)$) \\
+\addlinespace[1pt]
+Disorder average $\overline{(\cdot)}$ & $\mathbb{E}_{J}[(\cdot)]$ & $\mathbb{E}_{\mathcal{S}\sim\mathcal{D}^n}[(\cdot)]$ (average over dataset realizations) \\
+\addlinespace[1pt]
+Order parameter & Replica overlap $q=\frac{1}{N}\sum_i \sigma_i^{(1)}\sigma_i^{(2)}$ & Weight alignment/similarity between independently trained replicas \\
+\addlinespace[1pt]
+Phase transition & Paramagnet $\leftrightarrow$ Spin glass phase & Under-parameterized $\leftrightarrow$ Over-parameterized regime \\
+\bottomrule
+\end{tabularx}
+
+\begin{tablenotes}
+\footnotesize
+\item[] \textbf{Notes:} The mapping above is a pragmatic dictionary: it suggests a potential mechanism and provides a language for transferring tools (e.g., disorder averages, replica overlaps) when the assumptions of the physical approximation are plausibly satisfied.
+\end{tablenotes}
+\end{threeparttable}
+\end{table*}
 
 \textbf{Why This Mapping Works:}
 
@@ -814,7 +1015,7 @@ The deep reason for the spin glass---neural network analogy is \textbf{structura
     \item In both systems, the interplay between disorder and thermal fluctuations creates complex, non-convex energy/loss landscapes with multiple local minima.
 \end{enumerate}
 
-The mapping is not merely analogical---it is an \textit{exact correspondence} for certain model classes (e.g., the Hopfield network is precisely a spin glass with Hebbian couplings).
+For certain restricted model classes, the correspondence can be made essentially exact (e.g., the Hopfield network can be written as a spin system with Hebbian couplings). For modern deep networks trained with SGD, the dictionary is better viewed as a controlled approximation whose validity must be argued case-by-case.
 
 \subsection{The Jamming Transition: A Geometric Perspective on Interpolation}
 
@@ -883,6 +1084,98 @@ We have now established the formal definitions and physical justifications for t
 
 With these foundations in place, we now turn to reviewing how equilibrium theories (RMT, Replica) explain double descent in linear models, before developing the non-equilibrium framework that addresses deep networks.
 
+% ============================================================================
+% SECTION: RESEARCH FRICTION POINTS - DOCUMENTING VƯỚNG MẮC AS INSIGHT
+% ============================================================================
+% [Author's Philosophy: Following the principle that "vướng mắc là insight",
+% we explicitly document the points of theoretical friction. These are not
+% weaknesses to hide but research opportunities to embrace. Each friction
+% point is a place where current theory breaks down and new theory is needed.]
+% ============================================================================
+
+\subsection{Research Friction Points: Where Theory Meets Its Limits}\label{sec:friction_points}
+
+\textit{In the spirit of scientific humility, we document the ``friction points'' where our theoretical machinery encounters resistance. These are not failures but \textbf{signposts} indicating where deeper understanding is needed.}
+
+\subsubsection{Friction Point 1: The Langevin Approximation Breaks Down}
+
+\textbf{The Problem:} The continuous-time Langevin equation (Definition~\ref{def:langevin_sgd}) is derived under the assumption that the learning rate $\eta$ is small. However, in practice:
+\begin{itemize}
+    \item Large learning rates are often used, especially in early training.
+    \item Learning rate schedules (warmup, decay) violate the constant-$\eta$ assumption.
+    \item The discretization error $O(\eta^2)$ may accumulate over millions of steps.
+\end{itemize}
+
+\textbf{The Insight:} The breakdown of Langevin suggests that \textit{discrete-time effects} may be essential to understanding SGD. Recent work on ``edge of stability'' training \cite{cohen2021gradient} shows that large learning rates induce qualitatively different dynamics (oscillation, catapulting) not captured by continuous diffusion.
+
+\textbf{Open Question:} Can we develop a \textbf{discrete-time statistical mechanics} that captures these effects? What is the ``Hamiltonian'' for discrete SGD?
+
+\subsubsection{Friction Point 2: The Replica Trick's Mathematical Fragility}
+
+\textbf{The Problem:} The replica identity (Eq.~\eqref{eq:replica_identity}) involves:
+\begin{enumerate}
+    \item Computing $\mathbb{E}[Z^n]$ for integer $n$.
+    \item Analytically continuing to real $n$.
+    \item Taking the limit $n \to 0$.
+\end{enumerate}
+
+Each step is mathematically problematic:
+\begin{itemize}
+    \item \textbf{Analytic continuation:} There are infinitely many functions that agree on integers but differ on the reals. Which continuation is ``correct''?
+    \item \textbf{The $n \to 0$ limit:} What does it mean to have ``zero replicas''? The physical interpretation is obscure.
+    \item \textbf{Replica symmetry breaking (RSB):} In some systems (e.g., Sherrington-Kirkpatrick spin glass), the ``obvious'' symmetric ansatz gives wrong results. One must postulate a hierarchy of symmetry breaking whose physical origin is debated.
+\end{itemize}
+
+\textbf{The Insight:} The replica trick \textit{works empirically} despite lacking rigorous justification. This suggests either:
+\begin{enumerate}
+    \item There exists a deeper mathematical structure we have not yet identified.
+    \item The agreement with experiment is a ``lucky accident'' that may fail in edge cases.
+\end{enumerate}
+
+\textbf{Research Direction:} Alternative methods (cavity method, interpolation techniques, supersymmetric approach) can sometimes verify replica results rigorously. A systematic comparison in the ML context is needed.
+
+\subsubsection{Friction Point 3: The Temperature Analogy's Limits}
+
+\textbf{The Problem:} We defined $T_{\text{eff}} = \eta/B$ as the ``effective temperature'' (Definition~\ref{def:effective_temp}). But this analogy has limits:
+\begin{itemize}
+    \item \textbf{No detailed balance:} In equilibrium thermodynamics, $T$ determines the Boltzmann distribution via detailed balance. SGD generally violates detailed balance.
+    \item \textbf{Direction-dependent temperature:} The noise covariance $\Sigma(W)$ is a matrix, not a scalar. Different directions in weight space experience different ``temperatures.''
+    \item \textbf{Temperature depends on position:} $\Sigma(W)$ varies across weight space, so the ``temperature'' is a field, not a constant.
+\end{itemize}
+
+\textbf{The Insight:} The scalar temperature $T_{\text{eff}}$ is a \textbf{zeroth-order approximation}. The full physics requires treating the diffusion tensor $D(W) = (\eta/B) \Sigma(W)$ as the fundamental object. This is precisely what our NESP framework attempts.
+
+\textbf{Open Question:} Is there a well-defined ``temperature field'' $T(W)$ that captures the local noise intensity? If so, how does it relate to generalization?
+
+\subsubsection{Friction Point 4: The Gap Between Linear and Nonlinear}
+
+\textbf{The Problem:} Our toy model (Section~\ref{sec:toy_model}) is linear. Real neural networks use nonlinear activations (ReLU, sigmoid, etc.). The gap is substantial:
+\begin{itemize}
+    \item \textbf{Hessian structure:} In linear models, the Hessian is constant or slowly varying. In ReLU networks, the Hessian is \textit{piecewise constant} with discontinuities at activation boundaries.
+    \item \textbf{Loss landscape topology:} Linear models have a single connected basin (or manifold) of minima. Nonlinear models may have exponentially many disconnected basins.
+    \item \textbf{Feature learning:} Linear models cannot learn features---the ``representation'' is fixed. Nonlinear networks fundamentally change what they compute during training.
+\end{itemize}
+
+\textbf{The Insight:} The linear model is the \textbf{hydrogen atom} of learning theory---solvable but not representative. The challenge is to identify which properties (e.g., curvature-noise coupling) are \textit{universal} versus \textit{model-specific}.
+
+\textbf{Research Direction:} A systematic ``ladder of models'' from linear $\to$ random features $\to$ shallow ReLU $\to$ deep ReLU would reveal which phenomena persist and which disappear.
+
+\subsubsection{Friction Point 5: Observational vs.\ Causal Claims}
+
+\textbf{The Problem:} Much of double descent research is \textit{observational}: ``we see a peak at $P \approx N$.'' Our NESP framework attempts \textit{causal} claims: ``the peak occurs \textit{because} of curvature-noise coupling.'' But establishing causality is difficult:
+\begin{itemize}
+    \item \textbf{Confounders:} Many things change at $P \approx N$ (condition number, number of minima, basin geometry). Which is the ``cause'' of the peak?
+    \item \textbf{Interventions:} A true causal claim predicts what happens under \textit{intervention}. If we artificially modify the noise structure, does double descent disappear as predicted?
+\end{itemize}
+
+\textbf{The Insight:} Our framework makes \textbf{falsifiable predictions} (Section~\ref{sec:experimental_agenda}). If these predictions fail, the theory must be revised. This is the scientific method at work.
+
+\textbf{Concrete Test:} Train with \textit{isotropic} noise (add Gaussian noise independent of gradient). If curvature-noise coupling is essential, double descent should be suppressed or qualitatively different.
+
+\begin{remark}[The Value of Friction]
+These friction points are not embarrassments to be minimized in the final write-up. They are the \textbf{growing edge} of the theory---the places where new insights will emerge. A theory without friction points is either trivial or dishonest.
+\end{remark}
+
 \section{Classical Explanations: The Equilibrium Regime}
 
 Following the empirical identification of the double descent phenomenon, the initial wave of theoretical explanations primarily leveraged tools from \textbf{Equilibrium Statistical Physics} and \textbf{Random Matrix Theory (RMT)}. These approaches view the learning problem through a static lens, analyzing the properties of the solution space at equilibrium (or the minimum norm solution) rather than the dynamics of reaching it.
@@ -902,7 +1195,211 @@ Parallel to RMT, techniques from the statistical physics of disordered systems, 
 
 Researchers such as \cite{mezard1987spin, gerace2020generalisation} employed the ``Replica Trick'' to compute the partition function and free energy of the system in the thermodynamic limit. This framework confirmed that double descent is, in these models, a phase transition inherent to the equilibrium state of the system. However, like RMT, standard Replica analysis assumes a static equilibrium (Gibbs distribution) and does not inherently capture the algorithmic trajectory of Stochastic Gradient Descent (SGD).
 
+% ============================================================================
+% EXPANDED: REPLICA METHOD DERIVATION AND LIMITATIONS
+% ============================================================================
+% [Author's Note: Following the request to provide more detail on the Replica
+% Method, we now expand this section with: (1) explicit derivation steps,
+% (2) physical interpretation at each stage, (3) honest acknowledgment of
+% mathematical gaps. This is the "completeness of details in a sensitive
+% setting" that the research collaboration requires.]
+% ============================================================================
+
+\subsubsection{The Replica Calculation: Step-by-Step (Expanded)}
+
+\textit{We now provide a more detailed exposition of the replica calculation, highlighting both its power and its fragility. This level of detail is necessary to understand both what the method achieves and where it may fail.}
+
+\paragraph{Step 1: Setting Up the Disorder Average.}
+
+Consider a learning problem where the dataset $\mathcal{S} = \{(x_i, y_i)\}_{i=1}^n$ is drawn i.i.d.\ from some distribution $\mathcal{D}$. The partition function for the ``thermal'' distribution over weights is:
+\begin{equation}
+    Z(\mathcal{S}) = \int_{\mathbb{R}^P} \exp\left( -\beta \mathcal{L}(W; \mathcal{S}) \right) dW
+\end{equation}
+where $\beta$ is an inverse temperature and $\mathcal{L}(W; \mathcal{S})$ is the empirical loss.
+
+The \textbf{quenched free energy} is:
+\begin{equation}
+    F_{\text{quenched}} = -\frac{1}{\beta} \mathbb{E}_{\mathcal{S}} \left[ \ln Z(\mathcal{S}) \right]
+\end{equation}
+
+The expectation of a logarithm is analytically intractable. This is the fundamental obstacle.
+
+\paragraph{Step 2: The Replica Identity.}
+
+The replica trick exploits the identity:
+\begin{equation}
+    \ln Z = \lim_{n \to 0} \frac{Z^n - 1}{n}
+\end{equation}
+
+Thus:
+\begin{equation}\label{eq:replica_average}
+    \mathbb{E}[\ln Z] = \lim_{n \to 0} \frac{\mathbb{E}[Z^n] - 1}{n}
+\end{equation}
+
+For integer $n \geq 1$, we can write:
+\begin{equation}
+    Z^n = \prod_{a=1}^{n} \int dW^{(a)} \exp\left( -\beta \mathcal{L}(W^{(a)}; \mathcal{S}) \right)
+\end{equation}
+
+This is the partition function of $n$ \textbf{replicas} of the original system, all sharing the same dataset $\mathcal{S}$.
+
+\paragraph{Step 3: Disorder Average \textit{Before} Replica Limit.}
+
+The key insight: for integer $n$, we can compute $\mathbb{E}_{\mathcal{S}}[Z^n]$ because the expectation is now \textit{outside} the logarithm:
+\begin{equation}
+    \mathbb{E}_{\mathcal{S}}[Z^n] = \mathbb{E}_{\mathcal{S}} \left[ \prod_{a=1}^{n} \int dW^{(a)} \exp\left( -\beta \sum_{a=1}^{n} \mathcal{L}(W^{(a)}; \mathcal{S}) \right) \right]
+\end{equation}
+
+Exchanging the order of integration and expectation (justified for bounded losses or by regularization):
+\begin{equation}
+    \mathbb{E}_{\mathcal{S}}[Z^n] = \int \prod_{a=1}^{n} dW^{(a)} \, \mathbb{E}_{\mathcal{S}} \left[ \exp\left( -\beta \sum_{a=1}^{n} \mathcal{L}(W^{(a)}; \mathcal{S}) \right) \right]
+\end{equation}
+
+The disorder average now couples the replicas: even though each $W^{(a)}$ is independent \textit{a priori}, the shared dataset $\mathcal{S}$ creates effective interactions between them.
+
+\paragraph{Step 4: Order Parameters and Saddle Point.}
+
+In the thermodynamic limit ($n, P \to \infty$ with $P/n$ fixed), the integral is dominated by a \textbf{saddle point}. The relevant order parameters are the \textbf{replica overlaps}:
+\begin{equation}
+    q_{ab} = \frac{1}{P} \sum_{i=1}^{P} W_i^{(a)} W_i^{(b)}, \quad a \neq b
+\end{equation}
+
+These measure the similarity between different replicas---i.e., between independently trained models on the same dataset.
+
+\textbf{Replica Symmetric (RS) Ansatz:} The simplest assumption is that all replicas are statistically equivalent:
+\begin{equation}
+    q_{ab} = q \quad \text{for all } a \neq b
+\end{equation}
+
+Under this ansatz, the saddle point equations yield a self-consistent equation for $q$, which can be solved to obtain the free energy.
+
+\paragraph{Step 5: The Fragile $n \to 0$ Limit.}
+
+Having computed $\mathbb{E}[Z^n]$ as a function of integer $n$, we must now:
+\begin{enumerate}
+    \item Find an analytic expression valid for real $n$.
+    \item Evaluate the limit $n \to 0$.
+\end{enumerate}
+
+\textbf{Mathematical Warning:} This step is \textbf{not rigorous}. Analytic continuation is not unique, and the physical meaning of ``$n \to 0$ replicas'' is unclear. The justification is entirely \textit{a posteriori}: the method gives correct results when checked against other methods or simulations.
+
+\begin{remark}[Replica Symmetry Breaking (RSB)]
+In some systems (notably the Sherrington-Kirkpatrick spin glass), the RS ansatz gives \textit{wrong} results. The correct solution requires \textbf{Replica Symmetry Breaking}---a hierarchical structure where different pairs of replicas have different overlaps $q_{ab}$.
+
+In the ML context, RSB may be relevant when:
+\begin{itemize}
+    \item The loss landscape has many disconnected minima (``glassy'' phase).
+    \item Different training runs on the same data converge to qualitatively different solutions.
+\end{itemize}
+
+Determining whether RSB occurs in realistic neural network training is an \textbf{open problem}.
+\end{remark}
+
+\subsubsection{What Replica Theory Achieves and What It Misses}
+
+\textbf{Achievements:}
+\begin{itemize}
+    \item Exact asymptotic formulas for generalization error in linear and random-feature models.
+    \item Prediction of the interpolation threshold and double descent peak location.
+    \item Connection between generalization and properties of the solution (e.g., norm, flatness).
+\end{itemize}
+
+\textbf{Limitations:}
+\begin{itemize}
+    \item \textbf{Static equilibrium:} Assumes the Gibbs distribution, ignoring optimization dynamics.
+    \item \textbf{Linear/random features only:} Extension to trained deep networks is non-trivial.
+    \item \textbf{Thermodynamic limit:} Finite-size effects (realistic $n, P$) require separate analysis.
+    \item \textbf{Mathematical non-rigor:} The $n \to 0$ limit is a formal trick, not a theorem.
+\end{itemize}
+
+\begin{remark}[The Bridge to NESP]
+The replica method answers: ``What is the \textit{equilibrium} distribution over weights?'' Our NESP framework asks: ``What is the \textit{dynamical} distribution reached by SGD?'' These may differ. The replica calculation provides a \textbf{benchmark}---if SGD converges to equilibrium, replica predictions should hold. Deviations from replica predictions indicate \textbf{non-equilibrium effects}.
+\end{remark}
+
 \section{The Gap: From Static to Dynamic}
+
+% ============================================================================
+% CONCEPTUAL BRIDGES: CONNECTING FRAGMENTED IDEAS
+% ============================================================================
+% [Author's Note: This section addresses the concern that "everything will fail
+% and misrepresentation will happen" if we don't explicitly connect the pieces.
+% Each bridge represents a logical connection that might otherwise be hand-waved.]
+% ============================================================================
+
+\subsection{Conceptual Bridges: Making Implicit Connections Explicit}\label{sec:conceptual_bridges}
+
+\textit{Before proceeding to the NESP framework, we pause to make explicit several conceptual bridges that might otherwise be ``hand-waved.'' Each bridge connects two ideas that are often assumed to be related but whose connection requires justification.}
+
+\subsubsection{Bridge 1: Loss Landscape $\leftrightarrow$ Physical Energy}
+
+\textbf{The claim:} The loss function $\mathcal{L}(W)$ plays the role of ``energy'' in our physical analogy.
+
+\textbf{The justification:}
+\begin{itemize}
+    \item Both are scalar functions of the system state ($W$ or spin configuration $\sigma$).
+    \item Both define a ``landscape'' with minima, maxima, and saddles.
+    \item Optimization seeks low-loss states; thermodynamics favors low-energy states (at $T \to 0$).
+\end{itemize}
+
+\textbf{The caveat:} Physical energy has units (Joules); loss is dimensionless. The ``temperature'' $T_{\text{eff}} = \eta/B$ is not a real temperature but a ratio of hyperparameters. The analogy is \textit{structural}, not \textit{ontological}.
+
+\subsubsection{Bridge 2: Dataset Randomness $\leftrightarrow$ Quenched Disorder}
+
+\textbf{The claim:} The random dataset $\mathcal{S}$ plays the role of ``quenched disorder'' (random couplings $J_{ij}$ in spin glasses).
+
+\textbf{The justification:}
+\begin{itemize}
+    \item Both are random variables that are \textit{fixed during the dynamics} (training or thermal relaxation).
+    \item Both create a ``rugged'' landscape whose specific shape depends on the realization.
+    \item Both require averaging over realizations to obtain typical behavior.
+\end{itemize}
+
+\textbf{The caveat:} In spin glasses, $J_{ij}$ are typically i.i.d.\ Gaussian. Dataset samples $(x_i, y_i)$ have correlations (e.g., if $x_i$ are images, they share low-level statistics). The disorder structure may differ in important ways.
+
+\subsubsection{Bridge 3: SGD Noise $\leftrightarrow$ Thermal Fluctuations}
+
+\textbf{The claim:} Mini-batch stochasticity provides ``effective thermal fluctuations'' that allow the system to explore the loss landscape.
+
+\textbf{The justification:}
+\begin{itemize}
+    \item Both introduce randomness into an otherwise deterministic dynamics.
+    \item Both enable escape from local minima (barrier crossing).
+    \item Both have a ``temperature-like'' parameter controlling fluctuation magnitude ($T$ vs.\ $\eta/B$).
+\end{itemize}
+
+\textbf{The caveat:} Thermal noise satisfies detailed balance (leading to Gibbs equilibrium). SGD noise is \textit{anisotropic} and \textit{state-dependent}, generically violating detailed balance. This is precisely why we need NESP, not equilibrium statistical mechanics.
+
+\subsubsection{Bridge 4: Interpolation Threshold $\leftrightarrow$ Jamming Transition}
+
+\textbf{The claim:} The point $P \approx N$ (parameters $\approx$ data points) is analogous to the jamming transition in granular materials.
+
+\textbf{The justification:}
+\begin{itemize}
+    \item In both cases, a ``critical'' point separates under-constrained and over-constrained regimes.
+    \item In both cases, the system becomes ``marginally stable'' at criticality.
+    \item In both cases, response functions (e.g., susceptibility, condition number) diverge.
+\end{itemize}
+
+\textbf{The caveat:} Jamming is a geometric/mechanical transition; interpolation is an algebraic condition. The connection is suggestive but not proven to be in the same universality class. Critical exponents may differ.
+
+\subsubsection{Bridge 5: Flat Minima $\leftrightarrow$ Good Generalization}
+
+\textbf{The claim:} ``Flat'' minima (small Hessian eigenvalues) generalize better than ``sharp'' minima.
+
+\textbf{The justification:}
+\begin{itemize}
+    \item PAC-Bayes bounds relate generalization to the ``sharpness'' of the posterior around learned weights.
+    \item Intuitively, flat minima are ``robust''---small perturbations (e.g., from test vs.\ train distribution) cause small loss changes.
+    \item Empirical studies correlate flatness metrics with generalization.
+\end{itemize}
+
+\textbf{The caveat:} ``Flatness'' is not reparameterization-invariant. Scaling the weights and inversely scaling the next layer's weights preserves the function but changes the Hessian. Recent work suggests that \textit{volume} of the basin, not just curvature, may be the relevant quantity.
+
+\begin{remark}[Why Bridges Matter]
+These bridges are not merely pedagogical. They define the \textbf{scope of validity} of our framework. When a bridge's caveats are violated (e.g., non-i.i.d.\ data, extreme learning rates), the physical analogy may break down. Understanding the bridges helps us know when to trust the theory and when to be skeptical.
+\end{remark}
+
+\subsection{The Static-Dynamic Gap: A Precise Statement}
 
 While equilibrium theories successfully describe double descent in ``shallow'' and linear models, a fundamental gap remains when applying these concepts to modern Deep Neural Networks (DNNs). The elegance of the RMT and Replica approaches---their ability to yield closed-form expressions for risk in the thermodynamic limit---comes at a cost: they are fundamentally \textit{static} theories. They answer the question ``what is the equilibrium state?'' but remain silent on ``how does the system reach it?''
 
@@ -1802,7 +2299,339 @@ The NESP framework draws on concepts from statistical physics, stochastic proces
 
 Navigating this tension requires what might be called \textit{bilingual fluency}---the ability to translate concepts between fields while respecting the distinct semantics of each. We have attempted this throughout the chapter, but the translation is imperfect. Future work, by researchers with deeper expertise in either physics or machine learning, will surely refine (or refute) the ideas presented here.
 
+% ============================================================================
+% SECTION: COMPREHENSIVE VƯỚNG MẮC LOG - RESEARCH FRICTION AS INSIGHT
+% ============================================================================
+% [Author's Philosophy: Following the principle that "vướng mắc hay bất cứ cái
+% vấn đề gì gặp phải đều là 1 insight dùng trong theory construction với analysis",
+% we now provide a comprehensive log of all encountered obstacles, their current
+% status, and how each might lead to theoretical insights.]
+% ============================================================================
+
+\subsection{Comprehensive Research Friction Log}\label{sec:friction_log}
+
+\textit{``Vướng mắc là insight.'' This section documents every significant obstacle encountered during the development of this framework, treating each as a potential source of theoretical insight rather than a mere defect to be hidden.}
+
+\subsubsection{Category A: Mathematical Rigor Gaps}
+
+\begin{description}
+    \item[A1. The $n \to 0$ Replica Limit] \hfill \\
+    \textbf{Status:} Unresolved (mathematically non-rigorous) \\
+    \textbf{Vướng mắc:} The analytic continuation from integer $n$ to real $n \to 0$ is not unique. Different continuations give different results. \\
+    \textbf{Insight potential:} Perhaps the ``correct'' continuation is determined by physical constraints (stability, causality) not yet identified. Alternatively, the replica trick may be an approximation to a deeper structure (e.g., supersymmetric field theory).
+    
+    \item[A2. Fokker-Planck with State-Dependent Diffusion] \hfill \\
+    \textbf{Status:} Analytically intractable in general \\
+    \textbf{Vướng mắc:} When $D(W)$ depends on $W$, the stationary distribution $P_{\text{stat}}(W)$ is not the simple Boltzmann form. Closed-form solutions exist only for 1D or special cases. \\
+    \textbf{Insight potential:} The deviation from Boltzmann may encode the ``entropic selection'' mechanism. Computing $P_{\text{stat}}$ even approximately would reveal which minima are dynamically favored.
+    
+    \item[A3. Langevin Discretization Error] \hfill \\
+    \textbf{Status:} Known bounds exist, but may not apply to large $\eta$ \\
+    \textbf{Vướng mắc:} Standard SDE theory requires $\eta \to 0$. In practice, $\eta$ is finite and sometimes large. The error accumulation over training is not controlled. \\
+    \textbf{Insight potential:} Discrete-time effects may be essential, not corrections. A ``discrete Langevin'' theory might be more appropriate.
+\end{description}
+
+\subsubsection{Category B: Physical Analogy Limitations}
+
+\begin{description}
+    \item[B1. Temperature vs. Noise Covariance] \hfill \\
+    \textbf{Status:} Conceptual mismatch \\
+    \textbf{Vướng mắc:} Physical temperature is a scalar; SGD noise covariance is a matrix. The mapping $T_{\text{eff}} = \eta/B$ loses information about anisotropy. \\
+    \textbf{Insight potential:} A ``tensor temperature'' or ``temperature field'' $T_{ij}(W)$ may be the correct generalization. This would connect to non-equilibrium thermodynamics literature.
+    
+    \item[B2. Detailed Balance Violation] \hfill \\
+    \textbf{Status:} Fundamental obstruction to equilibrium analysis \\
+    \textbf{Obstacle:} SGD dynamics generically violate detailed balance, meaning the stationary distribution (if it exists) is not Gibbs. Standard equilibrium tools don't apply. \\
+    \textbf{Insight potential:} The violation of detailed balance may be quantifiable (e.g., via entropy production rate). This rate might correlate with generalization---systems ``further from equilibrium'' might generalize better.
+    
+    \item[B3. Quenched vs. Annealed Disorder] \hfill \\
+    \textbf{Status:} Potentially misidentified regime \\
+    \textbf{Obstacle:} We treat the dataset $\mathcal{S}$ as quenched (fixed during training). But with data augmentation or online learning, $\mathcal{S}$ effectively varies, approaching annealed disorder. \\
+    \textbf{Insight potential:} The quenched-to-annealed crossover is a known phenomenon in physics. Its ML analog might explain why data augmentation improves generalization.
+\end{description}
+
+\subsubsection{Category C: Empirical Instabilities}
+
+\begin{description}
+    \item[C1. Reproducibility of Double Descent] \hfill \\
+    \textbf{Status:} Empirically fragile \\
+    \textbf{Obstacle:} Double descent is not always observed. Small changes in hyperparameters, architecture, or dataset can suppress or shift the peak. \\
+    \textbf{Insight potential:} The ``fragility'' may indicate that double descent is a critical phenomenon---present only near a phase boundary. Mapping the phase diagram would clarify when to expect it.
+    
+    \item[C2. Architecture Dependence] \hfill \\
+    \textbf{Status:} Unexplained variability \\
+    \textbf{Obstacle:} Different architectures (ResNet vs. Transformer vs. MLP) show qualitatively different double descent profiles. The NESP framework does not currently predict these differences. \\
+    \textbf{Insight potential:} Architecture may determine the ``universality class'' of the phase transition. Classifying architectures by their critical behavior is a research direction.
+    
+    \item[C3. Optimizer Dependence] \hfill \\
+    \textbf{Status:} Underexplored \\
+    \textbf{Obstacle:} Most experiments use SGD or Adam. Does double descent persist with second-order methods (Newton, L-BFGS)? With gradient-free methods? \\
+    \textbf{Insight potential:} If double descent disappears with deterministic optimizers, this confirms the role of noise. If it persists, the phenomenon may be fundamentally about the loss landscape, not dynamics.
+\end{description}
+
+\subsubsection{Category D: Conceptual Gaps}
+
+\begin{description}
+    \item[D1. Definition of ``Flat'' Minimum] \hfill \\
+    \textbf{Status:} Reparameterization-dependent \\
+    \textbf{Obstacle:} Rescaling weights (while preserving function) changes Hessian eigenvalues. ``Flatness'' is not an intrinsic property of the solution. \\
+    \textbf{Insight potential:} A reparameterization-invariant measure (e.g., based on Fisher information or PAC-Bayes volume) may be the ``true'' quantity correlating with generalization.
+    
+    \item[D2. Causality vs. Correlation] \hfill \\
+    \textbf{Status:} Observational evidence only \\
+    \textbf{Obstacle:} We observe correlations (flat $\leftrightarrow$ good generalization, noise $\leftrightarrow$ flat selection). But correlation is not causation. \\
+    \textbf{Insight potential:} Interventional experiments (Section~\ref{sec:experimental_agenda}) can establish causality. Failing these, we have a heuristic, not a theory.
+    
+    \item[D3. Feature Learning] \hfill \\
+    \textbf{Status:} Completely outside current framework \\
+    \textbf{Obstacle:} The NESP framework treats features as fixed (or evolving only through weight changes). But deep networks learn representations---the ``features'' themselves change. \\
+    \textbf{Insight potential:} Incorporating feature learning may require a ``two-level'' theory: one for representation dynamics, one for classifier dynamics on top. This is a major theoretical challenge.
+\end{description}
+
+\subsubsection{Category E: Connections to Other Theories}
+
+\begin{description}
+    \item[E1. Neural Tangent Kernel (NTK)] \hfill \\
+    \textbf{Status:} Partial overlap, unclear relationship \\
+    \textbf{Obstacle:} NTK theory analyzes infinite-width limits where the network behaves linearly. Our NESP framework aims for finite-width, nonlinear networks. The connection is unclear. \\
+    \textbf{Insight potential:} NTK may be the ``equilibrium limit'' of NESP (infinite width $\to$ Gaussian process $\to$ equilibrium). Finite-width corrections might be NESP corrections.
+    
+    \item[E2. Information Bottleneck] \hfill \\
+    \textbf{Status:} Conceptual resonance, no formal link \\
+    \textbf{Obstacle:} Information Bottleneck suggests training compresses representations. NESP suggests noise selects flat minima. Both sound like ``simplicity emerges,'' but the connection is vague. \\
+    \textbf{Insight potential:} Perhaps noise-induced flat selection \textit{is} information compression, seen from a different angle. Formalizing this could unify two frameworks.
+    
+    \item[E3. PAC-Bayes Theory] \hfill \\
+    \textbf{Status:} Potentially compatible \\
+    \textbf{Obstacle:} PAC-Bayes bounds involve a ``posterior'' over weights and penalize its divergence from a prior. NESP describes the dynamics leading to this posterior. \\
+    \textbf{Insight potential:} The NESP stationary distribution $P_{\text{stat}}(W)$ could be the ``PAC-Bayes posterior.'' Computing it would give generalization bounds with dynamical content.
+\end{description}
+
+\begin{remark}[Using the Friction Log]
+This log is not meant to discourage but to \textbf{focus}. Each item represents a concrete research question. Graduate students seeking thesis topics could pick any entry and make progress. The log also serves as a ``honesty check''---if a reviewer asks ``what about X?'' and X is in the log, we have anticipated the concern.
+\end{remark}
+
+% ============================================================================
+% SECTION: RESEARCH ROADMAP - CONCRETE ACTION PLAN
+% ============================================================================
+
+\subsection{Research Roadmap: From Draft to Publication}\label{sec:roadmap}
+
+\textit{Following the principle of having a concrete roadmap for next steps, we provide a concrete action plan with milestones.}
+
+\subsubsection{Phase 1: Foundation Solidification (Weeks 1--2)}
+
+\begin{enumerate}
+    \item[$\square$] \textbf{Task 1.1:} Complete literature review on Replica Method applications in ML.
+    \begin{itemize}
+        \item Read: Mézard \& Montanari (2009), Gerace et al. (2020), Pennington \& Worah (2017)
+        \item Output: Summary table of replica results for linear/RF models
+    \end{itemize}
+    
+    \item[$\square$] \textbf{Task 1.2:} Verify all derivations in Section~\ref{sec:toy_model}.
+    \begin{itemize}
+        \item Check: Gradient formula (Eq.~\ref{eq:gradient_explicit})
+        \item Check: Noise covariance structure (Eq.~\ref{eq:sigma_tensor})
+        \item Check: Hessian formula (Eq.~\ref{eq:hessian_explicit})
+    \end{itemize}
+    
+    \item[$\square$] \textbf{Task 1.3:} Implement toy model code.
+    \begin{itemize}
+        \item Framework: PyTorch or JAX
+        \item Validate: Compare analytical $\mathcal{L}(U)$ with numerical evaluation
+    \end{itemize}
+\end{enumerate}
+
+\subsubsection{Phase 2: Core Experiments (Weeks 3--5)}
+
+\begin{enumerate}
+    \item[$\square$] \textbf{Task 2.1:} Run Experiment 1 (Toy Model Validation).
+    \begin{itemize}
+        \item Sweep: $k/d \in \{0.5, 0.7, 0.9, 1.0, 1.1, 1.3, 1.5, 2.0, 3.0, 5.0\}$
+        \item Measure: Train/test error, $\text{Tr}(H)$, $\text{Tr}(\Sigma)$, condition number
+        \item Plot: Double descent curve with curvature diagnostics overlaid
+    \end{itemize}
+    
+    \item[$\square$] \textbf{Task 2.2:} Eigenvalue correlation analysis.
+    \begin{itemize}
+        \item Compute: Full spectra of $H$ and $\Sigma$ at fixed $k$
+        \item Plot: Scatter plot $\lambda_i(H)$ vs. $\lambda_i(\Sigma)$
+        \item Quantify: Pearson/Spearman correlation
+    \end{itemize}
+    
+    \item[$\square$] \textbf{Task 2.3:} Run Experiment 3 (Batch Size Dependence).
+    \begin{itemize}
+        \item If peaks correlate with noise: strong support for NESP
+        \item If not: revisit assumptions
+    \end{itemize}
+\end{enumerate}
+
+\subsubsection{Phase 3: Extension and Validation (Weeks 6--8)}
+
+\begin{enumerate}
+    \item[$\square$] \textbf{Task 3.1:} Extend to ReLU networks (Experiment 4).
+    \begin{itemize}
+        \item Architecture: 2-layer MLP with ReLU, varying width
+        \item Challenge: Hessian computation (use Lanczos/power iteration)
+    \end{itemize}
+    
+    \item[$\square$] \textbf{Task 3.2:} Escape time numerics (Experiment 2).
+    \begin{itemize}
+        \item Protocol: Initialize at sharp minimum, measure escape
+        \item Statistical analysis: Multiple seeds, confidence intervals
+    \end{itemize}
+    
+    \item[$\square$] \textbf{Task 3.3:} Address top 3 friction points with targeted analysis.
+    \begin{itemize}
+        \item Priority: A2 (Fokker-Planck), B2 (Detailed Balance), D1 (Flatness definition)
+    \end{itemize}
+\end{enumerate}
+
+\subsubsection{Phase 4: Writing and Refinement (Weeks 9--12)}
+
+\begin{enumerate}
+    \item[$\square$] \textbf{Task 4.1:} Write Experimental Results chapter.
+    \begin{itemize}
+        \item Figures: Publication-quality plots
+        \item Analysis: Statistical significance, error bars
+    \end{itemize}
+    
+    \item[$\square$] \textbf{Task 4.2:} Revise theoretical sections based on experimental findings.
+    \begin{itemize}
+        \item If experiments confirm: strengthen claims
+        \item If experiments contradict: revise theory or acknowledge discrepancy
+    \end{itemize}
+    
+    \item[$\square$] \textbf{Task 4.3:} Final polish.
+    \begin{itemize}
+        \item Notation consistency check
+        \item Citation completeness
+        \item Abstract and introduction refinement
+    \end{itemize}
+\end{enumerate}
+
+\subsubsection{Success Criteria}
+
+The research will be considered successful if:
+\begin{enumerate}
+    \item The curvature-noise coupling (Hypothesis~\ref{hyp:curvature_noise}) is empirically confirmed in the toy model.
+    \item The double descent peak coincides with maximal $\text{Tr}(\Sigma)/\text{Tr}(H)$ ratio or similar diagnostic.
+    \item At least one prediction of the NESP framework is validated against equilibrium predictions (showing non-equilibrium deviation).
+\end{enumerate}
+
+\textit{Even partial success---confirming some predictions while falsifying others---constitutes scientific progress and publishable results.}
+
+\subsection*{Closing Reflection: The Invitation}
+
+\textit{``The work in this chapter is not a conclusion; it is an invitation.''}
+
+We have constructed a framework---NESP---that reframes double descent as a dynamical phase transition driven by the anisotropic noise structure of SGD. We have identified the key hypothesis (curvature-noise coupling), derived analytical predictions in a toy model, and designed experiments to test them. We have documented our uncertainties (friction points) and our limitations honestly.
+
+What remains is the hard work of verification. The theory makes falsifiable predictions. If they hold, we will have made progress toward understanding why deep learning works. If they fail, we will have learned something equally valuable: that the true mechanism lies elsewhere.
+
+Either way, the scientific process advances. This is the nature of research---not a march toward predetermined conclusions, but a dialogue with nature, mediated by mathematics and experiment.
+
 \textit{The work in this chapter is not a conclusion; it is an invitation.}
+
+% ============================================================================
+% AUTHOR'S CRITICAL SELF-REVIEW: COMPREHENSIVE VƯỚNG MẮC ANALYSIS
+% ============================================================================
+% [This section documents the results of a systematic review conducted on
+% February 1, 2026, identifying critical gaps, hand-waving, and overclaiming
+% that must be addressed before the paper can be considered complete.]
+% ============================================================================
+
+\subsection*{Author's Critical Self-Review (February 2026)}
+
+\textit{Following the principle that ``obstacles and any problems encountered are insights,'' we conducted a systematic review of this manuscript. The findings below represent an honest assessment of where the paper stands and what remains to be done.}
+
+\textbf{Draft Status:} This manuscript follows the research workflow: \textbf{Theory Development} $\to$ \textbf{Experiment Design} $\to$ \textbf{Experiment Execution} $\to$ \textbf{Theory Adjustment}. The theoretical framework and experimental design are substantially complete. The experimental phase will be the final step to validate and refine the theory.
+
+\subsubsection*{Category I: Theoretical Refinements Needed (Before Experiments)}
+
+\begin{enumerate}
+    \item \textbf{``Flatness'' Requires Rigorous Definition.} Bridge 5 acknowledges that Hessian-based flatness measures are reparameterization-dependent. Yet the NESP selection mechanism relies on ``flat minima.'' \textit{Resolution options:} (a) Adopt a reparameterization-invariant measure (PAC-Bayes volume, Fisher information), or (b) restrict to canonical parameterization with explicit justification.
+    
+    \item \textbf{Curvature-Noise Coupling Scope.} Hypothesis~\ref{hyp:curvature_noise} ($\Sigma \approx \alpha H$) is analytically confirmed for the linear teacher-student model. Extension to nonlinear networks remains conjectural. \textit{Resolution:} Experiment 4 will test this extension; until then, claims should be explicitly bounded to linear/random-feature models.
+    
+    \item \textbf{Equilibrium Deviation Should Be Quantified.} The core claim is that SGD reaches NESS different from Gibbs. A concrete observable measuring this deviation would strengthen the framework. \textit{Candidates:} entropy production rate, detailed balance violation measure, KL divergence from Boltzmann distribution.
+    
+    \item \textbf{Testable Predictions from Hypothesis 7.2.1.} Transform the qualitative hypothesis into quantitative predictions:
+    \begin{itemize}
+        \item Eigenvector alignment: $|v_i(H)^\top v_i(\Sigma)|^2 > \theta$ for threshold $\theta$
+        \item Eigenvalue correlation: Pearson $r(\lambda(H), \lambda(\Sigma)) > 0.5$
+        \item Falsification condition: correlation $< 0.2$ rejects the hypothesis
+    \end{itemize}
+\end{enumerate}
+
+\subsubsection*{Category II: Experimental Phase Planning}
+
+The experimental agenda (Section~\ref{sec:experimental_agenda}) provides a well-structured validation plan. Prioritized execution order:
+
+\begin{enumerate}
+    \item \textbf{Experiment 1 (Toy Model Validation):} Highest priority---validates core hypothesis in tractable setting. Plot $\text{Tr}(\Sigma)$ vs.\ test error vs.\ $k/d$.
+    
+    \item \textbf{Experiment 2 (Eigenvalue Correlation):} Direct visualization of curvature-noise coupling via scatter plot $\lambda_i(H)$ vs.\ $\lambda_i(\Sigma)$.
+    
+    \item \textbf{Experiment 3 (Batch Size Dependence):} Tests whether noise amplitude modulates double descent peak as predicted.
+    
+    \item \textbf{Experiment 4 (ReLU Extension):} Tests generalization to nonlinear networks. Even negative results bound the theory's scope.
+\end{enumerate}
+
+\subsubsection*{Category III: Methodological Refinements}
+
+\begin{enumerate}
+    \item \textbf{Replica Method:} Cite conditions under which replica is validated by rigorous methods (cavity method), or treat predictions as heuristics with explicit uncertainty.
+    
+    \item \textbf{Translation Protocol:} Verify validity conditions in experimental test cases.
+    
+    \item \textbf{Escape Time:} Derive analytically for the linear model where Fokker-Planck reduces to Ornstein-Uhlenbeck.
+\end{enumerate}
+
+\subsubsection*{Category IV: Content to Strengthen}
+
+\begin{enumerate}
+    \item \textbf{Regularization Analysis:} Regularization can suppress/shift the interpolation peak---natural control experiment.
+    
+    \item \textbf{Literature Comparison Table:} Systematic comparison of key papers on model class, framework, DD type.
+    
+    \item \textbf{RSB Detection:} Develop into concrete experimental signature of ``glassy'' phase.
+\end{enumerate}
+
+\subsubsection*{Honest Assessment: Paper Status}
+
+\begin{center}
+\begin{tabular}{|l|c|l|}
+\hline
+\textbf{Component} & \textbf{Status} & \textbf{Notes} \\
+\hline
+SLT Foundation (Sec.~2--3) & \textcolor{green!60!black}{Complete} & Standard, correct \\
+Double Descent Review (Sec.~4) & \textcolor{orange!80!black}{Adequate} & Needs comparison table \\
+Foundational Definitions (Sec.~5) & \textcolor{green!60!black}{Complete} & Well-documented assumptions \\
+Equilibrium Theories (Sec.~6) & \textcolor{orange!80!black}{Adequate} & Replica details improved \\
+NESP Framework (Sec.~7) & \textcolor{green!60!black}{Draft Complete} & Core ideas present \\
+Toy Model Derivation & \textcolor{green!60!black}{Complete} & Analytically rigorous \\
+Experiment Design & \textcolor{green!60!black}{Complete} & Well-structured agenda \\
+Experiment Execution & \textcolor{blue!70}{Planned} & Final validation phase \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsubsection*{Path Forward: Research Phases}
+
+\textbf{Current Phase:} Theory finalization and experimental preparation.
+
+\textbf{Next Phase:} Experimental execution following the 4-experiment agenda.
+
+\textbf{Final Phase:} Theory adjustment based on experimental results.
+
+\begin{enumerate}
+    \item[$\square$] If experiments confirm theory $\to$ strengthen claims, emphasize predictive power
+    \item[$\square$] If experiments contradict $\to$ revise theory, document insights gained
+    \item[$\square$] \textbf{Either outcome advances science and is publishable}
+\end{enumerate}
+
+\textit{``Obstacles are insights.'' The theoretical obstacles have been documented. They now become experimental hypotheses to test.}
 
 % ============================================================================
 % END OF CHAPTER 7
