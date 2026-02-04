@@ -5081,7 +5081,17 @@
     <bcf:citekey order="47" intorder="1">advani2017highdimensionaldynamicsgeneralizationerror</bcf:citekey>
     <bcf:citekey order="48" intorder="1">belkin2018understanddeeplearningneed</bcf:citekey>
     <bcf:citekey order="49" intorder="1">mei2020generalizationerrorrandomfeatures</bcf:citekey>
-    <bcf:citekey order="50" intorder="1" nocite="1">*</bcf:citekey>
+    <bcf:citekey order="50" intorder="1">hastie2019surprises</bcf:citekey>
+    <bcf:citekey order="51" intorder="1">mezard1987spin</bcf:citekey>
+    <bcf:citekey order="51" intorder="2">Gerace_2021</bcf:citekey>
+    <bcf:citekey order="52" intorder="1">nakkiran2021optimalregularizationmitigatedouble</bcf:citekey>
+    <bcf:citekey order="52" intorder="2">heckel2020early</bcf:citekey>
+    <bcf:citekey order="53" intorder="1">chaudhari2018stochasticgradientdescentperforms</bcf:citekey>
+    <bcf:citekey order="54" intorder="1">Geiger_2019</bcf:citekey>
+    <bcf:citekey order="55" intorder="1">belkin_reconciling_2019</bcf:citekey>
+    <bcf:citekey order="56" intorder="1">nakkiran_deep_2019</bcf:citekey>
+    <bcf:citekey order="57" intorder="1">nakkiran_deep_2019</bcf:citekey>
+    <bcf:citekey order="58" intorder="1" nocite="1">*</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="cms">

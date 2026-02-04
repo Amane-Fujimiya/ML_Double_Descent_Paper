@@ -8,7 +8,8 @@
 \@writefile{loa}{\addvspace {10\p@ }}
 \@writefile{toc}{\contentsline {section}{\numberline {2.1}Precursors to learning theoretic}{7}{section.2.1}\protected@file@percent }
 \citation{clocksin1996prolog,sterling1994art,norvig1992paradigms,brachman2004kr,jackson1985introduction,lucas1989principles,giarratano1998expert}
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}Inference learning}{8}{section.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Transparency shift}{8}{section.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Ladder of functionals}{9}{subsection.2.2.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {2.3}Classical setup}{9}{section.2.3}\protected@file@percent }
 \@@wrindexm@m{main}{empirical risk|hyperpage}{10}
 \newmarginnote{note.20.1}{{20}{30591562sp}}
@@ -17,18 +18,18 @@
 \@@wrindexm@m{main}{generalization risk|hyperpage}{10}
 \newmarginnote{note.20.2}{{20}{6696514sp}}
 \@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~2.3.2\else \numberline {2.3.2}Definition\fi \thmtformatoptarg {Generalization risk}}{10}{definition.2}\protected@file@percent }
-\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~2.3.3\else \numberline {2.3.3}Definition\fi \thmtformatoptarg {Empirical learning problem}}{10}{definition.3}\protected@file@percent }
-\newlabel{eq:lp1}{{2.4}{10}{Empirical learning problem}{equation.2.4}{}}
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~2.3.3\else \numberline {2.3.3}Definition\fi \thmtformatoptarg {Empirical learning problem}}{11}{definition.3}\protected@file@percent }
+\newlabel{eq:lp1}{{2.4}{11}{Empirical learning problem}{equation.2.4}{}}
 \@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~2.3.4\else \numberline {2.3.4}Definition\fi \thmtformatoptarg {Generalization learning problem}}{11}{definition.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces An illustration of statistical learning theory on the evaluation of the risks and errors, during learning process. $c'$ is presented in the `orbital' vicinity around $c$, with its distance of certain metric define how 'accurate' the reconstruction from distribution can be. Of the hypothesis set $\mathcal  {H}$, there exists the Bayes hypothesis $h_{B}$ and an arbitrary `random' hypothesis $h$, and their respective measure.}}{11}{figure.caption.5}\protected@file@percent }
-\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:genvsemp_fig}{{2.1}{11}{An illustration of statistical learning theory on the evaluation of the risks and errors, during learning process. $c'$ is presented in the `orbital' vicinity around $c$, with its distance of certain metric define how 'accurate' the reconstruction from distribution can be. Of the hypothesis set $\mathcal {H}$, there exists the Bayes hypothesis $h_{B}$ and an arbitrary `random' hypothesis $h$, and their respective measure}{figure.caption.5}{}}
 \@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~2.3.5\else \numberline {2.3.5}Definition\fi \thmtformatoptarg {Bayes risk}}{11}{definition.5}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~2.3.6\else \numberline {2.3.6}Definition\fi \thmtformatoptarg {Bayes model}}{11}{definition.6}\protected@file@percent }
 \citation{10.5555/2621980,10.5555/2371238,STL_Hajek_Maxim_2021}
 \citation{10.1145/1968.1972}
 \citation{10.5555/2371238}
 \citation{10.5555/200548}
-\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~2.3.6\else \numberline {2.3.6}Definition\fi \thmtformatoptarg {Bayes model}}{12}{definition.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces An illustration of statistical learning theory on the evaluation of the risks and errors, during learning process. $c'$ is presented in the `orbital' vicinity around $c$, with its distance of certain metric define how 'accurate' the reconstruction from distribution can be. Of the hypothesis set $\mathcal  {H}$, there exists the Bayes hypothesis $h_{B}$ and an arbitrary `random' hypothesis $h$, and their respective measure.}}{12}{figure.caption.5}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:genvsemp_fig}{{2.1}{12}{An illustration of statistical learning theory on the evaluation of the risks and errors, during learning process. $c'$ is presented in the `orbital' vicinity around $c$, with its distance of certain metric define how 'accurate' the reconstruction from distribution can be. Of the hypothesis set $\mathcal {H}$, there exists the Bayes hypothesis $h_{B}$ and an arbitrary `random' hypothesis $h$, and their respective measure}{figure.caption.5}{}}
 \@writefile{loe}{\contentsline {setting}{\ifthmt@listswap Setting~2.3.1\else \numberline {2.3.1}Setting\fi }{12}{setting.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {2.4}Optimal learning - PAC-learning}{12}{section.2.4}\protected@file@percent }
 \@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~2.4.1\else \numberline {2.4.1}Definition\fi \thmtformatoptarg {Model-specific learning}}{13}{definition.1}\protected@file@percent }
@@ -37,55 +38,78 @@
 \@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~2.4.2\else \numberline {2.4.2}Definition\fi \thmtformatoptarg {Model-free learning}}{13}{definition.2}\protected@file@percent }
 \@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~2.4.3\else \numberline {2.4.3}Definition\fi \thmtformatoptarg {PAC Learning, Preliminary Definition}}{14}{definition.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}Representation size and PAC-configuration}{14}{subsection.2.4.1}\protected@file@percent }
-\@@wrindexm@m{main}{representation scheme|hyperpage}{14}
-\newmarginnote{note.24.1}{{24}{8963767sp}}
+\@@wrindexm@m{main}{representation scheme|hyperpage}{15}
+\newmarginnote{note.25.1}{{25}{6548233sp}}
 \@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~2.4.4\else \numberline {2.4.4}Definition\fi \thmtformatoptarg {Representation scheme}}{15}{definition.4}\protected@file@percent }
 \@@wrindexm@m{main}{representation size|hyperpage}{15}
-\newmarginnote{note.25.1}{{25}{8665959sp}}
+\newmarginnote{note.25.2}{{25}{8665959sp}}
 \@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~2.4.5\else \numberline {2.4.5}Definition\fi \thmtformatoptarg {Representation complexity}}{15}{definition.5}\protected@file@percent }
-\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~2.4.6\else \numberline {2.4.6}Definition\fi \thmtformatoptarg {PAC-learning}}{15}{definition.6}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~2.4.6\else \numberline {2.4.6}Definition\fi \thmtformatoptarg {PAC-learning}}{16}{definition.6}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.4.2}Generalization bounds}{16}{subsection.2.4.2}\protected@file@percent }
 \@writefile{loe}{\contentsline {assumption}{\ifthmt@listswap Assumption~2.4.1\else \numberline {2.4.1}Assumption\fi \thmtformatoptarg {Structural assumptions}}{16}{assumption.1}\protected@file@percent }
 \@writefile{loe}{\contentsline {theorem}{\ifthmt@listswap Theorem~2.4.2\else \numberline {2.4.2}Theorem\fi \thmtformatoptarg {Learning bound - finite $\mathcal  {H}$, consistent case}}{16}{theorem.2}\protected@file@percent }
 \newlabel{thm:consistent_case_thm_finite_H}{{2.4.2}{16}{Learning bound - finite $\mathcal {H}$, consistent case}{theorem.2}{}}
 \@writefile{loe}{\contentsline {theorem}{\ifthmt@listswap Theorem~2.4.3\else \numberline {2.4.3}Theorem\fi \thmtformatoptarg {Learning bound - finite $\mathcal  {H}$, inconsistent case}}{16}{theorem.3}\protected@file@percent }
 \newlabel{thm:inconsistent_case_thm_finite_H}{{2.4.3}{16}{Learning bound - finite $\mathcal {H}$, inconsistent case}{theorem.3}{}}
+\citation{STL_Hajek_Maxim_2021}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.4.3}Agnostic-general PAC-learning}{17}{subsection.2.4.3}\protected@file@percent }
-\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~2.4.7\else \numberline {2.4.7}Definition\fi \thmtformatoptarg {Agnostic PAC-learning}}{17}{definition.7}\protected@file@percent }
+\citation{STL_Hajek_Maxim_2021}
+\citation{JMLR:v11:shalev-shwartz10a}
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~2.4.7\else \numberline {2.4.7}Definition\fi \thmtformatoptarg {Agnostic PAC-learning}}{18}{definition.7}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~2.4.8\else \numberline {2.4.8}Definition\fi \thmtformatoptarg {agnostic-PAC learning, \cite  {STL_Hajek_Maxim_2021}}}{18}{definition.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.4}Empirical and structural algorithms}{18}{subsection.2.4.4}\protected@file@percent }
+\citation{achlioptas_stochastic_nodate,ruder_overview_2017}
+\citation{zhang_gradient_2019}
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~2.4.9\else \numberline {2.4.9}Definition\fi }{19}{definition.9}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~2.4.10\else \numberline {2.4.10}Definition\fi }{19}{definition.10}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~2.4.11\else \numberline {2.4.11}Definition\fi }{19}{definition.11}\protected@file@percent }
+\@writefile{loe}{\contentsline {conjecture}{\ifthmt@listswap Conjecture~2.4.1\else \numberline {2.4.1}Conjecture\fi \thmtformatoptarg {ERM-SRM growth}}{19}{conjecture.1}\protected@file@percent }
+\citation{Alquier_2024}
+\citation{Alquier_2024}
+\@writefile{loe}{\contentsline {proposition}{\ifthmt@listswap Proposition~2.4.4\else \numberline {2.4.4}Proposition\fi }{20}{proposition.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.5}The PAC-ERM notion}{20}{subsection.2.4.5}\protected@file@percent }
+\@writefile{loe}{\contentsline {proposition}{\ifthmt@listswap Proposition~2.4.5\else \numberline {2.4.5}Proposition\fi \thmtformatoptarg {\cite  {Alquier_2024}}}{20}{proposition.5}\protected@file@percent }
+\newlabel{prop:PAC_ERM_1}{{2.4.5}{20}{\cite {Alquier_2024}}{proposition.5}{}}
+\citation{10.5555/2371238}
+\@writefile{loe}{\contentsline {theorem}{\ifthmt@listswap Theorem~2.4.6\else \numberline {2.4.6}Theorem\fi }{21}{theorem.6}\protected@file@percent }
 \citation{10.5555/200548}
-\@writefile{toc}{\contentsline {section}{\numberline {2.5}Simplistic learning - Occam's Razor}{18}{section.2.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.5.1}Occam Learning and Succinctness}{18}{subsection.2.5.1}\protected@file@percent }
-\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~2.5.1\else \numberline {2.5.1}Definition\fi \thmtformatoptarg {Occam algorithm}}{18}{definition.1}\protected@file@percent }
-\@writefile{loe}{\contentsline {theorem}{\ifthmt@listswap Theorem~2.5.1\else \numberline {2.5.1}Theorem\fi }{19}{theorem.1}\protected@file@percent }
-\@writefile{loe}{\contentsline {theorem}{\ifthmt@listswap Theorem~2.5.2\else \numberline {2.5.2}Theorem\fi \thmtformatoptarg {Occam's Razor}}{19}{theorem.2}\protected@file@percent }
-\newlabel{thm:Occam1}{{2.5.2}{19}{Occam's Razor}{theorem.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.6}Noise, \cite  {10.5555/2371238}}{22}{subsection.2.4.6}\protected@file@percent }
+\@@wrindexm@m{main}{noise|hyperpage}{22}
+\newmarginnote{note.31.1}{{32}{27071215sp}}
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~2.4.12\else \numberline {2.4.12}Definition\fi \thmtformatoptarg {Noise}}{22}{definition.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.5}Simplistic learning - Occam's Razor}{22}{section.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5.1}Occam Learning and Succinctness}{22}{subsection.2.5.1}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~2.5.1\else \numberline {2.5.1}Definition\fi \thmtformatoptarg {Occam algorithm}}{23}{definition.1}\protected@file@percent }
+\@writefile{loe}{\contentsline {theorem}{\ifthmt@listswap Theorem~2.5.1\else \numberline {2.5.1}Theorem\fi }{23}{theorem.1}\protected@file@percent }
+\@writefile{loe}{\contentsline {theorem}{\ifthmt@listswap Theorem~2.5.2\else \numberline {2.5.2}Theorem\fi \thmtformatoptarg {Occam's Razor}}{23}{theorem.2}\protected@file@percent }
+\newlabel{thm:Occam1}{{2.5.2}{23}{Occam's Razor}{theorem.2}{}}
 \citation{10.5555/2371238}
 \citation{bartlett2002rademacher}
-\@writefile{loe}{\contentsline {theorem}{\ifthmt@listswap Theorem~2.5.3\else \numberline {2.5.3}Theorem\fi \thmtformatoptarg {Occam's Razor, Cardinality Version}}{20}{theorem.3}\protected@file@percent }
-\newlabel{thm:Occam2}{{2.5.3}{20}{Occam's Razor, Cardinality Version}{theorem.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.6}Discrete space empiricism - Rademacher complexity}{20}{section.2.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.6.1}Rademacher descriptions}{21}{subsection.2.6.1}\protected@file@percent }
-\@@wrindexm@m{main}{ERC|hyperpage}{21}
-\newmarginnote{note.31.1}{{31}{12808874sp}}
-\@@wrindexm@m{main}{Rademacher variables|hyperpage}{21}
-\newmarginnote{note.31.2}{{31}{15184154sp}}
-\@@wrindexm@m{main}{Rademacher complexity|hyperpage}{21}
-\newmarginnote{note.31.3}{{31}{19712367sp}}
-\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~2.6.1\else \numberline {2.6.1}Definition\fi \thmtformatoptarg {Rademacher complexity}}{21}{definition.1}\protected@file@percent }
-\@writefile{loe}{\contentsline {theorem}{\ifthmt@listswap Theorem~2.6.1\else \numberline {2.6.1}Theorem\fi }{21}{theorem.1}\protected@file@percent }
-\newlabel{ref:3.x}{{2.23}{21}{}{equation.2.23}{}}
-\newlabel{ref:3.x1}{{2.24}{22}{}{equation.2.24}{}}
-\newlabel{eq:3.13}{{2.37}{23}{Rademacher descriptions}{equation.2.37}{}}
-\@writefile{loe}{\contentsline {col}{\ifthmt@listswap Corollary~2.6.1\else \numberline {2.6.1}Corollary\fi }{23}{col.1}\protected@file@percent }
-\@writefile{loe}{\contentsline {lemma}{\ifthmt@listswap Lemma~2.6.2\else \numberline {2.6.2}Lemma\fi }{24}{lemma.2}\protected@file@percent }
-\@writefile{loe}{\contentsline {theorem}{\ifthmt@listswap Theorem~2.6.3\else \numberline {2.6.3}Theorem\fi \thmtformatoptarg {Rademacher complexity bounds - binary classification}}{24}{theorem.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.6.2}Growth function}{25}{subsection.2.6.2}\protected@file@percent }
-\@@wrindexm@m{main}{growth function|hyperpage}{25}
-\newmarginnote{note.34.1}{{35}{29942798sp}}
-\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~2.6.2\else \numberline {2.6.2}Definition\fi \thmtformatoptarg {Growth function}}{25}{definition.2}\protected@file@percent }
-\@writefile{loe}{\contentsline {lemma}{\ifthmt@listswap Lemma~2.6.4\else \numberline {2.6.4}Lemma\fi \thmtformatoptarg {Massart's lemma}}{25}{lemma.4}\protected@file@percent }
-\@writefile{loe}{\contentsline {col}{\ifthmt@listswap Corollary~2.6.2\else \numberline {2.6.2}Corollary\fi }{25}{col.2}\protected@file@percent }
-\newlabel{col:what}{{2.6.2}{25}{}{col.2}{}}
+\@writefile{loe}{\contentsline {theorem}{\ifthmt@listswap Theorem~2.5.3\else \numberline {2.5.3}Theorem\fi \thmtformatoptarg {Occam's Razor, Cardinality Version}}{24}{theorem.3}\protected@file@percent }
+\newlabel{thm:Occam2}{{2.5.3}{24}{Occam's Razor, Cardinality Version}{theorem.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.6}Discrete space empiricism - Rademacher complexity}{25}{section.2.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6.1}Rademacher descriptions}{25}{subsection.2.6.1}\protected@file@percent }
+\@@wrindexm@m{main}{ERC|hyperpage}{25}
+\newmarginnote{note.35.1}{{35}{12808874sp}}
+\@@wrindexm@m{main}{Rademacher variables|hyperpage}{25}
+\newmarginnote{note.35.2}{{35}{15184154sp}}
+\@@wrindexm@m{main}{Rademacher complexity|hyperpage}{25}
+\newmarginnote{note.35.3}{{35}{19712367sp}}
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~2.6.1\else \numberline {2.6.1}Definition\fi \thmtformatoptarg {Rademacher complexity}}{25}{definition.1}\protected@file@percent }
+\@writefile{loe}{\contentsline {theorem}{\ifthmt@listswap Theorem~2.6.1\else \numberline {2.6.1}Theorem\fi }{26}{theorem.1}\protected@file@percent }
+\newlabel{ref:3.x}{{2.41}{26}{}{equation.2.41}{}}
+\newlabel{ref:3.x1}{{2.42}{26}{}{equation.2.42}{}}
+\newlabel{eq:3.13}{{2.55}{27}{Rademacher descriptions}{equation.2.55}{}}
+\@writefile{loe}{\contentsline {col}{\ifthmt@listswap Corollary~2.6.1\else \numberline {2.6.1}Corollary\fi }{27}{col.1}\protected@file@percent }
+\@writefile{loe}{\contentsline {lemma}{\ifthmt@listswap Lemma~2.6.2\else \numberline {2.6.2}Lemma\fi }{28}{lemma.2}\protected@file@percent }
+\@writefile{loe}{\contentsline {theorem}{\ifthmt@listswap Theorem~2.6.3\else \numberline {2.6.3}Theorem\fi \thmtformatoptarg {Rademacher complexity bounds - binary classification}}{28}{theorem.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6.2}Growth function}{29}{subsection.2.6.2}\protected@file@percent }
+\@@wrindexm@m{main}{growth function|hyperpage}{29}
+\newmarginnote{note.38.1}{{39}{29942798sp}}
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~2.6.2\else \numberline {2.6.2}Definition\fi \thmtformatoptarg {Growth function}}{29}{definition.2}\protected@file@percent }
+\@writefile{loe}{\contentsline {lemma}{\ifthmt@listswap Lemma~2.6.4\else \numberline {2.6.4}Lemma\fi \thmtformatoptarg {Massart's lemma}}{29}{lemma.4}\protected@file@percent }
+\@writefile{loe}{\contentsline {col}{\ifthmt@listswap Corollary~2.6.2\else \numberline {2.6.2}Corollary\fi }{29}{col.2}\protected@file@percent }
+\newlabel{col:what}{{2.6.2}{29}{}{col.2}{}}
 \citation{vapnik1971,Vapnik1999-VAPTNO,sauer1972,shelah1972}
 \citation{sachs2023algorithm}
 \citation{bousquet2002stability}
@@ -93,28 +117,28 @@
 \citation{pollard1984convergence}
 \citation{xu2017information}
 \citation{daniely2022approximate}
-\@writefile{loe}{\contentsline {col}{\ifthmt@listswap Corollary~2.6.3\else \numberline {2.6.3}Corollary\fi \thmtformatoptarg {Growth function generalization bound}}{26}{col.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.7}Equivalent spatial separation - VC-theory}{26}{section.2.7}\protected@file@percent }
-\@@wrindexm@m{main}{shattering|hyperpage}{26}
-\newmarginnote{note.36.1}{{36}{26818369sp}}
-\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~2.7.1\else \numberline {2.7.1}Definition\fi \thmtformatoptarg {Shattering}}{26}{definition.1}\protected@file@percent }
-\@@wrindexm@m{main}{VC-dimension|hyperpage}{26}
-\newmarginnote{note.36.2}{{36}{24468156sp}}
-\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~2.7.2\else \numberline {2.7.2}Definition\fi \thmtformatoptarg {VC-dimension}}{26}{definition.2}\protected@file@percent }
-\@@wrindexm@m{main}{halfspace|hyperpage}{26}
-\newmarginnote{note.36.3}{{36}{30849171sp}}
-\@@wrindexm@m{main}{Sauer's lemma|hyperpage}{27}
-\newmarginnote{note.37.1}{{37}{4455095sp}}
-\@writefile{loe}{\contentsline {theorem}{\ifthmt@listswap Theorem~2.7.1\else \numberline {2.7.1}Theorem\fi \thmtformatoptarg {Sauer's lemma}}{27}{theorem.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.8}Summary}{27}{section.2.8}\protected@file@percent }
+\@writefile{loe}{\contentsline {col}{\ifthmt@listswap Corollary~2.6.3\else \numberline {2.6.3}Corollary\fi \thmtformatoptarg {Growth function generalization bound}}{30}{col.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.7}Equivalent spatial separation - VC-theory}{30}{section.2.7}\protected@file@percent }
+\@@wrindexm@m{main}{shattering|hyperpage}{30}
+\newmarginnote{note.40.1}{{40}{26818369sp}}
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~2.7.1\else \numberline {2.7.1}Definition\fi \thmtformatoptarg {Shattering}}{30}{definition.1}\protected@file@percent }
+\@@wrindexm@m{main}{VC-dimension|hyperpage}{30}
+\newmarginnote{note.40.2}{{40}{24468156sp}}
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~2.7.2\else \numberline {2.7.2}Definition\fi \thmtformatoptarg {VC-dimension}}{30}{definition.2}\protected@file@percent }
+\@@wrindexm@m{main}{halfspace|hyperpage}{30}
+\newmarginnote{note.40.3}{{40}{30849171sp}}
+\@@wrindexm@m{main}{Sauer's lemma|hyperpage}{31}
+\newmarginnote{note.41.1}{{41}{4455095sp}}
+\@writefile{loe}{\contentsline {theorem}{\ifthmt@listswap Theorem~2.7.1\else \numberline {2.7.1}Theorem\fi \thmtformatoptarg {Sauer's lemma}}{31}{theorem.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.8}Summary}{31}{section.2.8}\protected@file@percent }
 \@setckpt{content/c3}{
-\setcounter{page}{29}
-\setcounter{equation}{58}
+\setcounter{page}{33}
+\setcounter{equation}{76}
 \setcounter{enumi}{4}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
 \setcounter{enumiv}{0}
-\setcounter{footnote}{5}
+\setcounter{footnote}{7}
 \setcounter{mpfootnote}{0}
 \setcounter{@memmarkcntra}{0}
 \setcounter{storedpagenumber}{1}
@@ -156,9 +180,9 @@
 \setcounter{cmsm@mctr}{0}
 \setcounter{bsm@mctr}{0}
 \setcounter{workm@mctr}{0}
-\setcounter{sheetsequence}{39}
-\setcounter{lastsheet}{156}
-\setcounter{lastpage}{146}
+\setcounter{sheetsequence}{43}
+\setcounter{lastsheet}{154}
+\setcounter{lastpage}{144}
 \setcounter{figure}{1}
 \setcounter{lofdepth}{1}
 \setcounter{table}{0}
@@ -180,15 +204,16 @@
 \setcounter{continuedfloat}{0}
 \setcounter{parnotemark}{1}
 \setcounter{float@type}{8}
-\setcounter{thmt@dummyctr}{37}
+\setcounter{thmt@dummyctr}{46}
 \setcounter{tabularnote}{0}
 \setcounter{nicematrix_draft}{0}
 \setcounter{subfigure}{0}
 \setcounter{subtable}{0}
 \setcounter{NAT@ctr}{0}
-\setcounter{Item}{9}
-\setcounter{Hfootnote}{5}
-\setcounter{bookmark@seq@number}{27}
+\setcounter{@todonotes@numberoftodonotes}{0}
+\setcounter{Item}{13}
+\setcounter{Hfootnote}{7}
+\setcounter{bookmark@seq@number}{31}
 \setcounter{memhycontfloat}{0}
 \setcounter{mem@Hpagenote}{0}
 \setcounter{tcbbreakpart}{0}
@@ -219,7 +244,7 @@
 \setcounter{example}{0}
 \setcounter{note}{0}
 \setcounter{claim}{0}
-\setcounter{mn@abspage}{39}
+\setcounter{mn@abspage}{43}
 \setcounter{tabularnotesi}{0}
 \setcounter{tabularnotes*i}{0}
 }

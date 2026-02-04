@@ -27,9 +27,7 @@ In our usual experiment, we would most specifically, use a closely-regarded fami
     \Return{$\hat{x}=1/T \sum^{T}_{t=1}x_{i}$}
     \label{algo:algo_gd}
 \end{algorithm}
-Nevertheless, one should be cautioned of the intrinsic assumption on which gradient descent of this type assumes. It assumes \textit{convexity}, which can only be possible, if the landscape itself is supposedly, assumed to contain such global minima. Said global minima in a richer language can be described as the epistemic collapse of the learning structure, under the arbitrary optimization space. This is a \textit{very serious assumption}, and should it fail, as seen in a lot of non-populated or general observation space, the entire procedure is invalid. It is also troublesome as to rely on the singular objective (numerically encoded) space in which it is trivial to realise that there are indeed, local minima. This scaling, with respect to both locality and global consideration, must be considered carefully, since \textit{every single contribution} might distort the experiment in a very unexpected way. 
-
-\subsection{Gradient descent and the implicit encoding structure}
+Nevertheless, one should be cautioned of the intrinsic assumption on which gradient descent of this type assumes. It assumes \textit{convexity}, which can only be possible, if the landscape itself is supposedly, assumed to contain such global minima. Said global minima in a richer language can be described as the epistemic collapse of the learning structure, under the arbitrary optimization space. This is a \textit{very serious assumption}, and should it fail, as seen in a lot of non-populated or general observation space, the entire procedure is invalid. It is also troublesome as to rely on the singular objective (numerically encoded) space in which it is trivial to realise that there are indeed, local minima. This scaling, with respect to both locality and global consideration, must be considered carefully, since \textit{every single contribution} might distort the experiment in a very unexpected way. In a more sophisticated explanation, we would be more aware of the structural conformation that gradient descent make of the encoding space. 
 
 \subsection{Experiments list}
 
@@ -73,6 +71,7 @@ Aside from such, each layer in the final point \textit{procure measures and stat
     \item Polynomial, changing basis construction, $[-1,1]$ range: Use modules, like \texttt{numpy.polynomial.legendre}, or \texttt{scipy.special.legendre}, and so on. 
     \item Polynomial, changing basis (plus monomial), $[-1,1]$ range, input-dropout (filter): Filter out, in the form of hidden information from the hypothesis polynomial, and not the concept polynomial, to simulate ordered information mismatch. 
 \end{enumerate}
+One of the main examples would be to pitch different kind of models together, for example, targeting Legendre polynomial class on monomial going against Newtonian polynomials, or the Vandermonde basis going against other structural models as well.  
 
 \subsection{Preliminaries on observations - \cite{schaeffer_double_2023}}
 
@@ -178,7 +177,7 @@ Such can then be seen as a prediction that double descent in certain case, can b
 
 \subsection{Extension}
 
-The current theory prompted for a more general treatment of the linear function class, as in-line with exploring reasonable existing alternatives in interpretation (\cite{nakkiran2019datahurtlinearregression}).
+The current theory prompted for a more general treatment of the linear function class, as in-line with exploring reasonable existing alternatives in interpretation (\cite{nakkiran2019datahurtlinearregression}). We have much to desire of, for example, extension of prediction for stochastic or iterative algorithms, consideration on statistical formations, uncertainty metrics. Or furthermore, different kind of linear models, including multilinear models and so on, with variational setting meaningful to the problem space. 
 
 Let us states some hypothesis about the previous experimental cases. First, is the lack of the begin-tail of the prediction on double descent of linear random cutoff features model. This can be explained informally as to be resulted from the uniformity of the operating space. Specifically, all parameters of the $\mathbb{R}^{n}$ parameter space, with respect to the dual space on such $f:\mathbb{R}^{n}\to\mathbb{R}$ projection is defined, are of the same order of magnitude. That is, for $f_{i,k}(x),f_{j,k}(x)$ of arbitrary parameter indexing on the set $k$ of shared parameter choice, and $i\neq j$ being the distinct choice, then we say $f_{i,k}(x)=\mathcal{O}(f_{j,k}(x))$ of the growth of both function on value ranges. Approximately speaking, the choice of parameter does not dramatically growth to a point of no return, like in later examples of polynomial approximation model. Such special model of multi-variable linear projection of scalar output also reinforces the numeric growth of the numerical encoding expression on the hypothesis model. The behaviour of the MSE-on-parameter, the internal risk, is also explainable using the same notion, such is that for a black-box case approximation, such linear model does not allow for average parameter deviation per approximation to be oversaturated and skewed (for example, the degree of polynomial directly counteract this, by separating expressive complexity by growth degree). How such hypothesis can be evaluated, we will have to make it for the general extension experiment, which we will have to conduct. 
 
@@ -209,12 +208,12 @@ Such class can be extended rigorously, through a varied change in dynamics, spec
 
 Common choices for such kernel mapping includes:
 \begin{itemize}[topsep=1pt,itemsep=1pt]
-    \item \textit{Polynomial features}: $\phi_j(\mathbf{u}) = u_{i_1} u_{i_2} \cdots u_{i_m}$ for various index combinations
-    \item \textit{Radial basis functions}: $\phi_j(\mathbf{u}_1, \mathbf{u}_2) = \exp(-\gamma \|\mathbf{u}_1 - \mathbf{u}_2\|^2)$
-    \item \textit{Fourier features}: $\phi_j(\mathbf{u}) = \sin(\boldsymbol{\omega}_j^{\top}\mathbf{u})$ or $\cos(\boldsymbol{\omega}_j^{\top}\mathbf{u})$
-    \item \textit{Neural network activations}: $\phi_j(\mathbf{u}) = \sigma(\mathbf{v}_j^{\top}\mathbf{u} + c_j)$ for activation $\sigma$,
+    \item \textbf{Polynomial features}: $\phi_j(\mathbf{u}) = u_{i_1} u_{i_2} \cdots u_{i_m}$ for various index combinations
+    \item \textbf{Radial basis functions}: $\phi_j(\mathbf{u}_1, \mathbf{u}_2) = \exp(-\gamma \|\mathbf{u}_1 - \mathbf{u}_2\|^2)$
+    \item \textbf{Fourier features}: $\phi_j(\mathbf{u}) = \sin(\boldsymbol{\omega}_j^{\top}\mathbf{u})$ or $\cos(\boldsymbol{\omega}_j^{\top}\mathbf{u})$
+    \item \textbf{Neural network activations}: $\phi_j(\mathbf{u}) = \sigma(\mathbf{v}_j^{\top}\mathbf{u} + c_j)$ for activation $\sigma$, though we note that this is a very simplistic removal of structural basis class. Rather, it is performing shallow network in linear approximation on kernel system. The reason most of the time we do not use this is because of complexity in multi-kernel distortion. 
 \end{itemize}
-thus basically hints at the generality of, at least being a \textit{linear approximation} on various hypothesis spaces, while not actually being similar. Then, our setting of sparsity being synthetically induced introduces the basin of subclasses. For any $p \in \{1, 2, \ldots, d\}$, we can then simply define the sparse subclass $\mathcal{H}_{L,p} \subseteq \mathcal{H}_{L}$ as the set of all functions $h \in \mathcal{H}_{L}$ where the weight vector $\mathbf{w} \in \mathbb{R}^{d}$ has exactly $p$ non-zero entries. Formally, per \cite{lafon_understanding_2024},
+From such, it basically hints at the generality of, at least being a \textit{linear approximation} on various hypothesis spaces, while not actually being similar. Then, our setting of sparsity being synthetically induced introduces the basin of subclasses. For any $p \in \{1, 2, \ldots, d\}$, we can then simply define the sparse subclass $\mathcal{H}_{L,p} \subseteq \mathcal{H}_{L}$ as the set of all functions $h \in \mathcal{H}_{L}$ where the weight vector $\mathbf{w} \in \mathbb{R}^{d}$ has exactly $p$ non-zero entries. Formally, per \cite{lafon_understanding_2024},
 \begin{equation}
         \mathcal{H}_{L,p} = \left\{ h \in \mathcal{H}_{L} : |\{j : w_j \neq 0\}| = p \right\}
 \end{equation}

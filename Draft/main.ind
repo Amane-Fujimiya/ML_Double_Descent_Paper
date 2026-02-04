@@ -6,16 +6,16 @@
   \indexspace
 
   \item empirical risk, \hyperpage{10}
-  \item ERC, \hyperpage{21}
+  \item ERC, \hyperpage{25}
 
   \indexspace
 
   \item generalization risk, \hyperpage{10}
-  \item growth function, \hyperpage{25}
+  \item growth function, \hyperpage{29}
 
   \indexspace
 
-  \item halfspace, \hyperpage{26}
+  \item halfspace, \hyperpage{30}
 
   \indexspace
 
@@ -24,26 +24,26 @@
 
   \indexspace
 
-  \item noise, \hyperpage{45}
+  \item noise, \hyperpage{22}
 
   \indexspace
 
-  \item outer typing, \hyperpage{106}
+  \item outer typing, \hyperpage{104}
 
   \indexspace
 
-  \item Rademacher complexity, \hyperpage{21}
-  \item Rademacher variables, \hyperpage{21}
-  \item representation scheme, \hyperpage{14}
+  \item Rademacher complexity, \hyperpage{25}
+  \item Rademacher variables, \hyperpage{25}
+  \item representation scheme, \hyperpage{15}
   \item representation size, \hyperpage{15}
 
   \indexspace
 
-  \item Sauer's lemma, \hyperpage{27}
-  \item shattering, \hyperpage{26}
+  \item Sauer's lemma, \hyperpage{31}
+  \item shattering, \hyperpage{30}
 
   \indexspace
 
-  \item VC-dimension, \hyperpage{26}
+  \item VC-dimension, \hyperpage{30}
 
 \end{theindex}

@@ -4,15 +4,15 @@
 \indexentry{empirical risk|hyperpage}{10}
 \indexentry{generalization risk|hyperpage}{10}
 \indexentry{model-free learning|hyperpage}{13}
-\indexentry{representation scheme|hyperpage}{14}
+\indexentry{representation scheme|hyperpage}{15}
 \indexentry{representation size|hyperpage}{15}
-\indexentry{ERC|hyperpage}{21}
-\indexentry{Rademacher variables|hyperpage}{21}
-\indexentry{Rademacher complexity|hyperpage}{21}
-\indexentry{growth function|hyperpage}{25}
-\indexentry{shattering|hyperpage}{26}
-\indexentry{VC-dimension|hyperpage}{26}
-\indexentry{halfspace|hyperpage}{26}
-\indexentry{Sauer's lemma|hyperpage}{27}
-\indexentry{noise|hyperpage}{45}
-\indexentry{outer typing|hyperpage}{106}
+\indexentry{noise|hyperpage}{22}
+\indexentry{ERC|hyperpage}{25}
+\indexentry{Rademacher variables|hyperpage}{25}
+\indexentry{Rademacher complexity|hyperpage}{25}
+\indexentry{growth function|hyperpage}{29}
+\indexentry{shattering|hyperpage}{30}
+\indexentry{VC-dimension|hyperpage}{30}
+\indexentry{halfspace|hyperpage}{30}
+\indexentry{Sauer's lemma|hyperpage}{31}
+\indexentry{outer typing|hyperpage}{104}

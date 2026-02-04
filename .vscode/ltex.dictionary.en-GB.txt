@@ -27,3 +27,5 @@ combinator
 pseudometric
 statisticalized
 agnosticity
+overclaim
+encodable

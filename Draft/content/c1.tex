@@ -80,7 +80,7 @@ Where $\mathrm{Var}[X]:= \mathbb{E}[|X-\mathbb{E}X|^{2}]=\mathbb{E}[X^{2}]- (\ma
 The property of Chebyshev's inequality contains several constraints, though arguably better than Markov's. Chebyshev's inequality does not require that the random variable is non-negative. However, it also requires that we know the variance in addition to the mean. Hence, the goal of Chebyshev's inequality is to bound the probability that the RV is far from its mean in either direction. While in principle Chebyshev's inequality asks about distance from the mean in either direction, it can still be used to give a bound on how often a random variable can take large values, and will usually give much better bound than Markov's inequality - since we have more knowledge of the distribution. 
 
 We can use Chebyshev's inequality to prove a soft variation of the law of large number, or the \textit{weak law of large number}. 
-\begin{theorem}[Week Law of Large Number]
+\begin{theorem}[Weak Law of Large Number]
     Let $X_{1},\dots,X_{n}$ be a sequence of i.i.d. random variables with mean $\mu$. Let $\bar{X}_{n}=(1/n)\sum_{i=1}^{n}X_{i}$ be the sample mean. Then $\bar{X}_{n}$ converges in probability to $\mu$. That is, for any $\epsilon>0$, 
     \begin{equation}
         \lim_{n\to\infty}\mathbb{P}\left(\lvert \bar{X}_{n}-\mu\rvert > \epsilon\right)=0

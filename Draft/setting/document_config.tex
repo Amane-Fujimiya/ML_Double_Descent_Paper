@@ -109,6 +109,21 @@
   \vskip 0.25\baselineskip\@afterheading
 }
 \makeatother
+%# Fancy box definition
+%# Fancy box definition
+\newenvironment{descriptionz}[3]{%
+  \begin{table}[htb]
+  \vspace{1.5mm}%
+  \noindent%
+  \begin{tabularx}{\linewidth}{|lX|}
+    \hline
+    \multicolumn{2}{|c|}{\scshape #1} \\ \hline
+    \textit{Structures:} & #2 \\[0.5em]
+    \textit{Operations:} & #3 \\ \hline
+  \end{tabularx}%
+  \vspace{1.5mm}%
+  \end{table}
+}{}
 %################################################################################
 % helper column types
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}

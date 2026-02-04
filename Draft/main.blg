@@ -13,6 +13,8 @@ Reallocating 'name_of_file' (item size: 1) to 15 items.
 A level-1 auxiliary file: content/c5.aux
 Reallocating 'name_of_file' (item size: 1) to 15 items.
 A level-1 auxiliary file: content/c6.aux
+Reallocating 'name_of_file' (item size: 1) to 17 items.
+A level-1 auxiliary file: content/c6.5.aux
 Reallocating 'name_of_file' (item size: 1) to 15 items.
 A level-1 auxiliary file: content/c7.aux
 Reallocating 'name_of_file' (item size: 1) to 15 items.
@@ -24,7 +26,7 @@ A level-1 auxiliary file: content/c10.aux
 Reallocating 'name_of_file' (item size: 1) to 10 items.
 Reallocating 'name_of_file' (item size: 1) to 9 items.
 The style file: plainnat.bst
-Reallocating 'field_info' (item size: 4) to 13288 items.
+Reallocating 'field_info' (item size: 4) to 13204 items.
 Database file #1: reference.bib
 Reallocating 'str_pool' (item size: 1) to 130000 items.
 Warning--I didn't find a database entry for "kaplan2020scaling"
@@ -66,7 +68,7 @@ Warning--empty institution in roberts2021principles
 Warning--empty journal in song2019score
 You've used 310 entries,
             2773 wiz_defined-function locations,
-            2400 strings with 68705 characters,
+            2401 strings with 68721 characters,
 and the built_in function-call counts, 146846 in all, are:
 = -- 13080
 > -- 9325

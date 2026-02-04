@@ -20,7 +20,7 @@ Afterward, it is perceived that expert inputs and traditional knowledge acquisit
 
 In another sense, learning can also be conjured to be the action of \textit{computational reasoning with uncertainty}, as opposed to the general notion of artificial agent, a type of model which makes use of, as previously mentioned, logics and relational discrete spaces. We would look into this aspect later, however, it is also suggested to note that, learning can also still happen, within the logical region of a model. By that, we think of the internal space and external space - the classical definition for learning theory and its distinction in such case is typically the classification between \textit{external-dependent reasoning} and \textit{internal-dependent reasoning} (which depends only on the propositional space). 
 
-\section{Inference learning}
+\section{Transparency shift}
 
 The learning theory started from the early 1970s. By the sense of classical, we do not mean by, as currently called, of non-deep learning theory, but rather the old treatment of theoretical boundaries and rigorous formalization of the concept itself. The nature of the learning theory can also be brought back from certain proposition or argument, most probably, the fact that it is mostly from the black-box interpretation - hence making almost all model being phenomenological by default. 
 
@@ -31,6 +31,10 @@ In historical term, such learning problem is derived out from the problem of \te
     \item What are the failure modes of the environment that \textit{discourage} the model from doing certain parts? In typical setting, we assume that in the operation of such model inside the environment, it will encounter \textit{problems}; however, the question is to encode it, and toward such, the question elaborates to what kind, how, and the role of such inhibitions. 
 \end{enumerate}
 
+Those questions are then answered by giving adaptation in a form of \textbf{trial and errors}. Effectively, this means learning a scenario or target concept by treating them in a form that can be given of \textit{causal relationship}. The simplest and most straightforward of such is the construct to be function, i.e. $f:x\to y$. This permits partial realization of the system at worst of such framework, and total predictability of such system at best. Suppose a system contains $(x,y,z,q_{1},\dots,q_{k})$ for relative set of $q_{i}\leq k$ elements of quantification. Then, the system can have the class of all \textit{directed function} mapping from $x\to y$, thus in a directed graph can be represented using directed edge, with the arrow pointing to dependent value in respective frame. In general, however, such relationships are often two-way, thus guarantee the existence of the inverse function. Then, a system can have binary multivariate relationship to be encoded of such causal form, for example, $v_{1}: x\to z$, $v_{2}: (x,y)\to q_{3}$, and so on. The set of all of such function in the system can be considered as the edge class (in a sense, a graph structure without fixed numerical representation is really effective for this type of assumption). The conjecture is this: the model can, estimate certain thread of this space, and in ideal case, find a causal chain good enough to infer different information about it. We call this specific node the \textbf{universal node}. Whether this node exists or not in the structure is unknown, and much like other form of assumptions and typical structural view, it is not totally guaranteed but of the bias in constructing such structure by itself. Nevertheless, much of learning theory exists, or rather, use this for approximation of systems. 
+
+\subsection{Ladder of functionals}
+
 \section{Classical setup}
 
 In simplicity, in classical learning theory in the modern paradigm (data-centric), our model is called the \textbf{hypothesis} $h\in \mathcal{H}$ of certain \textbf{hypothesis class} $\mathcal{H}$. This basically means that $h$ is configured to hypothesize of the one-one relationship of the observational space. The other ingredient of the learning theory includes: 
@@ -39,7 +43,8 @@ In simplicity, in classical learning theory in the modern paradigm (data-centric
     \item The task for the hypothesis, and the designer (us) is to figure out how to best approximate $c$, assuming arbitrary notion of knowledge, prior information, such that $h$ correctly \textit{mimic} the behaviour and phenomenon observed by $c$. We call this loosely as the \textbf{learning problem}. Naturally, learning problem is a statistical problem, since their setting is fully observational. 
 \end{enumerate}
 
-We are given our information of the system by the form of a dataset $\mathcal{S}$, called \textit{observation}. We first define the \textbf{observations}. The set of observation $\mathcal{S}$ is presentable in the space of 2-tuple $(\mathcal{X},\mathcal{Y})\subset(\mathbb{R}^{d},\mathbb{R}^{p})$. Usually, hence, our data will be realized in the Borel $\sigma$-algebra $\mathcal{B}$. The full dataset is \textit{discrete}, contain of $n$ instances of observations, and is denoted by \begin{equation}
+We are given our information of the system by the form of a dataset $\mathcal{S}$, called \textit{observation}. We first define the \textbf{observations}. The set of observation $\mathcal{S}$ is presentable in the space of 2-tuple $(\mathcal{X},\mathcal{Y})\subset(\mathbb{R}^{d},\mathbb{R}^{p})$. Usually, hence, our data will be realized in the Borel $\sigma$-algebra $\mathcal{B}$. The full dataset is \textit{discrete}, contain of $n$ instances of observations, and is denoted by 
+\begin{equation}
     \mathcal{S} = \{ (x_1,y_1),\dots(x_n,y_n) \} \subset (\mathcal{X}\times \mathcal{Y})^n 
 \end{equation}
 Here, $\mathcal{X}$ is called the \textit{ground} or input space, and $\mathcal{Y}$ is called the \textit{target} or output space. By default, in general, the input space $\mathcal{X}$ is supposed to follow some special distribution $\mathcal{D}$. This treatment branches from the ambiguity of the origin of $x\in\mathcal{X}$ for elements of the input space, that is, $x\sim \mathcal{D}$ by a random sampling process. This assumption also ensures relative population representability. By this, we mean that the observation captured fully describe what was happening with the entire concept - even including the pathological and outlier. We also assume that this sample of observation is \textbf{identically and independently sampled} of a given sampling process. 
@@ -271,11 +276,18 @@ The learning problem is to find a hypothesis $h\in \mathcal{H}$ with small gener
 \begin{equation}
     R(h)=\underset{(x,y)\sim \mathcal{D}}{\mathbb{P}}[h(x)\neq y]=\underset{(x,y)\sim \mathcal{D}}{\mathbb{E}}[1_{h(x)\neq y}]
 \end{equation}
-This more general scenario is referred to as the stochastic scenario. Within this setting, the output target is a probabilistic function of the input. The stochastic scenario captures many real-world problems where the label of an input point is not unique. \footnote{
+This more general scenario is referred to as the stochastic scenario. Within this setting, the output target is a probabilistic function of the input. The stochastic scenario captures many real-world problems where the label of an input point is not unique\footnote{
     Considering two set $X$ and $Y$. A probabilistic function from $X$ to $Y$ assign to each $x\in X$ a relevant sub-distribution of elements of $Y$, rather than a single value $y\in Y$. Such a sub-distribution is a function $\delta: Y \to [0,1]$ such that $$\sum_{y\in Y}\delta(y)\leq 1$$In other words, a probabilistic function $X\to Y$ is a function $f: X\to (Y\to[0,1])$, interpreted as $f: X \times Y\to[0,1]$ such that for all $x\in X$, $$\sum_{y\in Y}f(x,y)\leq 1$$
-}
+}.
+That said, the case of model-free is can be constructed in a simple manner, where we forgo any assumptions on the behaviours or structures of $\mathcal{C}$ and its associated $c$-model, and thus the observable pairs is simply $(x,y)\sim\mathcal{D}_{mf}$. Here, we denote $\mathcal{D}_{mf}$ to separate it from $\mathcal{D}$ of which is a singular $x$-distribution; however, we can also write $\mathcal{D}_{ms}$ and $\mathcal{D}_{mf}$ in certain specific cases. Per \cite{STL_Hajek_Maxim_2021}, the treatment of model-agnostic (no model $c$ assumption), targets the ingredient sets of, 
+\begin{enumerate}[itemsep=1pt,topsep=1pt]
+    \item Sets $\mathcal{X}, \mathcal{Y}$ and $\mathcal{U}$. Here, $\mathcal{U}$ is the correlated $h$-functional result, i.e. the hypothesis model, covering the case of \textbf{probabilistic models}. 
+    \item A class $\mathcal{P}$ of probability distribution on $Z:=\mathcal{X}\times \mathcal{Y}$. Here, the distribution covers both. 
+    \item A class $\mathcal{H}$ of functions $h:\mathcal{X}\to\mathcal{U}$. 
+    \item A loss function as objective, $\ell: \mathcal{Y}\times \mathcal{U}\to[a,b]$, preferably $[0,1]$. Additional overhead measures are also required. 
+\end{enumerate}
 
-The \textit{agnostic PAC-learning} format is then modified by considering $\mathcal{Y}$ as also a random variability. 
+The \textit{agnostic PAC-learning} format is then modified by considering $\mathcal{Y}$ as also a random variability, and thus can be stated as followed.
 \begin{definition}[Agnostic PAC-learning]
     A concept class $\mathcal{C}$ is said to be \textbf{PAC-learnable} if there exists an algorithm $\mathcal{A}$ and a polynomial function $poly(\cdot,\cdot,\cdot,\cdot)$ of 4-argument such that for any $\epsilon>0$, $\delta>0$, for all distribution $\mathcal{D}$  on $\mathcal{X}\times \mathcal{Y}$ and for any target concept $c\in\mathcal{C}$, the following holds for any sample size $m\geq poly(1/\epsilon,1/\delta,n)$:
     \begin{equation}
@@ -284,8 +296,160 @@ The \textit{agnostic PAC-learning} format is then modified by considering $\math
     If $\mathcal{A}$ further runs in $poly(1/\epsilon,1/\delta,n)$, then $\mathcal{C}$ is said to be \textit{efficiently agnostic PAC-learnable}. When such algorithm exists, we call $\mathcal{A}$ an agnostic PAC-learning algorithm.
 \end{definition}
 
+Under such lens, PAC-on-agnostic can be realized also using a more enumerative bound-on-definition instead: 
+\begin{definition}[agnostic-PAC learning, \cite{STL_Hajek_Maxim_2021}]
+    We say that a learning algorithm for a problem $(\mathcal{X},\mathcal{Y},\mathcal{U})$ and interpretations $(\mathcal{P},\mathcal{H},\ell)$ is PAC-learnable to accuracy $\epsilon > 0$, if, we have 
+    \begin{equation}
+        \lim_{n\to \infty}\sup_{P\in \mathcal{P}} P^{n} \left(Z^n : \hat{R}_{P}(h_{n})>\inf_{h\in\mathcal{H}} R_{P}(h)+\epsilon\right) = 0
+    \end{equation}
+    An algorithm that is PAC-learnable to accuracy $\epsilon$ for every $\epsilon >0$ is said to be a PAC-learning algorithm. A learning problem is said to be model-free learnable if there exists such algorithm, for every $A\in\mathcal{A}$ of such class to be \textbf{PAC}-learning algorithm class. 
+\end{definition}
 
 PAC-learning bound argues in the sense of \textit{computational complexities}, and \textit{space complexities}. Specifically, the term $poly(1/\epsilon,1/\delta,n,size(c))$ hopes to bound the required learning process to polynomial time, specified by 4 parameters. Here, $n$ is the \textit{input dimension}, $size(c)$ is the encoding complexity of the target concept, $\epsilon>0$ is the \textit{accuracy bound}, and $\delta$ is the confidence bound - the probability that $h$ fails.
+
+\subsection{Empirical and structural algorithms}
+
+Suppose that for a concept class $\mathcal{H}$, we can then partition it to $\mathcal{H}=\bigcup_{k\in \mathbb{N}} \mathcal{H}_{k}$ for finite $k$ hypotheses. Assume that they satisfy the uniform convergence (\cite{JMLR:v11:shalev-shwartz10a}), which means in the arbitrary path landscape, one can guarantee $\ell$-reduction, of $m$ samples on $\mathcal{S}$ to:
+
+\begin{equation}
+    \lim_{m\to \infty} \sup_{\mathcal{D}} \underset{S\sim\mathcal{D}^{m}}{\mathbb{E}} \left[ \sup_{h\in\mathcal{H}} [R(h) - R_{S}(h)] \right] = 0
+\end{equation}
+
+or, can also be expressed of equal to the following expression, for functions $\epsilon_{k}$ satisfies that for all $k$ and $\delta\in (0,1)$, $\lim_{m\to\infty}\epsilon_{k}=0$.
+
+\begin{equation}
+    \forall k \in \mathbb{N}, \quad \underset{S\sim \mathcal{D}^{m}}{\mathbb{P}} \left(\sup_{h\in \mathcal{H}_{k}} R(h) - \hat{R}_{S}(h)\leq \epsilon_{k}(m,\delta)\right) \geq 1- \delta
+\end{equation}
+
+Then such is said to be possible as a ruling dynamic when for a learning problem, the empirical risks of hypotheses in the hypothesis class converges to their population risk uniformly, with a distribution-independent rate. The result of this is that a problem then can be considered learnable with the ERM rule, for any given characterization. We state the following definition.\footnote{The reason why $r(\cdot)$ is not characterized in this preliminary section, is because of their uncertainty of effect. Hypothetically, $r(\cdot)$ is an additional structure (bias) of which apply a new gradient field in conjunction to the loss gradient field itself. This addition is uncertain of its content and analysis, since it depends on various stochastic dynamics of the model. We reserve from using regularization for now because of such reason.}
+
+\begin{definition}
+    A learning problem is learnable if there exist a learning rule $\mathcal{A}$ and a monotonically decreasing sequence $\epsilon_{cons}(m)$ such that $\epsilon_{cons}(m)\overset{m\to\infty}{\longrightarrow} 0$ and \begin{equation}
+        \forall \mathcal{D} , \quad \underset{S\sim\mathcal{D}^{m}}{\mathbb{E}} \left[F(\mathcal{A}(S))-F^{*}\right] \leq \epsilon_{cons}(m),
+    \end{equation}
+    with $F^{*} = \inf_{h\in\mathcal{H}} R(h)$. A learning rule $\mathcal{A}$ for which this hold is denoted as a universally consistent learning rule. 
+\end{definition}
+
+There are certainly a fundamental class of rule or algorithm $\mathcal{A}$ to resolve this particular uniform convergence of classes. One of the major assumption or observation from the point of the hypothesis class, is that the hypothesis cannot know the generalization error. Thereby, one strategy is the \textit{empirical risk minimization} (ERM) method, minimizing only the empirical risk to the empirical best; then, certain measures to `generalize' this heuristically is apprehended on the hypothesis. 
+
+\begin{definition}
+    A rule $\mathcal{A}$ is an ERM (Empirical Risk Minimizer), denoted $\mathcal{A}_{ERM}$ if it minimizes the empirical risk $\hat{R}(h)=(1/m)\sum_{c\in\mathcal{C}}\ell(h,c)$, over the observational space $S$, 
+    \begin{equation}
+        \hat{R}_{S}(\mathcal{A}_{ERM}(S)) = \hat{R}_{S} (h_{S}) = \inf_{h\in\mathcal{H}} \hat{R}_{S}(h) 
+    \end{equation}
+    Hence, the ERM tries to obtain $\mathrm{ERM}(h') = \argmin_{h\in \mathcal{H}} \hat{R}(h)$. 
+\end{definition}
+
+The problem of overfitting still somewhat resides in the setting of the method. Hence, usually, we have an implicit term in addition, called the \textit{regularizer}, of which is as followed. 
+
+\begin{definition}
+    A rule $\mathcal{A}$ is an SRM (Structural Risk Minimizer), denoted $\mathcal{A}_{ERM}$ if it minimizes the empirical risk $\hat{R}(h)=(1/m)\sum_{c\in\mathcal{C}}\ell(h,c)$, over the observational space $S$, 
+    \begin{equation}
+        \hat{R}_{S}(\mathcal{A}_{SRM}(S)) = \hat{R}_{S} (h_{S}) + \lambda r(h)= \inf_{h\in\mathcal{H}} \hat{R}_{S}(h) + \lambda r(h)
+    \end{equation}
+    of the regularizing term $r(\cdot)$. Hence, the SRM tries to obtain $\mathrm{ERM}(h') = \argmin_{h\in \mathcal{H}} \hat{R}(h)$, while taking into consideration a forcing term $r$, usually defined on the model complexity. 
+\end{definition}
+
+Hence, the SRM is inherently stronger than ERM. The regularizer $\lambda r(h)$, in specific case of convex loss landscape and reasonably well-behaved irregularities between domains, and of the structural regularization term $r_{s}(h)=\sum_{i,j}w_{ij}^{2}$ for weights of $ij$ index, then we have the following theorem. 
+
+\begin{conjecture}[ERM-SRM growth]
+    Consider the regulizer $\lambda r(h)$ for $h\in\mathcal{H}$. Assuming structural regularization $r_{\mathcal{S}}(h)=\sum_{i,j}w_{ij}^{2}$ for linear-layering of $ij$ index, for ERM and SRM optimizer classes, 
+    \begin{equation}
+    \begin{split}
+        &\mathrm{ERM}\left(\inf_{h\in\mathcal{H}} \hat{R}_{S}(h), \ell\right)\\
+        &\quad \quad \quad \approx o\left(\mathrm{SRM}\left(\inf_{h\in\mathcal{H}} \hat{R}_{S}(h) + \lambda r(h), [\ell ,\lambda r(h)]\right)\right)
+    \end{split}
+\end{equation}
+\end{conjecture}
+
+Where the little-$o$ notation is used for saying of the optimization strength per arbitrary time-similar notion of algorithmic evolution. The reason for this change is because of the restriction domain that $\mathrm{SRM}$ indicted on the model optimization landscape. Effectively, we introduce the structural bias $\lambda r(h)$ that forces the morph of the total loss landscape. In well-behaved case, this is usually effective to a point, however in realistic system and pathological cases, such can lead to the $c'$ approximation in $c$-space, just as we introduced in the reformulation of learning system. In this paper, we would like to presume the ERM method in question as the famous \textit{gradient descent}. We refer to \cite{achlioptas_stochastic_nodate,ruder_overview_2017} for general view of the algorithm, and \cite{zhang_gradient_2019} for a source on particularly gradient descent algorithm on deep learning models. 
+
+One particularly troublesome and should take serious consideration into interpreting it, is the fact of the insufficiency on ERM. The following proposition is rather questionable. 
+\begin{proposition}
+    For any sample $S$, the following inequality holds for the hypothesis returned by ERM: 
+    \begin{equation}
+        \mathbb{P}\Big[R(h_{S}')- \inf_{h\in \mathcal{H}}R(h) > \epsilon\Big] \leq \mathbb{P}\Big[ \sup_{h\in \mathcal{H}} \lvert R(h)- \hat{R}_{S}(h) \rvert > \frac{\epsilon}{2} \Big]
+    \end{equation}
+\end{proposition}
+We will prove this proposition in later section. For now, this proposition bounds the error of ERM, with respect to the probability of the generalization distance $\lvert R(h)- \hat{R}_{S}(h)\rvert$ between the two errors. As we might have suspected, the performance of ERM is typically very poor. This is because the algorithm disregards the complexity of the hypothesis set $\mathcal{H}$: in practice, either it is not complex enough, in which case the error can be large, or $\mathcal{H}$ is so rich, that the complexity makes the model shoot out of the complexity range. Additionally, in many cases, determining the ERM solution is computationally intractable. 
+
+\subsection{The PAC-ERM notion}
+
+Without restricting ourselves to specific ERM construction, we can still apply PAC on the set of ERM algorithms in its generality of itself. Within such understanding, the empirical risk minimization strategy is often motivated by the hope that \textit{$R$(h) and $\hat{R}(h)$ are not too far-distant apart}. Particularly, it also implicitly agree with statements conjectured with law of large number, for $n\to\infty$, $|R(h)-\hat{R}(h)|\approx \epsilon$ of irreducible noise. To what extent is this true, we have to take certain boundary on which might have been previously shown. We refer to authoritative introductory texts like \cite{Alquier_2024}, for both PAC-ERM and later sections on PAC-Bayes variation. 
+
+\begin{proposition}[\cite{Alquier_2024}]\label{prop:PAC_ERM_1}
+    For any $h\in\mathcal{H}$, for any $\delta\in(0,1)$, 
+    \begin{equation}
+        \mathbb{P}_{S}\left( R(h) > \hat{R}(h)+ C\sqrt{\frac{\log{(1/\delta)}}{2n}}\right)\leq \delta
+    \end{equation}
+\end{proposition}
+\begin{proof}
+    Applying Hoeffding's inequality onto $U=\mathbb{E}[\ell_{i}(h)]-\ell_{i}(h)$, 
+    \begin{equation}
+        \mathbb{E}_{S}\left[\exp{tn[R(h)-\hat{R}(h)]}\right] \leq \exp{[(nt^2C^2)/8]}
+    \end{equation}
+    For any $s>0$, we have by Markov's inequality, 
+    \begin{equation}
+        \begin{split}
+            \mathbb{P}_{S}(R(h)-\hat{R}(h)>s) 
+            & = \mathbb{P}_{S} \left(\exp{nt[R(h)-R]}> \exp{(nts)}\right)\\
+            & \leq \frac{1}{\exp{(nts)}} \mathbb{E}_{S}\left[e^{nt[R(h)-\hat{R}(h)]}\right]\\
+            & \leq \exp{\left(\frac{nt^2C^2}{8}-nts\right)}
+            \end{split}
+    \end{equation}
+    We can make this bound as tight as possible, by optimizing the choice of $t$. For $t=4s/C^{2}$, we have 
+    \begin{equation}
+        \mathbb{P}(R(h)-\hat{R}(h)>s) \leq \exp{\left(\frac{-2ns^2}{C^2}\right)}
+    \end{equation}
+    This means that, for a given $h$, the empirical risk $\hat{R}(h)$ cannot be much smaller than the risk $R(h)$. The order of this "much smaller" can be better understood by introducing $\delta=\exp{(-2ns^2/C^2)}$, of which substituting $\delta$ to $s$ yields the required proposition. 
+\end{proof}
+
+Proposition~\ref{prop:PAC_ERM_1} bounds the asymptotic term such that $R(h)$ will exceed $\hat{R}(h)$ by certain margin, at worst $1/\sqrt{n}$. However, this is not enough to justify the use of ERM (which indeed use the near-space approximation from empirical to general risk), since the proof only applies for $h$ that was fixed above in terms of complexity. For those that is implicit of the data itself, we cannot apply them\footnote{This means models such ass \textit{support vector machine} (SVM) or \textit{Gaussian process regression} of which the empirical optimization function and the hypothesis itself, relies on the number of data points available.}. The usual approach though, is to use the inequality 
+\begin{equation}
+    R(h_{ERM}) - \hat{R}(h_{ERM}) \leq \sup_{h\in\mathcal{H}} \left[R(h)-\hat{R}(h)\right]
+\end{equation}
+and to prove a version of Proposition~\ref{prop:PAC_ERM_1} that would hold uniformly on $\mathcal{H}$. 
+\begin{theorem}
+    Assume that $\mathrm{card}(\mathcal{H})=M<+\infty$, for any $\delta\in(0,1)$, 
+    \begin{equation}
+        \mathbb{P}_{S}\left( R(h_{ERM}) \leq \inf_{h\in\mathcal{H}} \hat{R}(h) + C\sqrt{\frac{\log{(M/\delta)}}{2n}} \right) \geq 1 - \delta
+    \end{equation}
+\end{theorem}
+\begin{proof}
+    We upper bound the supremum in the inequality by 
+    \begin{equation}
+        \begin{split}
+            \sP_{S} \left(\sup_{h\in\mathcal{H}}[R(h)-\hat{R}(h)>s]\right)
+            & = \sP_{S} \left(\bigcup_{h\in\mathcal{H}} \left\{ [R(h)-\hat{R}(h)]>s \right\} \right)\\
+            & \leq \sum_{h\in\mathcal{H}} \mathbb{P}_{S}(R(h)-\hat{R}(h)>s)\\
+            & \leq M\exp{\left(\frac{-2ns^2}{C^2}\right)}
+        \end{split}
+    \end{equation}
+    This time, put $\delta = M\exp{(-2ns^2/C^2)}$ we gain 
+\begin{equation}
+     \mathbb{P}_{S}\left( \sup_{h\in\mathcal{H}}[R(h)-\hat{R}(h)] \leq  C\sqrt{\frac{\log{(M/\delta)}}{2n}} \right) \leq \delta
+\end{equation}
+Thus it satisfies 
+\begin{equation}
+     \mathbb{P}_{S}\left( \sup_{h\in\mathcal{H}}[R(h)-\hat{R}(h)] \leq  C\sqrt{\frac{\log{(M/\delta)}}{2n}} \right) \geq 1-\delta
+\end{equation}
+Using the inequality
+\begin{equation}
+    \mathbb{P}_{S}\left( R(h_{ERM}) \leq \hat{R}(h_{ERM})  C\sqrt{\frac{\log{(M/\delta)}}{2n}} \right) \geq 1-\delta    
+\end{equation}
+As $\mathcal{H}$ is finite, $\hat{R}(h_{ERM})=\inf_{h\in\mathcal{H}}\hat{R}(h)$.
+\end{proof}
+This bound coincides for the \textit{Probably Approximately Correct} PAC-bounds, specifically for algorithm of ERM principle, since it approximates $R(h_{ERM})$ within $C\sqrt{\log{(M/\delta)}/2n}$ with probability $1-\delta$, and once again, under very strong arguments. Certain version of this theorem's result can be derived to `predict' double descent, but not giving its the diagnostic view. 
+\subsection{Noise, \cite{10.5555/2371238}}
+
+Using the notion of the Bayes classifier and Bayes error, one can define the \textit{noise} \index{noise} of a given learning setting under PAC-learning consideration, as followed. 
+\begin{definition}[Noise]
+    Given a distribution $\mathcal{D}$ over $\mathcal{X}\times \mathcal{Y}$, the \textit{noise} at point $x\in \mathcal{X}$ is defined by \begin{equation*}
+        noise(x) = \min_{x\in \mathcal{X}} \{\mathbb{P}[1\mid x], \mathbb{P}[0\mid x]\}
+    \end{equation*}
+    The average noise or the noise associated to $\mathcal{D}$ is then the minimum possible error aside from intrinsic model error, and is calculated by $\mathbb{E}[noise(x)]$
+\end{definition}
+Thus, the average noise is precisely the Bayes error, that is, $noise = \mathbb{E}[noise(x)]=R^{*}$. The noise is a characteristic of the learning task indicative of its level of difficulty. A point $x\in \mathcal{X}$, for which noise is close to $1/2$, is sometimes referred to as \textit{noisy} and is of course a challenge for accurate prediction. Such is understandable, and is often enough, however, we note that structurally, it is missing particular components or decomposition components that would eventually make up the builks of its claims. 
 
 \section{Simplistic learning - Occam's Razor}
 

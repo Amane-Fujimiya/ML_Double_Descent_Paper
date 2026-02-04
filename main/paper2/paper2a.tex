@@ -437,7 +437,7 @@ The fact that double descent is not well-defined itself is a problem on its own.
 
 
 
-% ... (Tiếp theo sau phần Double Descent trước đó) ...
+% ... (After DD) ...
 
 % ============================================================================
 % CHAPTER: FOUNDATIONAL DEFINITIONS FOR STATISTICAL PHYSICS OF LEARNING
@@ -448,11 +448,17 @@ The fact that double descent is not well-defined itself is a problem on its own.
 % justified. This follows the principle: "Don't just describe, DEFINE and ARGUE."]
 % ============================================================================
 
+\clearpage
+
 \section{Foundational Definitions: Grounding Physical Concepts in Learning Theory}
 
 Before applying tools from statistical physics to analyze learning dynamics, we must establish a rigorous foundation. This section provides formal definitions for key concepts, explains the mathematical components, and---critically---justifies \textit{why} these concepts are appropriate for understanding machine learning systems.
 
+Fundamentally, 
+
 \subsection{Stochastic Gradient Descent as a Physical Process}
+
+
 
 \subsubsection{Why View SGD as a Stochastic Process?}
 
@@ -776,34 +782,61 @@ The physicist's attitude is: \textit{the method works, even if we don't fully un
 
 To apply replica theory to neural networks, we establish a precise mapping between concepts.
 
-\begin{definition}[Spin Glass---Neural Network Dictionary]\label{def:spin_glass_dictionary}
 The following table establishes the isomorphism between spin glass physics and neural network learning:
 
-\begin{center}
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|p{4cm}|p{5cm}|p{5cm}|}
-\hline
-\textbf{Concept} & \textbf{Spin Glass (Physics)} & \textbf{Neural Network (ML)} \\
-\hline
-Degrees of freedom & Spin variables $\sigma_i \in \{-1, +1\}$ & Weight parameters $W_i \in \mathbb{R}$ \\
-\hline
-Energy function & Hamiltonian $\mathcal{H}(\sigma; J)$ & Loss function $\mathcal{L}(W; \mathcal{D})$ \\
-\hline
-Quenched disorder & Random couplings $J_{ij}$ (fixed but random) & Dataset $\mathcal{D} = \{(x_i, y_i)\}$ (fixed but random sample) \\
-\hline
-Temperature $T$ & Thermal fluctuations & Effective temperature $T_{\text{eff}} = \eta/B$ \\
-\hline
-Thermal average $\langle \cdot \rangle$ & $\int (\cdot) P_{\text{eq}}(\sigma) d\sigma$ & Expectation over weight distribution \\
-\hline
-Disorder average $\overline{(\cdot)}$ & $\mathbb{E}_J[(\cdot)]$ & $\mathbb{E}_{\mathcal{D}}[(\cdot)]$ \\
-\hline
-Order parameter & Overlap $q = \frac{1}{N}\sum_i \sigma_i^{(1)} \sigma_i^{(2)}$ & Weight alignment between replicas \\
-\hline
-Phase transition & Paramagnetic $\leftrightarrow$ Spin glass & Under- $\leftrightarrow$ Over-parameterized \\
-\hline
-\end{tabular}
-\end{center}
-\end{definition}
+\begin{table*}
+  \centering
+  \footnotesize
+  \begin{threeparttable}
+    \caption{Analogy between spin glass physics and neural network training}
+    \label{tab:spin_glass_nn_analogy}
+    % three columns: adaptive widths
+    \begin{tabularx}{\textwidth}{ L{0.25\textwidth}
+                                     L{0.35\textwidth}
+                                     >{\RaggedRight\arraybackslash}X }
+      \toprule
+      \textbf{Concept} & \textbf{Spin Glass (Physics)} & \textbf{Neural Network (ML)} \\
+      \midrule
+      Degrees of freedom
+        & Spin variables $\sigma_i \in \{-1, +1\}$
+        & Weight parameters $W_i \in \mathbb{R}$ \\
+      \addlinespace[1pt]
+      Energy function
+        & Hamiltonian $\mathcal{H}(\sigma; J)$
+        & Loss function $\mathcal{L}(W; \mathcal{D})$ \\
+      \addlinespace[1pt]
+      Quenched disorder
+        & Random couplings $J_{ij}$ (fixed but random)
+        & Dataset $\mathcal{D} = \{(x_i, y_i)\}$ (fixed but random sample) \\
+      \addlinespace[1pt]
+      Temperature $T$
+        & Thermal fluctuations
+        & Effective temperature $T_{\text{eff}} = \eta/B$ where $\eta$ is learning rate and $B$ is batch size \\
+      \addlinespace[1pt]
+      Thermal average $\langle \cdot \rangle$
+        & $\int (\cdot) P_{\text{eq}}(\sigma) d\sigma$
+        & Expectation over weight distribution during training \\
+      \addlinespace[1pt]
+      Disorder average $\overline{(\cdot)}$
+        & $\mathbb{E}_J[(\cdot)]$ — average over disorder realizations
+        & $\mathbb{E}_{\mathcal{D}}[(\cdot)]$ — average over dataset realizations \\
+      \addlinespace[1pt]
+      Order parameter
+        & Overlap $q = \frac{1}{N}\sum_i \sigma_i^{(1)} \sigma_i^{(2)}$ between replica configurations
+        & Weight alignment or similarity between independently trained replicas \\
+      \addlinespace[1pt]
+      Phase transition
+        & Paramagnetic $\leftrightarrow$ Spin glass phase
+        & Under-parameterized $\leftrightarrow$ Over-parameterized regime \\
+      \bottomrule
+    \end{tabularx}
+
+    \begin{tablenotes}
+      \footnotesize
+      \item[] \textbf{Notes:} This analogy connects statistical mechanics of disordered systems to modern machine learning. The spin glass framework provides theoretical tools for understanding the complex loss landscapes of neural networks, particularly in the over-parameterized regime where multiple near-optimal solutions exist.
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table*}
 
 \textbf{Why This Mapping Works:}
 
@@ -900,7 +933,7 @@ Parallel to RMT, techniques from the statistical physics of disordered systems, 
     \item The weights $W$ represent the thermal degrees of freedom (spins).
 \end{itemize}
 
-Researchers such as \cite{mezard1987spin, gerace2020generalisation} employed the ``Replica Trick'' to compute the partition function and free energy of the system in the thermodynamic limit. This framework confirmed that double descent is, in these models, a phase transition inherent to the equilibrium state of the system. However, like RMT, standard Replica analysis assumes a static equilibrium (Gibbs distribution) and does not inherently capture the algorithmic trajectory of Stochastic Gradient Descent (SGD).
+Researchers such as \cite{mezard1987spin, Gerace_2021} employed the ``Replica Trick'' to compute the partition function and free energy of the system in the thermodynamic limit. This framework confirmed that double descent is, in these models, a phase transition inherent to the equilibrium state of the system. However, like RMT, standard Replica analysis assumes a static equilibrium (Gibbs distribution) and does not inherently capture the algorithmic trajectory of Stochastic Gradient Descent (SGD).
 
 \section{The Gap: From Static to Dynamic}
 
@@ -927,7 +960,7 @@ The discrete steps of SGD can be modeled in continuous time via a Stochastic Dif
 \begin{equation}
     dW_t = -\nabla \mathcal{L}(W_t) dt + \sqrt{2D(W_t)} dB_t
 \end{equation}
-where $B_t$ is Brownian motion. Crucially, the diffusion matrix $D(W_t)$ arising from SGD noise is \textit{anisotropic} and \textit{state-dependent}. Unlike uniform thermal noise in classical thermodynamics, SGD noise magnitude scales with the gradient covariance. Recent studies \cite{chaudhari2018stochastic} suggest that this specific noise structure introduces an \textit{implicit regularization} term that penalizes ``sharp'' minima, effectively driving the system toward ``flat'' regions of the landscape which correlate with better generalization.
+where $B_t$ is Brownian motion. Crucially, the diffusion matrix $D(W_t)$ arising from SGD noise is \textit{anisotropic} and \textit{state-dependent}. Unlike uniform thermal noise in classical thermodynamics, SGD noise magnitude scales with the gradient covariance. Recent studies \cite{chaudhari2018stochasticgradientdescentperforms} suggest that this specific noise structure introduces an \textit{implicit regularization} term that penalizes ``sharp'' minima, effectively driving the system toward ``flat'' regions of the landscape which correlate with better generalization.
 
 The evolution of the probability distribution $P(W,t)$ is governed by the Fokker-Planck equation:
 \begin{equation}
@@ -936,7 +969,7 @@ The evolution of the probability distribution $P(W,t)$ is governed by the Fokker
 This formulation allows us to analyze the learning process as a probability flow, distinct from the static Gibbs distribution assumed in equilibrium theories.
 
 \subsection{The Jamming Transition Landscape}
-The geometric ``stage'' upon which this dynamics plays out is described by the \textbf{Jamming Transition} analogy \cite{geiger2019jamming}. The interpolation threshold corresponds to the transition point where the system goes from an under-constrained (liquid/floppy) phase to an over-constrained (jammed/solid) phase.
+The geometric ``stage'' upon which this dynamics plays out is described by the \textbf{Jamming Transition} analogy \cite{Geiger_2019}. The interpolation threshold corresponds to the transition point where the system goes from an under-constrained (liquid/floppy) phase to an over-constrained (jammed/solid) phase.
 
 \begin{itemize}
     \item \textbf{Under-parameterized ($P < N$):} The system is jammed; zero training error is inaccessible due to excessive constraints.
@@ -1798,11 +1831,11 @@ What we \textit{do} claim is that the NESP framework provides a \textbf{language
 
 \subsubsection{A Note on Interdisciplinarity}
 
-The NESP framework draws on concepts from statistical physics, stochastic processes, random matrix theory, and dynamical systems. This interdisciplinarity is both a strength and a risk. It is a strength because the phenomena of deep learning---phase transitions, critical behavior, emergent simplicity from complex dynamics---have natural analogs in physics. It is a risk because analogies can mislead; the ``spin'' of a weight is not literally a magnetic moment, and we must be vigilant against importing assumptions that do not transfer.
+The NESP framework draws on concepts from fields like statistical physics, stochastic processes, random matrix theory, and dynamical systems, each brings about different perspective of certain foundational cores. This interdisciplinarity is both a strength and a risk. It is a strength because the phenomena of deep learning---phase transitions, critical behavior, emergent simplicity from complex dynamics---have natural analogs in physics. It is a risk because analogies can mislead; the ``spin'' of a weight is not literally a magnetic moment, and we must be vigilant against importing assumptions that do not transfer.
 
 Navigating this tension requires what might be called \textit{bilingual fluency}---the ability to translate concepts between fields while respecting the distinct semantics of each. We have attempted this throughout the chapter, but the translation is imperfect. Future work, by researchers with deeper expertise in either physics or machine learning, will surely refine (or refute) the ideas presented here.
 
-\textit{The work in this chapter is not a conclusion; it is an invitation.}
+\textit{The work in this chapter is not a conclusion, since development is still going on. It is however, very much for invitation of clarification, and topic progression, as a foundational standpoint.}
 
 % ============================================================================
 % END OF CHAPTER 7
