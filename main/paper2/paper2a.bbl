@@ -1372,7 +1372,7 @@
       \field{pages}{536\bibrangedash 538}
       \range{pages}{3}
     \endentry
-    \entry{chaudhari2018stochasticgradientdescentperforms}{misc}{}{}
+    \entry{chaudhari2018stochastic}{article}{}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=8649bae54f337c079528ff9706949220}{%
            family={Chaudhari},
@@ -1400,14 +1400,12 @@
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{eprintclass}{cs.LG}
-      \field{eprinttype}{arXiv}
+      \field{labeltitlesource}{author}
+      \field{journaltitle}{arXiv preprint arXiv:1710.11029}
+      \field{note}{Analysis of SGD as variational inference and its connection to Fokker-Planck dynamics}
       \field{title}{Stochastic gradient descent performs variational inference, converges to limit cycles for deep networks}
       \field{year}{2018}
-      \verb{eprint}
-      \verb 1710.11029
-      \endverb
+      \true{nocite}
       \verb{urlraw}
       \verb https://arxiv.org/abs/1710.11029
       \endverb
@@ -1458,6 +1456,65 @@
       \endverb
       \verb{url}
       \verb https://doi.org/10.1016/j.neunet.2023.10.014
+      \endverb
+    \endentry
+    \entry{cohen2021gradient}{article}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=cac269ad7bcb68d9224c66cf4554bb97}{%
+           family={Cohen},
+           familyi={C\bibinitperiod},
+           given={Jeremy\bibnamedelima M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=258493b5a1aa8aed3bccc5214310dad3}{%
+           family={Kaur},
+           familyi={K\bibinitperiod},
+           given={Simran},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0d2c91b24f885b22d373a892a768abc8}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Yuanzhi},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0288715a83a3349e44f9292c5c2149f7}{%
+           family={Kolter},
+           familyi={K\bibinitperiod},
+           given={J.\bibnamedelimi Zico},
+           giveni={J\bibinitperiod\bibinitdelim Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=70e0fe957473b80f1b1b5dcb8e99d31e}{%
+           family={Talwalkar},
+           familyi={T\bibinitperiod},
+           given={Ameet},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{891324588ced3b65777a676a204b19ad}
+      \strng{fullhash}{a07e0100473dc30d14cb8f67c86c1ec7}
+      \strng{fullhashraw}{a07e0100473dc30d14cb8f67c86c1ec7}
+      \strng{bibnamehash}{a07e0100473dc30d14cb8f67c86c1ec7}
+      \strng{authorbibnamehash}{a07e0100473dc30d14cb8f67c86c1ec7}
+      \strng{authornamehash}{891324588ced3b65777a676a204b19ad}
+      \strng{authorfullhash}{a07e0100473dc30d14cb8f67c86c1ec7}
+      \strng{authorfullhashraw}{a07e0100473dc30d14cb8f67c86c1ec7}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{author}
+      \field{journaltitle}{arXiv preprint arXiv:2103.00065}
+      \field{note}{Introduces the concept of Edge of Stability in neural network training dynamics}
+      \field{title}{Gradient Descent on Neural Networks Typically Occurs at the Edge of Stability}
+      \field{year}{2021}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2103.00065
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2103.00065
       \endverb
     \endentry
     \entry{curth2023uturndoubledescentrethinking}{misc}{}{}
@@ -1966,7 +2023,7 @@
       \verb https://doi.org/10.1088/0305-4470/21/1/031
       \endverb
     \endentry
-    \entry{Geiger_2019}{article}{}{}
+    \entry{geiger2019jamming}{article}{}{}
       \name{author}{7}{}{%
         {{un=0,uniquepart=base,hash=8269041a68cb53bcac4121f74a3b53cf}{%
            family={Geiger},
@@ -1980,8 +2037,8 @@
            given={Stefano},
            giveni={S\bibinitperiod},
            givenun=0}}%
-        {{un=0,uniquepart=base,hash=4539493f02fa413b6b33a7c9da62c6bc}{%
-           family={d’Ascoli},
+        {{un=0,uniquepart=base,hash=acd3c947ad5a74439a71c9f7bb96d621}{%
+           family={d'Ascoli},
            familyi={d\bibinitperiod},
            given={Stéphane},
            giveni={S\bibinitperiod},
@@ -2011,38 +2068,34 @@
            giveni={M\bibinitperiod},
            givenun=0}}%
       }
-      \list{publisher}{1}{%
-        {American Physical Society (APS)}%
-      }
       \strng{namehash}{842888fe8228c40df4a54c7ba9f8fc46}
-      \strng{fullhash}{6d1825ecd18300217f8dcb6fa3033769}
-      \strng{fullhashraw}{6d1825ecd18300217f8dcb6fa3033769}
-      \strng{bibnamehash}{6d1825ecd18300217f8dcb6fa3033769}
-      \strng{authorbibnamehash}{6d1825ecd18300217f8dcb6fa3033769}
+      \strng{fullhash}{af48cbf618774ccff729a9b26b4fbcde}
+      \strng{fullhashraw}{af48cbf618774ccff729a9b26b4fbcde}
+      \strng{bibnamehash}{af48cbf618774ccff729a9b26b4fbcde}
+      \strng{authorbibnamehash}{af48cbf618774ccff729a9b26b4fbcde}
       \strng{authornamehash}{842888fe8228c40df4a54c7ba9f8fc46}
-      \strng{authorfullhash}{6d1825ecd18300217f8dcb6fa3033769}
-      \strng{authorfullhashraw}{6d1825ecd18300217f8dcb6fa3033769}
+      \strng{authorfullhash}{af48cbf618774ccff729a9b26b4fbcde}
+      \strng{authorfullhashraw}{af48cbf618774ccff729a9b26b4fbcde}
       \field{sortinit}{G}
       \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{author}
-      \field{issn}{2470-0053}
       \field{journaltitle}{Physical Review E}
-      \field{month}{7}
+      \field{note}{Statistical physics perspective on interpolation threshold and loss landscapes}
       \field{number}{1}
       \field{title}{Jamming transition as a paradigm to understand the loss landscape of deep neural networks}
       \field{volume}{100}
       \field{year}{2019}
-      \verb{doi}
-      \verb 10.1103/physreve.100.012115
-      \endverb
+      \true{nocite}
+      \field{pages}{012115}
+      \range{pages}{1}
       \verb{urlraw}
-      \verb http://dx.doi.org/10.1103/PhysRevE.100.012115
+      \verb https://arxiv.org/abs/1809.09349
       \endverb
       \verb{url}
-      \verb http://dx.doi.org/10.1103/PhysRevE.100.012115
+      \verb https://arxiv.org/abs/1809.09349
       \endverb
     \endentry
     \entry{6797087}{article}{}{}
@@ -2091,7 +2144,7 @@
       \verb 10.1162/neco.1992.4.1.1
       \endverb
     \endentry
-    \entry{Gerace_2021}{article}{}{}
+    \entry{gerace2020generalisation}{article}{}{}
       \name{author}{5}{}{%
         {{un=0,uniquepart=base,hash=9e5f09b7b9d42b95730b25e8137152f9}{%
            family={Gerace},
@@ -2124,9 +2177,6 @@
            giveni={L\bibinitperiod},
            givenun=0}}%
       }
-      \list{publisher}{1}{%
-        {IOP Publishing}%
-      }
       \strng{namehash}{bb200ff30359c3864751a48457c891f0}
       \strng{fullhash}{b91e2d7a4c8e665f4668c5a63c768fe5}
       \strng{fullhashraw}{b91e2d7a4c8e665f4668c5a63c768fe5}
@@ -2141,17 +2191,19 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{author}
-      \field{issn}{1742-5468}
-      \field{journaltitle}{Journal of Statistical Mechanics: Theory and Experiment}
-      \field{month}{12}
-      \field{number}{12}
-      \field{title}{Generalisation error in learning with random features and the hidden manifold model*}
-      \field{volume}{2021}
-      \field{year}{2021}
-      \field{pages}{124013}
-      \range{pages}{1}
-      \verb{doi}
-      \verb 10.1088/1742-5468/ac3ae6
+      \field{journaltitle}{Proceedings of the 37th International Conference on Machine Learning (ICML)}
+      \field{note}{Replica method analysis of generalization in random feature models}
+      \field{title}{Generalisation error in learning with random features and the hidden manifold model}
+      \field{volume}{119}
+      \field{year}{2020}
+      \true{nocite}
+      \field{pages}{3452\bibrangedash 3462}
+      \range{pages}{11}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2002.09339
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2002.09339
       \endverb
     \endentry
     \entry{goodfellow2016deep}{book}{}{}

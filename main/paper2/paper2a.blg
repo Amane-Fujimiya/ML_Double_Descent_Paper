@@ -1,19 +1,21 @@
 [0] Config.pm:308> INFO - This is Biber 2.20
-[0] Config.pm:311> INFO - Logfile is 'paper2a.blg'
-[189] biber-MSWIN64:340> INFO - === 
-[254] Biber.pm:420> INFO - Reading 'paper2a.bcf'
-[635] Biber.pm:991> INFO - Using all citekeys in bib section 0
-[659] Biber.pm:4463> INFO - Processing section 0
-[679] Biber.pm:4654> INFO - Looking for bibtex file 'references.bib' for section 0
-[753] bibtex.pm:1713> INFO - LaTeX decoding ...
-[1023] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
-[2612] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[2612] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[2612] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'level = 4' with 'level = 2'
-[2612] Biber.pm:4283> INFO - Sorting list 'cms/global//global/global/global' of type 'entry' with template 'cms' and locale 'en-US'
-[2613] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
-[2840] bbl.pm:676> INFO - Writing 'paper2a.bbl' with encoding 'UTF-8'
-[3004] bbl.pm:779> INFO - Output to paper2a.bbl
-[3004] Biber.pm:131> WARN - ISBN '978-0199233210' in entry 'mezard2009information' is invalid - run biber with '--validate_datamodel' for details.
-[3005] Biber.pm:131> WARN - ISBN '978-9971501533' in entry 'mezard1987spin' is invalid - run biber with '--validate_datamodel' for details.
-[3005] Biber.pm:133> INFO - WARNINGS: 2
+[1] Config.pm:311> INFO - Logfile is 'paper2a.blg'
+[260] biber-MSWIN64:340> INFO - === 
+[334] Biber.pm:420> INFO - Reading 'paper2a.bcf'
+[798] Biber.pm:991> INFO - Using all citekeys in bib section 0
+[825] Biber.pm:4463> INFO - Processing section 0
+[849] Biber.pm:4654> INFO - Looking for bibtex file 'references.bib' for section 0
+[937] bibtex.pm:1713> INFO - LaTeX decoding ...
+[1309] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
+[3368] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[3369] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[3369] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'level = 4' with 'level = 2'
+[3369] Biber.pm:4283> INFO - Sorting list 'cms/global//global/global/global' of type 'entry' with template 'cms' and locale 'en-US'
+[3369] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[3602] bbl.pm:676> INFO - Writing 'paper2a.bbl' with encoding 'UTF-8'
+[3798] bbl.pm:779> INFO - Output to paper2a.bbl
+[3799] Biber.pm:131> WARN - Duplicate entry key: 'Vapnik1999-VAPTNO' in file 'references.bib', skipping ...
+[3799] Biber.pm:131> WARN - Duplicate entry key: 'brellmann2024on' in file 'references.bib', skipping ...
+[3799] Biber.pm:131> WARN - ISBN '978-0199233210' in entry 'mezard2009information' is invalid - run biber with '--validate_datamodel' for details.
+[3799] Biber.pm:131> WARN - ISBN '978-9971501533' in entry 'mezard1987spin' is invalid - run biber with '--validate_datamodel' for details.
+[3799] Biber.pm:133> INFO - WARNINGS: 4

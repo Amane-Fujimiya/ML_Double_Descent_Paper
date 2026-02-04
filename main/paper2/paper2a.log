@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.13)  21 JAN 2026 22:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.13)  4 FEB 2026 22:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -3029,6 +3029,10 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 933.
 
 
+LaTeX Warning: Citation 'Gerace_2021' on page 15 undefined on input line 936.
+
+
+
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 959.
 LaTeX Font Info:    Nested math: keeping math alphabet allocation in version normal on input line 960.
 LaTeX Font Info:    Nested math: keeping math alphabet allocation in version normal on input line 960.
@@ -3039,6 +3043,14 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 963.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 963.
 
+LaTeX Warning: Citation 'chaudhari2018stochasticgradientdescentperforms' on page 15 undefined on input line 963.
+
+
+Overfull \hbox (16.41647pt too wide) in paragraph at lines 962--964
+\T1/fbb-TLF/m/n/10 (-20) cent stud-ies []
+ []
+
+
 
 [15]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 965.
@@ -3048,6 +3060,15 @@ LaTeX Font Info:    Nested math: keeping math alphabet allocation in version nor
 LaTeX Font Info:    Nested math: keeping math alphabet allocation in version normal on input line 966.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 968.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 968.
+
+
+LaTeX Warning: Citation 'Geiger_2019' on page 16 undefined on input line 972.
+
+
+Overfull \hbox (6.12772pt too wide) in paragraph at lines 972--973
+\T1/fbb-TLF/m/n/10 (-20) where the sys-tem goes from an under-constrained (liq-uid/floppy)
+ []
+
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 975.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 976.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 977.
@@ -3110,8 +3131,6 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1091.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1091.
 
-
-[17]
 pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
@@ -3119,6 +3138,9 @@ l.1105 F
         or a configuration $W$ residing in a local basin, the \textbf{Mean E...
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1105.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1105.
+
+
+[17]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1108.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1108.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1108.
@@ -3151,9 +3173,9 @@ Overfull \hbox (3.85132pt too wide) in paragraph at lines 1155--1156
 \T1/fbb-TLF/m/n/10 (-20) be-yond qual-i-ta-tive ar-gu-ments to an ex-plicit math-e-mat-i-cal deriva-
  []
 
-
-
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1164.
+
+
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1167.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1167.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1169.
@@ -3305,8 +3327,6 @@ LaTeX Font Info:    Nested math: keeping math alphabet allocation in version nor
 LaTeX Font Info:    Nested math: keeping math alphabet allocation in version normal on input line 1280.
 LaTeX Font Info:    Nested math: keeping math alphabet allocation in version normal on input line 1280.
 LaTeX Font Info:    Nested math: keeping math alphabet allocation in version normal on input line 1281.
-
-
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1282.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1282.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1289.
@@ -3314,6 +3334,8 @@ LaTeX Font Info:    Nested math: keeping math alphabet allocation in version nor
 LaTeX Font Info:    Nested math: keeping math alphabet allocation in version normal on input line 1290.
 LaTeX Font Info:    Nested math: keeping math alphabet allocation in version normal on input line 1290.
 LaTeX Font Info:    Nested math: keeping math alphabet allocation in version normal on input line 1290.
+
+
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1292.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1292.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1294.
@@ -3398,13 +3420,12 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1359.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1359.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1359.
-
-
-[19]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1360.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1366.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1366.
 
+
+[19]
 pdfTeX warning (ext4): destination with the same identifier (name{remark.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
@@ -3454,13 +3475,13 @@ LaTeX Font Info:    Nested math: keeping math alphabet allocation in version nor
 LaTeX Font Info:    Nested math: keeping math alphabet allocation in version normal on input line 1404.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1405.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1405.
-
-
 LaTeX Font Info:    Nested math: keeping math alphabet allocation in version normal on input line 1409.
 LaTeX Font Info:    Nested math: keeping math alphabet allocation in version normal on input line 1409.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1409.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1411.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1420.
+
+
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1422.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1423.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1424.
@@ -3483,11 +3504,11 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1454.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1454.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1456.
+LaTeX Font Info:    Nested math: keeping math alphabet allocation in version normal on input line 1469.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1469.
 
 
 [20]
-LaTeX Font Info:    Nested math: keeping math alphabet allocation in version normal on input line 1469.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1469.
 LaTeX Font Info:    Nested math: keeping math alphabet allocation in version normal on input line 1471.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1471.
 LaTeX Font Info:    Nested math: keeping math alphabet allocation in version normal on input line 1471.
@@ -3544,13 +3565,14 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1556.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1557.
 
-
-[21]
 Overfull \hbox (4.5995pt too wide) in paragraph at lines 1568--1570
 []\T1/fbb-TLF/b/n/10 (-20) Experimental Pre-dic-tion (Testable): \T1/fbb-TLF/m/n/10 (-20) If the NESP
  []
 
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1570.
+
+
+[21]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1579.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1583.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1583.
@@ -3563,8 +3585,6 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1606.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1608.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1608.
-
-
 LaTeX Font Info:    Nested math: keeping math alphabet allocation in version normal on input line 1612.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1612.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1612.
@@ -3577,6 +3597,8 @@ Overfull \hbox (58.56805pt too wide) in paragraph at lines 1612--1613
 Overfull \hbox (19.11937pt too wide) in paragraph at lines 1612--1613
 \T1/fbb-TLF/m/n/10 (-20) this would pro-vide a di-rect link be-tween cur-va-ture and probability---
  []
+
+
 
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1616.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1624.
@@ -3626,9 +3648,6 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1716.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1727.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1728.
-
-
-[23]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1737.
 
 Overfull \hbox (35.73695pt too wide) in paragraph at lines 1737--1738
@@ -3636,6 +3655,9 @@ Overfull \hbox (35.73695pt too wide) in paragraph at lines 1737--1738
  []
 
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1738.
+
+
+[23]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1750.
 LaTeX Font Info:    Nested math: keeping math alphabet allocation in version normal on input line 1752.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1752.
@@ -3667,11 +3689,10 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1813.
 LaTeX Font Info:    Nested math: keeping math alphabet allocation in version normal on input line 1813.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1813.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1817.
 
 
 [24]
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1817.
-
 
 
 
@@ -3741,8 +3762,6 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
 
 
 [26
@@ -3765,10 +3784,11 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
 
 
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
@@ -3784,12 +3804,6 @@ Overfull \hbox (2.13403pt too wide) in paragraph at lines 1848--1848
 \T1/fbb-TLF/m/it/8 (-20) tional learn-ing the-ory. \T1/fbb-TLF/m/n/8 (-20) Cam-bridge, MA, USA: MIT Press. \T1/fbb-TLF/m/sc/8 (-20) isbn\T1/fbb-TLF/m/n/8 (-20) : 0262111934. 
  []
 
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
@@ -3824,6 +3838,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
 
 
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
@@ -3842,6 +3857,14 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
+
+
+[28]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
 
@@ -3851,9 +3874,6 @@ Overfull \hbox (8.89275pt too wide) in paragraph at lines 1848--1848
 
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
-
-
-[28]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
@@ -3875,13 +3895,13 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
 
 
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 1847.
 
@@ -3904,24 +3924,32 @@ L3 programming layer <2025-05-26>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `paper2a.out' has not changed.
 (rerunfilecheck)             Checksum: 530B4355F9602FC3B07A06E07EC2AFBE;19341.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                paper2a
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'paper2a.run.xml'.
 \openout1 = `paper2a.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 83228 strings out of 468187
- 1998259 string characters out of 5448666
- 3687087 words of memory out of 5000000
- 109259 multiletter control sequences out of 15000+600000
- 985184 words of font info for 743 fonts, out of 8000000 for 9000
+ 83227 strings out of 468187
+ 1998323 string characters out of 5448666
+ 3685111 words of memory out of 5000000
+ 109260 multiletter control sequences out of 15000+600000
+ 984885 words of font info for 741 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  103i,25n,131p,3039b,4035s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbm/dpi600\bbm10.pk><D:/MikTek/fonts/type1/adobe/sourcesanspro/SourceSansPro-It.pfb><D:/MikTek/fonts/type1/adobe/sourcesanspro/SourceSansPro-Regular.pfb><D:/MikTek/fonts/type1/adobe/sourcesanspro/SourceSansPro-Semibold.pfb><D:/MikTek/fonts/type1/adobe/sourcesanspro/SourceSansPro-SemiboldIt.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/MikTek/fonts/type1/public/amsfonts/euler/eurm10.pfb><D:/MikTek/fonts/type1/public/amsfonts/euler/eurm7.pfb><D:/MikTek/fonts/type1/public/fbb/fbb-Bold.pfb><D:/MikTek/fonts/type1/public/fbb/fbb-BoldItalic.pfb><D:/MikTek/fonts/type1/public/fbb/fbb-Italic.pfb><D:/MikTek/fonts/type1/public/fbb/fbb-Regular.pfb><D:/MikTek/fonts/type1/public/amsfonts/symbols/msbm10.pfb><D:/MikTek/fonts/type1/public/cm-super/sftt0800.pfb>
-Output written on paper2a.pdf (29 pages, 1011532 bytes).
+Output written on paper2a.pdf (29 pages, 1010816 bytes).
 PDF statistics:
- 1504 PDF objects out of 1728 (max. 8388607)
- 488 named destinations out of 1000 (max. 500000)
+ 1499 PDF objects out of 1728 (max. 8388607)
+ 489 named destinations out of 1000 (max. 500000)
  130132 words of extra memory for PDF output out of 154059 (max. 10000000)
 

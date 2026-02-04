@@ -1280,35 +1280,66 @@ address = {San Francisco, CA, USA},
   note    = {arXiv:1710.03667; (published versions/derivatives exist)},
   url     = {https://arxiv.org/abs/1710.03667}
 }
-@article{Gerace_2021,
-   title={Generalisation error in learning with random features and the hidden manifold model*},
-   volume={2021},
-   ISSN={1742-5468},
-   DOI={10.1088/1742-5468/ac3ae6},
-   number={12},
-   journal={Journal of Statistical Mechanics: Theory and Experiment},
-   publisher={IOP Publishing},
-   author={Gerace, Federica and Loureiro, Bruno and Krzakala, Florent and Mézard, Marc and Zdeborová, Lenka},
-   year={2021},
-   month=dec, pages={124013} }
-@article{Geiger_2019,
-   title={Jamming transition as a paradigm to understand the loss landscape of deep neural networks},
-   volume={100},
-   ISSN={2470-0053},
-   url={http://dx.doi.org/10.1103/PhysRevE.100.012115},
-   DOI={10.1103/physreve.100.012115},
-   number={1},
-   journal={Physical Review E},
-   publisher={American Physical Society (APS)},
-   author={Geiger, Mario and Spigler, Stefano and d’Ascoli, Stéphane and Sagun, Levent and Baity-Jesi, Marco and Biroli, Giulio and Wyart, Matthieu},
-   year={2019},
-   month=jul }
-@misc{chaudhari2018stochasticgradientdescentperforms,
-      title={Stochastic gradient descent performs variational inference, converges to limit cycles for deep networks}, 
-      author={Pratik Chaudhari and Stefano Soatto},
-      year={2018},
-      eprint={1710.11029},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/1710.11029}, 
+
+@book{Vapnik1999-VAPTNO,
+  author    = {Vladimir N. Vapnik},
+  title     = {The Nature of Statistical Learning Theory},
+  publisher = {Springer},
+  year      = {1999},
+  edition   = {2nd},
+  address   = {New York},
+  isbn      = {978-0-387-98780-4},
+  note      = {Foundational text on statistical learning theory, VC dimension, and structural risk minimization}
+}
+
+@article{cohen2021gradient,
+  author  = {Cohen, Jeremy M. and Kaur, Simran and Li, Yuanzhi and Kolter, J. Zico and Talwalkar, Ameet},
+  title   = {Gradient Descent on Neural Networks Typically Occurs at the Edge of Stability},
+  journal = {arXiv preprint arXiv:2103.00065},
+  year    = {2021},
+  note    = {Introduces the concept of Edge of Stability in neural network training dynamics},
+  url     = {https://arxiv.org/abs/2103.00065}
+}
+
+@article{gerace2020generalisation,
+  author  = {Gerace, Federica and Loureiro, Bruno and Krzakala, Florent and Mézard, Marc and Zdeborová, Lenka},
+  title   = {Generalisation error in learning with random features and the hidden manifold model},
+  journal = {Proceedings of the 37th International Conference on Machine Learning (ICML)},
+  year    = {2020},
+  volume  = {119},
+  pages   = {3452--3462},
+  note    = {Replica method analysis of generalization in random feature models},
+  url     = {https://arxiv.org/abs/2002.09339}
+}
+
+@article{geiger2019jamming,
+  author  = {Geiger, Mario and Spigler, Stefano and d'Ascoli, Stéphane and Sagun, Levent and Baity-Jesi, Marco and Biroli, Giulio and Wyart, Matthieu},
+  title   = {Jamming transition as a paradigm to understand the loss landscape of deep neural networks},
+  journal = {Physical Review E},
+  year    = {2019},
+  volume  = {100},
+  number  = {1},
+  pages   = {012115},
+  note    = {Statistical physics perspective on interpolation threshold and loss landscapes},
+  url     = {https://arxiv.org/abs/1809.09349}
+}
+
+@article{chaudhari2018stochastic,
+  author  = {Chaudhari, Pratik and Soatto, Stefano},
+  title   = {Stochastic gradient descent performs variational inference, converges to limit cycles for deep networks},
+  journal = {arXiv preprint arXiv:1710.11029},
+  year    = {2018},
+  note    = {Analysis of SGD as variational inference and its connection to Fokker-Planck dynamics},
+  url     = {https://arxiv.org/abs/1710.11029}
+}
+
+@inproceedings{brellmann2024on,
+  author    = {Brellmann, David and Roth, Wolfgang and Kofler, Franz and Zellinger, Werner and Moser, Bernhard A.},
+  title     = {On the Role of Noise in Stochastic Gradient Descent},
+  booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence},
+  year      = {2024},
+  volume    = {38},
+  pages     = {11237--11245},
+  note      = {Analysis of SGD noise structure and its effects on optimization and generalization},
+  url       = {https://ojs.aaai.org/index.php/AAAI/article/view/29049}
 }
