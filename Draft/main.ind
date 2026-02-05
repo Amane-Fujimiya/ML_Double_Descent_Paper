@@ -5,45 +5,45 @@
 
   \indexspace
 
-  \item empirical risk, \hyperpage{10}
-  \item ERC, \hyperpage{25}
+  \item empirical risk, \hyperpage{14}
+  \item ERC, \hyperpage{29}
 
   \indexspace
 
-  \item generalization risk, \hyperpage{10}
-  \item growth function, \hyperpage{29}
+  \item generalization risk, \hyperpage{14}
+  \item growth function, \hyperpage{33}
 
   \indexspace
 
-  \item halfspace, \hyperpage{30}
+  \item halfspace, \hyperpage{34}
 
   \indexspace
 
   \item Markov's inequality, \hyperpage{2}
-  \item model-free learning, \hyperpage{13}
+  \item model-free learning, \hyperpage{17}
 
   \indexspace
 
-  \item noise, \hyperpage{22}
+  \item noise, \hyperpage{26}
 
   \indexspace
 
-  \item outer typing, \hyperpage{104}
+  \item outer typing, \hyperpage{112}
 
   \indexspace
 
-  \item Rademacher complexity, \hyperpage{25}
-  \item Rademacher variables, \hyperpage{25}
-  \item representation scheme, \hyperpage{15}
-  \item representation size, \hyperpage{15}
+  \item Rademacher complexity, \hyperpage{29}
+  \item Rademacher variables, \hyperpage{29}
+  \item representation scheme, \hyperpage{19}
+  \item representation size, \hyperpage{19}
 
   \indexspace
 
-  \item Sauer's lemma, \hyperpage{31}
-  \item shattering, \hyperpage{30}
+  \item Sauer's lemma, \hyperpage{35}
+  \item shattering, \hyperpage{34}
 
   \indexspace
 
-  \item VC-dimension, \hyperpage{30}
+  \item VC-dimension, \hyperpage{34}
 
 \end{theindex}

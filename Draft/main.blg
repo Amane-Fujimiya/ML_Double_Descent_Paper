@@ -26,16 +26,9 @@ A level-1 auxiliary file: content/c10.aux
 Reallocating 'name_of_file' (item size: 1) to 10 items.
 Reallocating 'name_of_file' (item size: 1) to 9 items.
 The style file: plainnat.bst
-Reallocating 'field_info' (item size: 4) to 13204 items.
+Reallocating 'field_info' (item size: 4) to 13652 items.
 Database file #1: reference.bib
 Reallocating 'str_pool' (item size: 1) to 130000 items.
-Warning--I didn't find a database entry for "kaplan2020scaling"
-Warning--I didn't find a database entry for "OstaszewskaZajkowski2014"
-Warning--I didn't find a database entry for "GRP_Hamilton"
-Warning--I didn't find a database entry for "lopushanskyy2024graphneuralnetworksgraph"
-Warning--I didn't find a database entry for "rossi2020temporalgraphnetworksdeep"
-Warning--I didn't find a database entry for "Veli_kovi__2023"
-Warning--I didn't find a database entry for "tanis2024introductiongraphneuralnetworks"
 Warning--I didn't find a database entry for "pyg_docs"
 Warning--I didn't find a database entry for "Fey/Lenssen/2019"
 Warning--I didn't find a database entry for "Cristianini2000AnIT"
@@ -66,45 +59,45 @@ Warning--empty journal in kingma_welling_2013
 Warning--empty journal in mehta2014exact
 Warning--empty institution in roberts2021principles
 Warning--empty journal in song2019score
-You've used 310 entries,
+You've used 322 entries,
             2773 wiz_defined-function locations,
-            2401 strings with 68721 characters,
-and the built_in function-call counts, 146846 in all, are:
-= -- 13080
-> -- 9325
-< -- 210
-+ -- 3188
-- -- 2857
-* -- 11849
-:= -- 22932
-add.period$ -- 1255
-call.type$ -- 310
-change.case$ -- 1833
-chr.to.int$ -- 289
-cite$ -- 647
-duplicate$ -- 6328
-empty$ -- 11355
-format.name$ -- 3339
-if$ -- 30715
+            2462 strings with 70790 characters,
+and the built_in function-call counts, 152224 in all, are:
+= -- 13568
+> -- 9607
+< -- 220
++ -- 3284
+- -- 2941
+* -- 12267
+:= -- 23745
+add.period$ -- 1302
+call.type$ -- 322
+change.case$ -- 1897
+chr.to.int$ -- 301
+cite$ -- 671
+duplicate$ -- 6579
+empty$ -- 11825
+format.name$ -- 3445
+if$ -- 31860
 int.to.chr$ -- 22
 int.to.str$ -- 1
-missing$ -- 274
-newline$ -- 1863
-num.names$ -- 1233
-pop$ -- 3767
+missing$ -- 283
+newline$ -- 1934
+num.names$ -- 1281
+pop$ -- 3900
 preamble$ -- 1
-purify$ -- 1554
+purify$ -- 1606
 quote$ -- 0
-skip$ -- 5163
+skip$ -- 5359
 stack$ -- 0
-substring$ -- 3803
-swap$ -- 710
-text.length$ -- 41
+substring$ -- 3967
+swap$ -- 739
+text.length$ -- 43
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 3210
+type$ -- 3342
 warning$ -- 23
-while$ -- 1157
+while$ -- 1204
 width$ -- 0
-write$ -- 4512
-(There were 37 warnings)
+write$ -- 4685
+(There were 30 warnings)

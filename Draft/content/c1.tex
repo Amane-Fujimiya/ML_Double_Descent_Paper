@@ -193,3 +193,220 @@ The function itself is a nonnegative function, since $\phi_{Z}(0)=0$. If $\mathb
     \phi_{Z}^{*}(t) = \sup_{\lambda\in \mathbb{R}}(\lambda t - \phi_{Z}(\lambda))
 \end{equation}
 from this, formally, we treat the right-hand expression of the often known, as what we call the \textit{Fenchel-Legendre dual function} of $\phi_{Z}$. Thus, at every $t\geq \mathbb{E}[Z]$, the Cramer transform coincides with the Fenchel-Legendre dual. That is not to say they are the same, however the range of $\lambda$ is relevant. 
+
+\section{Metric and pseudometric}
+
+One of the treatment, or rather insight that we would be looking at, consider the notion of a \textbf{metric}. Of those, we think of it as an additional structure upon two sets, to encode specific quantization to the notion of distinguishability, and distance metric. Out of those, there are the space of such admissible constructions, which includes \textit{metric space} and \textit{pseudometric spaces}. 
+
+\begin{definition}[Pseudometric space]
+    Suppose $X$ is a set. A function $\rho: X\times X \to \mathbb{R}$ is said to be a \textbf{pseudometric}, if it satisfies:
+    \begin{enumerate}[itemsep=1pt,topsep=1pt,label=\roman*]
+        \item $\rho(x,x)=0$, $\forall x\in X$, 
+        \item $\rho(x,y)=\rho(y,x)$, $\forall x,y\in X$,
+        \item $\rho(x,z)\leq \rho(x,y)+\rho(y,z)$, $\forall x,y,z\in X$. 
+    \end{enumerate}
+    The value of $\rho$ is positive-bounded, such that we can write $\rho:X\times X\to \mathbb{R}_{+}$. Suppose $\rho$ is a pseudometric on $X$, then we say that $(X,\rho)$ is a \textbf{pseudometric space}.
+\end{definition}
+
+We can see that a pseudometric would not impose characteristic on distinguishment upon two points, but only identifiability via $\rho(x,x)$. In fact, if two points are of zero-distance on the metric $\rho$, such cannot be determined if the two points are the same, but rather only a weaker form of $x\sim y$ as to require $\rho(x,y)=0$. If, however, we impose that they are the same, then we gain a metric. 
+\begin{definition}[Metric]
+    Suppose $X$ is a set. A function $\rho^{*}: X\times X \to \mathbb{R}$ is said to be a \textbf{metric} if it is a pseudometric, and satisfies $\rho^{*}(x,y)=0\Rightarrow x=y$. Then, we say $(X,\rho^{*})$ is a \textbf{metric space}.
+\end{definition}
+
+Later on, we would be seeing the difference between the two, and one of the categorical error of choosing metric space condition on loss-functional space. Let us illustrate the construction for now in this section. Let $\mathcal{H}$ be the hypothesis class of arbitrary structure, $\mathcal{Z}$ the admitted observations space, $\ell :\mathcal{H}\times \mathcal{Z}\to \mathbb{R}_{+}$ as the loss functional or resultant loss application on $\mathcal{H}\times \mathcal{Z}$, and suppose there exists a quantification of probability distribution $\mathcal{P}$ on $\mathcal{Z}$ of which we suppose to capture generating patterns on the observation pack. Then, the error functional on admitted dataset most often is of the form similar to an empirical error measure,
+\begin{equation}
+    \hat{R}(h) = \underset{z\sim \mathcal{P}}{\mathbb{E}} [\ell(h,z)]
+\end{equation}
+and thus giving us, suppose that there exists the $\mathcal{A}$-algorithm that produces $h_{i},h_{i+1},\dots$, the following distance metric:
+\begin{equation}
+    d_{\ell} (h_{i},h_{i+1}) := \underset{z\sim \mathcal{P}}{\mathbb{E}} \Big[ | \ell(h_{i},z) - \ell(h_{i+1},z) | \Big]
+\end{equation}
+This object satisfies \textit{non-negativity}, \textit{symmetry}, and \textit{triangle inequality} as specified of pseudometric. However, often we do not have the virtue to say that if $d_{\ell}(h_{i},h_{i+1})=0$ then $h_{i}=h_{i+1}$, aside from which we have total exposure of the system itself. Let us consider the setting. Suppose that for the picture $(z,\mathcal{P})$ of the perceived observations space characteristic, it has a true concept $c\in\mathcal{C}$ of arbitrary structure concept class $\mathcal{C}$. For any assumption on oracle access on $c$, we see that $R(c)\leq 0$ take as arbitrary $\epsilon$, since observation can deviate from the concept resultant observation itself. Hence, we get that 
+\begin{equation}
+    \begin{split}
+        d(h_{i},c) := \underset{z\sim \mathcal{P}}{\mathbb{E}} \Big[ | \ell(h_{i},z) - \ell(c,z) | \Big] &\leq \underset{z\sim \mathcal{P}}{\mathbb{E}} [\ell(h_{i},z)] + \underset{z\sim \mathcal{P}}{\mathbb{E}} [\ell(c,z)] \\
+        & = \underset{z\sim \mathcal{P}}{\mathbb{E}} [\ell(h_{i},z)] + \epsilon
+    \end{split}
+\end{equation}
+which means that even by this, the distance is never guaranteed as to be zero. And that is within oracle access setting itself. Usually, if this is not guaranteed, then we have no access on $c$, thus we also have no access to complete this distance metric calculation on itself, and thus $d(h,c)$ does not exist. Here is the conflation of the effect. If, we are to assume that we are comparing the notion of $x=y$ for any object of the functional space itself as to be the factorization, or parameterization that governs $z\to q$ of the input-output observable space on $\mathcal{Z}$, then the loss-functional gives a metric, as for $d(h,c)=0$ means they phenomenologically approach the same focal point. However, if the target is structural, then $d(h,c)=0$ does not mean $h=c$, even by assumption that $\mathcal{H}=\mathcal{C}$ i.e. concept space and the hypothesis space has same scope. Putting that aside, because we never have access to $c$, the way to interpret, with presumption of $c$ to exist, then $\ell(h,z)=\ell(c,z)$ only guarantees that we settle the model is an equivalence class $h\sim c$ only; this is strengthened if we further consider that $(\mathcal{Z},\mathcal{P})$ imposes a structural proxy $c^{*}$ that can deviate from $c$, and can also admit different structural interpretation outside of class $\mathcal{C}$. Thereby, interpretively, loss-functional space is not metric but pseudometric, when it comes to the target $c$ measure in which the measure comparing to this object simply does not exist. To obtain equality, one typically use quotient space on it, which is a very strong structural addition and assumption, and might, or might not, be guaranteed, though in this direction of admitting quotient decision space is valid. If, however, one approaches the other way, by saying that different hypotheses must be metrically distinguishable, i.e. imposing injectivity on $\ell$, full support on distribution $\mathcal{P}$, and identifiability condition, that the assumption set would be very strong and almost never work in practice. 
+
+\section{Graph theory}
+
+We retain a section explicitly about graph theory, partially because it would be used as a provisional example in the material, specifically in experimental setting. Thereby, we would like to contain several trivializations of knowledge on such structure. 
+
+\begin{definition}[Graph]
+    A \textbf{simple graph} is a pair $(V,E)$, where $V$ is a finite set, and where $E$ is a subset of $\mathcal{P}_{2}(V)$, with $\mathcal{P}_{2}(V)$ is the set of all 2-element subsets of $V$.
+\end{definition}
+
+A quick way to refers to certain elements of the graph is as followed.
+
+\begin{definition}[Notations]
+    Let $G=(V,E)$ be a simple graph. 
+    \begin{enumerate}[itemsep=1pt,topsep=1pt]
+        \item The set $V$ is the vertext set of $G$, denoted $\mathrm{V}(G)$. The element of $V$ are called the \textbf{vertices} (or \textbf{nodes}) of $G$. 
+        \item The set $E$ is called the \textbf{edge set} of $G$, denoted $\mathrm{E}(G)$. The element of $E$ are called the \textbf{edges} of $G$.  We denoted $uv$ for $\{u, v\}$ as connections between $u$ adn $v$.
+    \end{enumerate}
+\end{definition}
+
+Certain properties of such simple graph case follows: 
+
+\begin{definition}[Connectedness]
+    If the two graphs are $G_{1}=(V(G_{1}),E(G_{1}))$ and $G_{2}=(V(G_{2}),E(G_{2}))$ where $V(G_{1})$ and $V(G_{2})$ are disjoint, then their \textbf{union} $G_{1}\cup G_{2}$ is the graph with vertex set $V(G_{1})\cup V(G_{2})$ and edge family $E(G_{1})\cup E(G_{2})$. 
+\end{definition}
+
+\begin{definition}[Adjacency]
+    Two vertices $u,v$ are said to be \textbf{adjacent} to each other if $wv\in E$. $uv$ is then said to \textbf{join} $u$ with $v$. The \textbf{neighbour} of a vertex $v\in V$ is then the set of all $u\in V$ such that $uv\in E$. 
+\end{definition}
+
+\begin{definition}[Graph Isomorphism]
+    Let $G$ and $H$ be two simple graphs. A \textbf{graph isomorphism} (or \textbf{isomorphism}) from $G\to H$ is the bijection $\phi: \mathrm{V}(G)\to \mathrm{V}(H)$ that \textit{preserves edges}, i.e., for any two vertices $u$ and $v$ of $G$, we have \begin{equation}
+        (uv \in \mathrm{E}(G)) \iff (\phi (u)\phi (v) \in \mathrm{E}(H))
+    \end{equation} We say that $G$ and $H$ are isomorphic (denoted $G \cong H$) if there exists a graph isomorphism from $G$ to $H$. 
+\end{definition}
+
+We also list several types of graphs, specifically, the \textbf{subgraph}, null /complete graph, path /cycle graph, Kneser graphs, diagraphs and multigraph (or general graph).\todo[author=Amane,fancyline]{What if, for a general graph, there are \textbf{multiple non-equal edges and connections}, such that each node function more as a small subgraph, or either an itermediate I/O node?} 
+
+\begin{definition}[Subgraph]
+    A subgraph of a graph $X$ is a graph $Y$ such that $\mathrm{V}(Y)\subseteq \mathrm{V}(X)$ and $\mathrm{E}(Y)=\mathrm{E}(X)$. If $\mathrm{V}(Y) = \mathrm{V}(X)$ then $Y$ is a \textit{spanning subgraph} of $X$. A subgraph $Y$ of $X$ is an \textit{induced subgraph} if two vertices of $\mathrm{V}(Y)$ are adjacent in $Y$ if and only if they are adjacent in $X$. 
+\end{definition}
+
+One of the important definition for subgraph, especially for those of recommendation system, and graph construction network, is the notion of \textbf{induced subgraph}. 
+\begin{definition}[Induced subgraph]
+    Let $S\subset V$. The induced subgraph of $G$ on the set $S$ denotes the subgraph \begin{equation}
+        (S, E\cap \mathcal{P}_2 (S))
+    \end{equation}
+    of $G$. In other words, it denotes the subgraph of $G$ whose vertices are the elements of $S$, and whose edges are precisely those edges of $G$ whose both endpoints belong to $S$. 
+\end{definition}
+
+\begin{definition}[Null graph]
+    A graph whose edge-set $E=\varnothing$ is a \textbf{null graph}. we denote the null graph on $n$ vertices by $N_{n}=(V,\varnothing)$. 
+\end{definition}
+
+\begin{definition}[Complete graph]
+    A simple graph $G=(V,E)$ in which each pair of distinct vertices are adjacent is a \textbf{complete} graph. We denote this by $K_{n}$. For graph $K$ with $\mathrm{V}(G)= n$, we have: \begin{equation}
+        V(K_n) = \frac{n(n-1)}{2}
+    \end{equation}
+\end{definition}
+
+\begin{definition}[Path graph]
+    For each $n\in \mathbb{N}$, we define the $n$-th \textbf{path graph} $P_n$ to be the simple graph \begin{equation}
+        P_n = (\{1,2,\dots,n\, \{ i(i+1) \mid 1 \leq i < n \})
+    \end{equation}
+    This graph has $n$ vertices and $n-1$ edges (unless $n=0$)
+\end{definition}
+
+\begin{definition}[Cycle graphs]
+    For each $n>1$, we define the $n$-th \textbf{cycle graph} $C_n$ to be the simple graph \begin{equation}
+        C_n = (\{1,\dots,n\}, \{ i(i+1) \mid 1 \leq i < n \} \cup \{1n\} )
+    \end{equation}
+    This graph has $n$ vertices and $n$ edges, unless $n=1$, then it has only 1 edge. For multigraph, however, the $C_2$ graph can have two edges. 
+\end{definition}
+
+
+\subsection{Algebraic representation}
+The tool of computation is still linear algebra, for any large computational system under the neural network system. Hence, there are several useful way to represent such graph on linear algebraical notation and system. 
+\begin{definition}[Adjacency matrix]
+    Let $G$ be a simple graph with $V(G)=\{1,\dots,n\}$ and $E(G)= \{e_1, \dots, e_m\}$. The adjacency matrix of $G$, denoted $A(G)$, is the $n\times n$ matrix defined as \begin{equation}
+        A_{dj} = A \in \mathbb{R}^{n\times n}: \quad A_{ij} = \begin{cases}
+            1 & v_i v_j \in E, i \neq j \\
+            0 & \text{ otherwise}
+        \end{cases}
+    \end{equation}
+\end{definition}
+
+The modification (somewhat familiar) of the adjacency matrix is by the notion of \textbf{incidence matrix}, which takes into account the case of directed graph.
+\begin{definition}[Incident matrix]
+    Let $G$ be a graph with $\mathrm{V}(G)=\{1,\dots,n\}$ and $\mathrm{E}(G)=\{e_1,\dots,e_m\}$. Suppose each edge $e\in \mathrm{E}(G)$ is an orientation, which is arbitrary but fixed. The (vertex-edge) \textbf{incidence matrix} of $G$, denoted $Q(G)$, is the matrix of size $n\times m$, defined as followed: 
+    \begin{equation}
+        Q(G) \in \mathbb{R}^{n\times m} : \quad Q_{ij} = \begin{cases}
+            1 & (i, e_j)\in G, e_j \text{ originates at } i\\
+            -1 & (i, e_j)\in G, e_j \text{ terminates at } i\\
+            0 & \text{ otherwise (both)}
+        \end{cases}
+    \end{equation}
+    For undirected graph, the matrix is defined as 
+    \begin{equation}
+        Q(G) \in \mathbb{R}^{n\times m} : \quad Q_{ij} = \begin{cases}
+            1 & \exists k, e_j = \{v_i, v_k\}\\
+            0 & \text{ otherwise}
+        \end{cases}
+    \end{equation}
+\end{definition}
+
+For multidirected graph (or multigraph), we use the \textbf{Laplacian matrix} to represent such graph in matrix form. Notice that of the coming definition, the Laplacian matrix does not encode incidences in its matrix, as it is not the main focus of the definition. 
+\begin{definition}[Laplacian matrix]
+    Let $G$ be a graph with $\mathrm{V}(G)=\{1,\dots,n\}$ and $\mathrm{E}(G)=\{e_1,\dots,e_m\}$. The \textbf{Laplacian matrix} of $G$, denoted $L(G)$, is the $n\times n$ matrix defined as followed: 
+    \begin{equation}
+        L(G)\in \mathbb{R}^{n\times m} : L_{ij} = \begin{cases}
+            0 & i \neq j \\
+            deg(i) & i = j
+        \end{cases}
+    \end{equation}
+\end{definition}
+
+The Laplacian matrix and the incidences matrix can be related, with the fixed orientation assumption, by \begin{equation}
+    L(G) = Q(G)Q'(G)
+\end{equation} where $Q'(G)$ is the transpose of $Q$. This identity suggests that the Laplacian might depends on the orientation, although it is evident from the definition that the Laplacian is independent of orientation. 
+
+
+We present more subsidiary theory on graph theory. 
+\begin{theorem}[Handshaking Lemma]
+  In any graph $G$, the sum of all the vertex-degree is an even number. Or, the vertex degree add up to \textit{twice} the number of edges: $$\sum_{v\in V(G)}\mathrm{deg}_{G}(v)= 2\lvert E(G) \rvert $$
+\end{theorem}
+\begin{proof}[Proof by induction]
+  The base case here is $m=0$. The graph with no edge then $\mathrm{deg}(v)=0$. 
+
+Assume that the degree sum formula holds for all $(m-1)$-edge graphs. Let $G$ be a graph with $m\geq 1$ edges, and let $xy$ be any edge of $G$. We can apply the inductive hypothesis to $G-xy$ (the graph we get from \textbf{deleting} $xy$ from $G$), a graph with $m-1$ edges. 
+
+Both $x$ and $y$ have one extra incident edge in $G$ they don't have in $G-xy$ - the edge $xy$ itself. Hence $$\mathrm{deg}_{G}(x)=1+\mathrm{deg}_{G-xy}(x)$$
+and $$\mathrm{deg}_{G}(y)=1+\mathrm{deg}_{G-xy}(y)$$
+For any other vertex $v$, $G-xy$ and $G$ have the same number of edges, so we have $$\mathrm{deg}_{G}(v)=\mathrm{deg}_{G-xy}(v)$$
+Furthermore, $G-xy$ and $G$ have the same set of vertices. So if we add up the vertex degrees in $G-xy$ and $G$, the result is that $$\sum_{v\in V(G)} \mathrm{deg}_{G}(v)= 2+ \sum_{V\in V(G-xy)}\mathrm{deg}_{G-xy}(v)$$
+Applying the inductive hypothesis, we get that the degree sum in $G-xy$ is $2(m-1)$, so the degree sum in $G$ is $2(m-1)+2=2m$. By induction, the degree sum formula holds all graphs.  
+\end{proof}
+
+\subsection{Permutation invariance and equivariance}
+
+In mathematical terms, any function $f$ that takes an adjacency matrix $\mathbf{A}$ as input should ideally satisfy one of the two following properties: 
+\begin{align}
+  f(\mathbf{PAP})^{\top}= f(\mathbf{A})\quad \text{(Permutation Invariances)}\\
+  f(\mathbf{PAP^{\top}}) = \mathbf{P}f(\mathbf{A})\quad \text{(Permutation Equivariance)}
+\end{align}
+where $\mathbf{P}$ is a permutation matrix. Permutation invariance means that the functin does not depend on arbitrary ordering of the rows/coulmns in the adjacency matrix, while permutation equivariance means that the output of $f$ is permuted in a consistent way when we permute the adjacency matrix. 
+
+\subsection{Graph Fourier Transform}
+
+In graph theory, especially for the \textbf{spectral graph theory}, we present an encoding standard, called the \textbf{graph Laplacian}. Then we will focus on the Fourier analysis of such grpah representation, such as the \textit{graph Fourier transform}. For the purpose, however, we believe that the spectral graph theory alongside its analysis can get us to the layered encoding appropriated of analysing the aggregation contour that the graph is taken into. 
+\subsubsection{Graph Laplacian}
+Given the adjacency matrix $A\in \{0,1\}^{n\times n}$ and degree matrix $D\in \mathbb{Z}^{n\times n}$, for a graph $G=(V,E)$, we define the graph Laplacian as the matrix $L$ such that: \begin{equation}
+  L:= D- A
+\end{equation}
+
+Intuitively, it is the analog for the Laplacian operator $\Delta f(x)= \nabla\cdot \nabla f(x)$. In this form, it is quite different from the above Laplacian matrix, but the same idea applies. In this form, it is perhaps better for analysis, though. 
+
+We list several conclusive properties of the Laplacian matrix: 
+\begin{enumerate}[itemsep=1pt,topsep=1pt]
+  \item $L$ is a real symmetric matrix, there by $\lambda_k > 0, \forall \lambda \in \{\lambda_k\}_{k=0}^{N-1}$ with associated orthornomal eigenvectors $\{\varphi_k\}^{N-1}_{k=0}$.
+  \item If $G$ is finite and connected, then \begin{equation}
+    0= \lambda_0 < \lambda_1 < \dots < \lambda_{N-1}
+  \end{equation}
+  \item The spectrum of the Laplacian $\sigma(L)$ is fixed but one's choice of eigenvectors $\{\varphi_k\}^{N-1}_{k=0}$ can vary. Throughout the paper, we assume that the choice are fixed. 
+  \item Let $\Psi$ denote the $N\times N$ matrix where the $k$-th column is precisely the vector $\varphi_k$, then we can easily show that $\varphi_0 = 1/\sqrt{N}$. 
+\end{enumerate}
+
+\subsubsection{Fourier transformation}
+
+Let $G(V,E)$ be a weighted graph, $\mathbf{L}$ be its corresponding graph Laplacian, and $f: V\to \mathbb{R}$ a function defined on the vertices of $G$. The \textbf{Graph Fourier Transform} (GFT) is defined as
+\begin{equation}
+  \mathcal{GF}[f](\lambda_{l}) = \hat{f}(\lambda_{l}) = \langle f, \varphi_{l} \rangle = \sum_{i=1}^{n} f(i) \varphi_{l}(i)
+\end{equation}
+
+The inverse Fourier transform is then given by \begin{equation}
+  f(n) = \sum_{i=0}^{N-1} \hat{f}(\lambda_{l})\varphi_{l}(n) 
+\end{equation}
+
+This also leads it to the graph convolution (used in graph convolutional network) as
+\begin{equation}
+  f * g(n) = \sum_{l=0}^{N-1} \hat{f}(\lambda_{l})\hat{g}(\lambda_l)\varphi_{l}(n)
+\end{equation}
+for $f,g: V\to \mathbb{R}$ as functions on the continuous domain. 

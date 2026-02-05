@@ -465,7 +465,7 @@ Before applying tools from statistical physics to analyze learning dynamics, we 
 
 \textit{Before proceeding, we explicitly enumerate the theoretical machinery required for this research program, along with an honest assessment of the current status of each component. This transparency is essential for maintaining intellectual integrity and guiding future work.}
 
-\begin{table}[htb]
+\begin{table*}[htb]
 \centering
 \footnotesize
 \caption{Theoretical tools required for NESP framework: status and gaps}
@@ -495,7 +495,7 @@ Jamming Transition Analogy & \textcolor{orange!80!black}{Heuristic} & Qualitativ
 Non-Equilibrium Steady State (NESS) & \textcolor{red!70!black}{Framework} & Conceptual framework proposed; rigorous characterization of $P_{\text{NESS}}(W)$ is a \textbf{key open problem}. \\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}
 
 \noindent\textbf{Legend:} \textcolor{green!60!black}{Established} = rigorous mathematical foundation exists; \textcolor{orange!80!black}{Partial/Heuristic} = valid under certain assumptions or used as working approximation; \textcolor{red!70!black}{Conjectured/Open} = central to our framework but not yet rigorously proven.
 
@@ -572,7 +572,7 @@ where each component is specified as follows:
 \begin{itemize}
     \item $\mathcal{A}$ is the \textbf{optimization/training procedure}, producing an iterate sequence $(\theta_t)_{t\ge 0}$. In this paper, we focus primarily on:
     \begin{itemize}
-        \item \textbf{Stochastic Gradient Descent (SGD):} $\theta_{t+1} = \theta_t - \eta \cdot \frac{1}{|\mathcal{B}_t|}\sum_{(x,y)\in\mathcal{B}_t} \nabla_\theta \ell(\theta_t; x,y)$
+        \item \textbf{Stochastic Gradient Descent (SGD):} $$\theta_{t+1} = \theta_t - \eta \cdot \frac{1}{|\mathcal{B}_t|}\sum_{(x,y)\in\mathcal{B}_t} \nabla_\theta \ell(\theta_t; x,y)$$
         \item Variants: SGD with momentum, Adam, AdaGrad, etc.
     \end{itemize}
     \item \textbf{Hyperparameters} associated with $\mathcal{A}$:
@@ -2310,24 +2310,24 @@ Navigating this tension requires what might be called \textit{bilingual fluency}
 
 \subsection{Comprehensive Research Friction Log}\label{sec:friction_log}
 
-\textit{``Vướng mắc là insight.'' This section documents every significant obstacle encountered during the development of this framework, treating each as a potential source of theoretical insight rather than a mere defect to be hidden.}
+\textit{``Problem is insight.'' This section documents every significant obstacle encountered during the development of this framework, treating each as a potential source of theoretical insight rather than a mere defect to be hidden.}
 
 \subsubsection{Category A: Mathematical Rigor Gaps}
 
 \begin{description}
     \item[A1. The $n \to 0$ Replica Limit] \hfill \\
     \textbf{Status:} Unresolved (mathematically non-rigorous) \\
-    \textbf{Vướng mắc:} The analytic continuation from integer $n$ to real $n \to 0$ is not unique. Different continuations give different results. \\
+    \textbf{Problem:} The analytic continuation from integer $n$ to real $n \to 0$ is not unique. Different continuations give different results. \\
     \textbf{Insight potential:} Perhaps the ``correct'' continuation is determined by physical constraints (stability, causality) not yet identified. Alternatively, the replica trick may be an approximation to a deeper structure (e.g., supersymmetric field theory).
     
     \item[A2. Fokker-Planck with State-Dependent Diffusion] \hfill \\
     \textbf{Status:} Analytically intractable in general \\
-    \textbf{Vướng mắc:} When $D(W)$ depends on $W$, the stationary distribution $P_{\text{stat}}(W)$ is not the simple Boltzmann form. Closed-form solutions exist only for 1D or special cases. \\
+    \textbf{Problem:} When $D(W)$ depends on $W$, the stationary distribution $P_{\text{stat}}(W)$ is not the simple Boltzmann form. Closed-form solutions exist only for 1D or special cases. \\
     \textbf{Insight potential:} The deviation from Boltzmann may encode the ``entropic selection'' mechanism. Computing $P_{\text{stat}}$ even approximately would reveal which minima are dynamically favored.
     
     \item[A3. Langevin Discretization Error] \hfill \\
     \textbf{Status:} Known bounds exist, but may not apply to large $\eta$ \\
-    \textbf{Vướng mắc:} Standard SDE theory requires $\eta \to 0$. In practice, $\eta$ is finite and sometimes large. The error accumulation over training is not controlled. \\
+    \textbf{Problem:} Standard SDE theory requires $\eta \to 0$. In practice, $\eta$ is finite and sometimes large. The error accumulation over training is not controlled. \\
     \textbf{Insight potential:} Discrete-time effects may be essential, not corrections. A ``discrete Langevin'' theory might be more appropriate.
 \end{description}
 
@@ -2336,7 +2336,7 @@ Navigating this tension requires what might be called \textit{bilingual fluency}
 \begin{description}
     \item[B1. Temperature vs. Noise Covariance] \hfill \\
     \textbf{Status:} Conceptual mismatch \\
-    \textbf{Vướng mắc:} Physical temperature is a scalar; SGD noise covariance is a matrix. The mapping $T_{\text{eff}} = \eta/B$ loses information about anisotropy. \\
+    \textbf{Problem:} Physical temperature is a scalar; SGD noise covariance is a matrix. The mapping $T_{\text{eff}} = \eta/B$ loses information about anisotropy. \\
     \textbf{Insight potential:} A ``tensor temperature'' or ``temperature field'' $T_{ij}(W)$ may be the correct generalization. This would connect to non-equilibrium thermodynamics literature.
     
     \item[B2. Detailed Balance Violation] \hfill \\

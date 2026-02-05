@@ -29,3 +29,7 @@ statisticalized
 agnosticity
 overclaim
 encodable
+distinguishability
+distinguishment
+injectivity
+iff it

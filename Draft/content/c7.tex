@@ -666,6 +666,129 @@ We note a few problems with both interpolation interpretation and polynomial reg
 
 Aside from it, and aside from the fully-connected case, we have the particular testing scenario that can be expected of the ease of implementation. First, is the mundane implementation that is of gradually increasing degree mismatch. That is, for polynomial of $h_{p}$ and $c_{p}$, one requires only $d_{h}$ and $d_{c}$ to figure out the structure as there will exist exactly $d+1$ with the constant term, terms of which of finite many degrees. The second case is where for $p$ chosen randomly, such that aside from such $p$ entry, then the other degree or nodes of input are simply scattered dependent nodes, linear algebraically. That is, for a uniformly constructed $d$-degree network, choose at random $p$ particular degree to be fixed, while the other of $d-p$ are assigned randomly of belonging to some $p_{i}\in \{p\}$ nodes given the random choice on $p$ above. Linearly algebraically, scattered and dependent nodes then mean for example, node $4$ might use node $35$'s degree, and vice versa (if they were both non-fixed). The dependency structure is deliberately randomized rather than organized. For overparameterized case, we simply design the hypothesis by the following line of justification. For a mapping $\mathbb{R}^{d}\to\mathbb{R}$, the mapping $\mathbb{R}^{d+n}\to \mathbb{R}$ for $n= 1$ requires additional information, since the source provision does not contain information to handle additional $n$ dimensional input. Hence, we design it the following. For the hypothesis $h$, such unit of which does not fit to the original input space, the \textit{internal input space} that $h$ `hypothesize' contains, for the other $n$ entries, $q\leq d$ per unit input. That is, each input of $n$ overparameterized case receives at random, $q$ inputs can be received, for example, $w_{n1}x_{j}+w_{n2}x_{k}$ for $k,j$ specific input numbering. By the simplicity argument, then $q=1$ for the simplest case. However, this creates a skewed polynomial network, of which informally, the provided structural bias or additional information, is the fact that there exists overparameterization. To prevent this, instead, the final case considers the most general structure --- for each unit, each one can take $q$ inputs controlled as hyperparameter of the network, then the set $\{p\}$ of chosen degree influence their degree choice, and is uniform if the sampling process it is not included. 
 
+\subsection{Procedure}
+
+The procedure for making the observation space, i.e. the most important one, will be as followed. Specify finite $|\mathbf{X}|_{\mathbb{E}}$ denotation for admissible value region (if multivariate polynomial) of the observables' intended context coverage. Second, initialize \textbf{random shutdown} choice of the Oracle with arbitrary structure, in which this case we simply use polynomial component. Generate portion of $1$ for the true oracle without shutdown, and introduce a mixture as followed: for $k$ shutdown sequence, more severe than another, assign choice of choosing such data into the final dataset by Poisson distribution on $\lambda^{k}e^{-k}/(k!)$ of arbitrary $\lambda\in\mathbb{R}_{+}$. For fixture, we assume $\lambda=0.2$. Then finally, sample on the generated shutdown corruption, and add intrinsic noise, for $\epsilon_{i\leq m}\sim \mathcal{N}(1,\sigma^{2})$ tuneable for intrinsic noise change, and thus finish the initialization of the observation space.
+
+\clearpage
+
+\section{Multilayer perceptron}
+Neural architecture, and furthermore of neural network, presents an interesting topic of analysis, in which provide a rather rich experimental opportunity for any given admission. As such, we would like to take on testing neural network in a more complex analysis, but with normalized or simplified case basis, for example, analysing the \textit{semantic} and features of the model evolution. Before that can happen, we would like to cover our convention and model intervention. As seen of \cite{cybenko_1989,hornik_1991}, neural network can theoretically capture and represent a very wide class of functional encoding in closed, finite regime, furthermore with even Turing computability (\cite{siegelmann1991turing}). Of such, trainable neural architecture like neural network layering, offer $\mathsf{NP}$-complete or $\exists \mathbb{R}$-complete training complexity, and the perceived power of more depth, layering as seen of \cite{eldan2016power,telgarsky2016benefits}. The question of double descent though, lies in the domain of the problem upon \textit{reaching such approximation goal} instead. This in question, includes computational complexity. If we are to treat that the above presumption on complete training complexity is right, the problem is rather hinging on a dilemma, of which we defer to previous sections on decidability. 
+
+Suppose bias-variance applies, and we do not have double descent in question, thus position ourselves in the stead of \cite{belkin_reconciling_2019} when they first discovered double descent. However, what we would be doing is task admission-free, and consider a finite setting on approximation. Then, for any measure of arbitrary model complexity $\mathcal{M}(\mathcal{N})$ on network $\mathcal{N}$, results from the neural network construction, we create a set of $\{\mathcal{N}_{i}\}$ with  variational complexity. The task is now to see the behaviours of this, from the viewpoint of structural analysis on different construction of network $\mathcal{N}$, and evolutional dynamics. Since there are many ways to construct $\mathcal{M}$, what we would be doing is to connect error decision template to different model complexity measure. The level of changing model complexity would be one-level above training regimen and empirical test generalization. 
+
+\subsection{Experimental details}
+
+We fix the structure of the neural architecture to the typical layered neural network per accordance of our analysis on multilayer perceptron. Thus, for a network $\mathcal{N}_{m,\{n\}}$, specify by $m$ layers of $n_{i}$, $i<m$ number of per-layer nodes (we implicitly assume homogeneity of layer construction, thus variation difference only matters for layer themselves), the construct $\mathcal{N}$ is single-directed, forward-only in operation, and consider modification post-evaluation on training or optimization to be \textit{post-operation} of state transformation. That is, the network itself does not evolute, but is externally modified and hence exists no state nor phase transition structure. We can then proceed with cutoff in the same way of polynomial network, but this time much more better. We classify three specific set of components:
+\begin{enumerate}[topsep=1pt,itemsep=1pt]
+    \item Input components that feeds the system, we denote such special structure or ambiance context as $n_{i}^{\to}$ for `in channel' feed. 
+    \item Structural components of the neuron to be separated into three parts: weighted transceiver $T_{kj}$ of the $j$ neuron unit of layer $k$, mechanistic interpretation $M_{kj}(T_{kj})$ that contains, in the most plain singular form the activation function, and $P_{kj}$ as the \textbf{outer pushout} (i.e. can be said as output) of the neuron component. We admit such modular structure for all components. 
+    \item Ordering of neuronal unit. Here, we fix this to be constructed via \textbf{layer order}, such that there exists the acyclic  graph from layer $L_{1}$ to $L_{2}$ up to $L_{m}$, not taking into account the input channel. There, there exists no cross-component connection between components of the same layer by acyclic  condition, and the order of computation is the same as the directed acyclic  graph - all computation are independent of another in-layer, and proceed only afterward when all layer-specific operations are completed. While constraints might matter, typical multilayer perceptron is \textit{fully-connected}, that is, processed information from $L_{1}$ is received in entirety of every component in $L_{2}$, and so on. A looser condition suggests the usage of $n$th order information transceiver. That is, for a node $N_{kj}(T,M,P)$ of neural unit from layer $k$, then at best connection is guaranteed such that transformation of layer $L_{k-j}$ will be accessible to the of at best $n$th layer processing connection, assuming the network exists sparse connections. Another condition for the entire network is that all connection must be closed, that is if it starts, it must end of the last layer. 
+\end{enumerate}
+Simply said, we decompose the network out on itself into multiple components . About the transceiver concept, we can formalize such insight as followed of a construction diagnosis. 
+\begin{definition}[Order-$n$ transceiver]
+    A neural architecture $\mathcal{N}_{m,\{n\}}$ admits an order $n$ transceiver structure, iff for every neuronal unit $N_{kj}$, there exists a subset of layers
+    \begin{equation}
+        \mathcal{A}_{kj}\subset \{L_{k-1},\dots,L_{k-n}\}
+    \end{equation}
+    such that for all $L_{\ell}\in\mathcal{A}_{kj}$, the output pushouts $P_{\ell,*}$ are admissible inputs to $T_{kj}$, and no admissible inputs originate from $L_{<k-n}$ to be guaranteed on randomized model initialization, as to mean as determined solely by the architectural connectivity, independent of parameter realization under random initialization. Inversely, for a potentially sparsely configured, layer-based network definition, then the \textbf{inverse order $n$} condition is applied for $\mathcal{N}_{m,\{n\}}$ iff it can guarantee that 
+    \begin{equation}
+        \mathcal{A}_{kj}\subset \{L_{1},\dots,L_{n}\}
+    \end{equation}
+    is admissible to arbitrary layer $L_{>n}$. 
+\end{definition}
+The condition at the final end of the neural architecture varies, but usually, approximation requires it to reduce to one. If we are to test multi-to-multi feature mapping, for example, $\mathbb{R}^{q}\to\mathbb{R}^{l}$, this would be helpful, however, the choice of canonical example is such that $l=1$. Order-$n$ transceiver also pushes another structural preference, that is, equipping traffic restriction such that each component only has $g$ channels count to connect to the next layer aside from closure or beginning input sections of the network. Implicitly, this has justification on a kind of model complexity - the \textit{highest admissible channel count}, and enumerative total channel available of the network. That said, it does not mean the network can, or should connect all channels. In fact, we might as well in the future devise a connection-aware optimization scheme, though still external, will gauge network wiring configuration altogether, almost in the sense of inverse-dropout, though it can also be said to be dropout if we impose removal condition. The illustration of the network is shown in Figure~\ref{Fig:perceptron_decom}. 
+\begin{figure}[htb]
+    \centering
+    \resizebox{1.1\textwidth}{!}
+    {
+        \begin{tikzcd}[ampersand replacement=\&]
+	\&\& {T_{11}} \& {M_{11}(T_{11})} \& {P_{11}} \&\& {T_{11}} \& {M_{11}(T_{11})} \& {P_{11}} \&\& \bullet \& {T_{m1}} \& {M_{m2}(T_{m2})} \& {P_{m2}} \\
+	{n_{1}^{\to}} \\
+	{n_{1}^{\to}} \&\& {T_{12}} \& {M_{12}(T_{12})} \& {P_{12}} \&\& {T_{12}} \& {M_{12}(T_{12})} \& {P_{12}} \&\& \bullet \& {T_{m2}} \& {M_{m2}(T_{m2})} \& {P_{m2}} \\
+	{n_{1}^{\to}} \&\&\&\&\&\&\&\&\&\&\&\&\&\&\& {T_{F}} \& {M_{F}(T_{F})} \& {P_{F}} \\
+	\vdots \&\& {T_{13}} \& {M_{13}(T_{13})} \& {P_{13}} \&\& {T_{13}} \& {M_{13}(T_{13})} \& {P_{13}} \&\& \bullet \& {T_{m3}} \& {M_{m3}(T_{m3})} \& {P_{m3}} \\
+	{n_{i}^{\to}} \&\& \vdots \\
+	\&\& {T_{1j}} \& {M_{1j}(T_{1j})} \& {P_{1j}} \&\& {T_{1j}} \& {M_{1j}(T_{1j})} \& {P_{1j}} \&\& \bullet \& {T_{mj}} \& {M_{mj}(T_{mj})} \& {P_{mj}}
+	\arrow[from=1-3, to=1-4]
+	\arrow[from=1-4, to=1-5]
+	\arrow[from=1-5, to=1-7]
+	\arrow[from=1-5, to=3-7]
+	\arrow[from=1-7, to=1-8]
+	\arrow[from=1-8, to=1-9]
+	\arrow["\cdots"{description}, from=1-9, to=1-11]
+	\arrow["\cdots"{description}, from=1-9, to=5-11]
+	\arrow[from=1-11, to=1-12]
+	\arrow[from=1-12, to=1-13]
+	\arrow[from=1-13, to=1-14]
+	\arrow[from=1-14, to=4-16]
+	\arrow[from=2-1, to=1-3]
+	\arrow[from=2-1, to=3-3]
+	\arrow[from=2-1, to=5-3]
+	\arrow[from=2-1, to=7-3]
+	\arrow[from=3-1, to=1-3]
+	\arrow[from=3-1, to=3-3]
+	\arrow[from=3-1, to=5-3]
+	\arrow[from=3-1, to=7-3]
+	\arrow[from=3-3, to=3-4]
+	\arrow[from=3-4, to=3-5]
+	\arrow[from=3-5, to=1-7]
+	\arrow[from=3-5, to=5-7]
+	\arrow[from=3-5, to=7-7]
+	\arrow[from=3-7, to=3-8]
+	\arrow[from=3-8, to=3-9]
+	\arrow["\cdots"{description}, from=3-9, to=3-11]
+	\arrow[from=3-11, to=3-12]
+	\arrow[from=3-12, to=3-13]
+	\arrow[from=3-13, to=3-14]
+	\arrow[from=3-14, to=4-16]
+	\arrow[from=4-1, to=1-3]
+	\arrow[from=4-1, to=3-3]
+	\arrow[from=4-1, to=5-3]
+	\arrow[from=4-1, to=7-3]
+	\arrow[from=4-16, to=4-17]
+	\arrow[from=4-17, to=4-18]
+	\arrow[from=5-3, to=5-4]
+	\arrow[from=5-4, to=5-5]
+	\arrow[from=5-5, to=3-7]
+	\arrow[from=5-7, to=5-8]
+	\arrow[from=5-8, to=5-9]
+	\arrow["\cdots"{description}, from=5-9, to=3-11]
+	\arrow["\cdots"{description}, from=5-9, to=5-11]
+	\arrow[from=5-11, to=5-12]
+	\arrow[from=5-12, to=5-13]
+	\arrow[from=5-13, to=5-14]
+	\arrow[from=5-14, to=4-16]
+	\arrow[from=6-1, to=1-3]
+	\arrow[from=6-1, to=3-3]
+	\arrow[from=6-1, to=5-3]
+	\arrow[from=6-1, to=7-3]
+	\arrow[from=7-3, to=7-4]
+	\arrow[from=7-4, to=7-5]
+	\arrow[from=7-5, to=5-7]
+	\arrow[from=7-5, to=7-7]
+	\arrow[from=7-7, to=7-8]
+	\arrow[from=7-8, to=7-9]
+	\arrow["\cdots"{description}, from=7-9, to=5-11]
+	\arrow["\cdots"{description}, from=7-9, to=7-11]
+	\arrow[from=7-11, to=7-12]
+	\arrow[from=7-12, to=7-13]
+	\arrow[from=7-13, to=7-14]
+	\arrow[from=7-14, to=4-16]
+\end{tikzcd}
+    }
+    \caption{\textbf{Diagrammatic illustration of the decomposed neural architecture}. In case of non-sparsity, all the graph would have to be fully-connected, and the order of the network is $m$. The canonical construction on $l=1$ imposes final compression to $(T_{F},M_{F},P_{F})$, which is then the admissible form used for evaluation of prediction on based input setting.}
+    \label{Fig:perceptron_decom}
+\end{figure}
+That said, for experiment, we have a few initialization setting that can be used. Explicitly, we do not use conjectured structure above of learning behaviours on wiring change, or order complexity. We do it the \textbf{old-fashioned way}, but with component-awareness. So, for now, we provide procedure:
+\begin{definition}[Standard oracle procedure]
+    Construct an oracle that can be admitted of a form, either in full or best approximation of the decomposed neural architecture (component-based distinguishability). Choose finite oracle context semantic by the size of context per choice $n$, specify $|\mathbf{X}|_{\mathbb{E}}\in D$ of the domain of interest (if $n=1$, then $D\subset \mathbb{R}$). Next, \textbf{corrupt} the oracle by explicitly setting up $\xi-1$-scenarios of removing $\{N_{qh}\}_{i\leq k}$ set of neuron components or equivalent approximated representation of the oracle as the \textbf{1st-order corruption}, or corrupting each if not more of $(T,M,P)$ subcomponents, hence $\{(T_{qh},M_{qh},P_{qh})\}_{j \leq k}$ for \textbf{2nd-order corruption}, and intrinsic noisy interference $\epsilon_{rkj}\sim \mathcal{D}$ for $r=\{1,2,3\}$ of the three subcomponents; such can be combined into $\epsilon_{kj}$ of the neuron unit for simplicity. Canonical choice for $\epsilon$ is $\epsilon_{kj}\sim \mathcal{N}(1,\sigma^{2})$. Then, define a Poisson distribution measure $\mathrm{Poisson}(\lambda,k)$. Define a deterministic intensity profile, $\{\lambda_{Z}\geq 0\}$ of gauging the notion of corruption level in this ledger, thus $\lambda_{Z}=a-bZ$ for arbitrary $a,b\in\mathbb{Z}$. Then, sample of respective $\xi$-scenario, the amount of data from each configuration you require, using Poisson, for
+    \begin{equation}
+        n_{i}\sim\mathrm{Poisson}_{\mathcal{S}}(\lambda_{i}), 
+    \end{equation} 
+    from the distribution specified (can be changed, on consideration). After this, we have the total size of the dataset by $N=\sum n_{i}$. For each of the $\xi$-category or corruption model, sample the mixture by counts specified above. Finally, add intrinsic 3rd-order noise to complete the set. The dataset now contains $\xi-1$ scenario on corruption, and $1$ on non-corrupted, noise-only scenario. For fully-corrupted set, change to $\xi$ scenario without direct sampling from the oracle.
+\end{definition}
+From this the setting is deliberately simple. We consider constructing the oracle similar to the procedure, then construct a suitable $(m,n)$-size neural network, first being (1) a family of \textbf{multilayer perceptron}, fully-connected with varying shape and size, and then, (2) a family of non-fully connected neural network, or similar functional approximation model type, with different shape and size. Semantic and structural comparison is then available for analysis from the experimenter side. In sparse or near-sparse connection, initialize as normal and impose no $g$-cap (it is a theorized notion for later expansion on experiment).
 \clearpage
 
 \section{Graph Neural Network (GNN) - \cite{shi2024homophilymodulatesdoubledescent}}

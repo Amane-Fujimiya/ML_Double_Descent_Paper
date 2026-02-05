@@ -1,4 +1,4 @@
-\begin{thebibliography}{310}
+\begin{thebibliography}{322}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -29,6 +29,14 @@ Bridging the gap between practice and theory in deep learning.
   International Conference on Learning Representations.
 \newblock URL \url{https://sites.google.com/view/bgpt-iclr24}.
 \newblock Workshop held on May 11, 2024.
+
+\bibitem[Abrahamsen et~al.(2021)Abrahamsen, Kleist, and
+  Miltzow]{abrahamsen2021existential}
+Mikkel Abrahamsen, Linda Kleist, and Tillmann Miltzow.
+\newblock Training neural networks is {$\exists\mathbb{R}$}-complete.
+\newblock In \emph{Proceedings of NeurIPS 2021}, 2021.
+\newblock URL \url{https://arxiv.org/abs/2102.09798}.
+\newblock arXiv:2102.09798.
 
 \bibitem[Achlioptas()]{achlioptas_stochastic_nodate}
 Panos Achlioptas.
@@ -281,6 +289,11 @@ Dimitri~P. Bertsekas and John~N. Tsitsiklis.
 Christopher~M. Bishop.
 \newblock \emph{Neural Networks for Pattern Recognition}.
 \newblock Oxford University Press, 1995.
+
+\bibitem[Blum and Rivest(1992)]{blum1992training}
+Avrim~L. Blum and Ronald~L. Rivest.
+\newblock Training a 3-node neural network is np-complete.
+\newblock \emph{Neural Networks}, 5\penalty0 (1):\penalty0 117--127, 1992.
 
 \bibitem[Bousquet and Elisseeff(2002)]{bousquet2002stability}
 Olivier Bousquet and Andre Elisseeff.
@@ -624,6 +637,14 @@ George~Casella E.~L.~Lehmann.
 \newblock \doi{10.1007/b98854}.
 \newblock URL \url{http://link.springer.com/10.1007/b98854}.
 
+\bibitem[Eldan and Shamir(2016)]{eldan2016power}
+Ronen Eldan and Ohad Shamir.
+\newblock The power of depth for feedforward neural networks.
+\newblock In \emph{Proceedings of the 29th Annual Conference on Learning Theory
+  (COLT)}, volume~49 of \emph{Proceedings of Machine Learning Research}, pages
+  907--940, 2016.
+\newblock URL \url{https://proceedings.mlr.press/v49/eldan16.html}.
+
 \bibitem[Elliot(2019)]{Elliot2019_DeFinettiPhilosophy}
 C.~Elliot.
 \newblock \emph{On De Finetti’s Philosophy of Probability}.
@@ -770,6 +791,12 @@ Bruce Hajek and Maxim Raginsky.
 \newblock \emph{Statistical Learning Theory}, volume~1.
 \newblock 2021.
 \newblock URL \url{https://maxim.ece.illinois.edu/teaching/SLT/}.
+
+\bibitem[Hamilton(2022)]{GRP_Hamilton}
+William~L. Hamilton.
+\newblock Graph {{Representation Learning}}.
+\newblock \emph{Synthesis Lectures on Artificial Intelligence and Machine
+  Learning}, 14\penalty0 (3):\penalty0 1--159, 2022.
 
 \bibitem[Han et~al.(2022)Han, Papyan, and Donoho]{Han2022NeuralCollapseSurvey}
 X.~Y. Han, Vardan Papyan, and David~L. Donoho.
@@ -1150,6 +1177,10 @@ Ziming Liu, Eric~J. Michaud, and Max Tegmark.
 \newblock Grokking explained: A statistical phenomenon.
 \newblock \emph{arXiv preprint}, 2023.
 
+\bibitem[Lopushanskyy and Shi(2024)]{lopushanskyy2024graphneuralnetworksgraph}
+Dmytro Lopushanskyy and Borun Shi.
+\newblock Graph {{Neural Networks}} on {{Graph Databases}}, 2024.
+
 \bibitem[Lucas(1989)]{lucas1989principles}
 P.~J.~F. Lucas.
 \newblock \emph{Principles of Expert Systems}.
@@ -1468,6 +1499,14 @@ Kenta Oono and Taiji Suzuki.
 \newblock In \emph{International Conference on Learning Representations}, 2020.
 \newblock URL \url{https://openreview.net/forum?id=S1ldO2EFPr}.
 
+\bibitem[Ostaszewska and Zajkowski(2014)]{OstaszewskaZajkowski2014}
+Urszula Ostaszewska and Krzysztof Zajkowski.
+\newblock Cramér transform and t-entropy.
+\newblock \emph{Positivity}, 18\penalty0 (2):\penalty0 347–358, June 2014.
+\newblock ISSN 1572-9281.
+\newblock \doi{10.1007/s11117-013-0247-3}.
+\newblock URL \url{http://dx.doi.org/10.1007/s11117-013-0247-3}.
+
 \bibitem[Ouyang et~al.(2022)Ouyang, Wu, Jiang, Almeida, Wainwright, Mishkin,
   Zhang, Agarwal, Slama, Ray, et~al.]{ouyang2022training}
 Long Ouyang, Jeffrey Wu, Xu~Jiang, Diogo Almeida, Carroll Wainwright, Pamela
@@ -1675,6 +1714,13 @@ Frank Rosenblatt.
   1958{\natexlab{b}}.
 \newblock \doi{10.1037/h0042519}.
 
+\bibitem[Rossi et~al.(2020)Rossi, Chamberlain, Frasca, Eynard, Monti, and
+  Bronstein]{rossi2020temporalgraphnetworksdeep}
+Emanuele Rossi, Ben Chamberlain, Fabrizio Frasca, Davide Eynard, Federico
+  Monti, and Michael Bronstein.
+\newblock Temporal graph networks for deep learning on dynamic graphs, 2020.
+\newblock URL \url{https://arxiv.org/abs/2006.10637}.
+
 \bibitem[Ruder(2017)]{ruder_overview_2017}
 Sebastian Ruder.
 \newblock An overview of gradient descent optimization algorithms, June 2017.
@@ -1856,6 +1902,14 @@ Cheng Shi, Liming Pan, Hong Hu, and Ivan Dokmani\'c.
   convolution networks, 2024.
 \newblock URL \url{https://arxiv.org/abs/2212.13069}.
 
+\bibitem[Siegelmann and Sontag(1991)]{siegelmann1991turing}
+Hava~T. Siegelmann and Eduardo~D. Sontag.
+\newblock Turing computability with neural nets.
+\newblock \emph{Applied Mathematics Letters}, 4\penalty0 (6):\penalty0 77--80,
+  1991.
+\newblock \doi{10.1016/0893-9659(91)90080-F}.
+\newblock URL \url{https://www.sontaglab.org/FTPDIR/aml-turing.pdf}.
+
 \bibitem[Silver et~al.(2016)Silver, Huang, Maddison, Guez, Sifre, van~den
   Driessche, Schrittwieser, Antonoglou, et~al.]{silver2016mastering}
 David Silver, Aja Huang, Chris~J. Maddison, Arthur Guez, Laurent Sifre, George
@@ -1985,6 +2039,18 @@ Roberto Tamassia and Luca Vismara.
   applications}, 1997.
 \newblock URL \url{https://api.semanticscholar.org/CorpusID:5770657}.
 
+\bibitem[Tanis et~al.(2024)Tanis, Giannella, and
+  Mariano]{tanis2024introductiongraphneuralnetworks}
+James~H. Tanis, Chris Giannella, and Adrian~V. Mariano.
+\newblock Introduction to {{Graph Neural Networks}}: {{A Starting Point}} for
+  {{Machine Learning Engineers}}, 2024.
+
+\bibitem[Telgarsky(2016)]{telgarsky2016benefits}
+Matus Telgarsky.
+\newblock Benefits of depth in neural networks.
+\newblock In \emph{Proceedings of COLT 2016}, 2016.
+\newblock URL \url{https://arxiv.org/abs/1602.04485}.
+
 \bibitem[Touvron et~al.(2023{\natexlab{a}})Touvron, Lavril, Izacard, Martinet,
   Lachaux, Lacroix, Rozi{\`e}re, Goyal, Hambro, Azhar,
   et~al.]{touvron2023llama}
@@ -2076,6 +2142,14 @@ Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones,
   (NeurIPS)}, 2017{\natexlab{b}}.
 \newblock URL \url{https://arxiv.org/abs/1706.03762}.
 
+\bibitem[Veli{\v c}kovi{\'c}(2023)]{Veli_kovi__2023}
+Petar Veli{\v c}kovi{\'c}.
+\newblock Everything is connected: {{Graph}} neural networks.
+\newblock \emph{Current Opinion in Structural Biology}, 79:\penalty0 102538,
+  April 2023.
+\newblock ISSN 0959-440X.
+\newblock \doi{10.1016/j.sbi.2023.102538}.
+
 \bibitem[Wainwright and Jordan(2008)]{wainwright_jordan_2008}
 Martin~J. Wainwright and Michael~I. Jordan.
 \newblock Graphical models, exponential families, and variational inference.
@@ -2129,6 +2203,14 @@ Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Fei Xia, Ed~Chi, Quoc~V
 \newblock URL \url{https://arxiv.org/abs/2201.11903}.
 \newblock NeurIPS 2022. Demonstrated how step-by-step reasoning improves LLM
   performance.
+
+\bibitem[Weiss et~al.(2018)Weiss, Goldberg, and Yahav]{weiss2018practical}
+Gail Weiss, Yoav Goldberg, and Eran Yahav.
+\newblock On the practical computational power of finite precision rnns for
+  language recognition.
+\newblock In \emph{Proceedings of ACL (short papers) / arXiv}, 2018.
+\newblock URL \url{https://arxiv.org/abs/1805.04908}.
+\newblock arXiv:1805.04908.
 
 \bibitem[Werbos(1974)]{werbos_1974}
 Paul~J. Werbos.
