@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bcf:controlfile version="3.11" bltxversion="3.20" xmlns:bcf="https://sourceforge.net/projects/biblatex">
+<bcf:controlfile version="3.11" bltxversion="3.21" xmlns:bcf="https://sourceforge.net/projects/biblatex">
   <!-- BIBER OPTIONS -->
   <bcf:options component="biber" type="global">
     <bcf:option type="singlevalued">
@@ -2721,6 +2721,7 @@
     <bcf:option datatype="string">alphaothers</bcf:option>
     <bcf:option datatype="string">sortalphaothers</bcf:option>
     <bcf:option datatype="string">presort</bcf:option>
+    <bcf:option datatype="string">citepagerange</bcf:option>
     <bcf:option datatype="string">texencoding</bcf:option>
     <bcf:option datatype="string">bibencoding</bcf:option>
     <bcf:option datatype="string">sortingtemplatename</bcf:option>
@@ -4985,6 +4986,7 @@
     <bcf:citekey order="2" intorder="1">Vapnik1999-VAPTNO</bcf:citekey>
     <bcf:citekey order="3" intorder="1">6797087</bcf:citekey>
     <bcf:citekey order="4" intorder="1">belkin_reconciling_2019</bcf:citekey>
+    <bcf:citekey order="4" intorder="2">nakkiran_deep_2019</bcf:citekey>
     <bcf:citekey order="5" intorder="1">hopfield1982neural</bcf:citekey>
     <bcf:citekey order="5" intorder="2">amit1985spin</bcf:citekey>
     <bcf:citekey order="5" intorder="3">gardner1988optimal</bcf:citekey>
@@ -5042,57 +5044,43 @@
     <bcf:citekey order="21" intorder="26">cherkassky2024understand</bcf:citekey>
     <bcf:citekey order="21" intorder="27">nakkiran2019datahurtlinearregression</bcf:citekey>
     <bcf:citekey order="22" intorder="1">d_ascoli_triple_2020</bcf:citekey>
-    <bcf:citekey order="23" intorder="1">Sterkenburg_2024</bcf:citekey>
-    <bcf:citekey order="23" intorder="2">Vapnik1999-VAPTNO</bcf:citekey>
-    <bcf:citekey order="23" intorder="3">STL_Hajek_Maxim_2021</bcf:citekey>
-    <bcf:citekey order="24" intorder="1">JMLR:v11:shalev-shwartz10a</bcf:citekey>
-    <bcf:citekey order="25" intorder="1">achlioptas_stochastic_nodate</bcf:citekey>
-    <bcf:citekey order="25" intorder="2">ruder_overview_2017</bcf:citekey>
-    <bcf:citekey order="26" intorder="1">zhang_gradient_2019</bcf:citekey>
-    <bcf:citekey order="27" intorder="1">James2021</bcf:citekey>
-    <bcf:citekey order="28" intorder="1">10.5555/2371238</bcf:citekey>
-    <bcf:citekey order="29" intorder="1">James2021</bcf:citekey>
-    <bcf:citekey order="29" intorder="2">goodfellow2016deep</bcf:citekey>
-    <bcf:citekey order="29" intorder="3">STL_Hajek_Maxim_2021</bcf:citekey>
-    <bcf:citekey order="29" intorder="4">10.5555/2371238</bcf:citekey>
-    <bcf:citekey order="29" intorder="5">10.5555/2621980</bcf:citekey>
-    <bcf:citekey order="30" intorder="1">LehmannCasella_theory_1998</bcf:citekey>
-    <bcf:citekey order="30" intorder="2">liam_statistics_2005</bcf:citekey>
-    <bcf:citekey order="31" intorder="1">6797087</bcf:citekey>
-    <bcf:citekey order="32" intorder="1">6797087</bcf:citekey>
-    <bcf:citekey order="33" intorder="1">6797087</bcf:citekey>
-    <bcf:citekey order="34" intorder="1">brown2024biasvariance</bcf:citekey>
-    <bcf:citekey order="35" intorder="1">adlam2020understandingdoubledescentrequires</bcf:citekey>
-    <bcf:citekey order="36" intorder="1">brown2024biasvariance</bcf:citekey>
-    <bcf:citekey order="36" intorder="2">PfauBregmanDivergence</bcf:citekey>
-    <bcf:citekey order="37" intorder="1">lafon_understanding_2024</bcf:citekey>
-    <bcf:citekey order="38" intorder="1">domingos_unified_aaai_2000</bcf:citekey>
-    <bcf:citekey order="38" intorder="2">domingos_unified_2000</bcf:citekey>
+    <bcf:citekey order="23" intorder="1">Vapnik1999-VAPTNO</bcf:citekey>
+    <bcf:citekey order="23" intorder="2">STL_Hajek_Maxim_2021</bcf:citekey>
+    <bcf:citekey order="24" intorder="1">6797087</bcf:citekey>
+    <bcf:citekey order="25" intorder="1">adlam2020understandingdoubledescentrequires</bcf:citekey>
+    <bcf:citekey order="26" intorder="1">PfauBregmanDivergence</bcf:citekey>
+    <bcf:citekey order="27" intorder="1">belkin_reconciling_2019</bcf:citekey>
+    <bcf:citekey order="27" intorder="2">neal2019biasvariancetradeofftextbooksneed</bcf:citekey>
+    <bcf:citekey order="28" intorder="1">belkin_reconciling_2019</bcf:citekey>
+    <bcf:citekey order="29" intorder="1">belkin_reconciling_2019</bcf:citekey>
+    <bcf:citekey order="30" intorder="1">belkin_reconciling_2019</bcf:citekey>
+    <bcf:citekey order="31" intorder="1">belkin_reconciling_2019</bcf:citekey>
+    <bcf:citekey order="32" intorder="1">10.5555/2371238</bcf:citekey>
+    <bcf:citekey order="32" intorder="2">10.5555/2930837</bcf:citekey>
+    <bcf:citekey order="32" intorder="3">10.5555/2621980</bcf:citekey>
+    <bcf:citekey order="33" intorder="1">nakkiran_deep_2019</bcf:citekey>
+    <bcf:citekey order="34" intorder="1">nakkiran_deep_2019</bcf:citekey>
+    <bcf:citekey order="35" intorder="1">belkin_reconciling_2019</bcf:citekey>
+    <bcf:citekey order="36" intorder="1">advani2017highdimensionaldynamicsgeneralizationerror</bcf:citekey>
+    <bcf:citekey order="37" intorder="1">belkin2018understanddeeplearningneed</bcf:citekey>
+    <bcf:citekey order="38" intorder="1">mei2020generalizationerrorrandomfeatures</bcf:citekey>
     <bcf:citekey order="39" intorder="1">belkin_reconciling_2019</bcf:citekey>
-    <bcf:citekey order="40" intorder="1">belkin_reconciling_2019</bcf:citekey>
-    <bcf:citekey order="41" intorder="1">belkin_reconciling_2019</bcf:citekey>
-    <bcf:citekey order="42" intorder="1">belkin_reconciling_2019</bcf:citekey>
-    <bcf:citekey order="43" intorder="1">10.5555/2371238</bcf:citekey>
-    <bcf:citekey order="43" intorder="2">10.5555/2930837</bcf:citekey>
-    <bcf:citekey order="43" intorder="3">10.5555/2621980</bcf:citekey>
-    <bcf:citekey order="44" intorder="1">nakkiran_deep_2019</bcf:citekey>
-    <bcf:citekey order="45" intorder="1">nakkiran_deep_2019</bcf:citekey>
-    <bcf:citekey order="46" intorder="1">belkin_reconciling_2019</bcf:citekey>
-    <bcf:citekey order="47" intorder="1">advani2017highdimensionaldynamicsgeneralizationerror</bcf:citekey>
-    <bcf:citekey order="48" intorder="1">belkin2018understanddeeplearningneed</bcf:citekey>
-    <bcf:citekey order="49" intorder="1">mei2020generalizationerrorrandomfeatures</bcf:citekey>
-    <bcf:citekey order="50" intorder="1">cohen2021gradient</bcf:citekey>
-    <bcf:citekey order="51" intorder="1">hastie2019surprises</bcf:citekey>
-    <bcf:citekey order="52" intorder="1">mezard1987spin</bcf:citekey>
-    <bcf:citekey order="52" intorder="2">gerace2020generalisation</bcf:citekey>
-    <bcf:citekey order="53" intorder="1">nakkiran2021optimalregularizationmitigatedouble</bcf:citekey>
-    <bcf:citekey order="53" intorder="2">heckel2020early</bcf:citekey>
-    <bcf:citekey order="54" intorder="1">chaudhari2018stochastic</bcf:citekey>
-    <bcf:citekey order="55" intorder="1">geiger2019jamming</bcf:citekey>
-    <bcf:citekey order="56" intorder="1">belkin_reconciling_2019</bcf:citekey>
-    <bcf:citekey order="57" intorder="1">nakkiran_deep_2019</bcf:citekey>
-    <bcf:citekey order="58" intorder="1">nakkiran_deep_2019</bcf:citekey>
-    <bcf:citekey order="59" intorder="1" nocite="1">*</bcf:citekey>
+    <bcf:citekey order="40" intorder="1">nakkiran_deep_2019</bcf:citekey>
+    <bcf:citekey order="41" intorder="1">hastie2019surprises</bcf:citekey>
+    <bcf:citekey order="42" intorder="1">advani2017highdimensionaldynamicsgeneralizationerror</bcf:citekey>
+    <bcf:citekey order="43" intorder="1">mei2020generalizationerrorrandomfeatures</bcf:citekey>
+    <bcf:citekey order="44" intorder="1">gerace2020generalisation</bcf:citekey>
+    <bcf:citekey order="45" intorder="1">hastie2019surprises</bcf:citekey>
+    <bcf:citekey order="46" intorder="1">mezard1987spin</bcf:citekey>
+    <bcf:citekey order="46" intorder="2">gerace2020generalisation</bcf:citekey>
+    <bcf:citekey order="47" intorder="1">nakkiran2021optimalregularizationmitigatedouble</bcf:citekey>
+    <bcf:citekey order="47" intorder="2">heckel2020early</bcf:citekey>
+    <bcf:citekey order="48" intorder="1">belkin_reconciling_2019</bcf:citekey>
+    <bcf:citekey order="49" intorder="1">nakkiran_deep_2019</bcf:citekey>
+    <bcf:citekey order="50" intorder="1">nakkiran_deep_2019</bcf:citekey>
+    <bcf:citekey order="51" intorder="1">mei2020generalizationerrorrandomfeatures</bcf:citekey>
+    <bcf:citekey order="52" intorder="1">cohen2021gradient</bcf:citekey>
+    <bcf:citekey order="53" intorder="1" nocite="1">*</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="cms">

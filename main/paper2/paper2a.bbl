@@ -92,6 +92,7 @@
       \field{labeltitlesource}{author}
       \field{journaltitle}{Lecture note, Stanford's AI}
       \field{title}{Stochastic {Gradient} {Descent} in {Theory} and {Practice}}
+      \true{nocite}
       \verb{file}
       \verb Achlioptas - Stochastic Gradient Descent in Theory and Practice.pdf:C\:\\Users\\Admin\\Zotero\\storage\\7B7AKI5E\\Achlioptas - Stochastic Gradient Descent in Theory and Practice.pdf:application/pdf
       \endverb
@@ -1204,6 +1205,7 @@
       \field{journaltitle}{Transactions on Machine Learning Research}
       \field{title}{Bias/Variance is not the same as Approximation/Estimation}
       \field{year}{2024}
+      \true{nocite}
       \verb{urlraw}
       \verb https://openreview.net/forum?id=4TnFbv16hK
       \endverb
@@ -1405,6 +1407,7 @@
       \field{note}{Analysis of SGD as variational inference and its connection to Fokker-Planck dynamics}
       \field{title}{Stochastic gradient descent performs variational inference, converges to limit cycles for deep networks}
       \field{year}{2018}
+      \true{nocite}
       \verb{urlraw}
       \verb https://arxiv.org/abs/1710.11029
       \endverb
@@ -1661,6 +1664,7 @@
       \field{booktitle}{Proceedings of the 17th International Conference on Machine Learning (ICML-2000)}
       \field{title}{A Unified Bias-Variance Decomposition and its Applications}
       \field{year}{2000}
+      \true{nocite}
       \field{pages}{231\bibrangedash 238}
       \range{pages}{8}
       \verb{urlraw}
@@ -1701,6 +1705,7 @@
       \field{booktitle}{Proceedings of the 17th National Conference on Artificial Intelligence (AAAI-2000)}
       \field{title}{A Unified Bias-Variance Decomposition for Zero-One and Squared Loss}
       \field{year}{2000}
+      \true{nocite}
       \field{pages}{564\bibrangedash 569}
       \range{pages}{6}
       \verb{urlraw}
@@ -1829,6 +1834,7 @@
       \field{urlyear}{2025}
       \field{year}{1998}
       \field{urldateera}{ce}
+      \true{nocite}
       \verb{doi}
       \verb 10.1007/b98854
       \endverb
@@ -2086,6 +2092,7 @@
       \field{title}{Jamming transition as a paradigm to understand the loss landscape of deep neural networks}
       \field{volume}{100}
       \field{year}{2019}
+      \true{nocite}
       \field{pages}{012115}
       \range{pages}{1}
       \verb{urlraw}
@@ -2249,6 +2256,7 @@
       \field{title}{Deep learning}
       \field{volume}{1}
       \field{year}{2016}
+      \true{nocite}
     \endentry
     \entry{gunasekar_woodworth_srebro_2021_mirrorless_mirror_descent}{inproceedings}{}{}
       \name{author}{3}{}{%
@@ -2953,6 +2961,7 @@
       \field{series}{Springer Series in Statistics}
       \field{title}{The Elements of Statistical Learning: Data Mining, Inference, and Prediction}
       \field{year}{2009}
+      \true{nocite}
     \endentry
     \entry{janik2021complexitydeepneuralnetworks}{misc}{}{}
       \name{author}{2}{}{%
@@ -4557,6 +4566,7 @@
       \field{urlyear}{2025}
       \field{year}{2005}
       \field{urldateera}{ce}
+      \true{nocite}
       \verb{urlraw}
       \verb https://sites.stat.columbia.edu/liam/teaching/4107-fall05/
       \endverb
@@ -5006,6 +5016,7 @@
       \field{urlyear}{2025}
       \field{year}{2017}
       \field{urldateera}{ce}
+      \true{nocite}
       \verb{doi}
       \verb 10.48550/arXiv.1609.04747
       \endverb
@@ -5284,6 +5295,7 @@
       \field{title}{Learnability, Stability and Uniform Convergence}
       \field{volume}{11}
       \field{year}{2010}
+      \true{nocite}
       \field{pages}{2635\bibrangedash 2670}
       \range{pages}{36}
       \verb{urlraw}
@@ -5583,6 +5595,7 @@
       \field{title}{Statistical Learning Theory and Occam's Razor: The Core Argument}
       \field{volume}{35}
       \field{year}{2024}
+      \true{nocite}
       \verb{doi}
       \verb 10.1007/s11023-024-09703-y
       \endverb
@@ -6116,6 +6129,7 @@
       \field{urlyear}{2025}
       \field{year}{2019}
       \field{urldateera}{ce}
+      \true{nocite}
       \verb{doi}
       \verb 10.48550/arXiv.1903.03614
       \endverb

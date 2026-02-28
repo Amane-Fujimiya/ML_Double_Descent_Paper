@@ -32,7 +32,7 @@
 
 \begin{document}
 \begin{abstract}
-    The analysis of learning action, machine learning and related practices in the field theoretically has been made by utilizing Computational Learning Theory (CoLT) \cite{10.1145/1968.1972} and Statistical Learning Theory (SLT) \cite{Vapnik1999-VAPTNO}. These two theories, while overlapped, provides a general framework in analysing and justifying learning actions and learning model constructions, aiding in the formation of modern practices. One of the famous insight using such framework is the \textit{bias-variance tradeoff} \cite{6797087}, which states that model complexity and generality inversely affect each other, thus guarantee the need for a safe bracket between them. However, recent literatures, \cite{belkin_reconciling_2019} has indicated the fallout of such dilemma by the new phenomenon called \textit{double descent}, where there exists an interpolation threshold that renders the current statistical justification for bias-variance inconsequential to a given region. Various `anomaly' has also been detected similarly, with varying degree of sophistication and potential.In this paper, we would like to review through progress made in this particular field of research, and the phenomena potential explanations up until now. 
+    Classical statistical learning theory, grounded in Computational Learning Theory (CoLT) \cite{10.1145/1968.1972} and Statistical Learning Theory (SLT) \cite{Vapnik1999-VAPTNO}, predicts a monotonic \textit{bias-variance tradeoff} \cite{6797087} governing model selection: increasing model complexity reduces bias at the cost of increased variance, implying the existence of an optimal complexity. However, modern overparameterized models consistently violate this prediction, exhibiting the \textit{double descent} phenomenon \cite{belkin_reconciling_2019,nakkiran_deep_2019}, where test error first increases then decreases beyond the interpolation threshold. In this paper, we review the theoretical progress on double descent, situating existing explanations from Random Matrix Theory and replica methods within their equilibrium assumptions. We then develop a Non-Equilibrium Statistical Physics (NESP) framework that explains double descent through the interplay between anisotropic SGD noise and loss landscape curvature, analytically demonstrating a curvature-noise coupling $\Sigma(W) \sim H(W)$ in a linear teacher-student model. This coupling drives a dynamical selection mechanism---``survival of the flattest''---providing a physical mechanism for the implicit regularization of stochastic gradient descent.
 \end{abstract}
 
 The modern machine learning landscape is dominated and guaranteed by the foundation of theoretical machine learning, specifically computational learning theory (CoLT) and statistical learning theory (SLT). The theory of machine learning and its modern practice has been developed and researched, of a substantial portion by empirical and heuristic approach, either by advancing new practices, architectures or by try-and-test modification. From its early onset of a regression estimator $\theta(x,y)$ on the linear regression problem, machine learning has developed substantially. Certain model concept with great successes includes regression-classification model, Bayesian modelling, generative learning model, support vector machine, Gaussian processes, and more. Of all such, the more formal and complex model architecture created, is the concept of a \textit{neural network}. With increasingly sophisticated architecture, heuristic approach become popular, the fast-paced advancement of the field comes with new method, new results, new observations, and its far-reaching application which led to even bigger and larger scale deployment, there has been questions about the formation and status of a theoretical ground, a rigorous matter on the side of \textbf{theoretical machine learning}.
@@ -46,322 +46,77 @@ On itself, the phenomena \textit{double descent} has been investigated somewhat 
 
 Further literatures on double descent varies, but fairly new, ever since their discovery articles in \cite{belkin_reconciling_2019} and \cite{nakkiran_deep_2019}. Since then, we have \cite{shi2024homophilymodulatesdoubledescent,schaeffer_double_2023,quetu_can_2023,lafon_understanding_2024,neal2019biasvariancetradeofftextbooksneed,davies_unifying_2023,quetu_can_2023-1,liu2023understandingroleoptimizationdouble,mei2020generalizationerrorrandomfeatures,mei2019generalization,adlam2020understandingdoubledescentrequires,transtrum2025egaddoubledescentexplained,liu2021kernelregressionhighdimensions,allerbo2025changingkerneltrainingleads,pezeshki2021multiscalefeaturelearningdynamics,brellmann2024on,nakkiran2019moredata,mei2019randomfeatures,heckel2020early,nakkiran2020regularization,Belkin_2020,Yang_2024,spiess2023doublesingledescentcausal,nakkiran2021optimalregularizationmitigatedouble,zhang2024manipulatingsparsedoubledescent,cherkassky2024understand,nakkiran2019datahurtlinearregression}. An even more exotic version of double descent, dubbed \textit{triple descent} (or more), is discovered in \cite{d_ascoli_triple_2020}. 
 
-\section{Foundation of learning theory}
+% ============================================================================
+% BACKGROUND AND NOTATION (condensed from former Sections 2--3)
+% ============================================================================
 
-Most of the paper will argue about different features of statistical learning theory (\cite{Sterkenburg_2024,Vapnik1999-VAPTNO,STL_Hajek_Maxim_2021}). It is then imperative to discuss the background setting of such. We are given the observations, or dataset of the form $\mathcal{S}=(\mathcal{X},\mathcal{Y})\subset \mathbb{R}^{n}\times \mathbb{R}^{m}$, of all 2-tuple pairs, assumed to be sampled or observed and governed by a distribution $\mathcal{D}$. 
+\section{Background and Notation}\label{sec:background}
 
-\begin{equation*}
-    \mathcal{S} = \{ (x_1,y_1), (x_2, y_2),\dots(x_n,y_n) \} \subset \mathcal{X}\times \mathcal{Y}
-\end{equation*}
-The dataset is assumed to be i.i.d. sampling according to $\mathcal{D}$, which is unknown by the priori. Hence, we have the first set of assumption. 
-\begin{assumption}
-The observational space is governed by a particular sampling distribution $\mathcal{D}$, for fixed $y$-response according to the concept $c\in \mathcal{C}$. The sampling process is further assumed to hold no further structure, hence is \textit{identically and independently distributed} (i.i.d.). 
-\end{assumption}
+This section fixes notation and recalls the minimal definitions from statistical learning theory (SLT) \cite{Vapnik1999-VAPTNO,STL_Hajek_Maxim_2021} and the bias-variance framework that are required for the analysis in subsequent sections. A more detailed specification of the learning system---including all components mapped to statistical-physics language---is given in Section~\ref{sec:foundational_defs}.
 
-The learning problem is then formulated as followed. Given the machine learning model expressed a hypothesis $h$ of the hypothesis class $\mathcal{H}$, the learning theory aims for creating a procedure to learn either elements of the concept class $\mathcal{C}$ of all concepts $c: \mathcal{X}\to \mathcal{X}$, or the function class $\mathcal{F}$ of all functions $f: \mathcal{X}\to \mathcal{Y}$, which is usually set to $\{0,1\}$ or $[0,1]$. This distinction is trivial, hence, if it is clear, we will talk about the concept class $\mathcal{C}$ only as representative form. The learner $\mathcal{L}(h)$ consider the set of possible hypothesis $\mathcal{H}$, in which might not coincide with $\mathcal{C}$. It receives a partial image of sample $S=(x_{1},\dots,x_{2},\dots,x_n)$ drawn i.i.d. according to $\mathcal{D}$ as well as the label $(c(x_1),\dots,c(x_n))$. This constitutes the dataset $\mathcal{S}$, which are based on specific concept $c\in \mathcal{C}$ for the hypothesis to learn. The task is then to use (or \textit{extract}) meaningful information to select a hypothesis $h_{S}\in \mathcal{H}$ that accurately mimic $c$, with marginal error $\Theta$. The notation $h_{S}$ stands for all hypothesis that can be inferred from the range of the dataset (the first argument, $\mathcal{X}$). 
+\subsection{Learning Setup}
 
-The marginal error $\Theta$ is considered of two parameters, the empirical error $\hat{R}(h)$ and the generalization error $R(h)$. We give the following definition of them. 
+We observe a dataset $\mathcal{S}=\{(x_i,y_i)\}_{i=1}^{n}$ drawn i.i.d.\ from an unknown distribution $\mathcal{D}$ on $\mathcal{X}\times\mathcal{Y}$. A hypothesis class $\mathcal{H}$ contains candidate models $h:\mathcal{X}\to\mathcal{Y}$. Given a loss function $\ell:\mathcal{Y}\times\mathcal{Y}\to\mathbb{R}_{\geq 0}$, we define the two central risk measures.
 
-\begin{definition}[Empirical risk]
-    Given a hypothesis $h\in \mathcal{H}$, a target concept $c\in \mathcal{C}$, and a sample $S=(x_{1},\dots,x_{m})$. For some particular $\epsilon>0$, the \textbf{empirical error} or \textit{empirical risk} of $h$ is defined by\begin{equation}
-        \hat{R}_{S}(h) = \underset{x\in S\sim\mathcal{D}}{\mathbb{P}} [\ell\{h(x),c(x)\}\geq \epsilon] =\frac{1}{m} \sum_{i=1}^{m} \ell\{h(x_i),c(x_i)\}
-    \end{equation}
+\begin{definition}[Empirical and population risk]\label{def:risks}
+For $h\in\mathcal{H}$ and a sample $S=\{(x_i,y_i)\}_{i=1}^m$:
+\begin{align}
+    \hat{R}_{S}(h) &\;=\; \frac{1}{m}\sum_{i=1}^{m}\ell\bigl(h(x_i),\,y_i\bigr)
+        & &\text{(empirical risk),} \label{eq:emp_risk}\\[4pt]
+    R(h) &\;=\; \mathbb{E}_{(x,y)\sim\mathcal{D}}\bigl[\ell\bigl(h(x),\,y\bigr)\bigr]
+        & &\text{(population risk).} \label{eq:pop_risk}
+\end{align}
 \end{definition}
 
-The generalization risk is then defined as the extension of the empirical risk, of which instead of being evaluated on the set $\mathcal{S}$, it is evaluated on arbitrary infinite density sample space. The notation for the risk calculation can also be $R_{\mathcal{S}}$ instead, of which the need is to classify the set of which it is evaluated from. 
+The fundamental gap $R(h)-\hat{R}_S(h)$ is the \textit{generalization gap}: it measures how well performance on the training sample transfers to unseen data.
 
-\begin{definition}[Generalization risk]
-    Given a hypothesis $h\in\mathcal{H}$, a target concept $c\in\mathcal{C}$, and an underlying distribution $\mathcal{D}$ on $\mathcal{X}$. For some particular $\epsilon>0$, the generalization error or \textit{risk} of $h$ is defined by
-    \begin{equation}
-        \begin{split}
-          R(h) 
-          &= \underset{x\sim\mathcal{D}}{\mathbb{P}} [\ell\{h(x),c(x)\}\geq \epsilon]\\
-          &= \underset{x\sim\mathcal{D}}{\mathbb{E}}[\ell\{h(x),c(x)\}]\\ 
-          &= \int_{x\in \mathcal{D}} \ell\{h(x),c(x)\} \: dP(x)
-        \end{split}
-    \end{equation}
-\end{definition}
+\subsection{Optimization Principles}
 
-In essence, the empirical risk measure the hypothesis to observation error, and the generalization risk captures the difference of the hypothesis to the actual concept. Notice that by doing this, we have implicitly assumed that the observations and the concept is not the same thing, under the majority of scenarios. For the observations to be \textit{approximately equal} or sufficiently captures the concept, there then would have to be various criteria to fulfil. 
-For fixed $\mathcal{H}$, for fixed and sufficiently large $\mathcal{S}$, and no observation (data) errors, the empirical risk is the generalization risk. These two measures between $h$ and $c$ constitute the learning problem, which can also be separated into both cases - either empirical learning or generalization learning, one to minimize $\hat{R}(h)$, and one to minimize $R(h)$. Here, we emphasize such hierarchy by defining the generalization goal as the \textbf{nested criteria} for empirical risks minimization. 
-
-\begin{definition}[Empirical learning problem]
-    We present the formal form of the empirical learning. Suppose we have a \textbf{target}, $c\in\mathcal{C}$, where $\mathcal{C}$ is an arbitrary concept class that captures targets of the same type. Suppose we are provided a set of observations $\mathcal{S}$. The problem is to use certain algorithm $\mathcal{A}$ using $\mathcal{S}$, to obtain a hypothesis $h^{*}$ for a fixed $\mathcal{H}$ such that: 
-    \begin{equation}\label{eq:lp1}
-        R(h^{*}) = \min_{h\in\mathcal{H}} \hat{R}(h) = \min_{h\in\mathcal{H}} \underset{x\sim\mathcal{D}, x\in \mathcal{S}}{\mathbb{E}}\:\ell\{h(x),c(x)\}
-    \end{equation} 
-\end{definition}
-
-The generalization best $\bm{h}$ is also called in literature as the \textit{Bayes model}, such that it reduces the Bayes risk that is the infimum of the generalization risk, $R^{*}=\inf_{h\in \mathcal{H}}R(h)$. The hypothesis $h^{*}$ is often called the \textit{empirical best}, for it being the minimal, finite hypothesis of the lowest loss evaluation on the entire observation space $\mathcal{S}$. There exists no certified assumption regarding whether $h^{*}$ aligns with the minimal generalization error.
-
-\begin{definition}[Generalization learning problem]
-    We present the formal form of the generalization learning problem. Suppose we have a \textbf{target}, $c\in\mathcal{C}$, where $\mathcal{C}$ is an arbitrary concept class that captures targets of the same type. Suppose we are provided a set of observations $\mathcal{S}$. Supposed we have an algorithm $\mathcal{A}$ that for fixed hypothesis space $\mathcal{H}$, \eqref{eq:lp1} holds true. The problem is to use certain algorithm $\mathcal{A}'$ such that, under limited availability, to obtain $\bm{h}$, satisfies: \begin{equation}
-        R(\bm{h}) = \min_{h\in \mathcal{H}} R(\bm{h}) \leq \{\epsilon\}, \quad \epsilon > 0 
-    \end{equation}
-    For a set of risk bounds $\epsilon$. If the setting is deterministic, then there exists $\epsilon=0$ accordingly. 
-\end{definition}
-
-Then, we can partially say that generalization problem is an advancement from empirical solution. As such, empirical solution imposes the observed concept, and not the concept itself. This is reflected in modern machine learning landscape, by modelling the concept as distributions, and then using notions such as KL-divergence to measure such relative disparity. 
-
-The process of generalization goal can be, described in certain form as the global optimization objective in which empiricism can obtain from reasonable set of assumptions and conditions. The following algorithmic framing indeed aims to focus and extradite such sense of operational goal. 
-
-\RestyleAlgo{ruled}
-\SetKwComment{Comment}{}{}
-\SetKwBlock{Objective}{Objective}{}
-\begin{algorithm}[htb]
-    \renewcommand{\algorithmcfname}{Optimization problem}
-    \caption{Empirical-generalization learning dynamics (non-proxy)}
-    \KwData{$(x_{i},y_{i})\in\mathcal{S}, \Gamma \supset \mathcal{S}$, objective $\ell(y,f(x))$, $\nabla(\cdot)$ differentiable gradient field on $\ell$.}
-    \KwResult{Expected optimized model to the minimal error on the objective $\ell(\cdot,\cdot)$, dependent on $\mathcal{S}$.}
-    \Begin
-    {
-        $\Gamma\supset \mathcal{S}$, the general set\;
-        $R(\cdot),\hat{R}(\cdot)\gets\ell$ as objective functional\;
-        \For{Fixed $\mathcal{H}$, with $h\in\mathcal{H}$, for $\epsilon > 0$}{
-            Find $h\to \bm{h}'$, using algorithm $\mathcal{A}$ for minimization objective, such that 
-            \begin{equation}
-                \mathcal{A}\left(\min_{h\in\mathcal{H}} \hat{R}_{\mathcal{S}}(h) + R(h)\right) \leq \epsilon 
-            \end{equation}for procedure $\mathcal{A}(\cdot,\cdot)$ of structural constraints.\;
-        }
-    }
-    \Return{Optimized model $h$ on arbitrary objective space $(\ell,\nabla)$.}
-    \label{algo:algo_optim_ideal}
-\end{algorithm}
-
-These two stages of learning procedure comes of as the intrinsic design of machine learning setting. As opposed to interpolation, where empirical learning problem would have to be put into first priority to achieve the best possible point-through model, machine learning leans on approximation more and a separated criterion that is only visible in the learning setting - the fact that we are using $c'$ to extract $c$. This disparity is exactly the \textbf{generalization problem}, of which is then also the goal of machine learning, to approximate the general solution using the observed solution. One then can ask what is the difference between the two notions, and when we can guarantee that both will `converge' to the same point. The process of \textbf{model selection} is then the procedure that will optimize $h\in \mathcal{H}$ to a given target fixture, such as the empirical best. 
-
-One of the major assumption or observation from the point of the hypothesis class, is that the hypothesis cannot know the generalization error. Thereby, the more efficient and often used procedure/algorithm in training, is then the \textit{empirical risk minimization} (ERM) method, minimizing only the empirical risk to the empirical best; then, certain measures to `generalize' this heuristically is apprehended on the hypothesis. The process of model selection is also the place that we get the concept of \textbf{bias-variance tradeoff}, and its longstanding form to be a foundational metric on model selection. 
-
-\subsection{Empirical and structural algorithms}
-
-Suppose that for a concept class $\mathcal{H}$, we can then partition it to $\mathcal{H}=\bigcup_{k\in \mathbb{N}} \mathcal{H}_{k}$ for finite $k$ hypotheses. Assume that they satisfy the uniform convergence (\cite{JMLR:v11:shalev-shwartz10a}), which means in the arbitrary path landscape, one can guarantee $\ell$-reduction, of $m$ samples on $\mathcal{S}$ to:
-
-\begin{equation}
-    \lim_{m\to \infty} \sup_{\mathcal{D}} \underset{S\sim\mathcal{D}^{m}}{\mathbb{E}} \left[ \sup_{h\in\mathcal{H}} [R(h) - R_{S}(h)] \right] = 0
+\begin{definition}[ERM and SRM]\label{def:erm_srm}
+\textbf{Empirical Risk Minimization} (ERM) selects $h_S = \argmin_{h\in\mathcal{H}}\hat{R}_S(h)$.
+\textbf{Structural Risk Minimization} (SRM) adds a complexity penalty:
+\begin{equation}\label{eq:srm}
+    h_S^{\mathrm{reg}} \;=\; \argmin_{h\in\mathcal{H}}\bigl[\hat{R}_S(h)+\lambda\, r(h)\bigr],
 \end{equation}
-
-Then such is said to be possible as a ruling dynamic when for a learning problem, the empirical risks of hypotheses in the hypothesis class converges to their population risk uniformly, with a distribution-independent rate. The result of this is that a problem then can be considered learnable with the ERM rule, for any given characterization. We state the following definition.\footnote{The reason why $r(\cdot)$ is not characterized in this preliminary section, is because of their uncertainty of effect. Hypothetically, $r(\cdot)$ is an additional structure (bias) of which apply a new gradient field in conjunction to the loss gradient field itself. This addition is uncertain of its content and analysis, since it depends on various stochastic dynamics of the model. We reserve from using regularization for now because of such reason.}
-
-\begin{definition}
-    A learning problem is learnable if there exist a learning rule $\mathcal{A}$ and a monotonically decreasing sequence $\epsilon_{cons}(m)$ such that $\epsilon_{cons}(m)\overset{m\to\infty}{\longrightarrow} 0$ and \begin{equation}
-        \forall \mathcal{D} , \quad \underset{S\sim\mathcal{D}^{m}}{\mathbb{E}} \left[F(\mathcal{A}(S))-F^{*}\right] \leq \epsilon_{cons}(m),
-    \end{equation}
-    with $F^{*} = \inf_{h\in\mathcal{H}} R(h)$. A learning rule $\mathcal{A}$ for which this hold is denoted as a universally consistent learning rule. 
+where $r:\mathcal{H}\to\mathbb{R}_{\geq 0}$ is a regularizer (e.g., $r(h)=\|w\|_2^2$ for weight decay) and $\lambda>0$ controls the strength. In this paper, the primary optimization algorithm is \textit{stochastic gradient descent} (SGD) applied to the ERM objective; the implicit regularization induced by SGD noise is a central theme.
 \end{definition}
 
-There are certainly a fundamental class of rule or algorithm $\mathcal{A}$ to resolve this particular uniform convergence of classes. One of the major assumption or observation from the point of the hypothesis class, is that the hypothesis cannot know the generalization error. Thereby, one strategy is the \textit{empirical risk minimization} (ERM) method, minimizing only the empirical risk to the empirical best; then, certain measures to `generalize' this heuristically is apprehended on the hypothesis. 
+\subsection{Bias-Variance Decomposition}
 
-\begin{definition}
-    A rule $\mathcal{A}$ is an ERM (Empirical Risk Minimizer), denoted $\mathcal{A}_{ERM}$ if it minimizes the empirical risk $\hat{R}(h)=(1/m)\sum_{c\in\mathcal{C}}\ell(h,c)$, over the observational space $S$, 
-    \begin{equation}
-        \hat{R}_{S}(\mathcal{A}_{ERM}(S)) = \hat{R}_{S} (h_{S}) = \inf_{h\in\mathcal{H}} \hat{R}_{S}(h) 
-    \end{equation}
-    Hence, the ERM tries to obtain $\mathrm{ERM}(h') = \argmin_{h\in \mathcal{H}} \hat{R}(h)$. 
-\end{definition}
+For a regression problem with squared loss, the expected prediction error admits an exact decomposition \cite{6797087}.
 
-The problem of overfitting still somewhat resides in the setting of the method. Hence, usually, we have an implicit term in addition, called the \textit{regularizer}, of which is as followed. 
-
-\begin{definition}
-    A rule $\mathcal{A}$ is an SRM (Structural Risk Minimizer), denoted $\mathcal{A}_{ERM}$ if it minimizes the empirical risk $\hat{R}(h)=(1/m)\sum_{c\in\mathcal{C}}\ell(h,c)$, over the observational space $S$, 
-    \begin{equation}
-        \hat{R}_{S}(\mathcal{A}_{SRM}(S)) = \hat{R}_{S} (h_{S}) + \lambda r(h)= \inf_{h\in\mathcal{H}} \hat{R}_{S}(h) + \lambda r(h)
-    \end{equation}
-    of the regularizing term $r(\cdot)$. Hence, the SRM tries to obtain $\mathrm{ERM}(h') = \argmin_{h\in \mathcal{H}} \hat{R}(h)$, while taking into consideration a forcing term $r$, usually defined on the model complexity. 
-\end{definition}
-
-Hence, the SRM is inherently stronger than ERM. The regularizer $\lambda r(h)$, in specific case of convex loss landscape and reasonably well-behaved irregularities between domains, and of the structural regularization term $r_{s}(h)=\sum_{i,j}w_{ij}^{2}$ for weights of $ij$ index, then we have that 
-\begin{equation}
-    \mathrm{ERM}\left(\inf_{h\in\mathcal{H}} \hat{R}_{S}(h), \ell\right) \approx o\left(\mathrm{SRM}\left(\inf_{h\in\mathcal{H}} \hat{R}_{S}(h) + \lambda r(h), \ell + \lambda r(h)\right)\right)
+\begin{theorem}[Bias-variance decomposition]\label{thm:bv_decomp}
+Let $f(\cdot\,;\mathcal{D})$ denote a predictor trained on dataset $\mathcal{D}$, and let $y^{*}(x)=\mathbb{E}[y\mid x]$. Then:
+\begin{equation}\label{eq:bv_decomp}
+    \mathbb{E}_{\mathcal{D}}\!\bigl[\mathbb{E}_{x,y}(y-f(x;\mathcal{D}))^2\bigr]
+    \;=\;
+    \underbrace{\mathbb{E}_x\bigl(y^*\!-\mathbb{E}_{\mathcal{D}}[f]\bigr)^{2}}_{\text{bias}^2}
+    \;+\;
+    \underbrace{\mathbb{E}_x\,\mathbb{E}_{\mathcal{D}}\bigl(f-\mathbb{E}_{\mathcal{D}}[f]\bigr)^{2}}_{\text{variance}}
+    \;+\;
+    \underbrace{\mathbb{E}_{x,y}(y-y^*)^2}_{\text{noise}}.
 \end{equation}
-Where the little-$o$ notation is used for saying of the optimization strength per arbitrary time-similar notion of algorithmic evolution. The reason for this change is because of the restriction domain that $\mathrm{SRM}$ indicted on the model optimization landscape. Effectively, we introduce the structural bias $\lambda r(h)$ that forces the morph of the total loss landscape. In well-behaved case, this is usually effective to a point, however in realistic system and pathological cases, such can lead to the $c'$ approximation in $c$-space, just as we introduced in the reformulation of learning system. In this paper, we would like to presume the ERM method in question as the famous \textit{gradient descent}. We refer to \cite{achlioptas_stochastic_nodate,ruder_overview_2017} for general view of the algorithm, and \cite{zhang_gradient_2019} for a source on particularly gradient descent algorithm on deep learning models. 
-
-\subsection{Overfitting and underfitting}
-
-Following the above framework of statistical probabilistic learning theory, one understanding about the concept of underfitting and overfitting (similar to \cite{James2021}) can be reached, using the notion of \textit{partitioning} of observation space. Such work is typically done because of \textbf{practical condition}, in which the following constraints is applied.
-\begin{assumption}\label{assume:cpi_transparency}
-    No knowledge of $c\in\mathcal{C}$ is provided. \footnote{Few points need to be said about this assumption. This assumption represents the \textit{worst-case possible} of a system dynamic. From the perspective of a designer, inherent leakage of information can be provided in the design of a model. In such, case we are operating in the mode of a \textit{resource-constrained, closed} game, in which the model with further assumptions of fixed class, operates on. The problem space itself is inherently large and penalize any additional structural changes. If one is to occur, we usually mention it as \textit{implicit bias}, but another name that would be more fitting would be \textit{structural attractor}, after the notion of gradient attractor in chaotic systems.}
-\end{assumption}
-
-Without such knowledge, $R(h)$ cannot be computed, accordingly. We specify such approach as \textit{heuristic}, as it is only an approximation, and for better definition, we define it as followed. 
-
-\begin{definition}[Heuristic empirical risk]
-  Given a dataset $\mathcal{S}$ of size $m$, supposedly of the concept $c\in \mathcal{C}$, and the hypothesis $h\in \mathcal{H}$, then the \textbf{heuristic empirical risk} take a partitioning $k<m$ with $k/m\geq 1/2$, hence defining the heuristic empirical loss on $k$, denoted $\hat{R}_{k}(h)$. 
-\end{definition}
-
-\begin{definition}[Heuristical generalization risk]
-  Given a dataset $\mathcal{S}$ of size $m$, supposedly of the concept $c\in \mathcal{C}$, and the hypothesis $h\in \mathcal{H}$. Fixed $\hat{R}_{k}(h)$, for the final optimization of algorithm $\mathcal{A}$, then the \textbf{heuristic generalization risk} take the remaining 2-partition of portion $p=k-m$, hence defining the heuristic generalization loss on $p$, denoted $\hat{R}_{p}(h_{\mathcal{A}})$. 
-\end{definition}
-The two heuristic definition however, can be noted to not be equal to the true generalization risk - empirical risk pair in reality. Nevertheless, one can then define overfitting and underfitting in such manner. 
-\begin{definition}[Underfitting]
-  A model $h$ is called \textbf{underfitting} if for a constant $\epsilon > 0$ chosen for the setting, then $\hat{R}_{k}(h_{\mathcal{A}})>\epsilon$, $\hat{R}_{p}(h_{\alpha})> \epsilon$ over the entire observation space. 
-\end{definition}
-Usually, underfitting is defined to be such that test error is smaller than training error partition, however, we do not think that is a good definition. Especially since, at least in this setting, the empirical error under algorithm $\mathcal{A}$ is reduced to the representative smallest error that $\mathcal{A}$ can achieve on that particular model, within particular setting of $h$, then come the heuristic generalization error. Considering also that $k/m\geq 1/2$, that is, at least the training partition is half of the observation set, then only under very specific case will $\hat{R}_{p}(h_{\alpha})$ be smaller than $\hat{R}_{k}(h)$, statistically speaking. Thence this line of thought also reinforces the idea that both of them will be larger than the threshold $\epsilon$. Usually, heuristically, this threshold of error is $0.3$, normalized. Next, we define the notion of overfitting. 
-
-\begin{definition}[Overfitting]
-  A model $h$ is called \textbf{overfitting} if there exists a specific constant $\epsilon>0$ chosen for the setting, such that $\hat{R}_{k}(h)<\epsilon$, $\hat{R}_{p}(h_{\alpha})> \epsilon$ over the entire observation space.
-\end{definition}
-Namely, this mean that the static learning makes the generalization error worse. This draws the analogy of the student - studying explicitly for the past paper tests, yet unaware of the larger margin of questions in the large set of the test paper pool, leading to subpar performance. Similarly, overfitting is theorized to be fitting too fit to the reduced observation space - hence when it comes to the generalization observation space, it fails within such heuristic. The notion works on the mask of the risks, $\hat{R}_{k}$ and $\hat{R}_{p}(h_{\alpha})$. 
-
-In practice, Assumption~\ref{assume:cpi_transparency} means we cannot have $c\in\mathcal{C}$, or its probabilistic interpretation $\mathcal{D}$ such that $x\sim\mathcal{D}$, or in the extreme non-structured case, $(x,y)\sim \mathcal{D}$. In such case, the typical practical fix relies on the partitioning of the available partitioning space, that is, the empirical-generalization proxy. For large enough singleton count of $|\{(X_{k},Y_{k})\}|$, we assume that $\hat{R}_{\mathsf{Gen}}(h)\approx R(h)$. Thus, the algorithm can be stated in a form as Algorithm~\ref{algo:algo_optim_no_c}.
-
-\RestyleAlgo{ruled}
-\SetKwComment{Comment}{}{}
-\SetKwBlock{Objective}{Objective}{}
-\begin{algorithm}[htb]
-    \renewcommand{\algorithmcfname}{Optimization problem}
-    \caption{Empirical-generalization learning dynamics (proxy)}
-    \KwData{$(x_{i},y_{i})\in\mathcal{S}, y_{i}=\{\pm 1\}$, hinge objective $\ell(y,f(x))$, $\nabla(\cdot)$ differentiable gradient field on $\ell$.}
-    \KwResult{Expected optimized model to the minimal error on the objective $\ell(\cdot,\cdot)$, dependent on $\mathcal{S}$.}
-    \Begin
-    {
-        $((X_{1},Y_{1}),\dots)_{n}\gets\mathsf{Partition}_{n}(\mathcal{S})$\;
-        $\{(X_{j},Y_{j})\}\gets \mathsf{Train}$\;
-        $\{(X_{k},Y_{k})\}\gets \mathsf{Gen}$ for $k\ne j$\;
-        \For{Fixed $\mathcal{H}$, with $h\in\mathcal{H}$, for $\epsilon > 0$}{
-            (Optimistically) achieve $h\to \bm{h}'$, using algorithm $\mathcal{A}$ for minimization objective, such that 
-            \begin{equation}
-                \mathcal{A}\left(\min_{h\in\mathcal{H}} \hat{R}_{\mathsf{Train}}(h) + \hat{R}_{\mathsf{Gen}}(h)\right) \leq \epsilon 
-            \end{equation}for procedure $\mathcal{A}(\cdot,\cdot)$ of structural constraints.\;
-        }
-    }
-    \Return{Optimized model $h_{\mathcal{A}}$ on arbitrary objective space $(\ell,\nabla)$.}
-    \label{algo:algo_optim_no_c}
-\end{algorithm}
-The assumption above of the generalization set to the generalization truth error is apparent in the usual system theorem, Theorem~\ref{thm:minimalNeu}.
-\begin{theorem}[\cite{10.5555/2371238}]\label{thm:minimalNeu}
-    For fixed $\mathcal{H}$, for fixed and sufficiently large $\mathcal{S}$, and no observation errors, the empirical risk is the generalization risk: \begin{equation}
-        \underset{\mathcal{S}\sim \mathcal{D}^{m}}{\mathbb{E}}[\hat{R}_{\mathcal{S}}(h)]  = R(h)
-    \end{equation} 
+In compact notation \cite{adlam2020understandingdoubledescentrequires}:
+$\E[\hat{y}(\bfx)-y(\bfx)]^2 = (\E\hat{y}(\bfx)-\E y(\bfx))^2 + \V[\hat{y}(\bfx)] + \V[y(\bfx)]$.
 \end{theorem}
 
-\begin{proof}
-    By linearity of the expectation, and the fact that we assume the sample is given i.i.d., we can write: 
+The decomposition itself is an identity for squared loss (and extends to Bregman divergences \cite{PfauBregmanDivergence}). The \textit{tradeoff} that has historically guided model selection is an additional empirical regularity:
+
+\begin{hypothesis}[Bias-variance tradeoff]\label{thm:bias-variance}
+For a nested sequence of hypothesis classes $\mathcal{H}_1\subset\mathcal{H}_2\subset\cdots$ trained via ERM on data from a fixed distribution, one typically observes
 \begin{equation}
-    \begin{split}
-        \underset{S \sim \mathcal{D}^m}{\mathbb{E}}[\hat{R}_S(h)] 
-        &= \frac{1}{m} \sum_{i=1}^m 
-            \underset{S \sim \mathcal{D}^m}{\mathbb{E}} 
-                    \left[ \mathbbm{1}_{h(x_i) \ne c(x_i)} \right] \\
-        &= \frac{1}{m} \sum_{i=1}^m 
-            \underset{S \sim \mathcal{D}^m}{\mathbb{E}} 
-                \left[ \mathbbm{1}_{h(x) \ne c(x)} \right], \\
-    \end{split}
+    \frac{\partial\,\mathrm{Bias}^2}{\partial d}\leq 0,\qquad
+    \frac{\partial\,\mathrm{Var}}{\partial d}\geq 0
+    \qquad\text{(underparameterized regime),}
 \end{equation}
-for any \( x \) in sample \( S \). Thus, we result in
+where $d$ indexes model complexity. This yields a U-shaped test-error curve with an optimal complexity at the bias-variance sweet spot.
+\end{hypothesis}
 
-\begin{equation}
-    \begin{split}
-        \underset{S \sim \mathcal{D}^m}{\mathbb{E}}[\hat{R}_S(h)] 
-            &= \underset{S \sim \mathcal{D}^m}{\mathbb{E}} 
-            \left[ \mathbbm{1}_{h(x) \ne c(x)} \right] \\
-            &= \underset{x \sim \mathcal{D}}{\mathbb{E}} 
-            \left[ \mathbbm{1}_{h(x) \ne c(x)} \right] \\
-            &= R(h).
-    \end{split}
-\end{equation}
-which yields the desired result. 
-\end{proof}
+\begin{remark}[Scope and failure of the tradeoff]\label{rmk:bv_failure}
+The monotonic tradeoff is \textbf{not a theorem}: it is an empirical regularity that holds for specific model families in the underparameterized regime but \textbf{fails} in the overparameterized regime---precisely where double descent occurs \cite{belkin_reconciling_2019,neal2019biasvariancetradeofftextbooksneed}. This breakdown motivates the remainder of the paper.
+\end{remark}
 
-This theorem can be transferred to a more generalized conjecture, of which fit the generalized notion of the empirical proxy and so on. 
-\begin{conjecture}
-    Supposed $\mathcal{H},\mathcal{C}$ are fixed, for $\mathcal{S}$ is the empirical $c^{*}$ for $c\in \mathcal{C}$ the true concept. Then, for algorithm $\mathcal{A}(\cdot,\cdot)$ enforcing minimization apparatus, and the specific objective on the second argument, we have:
-    \begin{equation}
-        \begin{split}
-            &\underset{j\to\infty,\mathcal{S}_{i}\neq\mathcal{S}_{k}}{\mathcal{A}}\left(\min_{h\in\mathcal{H}} \hat{R}_{\mathsf{Train}}(h) + \hat{R}_{\mathsf{Gen}}(h), [\ell]\right)\\
-            & \quad \quad \approx \mathcal{A}\left(\min_{h\in\mathcal{H}} \hat{R}_{\mathcal{S}}(h) + R(h), [\ell]\right) + \epsilon_{\mathcal{S}}
-        \end{split}
-    \end{equation}
-    For $\mathcal{S}_{i}\neq\mathcal{S}_{j}$ such that there are only distinct samples, $j$ the observation set size, $[\ell]$ the set of structural or empirical objectives enforced on the problem landscape, and $\epsilon_{\mathcal{S}}$ is the empirical minimum that the algorithm result can achieve assuming sufficient `perfect interpolation'. 
-\end{conjecture}
-
-By the end of this section, we would also want to note that we deliberately choose an expression basis of $\mathcal{A}$ via the couple tuplet $(\min, [\ell])$ as a choice for \textit{algorithm-agnostic class} of algorithm satisfies the dynamic only, not just implementations. The algorithm, in certain sense, depends much more on structural assumptions, of which is not accessible via observations but via design, and intrinsic information specified in the observation class itself. This is a requirement for fine-tuning analysis in the long-run, as there exists a myriad of different approaches. 
-
-
-\section{Bias-variance tradeoff}
-
-In classical sources, \cite{James2021,goodfellow2016deep,STL_Hajek_Maxim_2021,10.5555/2371238,10.5555/2621980}, the principle of bias-variance tradeoff is a classical principle used in the categorization of technique called \textit{model selection}. Specifically, this refers to the progress of choosing the best predictor $h^{*}$ that minimize the generalization error that is the main goal of a particular machine learning model, during the process of training and inference. Originally, the theory that bias and variance often come in to conjunction is \textbf{Estimation theory}, of which there exists an estimator $\hat{\theta}$ that use a set of observations, to estimate the concept, or the underlying mechanics of certain system that outputted the observation set, by the \textbf{probabilistic perspective} - that is, it is governed by appearance by an independently and identically distributed process of parameterized probability $\theta\in \Theta$. Here, parameterized means being expressed by a set, often finite, of parameters, by \cite{LehmannCasella_theory_1998,liam_statistics_2005}. It is only when \cite{6797087} introduced it to machine learning that we have an equivalent structure that is similar to bias-variance in machine learning. 
-
-\subsection{Precursor (\cite{6797087})}
-
-The original definition of bias-variance tradeoff by \cite{6797087} is first constructed using the means-square error, which is regarded as a normal measure in the real encoding space. Their approach is to justify bias-variance via decomposition of the loss function $\ell$, for such to find an alternative reasonable form of such loss landscape. Suppose of a regression problem to construct a hypothesis function $f(x)$ from $(x_{1},y_{1},\dots,x_{N},y_{N})$ for the purpose of generalization - that is, predicting unseen variational values for different pair $(x_{j}, \mathord{?})$ such that $\mathord{?}=y_{j}+\epsilon$ for a conceivable implicit error. To be explicit about the relation of this problem, or $f$ on the given data $\mathcal{D}=\{(x_i, y_i)\mid i \leq N\}$, denote $f(x;\mathcal{D})$ instead of $f$, the natural mean-square measure as a predictor is: 
-\begin{equation}
-    \mathcal{M}(f,y) = \mathbb{E} \left[((y-f(x;\mathcal{D})))^{2}\mid x, \mathcal{D}\right] 
-\end{equation} for $\mathbb{E}[\cdot]$ the expectation wrt to a distribution $P$. Decomposing the right-hand side, we have: 
-\begin{equation}
-    \begin{split}
-        \mathcal{M}(f,y) &= \mathbb{E} \left[((y-f(x;\mathcal{D})))^{2}\mid x, \mathcal{D}\right] \\
-        &= \mathbb{E}\left[(y-\mathbb{E}[y\mid x])^{2}\mid x,\mathcal{D}\right] + (f(x;\mathcal{D})-\mathbb{E}[y\mid x])^{2}
-    \end{split}
-\end{equation}
-Here, $\mathbb{E}\left[(y-\mathbb{E}[y\mid x])^{2}\mid x,\mathcal{D}\right]$ does not depend on $\mathcal{D}$, but simply the statistical variance of $y$ given $x$. The term $(f(x;\mathcal{D})-\mathbb{E}[y\mid x])^{2}$ is considered a natural measure of effectiveness on $\mathbb{R}^{n}$ as a singular predictor of $y$. Now, for $\mathbb{E}_{\mathcal{D}}\left[(f(x;\mathcal{D})-\mathbb{E}[y\mid x])^{2}\right]$ which depends on the training set $\mathcal{D}$ in its computation, is decomposed into the form of \textit{bias-variance decomposition} terms, by derivation: 
-\begin{equation}
-    \begin{split}
-        &\mathbb{E}_{\mathcal{D}} \left[(f(x;\mathcal{D})-\mathbb{E}[y\mid x])^{2}\right] \\
-        &\quad \quad = \underbrace{\left\{ \mathbb{E}_{\mathcal{D}}[f(x;\mathcal{D})] - \mathbb{E}[y\mid x] \right\}^{2}}_{\text{bias term}} \\
-        &\quad\quad + \underbrace{\mathbb{E}_{\mathcal{D}} \left\{(f(x;\mathcal{D})- \mathbb{E}_{\mathcal{D}}[f(x;\mathcal{D})])^{2}\right\}}_{\text{variance term}}
-    \end{split}
-\end{equation}
-
-We summarize this in the following statement. 
-
-\begin{theorem}[Bias-variance decomposition]
-    Suppose the model $f(x;\mathcal{D})$ for the data $\mathcal{D}=(x_i, y_i)$ and its parameter $x$ is defined. For $y_{i}$ of the target concept's responses $y$, and consider a regression problem with the loss measure $\mathcal{M}(f,y)$ of mean squared risk, the following statement is true: \begin{equation}
-        \begin{split}
-            \mathbb{E}\big[\mathcal{M}(f,y)\big] &= \mathcal{B}(f,y) + \mathcal{V}(f,y) \\
-            &+ \mathbb{E}\Big[\mathbb{E} \left[((y-f(x;\mathcal{D})))^{2}\mid x, \mathcal{D}\right]\Big]
-        \end{split}
-    \end{equation}
-    for $\mathbb{E}[\:\cdot\mid x, \mathcal{D}]$ any expression with dependencies on $x$ and $\mathcal{D}$. The bias and variance term is subsequently expressed by 
-    \begin{align}
-        \mathcal{B}(f,y) &= \underbrace{\left\{ \mathbb{E}_{\mathcal{D}}[f(x;\mathcal{D})] - \mathbb{E}[y\mid x] \right\}^{2}}_{\text{bias }}, \\
-        \mathcal{V}(f,y) &=\underbrace{\mathbb{E}_{\mathcal{D}} \left\{(f(x;\mathcal{D})- \mathbb{E}_{\mathcal{D}}[f(x;\mathcal{D})])^{2}\right\}}_{\text{variance}}
-    \end{align}
-\end{theorem}
-
-%\begin{figure}[htb]
-%  \includegraphics[width=0.7\textwidth]{error_decomposition.png}
-%  \caption{{\small \textbf{Decomposition of the error term into 3 parts}. Respectively, the irreducible error $\mathbb%{V}[y(\mathbf{x})]$, the variance (blue) and the bias (dark yellow). All of them are assumed to take up 100\% of the %error observed in such composition. The proportion is included using the three coefficient $\lambda_{\epsilon},%\lambda_{V},\lambda_{B}$ where $\lambda_{\epsilon}+\lambda_{V}+\lambda_{B}=1$.}}
-%\end{figure}
-
-The above decomposition principle is often expressed into a form where there exists the intrinsic noise \cite{brown2024biasvariance}: 
-\begin{equation}
-    \begin{split}
-        \mathbb{E}_D \left[ \mathbb{E}_{xy} \left( y - \hat{f}(x) \right)^2 \right]
-        &= 
-         \mathbb{E}_x \left[ \left( y^* - \mathbb{E}_D[\hat{f}(x)] \right)^2 \right]\\
-        &+ \mathbb{E}_x \left[ \mathbb{E}_D \left( \hat{f}(x) - \mathbb{E}_D[\hat{f}(x)] \right)^2 \right] \\
-        &+ \mathbb{E}_{xy} \left[ \left( y - y^* \right)^2 \right]
-    \end{split}
-    \end{equation}
-In all, almost all representation of bias-variance decomposition are the same. For simplicity of notation, we adopt the similar form in the standard case of the paper \cite{adlam2020understandingdoubledescentrequires}: 
-\begin{equation}
-    \E \qa{\hat{y}(\bfx)-y(\bfx)}^2 = \pa{\E\hat{y}(\bfx) - \E y(\bfx)}^2 + \V\qa{\hat{y}(\bfx)} + \V\q{y(\bfx)}
-\end{equation}
-A main common theme of criticism toward bias-variance tradeoff is the fact that the decomposition is much more general, and intrinsic for the class of \textit{mean squared loss}. However, when considering the naturalness of an error measure and then its direct applicant, mean square error on real space of sufficient support and measure comes of as a very natural choice of an error measure, at least in consideration of the regression setting; for that, we then can also define classification as another top-layer above a regression's similar real continuous space, i.e. a decision layer. Furthermore, it can also be shown \cite{brown2024biasvariance,PfauBregmanDivergence} that it also holds for the class of Bregman divergence measure. 
-
-What does the decomposition say about model selection principle in general? In general, bias-variance is typically presented of its decomposition only, and the asymptotic prediction of its behaviours. In fact, one of the reason that it became the rule-of-thumb for ML practitioner, as well as generally statistical learning (\cite{lafon_understanding_2024} provides a quite rigorous treatment of bias-variance tradeoff in the section on statistical learning theory) solidify the trade-off as a particular model selection principle. Generally, this tradeoff can be summarized as followed: 
-\begin{theorem}[Bias-variance tradeoff]\label{thm:bias-variance}
-    For the expected loss of any given hypothesis $h$, the bias $\mathcal{B}(f,y)$ and variance $\mathcal{V}(f,y)$ is inversely proportional, that is, $\mathcal{B}(f,y)\propto \lambda^{-1} \mathcal{V}(f,y)$ for some proportionality $\lambda$ that may or may not be constant. In the most general case possible, $\lambda = -1$ on the entire error range. 
-\end{theorem}
-
-The tradeoff is then of inverse proportionality. Indeed, statistically, we have such tradeoff on a statistical framework in a more concrete sense. For the bias to increase, variance will increase, of which the criterion is inverse - we would like to have more bias but lower variance, and vice versa, according to such theory.
-
-\subsection{Generalized decomposition}
-
-According to \cite{domingos_unified_aaai_2000,domingos_unified_2000}, the bias-variance decomposition can usually be treated as being controlled by three factor error, with their respective coefficients $\lambda=(\lambda_{1},\lambda_{2},\lambda_{3})$ for such: 
-    \noindent 
-    \begin{equation*}
-        \begin{split}
-            &\mathbb{E}_{\mathcal{D}} \left[d((f,\mathbb{E}[y\mid x])\right] \\
-            & \quad = \lambda_{1} \mathrm{Bias}(f,y) + \lambda_{2}\mathrm{Var}(f,y)+ \lambda_{3}\epsilon(\mathcal{D})\\ 
-            & \quad = \lambda_{1}\underbrace{\left\{ \mathbb{E}_{\mathcal{D}}[f(x;\mathcal{D})] , \mathbb{E}[y\mid x] \right\}}_{\text{bias term}} \\
-            &\quad\quad +\lambda_{2} \underbrace{\mathbb{E}_{\mathcal{D}} \left\{(f(x;\mathcal{D}), \mathbb{E}_{\mathcal{D}}[f(x;\mathcal{D})])\right\}}_{\text{variance term}} \\
-            &\quad\quad +\underbrace{\lambda_{3}\epsilon}_{\text{irreducible error}}
-        \end{split}
-        \end{equation*}
-where $\epsilon(\mathcal{D})$ is the irreducible error of the system, depends (theoretically) on the intrinsic imperfection of the dataset $\mathcal{D}$. This method of which the bias-variance-irreducible error are `fit' into the total error by three coefficients $\lambda_{1},\lambda_{2},\lambda_{3}$ instead. This does not only scale up the B-V-IE triplet, but also leaves out the inexplainable gap between the scaling, and the actual normal measure. 
-
-\section{Double descent}
+\section{Double descent}\label{sec:double_descent}
 
 Nevertheless, of bias-variance and the analogous statistical learning theory concept, the target is the same. It is the dilemma of which is presented in \textbf{Occam's razor}, for choosing the sufficient model of good complexity, or bias, for tradeoff of its generalization ability, or variance. Then there must exist a sweet spot between the axis of bias and variance, since they are as exhibited above inversely proportional to each other. However, double descent seemingly broke the status quo, and insists on an interesting phenomenon - under the same setting, if we `crank' the complexity high enough, we will then reach a point then called the \textbf{interpolation threshold}, such that the trend reverse and the error rate, instead of being theorized to go up, goes down to a certain line of lower bound. 
 
@@ -435,35 +190,43 @@ The behaviour itself has been particularly investigated, in certain settings. Fo
 
 The fact that double descent is not well-defined itself is a problem on its own. To the best of our knowledge, there has been no effective definition or given description that outlines specifically how double descent can be structured. Instability in reproducing experiments and the effective range of the phenomena remains a question on its own. 
 
+\subsection{Comparative Summary of Key Results}
 
+Table~\ref{tab:dd_comparison} summarises the principal contributions on double descent, comparing model class, theoretical framework, the type of double descent observed, and key findings.
 
-% ... (Tiếp theo sau phần Double Descent trước đó) ...
+\begin{table*}[htb]
+\centering
+\footnotesize
+\caption{Comparison of key double descent results.}
+\label{tab:dd_comparison}
+\begin{tabular}{@{}p{3.2cm}p{2.8cm}p{2.8cm}p{1.8cm}p{4cm}@{}}
+\toprule
+\textbf{Reference} & \textbf{Model Class} & \textbf{Framework} & \textbf{DD Type} & \textbf{Key Finding} \\
+\midrule
+Belkin et~al.\ \cite{belkin_reconciling_2019} & Kernel methods, RF, DNNs & Empirical & Model-wise & First unified identification of DD across model families \\
+\addlinespace[2pt]
+Nakkiran et~al.\ \cite{nakkiran_deep_2019} & ResNet, Transformer, CNNs & Empirical (EMC) & Model / Epoch / Sample & Epoch-wise DD; effective model complexity framework \\
+\addlinespace[2pt]
+Hastie et~al.\ \cite{hastie2019surprises} & Ridgeless least squares & RMT (M-P law) & Model-wise & Exact asymptotic risk; peak at $\gamma=1$ \\
+\addlinespace[2pt]
+Advani \& Saxe \cite{advani2017highdimensionaldynamicsgeneralizationerror} & Two-layer linear nets & Statistical physics & Model-wise & Generalization error in high-dim; precursor to DD observation \\
+\addlinespace[2pt]
+Mei \& Montanari \cite{mei2020generalizationerrorrandomfeatures} & Random features & Replica / RMT & Model-wise & Precise asymptotics for RF regression; DD at interpolation \\
+\addlinespace[2pt]
+Gerace et~al.\ \cite{gerace2020generalisation} & RF / Generalized linear & Replica theory & Model-wise & Spin glass formulation; phase transition at threshold \\
+\addlinespace[2pt]
+\textbf{This work} & Linear teacher-student & NESP (Langevin / F-P) & Model / Epoch & Curvature-noise coupling as dynamical mechanism \\
+\bottomrule
+\end{tabular}
+\end{table*}
 
-% ============================================================================
-% CHAPTER: FOUNDATIONAL DEFINITIONS FOR STATISTICAL PHYSICS OF LEARNING
-% ============================================================================
-% [Author's Note: This section addresses the fundamental requirement of GROUNDING
-% all physical and mathematical concepts used in subsequent analysis. Each concept
-% is defined formally, its components explained, and its physical/ML interpretation
-% justified. This follows the principle: "Don't just describe, DEFINE and ARGUE."]
-% ============================================================================
-
-\section{Foundational Definitions: Grounding Physical Concepts in Learning Theory}
+\section{Foundational Definitions: Grounding Physical Concepts in Learning Theory}\label{sec:foundational_defs}
 
 Before applying tools from statistical physics to analyze learning dynamics, we must establish a rigorous foundation. This section provides formal definitions for key concepts, explains the mathematical components, and---critically---justifies \textit{why} these concepts are appropriate for understanding machine learning systems.
 
-% ============================================================================
-% AUTHOR'S NOTE: THEORETICAL REQUIREMENTS AND RESEARCH GAPS
-% ============================================================================
-% [The following subsection is intentionally placed at the beginning to provide
-% transparency about what theoretical tools we require, what we have rigorously
-% established, and where gaps remain. This follows the "Scientific Humility"
-% principle: acknowledge what we don't know as clearly as what we do know.]
-% ============================================================================
+\subsection{Theoretical Framework: Tools and Status}
 
-\subsection*{Theoretical Requirements and Current Gaps (Author's Note)}
-
-\textit{Before proceeding, we explicitly enumerate the theoretical machinery required for this research program, along with an honest assessment of the current status of each component. This transparency is essential for maintaining intellectual integrity and guiding future work.}
+Table~\ref{tab:theoretical_requirements} enumerates the theoretical tools required for the NESP framework, together with an honest assessment of their current status.
 
 \begin{table*}[htb]
 \centering
@@ -474,9 +237,9 @@ Before applying tools from statistical physics to analyze learning dynamics, we 
 \toprule
 \textbf{Theoretical Tool} & \textbf{Status} & \textbf{Notes / Gaps} \\
 \midrule
-Statistical Learning Theory (SLT) & \textcolor{green!60!black}{Established} & Classical framework; reviewed in Section 2. VC-dimension, Rademacher complexity well-defined. \\
+Statistical Learning Theory (SLT) & \textcolor{green!60!black}{Established} & Classical framework; reviewed in Section~\ref{sec:background}. VC-dimension, Rademacher complexity well-defined. \\
 \addlinespace[2pt]
-Bias-Variance Decomposition & \textcolor{green!60!black}{Established} & Valid for MSE loss and Bregman divergences; Section 3. \\
+Bias-Variance Decomposition & \textcolor{green!60!black}{Established} & Valid for MSE loss and Bregman divergences; Section~\ref{sec:background}. \\
 \addlinespace[2pt]
 Langevin/SDE Approximation of SGD & \textcolor{orange!80!black}{Partial} & Valid for small $\eta$, large $B$. Discretization effects and non-Gaussian noise require further analysis. \\
 \addlinespace[2pt]
@@ -499,23 +262,7 @@ Non-Equilibrium Steady State (NESS) & \textcolor{red!70!black}{Framework} & Conc
 
 \noindent\textbf{Legend:} \textcolor{green!60!black}{Established} = rigorous mathematical foundation exists; \textcolor{orange!80!black}{Partial/Heuristic} = valid under certain assumptions or used as working approximation; \textcolor{red!70!black}{Conjectured/Open} = central to our framework but not yet rigorously proven.
 
-\begin{remark}[Research Philosophy]
-The gaps identified above are not defects to be hidden but \textbf{research frontiers} to be explored. Each ``red'' item represents a potential contribution. The value of this framework lies not in having all answers, but in asking the right questions and providing a coherent language in which progress can be made.
-\end{remark}
-
-\begin{remark}[Methodological stance: scientific humility]\label{rem:scientific_humility}
-Throughout this chapter, our goal is not to ``prove'' that deep learning \emph{is} a spin glass, but to construct a translation layer that is \emph{consistent with} what we can rigorously define on the learning side. When a step relies on an approximation (e.g., Langevin limits, equilibrium assumptions, replica calculations), we state it as such and treat the resulting predictions as \textit{testable hypotheses} rather than final verdicts. In this spirit, points of friction (missing assumptions, non-rigorous limits, empirical instabilities) are not merely defects to hide, but may indicate where a new theory is needed.
-\end{remark}
-
-% ============================================================================
-% SECTION: THE MACHINE LEARNING SYSTEM - COMPLETE SPECIFICATION
-% ============================================================================
-% [Author's Note: This section responds to the requirement of specifying the
-% "machine learning system" BEFORE introducing statistical physics language.
-% We enumerate ALL components of the learning system in its native form,
-% without any physics interpretation. This is the "honest starting point."
-% Only after this complete specification do we introduce the physical analogies.]
-% ============================================================================
+Each ``red'' item in the table represents a research frontier whose resolution would constitute a significant contribution. Our methodological stance is one of \textbf{scientific humility}: when a step relies on an approximation (e.g., Langevin limits, equilibrium assumptions, replica calculations), we state it as such and treat the resulting predictions as \textit{testable hypotheses} rather than final verdicts.
 
 \subsection{A Minimal Machine Learning \textit{System} (Pre-Physics Setting)}\label{sec:ml_system_pre_physics}
 
@@ -1082,99 +829,7 @@ We have now established the formal definitions and physical justifications for t
     \item \textbf{Jamming transition} (Definition~\ref{def:jamming_nn}): The interpolation threshold as a phase transition between under-constrained and over-constrained regimes.
 \end{enumerate}
 
-With these foundations in place, we now turn to reviewing how equilibrium theories (RMT, Replica) explain double descent in linear models, before developing the non-equilibrium framework that addresses deep networks.
-
-% ============================================================================
-% SECTION: RESEARCH FRICTION POINTS - DOCUMENTING VƯỚNG MẮC AS INSIGHT
-% ============================================================================
-% [Author's Philosophy: Following the principle that "vướng mắc là insight",
-% we explicitly document the points of theoretical friction. These are not
-% weaknesses to hide but research opportunities to embrace. Each friction
-% point is a place where current theory breaks down and new theory is needed.]
-% ============================================================================
-
-\subsection{Research Friction Points: Where Theory Meets Its Limits}\label{sec:friction_points}
-
-\textit{In the spirit of scientific humility, we document the ``friction points'' where our theoretical machinery encounters resistance. These are not failures but \textbf{signposts} indicating where deeper understanding is needed.}
-
-\subsubsection{Friction Point 1: The Langevin Approximation Breaks Down}
-
-\textbf{The Problem:} The continuous-time Langevin equation (Definition~\ref{def:langevin_sgd}) is derived under the assumption that the learning rate $\eta$ is small. However, in practice:
-\begin{itemize}
-    \item Large learning rates are often used, especially in early training.
-    \item Learning rate schedules (warmup, decay) violate the constant-$\eta$ assumption.
-    \item The discretization error $O(\eta^2)$ may accumulate over millions of steps.
-\end{itemize}
-
-\textbf{The Insight:} The breakdown of Langevin suggests that \textit{discrete-time effects} may be essential to understanding SGD. Recent work on ``edge of stability'' training \cite{cohen2021gradient} shows that large learning rates induce qualitatively different dynamics (oscillation, catapulting) not captured by continuous diffusion.
-
-\textbf{Open Question:} Can we develop a \textbf{discrete-time statistical mechanics} that captures these effects? What is the ``Hamiltonian'' for discrete SGD?
-
-\subsubsection{Friction Point 2: The Replica Trick's Mathematical Fragility}
-
-\textbf{The Problem:} The replica identity (Eq.~\eqref{eq:replica_identity}) involves:
-\begin{enumerate}
-    \item Computing $\mathbb{E}[Z^n]$ for integer $n$.
-    \item Analytically continuing to real $n$.
-    \item Taking the limit $n \to 0$.
-\end{enumerate}
-
-Each step is mathematically problematic:
-\begin{itemize}
-    \item \textbf{Analytic continuation:} There are infinitely many functions that agree on integers but differ on the reals. Which continuation is ``correct''?
-    \item \textbf{The $n \to 0$ limit:} What does it mean to have ``zero replicas''? The physical interpretation is obscure.
-    \item \textbf{Replica symmetry breaking (RSB):} In some systems (e.g., Sherrington-Kirkpatrick spin glass), the ``obvious'' symmetric ansatz gives wrong results. One must postulate a hierarchy of symmetry breaking whose physical origin is debated.
-\end{itemize}
-
-\textbf{The Insight:} The replica trick \textit{works empirically} despite lacking rigorous justification. This suggests either:
-\begin{enumerate}
-    \item There exists a deeper mathematical structure we have not yet identified.
-    \item The agreement with experiment is a ``lucky accident'' that may fail in edge cases.
-\end{enumerate}
-
-\textbf{Research Direction:} Alternative methods (cavity method, interpolation techniques, supersymmetric approach) can sometimes verify replica results rigorously. A systematic comparison in the ML context is needed.
-
-\subsubsection{Friction Point 3: The Temperature Analogy's Limits}
-
-\textbf{The Problem:} We defined $T_{\text{eff}} = \eta/B$ as the ``effective temperature'' (Definition~\ref{def:effective_temp}). But this analogy has limits:
-\begin{itemize}
-    \item \textbf{No detailed balance:} In equilibrium thermodynamics, $T$ determines the Boltzmann distribution via detailed balance. SGD generally violates detailed balance.
-    \item \textbf{Direction-dependent temperature:} The noise covariance $\Sigma(W)$ is a matrix, not a scalar. Different directions in weight space experience different ``temperatures.''
-    \item \textbf{Temperature depends on position:} $\Sigma(W)$ varies across weight space, so the ``temperature'' is a field, not a constant.
-\end{itemize}
-
-\textbf{The Insight:} The scalar temperature $T_{\text{eff}}$ is a \textbf{zeroth-order approximation}. The full physics requires treating the diffusion tensor $D(W) = (\eta/B) \Sigma(W)$ as the fundamental object. This is precisely what our NESP framework attempts.
-
-\textbf{Open Question:} Is there a well-defined ``temperature field'' $T(W)$ that captures the local noise intensity? If so, how does it relate to generalization?
-
-\subsubsection{Friction Point 4: The Gap Between Linear and Nonlinear}
-
-\textbf{The Problem:} Our toy model (Section~\ref{sec:toy_model}) is linear. Real neural networks use nonlinear activations (ReLU, sigmoid, etc.). The gap is substantial:
-\begin{itemize}
-    \item \textbf{Hessian structure:} In linear models, the Hessian is constant or slowly varying. In ReLU networks, the Hessian is \textit{piecewise constant} with discontinuities at activation boundaries.
-    \item \textbf{Loss landscape topology:} Linear models have a single connected basin (or manifold) of minima. Nonlinear models may have exponentially many disconnected basins.
-    \item \textbf{Feature learning:} Linear models cannot learn features---the ``representation'' is fixed. Nonlinear networks fundamentally change what they compute during training.
-\end{itemize}
-
-\textbf{The Insight:} The linear model is the \textbf{hydrogen atom} of learning theory---solvable but not representative. The challenge is to identify which properties (e.g., curvature-noise coupling) are \textit{universal} versus \textit{model-specific}.
-
-\textbf{Research Direction:} A systematic ``ladder of models'' from linear $\to$ random features $\to$ shallow ReLU $\to$ deep ReLU would reveal which phenomena persist and which disappear.
-
-\subsubsection{Friction Point 5: Observational vs.\ Causal Claims}
-
-\textbf{The Problem:} Much of double descent research is \textit{observational}: ``we see a peak at $P \approx N$.'' Our NESP framework attempts \textit{causal} claims: ``the peak occurs \textit{because} of curvature-noise coupling.'' But establishing causality is difficult:
-\begin{itemize}
-    \item \textbf{Confounders:} Many things change at $P \approx N$ (condition number, number of minima, basin geometry). Which is the ``cause'' of the peak?
-    \item \textbf{Interventions:} A true causal claim predicts what happens under \textit{intervention}. If we artificially modify the noise structure, does double descent disappear as predicted?
-\end{itemize}
-
-\textbf{The Insight:} Our framework makes \textbf{falsifiable predictions} (Section~\ref{sec:experimental_agenda}). If these predictions fail, the theory must be revised. This is the scientific method at work.
-
-\textbf{Concrete Test:} Train with \textit{isotropic} noise (add Gaussian noise independent of gradient). If curvature-noise coupling is essential, double descent should be suppressed or qualitatively different.
-
-\begin{remark}[The Value of Friction]
-These friction points are not embarrassments to be minimized in the final write-up. They are the \textbf{growing edge} of the theory---the places where new insights will emerge. A theory without friction points is either trivial or dishonest.
-\end{remark}
+With these foundations in place, we now turn to reviewing how equilibrium theories (RMT, Replica) explain double descent in linear models, before developing the non-equilibrium framework that addresses deep networks. We document the specific ``friction points'' where these theoretical tools encounter their limits in Appendix~\ref{app:friction_points}.
 
 \section{Classical Explanations: The Equilibrium Regime}
 
@@ -1195,19 +850,13 @@ Parallel to RMT, techniques from the statistical physics of disordered systems, 
 
 Researchers such as \cite{mezard1987spin, gerace2020generalisation} employed the ``Replica Trick'' to compute the partition function and free energy of the system in the thermodynamic limit. This framework confirmed that double descent is, in these models, a phase transition inherent to the equilibrium state of the system. However, like RMT, standard Replica analysis assumes a static equilibrium (Gibbs distribution) and does not inherently capture the algorithmic trajectory of Stochastic Gradient Descent (SGD).
 
-% ============================================================================
-% EXPANDED: REPLICA METHOD DERIVATION AND LIMITATIONS
-% ============================================================================
-% [Author's Note: Following the request to provide more detail on the Replica
-% Method, we now expand this section with: (1) explicit derivation steps,
-% (2) physical interpretation at each stage, (3) honest acknowledgment of
-% mathematical gaps. This is the "completeness of details in a sensitive
-% setting" that the research collaboration requires.]
-% ============================================================================
+\begin{remark}[On benchmarks: RMT vs.\ Replica]
+For linear models and ridgeless regression, the asymptotic risk is derived \textbf{rigorously} via Random Matrix Theory (Marchenko-Pastur law, Stieltjes transforms) without recourse to the replica trick. We use these rigorous RMT results as our primary benchmark for linear models. The replica method is introduced for its potential extension to more complex settings (random features, nonlinear activations), where RMT alone is insufficient. When we compare NESP predictions against ``equilibrium predictions,'' the reader should understand: for linear models, ``equilibrium'' means \textit{rigorous RMT}; for random feature models, it means \textit{heuristic replica results} whose reliability must be assessed on a case-by-case basis.
+\end{remark}
 
 \subsubsection{The Replica Calculation: Step-by-Step (Expanded)}
 
-\textit{We now provide a more detailed exposition of the replica calculation, highlighting both its power and its fragility. This level of detail is necessary to understand both what the method achieves and where it may fail.}
+\textit{We provide a detailed exposition of the replica calculation, highlighting both its power and its fragility.}
 
 \paragraph{Step 1: Setting Up the Disorder Average.}
 
@@ -1316,19 +965,14 @@ Determining whether RSB occurs in realistic neural network training is an \textb
 The replica method answers: ``What is the \textit{equilibrium} distribution over weights?'' Our NESP framework asks: ``What is the \textit{dynamical} distribution reached by SGD?'' These may differ. The replica calculation provides a \textbf{benchmark}---if SGD converges to equilibrium, replica predictions should hold. Deviations from replica predictions indicate \textbf{non-equilibrium effects}.
 \end{remark}
 
-\section{The Gap: From Static to Dynamic}
+\paragraph{What static theories cannot explain.}
+Despite their successes in linear and random-feature settings, equilibrium approaches remain silent on three empirical regularities: (i)~\textit{epoch-wise} double descent, where the peak appears as a function of training time at fixed model size; (ii)~the crucial role of the optimizer---SGD with small batches generalises better than exact gradient descent; and (iii)~the dependence on the training \textit{path}, e.g.\ learning rate schedules and early stopping. These phenomena point to an intrinsically \textbf{dynamical} mechanism that equilibrium theories, by construction, cannot capture.
 
-% ============================================================================
-% CONCEPTUAL BRIDGES: CONNECTING FRAGMENTED IDEAS
-% ============================================================================
-% [Author's Note: This section addresses the concern that "everything will fail
-% and misrepresentation will happen" if we don't explicitly connect the pieces.
-% Each bridge represents a logical connection that might otherwise be hand-waved.]
-% ============================================================================
+\section{The Gap: From Static to Dynamic}
 
 \subsection{Conceptual Bridges: Making Implicit Connections Explicit}\label{sec:conceptual_bridges}
 
-\textit{Before proceeding to the NESP framework, we pause to make explicit several conceptual bridges that might otherwise be ``hand-waved.'' Each bridge connects two ideas that are often assumed to be related but whose connection requires justification.}
+\textit{Before proceeding to the NESP framework, we make explicit several conceptual bridges that are often assumed but whose connections require justification.}
 
 \subsubsection{Bridge 1: Loss Landscape $\leftrightarrow$ Physical Energy}
 
@@ -1395,6 +1039,24 @@ The replica method answers: ``What is the \textit{equilibrium} distribution over
 
 \textbf{The caveat:} ``Flatness'' is not reparameterization-invariant. Scaling the weights and inversely scaling the next layer's weights preserves the function but changes the Hessian. Recent work suggests that \textit{volume} of the basin, not just curvature, may be the relevant quantity.
 
+\begin{remark}[Information-Geometric Resolution: Fisher Flatness]\label{rmk:fisher_flatness}
+The reparameterization problem admits a principled resolution via the \textbf{Fisher Information Matrix} (FIM). For a model $p_\theta(y \mid x)$, the FIM is defined as
+\begin{equation}\label{eq:fisher_information}
+    \mathcal{I}(\theta)_{ij}
+    = \mathbb{E}_{(x,y) \sim p_{\mathrm{data}}}
+      \!\bigl[\partial_i \log p_\theta(y \mid x)\;\partial_j \log p_\theta(y \mid x)\bigr].
+\end{equation}
+Unlike the Hessian, $\mathcal{I}(\theta)$ transforms as a \emph{Riemannian metric tensor} under reparameterization $\theta \mapsto \phi(\theta)$:
+$\mathcal{I}_\phi = J^\top \mathcal{I}_\theta\, J$, where $J = \partial\theta/\partial\phi$.
+Consequently, \textbf{flatness measured in the Fisher metric} is intrinsic to the statistical model, not an artifact of parameterization.
+
+For well-specified models at a local minimum $\theta^*$ of the population risk, the classical identity $\mathcal{I}(\theta^*) = H(\theta^*)$ holds (the Bartlett identity), so the Hessian-based flatness coincides with Fisher flatness at the optimum. Away from the optimum---precisely where the NESP dynamics operate---the two diverge, and the Fisher metric provides the geometrically natural notion of curvature.
+
+This connects directly to PAC-Bayes generalization bounds: the KL divergence $\mathrm{KL}(Q \| P)$ for a Gaussian posterior $Q = \mathcal{N}(\theta^*, \sigma^2 I)$ around a minimum satisfies
+$\mathrm{KL}(Q\|P) \approx \tfrac{1}{2\sigma^2}\,\theta^{*\top} \mathcal{I}(\theta^*)\,\theta^*$
+to leading order, making the Fisher norm the natural sharpness measure appearing in generalization bounds. Reformulating the NESP curvature--noise coupling in terms of $\mathcal{I}$ rather than $H$ would yield a \textbf{reparameterization-invariant} version of the ``survival of the flattest'' mechanism, resolving the caveat above.
+\end{remark}
+
 \begin{remark}[Why Bridges Matter]
 These bridges are not merely pedagogical. They define the \textbf{scope of validity} of our framework. When a bridge's caveats are violated (e.g., non-i.i.d.\ data, extreme learning rates), the physical analogy may break down. Understanding the bridges helps us know when to trust the theory and when to be skeptical.
 \end{remark}
@@ -1415,32 +1077,6 @@ This gap is characterized by three critical distinctions:
 
 The existence of epoch-wise double descent suggests that ``model complexity'' is not a static scalar determined solely by parameter count, but a dynamic quantity---an \textit{Effective Model Complexity}---that evolves under the dynamics of SGD. Consequently, a complete theory must be grounded in \textbf{Non-Equilibrium Statistical Physics (NESP)}.
 
-\section{A Non-Equilibrium Statistical Physics Framework}
-
-To bridge the gap between static theory and dynamic practice, we propose a synthesis of \textbf{Multi-scale Training Dynamics} and \textbf{Critical Landscape Geometry} (Jamming). This framework treats SGD not merely as an optimizer, but as a driven physical system interacting with a disordered potential landscape.
-
-\subsection{Modeling SGD Dynamics: The Langevin Approximation}
-The discrete steps of SGD can be modeled in continuous time via a Stochastic Differential Equation (SDE), specifically the Langevin equation. For a weight vector $W_t$, the update rule is approximated by:
-\begin{equation}
-    dW_t = -\nabla \mathcal{L}(W_t) dt + \sqrt{2D(W_t)} dB_t
-\end{equation}
-where $B_t$ is Brownian motion. Crucially, the diffusion matrix $D(W_t)$ arising from SGD noise is \textit{anisotropic} and \textit{state-dependent}. Unlike uniform thermal noise in classical thermodynamics, SGD noise magnitude scales with the gradient covariance. Recent studies \cite{chaudhari2018stochastic} suggest that this specific noise structure introduces an \textit{implicit regularization} term that penalizes ``sharp'' minima, effectively driving the system toward ``flat'' regions of the landscape which correlate with better generalization.
-
-The evolution of the probability distribution $P(W,t)$ is governed by the Fokker-Planck equation:
-\begin{equation}
-    \frac{\partial P}{\partial t} = \nabla \cdot (\nabla \mathcal{L} P) + \nabla \cdot (\nabla \cdot (D(W) P))
-\end{equation}
-This formulation allows us to analyze the learning process as a probability flow, distinct from the static Gibbs distribution assumed in equilibrium theories.
-
-\subsection{The Jamming Transition Landscape}
-The geometric ``stage'' upon which this dynamics plays out is described by the \textbf{Jamming Transition} analogy \cite{geiger2019jamming}. The interpolation threshold corresponds to the transition point where the system goes from an under-constrained (liquid/floppy) phase to an over-constrained (jammed/solid) phase.
-
-\begin{itemize}
-    \item \textbf{Under-parameterized ($P < N$):} The system is jammed; zero training error is inaccessible due to excessive constraints.
-    \item \textbf{Critical ($P \approx N$):} The system is marginally stable. The landscape is extremely rugged with sharp, narrow minima, analogous to a jamming point in granular materials.
-    \item \textbf{Over-parameterized ($P > N$):} The constraints are relaxed (unjamming). The landscape opens up new dimensions, creating a network of connected, flat global minima.
-\end{itemize}
-
 \subsection{Synthesis: The Three Phases of Double Descent}
 Integrating NESP dynamics with the Jamming landscape provides a coherent narrative for the double descent phenomenon, separating the process into three distinct phases based on the interaction between the optimization trajectory and the landscape geometry:
 
@@ -1453,20 +1089,9 @@ As training progresses to ``slow modes'' (fine details and noise), the dynamics 
 \paragraph{Phase 3: Non-Equilibrium Relaxation (Second Descent)} 
 In the over-parameterized regime, the NESP mechanism dominates. The anisotropic noise of SGD acts as an annealing force. Because the ``effective temperature'' or noise magnitude is higher in sharp regions (due to larger gradient variance), the system is stochastically kicked out of the sharp minima (overfitting) and drifts into the vast, flat basins available in the high-dimensional unjammed landscape. This relaxation process, driven by the implicit regularization of SGD noise, filters out the noise fitted in Phase 2, reducing the test error despite the high model capacity.
 
-% ============================================================================
-% CHAPTER 7: NON-EQUILIBRIUM STATISTICAL PHYSICS FRAMEWORK
-% ============================================================================
-% [Author's Note: This chapter represents the theoretical core of our NESP approach.
-% Unlike the previous sections which reviewed existing literature, here we develop
-% original theoretical machinery. The structure follows a physics-style derivation:
-% (1) Identify the failure of existing assumptions, (2) Propose new postulates,
-% (3) Derive consequences, (4) Design verification protocols.
-% This is ACTIVE RESEARCH - no definitive conclusions are drawn.]
-% ============================================================================
-
 \section{Non-Equilibrium Statistical Physics Framework for Deep Learning Dynamics}
 
-\subsection*{Motivation: Why Non-Equilibrium?}
+\subsection{Motivation: Why Non-Equilibrium?}
 
 \textit{Before diving into formalism, we wish to articulate why this particular theoretical direction is compelling---not merely as a technical exercise, but as a principled methodological stance.}
 
@@ -1479,12 +1104,6 @@ We pursue the latter approach. The Non-Equilibrium Statistical Physics (NESP) fr
 This perspective resonates with a broader shift in theoretical physics---from asking ``what is the ground state?'' to ``how does the system evolve?'' In condensed matter, this shift gave us the theory of glasses, aging, and non-ergodic dynamics. In machine learning, we propose that it will provide a theory of \textit{why deep learning works}---not despite its apparent over-parameterization, but \textit{because} of the specific noise structure that over-parameterization enables.
 
 The following sections develop this intuition into a mathematical framework. The goal is not to provide final answers, but to establish a \textit{language} in which the right questions can be asked.
-
-% [Author's Reflection: This motivation section is deliberately personal. In scientific
-% writing, we often hide our intellectual journey behind a facade of logical inevitability.
-% But research is not like that. We make choices---often based on aesthetic preferences,
-% analogies from other fields, or sheer stubbornness. Acknowledging this does not weaken
-% the science; it makes it more honest.]
 
 \subsection{Overview and Connection to Prior Sections}
 
@@ -1516,12 +1135,6 @@ These observations motivate our central postulate:
 The training of Deep Neural Networks under SGD constitutes a \textbf{non-equilibrium} and potentially \textbf{non-ergodic} process. The asymptotic state is not determined by the static energy function $\mathcal{L}(W)$ alone, but by the \textit{access dynamics}---the specific pathway through which the system explores configuration space.
 \end{postulate}
 
-% [Author's Reflection: This postulate is the conceptual foundation of our approach.
-% It shifts the theoretical question from "what is the equilibrium?" to "how does
-% the system dynamically select among degenerate equilibria?" This is analogous to
-% symmetry breaking in phase transitions, but driven by noise structure rather than
-% symmetry-breaking fields.]
-
 \subsection{Anisotropic SGD Noise as the Driving Force}
 
 To operationalize Postulate~\ref{post:nesp}, we examine the continuous-time approximation of SGD. The standard formulation yields a Stochastic Differential Equation (SDE):
@@ -1535,18 +1148,14 @@ The critical element is the \textit{noise covariance matrix} $\Sigma(W)$. In equ
 This state-dependence of the noise is the key departure from classical statistical physics. In the Replica Theory framework (Section 5.2), the ``temperature'' is a global parameter conjugate to the energy. Here, temperature becomes \textit{local}---different directions in parameter space experience different effective temperatures, determined by the local curvature. This is why equilibrium analysis, which assumes a uniform temperature, fails to capture the selective pressure toward flat minima.
 
 \begin{hypothesis}[Curvature-Noise Coupling]\label{hyp:curvature_noise}
-The SGD noise covariance $\Sigma(W)$ is not isotropic white noise. Its structure is intrinsically coupled to the local curvature of the loss landscape, approximated by the Hessian $H(W) = \nabla^2 \mathcal{L}(W)$:
+The SGD noise covariance $\Sigma(W)$ is not isotropic white noise. Along the \textbf{training trajectory} (away from global minima), its structure is intrinsically coupled to the local curvature of the loss landscape, approximated by the Hessian $H(W) = \nabla^2 \mathcal{L}(W)$:
 \begin{equation}\label{eq:noise_hessian_coupling}
-    \Sigma(W) \approx \alpha \, H(W) + \mathcal{O}(H^2)
+    \Sigma(W) \approx \alpha(W) \, H(W) + \mathcal{O}(H^2), \quad \text{for } \mathcal{L}(W) > 0
 \end{equation}
-for some coupling constant $\alpha > 0$ that depends on the data distribution and batch statistics.
+where the coupling strength $\alpha(W) > 0$ depends on the residual error magnitude, the data distribution, and batch statistics. Critically, $\alpha(W) \to 0$ as $\mathcal{L}(W) \to 0$: the coupling \textbf{vanishes at global minima} where the prediction error is zero. This vanishing is not a weakness but the mechanism by which flat minima become dynamically stable---once the system enters a flat basin with near-zero loss, the noise is suppressed and the system is \textbf{trapped}.
 \end{hypothesis}
 
-% [Technical Note: The precise form of Eq.~\eqref{eq:noise_hessian_coupling} requires
-% careful derivation. For MSE loss with batch sampling, the gradient covariance involves
-% terms like $\mathbb{E}[(x x^T) \otimes (x x^T)]$. The connection to the Hessian emerges
-% in certain limits (e.g., when data covariance is close to identity). A rigorous proof
-% for general architectures remains an OPEN PROBLEM.]
+
 
 The physical consequences of Hypothesis~\ref{hyp:curvature_noise} are profound:
 
@@ -1569,18 +1178,14 @@ In equilibrium statistical mechanics, entropy counts the number of accessible mi
 For a configuration $W$ residing in a local basin, the \textbf{Mean Escape Time} $\tau(W)$ is the expected time for the stochastic trajectory to exit the basin under the dynamics of Eq.~\eqref{eq:langevin_sgd}.
 \end{definition}
 
-In equilibrium systems (Kramers theory), $\tau \sim \exp(\Delta E / k_B T)$ depends on the energy barrier $\Delta E$ and uniform temperature $T$. However, under NESP with curvature-dependent noise, the escape time depends on the \textit{local landscape geometry}:
+In equilibrium systems (Kramers theory), $\tau \sim \exp(+\Delta E / k_B T)$ depends on the energy barrier $\Delta E$ and uniform temperature $T$: higher barriers or lower temperatures lead to longer escape times. Under NESP with curvature-dependent noise, the escape time depends on the \textit{local landscape geometry}. The key mechanism is that the effective local temperature itself depends on curvature via the coupling $\Sigma \sim H$:
 
 \begin{equation}\label{eq:escape_time_nesp}
-    \tau(W) \sim \exp\left( - \beta_{\text{eff}}(W) \cdot \lambda_{\max}(W) \right)
+    \tau(W^*) \sim \exp\left( \frac{\Delta E(W^*)}{T_{\text{eff}}^{\text{local}}(W^*)} \right), \quad T_{\text{eff}}^{\text{local}}(W^*) \approx \frac{\eta}{B} \cdot \lambda_{\max}(H(W^*))
 \end{equation}
-where $\lambda_{\max}$ is the maximum Hessian eigenvalue and $\beta_{\text{eff}}$ is an effective inverse temperature that itself depends on the noise structure.
+where $\Delta E(W^*)$ is the barrier height at minimum $W^*$ and $\lambda_{\max}(H(W^*))$ is the maximum Hessian eigenvalue. The crucial point: at \textbf{sharp minima}, $\lambda_{\max}$ is large, so the local effective temperature is high, the ratio $\Delta E / T_{\text{eff}}^{\text{local}}$ is small, and hence $\tau_{\text{sharp}} \ll \tau_{\text{flat}}$. This is the quantitative basis for the ``survival of the flattest'' mechanism.
 
-% [Author's Reflection: Eq.~\eqref{eq:escape_time_nesp} is currently a qualitative
-% scaling argument, not a rigorous derivation. The precise functional form requires
-% solving the Fokker-Planck equation with state-dependent diffusion, which is
-% analytically intractable for general landscapes. This is a KEY OPEN PROBLEM
-% that we address via the toy model in Section~\ref{sec:toy_model}.]
+
 
 \subsubsection{The Selection Mechanism}
 
@@ -1597,31 +1202,12 @@ The entropic selection mechanism operates as follows:
 \begin{remark}[Physical Interpretation of Double Descent]
 Under this framework, the second descent is not merely ``finding a better minimum.'' It is a \textbf{dynamical phase transition}: the system transitions from being trapped in sharp, overfitting minima (high fluctuation amplitude $\Rightarrow$ high test error) to relaxing into flat, generalizing valleys (low fluctuation amplitude $\Rightarrow$ low test error). The peak of double descent corresponds to the \textit{critical jamming point} where the landscape is maximally rugged.
 
-This interpretation connects directly to the \textbf{Effective Model Complexity} (EMC) introduced by \cite{nakkiran_deep_2019} and reviewed in Section 4. In their framework, EMC is defined operationally as the maximum number of samples a model can interpolate. Our NESP framework provides a \textit{physical mechanism} for why EMC matters: at the EMC threshold, the landscape geometry undergoes a jamming transition, and the noise-curvature coupling reaches its maximum. The EMC is not merely a descriptive statistic; it is the \textbf{order parameter} of a dynamical phase transition.
+This interpretation connects directly to the \textbf{Effective Model Complexity} (EMC) introduced by \cite{nakkiran_deep_2019} and reviewed in Section~\ref{sec:double_descent}. In their framework, EMC is defined operationally as the maximum number of samples a model can interpolate. Our NESP framework provides a \textit{physical mechanism} for why EMC matters: at the EMC threshold, the landscape geometry undergoes a jamming transition, and the noise-curvature coupling reaches its maximum. The EMC is not merely a descriptive statistic; it is the \textbf{order parameter} of a dynamical phase transition.
 \end{remark}
-
-% ============================================================================
-% SECTION 7.4: TOY MODEL FOR ANALYTICAL VERIFICATION
-% ============================================================================
-% [Author's Note: This section is crucial for the scientific credibility of the
-% NESP framework. We need a tractable system where the Hessian and noise covariance
-% can be computed explicitly. The two-layer linear network is ideal: it has non-convex
-% loss (quartic in parameters) but admits closed-form analysis.]
-%
-% [Execution Philosophy: We now move from qualitative arguments to EXPLICIT 
-% MATHEMATICAL DERIVATION. Every equation must be traceable. The goal is to
-% verify Hypothesis 7.2.1 (Curvature-Noise Coupling) analytically, not just
-% argue for it on physical intuition.]
-% ============================================================================
 
 \subsection{Dynamics of Order Parameters: A Toy Model Execution}\label{sec:toy_model}
 
 To substantiate the NESP framework quantitatively, we move beyond qualitative arguments to an explicit mathematical derivation. We select the \textbf{Linear Teacher-Student} model. While linear in input-output mapping, the optimization dynamics over the factorized weights are non-convex, providing the minimal tractable laboratory to observe curvature-noise coupling.
-
-% [Author's Reasoning: Why not use a deep nonlinear net? Because we CANNOT compute
-% the Hessian analytically. The linear model is the simplest system that still
-% exhibits (1) non-convex loss, (2) degenerate minima, (3) double descent behavior.
-% It is the "hydrogen atom" of learning theory.]
 
 \subsubsection{System Definition and Energy Landscape}
 
@@ -1644,10 +1230,7 @@ We define the learning system $\mathcal{S}$ with maximal precision:
     where $\mathbf{1} \in \mathbb{R}^k$ is the all-ones vector.
 \end{itemize}
 
-% [Technical Note: Fixing $v$ is a standard simplification in the literature
-% (see Saxe et al., 2014). It removes one layer of non-convexity while preserving
-% the essential quartic structure in $U$. The full $(U, v)$ case can be treated
-% similarly but with more bookkeeping.]
+% [Technical Note: Fixing $v$ is a standard simplification (see Saxe et al., 2014).]
 
 The loss function (potential energy) per sample $(x, y)$ is the squared error:
 \begin{equation}\label{eq:loss_persample}
@@ -1674,10 +1257,7 @@ Using $\mathbb{E}[x x^\top] = I_d$ (whitened data):
     \mathcal{L}(U) = \frac{1}{2} (U^\top v - w^*)^\top \mathbb{E}[x x^\top] (U^\top v - w^*) = \frac{1}{2} \| U^\top v - w^* \|_2^2
 \end{equation}
 
-% [Checkpoint: The population loss is simply half the squared distance between
-% the effective weight and the teacher. The global minimum is achieved when
-% $U^\top v = w^*$. But there are INFINITELY MANY such $U$ matrices! This
-% degeneracy is the key to understanding the non-equilibrium selection.]
+
 
 \subsubsection{Derivation of the Gradient (The Drift Term)}
 
@@ -1704,10 +1284,7 @@ Substituting back:
     \boxed{g(U) = \nabla_U \ell = e(x) \cdot (v x^\top)}
 \end{equation}
 
-% [Author's Reflection: This result is STRUCTURALLY CRUCIAL. The gradient is a
-% rank-1 outer product of the readout weights $v$ and the input $x$, scaled by
-% the current prediction error $e(x)$. This rank-1 structure will reappear in
-% both the Hessian and the noise covariance, creating the coupling we seek.]
+
 
 \textbf{Interpretation:} Each gradient update modifies $U$ along the direction $v x^\top$. The magnitude of the update is proportional to the error $e(x)$. At a global minimum where $e(x) = 0$ for all $x$, the gradient vanishes.
 
@@ -1745,10 +1322,7 @@ Using the tensor product identity $(A) \otimes (B) = (A \otimes B)$ for rank-1 m
     \boxed{\Sigma(U) = \mathbb{E}_x \left[ e(x)^2 \cdot (v v^\top) \otimes (x x^\top) \right]}
 \end{equation}
 
-% [Technical Note: The tensor product here is between $k \times k$ and $d \times d$
-% matrices, yielding a $(kd) \times (kd)$ covariance matrix when $U$ is vectorized.
-% The structure $(v v^\top) \otimes (x x^\top)$ is KEY---it factorizes into the
-% "hidden unit" structure and the "input space" structure.]
+
 
 Expanding $e(x)^2 = [(U^\top v - w^*)^\top x]^2$:
 \begin{equation}\label{eq:sigma_explicit}
@@ -1765,9 +1339,7 @@ The explicit evaluation yields:
     \Sigma(U) = (v v^\top) \otimes \left[ 2(U^\top v - w^*)(U^\top v - w^*)^\top + \|U^\top v - w^*\|^2 I_d \right]
 \end{equation}
 
-% [Author's Note: This exact formula can be verified by direct computation or
-% by using the general formula for Gaussian fourth moments. The important point
-% is that $\Sigma$ depends on the SAME quantities as the Hessian will.]
+
 
 \subsubsection{The Hessian Geometry (The Curvature)}
 
@@ -1794,10 +1366,7 @@ The \textbf{population Hessian} is:
     \boxed{H(U) = \mathbb{E}_x[H_{\text{sample}}] = (v v^\top) \otimes \mathbb{E}_x[x x^\top] = (v v^\top) \otimes I_d}
 \end{equation}
 
-% [CRITICAL OBSERVATION: The population Hessian is INDEPENDENT of the current
-% weights U! This is a special property of the linear model. The curvature is
-% constant across the entire parameter space. However, the NOISE (Eq. 7.sigma)
-% DOES depend on U through the error term e(x).]
+
 
 \subsubsection{Analytical Confirmation of Curvature-Noise Coupling}
 
@@ -1839,10 +1408,13 @@ This mathematical structure explains \textbf{why SGD selects flat minima}:
 This is NOT equilibrium thermodynamics (where all $E=0$ states are equally probable). This is a \textbf{dynamical selection} driven by the state-dependent noise structure.
 \end{remark}
 
-% [Author's Reflection: This is the key analytical confirmation we were seeking. The
-% structural identity between H and Sigma is not an accident---it arises from
-% the fact that both are constructed from the same gradient outer product.
-% The question now is: does this survive in nonlinear networks?]
+\begin{remark}[Coupling Vanishes at Optimum --- Implications for the Nature of Generalization]\label{rmk:coupling_vanishes}
+A subtle but important point: at a global minimum $U^*$ where $U^{*\top}v = w^*$, the residual error $e(x) = 0$ for all $x$, and consequently $\Sigma(U^*) = 0$ while $H(U^*) = (vv^\top)\otimes I_d \neq 0$. The coupling $\Sigma \propto H$ therefore holds \textbf{only along the training trajectory}, not at convergence. This has a profound implication: the ``survival of the flattest'' is a \textbf{kinetic} (path-dependent) phenomenon, not a thermodynamic (equilibrium) one. The selection happens \textit{during training}---the noise structure guides the system toward flat basins, but once it arrives, the noise shuts off and the system freezes.
+
+This suggests that \textbf{generalization in overparameterized models is fundamentally a non-equilibrium kinetic phenomenon}. Any training regime long enough to reach true equilibrium (where the Gibbs distribution governs) would erase the kinetic advantage---the system would eventually diffuse out of flat minima toward a uniform distribution over all zero-loss configurations. This provides a \textbf{principled justification for early stopping}: not merely as a regularization heuristic, but as a necessary condition for preserving the non-equilibrium selection that produces good generalization.
+\end{remark}
+
+
 
 \subsubsection{Critical Divergence at the Interpolation Threshold}
 
@@ -1875,10 +1447,7 @@ For our NESP framework, this has immediate consequences:
     \item \textbf{Escape time collapse:} $\tau \sim \exp(-\beta \lambda_{\max}) \to 0$ for sharp minima.
 \end{itemize}
 
-% [Author's Note: The mathematical divergence at $\gamma = 1$ is the RMT signature
-% of the interpolation threshold. In our dynamical framework, this translates to
-% a "stochastic resonance" where noise and curvature conspire to destabilize the
-% system maximally. This is WHY the test error peaks at the threshold.]
+
 
 \paragraph{Physical Interpretation: The ``Melting'' Transition.}
 At $k \approx d$, the loss landscape undergoes a structural transition:
@@ -1920,10 +1489,26 @@ Based on the theoretical framework, we predict three distinct phases as the hidd
     \item \textbf{Observable signature:} Training error $= 0$, test error \textbf{decreases} (the second descent).
 \end{itemize}
 
-% [Author's Reflection: The phase structure maps cleanly onto the double descent
-% curve. The key insight is that Phase III is NOT simply "having more parameters."
-% It is a qualitatively different dynamical regime where the NOISE STRUCTURE
-% changes from destabilizing (at criticality) to guiding (in the flat manifold).]
+\subsubsection{Phase Diagram in the $(\gamma,\,T_{\mathrm{eff}})$-plane}\label{sec:phase_diagram}
+
+The three phases identified above can be organised into a two-dimensional \textbf{phase diagram} with axes
+\begin{equation}
+    \gamma = \frac{P}{N} \quad (\text{over-parameterisation ratio}), \qquad
+    T_{\mathrm{eff}} = \frac{\eta}{B} \quad (\text{effective temperature}).
+\end{equation}
+The diagram delineates four qualitative regions:
+
+\begin{description}
+    \item[Under-fitting ($\gamma \ll 1$, any $T_{\mathrm{eff}}$):] Insufficient capacity; both bias and training error are high. The system is ``jammed'' and noise cannot compensate for lack of expressivity.
+    
+    \item[Classical regime ($\gamma < 1$, moderate $T_{\mathrm{eff}}$):] The standard bias--variance trade-off governs; increasing $\gamma$ initially reduces test error until over-fitting sets in. Equilibrium (Gibbs) descriptions are approximately valid.
+    
+    \item[Jamming peak ($\gamma \approx 1$):] The interpolation threshold. The condition number $\kappa(H) \to \infty$; noise amplification is maximal. The phase boundary sharpens as $T_{\mathrm{eff}}$ increases---higher noise exacerbates the peak.
+    
+    \item[Second descent ($\gamma > 1$, moderate $T_{\mathrm{eff}}$):] The NESP regime. The curvature--noise coupling selects flat minima; test error decreases with $\gamma$. \emph{Too large} $T_{\mathrm{eff}}$ (very small batch) may destabilise even flat basins, so optimal generalisation requires an intermediate $T_{\mathrm{eff}}$.
+\end{description}
+
+\noindent A key prediction is that the \textbf{critical line} $\gamma_c(T_{\mathrm{eff}})$ separating the peak region from the second-descent region is \emph{not} vertical at $\gamma = 1$ but bends: higher effective temperature shifts the onset of the second descent to larger $\gamma$. Mapping this phase boundary experimentally---by sweeping $(\gamma, B)$ pairs---would provide a stringent test of the NESP framework and connect the double descent literature to the broader theory of non-equilibrium phase transitions.
 
 \subsubsection{Proposed Observables for Experimental Verification}
 
@@ -1956,18 +1541,7 @@ Beyond the standard train/test error curves, the following physical quantities s
     \end{itemize}
 \end{enumerate}
 
-% [Author's Note for Future Work: The numerical experiments to verify these
-% predictions should be straightforward to implement. The key is to compute
-% the Hessian eigenvalues during training, not just at convergence. This will
-% reveal the DYNAMICAL nature of the phase transition.]
 
-% ============================================================================
-% SECTION 7.4.8: CRITICAL SELF-ASSESSMENT - LIMITATIONS OF THE TOY MODEL
-% ============================================================================
-% [Author's Philosophy: A good theoretical physicist knows the BOUNDARIES of
-% their model as well as its predictions. This section is essential for
-% intellectual honesty and for guiding future research directions.]
-% ============================================================================
 
 \subsubsection{Critical Self-Assessment: What the Toy Model Does NOT Capture}
 
@@ -1987,7 +1561,7 @@ The most glaring gap is the \textbf{linearity} of our model. Real deep networks 
 \textit{The million-dollar question:} Does the curvature-noise coupling $\Sigma \sim H$ survive when we ``inject'' ReLU into the architecture?
 
 \begin{quote}
-\textbf{Author's Conjecture (Unverified):} The coupling likely persists \textit{qualitatively} but not \textit{quantitatively}. The physical intuition is robust: sharp directions should still correlate with high gradient variance because both are driven by the same data statistics. However, the precise proportionality constant $\alpha$ in $\Sigma \approx \alpha H$ may become a complicated function of the activation pattern.
+\textbf{Conjecture:} The coupling likely persists \textit{qualitatively} but not \textit{quantitatively}. The physical intuition is robust: sharp directions should still correlate with high gradient variance because both are driven by the same data statistics. However, the precise proportionality constant $\alpha$ in $\Sigma \approx \alpha H$ may become a complicated function of the activation pattern.
 \end{quote}
 
 This conjecture can be tested empirically (see Section~\ref{sec:experimental_agenda}) but a rigorous proof would require tools beyond the scope of this work---possibly involving Neural Tangent Kernel analysis in the finite-width regime, or replica calculations for nonlinear random feature models.
@@ -2053,10 +1627,6 @@ Finite-size effects introduce:
 \textbf{Open Question:} Is there a \textit{finite-size scaling} law for double descent, analogous to critical phenomena in statistical physics? If so, what are the critical exponents, and do they depend on the network architecture?
 \end{quote}
 
-% ============================================================================
-% SECTION 7.5: OPEN PROBLEMS AND RESEARCH DIRECTIONS (EXPANDED)
-% ============================================================================
-
 \subsection{Current Obstacles and Open Problems}\label{sec:open_problems}
 
 The theoretical framework presented above, while conceptually coherent, faces several unresolved challenges. We document these explicitly as they define the frontier of this research program. \textbf{This is not a conclusion---it is an invitation to future investigation.}
@@ -2107,6 +1677,22 @@ with state-dependent diffusion $D(W) \sim H(W)$ concentrates on low-curvature re
     \item If curves collapse onto a single universal function, extract the critical exponent $\alpha$.
 \end{itemize}
 
+\subsubsection{Random Features as an Intermediate Step}
+
+The gap between the linear teacher--student model and fully nonlinear deep networks can be partially bridged by \textbf{random feature (RF) models}. In the RF setting, one fixes a random first layer and trains only the readout:
+\begin{equation}
+    f(x) = \sum_{j=1}^{P} w_j \,\sigma\!\bigl(a_j^\top x\bigr), \qquad a_j \sim \mathcal{N}(0, I_d/d),
+\end{equation}
+where $\sigma$ is a nonlinear activation (e.g.\ ReLU) and $w \in \mathbb{R}^P$ are the trainable weights. This model inherits the Kronecker noise structure of the linear case---the noise covariance factorises as $\Sigma(w) = \mathbb{E}[e(x)^2\,\phi(x)\phi(x)^\top]$ with $\phi_j(x) = \sigma(a_j^\top x)$---while introducing the nonlinearity absent from the toy model.
+
+\textbf{Why RF models matter for the NESP programme:}
+\begin{enumerate}
+    \item Exact asymptotic risk formulas exist via replica/RMT methods \cite{mei2020generalizationerrorrandomfeatures}, providing a rigorous equilibrium benchmark.
+    \item The curvature--noise coupling can be computed semi-analytically, since the Hessian is $H(w) = \mathbb{E}[\phi(x)\phi(x)^\top]$ (independent of $w$, as in the linear case).
+    \item Deviations of the SGD-trained solution from the equilibrium (minimum-norm) prediction would directly quantify non-equilibrium effects, testing Postulate~\ref{post:nesp} in a controlled nonlinear setting.
+\end{enumerate}
+RF models thus occupy a natural intermediate rung on the ``ladder of models'' (linear $\to$ random features $\to$ shallow trained $\to$ deep trained), and represent the most immediate extension of the analytical results in Section~\ref{sec:toy_model}.
+
 \subsubsection{Extension to Deep Nonlinear Networks}
 
 \textbf{Statement:} The toy model is linear. Real DNNs involve nonlinear activations.
@@ -2154,10 +1740,6 @@ This is consistent with empirical observations that regularization mitigates dou
 \textbf{Speculative Direction:} The Information Bottleneck theory of deep learning suggests that training compresses information about inputs while preserving information about outputs. The NESP framework may provide a \textit{dynamical mechanism} for this compression: anisotropic noise destroys information along ``irrelevant'' (sharp) directions while preserving it along ``relevant'' (flat) directions.
 
 \textbf{Open Question:} Can we prove that SGD with curvature-dependent noise is an optimal (or near-optimal) information compressor in some well-defined sense?
-
-% ============================================================================
-% SECTION 7.6: EXPERIMENTAL AGENDA
-% ============================================================================
 
 \subsection{Experimental Agenda for Verification}\label{sec:experimental_agenda}
 
@@ -2217,11 +1799,60 @@ The theoretical framework generates specific, falsifiable predictions. We outlin
     \item \textbf{Success criterion:} Alignment significantly greater than random ($\gg 1/\dim$) would support the NESP framework.
 \end{enumerate}
 
-% ============================================================================
-% AUTHOR'S NOTES FOR FUTURE DEVELOPMENT
-% ============================================================================
+\subsubsection{Prediction 5: Equilibrium Erosion at $t \to \infty$}
+\label{sec:equilibrium_erosion}
 
-\subsection*{Author's Notes: Research Trajectory and Pickup Points}
+\textbf{Motivation.}
+Remark~\ref{rmk:coupling_vanishes} established that the curvature--noise coupling $\Sigma(W) \propto \alpha(W)\,H(W)$ vanishes once the training loss reaches zero. At that point the SGD noise covariance collapses: $\Sigma(U^*) = 0$, even though the Hessian remains non-trivial ($H(U^*) \neq 0$). The ``survival of the flattest'' selection therefore ceases to operate, and the system enters a regime where the \textbf{kinetic selection pressure that promotes good generalization is absent}.
+
+\textbf{Hypothesis (Equilibrium Erosion).}
+Beyond the interpolation threshold, once $\mathcal{L}(W_t) \approx 0$ is reached, the effective noise becomes isotropic at leading order (or vanishes entirely for exact interpolation). Over sufficiently long training times $t \gg \tau_{\mathrm{escape}}$, the weight trajectory undergoes a slow \emph{diffusion along the zero-loss manifold}:
+\begin{equation}\label{eq:erosion_diffusion}
+    dW_t \approx \sqrt{2D_{\mathrm{res}}(W_t)}\,dB_t, \qquad \mathcal{L}(W_t) = 0,
+\end{equation}
+where $D_{\mathrm{res}}$ is the residual (mini-batch sampling) diffusion coefficient, which is small but non-zero in finite-precision arithmetic and finite batch sizes. Because the coupling no longer biases this diffusion toward flat basins, the weights drift randomly through the interpolation manifold. The population risk $\mathcal{R}(W_t)$ is \emph{not} constant on this manifold---different interpolators generalize differently---so the test error is predicted to \textbf{slowly increase} as the kinetic advantage erodes.
+
+\textbf{Protocol:}
+\begin{enumerate}
+    \item Train the linear teacher--student model well past convergence ($\mathcal{L} < \epsilon \approx 10^{-8}$), continuing for $T_{\mathrm{long}} \gg T_{\mathrm{converge}}$ (e.g., $10\times$--$100\times$ additional epochs).
+    \item Record the test error $\mathcal{R}(W_t)$ at regular intervals throughout the extended training.
+    \item Simultaneously track the \emph{distance moved in weight space}: $\|W_t - W_{T_{\mathrm{converge}}}\|_F$ and the \emph{basin curvature} $\mathrm{Tr}(H(W_t))$.
+    \item Repeat for multiple batch sizes $B \in \{16, 64, 256, n\}$ to modulate residual noise.
+\end{enumerate}
+
+\textbf{Success criteria:}
+\begin{itemize}
+    \item \textbf{Primary:} Test error $\mathcal{R}(W_t)$ exhibits a statistically significant upward trend for $t > T_{\mathrm{converge}}$, with the rate of increase scaling with $\eta / B$ (larger residual noise $\Rightarrow$ faster erosion).
+    \item \textbf{Secondary:} $\mathrm{Tr}(H(W_t))$ increases over extended training, indicating drift from flat toward sharper regions of the interpolation manifold.
+    \item \textbf{Control:} Full-batch gradient descent ($B = n$) should show \emph{no} erosion (zero residual noise), confirming the stochastic origin of the effect.
+\end{itemize}
+
+\textbf{Connection to theory.}
+A positive result would provide direct experimental evidence that generalization in overparameterized models is a \emph{kinetic} phenomenon (Remark~\ref{rmk:coupling_vanishes}): the flat-basin selection is maintained only by the non-equilibrium noise structure during active descent. In the language of statistical physics, this corresponds to the long-time relaxation toward the microcanonical ensemble on the zero-loss manifold, erasing the non-equilibrium memory of the training path.
+
+\appendix
+\section{Supplementary Material}\label{app:supplementary}
+
+\subsection{Research Friction Points: Where Theory Meets Its Limits}\label{app:friction_points}
+
+\textit{We document the ``friction points'' where our theoretical machinery encounters resistance. These are not failures but signposts indicating where deeper understanding is needed.}
+
+\subsubsection{The Langevin Approximation Breaks Down}
+The continuous-time Langevin equation (Definition~\ref{def:langevin_sgd}) assumes small learning rate $\eta$. In practice, large learning rates, warmup/decay schedules, and accumulated discretization error $O(\eta^2)$ violate this assumption. Recent ``edge of stability'' results \cite{cohen2021gradient} show that large learning rates induce qualitatively different dynamics not captured by continuous diffusion.
+
+\subsubsection{The Replica Trick's Mathematical Fragility}
+The replica identity (Eq.~\eqref{eq:replica_identity}) requires: (1) computing $\mathbb{E}[Z^n]$ for integer $n$, (2) analytic continuation to real $n$, (3) taking $n \to 0$. Each step is non-rigorous. In some systems (e.g., Sherrington--Kirkpatrick), the symmetric ansatz gives wrong results and replica symmetry breaking is required. Alternative methods (cavity, interpolation, supersymmetric) can sometimes validate replica results rigorously.
+
+\subsubsection{The Temperature Analogy's Limits}
+The scalar $T_{\text{eff}} = \eta/B$ is a zeroth-order approximation. The full noise covariance $\Sigma(W)$ is a matrix that varies across weight space: different directions experience different ``temperatures,'' and detailed balance is violated. The diffusion tensor $D(W) = (\eta/B)\Sigma(W)$ is the fundamental object, motivating the NESP framework.
+
+\subsubsection{The Gap Between Linear and Nonlinear}
+The linear teacher--student model is the ``hydrogen atom'' of learning theory: solvable but not representative. With nonlinear activations, the Hessian varies across parameter space, gradients lose their clean rank-1 form, and the loss landscape may have exponentially many disconnected basins. A systematic ``ladder of models'' (linear $\to$ random features $\to$ shallow ReLU $\to$ deep ReLU) is needed to identify which phenomena are universal.
+
+\subsubsection{Observational vs.\ Causal Claims}
+Much of double descent research is observational. Our NESP framework attempts causal claims via the curvature--noise coupling mechanism. The framework generates falsifiable predictions (Section~\ref{sec:experimental_agenda}); a concrete test is replacing SGD noise with isotropic Gaussian noise to check whether double descent is suppressed.
+
+\subsection{Author's Working Notes: Research Trajectory}\label{app:author_notes}
 
 \textit{This section is intentionally left as working notes rather than polished prose, to facilitate the ``pickup'' of research momentum. Each item represents a concrete starting point for future work sessions.}
 
@@ -2247,11 +1878,7 @@ The theoretical framework generates specific, falsifiable predictions. We outlin
     \item \textbf{Connection to NTK:} Read the NTK literature carefully; understand how our NESP framework relates to infinite-width limits.
 \end{itemize}
 
-% ============================================================================
-% SECTION 7.7: PHILOSOPHICAL REFLECTIONS AND EPISTEMOLOGICAL SHIFT
-% ============================================================================
-
-\subsection{Philosophical Reflections: The Epistemological Shift}
+\subsection{Philosophical Reflections: The Epistemological Shift}\label{app:philosophy}
 
 Beyond technical results, the NESP framework represents a shift in \textit{how we think} about learning systems. This section articulates that shift explicitly, as it informs the interpretation of all preceding derivations.
 
@@ -2298,15 +1925,6 @@ What we \textit{do} claim is that the NESP framework provides a \textbf{language
 The NESP framework draws on concepts from statistical physics, stochastic processes, random matrix theory, and dynamical systems. This interdisciplinarity is both a strength and a risk. It is a strength because the phenomena of deep learning---phase transitions, critical behavior, emergent simplicity from complex dynamics---have natural analogs in physics. It is a risk because analogies can mislead; the ``spin'' of a weight is not literally a magnetic moment, and we must be vigilant against importing assumptions that do not transfer.
 
 Navigating this tension requires what might be called \textit{bilingual fluency}---the ability to translate concepts between fields while respecting the distinct semantics of each. We have attempted this throughout the chapter, but the translation is imperfect. Future work, by researchers with deeper expertise in either physics or machine learning, will surely refine (or refute) the ideas presented here.
-
-% ============================================================================
-% SECTION: COMPREHENSIVE VƯỚNG MẮC LOG - RESEARCH FRICTION AS INSIGHT
-% ============================================================================
-% [Author's Philosophy: Following the principle that "vướng mắc hay bất cứ cái
-% vấn đề gì gặp phải đều là 1 insight dùng trong theory construction với analysis",
-% we now provide a comprehensive log of all encountered obstacles, their current
-% status, and how each might lead to theoretical insights.]
-% ============================================================================
 
 \subsection{Comprehensive Research Friction Log}\label{sec:friction_log}
 
@@ -2410,10 +2028,6 @@ Navigating this tension requires what might be called \textit{bilingual fluency}
 \begin{remark}[Using the Friction Log]
 This log is not meant to discourage but to \textbf{focus}. Each item represents a concrete research question. Graduate students seeking thesis topics could pick any entry and make progress. The log also serves as a ``honesty check''---if a reviewer asks ``what about X?'' and X is in the log, we have anticipated the concern.
 \end{remark}
-
-% ============================================================================
-% SECTION: RESEARCH ROADMAP - CONCRETE ACTION PLAN
-% ============================================================================
 
 \subsection{Research Roadmap: From Draft to Publication}\label{sec:roadmap}
 
@@ -2521,27 +2135,11 @@ The research will be considered successful if:
 
 \textit{Even partial success---confirming some predictions while falsifying others---constitutes scientific progress and publishable results.}
 
-\subsection*{Closing Reflection: The Invitation}
+\subsection{Closing Reflection}
 
-\textit{``The work in this chapter is not a conclusion; it is an invitation.''}
+We have constructed a framework---NESP---that reframes double descent as a dynamical phase transition driven by the anisotropic noise structure of SGD. We have identified the key hypothesis (curvature-noise coupling), derived analytical predictions in a toy model, and designed experiments to test them. The theory makes falsifiable predictions; verification through the experimental program outlined above is the immediate next step.
 
-We have constructed a framework---NESP---that reframes double descent as a dynamical phase transition driven by the anisotropic noise structure of SGD. We have identified the key hypothesis (curvature-noise coupling), derived analytical predictions in a toy model, and designed experiments to test them. We have documented our uncertainties (friction points) and our limitations honestly.
-
-What remains is the hard work of verification. The theory makes falsifiable predictions. If they hold, we will have made progress toward understanding why deep learning works. If they fail, we will have learned something equally valuable: that the true mechanism lies elsewhere.
-
-Either way, the scientific process advances. This is the nature of research---not a march toward predetermined conclusions, but a dialogue with nature, mediated by mathematics and experiment.
-
-\textit{The work in this chapter is not a conclusion; it is an invitation.}
-
-% ============================================================================
-% AUTHOR'S CRITICAL SELF-REVIEW: COMPREHENSIVE VƯỚNG MẮC ANALYSIS
-% ============================================================================
-% [This section documents the results of a systematic review conducted on
-% February 1, 2026, identifying critical gaps, hand-waving, and overclaiming
-% that must be addressed before the paper can be considered complete.]
-% ============================================================================
-
-\subsection*{Author's Critical Self-Review (February 2026)}
+\subsection{Critical Self-Review}\label{app:self_review}
 
 \textit{Following the principle that ``obstacles and any problems encountered are insights,'' we conducted a systematic review of this manuscript. The findings below represent an honest assessment of where the paper stands and what remains to be done.}
 
@@ -2633,9 +2231,7 @@ Experiment Execution & \textcolor{blue!70}{Planned} & Final validation phase \\
 
 \textit{``Obstacles are insights.'' The theoretical obstacles have been documented. They now become experimental hypotheses to test.}
 
-% ============================================================================
-% END OF CHAPTER 7
-% ============================================================================
+% End of supplementary material
 
 \clearpage
 
