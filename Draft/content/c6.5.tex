@@ -15,22 +15,6 @@ Bias-variance tradeoff is not new in concept, their definitions on computation h
     On arbitrary function space $\mathcal{F}:\{X\}\to \{Y\}$, of which a system admits its operation in such form, let $\mathcal F_\Gamma \subseteq Y^X$ denote a class of functions admitting representation under a fixed mathematical semantic $\Gamma$ (e.g.\ algebraic, geometric, compositional, or dynamical semantics). Then such system is transformed to a similar \textbf{parameterized system} if and only if it admits the factorization form, or if there exist a parameter space $\Theta$ and a family of operators $\Psi_{\Gamma} : \Theta \times X \to Y$, where $\Gamma$ is the mathematical semantic used, $\theta$ is the above-level replacement of direct relational connection into variable control of $\theta$, and variations in $y$ being controlled by $\theta$, such that for functions $f \in \mathcal F_\Gamma$, $f(x) \approx \Psi_{\Gamma}(\theta, x)$.
 \end{definition}
 
-%\descriptionz{Bias-variance}{
-%We use the setup of a model $M$ structured into $(\theta, I, \{f\})$, where $\{f\}$ is the set of descriptions using %$\theta$ of the internal model's components, and $I$ as the external receiver of connector. In effect, a model is %structurally the set of all $\{I,(\theta, \{f\})\}$ with respect to the component form $\theta$, and variation of the %external connector $I$, often can be considered input, and if $\theta$ is reduced to variable, we call it a \textbf%{parameterized model} that creates implicit linkage between $I$ and its intended transformation from $I$, using %$\theta$. Furthermore:
-%\begin{enumerate}[itemsep=0pt,topsep=1pt]
-%    \item Input space $I$ and output space $O$, typically referred to as $X,Y$, measurable space taking values from the %real field $\mathbb{R}$. Typical set of all feasible values of input and output forms can be specified of $(\mathbb%{R}^{d},\mathbb{R}^{k})$ or for output to be a small embedded subset $Y=\{y_{1},\dots,y_{n}\}$ being finite and %discrete on $\mathbb{R}$.  
-%    \item Euclidean metric $||\cdot||$ is used for all real-valued components.
-%    \item System relation between $X,Y$ is the \textbf{function space} $Y^{X}$ or a subset $\mathcal{F}_{\Gamma}\subset %Y^{X}$, where $\Gamma$ is the chosen semantic or representation class. Such system uses also the \textbf{parameter %space} $\Theta \subseteq \mathbb{R}^{p}$ for finite $p$.
-%    \item Hypothesis model, i.e. the learnable model admits the \textbf{parameterized form} if able, as Definition~\ref%{def:paramterization}, or $\Psi_{\Gamma}: \Theta\times X\to Y$. A model instance is $\hat{f}_{\theta}(x)=\Psi_%{\Gamma}(\theta, x)$. We denote all models as $h\in \mathcal{H}$ for $\mathcal{H}$ the class of all specific %$\Gamma$ and intended value space on $\theta_{\mathcal{H}}$. 
-%    \item We assume there exists an \textbf{objective oracle}, denoted either $c$ or $EX$, of which belongs to a class %$\mathcal{C}$ of all oracles fitting certain description $(\theta_{c},\Gamma_{c})$. We assume this objective oracle %is a part of the general oracle class $\mathcal{O}\supset \mathcal{C}$. Furthermore, we assume \textbf{knowledge} of %this oracle is presented only by fixed instantiation of it, giving non-factorable description of linkage in the form %of \textit{dataset}, $D=\{(x,_{i},y_{i})\}^{n}_{n=1}$ being finite and drawn from observations or probing of $c$. %One more assumptions that can be removed: $c$ exists and knowable of existence; in case this does not happen, we say %the setting is \textit{oracle-black boxed}. In case partial information are possible, we say that the setting is %semi-transparent. The dataset cutoff implicitly creates $c'\in\mathcal{C}'$ of a proxy concept class, such that %lowest condition remains $\mathcal{C}\cap_{\Gamma,\theta} \mathcal{C}'\neq \varnothing$, and so on of the inclusion %structure. 
-%    \item We apply a \textbf{statistical interpretation} on the dataset of observables $D$ to capture the observations' %occurrence patterns replacing the internal $\Gamma$ exposition, into probabilistic distribution $P$ on $X\times Y$ %of variations. Simplest assumption can be determined of being i.i.d. or identically and independently sampled, and %thus observation are further assumed to come from instantiation of the \textbf{sampling} action. 
-%    \item Loss function $\ell: Y\times Y_{c}\to \mathbb{R}_{\geq 0}$ is defined on comparison space between $h$ and $c$. %On Euclidean space, use $L_{2}$ norm or square loss as measure. The semantic can change, thus we say the loss system %contains $\{\ell_{i}\}$ of variational applied form, such that $\{\ell_{i}\}^{3}_{i=1}$ being $\ell_{3}(\ell_{2}%(\ell_{1}(\cdot,\cdot)))$. Define \textbf{population (expected)} error named as risk, taking expected value over the %entire space.
-%    \item Operations making use of $\ell$ defines the \textbf{objective} for finding suitable $h$ such that to reduce %$\ell(y,y')$ of their representative observables. 
-%\end{enumerate}
-%}{
-%Separated.
-%}
-
 Thus, it is in-spirit, a definition of parameterization of model that we can use. Most definition of parameterization differs from this form, not inherently a disadvantage, to presume independent choice of selecting a family of parameterization; undermine the structural form that are explicit in $\Gamma$; using parameter as controllers that can be tuned of optimization, and often merge such description together with loss and training. The loss of $\Gamma$ is rather troublesome, but they are often mediated in a weak form using similarity of elementary compositions, i.e. most structural forms in ML models are often elementarily composable, though there exists transcendental expressions of which can be formed during process and not inherent of the syntax itself. Concretely, $\Gamma$ is the hypothesis about \textit{how relations are connected of each other}, i.e. the grammar of admissible operators. When $\Gamma$ is absent or mismatched, optimization is free to exploit the structural gaps by directly specify $\theta$-only optimization on non-structured parameters, and can indeed imperfectly gauge the underlying hypothesis model structure itself. Two things can happen in this case: either optimization reduces empirical loss by fitting idiosyncrasies of the training set (overfitting to structure outside the true operator family or admissible approximation of the family to another external family); or optimization selects arbitrary parameter instantiations along many uninformative directions, producing unstable solutions with high variances. Those are potentially two failure mode on wrong operators and worse variance, and thus also correlate to the arbitrary notion of generalization, where this is particularly troublesome since some form of optimization setting assumes $\Gamma_{c}$ of the concept $c\in\mathcal{C}$. From such, we state the frame in which bias-variance is calculated of, with construction preconditioning specified by construction~\ref{const:bias-variance1}. 
 
 
@@ -48,7 +32,11 @@ We use the setup of a model $M$ structured into $(\theta, I, \{f\})$, where $\{f
 \end{enumerate}
 \end{construction}
 
-One of the main question that should be asked of the modern landscape is that, would modern models even \textbf{admit bias-variance} in any reasonable way? We might as well also analyse in such fact, firstly with admission on computational complexity and decidability problem, and how bias-variance forces structure this way. 
+One of the main question that should be asked of the modern landscape is that, would modern models even \textbf{admit bias-variance} in any reasonable way? We might as well also analyse in such fact, firstly with admission on computational complexity and decidability problem, and how bias-variance forces structure this way. As we have already seen of the setup, the construction itself is not neutral. Indeed, it asks for many conditions simultaneously, further than the above set conditioning. Indeed, one might also extrapolate and see that under general setting, the bias itself is not total, in the sense that $\mathcal{B}(h,c)$ and $\mathcal{V}(h,c)$ are never enough or might measure overcapacitated domains, i.e. where two modes happen,
+\begin{equation}
+  \mathcal{B}(h,c) + \mathcal{V}(h,c) < \{R\}, \quad \mathcal{B}(h,c) + \mathcal{V}(h,c) > \{R\}
+\end{equation}
+of the bias-variance combination. Often, theories resolve this by collapsing it into $\epsilon$, thus delegating it to noise or rather irreducible error. However, such is rather an unwarranted move, and often time it can also indicate \textbf{bias-variance artefact} instead than delegation to process-level fluctuation or inconsistency. The bias-variance notion itself is brittle, especially when its definition is explicitly defined in classical way through $\ell_{2}$ norm class, and of which to be explored of how the divergence pattern happen to different settings, of which to violate the above construction. However, before again, moving on to identifying the structural justification and problem of bias-variance, we also would like to present another construction. This time, how \textit{bias-variance is computed} in real system. 
 
 \subsection{The definitions of double descent}
 
@@ -56,6 +44,92 @@ Double descent is often considered the direct opposition to the viewpoint of bia
 
 Empirically, double descent has been reported in a variety of settings, while being absent in many others, even under closely related modelling and data conditions. This variability complicates attempts to treat double descent as a unified phenomenon and raises whether it constitutes a single mechanism, a collection of regime-dependent effects, or an artefact of specific modelling and evaluation choices. In the absence of necessary and sufficient conditions for its occurrence, theoretical accounts are forced to accommodate mutually incompatible behaviours, thereby undermining their explanatory specificity. Consequently, existing frameworks face a dual difficulty: they neither reconcile naturally with classical bias-variance analyses, nor align with the assumptions underlying earlier generalization results, such as uniform convergence over well-behaved hypothesis classes. Without a precise characterization of the object under study, it remains unclear how such theories can be systematically compared, falsified, or extended. 
 
+If we are to reframe double descent, then it would be rather better characterized if we to treat double descent not as a singular phenomenon, but rather a corpus of such, all of which containing different notions and observations than said mention, depends on various moving mechanism of the dynamical system in operations. 
+
 \subsection{Gradient descent and metric mismatch}
 
 Gradient descent is an effective approach to realize the case of \textbf{empirical risk minimization} into the formation of practical encodable algorithm, within certain structural constraints, or rather the reverse is true. For ERM to be applied, we require certain spaces of admissible structure:
+
+
+\section{Complexity notion and its pluralism}
+
+Assume the working space is the real field $\mathbb{R}^{n}$. Let us recall a model $h\in\mathcal{H}$ of certain hypothesis class $\mathcal{H}$. Then, the \textbf{complexity} refers to the complexity of the hypothesis $h$ itself; there is also the notion of class maximal complexity for $\mathcal{H}$. Complexity in this case refers to the mass of the model, or rather, to answer the following questions:
+\begin{enumerate}[itemsep=1pt,topsep=1pt]
+    \item What is the effective expression range of a hypothesis?
+    \item What is the hypothesis structured in?
+    \item If the model is constructed by parameters, how many parameters are there?
+    \item How many components are there in specific model $h$, and how would another model $h'\in \mathcal{H}$ differs from $h$?
+\end{enumerate}
+
+Those questions are not so easily answered. In fact, under the current learning theory landscape, such is often incoherent if taken individually, because the model structure are often incoherent the sense of exhibiting the \textbf{expressive plurality} problem, where the abbreviated $|c|$ and $|\mathcal{H}|$ size of the hypothesis model or hypothesis model space, respectively, are rather actually a set of all measures contracted on the model description. At most, there exists two types of model complexity, with the first being \textit{operational complexity} or often known in discourse as expressive complexity (though such term is poorly used), and the second one being \textit{structural complexity}, coming from the model configuration and static mass-operation conditioning (mass here means the collection of all objects in question of the model itself). Those are model-respective complexity. When we are to initialize testing scenario, such term is then also sample complexity, and so on. However, the majority of the plurality can be pointed to the insufficiency in expressing different classes of models together. Or rather, the lack thereof of structural equivalence beyond simple mathematical formulaic equivalence, which, if such is sufficient, the problem would be absolved. 
+
+Toward specificity, analysis often puts the hypothesis class $\mathcal{H}$ as a class of functions. So, there exists the class $\mathcal{H}_{n}$ of $n$-th degree polynomials, or else. Effective complexity in such case means the range of expression a function can give - for example, for $n$-th polynomial class. For the class $\mathcal{H}_n$ of polynomials of degree $n$ on a closed interval $[a,b]\subset \mathbb{R}$, the Weierstrass approximation theorem guarantees that, as $n\to \infty$, any continuous function $f:[a,b]\to \mathbb{R}$ can be approximated arbitrarily closely in the uniform norm. Hence, the expressive complexity of $\mathcal{H}_n$ grows with $n$, but for fixed $n$ only a finite-dimensional subset of $C([a,b])$ is exactly representable. This distinction highlights the difference between \emph{approximation capacity} of a hypothesis class and the \emph{exact representational capacity} captured by its parameterization. These expressions depend on the field or space the hypothesis class lives in, for example, if the hypothesis is configured to work in the set of all functions in $\mathbb{F}=\mathbb{R}$ of algebraic field, then we call it the algebraic family. There are various hypothesis classes in such case, and usually, not a lot of them can be analysed and represented in the same way, and hence also the analysis of the `size' of the hypothesis, also between different hypothesis classes, prompted the usage of a more general notion, called \textbf{representation complexity}\footnote{Representation complexity refers to the number of components needed to express $h$ and generally, any hypothesis in $\mathcal{H}$. This is often the parameters count, since the parameters themselves are used in constructing the function in algebraic system. Thus, again, an $n$-th degree polynomial might have $2(n+1)$ parameters, for $n+1$ variational input (or variable), and $n+1$ coefficients. Notice that we specifically at the beginning, use the notion of algebraic structure $\mathbb{R}$ because of it. If we restrict ourselves to the expression, for example, for $\mathbb{B}=\{0,1\}$, then it can be expressed in various ways in logic theory, such as conjunctive normal form (CNF), disjunctive normal form (DNF), and else. This forbid the analysis based on the effective process itself, but rather the number of components required, hence taking them as complexity of construction.}.
+
+\begin{table*}[htb]
+  \centering
+  \footnotesize
+  \begin{threeparttable}
+    \caption{Descriptions of complexity measures applied to models and learning processes, from \cite{STL_Hajek_Maxim_2021,10.5555/2930837,10.5555/2371238,10.5555/200548} and \cite{Vapnik1999-VAPTNO} with some custom notions.}
+    \label{tab:polynomial_test}
+    % three columns: adaptive widths
+    \begin{tabularx}{\textwidth}{ L{0.15\textwidth}
+                                     L{0.1\textwidth} 
+                                     L{0.4\textwidth}
+                                     >{\RaggedRight\arraybackslash}X }
+      \toprule
+      \textbf{Type} & \textbf{Notation} & \textbf{Purposes} & \textbf{Notes} \\
+      \midrule
+      Representation
+        & $\mathcal{M}_{r}$ 
+        & Complexity of encoding a model (size of representation, alphabet-dependent).
+        & Model-level measure. \\
+      \addlinespace[1pt]
+      Expressive 
+        & $\mathcal{M}_{e}$
+        & Complexity of the model's observable behaviour (operational expressivity of the mapping it implements). 
+        & Model-level measure.\\
+      \addlinespace[1pt]
+      Structural
+        & $\mathcal{M}_{s}$
+        & Complexity of the model's internal architecture (how components compose and interact).
+        & Model-level measure.\\
+      \addlinespace[1pt]
+      Structural mass
+        & $\mathcal{M}_{\Sigma}$
+        & Aggregate representation size derived from representation complexity across the model.
+        & Sum of $\mathcal{M}_{r},\mathcal{M}_{e},\mathcal{M}_{s}$\\
+      \addlinespace[1pt]
+      Sample
+        & $\mathcal{M}_{p\in\mathcal{S}},\mathcal{M}_{p}$
+        & Number of samples required to reach a prescribed performance level (statistical sample-count).
+        &Process-level measure.\\
+      \addlinespace[1pt]
+      Sample space
+        & $\mathcal{M}_{\mathcal{S}}$
+        & Intrinsic complexity of the data distribution / sample domain (richness, diversity, structured-ness).
+        & Global process measure.\\
+      \addlinespace[1pt]
+      Optimization
+        & $\mathcal{M}_{\epsilon}$
+        & Complexity of the learning algorithm (convergence rate, computational/iteration cost, sensitivity) or worst-medium-best learning cost. 
+        & Process-level measure.\\
+      \addlinespace[1pt]
+      \bottomrule
+    \end{tabularx}
+
+    \begin{tablenotes}
+      \footnotesize
+      \item[] \textbf{Notes:} The notion of structural mass is convoluted. In certain setting, it is simply the parameter space $\theta\in\Theta$, but in some setting, there exists fundamental difference than identically weighted parameter space complexity, as seen in multi-basis polynomial models, not taking into account homogeneous deep learning networks. Optimization complexity coincides with PAC-learning bounds for polynomial runtime, and \textit{sample complexity} sometimes can only be the dimension of the input/observation space.
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table*}
+
+The above complexity (and so is in Table~\ref{tab:polynomial_test}), aside from sample space-related measure, can also be applied onto the concept class's members itself. We also take the class complexity in such case, as the argument that maximize those measure: that is, the largest value of the measure, taken on the class as the class's complexity.\footnote{Expressive complexity measures the variety of input-output behaviours the model can implement.}\footnote{Structural complexity is decomposable into component-wise measures (e.g., per-layer, per-module) and useful for architectural comparisons.}\footnote{Sample complexity depends on hypothesis class, loss, and desired error/confidence. Further clarification must be made of a grounded definition for utilization.}\footnote{Sample space complexity infers the statistical measure over the sample space; affects learnability and effective sample size.}\footnote{We also note that the notion of optimization is usually hard to pin down analytically, often characterized empirically or by worst-case bounds.}
+
+The next complexity measures that can be taken of, comes from the learning process structure itself. Usually, in statistical learning theory (\cite{STL_Hajek_Maxim_2021,10.5555/2371238,10.5555/2621980}), we often use the setting that is related to \textbf{supervised process}. This usually means the process can be configured in a feedback loop, or induced response toward the model - often come from the observational space, where the concept that is set to be the target of the process - then called as learning process - is conjured. For now, we reserve this to the classical learning theory and process, and will not inquire further of such direction. 
+
+The learning process assumes an operational space containing the structure, for example, $\mathbb{R}$-encoding space of real values, and a set of \textbf{samples} living in such space, denoted $\mathcal{S}$. Those samples are often referred to as the \textbf{observation set} of a particular objective of learning. As mentioned above, $\mathcal{S}$ belongs to the concept $c$, assumed to be of certain concept class $\mathcal{C}$. $\mathcal{S}$ is obtained by using an observing process to create or generate the result. This process can be determined or considered in multiple way, however, generally can be considered by having a deterministic interpretation (using an explicit function $c(x)$) or by probabilistic approach (modelling a distribution $\mathcal{D}$). Hence, we gain another type of complexity, with regard to the process called \textbf{sample complexity} - usually defined of cardinality - the amount of sample needed for particular purpose, for particular objective. For the complexity category up to the structure of the learning setting by itself, we call it the \textbf{sample space complexity}. 
+
+One final complexity that is worth mentioning is then the \textbf{optimization complexity}, measure on the action of the learning algorithm. By such, it investigates the construction of an optimization algorithm solely dependent on its size of the algorithm, and other non-process related measures. Optimization complexity can also be related or expressed, in situation of time complexity, which is typical in computing system. 
+
+One might ask why we need to determine and categorize complexity measures and the need to generalize and differentiate of each one. Indeed, while in usual use cases, such complexity notion can be considered sufficient in controlling and gauging the model itself. However, just as \cite{James2021} indicated in the section on deep learning double descent, such complexity might eventually, of some regions, inadequate to express and evaluate the complexity of the model in its operations any more. Such transition is unanswered, and while the founding of complexity notion is still fragmented, it is indeed difficult to not paying attention specifically to those notions themselves. Considering such of the learning framework and the more sophisticated goal that we push forth of reforming the learning theory, it is then natural to define such. That said, the list itself is not enough, and it would be rather difficult to think of, as without a clear structural scheme, we might as well cannot analyse the system holding such. 

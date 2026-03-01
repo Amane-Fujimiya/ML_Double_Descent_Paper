@@ -1,7 +1,7 @@
 PWD e:\Core\Main Directory\Paper Series\Draft
 INPUT C:\Users\Admin\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
 INPUT e:\Core\Main Directory\Paper Series\Draft\main.tex
-OUTPUT main.log
+OUTPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\main.log
 INPUT D:\MikTek\tex\latex\memoir\memoir.cls
 INPUT D:\MikTek\tex\latex\memoir\memoir.cls
 INPUT D:\MikTek\tex\latex\xpatch\xpatch.sty
@@ -542,7 +542,7 @@ INPUT D:\MikTek\tex\generic\pgf\libraries\shapes\pgflibraryshapes.geometric.code
 INPUT D:\MikTek\tex\generic\pgf\libraries\shapes\pgflibraryshapes.geometric.code.tex
 INPUT D:\MikTek\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryfit.code.tex
 INPUT D:\MikTek\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryfit.code.tex
-OUTPUT main.idx
+OUTPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\main.idx
 INPUT .\setting\theorem.tex
 INPUT .\setting\theorem.tex
 INPUT setting\theorem.tex
@@ -554,7 +554,7 @@ INPUT .\setting\document_config.tex
 INPUT setting\document_config.tex
 INPUT D:\MikTek\tex\latex\marginnote\marginnote.sty
 INPUT D:\MikTek\tex\latex\marginnote\marginnote.sty
-OUTPUT main.idx
+OUTPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\main.idx
 INPUT .\setting\mathcommand.tex
 INPUT .\setting\mathcommand.tex
 INPUT setting\mathcommand.tex
@@ -585,43 +585,43 @@ INPUT D:\MikTek\tex\latex\etbb\t1etbb-tlf.fd
 INPUT D:\MikTek\tex\latex\etbb\t1etbb-tlf.fd
 INPUT D:\MikTek\tex\latex\etbb\t1etbb-tlf.fd
 INPUT D:\MikTek\fonts\tfm\public\etbb\ETbb-Regular-tlf-t1.tfm
-INPUT .\main.aux
-INPUT .\main.aux
-INPUT main.aux
-INPUT .\content\introduction.aux
-INPUT .\content\introduction.aux
-INPUT content\introduction.aux
-INPUT .\content\c1.aux
-INPUT .\content\c1.aux
-INPUT content\c1.aux
-INPUT .\content\c3.aux
-INPUT .\content\c3.aux
-INPUT content\c3.aux
-INPUT .\content\c4.aux
-INPUT .\content\c4.aux
-INPUT content\c4.aux
-INPUT .\content\c5.aux
-INPUT .\content\c5.aux
-INPUT content\c5.aux
-INPUT .\content\c6.aux
-INPUT .\content\c6.aux
-INPUT content\c6.aux
-INPUT .\content\c6.5.aux
-INPUT .\content\c6.5.aux
-INPUT content\c6.5.aux
-INPUT .\content\c7.aux
-INPUT .\content\c7.aux
-INPUT content\c7.aux
-INPUT .\content\c8.aux
-INPUT .\content\c8.aux
-INPUT content\c8.aux
-INPUT .\content\c9.aux
-INPUT .\content\c9.aux
-INPUT content\c9.aux
-INPUT .\content\c10.aux
-INPUT .\content\c10.aux
-INPUT content\c10.aux
-OUTPUT main.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\main.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\main.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\main.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\introduction.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\introduction.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\introduction.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c1.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c1.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c1.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c3.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c3.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c3.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c4.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c4.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c4.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c5.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c5.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c5.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c6.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c6.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c6.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c6.5.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c6.5.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c6.5.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c7.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c7.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c7.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c8.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c8.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c8.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c9.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c9.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c9.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c10.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c10.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c10.aux
+OUTPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\main.aux
 INPUT D:\MikTek\tex\latex\ly1\ly1ptm.fd
 INPUT D:\MikTek\tex\latex\ly1\ly1ptm.fd
 INPUT D:\MikTek\tex\latex\ly1\ly1ptm.fd
@@ -633,17 +633,17 @@ INPUT D:\MikTek\tex\latex\epstopdf-pkg\epstopdf-base.sty
 INPUT D:\MikTek\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT D:\MikTek\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT D:\MikTek\tex\latex\00miktex\epstopdf-sys.cfg
-INPUT .\main.out
-INPUT .\main.out
-INPUT main.out
-INPUT main.out
-OUTPUT main.pdf
-INPUT .\main.out
-INPUT .\main.out
-OUTPUT main.out
-INPUT .\main.toc
-INPUT .\main.toc
-INPUT main.toc
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\main.out
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\main.out
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\main.out
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\main.out
+OUTPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\main.pdf
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\main.out
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\main.out
+OUTPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\main.out
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\main.toc
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\main.toc
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\main.toc
 INPUT D:\MikTek\fonts\tfm\public\etbb\ETbb-Regular-tlf-t1.tfm
 INPUT D:\MikTek\fonts\tfm\public\cm\cmr10.tfm
 INPUT D:\MikTek\fonts\tfm\public\cm\cmr6.tfm
@@ -735,7 +735,7 @@ INPUT D:\MikTek\fonts\vf\public\etbb\ETbb-Regular-tlf-t1.vf
 INPUT D:\MikTek\fonts\tfm\public\etbb\ETbb-Regular-tlf-t1--base.tfm
 INPUT D:\MikTek\fonts\vf\public\etbb\ETbb-Regular-tlf-t1.vf
 INPUT D:\MikTek\fonts\tfm\public\etbb\ETbb-Regular-tlf-t1--base.tfm
-OUTPUT main.toc
+OUTPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\main.toc
 INPUT D:\MikTek\fonts\tfm\jknappen\ec\ecss1728.tfm
 INPUT D:\MikTek\fonts\tfm\jknappen\ec\ecss0900.tfm
 INPUT D:\MikTek\fonts\tfm\jknappen\ec\ecss1000.tfm
@@ -755,9 +755,9 @@ INPUT D:\MikTek\fonts\tfm\public\etbb\ETbb-Regular-tlf-t1--base.tfm
 INPUT D:\MikTek\fonts\tfm\public\etbb\ETbb-Italic-tlf-t1.tfm
 INPUT D:\MikTek\fonts\vf\public\etbb\ETbb-Italic-tlf-t1.vf
 INPUT D:\MikTek\fonts\tfm\public\etbb\ETbb-Italic-tlf-t1--base.tfm
-INPUT .\main.lof
-INPUT .\main.lof
-INPUT main.lof
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\main.lof
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\main.lof
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\main.lof
 INPUT D:\MikTek\fonts\tfm\public\etbb\ETbb-Bold-tlf-t1.tfm
 INPUT D:\MikTek\fonts\tfm\public\etbb\ETbb-Italic-tlf-t1.tfm
 INPUT D:\MikTek\fonts\vf\public\etbb\ETbb-Bold-tlf-t1.vf
@@ -778,7 +778,7 @@ INPUT D:\MikTek\fonts\tfm\public\etbb\ETbb-Regular-tlf-sc-t1--base.tfm
 INPUT D:\MikTek\fonts\enc\dvips\etbb\etbb_6bhqsy.enc
 INPUT .\content\introduction.tex
 INPUT .\content\introduction.tex
-OUTPUT content\introduction.aux
+OUTPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\introduction.aux
 INPUT .\content\introduction.tex
 INPUT .\content\introduction.tex
 INPUT content\introduction.tex
@@ -796,7 +796,7 @@ INPUT D:\MikTek\fonts\vf\public\etbb\ETbb-Italic-tlf-t1.vf
 INPUT D:\MikTek\fonts\tfm\public\etbb\ETbb-Italic-tlf-t1--base.tfm
 INPUT .\content\c1.tex
 INPUT .\content\c1.tex
-OUTPUT content\c1.aux
+OUTPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c1.aux
 INPUT .\content\c1.tex
 INPUT .\content\c1.tex
 INPUT content\c1.tex
@@ -821,7 +821,7 @@ INPUT D:\MikTek\fonts\tfm\public\etbb\ETbb-Italic-tlf-t1.tfm
 INPUT D:\MikTek\fonts\tfm\jknappen\ec\ecsx0900.tfm
 INPUT .\content\c3.tex
 INPUT .\content\c3.tex
-OUTPUT content\c3.aux
+OUTPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c3.aux
 INPUT .\content\c3.tex
 INPUT .\content\c3.tex
 INPUT content\c3.tex
@@ -847,19 +847,19 @@ INPUT D:\MikTek\fonts\tfm\public\amsfonts\euler\eufm5.tfm
 INPUT D:\MikTek\fonts\tfm\public\amsfonts\euler\eufm7.tfm
 INPUT .\content\c4.tex
 INPUT .\content\c4.tex
-OUTPUT content\c4.aux
+OUTPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c4.aux
 INPUT .\content\c4.tex
 INPUT .\content\c4.tex
 INPUT content\c4.tex
 INPUT .\content\c5.tex
 INPUT .\content\c5.tex
-OUTPUT content\c5.aux
+OUTPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c5.aux
 INPUT .\content\c5.tex
 INPUT .\content\c5.tex
 INPUT content\c5.tex
 INPUT .\content\c6.tex
 INPUT .\content\c6.tex
-OUTPUT content\c6.aux
+OUTPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c6.aux
 INPUT .\content\c6.tex
 INPUT .\content\c6.tex
 INPUT content\c6.tex
@@ -926,7 +926,7 @@ INPUT .\media\introroc2.png
 INPUT .\media\introroc2.png
 INPUT .\media\introroc2.png
 INPUT .\content\c6.5.tex
-OUTPUT content\c6.5.aux
+OUTPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c6.5.aux
 INPUT .\content\c6.5.tex
 INPUT .\content\c6.5.tex
 INPUT .\content\c6.5.tex
@@ -936,7 +936,7 @@ INPUT D:\MikTek\fonts\vf\public\etbb\ETbb-Bold-tlf-t1.vf
 INPUT D:\MikTek\fonts\tfm\public\etbb\ETbb-Bold-tlf-t1--base.tfm
 INPUT .\content\c7.tex
 INPUT .\content\c7.tex
-OUTPUT content\c7.aux
+OUTPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c7.aux
 INPUT .\content\c7.tex
 INPUT .\content\c7.tex
 INPUT content\c7.tex
@@ -1012,7 +1012,7 @@ INPUT .\media\img\gnn_encoding.png
 INPUT .\media\img\gnn_encoding.png
 INPUT .\content\c8.tex
 INPUT .\content\c8.tex
-OUTPUT content\c8.aux
+OUTPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c8.aux
 INPUT .\content\c8.tex
 INPUT .\content\c8.tex
 INPUT content\c8.tex
@@ -1025,7 +1025,7 @@ INPUT .\media\g10.png
 INPUT .\media\g10.png
 INPUT .\content\c9.tex
 INPUT .\content\c9.tex
-OUTPUT content\c9.aux
+OUTPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c9.aux
 INPUT .\content\c9.tex
 INPUT .\content\c9.tex
 INPUT content\c9.tex
@@ -1034,7 +1034,7 @@ INPUT D:\MikTek\fonts\tfm\public\amsfonts\euler\eufm10.tfm
 INPUT C:\Users\Admin\AppData\Local\MiKTeX\fonts\tfm\public\bbm\bbm10.tfm
 INPUT .\content\c10.tex
 INPUT .\content\c10.tex
-OUTPUT content\c10.aux
+OUTPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c10.aux
 INPUT .\content\c10.tex
 INPUT .\content\c10.tex
 INPUT content\c10.tex
@@ -1042,9 +1042,9 @@ INPUT D:\MikTek\fonts\tfm\jknappen\ec\ecsi0900.tfm
 INPUT D:\MikTek\fonts\tfm\public\etbb\ETbb-Bold-tlf-t1.tfm
 INPUT D:\MikTek\fonts\vf\public\etbb\ETbb-Bold-tlf-t1.vf
 INPUT D:\MikTek\fonts\tfm\public\etbb\ETbb-Bold-tlf-t1--base.tfm
-INPUT .\main.ind
-INPUT .\main.ind
-INPUT main.ind
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\main.ind
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\main.ind
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\main.ind
 INPUT .\appendix\appendix.tex
 INPUT .\appendix\appendix.tex
 INPUT .\appendix\appendix.tex
@@ -1067,43 +1067,43 @@ INPUT D:\MikTek\fonts\tfm\public\etbb\ETbb-Regular-tlf-sc-t1.tfm
 INPUT .\main.bbl
 INPUT .\main.bbl
 INPUT main.bbl
-OUTPUT main.lof
-INPUT main.aux
-INPUT .\content\introduction.aux
-INPUT .\content\introduction.aux
-INPUT content\introduction.aux
-INPUT .\content\c1.aux
-INPUT .\content\c1.aux
-INPUT content\c1.aux
-INPUT .\content\c3.aux
-INPUT .\content\c3.aux
-INPUT content\c3.aux
-INPUT .\content\c4.aux
-INPUT .\content\c4.aux
-INPUT content\c4.aux
-INPUT .\content\c5.aux
-INPUT .\content\c5.aux
-INPUT content\c5.aux
-INPUT .\content\c6.aux
-INPUT .\content\c6.aux
-INPUT content\c6.aux
-INPUT .\content\c6.5.aux
-INPUT .\content\c6.5.aux
-INPUT content\c6.5.aux
-INPUT .\content\c7.aux
-INPUT .\content\c7.aux
-INPUT content\c7.aux
-INPUT .\content\c8.aux
-INPUT .\content\c8.aux
-INPUT content\c8.aux
-INPUT .\content\c9.aux
-INPUT .\content\c9.aux
-INPUT content\c9.aux
-INPUT .\content\c10.aux
-INPUT .\content\c10.aux
-INPUT content\c10.aux
-INPUT .\main.out
-INPUT .\main.out
+OUTPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\main.lof
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\main.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\introduction.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\introduction.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\introduction.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c1.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c1.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c1.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c3.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c3.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c3.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c4.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c4.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c4.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c5.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c5.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c5.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c6.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c6.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c6.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c6.5.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c6.5.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c6.5.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c7.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c7.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c7.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c8.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c8.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c8.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c9.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c9.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c9.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c10.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c10.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\content\c10.aux
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\main.out
+INPUT e:\Core\Main Directory\Paper Series\Draft\%OUTDIR%\main.out
 INPUT C:\Users\Admin\AppData\Local\MiKTeX\fonts\pk\ljfour\public\bbm\dpi600\bbm9.pk
 INPUT C:\Users\Admin\AppData\Local\MiKTeX\fonts\pk\ljfour\public\bbm\dpi600\bbm9.pk
 INPUT D:\MikTek\fonts\type1\public\etbb\ETbb-Bold.pfb

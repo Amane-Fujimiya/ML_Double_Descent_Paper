@@ -75,7 +75,26 @@ One of the main examples would be to pitch different kind of models together, fo
 
 \subsection{Preliminaries on observations - \cite{schaeffer_double_2023}}
 
-Conveniently, one of the few analytical sufficient experimental analysis that we can get, is from \cite{schaeffer_double_2023} paper on demystifying double descent. While the experimental setup is rather well-defined and interesting, it is also rather limited in scope, of which we want to dive deeper into it and further the analysis that was provided. 
+Conveniently, one of the few analytical sufficient experimental analysis that we can get, is from \cite{schaeffer_double_2023} paper on demystifying double descent. While the experimental setup is rather well-defined and interesting, it is also rather limited in scope, of which we want to dive deeper into it and further the analysis that was provided. The setting of the model in precondition was within the setup of a duplet correlation dataset, 
+\begin{equation}
+    \mathcal{D} = \{(\mathbf{x}_{n}, y_{n})\}_{1\leq n \leq N}
+\end{equation}
+for $N$ samples with variational vector $x$ as input. The function is the classical functional type of $y=c(\mathbf{x})$ of the hidden concept, of which is assumed to utilize all variables in the setting of $\mathbf{x}$ itself. Thence, objective is to figure out for the model $f(x)$ given, such that
+\begin{equation}
+    f(\mathbf{x}) = \mathbf{x}\cdot \bm{\beta} \approx c(\mathbf{x}) 
+\end{equation}
+In a sense, if the setting is ordinary linear regression, then such model equates to multilinear model, unless $|\mathbf{x}|=1$, without bias $b$ on the conditioned projection space. The experiment conducted in the test is rather simple, with the setting being,
+\begin{equation}
+    |\mathbf{x}| = 1,\quad x\in [-1,1],\quad y\in \mathbb{R},\: c(x) = 2x + \cos{(25x)}
+\end{equation}
+and within such approximating $c(x)$ using a univariate polynomial on feature map $\bm{\phi}_{P}$ of which maps any $x$ to $P$-degree polynomial basis vector, and collapse it of such for the fitting model $f(x)$ to be now
+\begin{equation}
+    f(x)\equiv \bm{\phi}_{P}(x)\cdot \beta_{P} \approx c(x)
+\end{equation}
+While the paper indeed introduced a larger and logical intuition concepts, plus analysis into how one might interpret such result using ordinary least square and the general regression problem, such is often poorly directed toward where the analysis itself is rather only additive than any. First, is the legible assumption of the generality of application on results, of the tested function class of cosine class functions with additive conditional bias drift on $2x$ term. The paper insufficiently so, does not tell us about how this visual explanation and analysis can help us in understand more about double descent aside from the optimization path analysis already did in several other analyses. The family of cosine equations itself imposes a rather non-trivial properties, it forces \textbf{periodicity} and value space bounding on dataset itself. That is, the choice of giving cosine class concept function morphs the moving optimization space to a more narrow space, on which there exists $x$-consistent spread and structures, i.e. a \textbf{concentrated space} class. During which, the shift can give the cosine class a linear upward drift, but not enough toward which to be called exploding, like in many cases of polynomial models or complex pollinated classes dynamics. Effectively, such is to constrain $c$ into the real analytic on compact interval problem, or $c\in C^{\omega}([-1,1])$ space, and of which spectral decays and heavy-tailed or sparse spectral structures are rare or nonexistent. 
+Second, constraining the setup to $[-1,1]$ directly interferes with the stability of the ill-conditioned Vandermonde basis polynomial space, of which setup a rather non-trivial optimization path under iterative algorithms. Thirdly, the experiment deliberately removes noise-conditioning setting, of which means that the setting assume of the synthetic analysis \textit{full oracle access} on details, of which is a non-trivial choice. 
+
+Continuing forward, the three critical quantities are generally rather not explained. For example, it is mentioned that removing small singular values in the training features $X$ prevents double descent, however such removal is non-trivial and requires justification on why this is a rather good choice, and whether a synthetic dataset can remove such and \textit{where} would it be so. Preventing the test feature from varying in trailing singular modes prevents double descent, however with such singlar modes are there is unknown, and there are no justification - whether if such mode is detrimental to the actual dataset or not of the arbitrary concept classes. Similarly so, ensuring that the optimal model in the model class has zero residual prediction errors $E$ is stated to prevent double descent, however, that is a rather metric-dependent optimization scheme, and might as well lead to the \textit{overfitting regime}, where at this behaviour, one actually returns to the question of overfitting both test and train sets, and would have to rely on the third set to see if double descent appears there or not. Either way, the setting itself is interesting to analyse, and one would consider it interesting to expand on their analysis, especially to different finite-domain conditioned system and concepts. 
 
 \subsection{Linear function class $h(u)$ - \cite{lafon_understanding_2024}}
 

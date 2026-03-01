@@ -1,19 +1,18 @@
 \indexentry{Markov's inequality|hyperpage}{2}
 \indexentry{Chernoff's inequality|hyperpage}{5}
 \indexentry{Cramer condition|hyperpage}{5}
-\indexentry{operationalisation|hyperpage}{13}
 \indexentry{empirical risk|hyperpage}{14}
 \indexentry{generalization risk|hyperpage}{14}
-\indexentry{model-free learning|hyperpage}{18}
+\indexentry{model-free learning|hyperpage}{17}
 \indexentry{representation scheme|hyperpage}{19}
-\indexentry{representation size|hyperpage}{20}
+\indexentry{representation size|hyperpage}{19}
 \indexentry{noise|hyperpage}{26}
 \indexentry{ERC|hyperpage}{29}
 \indexentry{Rademacher variables|hyperpage}{29}
-\indexentry{Rademacher complexity|hyperpage}{30}
+\indexentry{Rademacher complexity|hyperpage}{29}
 \indexentry{growth function|hyperpage}{33}
-\indexentry{shattering|hyperpage}{35}
-\indexentry{VC-dimension|hyperpage}{35}
-\indexentry{halfspace|hyperpage}{35}
-\indexentry{Sauer's lemma|hyperpage}{36}
-\indexentry{outer typing|hyperpage}{114}
+\indexentry{shattering|hyperpage}{34}
+\indexentry{VC-dimension|hyperpage}{34}
+\indexentry{halfspace|hyperpage}{34}
+\indexentry{Sauer's lemma|hyperpage}{35}
+\indexentry{outer typing|hyperpage}{112}

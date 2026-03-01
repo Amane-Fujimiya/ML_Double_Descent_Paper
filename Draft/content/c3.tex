@@ -35,9 +35,18 @@ Those questions are then answered by giving adaptation in a form of \textbf{tria
 
 \subsection{Ladder of functionals}
 
+Due to the above observation itself, the minimal baseline on assumption of any given exposed system, is that potentially, such systems do change but would rather be unattainable of all sufficient details of the hidden variable, or the graph theoretical mapping of all given quantities or properties expressible and assigned, from the perspective of the designer and the hypothesis model class. Thereby, the first assumption in worst-case scenario would be to remove this. However, before that, we need to clarify what are the ladder of functional in effective operation. 
+
+There are two nontrivial system that would give rise to the observation typically seen in symbolic AI, and classical learning theory. One of which is the separation of the \textbf{mechanistic layer} and the \textbf{phenomenological layer}. Specifically, symbolic or any other structure admitted of the more sophisticated modelling, takes on the form of mechanistic layer - i.e. structural commitment on what the system operates, either is the substrate by itself, or a rather mechanistic components of it. Phenomenological layer can be given as the upper layer, of which is largely tied into the \textbf{observation} of the specific system in operationalisation\index{operationalisation}, or the action of either giving a system existing on paper or writing, or examine a natural one, in its own implementation and existence, and of its operation throughout (i.e. \textit{dynamics}). Per such, the following setup would preside both the classical systems, and the newer statistical one. 
+
+\begin{enumerate}
+    \item \textbf{Layer I}: Here, we have the \textbf{object in consideration} itself and of its details. Supposedly, let us denote such object being $c\in\mathcal{C}$ of a specific class of objects, or arbitrary similar-type classification. Such object is not object in definitive form, but can be a system, `world' of dynamics in which there exists \textit{observables} that can be used to infer properties of the object space itself. Here, we assume that such object can be contained of the descriptions $\mathcal{W}\{(\Theta, \Gamma)\}$ for structural and actionable components, and the dynamical operations, thus giving datasets or observations on actions from $\mathcal{W}$. This is the system baseline. 
+    \item \textbf{Layer II}: The layer reserved for \textit{observables}. Such is to say, during $\mathcal{W}$ observations, there exists a set of conditions, $(q_{1},\dots,q_{n})$ that is finite on conditioned experiment, and there exists 
+\end{enumerate}
+
 \section{Classical setup}
 
-In simplicity, in classical learning theory in the modern paradigm (data-centric), our model is called the \textbf{hypothesis} $h\in \mathcal{H}$ of certain \textbf{hypothesis class} $\mathcal{H}$. This basically means that $h$ is configured to hypothesize of the one-one relationship of the observational space. The other ingredient of the learning theory includes: 
+In simplicity, in classical learning theory in the modern paradigm (data-centric), our model is called the \textbf{hypothesis} $h\in \mathcal{H}$ of certain \textbf{hypothesis class}\index{hypothesis class} $\mathcal{H}$. This basically means that $h$ is configured to hypothesize of the one-one relationship of the observational space. The other ingredient of the learning theory includes: 
 \begin{enumerate}[itemsep=1pt,topsep=1pt]
     \item The concept class versus function class can be fully incorporated into one as $\mathcal{C}$, if one is to assume the form of any given concept as $c: X\to Y$ for another set $Y$ which can lies in the sigma-algebra $\mathcal{S}$, or the measurable mapping as $f$. 
     \item The task for the hypothesis, and the designer (us) is to figure out how to best approximate $c$, assuming arbitrary notion of knowledge, prior information, such that $h$ correctly \textit{mimic} the behaviour and phenomenon observed by $c$. We call this loosely as the \textbf{learning problem}. Naturally, learning problem is a statistical problem, since their setting is fully observational. 
@@ -126,6 +135,10 @@ Overall, in the classical learning setting, we can dissect the problem into what
 \end{setting}
 To choose and to compare between the empirical best, and the Bayes hypothesis (generalization best), we need certain notions to compare the two, algorithm to choose and evaluate, and metric to determine how comparison should be performed, with both measurable. At best, we need to find the correlation between the subconcept and the actual target concept itself. 
 
+\subsection{Instantiation of the learning problem - ordering}
+
+When instantiate the setting of the learning problem, we are required to specify at least a sufficient domain validity of which the finite experiment can work on. Hence, while we can non-trivially but rather effortlessly define certain set of admissible working mechanisms, for example floating point precision abstraction, 
+
 \section{Optimal learning - PAC-learning}
 
 The PAC-learning process (\cite{10.5555/2621980,10.5555/2371238,STL_Hajek_Maxim_2021}), or rather, \textit{Probably Approximately Correct} learning, connects three complexity measures - the sample space complexity, representation complexity, and optimization complexity, to the evaluation of the statistical learning process. It refers to the categorization of various learning procedure that satisfies the Probably Approximately Correct criteria in its name, as such being followed. The theory was proposed first by \cite{10.1145/1968.1972}, of whom then won the Turing Award, but his contribution stayed in the shadow in much of the end of the century, until the formal foundation of machine learning theory, of which then it becomes the stay ground on the standard discussion on the story of machine learner and algorithmic guarantees. As such, it is the de-facto foundation of statistical-based learning. The materials here based heavily on \cite{10.5555/2371238} and \cite{10.5555/200548}, aside from interpretations. 
@@ -187,7 +200,7 @@ For the preliminary PAC learning model, there are two important problems with it
 
 First, the parameter pair $\epsilon, \delta$ control two types of failure to which a learning algorithm in the PAC model is inevitably susceptible. The error parameter $\epsilon$ is necessary since there may be only a negligible probability that a small random sample will distinguish between two competing hypotheses that differ on only one improbable point in the instance space. The confidence on only one improbable point in the instance (ground) space. The confidence parameter $\delta$ is necessary since the learning algorithm may occasionally be extremely unlucky, and draw a terribly "unrepresentative" sample of the target concept - for example, a sample consisting only of repeated draws of the same instances. The best we can hope for is that the probability of both types of failure can be made arbitrarily small at a modest cost. 
 
-Second, we notice that we demand a PAC learning algorithm perform well with respect any distribution $\mathcal{D}$. This is a very strong requirement, which is moderated by the fact that we only evaluate the hypothesis of the learning algorithm with respect to the same distribution $\mathcal{D}$. 
+Second, we notice that we demand a PAC learning algorithm perform well with respect any distribution $\mathcal{D}$. This is a very strong requirement, which is moderated by the fact that we only evaluate the hypothesis of the learning algorithm with respect to the same distribution $\mathcal{D}$. Whether this is reduced or not, depends on the shape of which the distribution is induced via determination of distribution structure. 
 
 \subsection{Representation size and PAC-configuration}
 

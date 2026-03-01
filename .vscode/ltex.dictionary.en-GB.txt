@@ -33,3 +33,5 @@ distinguishability
 distinguishment
 injectivity
 iff it
+overcapacitated
+subconcept
