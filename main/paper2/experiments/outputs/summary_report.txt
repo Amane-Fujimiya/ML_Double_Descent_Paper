@@ -1,0 +1,15 @@
+============================================================
+  NESP EXPERIMENTAL SUITE — SUMMARY REPORT
+  2026-04-26 22:53:53
+  Total time: 249s (4.1 min)
+============================================================
+
+[Exp 3] Batch Size Dependence: OK
+
+Output directory: C:\Users\Administrator\Documents\GitHub\ML_Double_Descent_Paper\main\paper2\experiments\outputs
+Generated figures:
+  - exp1_double_descent_noise.pdf
+  - exp1_eigenvalue_scatter.pdf
+  - exp1_hessian_geometry.pdf
+  - exp3_batch_size_dependence.pdf
+  - exp3_trajectories.pdf
