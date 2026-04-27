@@ -19,6 +19,11 @@ NESP prediction:
 """
 import sys
 import os
+if sys.platform == 'win32':
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+    except Exception:
+        pass
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 import torch
@@ -38,12 +43,15 @@ def run_experiment_5(
     k: int = 30,  # over-parameterized regime
     batch_sizes: list = None,
     lr: float = 0.01,
-    n_epochs_converge: int = 3000,
+    n_epochs: int = 3000,  # epochs for initial convergence
+    n_epochs_converge: int = None,  # if None, uses n_epochs
     n_epochs_extended: int = 15000,
     convergence_threshold: float = 1e-7,
     seed: int = 42,
     output_dir: str = './outputs',
 ):
+    if n_epochs_converge is None:
+        n_epochs_converge = n_epochs
     """Equilibrium erosion experiment."""
     n_train = int(0.7 * n_samples)
     if batch_sizes is None:

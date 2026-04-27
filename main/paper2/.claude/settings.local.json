@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python *)",
+      "Bash(pip install *)",
+      "Bash(where pdflatex *)",
+      "Read(//c/Program Files/MiKTeX/miktex/bin/x64/**)",
+      "Read(//c/Users/Administrator/AppData/Local/Programs/MiKTeX/miktex/bin/x64/**)",
+      "Bash(\"/c/Program Files/MiKTeX/miktex/bin/x64/pdflatex\" -interaction=nonstopmode -synctex=1 final_paper.tex)",
+      "Bash(\"/c/Program Files/MiKTeX/miktex/bin/x64/mpm\" --install=sourcesans3)",
+      "Bash(\"/c/Program Files/MiKTeX/miktex/bin/x64/mpm\" --install=source-sans)",
+      "Bash(\"/c/Program Files/MiKTeX/miktex/bin/x64/miktex-packages\" install sourcesans3)",
+      "Bash(\"/c/Program Files/MiKTeX/miktex/bin/x64/pdflatex\" -interaction=nonstopmode -draftmode final_paper.tex')",
+      "Bash(\"/c/Program Files/MiKTeX/miktex/bin/x64/mpm\" --list)",
+      "Bash(/c/Program Files/MiKTeX/miktex/bin/x64/mpm *)",
+      "Bash(\"/c/Program Files/MiKTeX/miktex/bin/x64/updmap\" --verbose)",
+      "Bash(\"/c/Program Files/MiKTeX/miktex/bin/x64/lualatex\" -interaction=nonstopmode -synctex=1 final_paper.tex)",
+      "Bash(\"/c/Program Files/MiKTeX/miktex/bin/x64/biber\" final_paper)",
+      "Bash(\"/c/Program Files/MiKTeX/miktex/bin/x64/lualatex\" -interaction=nonstopmode -synctex=1 paper2a_revised.tex)",
+      "Bash(\"/c/Program Files/MiKTeX/miktex/bin/x64/biber\" paper2a_revised)"
+    ]
+  }
+}

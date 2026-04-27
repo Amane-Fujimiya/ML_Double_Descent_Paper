@@ -35,11 +35,11 @@ from utils import (
 
 
 def run_experiment_1(
-    d: int = 20,
-    n_samples: int = 2000,
+    d: int = 50,
+    n_samples: int = 10000,
     k_values: list = None,
     lr: float = 0.01,
-    n_epochs: int = 2000,
+    n_epochs: int = 10000,
     seed: int = 42,
     output_dir: str = './outputs',
 ):
@@ -256,10 +256,10 @@ def run_experiment_1(
 
 if __name__ == '__main__':
     results = run_experiment_1(
-        d=20,
-        n_samples=2000,
-        k_values=[int(20*r) for r in [0.3, 0.5, 0.8, 1.0, 1.2, 1.5, 2.0, 3.0, 5.0]],
+        d=30,
+        n_samples=4000,
+        k_values=[int(30*r) for r in [0.3, 0.5, 0.8, 1.0, 1.2, 1.5, 2.0, 3.0, 5.0]],
         lr=0.01,
-        n_epochs=2000,
+        n_epochs=4000,
         output_dir='./outputs',
     )

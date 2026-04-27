@@ -2,7 +2,7 @@
 % PACKAGE INCLUSION
 %\usepackage{times}
 \usepackage[utf8]{inputenc}   % only for pdfLaTeX
-\graphicspath{{media/}}  % organize your images and other figures under media/ folder
+\graphicspath{{media/}{pdf/}}  % organize your images and other figures under media/ and pdf/ folders
 %\usepackage[T1]{fontenc}
 %\usepackage{titlesec}
 \usepackage{amsbsy,amssymb,amsmath,amsfonts,amsthm} % Math and related rendering
@@ -32,6 +32,7 @@
 \usepackage{nicefrac}       % compact symbols for 1/2, etc.
 \usepackage{microtype}      % microtypography
 \microtypesetup{expansion=false}  % disable font expansion for MiKTeX compatibility
+\emergencystretch=3em
 \usepackage{stmaryrd}
 \usepackage{csquotes}
 %\DisemulatePackage{showidx} %(2)
@@ -75,6 +76,7 @@
 %----------------------------------------------------------------------------------% 
 % SMALL SETTING
 \usepackage{pgfplots} % for something else
+\pgfplotsset{compat=1.18}
 \usetikzlibrary{patterns}       % For custom patterns
 \usetikzlibrary{shadings}       % For gradient fills
 \usetikzlibrary{shapes.geometric} % For geometric shapes
@@ -157,6 +159,19 @@
 \newtheorem{question}{Question}[section]
 %\newtheorem{example}{Example}[section]
 \newtheorem{note}{Note}[section]
+
+\renewcommand{\theHdefinition}{\thesection.\arabic{definition}}
+\renewcommand{\theHtheorem}{\thesection.\arabic{theorem}}
+\renewcommand{\theHcol}{\thesection.\arabic{col}}
+\renewcommand{\theHconjecture}{\thesection.\arabic{conjecture}}
+\renewcommand{\theHsetting}{\thesection.\arabic{setting}}
+\renewcommand{\theHassumption}{\thesection.\arabic{assumption}}
+\renewcommand{\theHassume}{\thesection.\arabic{assume}}
+\renewcommand{\theHremark}{\thesection.\arabic{remark}}
+\renewcommand{\theHhypothesis}{\thesection.\arabic{hypothesis}}
+\renewcommand{\theHpostulate}{\thesection.\arabic{postulate}}
+\renewcommand{\theHquestion}{\thesection.\arabic{question}}
+\renewcommand{\theHnote}{\thesection.\arabic{note}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% nicer spacing

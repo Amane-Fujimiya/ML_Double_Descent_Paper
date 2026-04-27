@@ -16,6 +16,11 @@ Prediction from NESP:
 """
 import sys
 import os
+if sys.platform == 'win32':
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+    except Exception:
+        pass
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 import torch
@@ -118,6 +123,8 @@ def run_experiment_2(
     k: int = 20,  # at interpolation threshold
     n_trials: int = 8,
     lr_values: list = None,
+    n_epochs: int = 3000,  # epochs for initial convergence
+    n_epochs_escape: int = 5000,  # max epochs for escape
     seed: int = 42,
     output_dir: str = './outputs',
 ):
@@ -148,7 +155,7 @@ def run_experiment_2(
         # Phase 1: Create minimum with given LR
         model = LinearTeacherStudent(d=d, k=k)
         model = create_sharp_minimum(model, X_train, y_train,
-                                     lr_small=lr_init, n_epochs=3000)
+                                     lr_small=lr_init, n_epochs=n_epochs)
 
         # Measure sharpness (λ_max of Hessian)
         with torch.no_grad():
@@ -166,7 +173,7 @@ def run_experiment_2(
             model, X_train, y_train, X_test, y_test,
             lr=0.01,
             escape_threshold=0.05,
-            max_epochs=5000,
+            max_epochs=n_epochs_escape,
         )
 
         results.append({

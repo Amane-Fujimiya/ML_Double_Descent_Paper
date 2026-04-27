@@ -1,0 +1,21 @@
+[0] Config.pm:328> INFO - This is Biber 2.21
+[0] Config.pm:331> INFO - Logfile is 'paper2a_revised.blg'
+[78] biber-MSWIN64:342> INFO - === 
+[107] Biber.pm:421> INFO - Reading 'paper2a_revised.bcf'
+[263] Biber.pm:999> INFO - Using all citekeys in bib section 0
+[274] Biber.pm:4487> INFO - Processing section 0
+[283] Biber.pm:4678> INFO - Looking for bibtex file 'references.bib' for section 0
+[330] bibtex.pm:1713> INFO - LaTeX decoding ...
+[430] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
+[1035] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1035] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1035] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'level = 4' with 'level = 2'
+[1035] Biber.pm:4307> INFO - Sorting list 'cms/global//global/global/global' of type 'entry' with template 'cms' and locale 'en-US'
+[1035] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
+[1138] bbl.pm:676> INFO - Writing 'paper2a_revised.bbl' with encoding 'UTF-8'
+[1212] bbl.pm:779> INFO - Output to paper2a_revised.bbl
+[1212] Biber.pm:132> WARN - Duplicate entry key: 'Vapnik1999-VAPTNO' in file 'references.bib', skipping ...
+[1212] Biber.pm:132> WARN - Duplicate entry key: 'brellmann2024on' in file 'references.bib', skipping ...
+[1212] Biber.pm:132> WARN - ISBN '978-0199233210' in entry 'mezard2009information' is invalid - run biber with '--validate_datamodel' for details.
+[1213] Biber.pm:132> WARN - ISBN '978-9971501533' in entry 'mezard1987spin' is invalid - run biber with '--validate_datamodel' for details.
+[1213] Biber.pm:134> INFO - WARNINGS: 4
