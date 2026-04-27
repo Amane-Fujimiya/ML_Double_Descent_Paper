@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.4.28)  28 APR 2026 02:38
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.4.28)  28 APR 2026 03:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2698,14 +2698,6 @@ LaTeX Font Info:    Font shape `TU/SourceSans3(0)/m/n' will be
 (Font)              scaled to size 7.0pt on input line 36.
 LaTeX Font Info:    Font shape `TU/SourceSans3(0)/m/it' will be
 (Font)              scaled to size 7.0pt on input line 36.
-
-
-LaTeX Font Warning: Font shape `TU/fbb-TLF/b/n' undefined
-(Font)              using `TU/fbb-TLF/m/n' instead on input line 36.
-
-
-LaTeX Warning: Reference `LastPage' on page 1 undefined on input line 36.
-
 File: cup-logo-new.pdf Graphic file (type pdf)
 <use cup-logo-new.pdf>
 LaTeX Font Info:    Font shape `TU/SourceSans3(0)/b/n' will be
@@ -2771,13 +2763,17 @@ LaTeX Font Warning: Font shape `TU/fbb-TLF/m/it' undefined
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 36.
+
+LaTeX Font Warning: Font shape `TU/fbb-TLF/b/n' undefined
+(Font)              using `TU/fbb-TLF/m/n' instead on input line 36.
+
 LaTeX Font Info:    Font shape `TU/SourceSans3(0)/b/n' will be
 (Font)              scaled to size 9.0pt on input line 36.
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 36.
 
 Underfull \hbox (badness 3612) in paragraph at lines 38--39
-\TU/fbb-TLF/m/it/10 learning, specifically computational learning theory
+\TU/fbb-TLF/b/n/10 learning, specifically computational learning theory
  []
 
 
@@ -3004,10 +3000,6 @@ Underfull \hbox (badness 4291) in paragraph at lines 834--835
  []
 
 
-LaTeX Warning: Reference `app:friction_points' on page 13 undefined on input li
-ne 837.
-
-
 Underfull \hbox (badness 2088) in paragraph at lines 859--860
 \TU/fbb-TLF/b/it/10 we compare NESP predictions against “equilibrium
  []
@@ -3089,24 +3081,6 @@ Underfull \hbox (badness 1077) in paragraph at lines 1118--1119
 
 Package hyperref Info: bookmark level for unknown assumption defaults to 0 on i
 nput line 1127.
-
-LaTeX Warning: Reference `sec:results' on page 17 undefined on input line 1128.
-
-
-
-Underfull \hbox (badness 2418) in paragraph at lines 1128--1129
-\TU/fbb-TLF/b/it/10 and all experiments in Chapter [] are conducted
- []
-
-
-Underfull \hbox (badness 1052) in paragraph at lines 1128--1129
-\TU/fbb-TLF/b/it/10 dimension $[]$, hidden width $[]$, and parameterization
- []
-
-
-LaTeX Warning: Reference `sec:results' on page 17 undefined on input line 1132.
-
-
 [17]
 Package hyperref Info: bookmark level for unknown postulate defaults to 0 on in
 put line 1161.
@@ -3385,19 +3359,11 @@ T1/cmr/m/n/10 = []/[] \OMS/cmsy/m/n/10 2
 File: media/exp1_double_descent_noise.pdf Graphic file (type pdf)
 <use media/exp1_double_descent_noise.pdf>
 
-LaTeX Warning: Reference `tab:exp1_data' on page 30 undefined on input line 203
-3.
-
-
 Underfull \hbox (badness 1675) in paragraph at lines 2033--2034
 \TU/fbb-TLF/b/it/10 classical U-curve), with a secondary elevation near
  []
 
 [30]
-
-LaTeX Warning: Reference `fig:exp1_main' on page 31 undefined on input line 206
-1.
-
 File: media/exp2_escape_time.pdf Graphic file (type pdf)
 <use media/exp2_escape_time.pdf>
 
@@ -3419,9 +3385,6 @@ Underfull \hbox (badness 1668) in paragraph at lines 2095--2096
 
 File: media/exp3_batch_size_dependence.pdf Graphic file (type pdf)
 <use media/exp3_batch_size_dependence.pdf>
-
-LaTeX Warning: Reference `fig:exp3' on page 32 undefined on input line 2110.
-
 
 Underfull \hbox (badness 4013) in paragraph at lines 2116--2117
 []\TU/fbb-TLF/b/it/10 Method: We trained a two-layer ReLU network
@@ -3485,16 +3448,9 @@ File: media/exp6_activation_comparison.pdf Graphic file (type pdf)
 LaTeX Font Info:    Font shape `TU/SourceSans3(0)/m/it' will be
 (Font)              scaled to size 8.0pt on input line 2169.
 
-LaTeX Warning: Reference `tab:exp6_data' on page 33 undefined on input line 217
-3.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 2194--2194
 []\TU/SourceSans3(0)/m/it/10 Observation 2: Alignment Increases with Over-
  []
-
-
-LaTeX Warning: Reference `fig:exp6' on page 33 undefined on input line 2196.
 
 [33]
 Underfull \hbox (badness 2726) in paragraph at lines 2198--2199
@@ -3542,10 +3498,6 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 File: media/exp8_sharpness_gradient.pdf Graphic file (type pdf)
 <use media/exp8_sharpness_gradient.pdf>
 
-LaTeX Warning: Reference `tab:sharpness_gradient' on page 35 undefined on input
- line 2232.
-
-
 Underfull \hbox (badness 2318) in paragraph at lines 2237--2238
 []\TU/fbb-TLF/b/it/10 Linear and ReLU mark the lower envelope: Lin-
  []
@@ -3591,10 +3543,6 @@ Underfull \hbox (badness 2717) in paragraph at lines 2271--2271
 
 File: media/exp9_lr_modulation.pdf Graphic file (type pdf)
 <use media/exp9_lr_modulation.pdf>
-
-LaTeX Warning: Reference `tab:lr_modulation' on page 35 undefined on input line
- 2280.
-
 [35]
 Underfull \hbox (badness 10000) in paragraph at lines 2298--2298
 []|\TU/SourceSans3(0)/m/n/8 Slow convergence; weak
@@ -3646,11 +3594,6 @@ Overfull \hbox (120.78096pt too wide) in alignment at lines 2396--2396
  []
 
 [37]
-
-LaTeX Warning: Reference `sec:results' on page 38 undefined on input line 2404.
-
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 2406--2407
 []\TU/fbb-TLF/b/it/10 The experimental program further revealed that
  []
@@ -3669,10 +3612,6 @@ Underfull \hbox (badness 1590) in paragraph at lines 2406--2407
 Underfull \hbox (badness 1360) in paragraph at lines 2411--2412
 \TU/fbb-TLF/b/it/10 on the interplay between noise structure and land-
  []
-
-
-LaTeX Warning: Reference `sec:results' on page 38 undefined on input line 2420.
-
 
 
 Underfull \hbox (badness 2762) in paragraph at lines 2433--2434
@@ -3715,129 +3654,193 @@ Underfull \hbox (badness 3792) in paragraph at lines 2463--2464
  []
 
 [39]
-Underfull \hbox (badness 1019) in paragraph at lines 2502--2503
+Underfull \hbox (badness 1019) in paragraph at lines 2482--2483
 []\TU/fbb-TLF/b/it/10 The noise structure $\OT1/cmr/m/n/10 ^^F([])$\TU/fbb-TLF/
 b/it/10 —anisotropic noise creates
  []
 
 
-Underfull \hbox (badness 3158) in paragraph at lines 2508--2508
+Underfull \hbox (badness 3158) in paragraph at lines 2488--2488
 []\TU/SourceSans3(0)/m/it/10 The “Unreasonable Effectiveness” of SGD
  []
 
 
-Underfull \hbox (badness 1275) in paragraph at lines 2520--2521
+Underfull \hbox (badness 1275) in paragraph at lines 2500--2501
 \TU/fbb-TLF/b/it/10 This reframes hyperparameter tuning (learning rate,
  []
 
 
-Underfull \hbox (badness 1337) in paragraph at lines 2520--2521
+Underfull \hbox (badness 1337) in paragraph at lines 2500--2501
 \TU/fbb-TLF/b/it/10 batch size, momentum) not as “finding the fastest
  []
 
 [40]
-Underfull \hbox (badness 2173) in paragraph at lines 2589--2593
+Underfull \hbox (badness 2173) in paragraph at lines 2569--2573
 \TU/fbb-TLF/b/it/10 Insight potential: Architecture may determine the
  []
 
-[41]
-Underfull \hbox (badness 3746) in paragraph at lines 2608--2612
+
+Underfull \hbox (badness 3746) in paragraph at lines 2588--2592
 \TU/fbb-TLF/b/it/10 Insight potential: Interventional experiments (Sec-
  []
 
-
-Underfull \hbox (badness 1303) in paragraph at lines 2622--2626
+[41]
+Underfull \hbox (badness 1303) in paragraph at lines 2602--2606
 \TU/fbb-TLF/b/it/10 librium). Finite-width corrections might be NESP
  []
 
+
+Underfull \hbox (badness 2197) in paragraph at lines 2626--2626
+[]\TU/SourceSans3(0)/m/it/10 Phase 1: Foundation Solidification (Com-
+ []
+
+
+Underfull \hbox (badness 1776) in paragraph at lines 2673--2673
+[]\TU/SourceSans3(0)/m/it/10 Phase 3: Extension and Validation (Com-
+ []
+
+
+Underfull \hbox (badness 3849) in paragraph at lines 2694--2694
+[]\TU/SourceSans3(0)/m/it/10 Phase 4: Writing and Refinement (Com-
+ []
+
 [42]
-Underfull \hbox (badness 3701) in paragraph at lines 2742--2743
+Underfull \hbox (badness 3701) in paragraph at lines 2722--2723
 []\TU/fbb-TLF/b/it/10 The double descent peak coincides with maximal
  []
 
 
-Underfull \hbox (badness 1127) in paragraph at lines 2743--2744
+Underfull \hbox (badness 1127) in paragraph at lines 2723--2724
 []\TU/fbb-TLF/b/it/10 At least one prediction of the NESP framework is
  []
 
 
-Underfull \hbox (badness 6825) in paragraph at lines 2743--2744
+Underfull \hbox (badness 6825) in paragraph at lines 2723--2724
 \TU/fbb-TLF/b/it/10 validated against equilibrium predictions (showing
  []
 
 
-Underfull \hbox (badness 1642) in paragraph at lines 2750--2751
+Underfull \hbox (badness 1642) in paragraph at lines 2730--2731
 \TU/fbb-TLF/b/it/10 We have constructed a framework—NESP—that re-
  []
 
 
-Underfull \hbox (badness 3000) in paragraph at lines 2750--2751
+Underfull \hbox (badness 3000) in paragraph at lines 2730--2731
 \TU/fbb-TLF/b/it/10 have identified the key hypothesis (curvature-noise
  []
 
 
-Underfull \hbox (badness 1675) in paragraph at lines 2761--2762
+Underfull \hbox (badness 1152) in paragraph at lines 2736--2737
+[]\TU/fbb-TLF/b/it/10 Draft Status: This manuscript has now progressed
+ []
+
+
+Underfull \hbox (badness 1675) in paragraph at lines 2741--2742
 []\TU/fbb-TLF/b/it/10 “Flatness” Requires Rigorous Definition. Bridge 5
  []
 
 
-Underfull \hbox (badness 3724) in paragraph at lines 2763--2764
+Underfull \hbox (badness 3724) in paragraph at lines 2743--2744
 []\TU/fbb-TLF/b/it/10 Curvature-Noise Coupling Scope. Hypothesis []7.1[]
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 2763--2764
+Underfull \hbox (badness 1168) in paragraph at lines 2743--2744
 \TU/fbb-TLF/b/it/10 ($\OT1/cmr/m/n/10 ^^F \OMS/cmsy/m/n/10 ^^Y \U/zeur/m/n/10 ^
 ^K[]$\TU/fbb-TLF/b/it/10 ) is analytically confirmed for the linear
  []
 
-[43]
-Underfull \hbox (badness 7273) in paragraph at lines 2802--2803
+
+Underfull \hbox (badness 7273) in paragraph at lines 2782--2783
 []\TU/fbb-TLF/b/it/10 Regularization Analysis: Regularization can sup-
  []
 
 
-Underfull \hbox (badness 5607) in paragraph at lines 2802--2803
+Underfull \hbox (badness 5607) in paragraph at lines 2782--2783
 \TU/fbb-TLF/b/it/10 press/shift the interpolation peak—natural control
  []
 
 
-Overfull \hbox (135.52246pt too wide) in paragraph at lines 2812--2826
- [] 
+Underfull \hbox (badness 10000) in paragraph at lines 2809--2809
+[]|\TU/fbb-TLF/m/it/8 Needs compari-
  []
 
 
-Underfull \hbox (badness 1997) in paragraph at lines 2832--2833
-[]\TU/fbb-TLF/b/it/10 Next Phase: Experimental execution following the
+Underfull \hbox (badness 10000) in paragraph at lines 2809--2809
+[]|\TU/fbb-TLF/m/it/8 Well-documented
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2809--2809
+[]|\TU/fbb-TLF/m/it/8 Replica details
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2809--2809
+[]|\TU/fbb-TLF/m/it/8 Core ideas
+ []
+
+
+Underfull \hbox (badness 5741) in paragraph at lines 2809--2809
+[]|\TU/fbb-TLF/m/it/8 Analytically rig-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2809--2809
+[]|\TU/fbb-TLF/m/it/8 Well-structured
+ []
+
+
+Underfull \hbox (badness 7851) in paragraph at lines 2809--2809
+[]|\TU/fbb-TLF/m/it/8 Final validation
+ []
+
+
+Underfull \vbox (badness 2189) has occurred while \output is active []
+
+ [43]
+Overfull \hbox (10.22247pt too wide) in paragraph at lines 2814--2815
+\TU/fbb-TLF/b/it/10 one driver per experiment (\TU/lmtt/m/it/10 run_exp1_curvat
+ure_noise.py
+ []
+
+
+Underfull \hbox (badness 1342) in paragraph at lines 2824--2825
+\TU/fbb-TLF/b/it/10 model. Adding such a comparison would sharpen
+ []
+
+
+Underfull \hbox (badness 1584) in paragraph at lines 2843--2844
+[]\TU/fbb-TLF/b/it/10 Strengthen curvature estimation. Add convergence
  []
 
 [44]
-Underfull \hbox (badness 4569) in paragraph at lines 2850--2850
+Underfull \hbox (badness 4569) in paragraph at lines 2858--2858
 [][][]\TU/fbb-TLF/m/it/8 . 2017b. High-dimensional dynamics of generalization
  []
 
 
-Underfull \hbox (badness 3281) in paragraph at lines 2850--2850
+Underfull \hbox (badness 3281) in paragraph at lines 2858--2858
 \TU/fbb-TLF/m/it/8 Matthew Trager. 2025. Geometry and optimization of
  []
 
 
-Underfull \hbox (badness 7415) in paragraph at lines 2850--2850
+Underfull \hbox (badness 7415) in paragraph at lines 2858--2858
 \TU/fbb-TLF/m/it/8 2019a. Reconciling modern machine learning practice
  []
 
 
-Underfull \hbox (badness 7273) in paragraph at lines 2850--2850
+Underfull \hbox (badness 7273) in paragraph at lines 2858--2858
 \TU/fbb-TLF/m/it/8 and the bias-variance trade-off. ArXiv:1812.11118 [cs,
  []
 
 
-Underfull \hbox (badness 2088) in paragraph at lines 2850--2850
+Underfull \hbox (badness 2088) in paragraph at lines 2858--2858
 \TU/fbb-TLF/m/it/8 stat], Proc. Natl. Acad. Sci. U.S.A. 116, no. 32 (Au-
  []
 
 
-Underfull \hbox (badness 2293) in paragraph at lines 2850--2850
+Underfull \hbox (badness 2293) in paragraph at lines 2858--2858
 [][]\TU/fbb-TLF/m/it/8 Buschjäger, Sebastian, Lukas Pfahler, and Katharina Mori
 k.
  []
@@ -3845,73 +3848,73 @@ k.
 [45
 
 ]
-Underfull \hbox (badness 1776) in paragraph at lines 2850--2850
+Underfull \hbox (badness 1776) in paragraph at lines 2858--2858
 [][]\TU/fbb-TLF/m/it/8 Hu, Xia, Lingyang Chu, Jian Pei, Weiqing Liu, and Jiang
  []
 
 
-Underfull \hbox (badness 3815) in paragraph at lines 2850--2850
+Underfull \hbox (badness 3815) in paragraph at lines 2858--2858
 \TU/fbb-TLF/m/it/8 vey. ArXiv:2103.05127 [cs], August. Accessed July 18,
  []
 
 [46]
-Underfull \hbox (badness 1616) in paragraph at lines 2850--2850
+Underfull \hbox (badness 1616) in paragraph at lines 2858--2858
 \TU/fbb-TLF/m/it/8 Double Descent Phenomenon in Deep Learning [in en].
  []
 
 
-Underfull \hbox (badness 1102) in paragraph at lines 2850--2850
+Underfull \hbox (badness 1102) in paragraph at lines 2858--2858
 \TU/fbb-TLF/m/it/8 Rustem. 2016. A weighted mirror descent algorithm for
  []
 
 
-Underfull \hbox (badness 4144) in paragraph at lines 2850--2850
+Underfull \hbox (badness 4144) in paragraph at lines 2858--2858
 \TU/fbb-TLF/m/it/8 timization Theory and Applications 170 (3): 900–915.
  []
 
 
-Underfull \hbox (badness 2469) in paragraph at lines 2850--2850
+Underfull \hbox (badness 2469) in paragraph at lines 2858--2858
 [][][]\TU/fbb-TLF/m/it/8 . 2019b. The generalization error of random features
  []
 
 
-Underfull \hbox (badness 2626) in paragraph at lines 2850--2850
+Underfull \hbox (badness 2626) in paragraph at lines 2858--2858
 \TU/fbb-TLF/m/it/8 theory and beyond. Singapore: World Scientific. ISBN:
  []
 
 
-Underfull \hbox (badness 4316) in paragraph at lines 2850--2850
+Underfull \hbox (badness 4316) in paragraph at lines 2858--2858
 \TU/fbb-TLF/m/it/8 Boaz Barak, and Ilya Sutskever. 2019. Deep Double
  []
 
 
-Underfull \hbox (badness 3386) in paragraph at lines 2850--2850
+Underfull \hbox (badness 3386) in paragraph at lines 2858--2858
 \TU/fbb-TLF/m/it/8 Descent: Where Bigger Models and More Data Hurt.
  []
 
 
-Underfull \hbox (badness 6141) in paragraph at lines 2850--2850
+Underfull \hbox (badness 6141) in paragraph at lines 2858--2858
 \TU/fbb-TLF/m/it/8 Matthew Scicluna, Simon Lacoste-Julien, and Ioannis
  []
 
 [47]
-Underfull \hbox (badness 8038) in paragraph at lines 2850--2850
+Underfull \hbox (badness 8038) in paragraph at lines 2858--2858
 \TU/fbb-TLF/m/it/8 principles of deep learning theory. Technical report.
  []
 
 
-Underfull \hbox (badness 1466) in paragraph at lines 2850--2850
+Underfull \hbox (badness 1466) in paragraph at lines 2858--2858
 [][]\TU/fbb-TLF/m/it/8 Schaeffer, Rylan, Mikail Khona, Zachary Robertson, Akhil
 an
  []
 
 
-Underfull \hbox (badness 1259) in paragraph at lines 2850--2850
+Underfull \hbox (badness 1259) in paragraph at lines 2858--2858
 \TU/fbb-TLF/m/it/8 to signal whitening, and recipes and tricks for its use.
  []
 
 
-Underfull \hbox (badness 5681) in paragraph at lines 2850--2850
+Underfull \hbox (badness 5681) in paragraph at lines 2858--2858
 [][]\TU/fbb-TLF/m/it/8 Srivastava, Nitish, Geoffrey Hinton, Alex Krizhevsky, Il
 ya
  []
@@ -3930,9 +3933,6 @@ L3 programming layer <2025-12-24>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 
@@ -3941,26 +3941,18 @@ Package rerunfilecheck Warning: File `paper2a_revised.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `paper2a_revised.out':
-(rerunfilecheck)             Before: FC3563E1020617DD18C3D52EDF9F3BEB;24404
-(rerunfilecheck)             After:  980A24E0D308F986B259BF5E3A51BF9A;43708.
-
-Package lastpage Warning: Rerun to get the references right on input line 2851.
-
-
-
-Package biblatex Warning: Please rerun LaTeX.
-(biblatex)                Page breaks have changed.
-
+(rerunfilecheck)             Before: 8F2090FC327930943DFBA6E9A0CA28C8;43974
+(rerunfilecheck)             After:  BBCB7444DC1D3019E22E3B19DE49C58F;44065.
 Package logreq Info: Writing requests to 'paper2a_revised.run.xml'.
 \openout1 = `paper2a_revised.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 84467 strings out of 402986
- 2079461 string characters out of 5452850
- 3873026 words of memory out of 5000000
- 112128 multiletter control sequences out of 15000+600000
- 647527 words of font info for 158 fonts, out of 8000000 for 9000
+ 84613 strings out of 402986
+ 2081289 string characters out of 5452850
+ 3881568 words of memory out of 5000000
+ 112272 multiletter control sequences out of 15000+600000
+ 647535 words of font info for 159 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  107i,18n,138p,2999b,5432s stack positions out of 10000i,1000n,20000p,200000b,200000s
 

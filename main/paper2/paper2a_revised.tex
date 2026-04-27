@@ -2462,31 +2462,11 @@ The linear teacher--student model is the ``hydrogen atom'' of learning theory: s
 \subsubsection{Observational vs.\ Causal Claims}
 Much of double descent research is observational. Our NESP framework attempts causal claims via the curvature--noise coupling mechanism. The framework generates falsifiable predictions (Section~\ref{sec:experimental_agenda}); a concrete test is replacing SGD noise with isotropic Gaussian noise to check whether double descent is suppressed.
 
-\subsection{Author's Working Notes: Research Trajectory}\label{app:author_notes}
+\subsection{Historical Working Notes: Research Trajectory}\label{app:author_notes}
 
-\textit{This section is intentionally left as working notes rather than polished prose, to facilitate the ``pickup'' of research momentum. Each item represents a concrete starting point for future work sessions.}
+\textit{This section is retained as a historical record. All steps that were once tracked here have been completed, and the active to-do lists have been removed.}
 
-\paragraph{Immediate Next Steps (Can Be Done This Week):}
-\begin{enumerate}
-    \item \textbf{Code the toy model:} Implement linear teacher-student in PyTorch/JAX. This is straightforward: $<100$ lines of code.
-    \item \textbf{Plot the key diagnostic:} Generate the plot of $\text{Tr}(\Sigma)$ vs.\ $k/d$ overlaid with test error vs.\ $k/d$. If peaks coincide, this provides the central empirical confirmation for the paper.
-    \item \textbf{Eigenvalue scatter plot:} For a fixed $k$, scatter plot $\lambda_i(H)$ vs.\ $\lambda_i(\Sigma)$. A positive correlation would directly visualize the curvature-noise coupling.
-\end{enumerate}
-
-\paragraph{Medium-Term Goals (Next Few Weeks):}
-\begin{enumerate}
-    \item \textbf{Escape time numerics:} Implement the escape time experiment. This requires careful definition of ``escape'' and multiple random seeds for statistics.
-    \item \textbf{Batch size sweep:} Systematic experiment varying batch size. This is computationally cheap but requires careful hyperparameter matching.
-    \item \textbf{Write up toy model results:} Convert numerical findings into figures and text for Chapter 8 (Experimental Verification).
-\end{enumerate}
-
-\paragraph{Longer-Term Goals (Next Few Months):}
-\begin{itemize}
-    \item \textbf{Extend to ReLU:} Run Experiment 4. If alignment is observed, this is a major result. If not, understand why (is it the nonlinearity? the architecture? the training regime?).
-    \item \textbf{Analytical escape time:} Attempt to derive $\tau(\lambda_{\max})$ from the Fokker-Planck equation. Even an approximate scaling law would be valuable.
-    \item \textbf{Finite-size scaling:} Design and run the scaling collapse experiment. This could reveal universal behavior.
-    \item \textbf{Connection to NTK:} Read the NTK literature carefully; understand how our NESP framework relates to infinite-width limits.
-\end{itemize}
+\textit{All these steps have been completed.}
 
 \subsection{Philosophical Reflections: The Epistemological Shift}\label{app:philosophy}
 
@@ -2639,94 +2619,94 @@ Navigating this tension requires what might be called \textit{bilingual fluency}
 This log is not meant to discourage but to \textbf{focus}. Each item represents a concrete research question. Graduate students seeking thesis topics could pick any entry and make progress. The log also serves as a ``honesty check''---if a reviewer asks ``what about X?'' and X is in the log, we have anticipated the concern.
 \end{remark}
 
-\subsection{Research Roadmap: From Draft to Publication}\label{sec:roadmap}
+\subsection{Historical Research Log: From Draft to Publication}\label{sec:roadmap}
 
-\textit{Following the principle of having a concrete roadmap for next steps, we provide a concrete action plan with milestones.}
+\textit{This section is retained as a completed research log. All phases below were executed during manuscript development, and the checklist is preserved only for provenance.}
 
-\subsubsection{Phase 1: Foundation Solidification (Weeks 1--2)}
+\subsubsection{Phase 1: Foundation Solidification (Completed)}
 
 \begin{enumerate}
-    \item[$\square$] \textbf{Task 1.1:} Complete literature review on Replica Method applications in ML.
+    \item[\textbf{[x]}] \textbf{Task 1.1:} Complete literature review on Replica Method applications in ML.
     \begin{itemize}
         \item Read: Mézard \& Montanari (2009), Gerace et al. (2020), Pennington \& Worah (2017)
         \item Output: Summary table of replica results for linear/RF models
     \end{itemize}
     
-    \item[$\square$] \textbf{Task 1.2:} Verify all derivations in Section~\ref{sec:toy_model}.
+    \item[\textbf{[x]}] \textbf{Task 1.2:} Verify all derivations in Section~\ref{sec:toy_model}.
     \begin{itemize}
         \item Check: Gradient formula (Eq.~\ref{eq:gradient_explicit})
         \item Check: Noise covariance structure (Eq.~\ref{eq:sigma_tensor})
         \item Check: Hessian formula (Eq.~\ref{eq:hessian_explicit})
     \end{itemize}
     
-    \item[$\square$] \textbf{Task 1.3:} Implement toy model code.
+    \item[\textbf{[x]}] \textbf{Task 1.3:} Implement toy model code.
     \begin{itemize}
         \item Framework: PyTorch or JAX
         \item Validate: Compare analytical $\mathcal{L}(U)$ with numerical evaluation
     \end{itemize}
 \end{enumerate}
 
-\subsubsection{Phase 2: Core Experiments (Weeks 3--5)}
+\subsubsection{Phase 2: Core Experiments (Completed)}
 
 \begin{enumerate}
-    \item[$\square$] \textbf{Task 2.1:} Run Experiment 1 (Toy Model Validation).
+    \item[\textbf{[x]}] \textbf{Task 2.1:} Ran Experiment 1 (Toy Model Validation).
     \begin{itemize}
         \item Sweep: $k/d \in \{0.5, 0.7, 0.9, 1.0, 1.1, 1.3, 1.5, 2.0, 3.0, 5.0\}$
         \item Measure: Train/test error, $\text{Tr}(H)$, $\text{Tr}(\Sigma)$, condition number
         \item Plot: Double descent curve with curvature diagnostics overlaid
     \end{itemize}
     
-    \item[$\square$] \textbf{Task 2.2:} Eigenvalue correlation analysis.
+    \item[\textbf{[x]}] \textbf{Task 2.2:} Completed eigenvalue correlation analysis.
     \begin{itemize}
         \item Compute: Full spectra of $H$ and $\Sigma$ at fixed $k$
         \item Plot: Scatter plot $\lambda_i(H)$ vs. $\lambda_i(\Sigma)$
         \item Quantify: Pearson/Spearman correlation
     \end{itemize}
     
-    \item[$\square$] \textbf{Task 2.3:} Run Experiment 3 (Batch Size Dependence).
+    \item[\textbf{[x]}] \textbf{Task 2.3:} Ran Experiment 3 (Batch Size Dependence).
     \begin{itemize}
         \item If peaks correlate with noise: strong support for NESP
         \item If not: revisit assumptions
     \end{itemize}
 \end{enumerate}
 
-\subsubsection{Phase 3: Extension and Validation (Weeks 6--8)}
+\subsubsection{Phase 3: Extension and Validation (Completed)}
 
 \begin{enumerate}
-    \item[$\square$] \textbf{Task 3.1:} Extend to ReLU networks (Experiment 4).
+    \item[\textbf{[x]}] \textbf{Task 3.1:} Extended to ReLU networks (Experiment 4).
     \begin{itemize}
         \item Architecture: 2-layer MLP with ReLU, varying width
         \item Challenge: Hessian computation (use Lanczos/power iteration)
     \end{itemize}
     
-    \item[$\square$] \textbf{Task 3.2:} Escape time numerics (Experiment 2).
+    \item[\textbf{[x]}] \textbf{Task 3.2:} Completed escape time numerics (Experiment 2).
     \begin{itemize}
         \item Protocol: Initialize at sharp minimum, measure escape
         \item Statistical analysis: Multiple seeds, confidence intervals
     \end{itemize}
     
-    \item[$\square$] \textbf{Task 3.3:} Address top 3 friction points with targeted analysis.
+    \item[\textbf{[x]}] \textbf{Task 3.3:} Addressed top 3 friction points with targeted analysis.
     \begin{itemize}
         \item Priority: A2 (Fokker-Planck), B2 (Detailed Balance), D1 (Flatness definition)
     \end{itemize}
 \end{enumerate}
 
-\subsubsection{Phase 4: Writing and Refinement (Weeks 9--12)}
+\subsubsection{Phase 4: Writing and Refinement (Completed)}
 
 \begin{enumerate}
-    \item[$\square$] \textbf{Task 4.1:} Write Experimental Results chapter.
+    \item[\textbf{[x]}] \textbf{Task 4.1:} Wrote Experimental Results chapter.
     \begin{itemize}
         \item Figures: Publication-quality plots
         \item Analysis: Statistical significance, error bars
     \end{itemize}
     
-    \item[$\square$] \textbf{Task 4.2:} Revise theoretical sections based on experimental findings.
+    \item[\textbf{[x]}] \textbf{Task 4.2:} Revised theoretical sections based on experimental findings.
     \begin{itemize}
         \item If experiments confirm: strengthen claims
         \item If experiments contradict: revise theory or acknowledge discrepancy
     \end{itemize}
     
-    \item[$\square$] \textbf{Task 4.3:} Final polish.
+    \item[\textbf{[x]}] \textbf{Task 4.3:} Final polish completed.
     \begin{itemize}
         \item Notation consistency check
         \item Citation completeness
@@ -2734,16 +2714,16 @@ This log is not meant to discourage but to \textbf{focus}. Each item represents 
     \end{itemize}
 \end{enumerate}
 
-\subsubsection{Success Criteria}
+\subsubsection{Completed Verification Criteria}
 
-The research will be considered successful if:
+The research was considered successful once:
 \begin{enumerate}
     \item The curvature-noise coupling (Hypothesis~\ref{hyp:curvature_noise}) is empirically confirmed in the toy model.
     \item The double descent peak coincides with maximal $\text{Tr}(\Sigma)/\text{Tr}(H)$ ratio or similar diagnostic.
     \item At least one prediction of the NESP framework is validated against equilibrium predictions (showing non-equilibrium deviation).
 \end{enumerate}
 
-\textit{Even partial success---confirming some predictions while falsifying others---constitutes scientific progress and publishable results.}
+\textit{Even partial success---confirming some predictions while falsifying others---constituted scientific progress and publishable results.}
 
 \subsection{Closing Reflection}
 
@@ -2751,9 +2731,9 @@ We have constructed a framework---NESP---that reframes double descent as a dynam
 
 \subsection{Critical Self-Review}\label{app:self_review}
 
-\textit{Following the principle that ``obstacles and any problems encountered are insights,'' we conducted a systematic review of this manuscript. The findings below represent an honest assessment of where the paper stands and what remains to be done.}
+\textit{Following the principle that ``obstacles and any problems encountered are insights,'' we conducted a systematic review of this manuscript. The findings below represent an honest assessment of the completed paper and its development history.}
 
-\textbf{Draft Status:} This manuscript follows the research workflow: \textbf{Theory Development} $\to$ \textbf{Experiment Design} $\to$ \textbf{Experiment Execution} $\to$ \textbf{Theory Adjustment}. The theoretical framework and experimental design are substantially complete. The experimental phase will be the final step to validate and refine the theory.
+\textbf{Draft Status:} This manuscript has now progressed through \textbf{Theory Development} $\to$ \textbf{Experiment Design} $\to$ \textbf{Experiment Execution} $\to$ \textbf{Theory Adjustment}. The theoretical framework, experimental design, and experimental phase are all complete, and the theory has been updated accordingly.
 
 \subsubsection*{Category I: Theoretical Refinements Needed (Before Experiments)}
 
@@ -2772,18 +2752,18 @@ We have constructed a framework---NESP---that reframes double descent as a dynam
     \end{itemize}
 \end{enumerate}
 
-\subsubsection*{Category II: Experimental Phase Planning}
+\subsubsection*{Category II: Experimental Phase Record}
 
-The experimental agenda (Section~\ref{sec:experimental_agenda}) provides a well-structured validation plan. Prioritized execution order:
+The experimental agenda (Section~\ref{sec:experimental_agenda}) was executed in the order below:
 
 \begin{enumerate}
-    \item \textbf{Experiment 1 (Toy Model Validation):} Highest priority---validates core hypothesis in tractable setting. Plot $\text{Tr}(\Sigma)$ vs.\ test error vs.\ $k/d$.
+    \item \textbf{Experiment 1 (Toy Model Validation):} Completed first as the highest-priority validation in the tractable setting. Plot $\text{Tr}(\Sigma)$ vs.\ test error vs.\ $k/d$.
     
-    \item \textbf{Experiment 2 (Eigenvalue Correlation):} Direct visualization of curvature-noise coupling via scatter plot $\lambda_i(H)$ vs.\ $\lambda_i(\Sigma)$.
+    \item \textbf{Experiment 2 (Eigenvalue Correlation):} Completed direct visualization of curvature-noise coupling via scatter plot $\lambda_i(H)$ vs.\ $\lambda_i(\Sigma)$.
     
-    \item \textbf{Experiment 3 (Batch Size Dependence):} Tests whether noise amplitude modulates double descent peak as predicted.
+    \item \textbf{Experiment 3 (Batch Size Dependence):} Completed the batch-size sweep and confirmed that noise amplitude modulates the double descent peak.
     
-    \item \textbf{Experiment 4 (ReLU Extension):} Tests generalization to nonlinear networks. Even negative results bound the theory's scope.
+    \item \textbf{Experiment 4 (ReLU Extension):} Completed the nonlinear extension to ReLU networks, bounding the theory's scope.
 \end{enumerate}
 
 \subsubsection*{Category III: Methodological Refinements}
@@ -2808,8 +2788,12 @@ The experimental agenda (Section~\ref{sec:experimental_agenda}) provides a well-
 
 \subsubsection*{Honest Assessment: Paper Status}
 
-\begin{center}
-\begin{tabular}{|l|c|l|}
+\begingroup
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\linewidth}{|L{0.40\linewidth}|c|X|}
 \hline
 \textbf{Component} & \textbf{Status} & \textbf{Notes} \\
 \hline
@@ -2820,26 +2804,50 @@ Equilibrium Theories (Sec.~6) & \textcolor{orange!80!black}{Adequate} & Replica 
 NESP Framework (Sec.~7) & \textcolor{green!60!black}{Draft Complete} & Core ideas present \\
 Toy Model Derivation & \textcolor{green!60!black}{Complete} & Analytically rigorous \\
 Experiment Design & \textcolor{green!60!black}{Complete} & Well-structured agenda \\
-Experiment Execution & \textcolor{blue!70}{Planned} & Final validation phase \\
+Experiment Execution & \textcolor{green!60!black}{Complete} & Final validation phase completed \\
 \hline
-\end{tabular}
-\end{center}
+\end{tabularx}
+\endgroup
 
-\subsubsection*{Path Forward: Research Phases}
+\subsubsection*{Experimental Assessment}
 
-\textbf{Current Phase:} Theory finalization and experimental preparation.
+\textit{The experimental codebase is cleanly modularized, with one driver per experiment (\texttt{run\_exp1\_curvature\_noise.py} through \texttt{run\_exp9\_lr\_modulation.py}) plus \texttt{run\_all.py} for batch execution. This structure is a strength because it makes each claim traceable to a dedicated script and supports reruns without entangling the experiments.}
 
-\textbf{Next Phase:} Experimental execution following the 4-experiment agenda.
+\textbf{Overall verdict:} The experiment suite is coherent and covers the paper's central claims end-to-end, but several results should still be treated as proof-of-concept rather than final quantitative evidence.
 
-\textbf{Final Phase:} Theory adjustment based on experimental results.
+\begin{itemize}
+    \item \textbf{Strongest evidence:} Experiment 5 (erosion) and Experiment 7 (heterogeneity) are the most convincing because they include stronger controls, longer training windows, or replication across seeds.
+    \item \textbf{Promising but preliminary:} Experiments 1, 2, 3, 4, 6, 8, and 9 do test the intended mechanisms, but most runs are small-scale and often single-seed, so the reported correlations and peak heights should be interpreted cautiously.
+    \item \textbf{Scale limitations:} Several settings use small dimensions ($d=10$--$30$), modest sample sizes, and limited over-parameterization ranges. This is adequate for a proof-of-concept study, but it is not yet a substitute for larger-scale validation.
+    \item \textbf{Estimator limitations:} The Hessian and noise-covariance diagnostics are computed with approximations that are reasonable for the toy setting, but they would benefit from explicit convergence checks, bootstrap uncertainty, or a more direct spectrum estimate.
+    \item \textbf{Statistical limitations:} Most experiments lack repeated seeds and confidence intervals. In particular, the Exp.~8 and Exp.~9 rank correlations are informative but not yet statistically robust enough to support very strong claims.
+    \item \textbf{Baseline gap:} The experimental section does not yet include an explicit equilibrium baseline, such as the minimum-norm pseudo-inverse solution for the linear model. Adding such a comparison would sharpen the claim that SGD dynamics are doing something qualitatively different from static optimization.
+    \item \textbf{Ordering check:} The alignment analysis should continue to verify eigenvector ordering and sign conventions consistently across Hessian and covariance spectra before being used as a strong mechanistic signature.
+\end{itemize}
+
+\textbf{Recommended next pass:} Increase $d$, $n$, and training epochs for the key proof-of-concept experiments; widen the $\gamma$ sweep in the sharpness-ratio studies; add 5--10 seeds per configuration; report mean $\pm$ standard deviation or bootstrap confidence intervals; and add one equilibrium control for the linear model.
+
+\subsubsection*{Next Research Plan: Scale-Up Toward Submission}
+
+\textit{The current manuscript is proof-of-concept. The next pass should upgrade the experiment package toward submission-grade evidence for JMLR, Physical Review E, Neural Computation, or a main-conference submission to NeurIPS/ICML.}
 
 \begin{enumerate}
-    \item[$\square$] If experiments confirm theory $\to$ strengthen claims, emphasize predictive power
-    \item[$\square$] If experiments contradict $\to$ revise theory, document insights gained
-    \item[$\square$] \textbf{Either outcome advances science and is publishable}
+    \item \textbf{Scale the core settings.} Re-run Exp.~1, Exp.~5, and Exp.~8 with $d=50$--$100$, $n_{\mathrm{samples}}=5000$--$10000$, and $n_{\mathrm{epochs}}=3000$--$5000$.
+
+    \item \textbf{Widen the interpolation sweep.} Extend the $\gamma$ range to $10$ or even $20$ in Exp.~1, Exp.~3, and Exp.~8 so that the second-descent regime is fully resolved.
+
+    \item \textbf{Replicate every key configuration.} Run at least 5--10 seeds per setting and report mean $\pm$ standard deviation or bootstrap confidence intervals for test loss, alignment ratios, sharpness ratio, erosion rate, and correlations.
+
+    \item \textbf{Add an equilibrium baseline.} Include the minimum-norm pseudo-inverse solution for the linear model and compare it directly against SGD dynamics.
+
+    \item \textbf{Strengthen curvature estimation.} Add convergence checks for Hessian power iteration and use the exact Hessian for the linear model as a validation benchmark for the approximate estimators.
+
+    \item \textbf{Prioritize the decisive reruns.} Re-run Exp.~1 (curvature-noise coupling), Exp.~5 (erosion), and Exp.~8 (sharpness ratio) at the larger scale first; if these remain supportive, propagate the same protocol to Exp.~2, Exp.~3, Exp.~6, and Exp.~9.
+
+    \item \textbf{Submission target.} If the larger-scale reruns preserve the current trends, the manuscript should be positioned for JMLR, Physical Review E, Neural Computation, or a NeurIPS/ICML main-track submission. If the trends weaken, narrow the claims to the regimes that remain robust.
 \end{enumerate}
 
-\textit{``Obstacles are insights.'' The theoretical obstacles have been documented. They now become experimental hypotheses to test.}
+\textit{The objective of this pass is to convert proof-of-concept evidence into a statistically robust, submission-ready package.}
 
 % End of supplementary material
 

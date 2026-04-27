@@ -1,0 +1,19 @@
+============================================================
+  NESP EXPERIMENTAL SUITE — SUMMARY REPORT
+  2026-04-27 19:23:27
+  Total time: 2344s (39.1 min)
+============================================================
+
+[Exp 2] Escape Time Measurement: OK
+[Exp 5] Equilibrium Erosion: OK
+
+Output directory: C:\Users\Administrator\Documents\GitHub\ML_Double_Descent_Paper\main\paper2\outputs
+Generated figures:
+  - exp1_double_descent_noise.pdf
+  - exp1_eigenvalue_scatter.pdf
+  - exp1_hessian_geometry.pdf
+  - exp2_escape_time.pdf
+  - exp3_batch_size_dependence.pdf
+  - exp3_trajectories.pdf
+  - exp4_relu_alignment.pdf
+  - exp5_equilibrium_erosion.pdf
