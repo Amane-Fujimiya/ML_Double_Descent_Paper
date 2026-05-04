@@ -86,45 +86,44 @@ def compute_lyapunov_spectrum(
 
     # Log divergence accumulators
     log_div_accum = [[] for _ in range(n_exponents)]
-    shadow_models = [copy.deepcopy(model) for _ in range(n_exponents)]
 
-    ref_params_flat = get_flat_params(model)
+    # Create shadow models and perturb them at initialization
+    shadow_models = []
+    for i in range(n_exponents):
+        sm = copy.deepcopy(model)
+        set_flat_params(sm, get_flat_params(sm) + epsilon * perturbation_vecs[i])
+        shadow_models.append(sm)
+
+    loss_fn = nn.MSELoss()
 
     for step in range(n_steps):
         # Same mini-batch for ALL trajectories
         idx = torch.randint(0, n_train, (batch_size,))
         X_batch, y_batch = X_train[idx], y_train[idx]
-        loss_fn = nn.MSELoss()
 
-    # --- Reference step ---
-    model.zero_grad()
-    loss_ref = loss_fn(model(X_batch), y_batch)
-    loss_ref.backward()
-
-    # Update reference using its own gradient
-    for p in params:
-        if p.grad is not None:
-            p.data -= lr * p.grad
-
-    # --- Shadow steps with OWN gradients (same mini-batch) ---
-    # CRITICAL: Each shadow computes its OWN gradient on the SAME mini-batch,
-    # NOT copying the reference gradient. The shadow must evolve freely
-    # under the same data stream to capture trajectory divergence.
-    for i, sm in enumerate(shadow_models):
-        sm.zero_grad()
-        loss_s = loss_fn(sm(X_batch), y_batch)
-        loss_s.backward()
-
-        for p in sm.parameters():
+        # --- Reference step ---
+        model.zero_grad()
+        loss_ref = loss_fn(model(X_batch), y_batch)
+        loss_ref.backward()
+        for p in params:
             if p.grad is not None:
                 p.data -= lr * p.grad
 
-        # --- Orthogonalize and renormalize ---
+        # --- Shadow steps: each evolves freely under same mini-batch ---
+        for sm in shadow_models:
+            sm.zero_grad()
+            loss_s = loss_fn(sm(X_batch), y_batch)
+            loss_s.backward()
+            for p in sm.parameters():
+                if p.grad is not None:
+                    p.data -= lr * p.grad
+
+        # --- Orthogonalize and renormalize (AFTER all shadows evolved) ---
         if step % renormalize_every == 0:
             ref_flat = get_flat_params(model)
             displacements = []
 
-            for i, sm in enumerate(shadow_models):
+            for sm in shadow_models:
                 sm_flat = get_flat_params(sm)
                 disp = sm_flat - ref_flat
                 displacements.append(disp)
@@ -132,7 +131,6 @@ def compute_lyapunov_spectrum(
             # Gram-Schmidt orthogonalization
             for i in range(n_exponents):
                 for j in range(i):
-                    # Remove projection onto previous vectors
                     proj = torch.dot(displacements[i], displacements[j])
                     displacements[i] -= proj * displacements[j]
 
@@ -149,8 +147,8 @@ def compute_lyapunov_spectrum(
         if verbose and step % 200 == 0:
             current_exps = [np.mean(logs[-min(50, len(logs)):]) if logs else 0
                            for logs in log_div_accum]
-            print(f"  Step {step:5d} | FTLE: " +
-                  " ".join([f"λ{i+1}={e:.4f}" for i, e in enumerate(current_exps)]))
+            exps_str = " ".join([f"L{i+1}={e:.4f}" for i, e in enumerate(current_exps)])
+            print(f"  Step {step:5d} | FTLE: {exps_str}")
 
     # Final exponents: time average
     exponents = [np.mean(logs) if logs else 0.0 for logs in log_div_accum]

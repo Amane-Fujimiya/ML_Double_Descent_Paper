@@ -185,7 +185,7 @@
 % Approximations of commercial fonts:
 \newcommand{\simfonts}{%
   \RequirePackage[scaled=0.97]{fbb}
-  \RequirePackage[semibold]{sourcesanspro}
+  %\RequirePackage[semibold]{sourcesanspro}
   \RequirePackage{sansmath}
   \RequirePackage[italic,eulergreek]{mathastext}
 }

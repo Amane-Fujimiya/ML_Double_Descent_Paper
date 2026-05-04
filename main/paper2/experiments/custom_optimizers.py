@@ -274,9 +274,10 @@ class IsotropicNoiseSGD(optim.Optimizer):
 class PerParameterNoiseSGD(optim.Optimizer):
     """SGD with per-parameter noise tuned to match curvature or be isotropic.
 
-    Two modes:
+    Modes:
     - 'curvature': noise_i = β * sqrt(|g_i|) * ξ_i  (proxy for curvature)
-    - 'isotropic': noise_i = σ * ξ_i
+    - 'isotropic': noise_i = σ * ξ_i  (old uncalibrated mode)
+    - 'iso_calibrated': noise_i = β * sqrt(mean(|g|)) * ξ_i  (total power matched)
     - 'none': standard SGD
     """
 
@@ -298,18 +299,26 @@ class PerParameterNoiseSGD(optim.Optimizer):
             beta = group['beta']
             sigma = group['sigma']
 
+            # Dynamic calibration for iso_calibrated mode
+            if noise_mode == 'iso_calibrated':
+                all_abs = []
+                for p in group['params']:
+                    if p.grad is not None:
+                        all_abs.append(p.grad.abs().mean().item())
+                if all_abs:
+                    sigma = beta * np.sqrt(np.mean(all_abs))
+                else:
+                    sigma = 0.0
+
             for p in group['params']:
                 if p.grad is None:
                     continue
                 grad = p.grad
 
                 if noise_mode == 'curvature':
-                    # Proxy: noise proportional to sqrt(|grad|) × random direction
-                    # This approximates curvature-aligned noise since
-                    # in the linearized regime, |g| ∝ sqrt(curvature)
                     grad_scale = grad.abs().sqrt().clamp(min=1e-8)
                     noise = beta * grad_scale * torch.randn_like(p)
-                elif noise_mode == 'isotropic':
+                elif noise_mode in ('isotropic', 'iso_calibrated'):
                     noise = sigma * torch.randn_like(p)
                 else:
                     noise = torch.zeros_like(p)

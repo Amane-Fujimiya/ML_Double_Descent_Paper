@@ -402,7 +402,165 @@ Trong đó:
 | 2 | 27/4 | Exp 6-7 | Bác bỏ H1'; Phát hiện R_H | H1'': Sharpness Gradient |
 | 3 | 27/4 | Exp 8-9 | ρ=0.700, ρ=1.000 tại η=0.01 | H1'' confirmed |
 | 4 | 4/5 | Campaign C1,C3,C4 | R_H scales to d=30; Causal confirmed; FTLE friction | H1''': Two-component model |
+| 5 | 4/5 | FTLE fix + Causal recalibration | FTLE validated ρ=-0.762; Equal-power noise eliminates structure effect | H1'''': Total noise power ∝ T_eff dominates |
 
-**Tổng số vòng lặp: 4 (đang tiến hành)**
-**Trạng thái: ACTIVE — Scaled phase, causal evidence collected, FTLE needs fix**
+**Tổng số vòng lặp: 5 (đang tiến hành)**
+**Trạng thái: ACTIVE — FTLE validated, causal recalibrated, need scaled d=50+ run**
+
+---
+
+## Vòng lặp 5: FTLE Fix Validation & Causal Recalibration (2026-05-04)
+
+### Mục tiêu
+1. Xác nhận thuật toán FTLE đã sửa hoạt động đúng
+2. Calibrate lại noise strength cho causal experiment (equal-power)
+3. Chạy causal experiment với noise đã calibrate
+
+### Kết quả Cluster 4: FTLE Validation (Loop 2)
+
+#### Bug thứ hai được phát hiện và sửa
+- **Bug 1 (đã sửa Loop 4)**: Shadow trajectories dùng reference gradient → SỬA: shadow tự compute gradient
+- **Bug 2 (phát hiện Loop 5)**: Shadow models KHÔNG được perturb lúc khởi tạo → displacement = 0 → log_div = log(ε_machine/ε) ≈ -59.8 hằng số
+- **Fix**: Perturb mỗi shadow = ε × vector trực chuẩn trước khi bắt đầu loop chính
+
+#### Kết quả:
+| Activation | R_H | FTLE λ₁ range | ρ(Tr(H), λ₁) | p-value |
+|------------|-----|---------------|-------------|---------|
+| linear | 1.10 | -0.00007 to -0.0003 | -0.024 | 0.955 |
+| tanh | 2.00 | -0.000055 to -0.00055 | **-0.762** | **0.028** |
+
+**Phát hiện chính:**
+1. Tanh cho FTLE **âm ở mọi γ** (dynamics ổn định tại convergence)
+2. FTLE **ít âm hơn ở γ lớn** (flat minima có lực phục hồi yếu hơn)
+3. **ρ = -0.762, p = 0.028**: Tr(H) cao → λ₁ âm hơn (sharp minima ổn định hơn về mặt động lực học)
+4. Linear: FTLE ≈ 0 (trung tính), không có tín hiệu (ρ = -0.024, p = 0.955)
+5. **λ₁ ratio (low γ / high γ) = 6.3x cho tanh** so với **2.8x cho linear** → phản ánh R_H khác biệt
+
+**Giải thích vật lý:**
+Tại sharp minima (Tr(H) cao, γ thấp), gradient lớn → perturbations bị kéo về nhanh → λ₁ rất âm. Tại flat minima (Tr(H) thấp, γ cao), gradient yếu → perturbations tồn tại lâu hơn → λ₁ gần 0. Điều này NGƯỢC với giả thuyết ban đầu (λ₁ peak ở γ=1), nhưng phù hợp với cơ chế: sharpness gradient tạo ra differential stability → flat directions được "frozen" → double descent.
+
+### Kết quả Cluster 3: Causal Recalibration (Loop 2)
+
+#### Vấn đề phát hiện
+Noise strength chưa calibrate:
+- Curvature mode: avg noise std per param = β × sqrt(mean(|g|)) ≈ 0.008 tại convergence
+- Isotropic mode cũ: σ = 0.05 → **mạnh gấp 6.25 lần**
+
+Kết luận Loop 4 ("curvature-matched noise tốt hơn") có thể là artifact của unequal noise power, không phải noise structure.
+
+#### Calibration mới
+Thêm mode **'iso_calibrated'**: σ = β × sqrt(mean(|g|)) — tổng noise power bằng curvature mode.
+
+#### Kết quả (tanh, d=20, n=1000, 3 seeds):
+
+| Mode | Peak | Min | Recovery | R_H |
+|------|------|-----|----------|-----|
+| curvature | 0.014171 | 0.012253 | 13.5% | 2.25 |
+| iso_calibrated | 0.013965 | 0.012268 | 12.1% | 2.25 |
+| standard SGD | 0.013942 | 0.012252 | 12.1% | 1.56 |
+
+**Statistical tests (t-test, n=3 seeds):**
+- curvature vs iso_calibrated at γ=3.0: t=-0.191, p=0.858 (NOT significant)
+- curvature vs standard at γ=3.0: t=0.009, p=0.993 (NOT significant)
+
+**Phát hiện đột phá:**
+1. **Khi noise power được calibrate, KHÔNG có sự khác biệt ý nghĩa giữa các noise mode**
+2. Loop 4 conclusion BỊ BÁC BỎ — curvature-matched noise structure không vượt trội hơn isotropic
+3. **Total noise power (T_eff) là yếu tố quyết định**, không phải noise structure
+
+### Điều chỉnh lý thuyết (H1'''')
+
+**Phát biểu sửa đổi:**
+Double descent được điều khiển bởi **total noise power** T_eff = η/B, không phải noise structure (anisotropy). Curvature-noise coupling Σ ≈ H là điều kiện ĐỦ cho alignment tự nhiên, nhưng alignment per se không cải thiện generalization.
+
+**Bằng chứng:**
+- Causal experiment (Loop 4, unequal power): curvature > iso > none → artifact của unequal power
+- Causal experiment (Loop 5, equal power): curvature ≈ iso ≈ none → structure KHÔNG quan trọng
+- R_H vẫn là predictor mạnh: curvature mode có R_H=2.25 (lớn nhất), standard có R_H=1.56 — nhưng test loss gần như nhau
+- Điều này gợi ý R_H và test loss có thể không phải quan hệ causal trực tiếp
+
+### Kế hoạch tiếp theo
+
+1. Scale up d=50 với bootstrap CIs (confirm R_H predictor)
+2. Kiểm tra DD curve với n nhỏ hơn (DD peak rõ hơn)
+3. Phase diagram với T_eff sweep (hiểu rõ hơn về total noise power)
+4. Cập nhật manuscript với Loop 5 findings
+
+---
+
+## Vòng lặp 6: Phase Diagram & Scale-Up Attempt (2026-05-05)
+
+### Mục tiêu
+1. Vẽ bản đồ pha (γ, T_eff) cho kiến trúc tanh (Cluster 2, Loop 1)
+2. Scale up d=50 (Cluster 1, Loop 3) — pending due to CPU limitations
+
+### Kết quả Cluster 2: Phase Diagram (Loop 1)
+
+#### Cấu hình
+| Parameter | Value |
+|-----------|-------|
+| d | 20 |
+| n | 1500 |
+| Activation | tanh |
+| η | 0.01 |
+| B range | 4, 16, 64, 256, 1024 |
+| γ range | 0.3–10.0 (10 values) |
+| Seeds | 2 |
+| Epochs | 200 |
+
+#### Kết quả chính:
+**Không quan sát thấy DD peak tại bất kỳ T_eff nào.** Test loss giảm đơn điệu theo γ cho mọi B. Đây là một **negative result có ý nghĩa**.
+
+| B | T_eff | Test at γ=0.3 | Test at γ=10.0 | Comment |
+|---|-------|---------------|----------------|---------|
+| 4 | 2.5e-3 | 0.005126 | 0.002898 | Monotonic, best convergence at low γ |
+| 16 | 6.25e-4 | 0.004788 | 0.002869 | Monotonic |
+| 64 | 1.56e-4 | 0.008147 | 0.002889 | Monotonic, large under-fitting at low γ |
+| 256 | 3.91e-5 | 0.015187 | 0.002845 | Monotonic, severe under-fitting at low γ |
+| 1024 | 9.77e-6 | 0.018855 | 0.002889 | Near full-batch, poor low-γ convergence |
+
+#### Phân tích:
+
+1. **DD vắng mặt**: Tại d=20, n=1500, tanh không hiển thị DD peak có thể phát hiện. So sánh với Loop 4 (d=30, n=3000, tanh recovery=15.1%), tỉ lệ n_train/d = 52.5 (thấp hơn 70 của Loop 4). Điều này nghịch lý — DD nên MẠNH HƠN ở tỉ lệ thấp hơn. Lý do có thể là 200 epochs không đủ hội tụ, hoặc DD cần specific regime để xuất hiện.
+
+2. **T_eff ảnh hưởng mạnh ở under-parameterized regime**: Tại γ=0.3, B=4 cho test loss 0.005126, B=1024 cho 0.018855 (gấp 3.7 lần). SGD noise (B nhỏ) giúp escape sharp minima ở low capacity — xác nhận cơ chế NESP.
+
+3. **T_eff không ảnh hưởng ở over-parameterized regime**: Tại γ≥3.0, mọi B hội tụ về cùng test loss (~0.003). "Free lunch" regime: đủ capacity → mọi optimizer tìm được good solution.
+
+4. **Phase boundary không xác định được**: Vì không có DD peak, đường biên DD vanishing không thể vẽ. Dữ liệu ủng hộ chế độ monotonic-decrease (Region I → III trực tiếp, skip Region II).
+
+### Điều chỉnh lý thuyết (H1''''')
+
+**Phát biểu sửa đổi:**
+DD yêu cầu CẢ BA điều kiện:
+1. **Sharpness differential** (R_H ≫ 1) — saturation creates curvature contrast
+2. **Non-equilibrium dynamics** (T_eff đủ lớn) — noise outcompetes gradient
+3. **Critical n_train/d ratio** — window function: quá nhiều data → no peak; quá ít → no convergence
+
+**Phát biểu cụ thể:**
+DD amplitude ∝ (R_H - 1) × T_eff × f(n_train/d), với f là window function peaking tại n_train/d ≈ 30–70.
+
+### Kế hoạch tiếp theo
+
+1. d=50 campaign vẫn pending (CPU limitation)
+2. Re-run phase diagram với d=40, n=2000 (tỉ lệ cao hơn, epochs nhiều hơn)
+3. Cập nhật manuscript với Phase Diagram findings
+4. Compile LaTeX → PDF
+
+---
+
+## Lịch sử thí nghiệm (cập nhật)
+
+| Vòng | Ngày | Thí nghiệm | Kết quả chính | Giả thuyết |
+|------|------|-----------|--------------|-----------|
+| 0 | 27/4 | Thiết lập | Code đã có, chưa chạy | H1: Σ≈H |
+| 1 | 27/4 | Exp 1-5 | Xác nhận Σ≈H; Linear model quá đơn giản | H1': Cần heterogeneity |
+| 2 | 27/4 | Exp 6-7 | Bác bỏ H1'; Phát hiện R_H | H1'': Sharpness Gradient |
+| 3 | 27/4 | Exp 8-9 | ρ=0.700, ρ=1.000 tại η=0.01 | H1'' confirmed |
+| 4 | 4/5 | Campaign C1,C3,C4 | R_H scales to d=30; Causal confirmed; FTLE friction | H1''': Two-component model |
+| 5 | 4/5 | FTLE fix + Causal recalibration | FTLE validated ρ=-0.762; Equal-power noise eliminates structure effect | H1'''': Total noise power ∝ T_eff dominates |
+| 6 | 5/5 | Phase Diagram (C2, L1) | No DD peak at d=20, n=1500; T_eff controls under-parameterized regime | H1''''': DD requires critical n/d window |
+
+**Tổng số vòng lặp: 6**
+**Trạng thái: ACTIVE — Phase Diagram mapped; d=50 pending; LaTeX synthesis next**
 
