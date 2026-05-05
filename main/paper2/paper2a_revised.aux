@@ -3,8 +3,7 @@
 \abx@aux@refcontext{cms/global//global/global/global}
 \ExplSyntaxOn \cs_if_exist_use:NT \nicematrix@redefine@check@rerun \ExplSyntaxOff 
 \providecommand\hyper@newdestlabel[2]{}
-\providecommand\HyField@AuxAddToFields[1]{}
-\providecommand\HyField@AuxAddToCoFields[2]{}
+\providecommand*\HyPL@Entry[1]{}
 \abx@aux@cite{0}{10.1145/1968.1972}
 \abx@aux@segm{0}{0}{10.1145/1968.1972}
 \abx@aux@cite{0}{Vapnik1999-VAPTNO}
@@ -53,6 +52,7 @@
 \abx@aux@segm{0}{0}{XuRaginsky:2017:InfoGen}
 \abx@aux@cite{0}{Manin_2024}
 \abx@aux@segm{0}{0}{Manin_2024}
+\HyPL@Entry{0<</S/D>>}
 \zref@newlabel{mdf@pagelabel-1}{\default{}\page{1}\abspage{1}\mdf@pagevalue{1}}
 \abx@aux@page{1}{1}
 \abx@aux@page{2}{1}
@@ -156,8 +156,6 @@
 \abx@aux@segm{0}{0}{Vapnik1999-VAPTNO}
 \abx@aux@cite{0}{STL_Hajek_Maxim_2021}
 \abx@aux@segm{0}{0}{STL_Hajek_Maxim_2021}
-\abx@aux@cite{0}{6797087}
-\abx@aux@segm{0}{0}{6797087}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Foundational works}{2}{section.1}\protected@file@percent }
 \abx@aux@page{25}{2}
 \abx@aux@page{26}{2}
@@ -167,6 +165,9 @@
 \abx@aux@page{30}{2}
 \abx@aux@page{31}{2}
 \abx@aux@page{32}{2}
+\abx@aux@fnpage{22}{2}
+\abx@aux@fnpage{23}{2}
+\abx@aux@fnpage{24}{2}
 \abx@aux@page{33}{2}
 \abx@aux@page{34}{2}
 \abx@aux@page{35}{2}
@@ -175,9 +176,6 @@
 \abx@aux@page{38}{2}
 \abx@aux@page{39}{2}
 \abx@aux@page{40}{2}
-\abx@aux@fnpage{22}{2}
-\abx@aux@fnpage{23}{2}
-\abx@aux@fnpage{24}{2}
 \abx@aux@page{41}{2}
 \abx@aux@page{42}{2}
 \abx@aux@page{43}{2}
@@ -213,6 +211,8 @@
 \@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~2.2\else \numberline {2.2}Definition\fi \thmtformatoptarg {ERM and SRM}}{2}{definition.2.2}\protected@file@percent }
 \newlabel{def:erm_srm}{{2.2}{2}{ERM and SRM}{definition.2.2}{}}
 \newlabel{eq:srm}{{3}{2}{ERM and SRM}{equation.3}{}}
+\abx@aux@cite{0}{6797087}
+\abx@aux@segm{0}{0}{6797087}
 \abx@aux@cite{0}{adlam2020understandingdoubledescentrequires}
 \abx@aux@segm{0}{0}{adlam2020understandingdoubledescentrequires}
 \abx@aux@cite{0}{PfauBregmanDivergence}
@@ -460,21 +460,21 @@
 \newlabel{eq:langevin_sgd}{{40}{17}{Anisotropic SGD Noise as the Driving Force}{equation.40}{}}
 \@writefile{loe}{\contentsline {hypothesis}{\ifthmt@listswap Hypothesis~7.1\else \numberline {7.1}Hypothesis\fi \thmtformatoptarg {Curvature-Noise Coupling}}{17}{hypothesis.7.1}\protected@file@percent }
 \newlabel{hyp:curvature_noise}{{7.1}{17}{Curvature-Noise Coupling}{hypothesis.7.1}{}}
-\abx@aux@cite{0}{cohen2021gradient}
-\abx@aux@segm{0}{0}{cohen2021gradient}
 \newlabel{eq:noise_hessian_coupling}{{41}{18}{Curvature-Noise Coupling}{equation.41}{}}
-\@writefile{loe}{\contentsline {remark}{\ifthmt@listswap Remark~7.5\else \numberline {7.5}Remark\fi \thmtformatoptarg {Necessary vs.\ Sufficient Condition for Double Descent}}{18}{remark.7.5}\protected@file@percent }
-\newlabel{rmk:sharpness_gradient_condition}{{7.5}{18}{Necessary vs.\ Sufficient Condition for Double Descent}{remark.7.5}{}}
-\newlabel{eq:sharpness_ratio_def}{{42}{18}{Necessary vs.\ Sufficient Condition for Double Descent}{equation.42}{}}
-\newlabel{eq:dd_peak_prediction}{{43}{18}{Necessary vs.\ Sufficient Condition for Double Descent}{equation.43}{}}
+\@writefile{loe}{\contentsline {remark}{\ifthmt@listswap Remark~7.5\else \numberline {7.5}Remark\fi \thmtformatoptarg {Coupling, Power, and the Causal Mechanism}}{18}{remark.7.5}\protected@file@percent }
+\newlabel{rmk:sharpness_gradient_condition}{{7.5}{18}{Coupling, Power, and the Causal Mechanism}{remark.7.5}{}}
+\newlabel{eq:sharpness_ratio_def}{{42}{18}{Coupling, Power, and the Causal Mechanism}{equation.42}{}}
+\newlabel{eq:dd_peak_prediction}{{43}{18}{Coupling, Power, and the Causal Mechanism}{equation.43}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.6}From Continuous to Discrete: The Edge of Stability}{18}{subsection.7.6}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {7.6.1}Discrete SGD as a Dynamical System}{18}{subsubsection.7.6.1}\protected@file@percent }
 \newlabel{eq:sgd_discrete_eos}{{44}{18}{Discrete SGD as a Dynamical System}{equation.44}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {7.6.2}The Stability Threshold: Where $\lambda _{\max } \approx 2/\eta $}{18}{subsubsection.7.6.2}\protected@file@percent }
 \newlabel{eq:eos_condition}{{47}{18}{The Stability Threshold: Where \texorpdfstring {$\lambda _{\max } \approx 2/\eta $}{lambda max approx 2 over eta}}{equation.47}{}}
-\abx@aux@page{96}{18}
 \abx@aux@cite{0}{cohen2021gradient}
 \abx@aux@segm{0}{0}{cohen2021gradient}
+\abx@aux@cite{0}{cohen2021gradient}
+\abx@aux@segm{0}{0}{cohen2021gradient}
+\abx@aux@page{96}{19}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {7.6.3}Progressive Sharpening: The Route to EoS}{19}{subsubsection.7.6.3}\protected@file@percent }
 \abx@aux@page{97}{19}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {7.6.4}EoS and the Onset of Double Descent}{19}{subsubsection.7.6.4}\protected@file@percent }
@@ -484,11 +484,11 @@
 \newlabel{eq:ftle_def}{{48}{19}{Finite-Time Lyapunov Exponents for SGD}{equation.48}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {7.7.2}Jacobian of the SGD Step and Hessian Connection}{19}{subsubsection.7.7.2}\protected@file@percent }
 \newlabel{eq:ftle_expansion}{{51}{19}{Jacobian of the SGD Step and Hessian Connection}{equation.51}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.7.3}FTLE Spectrum and Generalization}{19}{subsubsection.7.7.3}\protected@file@percent }
 \abx@aux@cite{0}{cohen2021gradient}
 \abx@aux@segm{0}{0}{cohen2021gradient}
 \abx@aux@cite{0}{cohen2021gradient}
 \abx@aux@segm{0}{0}{cohen2021gradient}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.7.3}FTLE Spectrum and Generalization}{20}{subsubsection.7.7.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {7.7.4}Relation to Sharpness Dimension}{20}{subsubsection.7.7.4}\protected@file@percent }
 \abx@aux@page{98}{20}
 \newlabel{eq:lyapunov_dim}{{52}{20}{Relation to Sharpness Dimension}{equation.52}{}}
@@ -502,9 +502,9 @@
 \@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~7.1\else \numberline {7.1}Definition\fi \thmtformatoptarg {Mean Escape Time}}{20}{definition.7.1}\protected@file@percent }
 \newlabel{eq:escape_time_nesp}{{53}{20}{Dynamical Entropy vs.\ Thermodynamic Entropy}{equation.53}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {7.8.2}The Selection Mechanism}{20}{subsubsection.7.8.2}\protected@file@percent }
-\@writefile{loe}{\contentsline {remark}{\ifthmt@listswap Remark~7.6\else \numberline {7.6}Remark\fi \thmtformatoptarg {Physical Interpretation of Double Descent}}{20}{remark.7.6}\protected@file@percent }
 \abx@aux@cite{0}{nakkiran_deep_2019}
 \abx@aux@segm{0}{0}{nakkiran_deep_2019}
+\@writefile{loe}{\contentsline {remark}{\ifthmt@listswap Remark~7.6\else \numberline {7.6}Remark\fi \thmtformatoptarg {Physical Interpretation of Double Descent}}{21}{remark.7.6}\protected@file@percent }
 \abx@aux@page{100}{21}
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.9}Dynamics of Order Parameters: A Toy Model Execution}{21}{subsection.7.9}\protected@file@percent }
 \newlabel{sec:toy_model}{{7.9}{21}{Dynamics of Order Parameters: A Toy Model Execution}{subsection.7.9}{}}
@@ -514,16 +514,16 @@
 \newlabel{eq:loss_persample}{{56}{21}{System Definition and Energy Landscape}{equation.56}{}}
 \newlabel{eq:population_loss}{{59}{21}{System Definition and Energy Landscape}{equation.59}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {7.9.2}Derivation of the Gradient (The Drift Term)}{21}{subsubsection.7.9.2}\protected@file@percent }
-\newlabel{eq:gradient_explicit}{{64}{21}{Derivation of the Gradient (The Drift Term)}{equation.64}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.9.3}The Noise Covariance Structure (The Diffusion Term)}{21}{subsubsection.7.9.3}\protected@file@percent }
+\newlabel{eq:gradient_explicit}{{64}{22}{Derivation of the Gradient (The Drift Term)}{equation.64}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.9.3}The Noise Covariance Structure (The Diffusion Term)}{22}{subsubsection.7.9.3}\protected@file@percent }
 \newlabel{eq:sigma_tensor}{{70}{22}{The Noise Covariance Structure (The Diffusion Term)}{equation.70}{}}
 \newlabel{eq:sigma_explicit}{{71}{22}{The Noise Covariance Structure (The Diffusion Term)}{equation.71}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {7.9.4}The Hessian Geometry (The Curvature)}{22}{subsubsection.7.9.4}\protected@file@percent }
 \newlabel{eq:hessian_explicit}{{77}{22}{The Hessian Geometry (The Curvature)}{equation.77}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {7.9.5}Analytical Confirmation of Curvature-Noise Coupling}{22}{subsubsection.7.9.5}\protected@file@percent }
 \@writefile{loe}{\contentsline {remark}{\ifthmt@listswap Remark~7.7\else \numberline {7.7}Remark\fi \thmtformatoptarg {Physical Mechanism of Entropic Selection}}{22}{remark.7.7}\protected@file@percent }
-\@writefile{loe}{\contentsline {remark}{\ifthmt@listswap Remark~7.8\else \numberline {7.8}Remark\fi \thmtformatoptarg {Coupling Vanishes at Optimum --- Implications for the Nature of Generalization}}{22}{remark.7.8}\protected@file@percent }
-\newlabel{rmk:coupling_vanishes}{{7.8}{22}{Coupling Vanishes at Optimum --- Implications for the Nature of Generalization}{remark.7.8}{}}
+\@writefile{loe}{\contentsline {remark}{\ifthmt@listswap Remark~7.8\else \numberline {7.8}Remark\fi \thmtformatoptarg {Coupling Vanishes at Optimum --- Implications for the Nature of Generalization}}{23}{remark.7.8}\protected@file@percent }
+\newlabel{rmk:coupling_vanishes}{{7.8}{23}{Coupling Vanishes at Optimum --- Implications for the Nature of Generalization}{remark.7.8}{}}
 \@writefile{loe}{\contentsline {remark}{\ifthmt@listswap Remark~7.9\else \numberline {7.9}Remark\fi \thmtformatoptarg {Why the Linear Model Shows Weak Double Descent --- The Sharpness Differential}}{23}{remark.7.9}\protected@file@percent }
 \newlabel{rmk:linear_weak_dd}{{7.9}{23}{Why the Linear Model Shows Weak Double Descent --- The Sharpness Differential}{remark.7.9}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {7.9.6}Critical Divergence at the Interpolation Threshold}{23}{subsubsection.7.9.6}\protected@file@percent }
@@ -534,12 +534,12 @@
 \@writefile{toc}{\contentsline {paragraph}{Physical Interpretation: The ``Melting'' Transition.}{23}{section*.25}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {7.9.7}Predicted Phase Structure}{23}{subsubsection.7.9.7}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Phase I: Under-parameterized / Jamming ($k < d$)}{23}{section*.26}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Phase II: Critical / Peak ($k \approx d$)}{23}{section*.27}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Phase II: Critical / Peak ($k \approx d$)}{24}{section*.27}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Phase III: Over-parameterized / Relaxation ($k \gg d$)}{24}{section*.28}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {7.9.8}Phase Diagram in the $(\gamma ,\,T_{\mathrm {eff}})$-plane}{24}{subsubsection.7.9.8}\protected@file@percent }
 \newlabel{sec:phase_diagram}{{7.9.8}{24}{Phase Diagram in the $(\gamma ,\,T_{\mathrm {eff}})$-plane}{subsubsection.7.9.8}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {7.9.9}Proposed Observables for Experimental Verification}{24}{subsubsection.7.9.9}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.9.10}Critical Self-Assessment: What the Toy Model Does NOT Capture}{24}{subsubsection.7.9.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.9.10}Critical Self-Assessment: What the Toy Model Does NOT Capture}{25}{subsubsection.7.9.10}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Limitation 1: The Absence of Non-Linearity.}{25}{section*.29}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Limitation 2: The Escape Time Problem---Quantitative Gap.}{25}{section*.30}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Limitation 3: Batch Size and Learning Rate Effects.}{25}{section*.31}\protected@file@percent }
@@ -619,207 +619,214 @@
 \@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Per-learning-rate Spearman correlation between $R_H$ and DD peak (Experiment~9, $n=3$ activations).}}{34}{table.caption.45}\protected@file@percent }
 \newlabel{tab:lr_modulation}{{7}{34}{Per-learning-rate Spearman correlation between $R_H$ and DD peak (Experiment~9, $n=3$ activations)}{table.caption.45}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {8.10}Synthesis: The Experimental Case for NESP}{34}{subsection.8.10}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Level 1: Microscopic Mechanism (Experiments 1, 4, 6)}{34}{section*.46}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Level 2: Dynamical Selection (Experiments 2, 3, 5)}{34}{section*.47}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Level 3: The Sufficient Condition --- Sharpness Ratio (Experiments 7, 8, 9)}{35}{section*.48}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Level 1: Microscopic Mechanism --- Curvature-Noise Coupling (Experiments 1, 4, 6)}{34}{section*.46}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Level 2: Dynamical Selection --- ``Survival of the Flattest'' (Experiments 2, 3, 5)}{35}{section*.47}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Level 3: The Predictive Condition --- Sharpness Ratio $R_H$ (Experiments 7, 8, 9)}{35}{section*.48}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {8.11}Scaled Experimental Campaign: Statistical Robustness and Causal Intervention}{35}{subsection.8.11}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {8.11.1}Cluster 1: Sharpness Gradient at Scale}{35}{subsubsection.8.11.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Scaled sharpness gradient results ($d=30$, $n=3000$, $N_{\mathrm {seeds}}=3$). Test loss and $\mathrm {Tr}(H)$ are reported as mean $\pm $ bootstrap 95\% CI.}}{35}{table.caption.49}\protected@file@percent }
-\newlabel{tab:scaled_sharpness}{{8}{35}{Scaled sharpness gradient results ($d=30$, $n=3000$, $N_{\mathrm {seeds}}=3$). Test loss and $\mathrm {Tr}(H)$ are reported as mean $\pm $ bootstrap 95\% CI}{table.caption.49}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Scaled sharpness gradient results ($d=30$, $n=3000$, $N_{\mathrm {seeds}}=3$). Test MSE in $\times 10^{-3}$, $\mathrm {Tr}(H)$ as mean $\pm $ bootstrap 95\% CI.}}{36}{table.caption.49}\protected@file@percent }
+\newlabel{tab:scaled_sharpness}{{8}{36}{Scaled sharpness gradient results ($d=30$, $n=3000$, $N_{\mathrm {seeds}}=3$). Test MSE in $\times 10^{-3}$, $\mathrm {Tr}(H)$ as mean $\pm $ bootstrap 95\% CI}{table.caption.49}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {8.11.2}Cluster 3: Causal Intervention --- Total Noise Power Dominates DD Magnitude}{36}{subsubsection.8.11.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Calibrated causal intervention ($\tanh $, $d=20$, $n=1000$, $N_{\mathrm {seeds}}=3$). All test loss values $\times 10^{-2}$. Equal-powered noise eliminates the apparent structure effect.}}{36}{table.caption.50}\protected@file@percent }
+\newlabel{tab:causal_intervention}{{9}{36}{Calibrated causal intervention ($\tanh $, $d=20$, $n=1000$, $N_{\mathrm {seeds}}=3$). All test loss values $\times 10^{-2}$. Equal-powered noise eliminates the apparent structure effect}{table.caption.50}{}}
 \newlabel{eq:one_component_causal}{{86}{36}{Cluster 3: Causal Intervention --- Total Noise Power Dominates DD Magnitude}{equation.86}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Calibrated causal intervention results ($\tanh $, $d=20$, $n=1000$, $N_{\mathrm {seeds}}=3$). Equal-powered noise eliminates the apparent structure effect observed in the uncalibrated experiment.}}{36}{table.caption.50}\protected@file@percent }
-\newlabel{tab:causal_intervention}{{9}{36}{Calibrated causal intervention results ($\tanh $, $d=20$, $n=1000$, $N_{\mathrm {seeds}}=3$). Equal-powered noise eliminates the apparent structure effect observed in the uncalibrated experiment}{table.caption.50}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.11.3}Cluster 4: FTLE Analysis --- Validated with Dynamical Signal}{36}{subsubsection.8.11.3}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Corrected FTLE spectrum results ($\tanh $, $d=20$, converged models). $\lambda _1$ is the maximal FTLE. $R_H$ computed from $\mathrm {Tr}(H)$ as in Eq.~equation~\ref {eq:sharpness_ratio_def}.}}{37}{table.caption.51}\protected@file@percent }
-\newlabel{tab:ftle_corrected}{{10}{37}{Corrected FTLE spectrum results ($\tanh $, $d=20$, converged models). $\lambda _1$ is the maximal FTLE. $R_H$ computed from $\mathrm {Tr}(H)$ as in Eq.~\eqref {eq:sharpness_ratio_def}}{table.caption.51}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.11.3}Cluster 4: FTLE Analysis --- Validated with Dynamical Signal}{37}{subsubsection.8.11.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Corrected FTLE spectrum ($\tanh $, $d=20$, converged models). All $\lambda _i$ values $\times 10^{-4}$. $\lambda _1$ is the maximal FTLE.}}{37}{table.caption.51}\protected@file@percent }
+\newlabel{tab:ftle_corrected}{{10}{37}{Corrected FTLE spectrum ($\tanh $, $d=20$, converged models). All $\lambda _i$ values $\times 10^{-4}$. $\lambda _1$ is the maximal FTLE}{table.caption.51}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {8.11.4}Cluster 2: Phase Diagram --- Negative Result and Empirical Constraints}{37}{subsubsection.8.11.4}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Phase diagram test loss grid ($\tanh $, $d=20$, $n=1500$, $200$ epochs). Bold values mark the best final (largest $\gamma $) and worst initial (smallest $\gamma $) test loss at each $B$.}}{37}{table.caption.52}\protected@file@percent }
-\newlabel{tab:phase_diagram}{{11}{37}{Phase diagram test loss grid ($\tanh $, $d=20$, $n=1500$, $200$ epochs). Bold values mark the best final (largest $\gamma $) and worst initial (smallest $\gamma $) test loss at each $B$}{table.caption.52}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.12}Limitations and Open Questions}{37}{subsection.8.12}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.13}Summary of Key Numerical Results}{38}{subsection.8.13}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {9}Conclusion and Outlook}{38}{section.9}\protected@file@percent }
-\newlabel{sec:conclusion}{{9}{38}{Conclusion and Outlook}{section.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Phase diagram test loss (all $\times 10^{-3}$, $\tanh $, $d=20$, $n=1500$, $200$ epochs). Bold: best/worst at each $B$.}}{37}{table.caption.52}\protected@file@percent }
+\newlabel{tab:phase_diagram}{{11}{37}{Phase diagram test loss (all $\times 10^{-3}$, $\tanh $, $d=20$, $n=1500$, $200$ epochs). Bold: best/worst at each $B$}{table.caption.52}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.11.5}Cluster 1 Extension: Scaled Campaign at $d=50$ --- GPU-Accelerated Confirmation}{38}{subsubsection.8.11.5}\protected@file@percent }
+\newlabel{sec:d50_campaign}{{8.11.5}{38}{Cluster 1 Extension: Scaled Campaign at $d=50$ --- GPU-Accelerated Confirmation}{subsubsection.8.11.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces \textbf  {$d=50$ scaled campaign:} Sharpness Ratio and double descent metrics. Test MSE (all values $\times 10^{-3}$) and $\mathrm {Tr}(H)$ are mean $\pm $ bootstrap 95\% CI across $N_{\mathrm {seeds}}=3$. Equilibrium baseline: $\mathrm {Tr}(H)_{\mathrm {eq}} = 49.95$, $\mathrm {MSE}_{\mathrm {eq}} = 2.604 \times 10^{-3}$.}}{38}{table.caption.53}\protected@file@percent }
+\newlabel{tab:d50_campaign}{{12}{38}{\textbf {$d=50$ scaled campaign:} Sharpness Ratio and double descent metrics. Test MSE (all values $\times 10^{-3}$) and $\mathrm {Tr}(H)$ are mean $\pm $ bootstrap 95\% CI across $N_{\mathrm {seeds}}=3$. Equilibrium baseline: $\mathrm {Tr}(H)_{\mathrm {eq}} = 49.95$, $\mathrm {MSE}_{\mathrm {eq}} = 2.604 \times 10^{-3}$}{table.caption.53}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.11.6}Cluster 1 Extension: Grid Resolution Sensitivity --- Recovery Rate as a Lower Bound}{39}{subsubsection.8.11.6}\protected@file@percent }
+\newlabel{sec:grid_sensitivity}{{8.11.6}{39}{Cluster 1 Extension: Grid Resolution Sensitivity --- Recovery Rate as a Lower Bound}{subsubsection.8.11.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.11.7}Epoch-wise Double Descent: Dynamical Validation of ``Survival of the Flattest''}{39}{subsubsection.8.11.7}\protected@file@percent }
+\newlabel{sec:epochwise_dd}{{8.11.7}{39}{Epoch-wise Double Descent: Dynamical Validation of ``Survival of the Flattest''}{subsubsection.8.11.7}{}}
+\abx@aux@cite{0}{nakkiran_deep_2019}
+\abx@aux@segm{0}{0}{nakkiran_deep_2019}
+\abx@aux@page{102}{40}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.11.8}Deep Network Scaling: Boundary of the Sharpness Ratio Hypothesis}{40}{subsubsection.8.11.8}\protected@file@percent }
+\newlabel{sec:deep_scaling}{{8.11.8}{40}{Deep Network Scaling: Boundary of the Sharpness Ratio Hypothesis}{subsubsection.8.11.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.12}Limitations and Open Questions}{40}{subsection.8.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.13}Summary of Key Numerical Results}{41}{subsection.8.13}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {9}Conclusion and Outlook}{42}{section.9}\protected@file@percent }
+\newlabel{sec:conclusion}{{9}{42}{Conclusion and Outlook}{section.9}{}}
 \abx@aux@cite{0}{cohen2021gradient}
 \abx@aux@segm{0}{0}{cohen2021gradient}
-\@writefile{toc}{\contentsline {section}{\numberline {Appendix 1}Supplementary Material}{39}{appendix.A}\protected@file@percent }
-\newlabel{app:supplementary}{{Appendix 1}{39}{Supplementary Material}{appendix.A}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {Appendix 1.1}Research Friction Points: Where Theory Meets Its Limits}{39}{subsection.A.1}\protected@file@percent }
-\newlabel{app:friction_points}{{Appendix 1.1}{39}{Research Friction Points: Where Theory Meets Its Limits}{subsection.A.1}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.1.1}The Langevin Approximation Breaks Down}{39}{subsubsection.A.1.1}\protected@file@percent }
-\abx@aux@page{102}{39}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.1.2}The Replica Trick's Mathematical Fragility}{39}{subsubsection.A.1.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.1.3}The Temperature Analogy's Limits}{40}{subsubsection.A.1.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.1.4}The Gap Between Linear and Nonlinear}{40}{subsubsection.A.1.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.1.5}Observational vs.\ Causal Claims}{40}{subsubsection.A.1.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {Appendix 1.2}Historical Working Notes: Research Trajectory}{40}{subsection.A.2}\protected@file@percent }
-\newlabel{app:author_notes}{{Appendix 1.2}{40}{Historical Working Notes: Research Trajectory}{subsection.A.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {Appendix 1.3}Philosophical Reflections: The Epistemological Shift}{40}{subsection.A.3}\protected@file@percent }
-\newlabel{app:philosophy}{{Appendix 1.3}{40}{Philosophical Reflections: The Epistemological Shift}{subsection.A.3}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.3.1}From ``What'' to ``How'': The Dynamical Turn}{40}{subsubsection.A.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.3.2}The ``Unreasonable Effectiveness'' of SGD Noise}{40}{subsubsection.A.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.3.3}Implications for Theory and Practice}{40}{subsubsection.A.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.3.4}What This Chapter Does Not Claim}{41}{subsubsection.A.3.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.3.5}A Note on Interdisciplinarity}{41}{subsubsection.A.3.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {Appendix 1.4}Comprehensive Research Friction Log}{41}{subsection.A.4}\protected@file@percent }
-\newlabel{sec:friction_log}{{Appendix 1.4}{41}{Comprehensive Research Friction Log}{subsection.A.4}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.4.1}Category A: Mathematical Rigor Gaps}{41}{subsubsection.A.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.4.2}Category B: Physical Analogy Limitations}{41}{subsubsection.A.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.4.3}Category C: Empirical Instabilities}{41}{subsubsection.A.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.4.4}Category D: Conceptual Gaps}{42}{subsubsection.A.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.4.5}Category E: Connections to Other Theories}{42}{subsubsection.A.4.5}\protected@file@percent }
-\@writefile{loe}{\contentsline {remark}{\ifthmt@listswap Remark~Appendix 1.1\else \numberline {Appendix 1.1}Remark\fi \thmtformatoptarg {Using the Friction Log}}{42}{remark.Appendix 1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {Appendix 1.5}Historical Research Log: From Draft to Publication}{43}{subsection.A.5}\protected@file@percent }
-\newlabel{sec:roadmap}{{Appendix 1.5}{43}{Historical Research Log: From Draft to Publication}{subsection.A.5}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.5.1}Phase 1: Foundation Solidification (Completed)}{43}{subsubsection.A.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.5.2}Phase 2: Core Experiments (Completed)}{43}{subsubsection.A.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.5.3}Phase 3: Extension and Validation (Completed)}{43}{subsubsection.A.5.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.5.4}Phase 4: Writing and Refinement (Completed)}{43}{subsubsection.A.5.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.5.5}Completed Verification Criteria}{43}{subsubsection.A.5.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {Appendix 1.6}Closing Reflection}{43}{subsection.A.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {Appendix 1.7}Critical Self-Review}{43}{subsection.A.7}\protected@file@percent }
-\newlabel{app:self_review}{{Appendix 1.7}{43}{Critical Self-Review}{subsection.A.7}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Category I: Theoretical Refinements Needed (Before Experiments)}{43}{section*.54}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Category II: Experimental Phase Record}{44}{section*.55}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Category III: Methodological Refinements}{44}{section*.56}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Category IV: Content to Strengthen}{44}{section*.57}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Honest Assessment: Paper Status}{44}{section*.58}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Experimental Assessment}{44}{section*.59}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Next Research Plan: Scale-Up Toward Submission}{45}{section*.60}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces Summary of key experimental observables and their theoretical counterparts.}}{45}{table.caption.53}\protected@file@percent }
-\newlabel{tab:results_summary}{{12}{45}{Summary of key experimental observables and their theoretical counterparts}{table.caption.53}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {Appendix 1}Supplementary Material}{43}{appendix.A}\protected@file@percent }
+\newlabel{app:supplementary}{{Appendix 1}{43}{Supplementary Material}{appendix.A}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {Appendix 1.1}Research Friction Points: Where Theory Meets Its Limits}{43}{subsection.A.1}\protected@file@percent }
+\newlabel{app:friction_points}{{Appendix 1.1}{43}{Research Friction Points: Where Theory Meets Its Limits}{subsection.A.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.1.1}The Langevin Approximation Breaks Down}{43}{subsubsection.A.1.1}\protected@file@percent }
+\abx@aux@page{103}{43}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.1.2}The Replica Trick's Mathematical Fragility}{43}{subsubsection.A.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.1.3}The Temperature Analogy's Limits}{43}{subsubsection.A.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.1.4}The Gap Between Linear and Nonlinear}{43}{subsubsection.A.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.1.5}Observational vs.\ Causal Claims}{44}{subsubsection.A.1.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {Appendix 1.2}Historical Working Notes: Research Trajectory}{44}{subsection.A.2}\protected@file@percent }
+\newlabel{app:author_notes}{{Appendix 1.2}{44}{Historical Working Notes: Research Trajectory}{subsection.A.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {Appendix 1.3}Philosophical Reflections: The Epistemological Shift}{44}{subsection.A.3}\protected@file@percent }
+\newlabel{app:philosophy}{{Appendix 1.3}{44}{Philosophical Reflections: The Epistemological Shift}{subsection.A.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.3.1}From ``What'' to ``How'': The Dynamical Turn}{44}{subsubsection.A.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.3.2}The ``Unreasonable Effectiveness'' of SGD Noise}{44}{subsubsection.A.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.3.3}Implications for Theory and Practice}{44}{subsubsection.A.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.3.4}What This Chapter Does Not Claim}{44}{subsubsection.A.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.3.5}A Note on Interdisciplinarity}{45}{subsubsection.A.3.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {Appendix 1.4}Comprehensive Research Friction Log}{45}{subsection.A.4}\protected@file@percent }
+\newlabel{sec:friction_log}{{Appendix 1.4}{45}{Comprehensive Research Friction Log}{subsection.A.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.4.1}Category A: Mathematical Rigor Gaps}{45}{subsubsection.A.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.4.2}Category B: Physical Analogy Limitations}{45}{subsubsection.A.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.4.3}Category C: Empirical Instabilities}{45}{subsubsection.A.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.4.4}Category D: Conceptual Gaps}{46}{subsubsection.A.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.4.5}Category E: Connections to Other Theories}{46}{subsubsection.A.4.5}\protected@file@percent }
+\@writefile{loe}{\contentsline {remark}{\ifthmt@listswap Remark~Appendix 1.1\else \numberline {Appendix 1.1}Remark\fi \thmtformatoptarg {Using the Friction Log}}{46}{remark.Appendix 1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {Appendix 1.5}Historical Research Log: From Draft to Publication}{46}{subsection.A.5}\protected@file@percent }
+\newlabel{sec:roadmap}{{Appendix 1.5}{46}{Historical Research Log: From Draft to Publication}{subsection.A.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {Appendix 1.5.1}Completed Verification Criteria}{46}{subsubsection.A.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {Appendix 1.6}Closing Reflection}{46}{subsection.A.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {Appendix 1.7}Critical Self-Review}{46}{subsection.A.7}\protected@file@percent }
+\newlabel{app:self_review}{{Appendix 1.7}{46}{Critical Self-Review}{subsection.A.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Honest Assessment: Paper Status (Updated, Loop~7)}{46}{section*.55}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Updated Experimental Assessment (Loop~8)}{46}{section*.57}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{What has been resolved since the initial self-review:}{47}{section*.58}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Remaining limitations (honest assessment):}{47}{section*.59}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Overall verdict (updated, Loop~8):}{47}{section*.60}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces Summary of key experimental observables and their theoretical counterparts.}}{48}{table.caption.54}\protected@file@percent }
+\newlabel{tab:results_summary}{{13}{48}{Summary of key experimental observables and their theoretical counterparts}{table.caption.54}{}}
 \abx@aux@nociteall
-\@writefile{toc}{\contentsline {section}{References}{46}{section*.61}\protected@file@percent }
-\abx@aux@page{103}{46}
-\abx@aux@page{104}{46}
-\abx@aux@page{105}{46}
-\abx@aux@page{106}{46}
-\abx@aux@page{107}{46}
-\abx@aux@page{108}{46}
-\abx@aux@page{109}{46}
-\abx@aux@page{110}{46}
-\abx@aux@page{111}{46}
-\abx@aux@page{112}{46}
-\abx@aux@page{113}{46}
-\abx@aux@page{114}{46}
-\abx@aux@page{115}{46}
-\abx@aux@page{116}{46}
-\abx@aux@page{117}{46}
-\abx@aux@page{118}{46}
-\abx@aux@page{119}{46}
-\abx@aux@page{120}{46}
-\abx@aux@page{121}{46}
-\abx@aux@page{122}{46}
-\abx@aux@page{123}{46}
-\abx@aux@page{124}{46}
-\abx@aux@page{125}{46}
-\abx@aux@page{126}{46}
-\abx@aux@page{127}{46}
-\abx@aux@page{128}{46}
-\abx@aux@page{129}{46}
-\abx@aux@page{130}{46}
-\abx@aux@page{131}{46}
-\abx@aux@page{132}{46}
-\abx@aux@page{133}{46}
-\abx@aux@page{134}{47}
-\abx@aux@page{135}{47}
-\abx@aux@page{136}{47}
-\abx@aux@page{137}{47}
-\abx@aux@page{138}{47}
-\abx@aux@page{139}{47}
-\abx@aux@page{140}{47}
-\abx@aux@page{141}{47}
-\abx@aux@page{142}{47}
-\abx@aux@page{143}{47}
-\abx@aux@page{144}{47}
-\abx@aux@page{145}{47}
-\abx@aux@page{146}{47}
-\abx@aux@page{147}{47}
-\abx@aux@page{148}{47}
-\abx@aux@page{149}{47}
-\abx@aux@page{150}{47}
-\abx@aux@page{151}{47}
-\abx@aux@page{152}{47}
-\abx@aux@page{153}{47}
-\abx@aux@page{154}{47}
-\abx@aux@page{155}{47}
-\abx@aux@page{156}{47}
-\abx@aux@page{157}{47}
-\abx@aux@page{158}{47}
-\abx@aux@page{159}{47}
-\abx@aux@page{160}{47}
-\abx@aux@page{161}{47}
-\abx@aux@page{162}{47}
-\abx@aux@page{163}{47}
-\abx@aux@page{164}{47}
-\abx@aux@page{165}{47}
-\abx@aux@page{166}{47}
-\abx@aux@page{167}{47}
-\abx@aux@page{168}{48}
-\abx@aux@page{169}{48}
-\abx@aux@page{170}{48}
-\abx@aux@page{171}{48}
-\abx@aux@page{172}{48}
-\abx@aux@page{173}{48}
-\abx@aux@page{174}{48}
-\abx@aux@page{175}{48}
-\abx@aux@page{176}{48}
-\abx@aux@page{177}{48}
-\abx@aux@page{178}{48}
-\abx@aux@page{179}{48}
-\abx@aux@page{180}{48}
-\abx@aux@page{181}{48}
-\abx@aux@page{182}{48}
-\abx@aux@page{183}{48}
-\abx@aux@page{184}{48}
-\abx@aux@page{185}{48}
-\abx@aux@page{186}{48}
-\abx@aux@page{187}{48}
-\abx@aux@page{188}{48}
-\abx@aux@page{189}{48}
-\abx@aux@page{190}{48}
-\abx@aux@page{191}{48}
-\abx@aux@page{192}{48}
-\abx@aux@page{193}{48}
-\abx@aux@page{194}{48}
-\abx@aux@page{195}{48}
-\abx@aux@page{196}{48}
-\abx@aux@page{197}{48}
-\abx@aux@page{198}{48}
-\abx@aux@page{199}{48}
-\abx@aux@page{200}{48}
-\abx@aux@page{201}{48}
-\abx@aux@page{202}{48}
-\abx@aux@page{203}{48}
-\abx@aux@page{204}{49}
-\abx@aux@page{205}{49}
-\abx@aux@page{206}{49}
-\abx@aux@page{207}{49}
-\abx@aux@page{208}{49}
-\abx@aux@page{209}{49}
-\abx@aux@page{210}{49}
-\abx@aux@page{211}{49}
-\abx@aux@page{212}{49}
-\abx@aux@page{213}{49}
-\abx@aux@page{214}{49}
-\abx@aux@page{215}{49}
-\abx@aux@page{216}{49}
-\abx@aux@page{217}{49}
-\abx@aux@page{218}{49}
-\abx@aux@page{219}{49}
-\abx@aux@page{220}{49}
-\abx@aux@page{221}{49}
-\abx@aux@page{222}{49}
-\abx@aux@page{223}{49}
-\abx@aux@page{224}{49}
-\abx@aux@page{225}{49}
-\abx@aux@page{226}{49}
-\abx@aux@page{227}{49}
-\abx@aux@page{228}{49}
-\abx@aux@page{229}{49}
-\newlabel{LastPage}{{Appendix 1.7}{49}{Next Research Plan: Scale-Up Toward Submission}{page.49}{}}
-\gdef\lastpage@lastpage{49}
-\gdef\lastpage@lastpageHy{49}
+\@writefile{toc}{\contentsline {section}{References}{50}{section*.61}\protected@file@percent }
+\abx@aux@page{104}{50}
+\abx@aux@page{105}{50}
+\abx@aux@page{106}{50}
+\abx@aux@page{107}{50}
+\abx@aux@page{108}{50}
+\abx@aux@page{109}{50}
+\abx@aux@page{110}{50}
+\abx@aux@page{111}{50}
+\abx@aux@page{112}{50}
+\abx@aux@page{113}{50}
+\abx@aux@page{114}{50}
+\abx@aux@page{115}{50}
+\abx@aux@page{116}{50}
+\abx@aux@page{117}{50}
+\abx@aux@page{118}{50}
+\abx@aux@page{119}{50}
+\abx@aux@page{120}{50}
+\abx@aux@page{121}{50}
+\abx@aux@page{122}{50}
+\abx@aux@page{123}{50}
+\abx@aux@page{124}{50}
+\abx@aux@page{125}{50}
+\abx@aux@page{126}{50}
+\abx@aux@page{127}{50}
+\abx@aux@page{128}{50}
+\abx@aux@page{129}{50}
+\abx@aux@page{130}{50}
+\abx@aux@page{131}{50}
+\abx@aux@page{132}{50}
+\abx@aux@page{133}{50}
+\abx@aux@page{134}{50}
+\abx@aux@page{135}{51}
+\abx@aux@page{136}{51}
+\abx@aux@page{137}{51}
+\abx@aux@page{138}{51}
+\abx@aux@page{139}{51}
+\abx@aux@page{140}{51}
+\abx@aux@page{141}{51}
+\abx@aux@page{142}{51}
+\abx@aux@page{143}{51}
+\abx@aux@page{144}{51}
+\abx@aux@page{145}{51}
+\abx@aux@page{146}{51}
+\abx@aux@page{147}{51}
+\abx@aux@page{148}{51}
+\abx@aux@page{149}{51}
+\abx@aux@page{150}{51}
+\abx@aux@page{151}{51}
+\abx@aux@page{152}{51}
+\abx@aux@page{153}{51}
+\abx@aux@page{154}{51}
+\abx@aux@page{155}{51}
+\abx@aux@page{156}{51}
+\abx@aux@page{157}{51}
+\abx@aux@page{158}{51}
+\abx@aux@page{159}{51}
+\abx@aux@page{160}{51}
+\abx@aux@page{161}{51}
+\abx@aux@page{162}{51}
+\abx@aux@page{163}{51}
+\abx@aux@page{164}{51}
+\abx@aux@page{165}{51}
+\abx@aux@page{166}{51}
+\abx@aux@page{167}{51}
+\abx@aux@page{168}{51}
+\abx@aux@page{169}{52}
+\abx@aux@page{170}{52}
+\abx@aux@page{171}{52}
+\abx@aux@page{172}{52}
+\abx@aux@page{173}{52}
+\abx@aux@page{174}{52}
+\abx@aux@page{175}{52}
+\abx@aux@page{176}{52}
+\abx@aux@page{177}{52}
+\abx@aux@page{178}{52}
+\abx@aux@page{179}{52}
+\abx@aux@page{180}{52}
+\abx@aux@page{181}{52}
+\abx@aux@page{182}{52}
+\abx@aux@page{183}{52}
+\abx@aux@page{184}{52}
+\abx@aux@page{185}{52}
+\abx@aux@page{186}{52}
+\abx@aux@page{187}{52}
+\abx@aux@page{188}{52}
+\abx@aux@page{189}{52}
+\abx@aux@page{190}{52}
+\abx@aux@page{191}{52}
+\abx@aux@page{192}{52}
+\abx@aux@page{193}{52}
+\abx@aux@page{194}{52}
+\abx@aux@page{195}{52}
+\abx@aux@page{196}{52}
+\abx@aux@page{197}{52}
+\abx@aux@page{198}{52}
+\abx@aux@page{199}{52}
+\abx@aux@page{200}{52}
+\abx@aux@page{201}{52}
+\abx@aux@page{202}{52}
+\abx@aux@page{203}{52}
+\abx@aux@page{204}{52}
+\abx@aux@page{205}{53}
+\abx@aux@page{206}{53}
+\abx@aux@page{207}{53}
+\abx@aux@page{208}{53}
+\abx@aux@page{209}{53}
+\abx@aux@page{210}{53}
+\abx@aux@page{211}{53}
+\abx@aux@page{212}{53}
+\abx@aux@page{213}{53}
+\abx@aux@page{214}{53}
+\abx@aux@page{215}{53}
+\abx@aux@page{216}{53}
+\abx@aux@page{217}{53}
+\abx@aux@page{218}{53}
+\abx@aux@page{219}{53}
+\abx@aux@page{220}{53}
+\abx@aux@page{221}{53}
+\abx@aux@page{222}{53}
+\abx@aux@page{223}{53}
+\abx@aux@page{224}{53}
+\abx@aux@page{225}{53}
+\abx@aux@page{226}{53}
+\abx@aux@page{227}{53}
+\abx@aux@page{228}{53}
+\abx@aux@page{229}{53}
+\abx@aux@page{230}{53}
+\newlabel{LastPage}{{Appendix 1.7}{53}{Overall verdict (updated, Loop~8):}{page.53}{}}
+\gdef\lastpage@lastpage{53}
+\gdef\lastpage@lastpageHy{53}
 \abx@aux@read@bbl@mdfivesum{0F40554E10C2E2C2A7F0402EE99607CB}
 \abx@aux@defaultrefcontext{0}{unified_bias_composition}{cms/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{noauthor_pdf_nodate-1}{cms/global//global/global/global}
@@ -948,4 +955,4 @@
 \abx@aux@defaultrefcontext{0}{yang_rethinking_2020}{cms/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{zhang_gradient_2019}{cms/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{zhang2024manipulatingsparsedoubledescent}{cms/global//global/global/global}
-\gdef \@abspage@last{49}
+\gdef \@abspage@last{53}

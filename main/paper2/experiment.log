@@ -1,0 +1,343 @@
+nohup: ignoring input
+[GPU] Using device: cuda
+[GPU] NVIDIA GeForce RTX 5070 Ti | Memory: 15.5 GB
+======================================================================
+  LOOP 6 - CLUSTER 1: Scaled Sharpness Gradient
+  d=50, n=5000, epochs=2000, seeds=3
+  Activations: ['tanh', 'linear']
+  gamma values: 16 (k=10..500)
+======================================================================
+  Resuming from checkpoint: outputs/checkpoint_cluster1.json
+  Completed: ['tanh']
+
+  Equilibrium: Tr(H)=49.95, TestMSE=0.002604
+
+────────────────────────────────────────────────────────────
+  Activation: tanh
+────────────────────────────────────────────────────────────
+  Using 9 checkpointed entries
+  gamma=0.20 (k=10) — SKIPPED (checkpointed)
+  gamma=0.30 (k=15) — SKIPPED (checkpointed)
+  gamma=0.40 (k=20) — SKIPPED (checkpointed)
+  gamma=0.50 (k=25) — SKIPPED (checkpointed)
+  gamma=0.60 (k=30) — SKIPPED (checkpointed)
+  gamma=0.70 (k=35) — SKIPPED (checkpointed)
+  gamma=0.80 (k=40) — SKIPPED (checkpointed)
+  gamma=0.90 (k=45) — SKIPPED (checkpointed)
+  gamma=1.00 (k=50) — SKIPPED (checkpointed)
+    [seed 1/3] ep=500/2000 test=0.003049 elapsed=25s
+    [seed 1/3] ep=1000/2000 test=0.003356 elapsed=46s
+    [seed 1/3] ep=1500/2000 test=0.003813 elapsed=67s
+    gamma=1.10 (k= 55) seed=1/3 | test=0.004184 Tr(H)=139.9 | ETA: 2.3h
+    [seed 2/3] ep=500/2000 test=0.002953 elapsed=107s
+    [seed 2/3] ep=1000/2000 test=0.003303 elapsed=128s
+    [seed 2/3] ep=1500/2000 test=0.003633 elapsed=149s
+    gamma=1.10 (k= 55) seed=2/3 | test=0.004134 Tr(H)=177.6 | ETA: 2.2h
+    [seed 3/3] ep=500/2000 test=0.002987 elapsed=191s
+    [seed 3/3] ep=1000/2000 test=0.003333 elapsed=215s
+    [seed 3/3] ep=1500/2000 test=0.003696 elapsed=237s
+    gamma=1.10 (k= 55) seed=3/3 | test=0.004150 Tr(H)=266.8 | ETA: 2.2h
+    -> Test: 0.004156 [0.004134,0.004184] Tr(H): 194.8 [139.9,266.8] | Checkpoint saved
+    [seed 1/3] ep=500/2000 test=0.002989 elapsed=278s
+    [seed 1/3] ep=1000/2000 test=0.003273 elapsed=299s
+    [seed 1/3] ep=1500/2000 test=0.003608 elapsed=321s
+    gamma=1.20 (k= 60) seed=1/3 | test=0.004093 Tr(H)=165.3 | ETA: 2.2h
+    [seed 2/3] ep=500/2000 test=0.003048 elapsed=365s
+    [seed 2/3] ep=1000/2000 test=0.003378 elapsed=386s
+    [seed 2/3] ep=1500/2000 test=0.003810 elapsed=405s
+    gamma=1.20 (k= 60) seed=2/3 | test=0.004240 Tr(H)=162.7 | ETA: 2.1h
+    [seed 3/3] ep=500/2000 test=0.002987 elapsed=445s
+    [seed 3/3] ep=1000/2000 test=0.003254 elapsed=467s
+    [seed 3/3] ep=1500/2000 test=0.003732 elapsed=485s
+    gamma=1.20 (k= 60) seed=3/3 | test=0.004318 Tr(H)=244.2 | ETA: 2.1h
+    -> Test: 0.004217 [0.004093,0.004318] Tr(H): 190.7 [162.7,244.2] | Checkpoint saved
+    [seed 1/3] ep=500/2000 test=0.002897 elapsed=526s
+    [seed 1/3] ep=1000/2000 test=0.003142 elapsed=547s
+    [seed 1/3] ep=1500/2000 test=0.003694 elapsed=567s
+    gamma=1.50 (k= 75) seed=1/3 | test=0.004207 Tr(H)=183.1 | ETA: 2.1h
+    [seed 2/3] ep=500/2000 test=0.002876 elapsed=607s
+    [seed 2/3] ep=1000/2000 test=0.002950 elapsed=628s
+    [seed 2/3] ep=1500/2000 test=0.003311 elapsed=653s
+    gamma=1.50 (k= 75) seed=2/3 | test=0.003934 Tr(H)=158.8 | ETA: 2.1h
+    [seed 3/3] ep=500/2000 test=0.002921 elapsed=696s
+    [seed 3/3] ep=1000/2000 test=0.003092 elapsed=715s
+    [seed 3/3] ep=1500/2000 test=0.003472 elapsed=737s
+    gamma=1.50 (k= 75) seed=3/3 | test=0.004149 Tr(H)=242.6 | ETA: 2.0h
+    -> Test: 0.004097 [0.003934,0.004207] Tr(H): 194.9 [158.8,242.6] | Checkpoint saved
+    [seed 1/3] ep=500/2000 test=0.002785 elapsed=781s
+    [seed 1/3] ep=1000/2000 test=0.003060 elapsed=803s
+    [seed 1/3] ep=1500/2000 test=0.003448 elapsed=823s
+    gamma=2.00 (k=100) seed=1/3 | test=0.003817 Tr(H)=199.6 | ETA: 2.0h
+    [seed 2/3] ep=500/2000 test=0.002786 elapsed=864s
+    [seed 2/3] ep=1000/2000 test=0.002884 elapsed=887s
+    [seed 2/3] ep=1500/2000 test=0.003264 elapsed=906s
+    gamma=2.00 (k=100) seed=2/3 | test=0.003769 Tr(H)=147.8 | ETA: 2.0h
+    [seed 3/3] ep=500/2000 test=0.002875 elapsed=947s
+    [seed 3/3] ep=1000/2000 test=0.003018 elapsed=969s
+    [seed 3/3] ep=1500/2000 test=0.003388 elapsed=989s
+    gamma=2.00 (k=100) seed=3/3 | test=0.003842 Tr(H)=123.1 | ETA: 2.0h
+    -> Test: 0.003809 [0.003769,0.003842] Tr(H): 156.8 [123.1,199.6] | Checkpoint saved
+    [seed 1/3] ep=500/2000 test=0.002782 elapsed=1029s
+    [seed 1/3] ep=1000/2000 test=0.002918 elapsed=1049s
+    [seed 1/3] ep=1500/2000 test=0.003214 elapsed=1069s
+    gamma=3.00 (k=150) seed=1/3 | test=0.003606 Tr(H)=221.2 | ETA: 1.9h
+    [seed 2/3] ep=500/2000 test=0.002804 elapsed=1112s
+    [seed 2/3] ep=1000/2000 test=0.002827 elapsed=1133s
+    [seed 2/3] ep=1500/2000 test=0.003140 elapsed=1152s
+    gamma=3.00 (k=150) seed=2/3 | test=0.003545 Tr(H)=164.4 | ETA: 1.9h
+    [seed 3/3] ep=500/2000 test=0.002758 elapsed=1193s
+    [seed 3/3] ep=1000/2000 test=0.002972 elapsed=1213s
+    [seed 3/3] ep=1500/2000 test=0.003353 elapsed=1236s
+    gamma=3.00 (k=150) seed=3/3 | test=0.003707 Tr(H)=114.3 | ETA: 1.9h
+    -> Test: 0.003619 [0.003545,0.003707] Tr(H): 166.7 [114.3,221.2] | Checkpoint saved
+    [seed 1/3] ep=500/2000 test=0.002728 elapsed=1279s
+    [seed 1/3] ep=1000/2000 test=0.002745 elapsed=1299s
+    [seed 1/3] ep=1500/2000 test=0.002910 elapsed=1318s
+    gamma=5.00 (k=250) seed=1/3 | test=0.003154 Tr(H)=124.9 | ETA: 1.9h
+    [seed 2/3] ep=500/2000 test=0.002705 elapsed=1359s
+    [seed 2/3] ep=1000/2000 test=0.002766 elapsed=1378s
+    [seed 2/3] ep=1500/2000 test=0.003040 elapsed=1401s
+    gamma=5.00 (k=250) seed=2/3 | test=0.003330 Tr(H)=150.7 | ETA: 1.8h
+    [seed 3/3] ep=500/2000 test=0.002756 elapsed=1449s
+    [seed 3/3] ep=1000/2000 test=0.002737 elapsed=1468s
+    [seed 3/3] ep=1500/2000 test=0.002904 elapsed=1490s
+    gamma=5.00 (k=250) seed=3/3 | test=0.003173 Tr(H)=170.7 | ETA: 1.8h
+    -> Test: 0.003219 [0.003154,0.003330] Tr(H): 148.8 [124.9,170.7] | Checkpoint saved
+    [seed 1/3] ep=500/2000 test=0.002681 elapsed=1531s
+    [seed 1/3] ep=1000/2000 test=0.002707 elapsed=1553s
+    [seed 1/3] ep=1500/2000 test=0.002699 elapsed=1573s
+    gamma=10.00 (k=500) seed=1/3 | test=0.002835 Tr(H)=78.4 | ETA: 1.8h
+    [seed 2/3] ep=500/2000 test=0.002705 elapsed=1618s
+    [seed 2/3] ep=1000/2000 test=0.002714 elapsed=1638s
+    [seed 2/3] ep=1500/2000 test=0.002724 elapsed=1663s
+    gamma=10.00 (k=500) seed=2/3 | test=0.002935 Tr(H)=62.7 | ETA: 1.8h
+    [seed 3/3] ep=500/2000 test=0.002691 elapsed=1707s
+    [seed 3/3] ep=1000/2000 test=0.002737 elapsed=1731s
+    [seed 3/3] ep=1500/2000 test=0.002760 elapsed=1750s
+    gamma=10.00 (k=500) seed=3/3 | test=0.002946 Tr(H)=110.8 | ETA: 1.8h
+    -> Test: 0.002906 [0.002835,0.002946] Tr(H): 83.9 [62.7,110.8] | Checkpoint saved
+
+────────────────────────────────────────────────────────────
+  Activation: linear
+────────────────────────────────────────────────────────────
+    [seed 1/3] ep=500/2000 test=0.002623 elapsed=1791s
+    [seed 1/3] ep=1000/2000 test=0.002694 elapsed=1808s
+    [seed 1/3] ep=1500/2000 test=0.002631 elapsed=1827s
+    gamma=0.20 (k= 10) seed=1/3 | test=0.002680 Tr(H)=102.1 | ETA: 1.7h
+    [seed 2/3] ep=500/2000 test=0.002638 elapsed=1865s
+    [seed 2/3] ep=1000/2000 test=0.002657 elapsed=1881s
+    [seed 2/3] ep=1500/2000 test=0.002643 elapsed=1897s
+    gamma=0.20 (k= 10) seed=2/3 | test=0.002675 Tr(H)=115.5 | ETA: 1.7h
+    [seed 3/3] ep=500/2000 test=0.002703 elapsed=1931s
+    [seed 3/3] ep=1000/2000 test=0.002671 elapsed=1950s
+    [seed 3/3] ep=1500/2000 test=0.002662 elapsed=1968s
+    gamma=0.20 (k= 10) seed=3/3 | test=0.002664 Tr(H)=93.2 | ETA: 1.7h
+    -> Test: 0.002673 [0.002664,0.002680] Tr(H): 103.6 [93.2,115.5] | Checkpoint saved
+    [seed 1/3] ep=500/2000 test=0.002669 elapsed=2003s
+    [seed 1/3] ep=1000/2000 test=0.002676 elapsed=2019s
+    [seed 1/3] ep=1500/2000 test=0.002643 elapsed=2036s
+    gamma=0.30 (k= 15) seed=1/3 | test=0.002718 Tr(H)=87.8 | ETA: 1.6h
+    [seed 2/3] ep=500/2000 test=0.002727 elapsed=2073s
+    [seed 2/3] ep=1000/2000 test=0.002627 elapsed=2091s
+    [seed 2/3] ep=1500/2000 test=0.002651 elapsed=2108s
+    gamma=0.30 (k= 15) seed=2/3 | test=0.002664 Tr(H)=116.0 | ETA: 1.6h
+    [seed 3/3] ep=500/2000 test=0.002679 elapsed=2142s
+    [seed 3/3] ep=1000/2000 test=0.002663 elapsed=2160s
+    [seed 3/3] ep=1500/2000 test=0.002669 elapsed=2176s
+    gamma=0.30 (k= 15) seed=3/3 | test=0.002656 Tr(H)=130.1 | ETA: 1.6h
+    -> Test: 0.002679 [0.002656,0.002718] Tr(H): 111.3 [87.8,130.1] | Checkpoint saved
+    [seed 1/3] ep=500/2000 test=0.002647 elapsed=2211s
+    [seed 1/3] ep=1000/2000 test=0.002668 elapsed=2227s
+    [seed 1/3] ep=1500/2000 test=0.002650 elapsed=2247s
+    gamma=0.40 (k= 20) seed=1/3 | test=0.002693 Tr(H)=98.3 | ETA: 1.5h
+    [seed 2/3] ep=500/2000 test=0.002667 elapsed=2284s
+    [seed 2/3] ep=1000/2000 test=0.002643 elapsed=2304s
+    [seed 2/3] ep=1500/2000 test=0.002621 elapsed=2324s
+    gamma=0.40 (k= 20) seed=2/3 | test=0.002651 Tr(H)=133.1 | ETA: 1.5h
+    [seed 3/3] ep=500/2000 test=0.002634 elapsed=2362s
+    [seed 3/3] ep=1000/2000 test=0.002700 elapsed=2380s
+    [seed 3/3] ep=1500/2000 test=0.002670 elapsed=2397s
+    gamma=0.40 (k= 20) seed=3/3 | test=0.002704 Tr(H)=82.6 | ETA: 1.5h
+    -> Test: 0.002683 [0.002651,0.002704] Tr(H): 104.6 [82.6,133.1] | Checkpoint saved
+    [seed 1/3] ep=500/2000 test=0.002648 elapsed=2435s
+    [seed 1/3] ep=1000/2000 test=0.002628 elapsed=2451s
+    [seed 1/3] ep=1500/2000 test=0.002635 elapsed=2468s
+    gamma=0.50 (k= 25) seed=1/3 | test=0.002660 Tr(H)=132.3 | ETA: 1.4h
+    [seed 2/3] ep=500/2000 test=0.002657 elapsed=2502s
+    [seed 2/3] ep=1000/2000 test=0.002661 elapsed=2520s
+    [seed 2/3] ep=1500/2000 test=0.002657 elapsed=2538s
+    gamma=0.50 (k= 25) seed=2/3 | test=0.002605 Tr(H)=80.0 | ETA: 1.4h
+    [seed 3/3] ep=500/2000 test=0.002650 elapsed=2573s
+    [seed 3/3] ep=1000/2000 test=0.002602 elapsed=2590s
+    [seed 3/3] ep=1500/2000 test=0.002669 elapsed=2609s
+    gamma=0.50 (k= 25) seed=3/3 | test=0.002632 Tr(H)=79.2 | ETA: 1.4h
+    -> Test: 0.002632 [0.002605,0.002660] Tr(H): 97.1 [79.2,132.3] | Checkpoint saved
+    [seed 1/3] ep=500/2000 test=0.002695 elapsed=2646s
+    [seed 1/3] ep=1000/2000 test=0.002640 elapsed=2664s
+    [seed 1/3] ep=1500/2000 test=0.002627 elapsed=2681s
+    gamma=0.60 (k= 30) seed=1/3 | test=0.002673 Tr(H)=98.4 | ETA: 1.4h
+    [seed 2/3] ep=500/2000 test=0.002641 elapsed=2720s
+    [seed 2/3] ep=1000/2000 test=0.002665 elapsed=2737s
+    [seed 2/3] ep=1500/2000 test=0.002602 elapsed=2755s
+    gamma=0.60 (k= 30) seed=2/3 | test=0.002662 Tr(H)=84.8 | ETA: 1.3h
+    [seed 3/3] ep=500/2000 test=0.002627 elapsed=2792s
+    [seed 3/3] ep=1000/2000 test=0.002682 elapsed=2809s
+    [seed 3/3] ep=1500/2000 test=0.002670 elapsed=2826s
+    gamma=0.60 (k= 30) seed=3/3 | test=0.002715 Tr(H)=134.7 | ETA: 1.3h
+    -> Test: 0.002683 [0.002662,0.002715] Tr(H): 106.0 [84.8,134.7] | Checkpoint saved
+    [seed 1/3] ep=500/2000 test=0.002685 elapsed=2863s
+    [seed 1/3] ep=1000/2000 test=0.002660 elapsed=2880s
+    [seed 1/3] ep=1500/2000 test=0.002680 elapsed=2898s
+    gamma=0.70 (k= 35) seed=1/3 | test=0.002684 Tr(H)=69.1 | ETA: 1.3h
+    [seed 2/3] ep=500/2000 test=0.002640 elapsed=2933s
+    [seed 2/3] ep=1000/2000 test=0.002655 elapsed=2950s
+    [seed 2/3] ep=1500/2000 test=0.002650 elapsed=2967s
+    gamma=0.70 (k= 35) seed=2/3 | test=0.002699 Tr(H)=94.1 | ETA: 1.3h
+    [seed 3/3] ep=500/2000 test=0.002664 elapsed=3001s
+    [seed 3/3] ep=1000/2000 test=0.002683 elapsed=3018s
+    [seed 3/3] ep=1500/2000 test=0.002642 elapsed=3035s
+    gamma=0.70 (k= 35) seed=3/3 | test=0.002669 Tr(H)=92.1 | ETA: 1.2h
+    -> Test: 0.002684 [0.002669,0.002699] Tr(H): 85.1 [69.1,94.1] | Checkpoint saved
+    [seed 1/3] ep=500/2000 test=0.002659 elapsed=3071s
+    [seed 1/3] ep=1000/2000 test=0.002666 elapsed=3090s
+    [seed 1/3] ep=1500/2000 test=0.002666 elapsed=3108s
+    gamma=0.80 (k= 40) seed=1/3 | test=0.002648 Tr(H)=111.1 | ETA: 1.2h
+    [seed 2/3] ep=500/2000 test=0.002610 elapsed=3144s
+    [seed 2/3] ep=1000/2000 test=0.002670 elapsed=3161s
+    [seed 2/3] ep=1500/2000 test=0.002676 elapsed=3178s
+    gamma=0.80 (k= 40) seed=2/3 | test=0.002671 Tr(H)=117.2 | ETA: 1.2h
+    [seed 3/3] ep=500/2000 test=0.002617 elapsed=3217s
+    [seed 3/3] ep=1000/2000 test=0.002661 elapsed=3233s
+    [seed 3/3] ep=1500/2000 test=0.002637 elapsed=3251s
+    gamma=0.80 (k= 40) seed=3/3 | test=0.002651 Tr(H)=92.3 | ETA: 1.2h
+    -> Test: 0.002657 [0.002648,0.002671] Tr(H): 106.9 [92.3,117.2] | Checkpoint saved
+    [seed 1/3] ep=500/2000 test=0.002665 elapsed=3290s
+    [seed 1/3] ep=1000/2000 test=0.002651 elapsed=3309s
+    [seed 1/3] ep=1500/2000 test=0.002656 elapsed=3327s
+    gamma=0.90 (k= 45) seed=1/3 | test=0.002629 Tr(H)=131.2 | ETA: 1.1h
+    [seed 2/3] ep=500/2000 test=0.002629 elapsed=3361s
+    [seed 2/3] ep=1000/2000 test=0.002646 elapsed=3380s
+    [seed 2/3] ep=1500/2000 test=0.002627 elapsed=3399s
+    gamma=0.90 (k= 45) seed=2/3 | test=0.002652 Tr(H)=83.3 | ETA: 1.1h
+    [seed 3/3] ep=500/2000 test=0.002651 elapsed=3439s
+    [seed 3/3] ep=1000/2000 test=0.002673 elapsed=3460s
+    [seed 3/3] ep=1500/2000 test=0.002644 elapsed=3479s
+    gamma=0.90 (k= 45) seed=3/3 | test=0.002633 Tr(H)=86.5 | ETA: 1.1h
+    -> Test: 0.002638 [0.002629,0.002652] Tr(H): 100.3 [83.3,131.2] | Checkpoint saved
+    [seed 1/3] ep=500/2000 test=0.002679 elapsed=3513s
+    [seed 1/3] ep=1000/2000 test=0.002602 elapsed=3531s
+    [seed 1/3] ep=1500/2000 test=0.002659 elapsed=3549s
+    gamma=1.00 (k= 50) seed=1/3 | test=0.002624 Tr(H)=145.4 | ETA: 1.1h
+    [seed 2/3] ep=500/2000 test=0.002662 elapsed=3582s
+    [seed 2/3] ep=1000/2000 test=0.002642 elapsed=3600s
+    [seed 2/3] ep=1500/2000 test=0.002630 elapsed=3621s
+    gamma=1.00 (k= 50) seed=2/3 | test=0.002646 Tr(H)=104.3 | ETA: 1.1h
+    [seed 3/3] ep=500/2000 test=0.002634 elapsed=3657s
+    [seed 3/3] ep=1000/2000 test=0.002645 elapsed=3674s
+    [seed 3/3] ep=1500/2000 test=0.002686 elapsed=3691s
+    gamma=1.00 (k= 50) seed=3/3 | test=0.002659 Tr(H)=102.2 | ETA: 1.0h
+    -> Test: 0.002643 [0.002624,0.002659] Tr(H): 117.3 [102.2,145.4] | Checkpoint saved
+    [seed 1/3] ep=500/2000 test=0.002631 elapsed=3728s
+    [seed 1/3] ep=1000/2000 test=0.002659 elapsed=3746s
+    [seed 1/3] ep=1500/2000 test=0.002644 elapsed=3763s
+    gamma=1.10 (k= 55) seed=1/3 | test=0.002661 Tr(H)=116.9 | ETA: 1.0h
+    [seed 2/3] ep=500/2000 test=0.002640 elapsed=3798s
+    [seed 2/3] ep=1000/2000 test=0.002658 elapsed=3816s
+    [seed 2/3] ep=1500/2000 test=0.002624 elapsed=3835s
+    gamma=1.10 (k= 55) seed=2/3 | test=0.002672 Tr(H)=96.5 | ETA: 59.1m
+    [seed 3/3] ep=500/2000 test=0.002680 elapsed=3876s
+    [seed 3/3] ep=1000/2000 test=0.002664 elapsed=3893s
+    [seed 3/3] ep=1500/2000 test=0.002673 elapsed=3912s
+    gamma=1.10 (k= 55) seed=3/3 | test=0.002688 Tr(H)=96.5 | ETA: 57.8m
+    -> Test: 0.002674 [0.002661,0.002688] Tr(H): 103.3 [96.5,116.9] | Checkpoint saved
+    [seed 1/3] ep=500/2000 test=0.002687 elapsed=3952s
+    [seed 1/3] ep=1000/2000 test=0.002677 elapsed=3968s
+    [seed 1/3] ep=1500/2000 test=0.002656 elapsed=3984s
+    gamma=1.20 (k= 60) seed=1/3 | test=0.002677 Tr(H)=60.9 | ETA: 56.4m
+    [seed 2/3] ep=500/2000 test=0.002660 elapsed=4017s
+    [seed 2/3] ep=1000/2000 test=0.002630 elapsed=4036s
+    [seed 2/3] ep=1500/2000 test=0.002638 elapsed=4054s
+    gamma=1.20 (k= 60) seed=2/3 | test=0.002682 Tr(H)=104.8 | ETA: 55.1m
+    [seed 3/3] ep=500/2000 test=0.002620 elapsed=4090s
+    [seed 3/3] ep=1000/2000 test=0.002672 elapsed=4108s
+    [seed 3/3] ep=1500/2000 test=0.002688 elapsed=4128s
+    gamma=1.20 (k= 60) seed=3/3 | test=0.002646 Tr(H)=116.5 | ETA: 53.8m
+    -> Test: 0.002669 [0.002646,0.002682] Tr(H): 94.0 [60.9,116.5] | Checkpoint saved
+    [seed 1/3] ep=500/2000 test=0.002657 elapsed=4167s
+    [seed 1/3] ep=1000/2000 test=0.002660 elapsed=4187s
+    [seed 1/3] ep=1500/2000 test=0.002650 elapsed=4206s
+    gamma=1.50 (k= 75) seed=1/3 | test=0.002641 Tr(H)=100.5 | ETA: 52.5m
+    [seed 2/3] ep=500/2000 test=0.002637 elapsed=4240s
+    [seed 2/3] ep=1000/2000 test=0.002678 elapsed=4257s
+    [seed 2/3] ep=1500/2000 test=0.002640 elapsed=4275s
+    gamma=1.50 (k= 75) seed=2/3 | test=0.002638 Tr(H)=82.5 | ETA: 51.1m
+    [seed 3/3] ep=500/2000 test=0.002652 elapsed=4311s
+    [seed 3/3] ep=1000/2000 test=0.002676 elapsed=4328s
+    [seed 3/3] ep=1500/2000 test=0.002644 elapsed=4345s
+    gamma=1.50 (k= 75) seed=3/3 | test=0.002678 Tr(H)=114.4 | ETA: 49.7m
+    -> Test: 0.002652 [0.002638,0.002678] Tr(H): 99.1 [82.5,114.4] | Checkpoint saved
+    [seed 1/3] ep=500/2000 test=0.002612 elapsed=4379s
+    [seed 1/3] ep=1000/2000 test=0.002648 elapsed=4399s
+    [seed 1/3] ep=1500/2000 test=0.002605 elapsed=4418s
+    gamma=2.00 (k=100) seed=1/3 | test=0.002621 Tr(H)=99.0 | ETA: 48.4m
+    [seed 2/3] ep=500/2000 test=0.002689 elapsed=4456s
+    [seed 2/3] ep=1000/2000 test=0.002655 elapsed=4473s
+    [seed 2/3] ep=1500/2000 test=0.002644 elapsed=4492s
+    gamma=2.00 (k=100) seed=2/3 | test=0.002702 Tr(H)=97.5 | ETA: 47.1m
+    [seed 3/3] ep=500/2000 test=0.002662 elapsed=4529s
+    [seed 3/3] ep=1000/2000 test=0.002642 elapsed=4551s
+    [seed 3/3] ep=1500/2000 test=0.002680 elapsed=4570s
+    gamma=2.00 (k=100) seed=3/3 | test=0.002653 Tr(H)=99.9 | ETA: 45.9m
+    -> Test: 0.002659 [0.002621,0.002702] Tr(H): 98.8 [97.5,99.9] | Checkpoint saved
+    [seed 1/3] ep=500/2000 test=0.002656 elapsed=4607s
+    [seed 1/3] ep=1000/2000 test=0.002627 elapsed=4625s
+    [seed 1/3] ep=1500/2000 test=0.002686 elapsed=4645s
+    gamma=3.00 (k=150) seed=1/3 | test=0.002642 Tr(H)=95.8 | ETA: 44.6m
+    [seed 2/3] ep=500/2000 test=0.002607 elapsed=4683s
+    [seed 2/3] ep=1000/2000 test=0.002643 elapsed=4700s
+    [seed 2/3] ep=1500/2000 test=0.002685 elapsed=4717s
+    gamma=3.00 (k=150) seed=2/3 | test=0.002657 Tr(H)=127.2 | ETA: 43.3m
+    [seed 3/3] ep=500/2000 test=0.002639 elapsed=4755s
+    [seed 3/3] ep=1000/2000 test=0.002673 elapsed=4772s
+    [seed 3/3] ep=1500/2000 test=0.002615 elapsed=4789s
+    gamma=3.00 (k=150) seed=3/3 | test=0.002663 Tr(H)=111.7 | ETA: 41.9m
+    -> Test: 0.002654 [0.002642,0.002663] Tr(H): 111.6 [95.8,127.2] | Checkpoint saved
+    [seed 1/3] ep=500/2000 test=0.002665 elapsed=4823s
+    [seed 1/3] ep=1000/2000 test=0.002704 elapsed=4844s
+    [seed 1/3] ep=1500/2000 test=0.002620 elapsed=4860s
+    gamma=5.00 (k=250) seed=1/3 | test=0.002653 Tr(H)=75.6 | ETA: 40.7m
+    [seed 2/3] ep=500/2000 test=0.002639 elapsed=4896s
+    [seed 2/3] ep=1000/2000 test=0.002671 elapsed=4916s
+    [seed 2/3] ep=1500/2000 test=0.002633 elapsed=4934s
+    gamma=5.00 (k=250) seed=2/3 | test=0.002680 Tr(H)=126.6 | ETA: 39.4m
+    [seed 3/3] ep=500/2000 test=0.002637 elapsed=4969s
+    [seed 3/3] ep=1000/2000 test=0.002645 elapsed=4989s
+    [seed 3/3] ep=1500/2000 test=0.002637 elapsed=5007s
+    gamma=5.00 (k=250) seed=3/3 | test=0.002649 Tr(H)=118.6 | ETA: 38.1m
+    -> Test: 0.002661 [0.002649,0.002680] Tr(H): 106.9 [75.6,126.6] | Checkpoint saved
+    [seed 1/3] ep=500/2000 test=0.002646 elapsed=5040s
+    [seed 1/3] ep=1000/2000 test=0.002684 elapsed=5061s
+    [seed 1/3] ep=1500/2000 test=0.002620 elapsed=5080s
+    gamma=10.00 (k=500) seed=1/3 | test=0.002678 Tr(H)=101.6 | ETA: 36.8m
+    [seed 2/3] ep=500/2000 test=0.002637 elapsed=5118s
+    [seed 2/3] ep=1000/2000 test=0.002670 elapsed=5136s
+    [seed 2/3] ep=1500/2000 test=0.002629 elapsed=5156s
+    gamma=10.00 (k=500) seed=2/3 | test=0.002637 Tr(H)=92.2 | ETA: 35.5m
+    [seed 3/3] ep=500/2000 test=0.002631 elapsed=5190s
+    [seed 3/3] ep=1000/2000 test=0.002658 elapsed=5207s
+    [seed 3/3] ep=1500/2000 test=0.002615 elapsed=5224s
+    gamma=10.00 (k=500) seed=3/3 | test=0.002624 Tr(H)=86.3 | ETA: 34.2m
+    -> Test: 0.002646 [0.002624,0.002678] Tr(H): 93.4 [86.3,101.6] | Checkpoint saved
+
+======================================================================
+  RESULTS: Sharpness Ratios
+======================================================================
+  Activation    R_H    H_low   H_high       Peak  Recovery
+-------------------------------------------------------
+        tanh   2.18    290.1    133.1   0.004690     38.0%
+      linear   0.98    101.9    104.0   0.002674      1.0%
+
+  Full results saved: ./outputs/cluster1_results.json
+  Subreport: ./outputs/cluster1_loop3_subreport.md
+
+  LOOP 6 CLUSTER 1 COMPLETE

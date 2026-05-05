@@ -130,6 +130,11 @@
 %  allcolors=blue
 %}
 
+% Suppress the "ARTICLE" label in the header (class default places it awkwardly)
+\makeatletter
+\renewcommand*\cup@manuscript{}
+\makeatother
+
 \newcommand{\Ap}{A_{\sim p}}
 \newcommand{\Aq}{A_{\sim q}}
 \newcommand{\Xp}{X_{\sim p}}
