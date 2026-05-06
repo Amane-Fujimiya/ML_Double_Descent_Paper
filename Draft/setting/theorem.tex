@@ -1,20 +1,33 @@
 %################################################################################
+% -----------------------------------------------
+% PLAIN: asserted results — italic body text
+% -----------------------------------------------
 \theoremstyle{plain}
-\newtheorem{definition}{Definition}[section]
 \newtheorem{theorem}{Theorem}[section]
-\newtheorem{col}{Corollary}[section]
-\newtheorem{conjecture}{Conjecture}[section]
-\newtheorem{setting}{Setting}[section]
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{col}{Corollary}[section]
+\newtheorem{claim}{Claim}[theorem]
+\newtheorem{conjecture}{Conjecture}[section]
+\newtheorem{hypothesis}{Hypothesis}[section]
 \newtheorem{assumption}[theorem]{Assumption}
 \newtheorem{assume}{Assumption}[subsection]
-\newtheorem{remark}[theorem]{Remark}
-\newtheorem{hypothesis}{Hypothesis}[section]
+
+% -----------------------------------------------
+% DEFINITION: constitutive content — upright body text
+% -----------------------------------------------
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
 \newtheorem{axiom}{Axiom}[section]
-\newtheorem{question}{Question}[section]
-\newtheorem{example}{Example}[section]
-\newtheorem{note}{Note}[section]
-\newtheorem{claim}{Claim}[theorem]
+\newtheorem{setting}{Setting}[section]
 \newtheorem{construction}{Construction}[subsection]
+\newtheorem{example}{Example}[section]
+
+% -----------------------------------------------
+% REMARK: peripheral commentary — italic label, upright body
+% -----------------------------------------------
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{note}{Note}[section]
+\newtheorem{question}{Question}[section]
 %################################################################################

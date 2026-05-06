@@ -1,50 +1,70 @@
 \begin{theindex}
 
-  \item Chernoff's inequality, \hyperpage{5}
-  \item Cramer condition, \hyperpage{5}
+  \item Bayes model, \hyperpage{24}
 
   \indexspace
 
-  \item empirical risk, \hyperpage{14}
-  \item ERC, \hyperpage{29}
+  \item Chernoff's inequality, \hyperpage{6}
+  \item Cramer condition, \hyperpage{6}
 
   \indexspace
 
-  \item generalization risk, \hyperpage{14}
-  \item growth function, \hyperpage{33}
+  \item dataset identifiability, \hyperpage{97}
 
   \indexspace
 
-  \item halfspace, \hyperpage{35}
+  \item empirical risk, \hyperpage{21}
+  \item ERC, \hyperpage{42}
+
+  \indexspace
+
+  \item generalization risk, \hyperpage{21}
+  \item growth function, \hyperpage{46}
+
+  \indexspace
+
+  \item halfspace, \hyperpage{49}
+  \item hypothesis class, \hyperpage{20}
 
   \indexspace
 
   \item Markov's inequality, \hyperpage{2}
-  \item model-free learning, \hyperpage{18}
+  \item mechanistic layer, \hyperpage{16}
+  \item model-free learning, \hyperpage{27}
+  \item model-specific learning, \hyperpage{27}
 
   \indexspace
 
-  \item noise, \hyperpage{26}
+  \item noise, \hyperpage{38}
 
   \indexspace
 
-  \item operationalisation, \hyperpage{13}
-  \item outer typing, \hyperpage{114}
+  \item operationalisation, \hyperpage{16}
+  \item outer typing, \hyperpage{150}
 
   \indexspace
 
-  \item Rademacher complexity, \hyperpage{30}
-  \item Rademacher variables, \hyperpage{29}
-  \item representation scheme, \hyperpage{19}
-  \item representation size, \hyperpage{20}
+  \item phenomenological layer, \hyperpage{16}
 
   \indexspace
 
-  \item Sauer's lemma, \hyperpage{36}
-  \item shattering, \hyperpage{35}
+  \item Rademacher complexity, \hyperpage{43}
+  \item Rademacher variables, \hyperpage{42}
+  \item representation scheme, \hyperpage{29}
+  \item representation size, \hyperpage{30}
 
   \indexspace
 
-  \item VC-dimension, \hyperpage{35}
+  \item Sauer's lemma, \hyperpage{49}
+  \item shattering, \hyperpage{48}
+
+  \indexspace
+
+  \item temporal difference, \hyperpage{78}
+  \item transparency, \hyperpage{16}
+
+  \indexspace
+
+  \item VC-dimension, \hyperpage{48}
 
 \end{theindex}

@@ -1,4 +1,4 @@
-\begin{thebibliography}{322}
+\begin{thebibliography}{339}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -179,6 +179,13 @@ Yuntao Bai, Saurav Kadavath, Sandipan Kundu, Amanda Askell, Jackson Kernion,
 \newblock URL \url{https://arxiv.org/abs/2212.08073}.
 \newblock Anthropic's approach to AI alignment using AI-generated feedback.
 
+\bibitem[Balcan et~al.(2010)Balcan, Hanneke, and
+  Wortman~Vaughan]{Balcan2010TrueSampleComplexity}
+Maria-Florina Balcan, Steve Hanneke, and Jennifer Wortman~Vaughan.
+\newblock The true sample complexity of active learning.
+\newblock \emph{Machine Learning}, 80\penalty0 (2--3):\penalty0 111--139, 2010.
+\newblock \doi{10.1007/s10994-010-5174-y}.
+
 \bibitem[Barbier et~al.(2025)Barbier, Camilli, Nguyen, Pastore, and
   Skerk]{barbier2025statisticalphysicsdeeplearning}
 Jean Barbier, Francesco Camilli, Minh-Toan Nguyen, Mauro Pastore, and Rudy
@@ -186,6 +193,13 @@ Jean Barbier, Francesco Camilli, Minh-Toan Nguyen, Mauro Pastore, and Rudy
 \newblock Statistical physics of deep learning: Optimal learning of a
   multi-layer perceptron near interpolation, 2025.
 \newblock URL \url{https://arxiv.org/abs/2510.24616}.
+
+\bibitem[Barcel{\'o} et~al.(2020)Barcel{\'o}, Monet, P{\'e}rez, and
+  Subercaseaux]{barceló2020modelinterpretabilitylenscomputational}
+Pablo Barcel{\'o}, Mika{\"e}l Monet, Jorge P{\'e}rez, and Bernardo
+  Subercaseaux.
+\newblock Model {{Interpretability}} through the {{Lens}} of {{Computational
+  Complexity}}, 2020.
 
 \bibitem[Barceló et~al.(2020)Barceló, Monet, Pérez, and
   Subercaseaux]{barcelo2020modelinterpretabilitylenscomputational}
@@ -204,6 +218,20 @@ Peter~L. Bartlett and Shahar Mendelson.
   \url{https://www.jmlr.org/papers/volume3/bartlett02a/bartlett02a.pdf}.
 \newblock Introduces data-dependent complexity measures that often yield
   tighter generalization bounds than VC dimension.
+
+\bibitem[Bartlett and Mendelson(2005)]{bartlett2005local}
+Peter~L. Bartlett and Shahar Mendelson.
+\newblock Empirical minimization.
+\newblock In \emph{Probability {{Theory}} and {{Related Fields}}}, volume 135,
+  pages 311--334, 2005.
+\newblock \doi{10.1007/s00440-005-0460-0}.
+
+\bibitem[Bartlett et~al.(2017)Bartlett, Foster, and
+  Telgarsky]{bartlett2017spectrally}
+Peter~L. Bartlett, Dylan~J. Foster, and Matus Telgarsky.
+\newblock Spectrally-normalized margin bounds for neural networks.
+\newblock In \emph{Advances in {{Neural Information Processing Systems}}
+  ({{NeurIPS}})}, pages 6241--6250, 2017.
 
 \bibitem[Bartlett et~al.(2020)Bartlett, Long, Lugosi, and
   Tsigler]{Bartlett2020BenignOverfitting}
@@ -518,6 +546,12 @@ St\'ephane d'~Ascoli, Levent Sagun, and Giulio Biroli.
 Amit Daniely and Gal Katzhendler.
 \newblock Approximate description length, covering numbers, and vc dimension.
 \newblock \emph{arXiv}, 2209.12882, 2022.
+
+\bibitem[Darwiche and Marquis(2002)]{DarwicheMarquis2002}
+Adnan Darwiche and Pierre Marquis.
+\newblock A {{Knowledge Compilation Map}}.
+\newblock \emph{Journal of Artificial Intelligence Research}, 17:\penalty0
+  229--264, 2002.
 
 \bibitem[Davies et~al.(2023)Davies, Langosco, and
   Krueger]{davies_unifying_2023}
@@ -1145,6 +1179,11 @@ Timothy~P. Lillicrap, Jonathan~J. Hunt, Alexandre Pritzel, Nicolas Heess, Tom
 \newblock URL \url{https://arxiv.org/abs/1509.02971}.
 \newblock DDPG — deterministic policy gradient for continuous control.
 
+\bibitem[Lipton(2017)]{lipton2017mythosmodelinterpretability}
+Zachary~C. Lipton.
+\newblock The mythos of model interpretability, 2017.
+\newblock URL \url{https://arxiv.org/abs/1606.03490}.
+
 \bibitem[Lipton(2018)]{lipton2018mythos}
 Zachary~C. Lipton.
 \newblock The mythos of model interpretability.
@@ -1152,6 +1191,10 @@ Zachary~C. Lipton.
   2018.
 \newblock \doi{10.1145/3233231}.
 \newblock URL \url{https://arxiv.org/abs/1606.03490}.
+
+\bibitem[Lipton and Steinhardt(2018)]{lipton2018troublingtrendsmachinelearning}
+Zachary~C. Lipton and Jacob Steinhardt.
+\newblock Troubling {{Trends}} in {{Machine Learning Scholarship}}, 2018.
 
 \bibitem[Littlestone and Warmuth(1994)]{littlestone1994weighted}
 Nick Littlestone and Manfred~K. Warmuth.
@@ -1276,6 +1319,14 @@ Pankaj Mehta and David~J. Schwab.
 \newblock URL \url{https://arxiv.org/abs/1410.3831}.
 \newblock arXiv:1410.3831.
 
+\bibitem[Mei et~al.(2022)Mei, Zhao, Yuan, and Ni]{Mei2022TowardsBridging}
+Shibin Mei, Chenglong Zhao, Shengchao Yuan, and Bingbing Ni.
+\newblock Towards {{Bridging Sample Complexity}} and {{Model Capacity}}.
+\newblock In \emph{Proceedings of the {{AAAI Conference}} on {{Artificial
+  Intelligence}}}, volume~36 of \emph{{{AAAI}}'22 {{Technical Tracks}}}, pages
+  1972--1980, June 2022.
+\newblock \doi{10.1609/aaai.v36i2.20092}.
+
 \bibitem[Mei and Montanari(2019{\natexlab{a}})]{mei2019generalization}
 Song Mei and Andrea Montanari.
 \newblock The generalization error of random features regression: Precise
@@ -1318,6 +1369,13 @@ Marc Mezard and Andrea Montanari.
 \newblock \emph{Information, Physics, and Computation}.
 \newblock Oxford University Press, Oxford, 2009.
 \newblock ISBN 978-0199233210.
+
+\bibitem[Miltersen et~al.(2005)Miltersen, Radhakrishnan, and
+  Wegener]{MiltersenRadhakrishnanWegener2005}
+Peter~B. Miltersen, Jaikumar Radhakrishnan, and Ingo Wegener.
+\newblock On {{Converting CNF}} to {{DNF}}.
+\newblock \emph{Theoretical Computer Science}, 347\penalty0 (1--2):\penalty0
+  325--335, 2005.
 
 \bibitem[Minsky and Papert(1969)]{minsky_papert_1969}
 Marvin Minsky and Seymour Papert.
@@ -1367,14 +1425,25 @@ Christoph Molnar.
 \newblock URL \url{https://christophm.github.io/interpretable-ml-book/}.
 \newblock Free, continuously updated reference book.
 
-\bibitem[Molnar et~al.(2020)Molnar, Casalicchio, and Bischl]{Molnar_2020}
+\bibitem[Molnar et~al.(2020{\natexlab{a}})Molnar, Casalicchio, and
+  Bischl]{Molnar_2020}
 Christoph Molnar, Giuseppe Casalicchio, and Bernd Bischl.
 \newblock \emph{Quantifying Model Complexity via Functional Decomposition for
   Better Post-hoc Interpretability}, pages 193--204.
-\newblock Springer International Publishing, 2020.
+\newblock Springer International Publishing, 2020{\natexlab{a}}.
 \newblock ISBN 9783030438234.
 \newblock \doi{10.1007/978-3-030-43823-4_17}.
 \newblock URL \url{http://dx.doi.org/10.1007/978-3-030-43823-4_17}.
+
+\bibitem[Molnar et~al.(2020{\natexlab{b}})Molnar, K{\"o}nig, Herbinger,
+  Freiesleben, Dandl, Scholbeck, Casalicchio, {Grosse-Wentrup}, and
+  Bischl]{molnar2020general}
+Christoph Molnar, Gunnar K{\"o}nig, Julia Herbinger, Timo Freiesleben, Susanne
+  Dandl, Christian~A. Scholbeck, Giuseppe Casalicchio, Moritz {Grosse-Wentrup},
+  and Bernd Bischl.
+\newblock General {{Pitfalls}} of {{Model-Agnostic Interpretation Methods}} for
+  {{Machine Learning Models}}.
+\newblock \emph{arXiv preprint arXiv:2007.04131}, 2020{\natexlab{b}}.
 
 \bibitem[Muresan(2023)]{bernsprob2023}
 Mircea Muresan.
@@ -1388,6 +1457,12 @@ Vidya Muthukumar, Kailas Vodrahalli, Vignesh Subramanian, and Anant Sahai.
 \newblock Understanding deep learning requires rethinking generalization.
 \newblock \emph{Journal of the ACM}, 68\penalty0 (4), 2021.
 \newblock \doi{10.1145/3446776}.
+
+\bibitem[Nagarajan and
+  Kolter(2021)]{nagarajan2021uniformconvergenceunableexplain}
+Vaishnavh Nagarajan and J.~Zico Kolter.
+\newblock Uniform convergence may be unable to explain generalization in deep
+  learning, 2021.
 
 \bibitem[Nakkiran(2019{\natexlab{a}})]{nakkiran2019datahurtlinearregression}
 Preetum Nakkiran.
@@ -1697,6 +1772,12 @@ Daniel~A. Roberts, Sho Yaida, and Boris Hanin.
 \newblock \emph{The Principles of Deep Learning Theory: An Effective Theory
   Approach to Understanding Neural Networks}.
 \newblock Cambridge University Press, 2022.
+
+\bibitem[Romer(2015)]{romer2015mathiness}
+Paul~M. Romer.
+\newblock Mathiness in the {{Theory}} of {{Economic Growth}}.
+\newblock \emph{American Economic Review}, 105\penalty0 (5):\penalty0 89--93,
+  2015.
 
 \bibitem[Rosenblatt(1958{\natexlab{a}})]{Rosenblatt1958ThePA}
 Frank Rosenblatt.
@@ -2018,6 +2099,11 @@ Richard~S. Sutton and Andrew~G. Barto.
 \newblock MIT Press, 2nd edition, 2018.
 \newblock Available online: https://incompleteideas.net/book/the-book-2nd.html.
 
+\bibitem[Syll(2024)]{syll2024postreal}
+Lars~P{\aa}lsson Syll.
+\newblock Post-real economics --- a severe case of mathiness.
+\newblock Blog post, Heterodox Economic Blogs, 2024.
+
 \bibitem[Szegedy et~al.(2014)Szegedy, Liu, Jia, Sermanet, Reed, Anguelov,
   Erhan, Vanhoucke, and Rabinovich]{szegedy_2014_inception}
 Christian Szegedy, Wei Liu, Yangqing Jia, Pierre Sermanet, Scott Reed, Dragomir
@@ -2093,6 +2179,14 @@ Paul Tseng.
 \newblock \emph{Journal of Optimization Theory and Applications}, 109\penalty0
   (3):\penalty0 475--494, 2001.
 \newblock \doi{10.1007/s10957-001-0006-4}.
+
+\bibitem[Tunali(2019)]{tunali2019empirical}
+Onur Tunali.
+\newblock Empirical {{Rademacher Complexity}} and {{Its Implications}} to
+  {{Deep Learning}}.
+\newblock
+  https://www.onurtunali.com/ml/2019/02/01/empirical-rademacher-complexity-and-its-implications-to-deep-learning.html,
+  February 2019.
 
 \bibitem[Valiant(1984)]{10.1145/1968.1972}
 L.~G. Valiant.
@@ -2175,6 +2269,17 @@ Jingyuan Wang, Kai Feng, and Junjie Wu.
 Christopher J. C.~H. Watkins and Peter Dayan.
 \newblock Q-learning.
 \newblock \emph{Machine Learning}, 8:\penalty0 279--292, 1992.
+
+\bibitem[Wegel et~al.(2025)Wegel, So, Park, and
+  Yang]{wegel2025samplecomplexitysemisupervisedmultiobjective}
+Tobias Wegel, Geelon So, Junhyung Park, and Fanny Yang.
+\newblock On the sample complexity of semi-supervised multi-objective learning,
+  2025.
+
+\bibitem[Wegener(1987)]{Wegener1987}
+Ingo Wegener.
+\newblock \emph{The {{Complexity}} of {{Boolean Functions}}}.
+\newblock John Wiley \& Sons, Chichester, UK, 1987.
 
 \bibitem[Wei et~al.(2022{\natexlab{a}})Wei, Shen, and Ma]{wei2022theory}
 Colin Wei, Zeyuan Allen-Zhu Shen, and Tengyu Ma.
@@ -2298,6 +2403,11 @@ Zitong Yang, Yaodong Yu, Chong You, Jacob Steinhardt, and Yi~Ma.
   {Neural} {Networks}, December 2020.
 \newblock URL \url{http://arxiv.org/abs/2002.11328}.
 \newblock arXiv:2002.11328 [cs, stat].
+
+\bibitem[Zhang et~al.(2017)Zhang, Bengio, Hardt, Recht, and
+  Vinyals]{zhang2017understandingdeeplearningrequires}
+Chiyuan Zhang, Samy Bengio, Moritz Hardt, Benjamin Recht, and Oriol Vinyals.
+\newblock Understanding deep learning requires rethinking generalization, 2017.
 
 \bibitem[Zhang(2019)]{zhang_gradient_2019}
 Jiawei Zhang.

@@ -1,0 +1,117 @@
+\documentclass[twoside,11pt]{article}
+
+\usepackage{blindtext}
+
+% Any additional packages needed should be included after jmlr2e.
+% Note that jmlr2e.sty includes epsfig, amssymb, natbib and graphicx,
+% and defines many common macros, such as 'proof' and 'example'.
+%
+% It also sets the bibliographystyle to plainnat; for more information on
+% natbib citation styles, see the natbib documentation, a copy of which
+% is archived at http://www.jmlr.org/format/natbib.pdf
+
+% Available options for package jmlr2e are:
+%
+%   - abbrvbib : use abbrvnat for the bibliography style
+%   - nohyperref : do not load the hyperref package
+%   - preprint : remove JMLR specific information from the template,
+%         useful for example for posting to preprint servers.
+%
+% Example of using the package with custom options:
+%
+% \usepackage[abbrvbib, preprint]{jmlr2e}
+
+\usepackage{amsmath}
+\usepackage{amsbsy,amssymb,amsfonts,amsthm} % Math and related rendering
+\usepackage{jmlr2e}
+%\let\proof\relax
+%\let\endproof\relax
+\input{setting/package.tex}
+\input{setting/config.tex}
+\input{setting/document_config.tex}
+\input{setting/theorem.tex}
+
+% Definitions of handy macros can go here
+
+%\newcommand{\dataset}{{\cal D}}
+%\newcommand{\fracpartial}[2]{\frac{\partial #1}{\partial  #2}}
+\input{setting/mathcommand.tex}
+
+% Heading arguments are {volume}{year}{pages}{date submitted}{date published}{paper id}{author-full-names}
+
+\usepackage{lastpage}
+\jmlrheading{23}{2022}{1-\pageref{LastPage}}{1/21; Revised 5/22}{9/22}{21-0000}{Author One and Author Two}
+
+% Short headings should be running head and authors last names
+
+\ShortHeadings{Sample JMLR Paper}{One and Two}
+\firstpageno{1}
+
+\begin{document}
+
+\title{Sample JMLR Paper}
+
+\author{\name Khanh Gia Bui \email 23000206@hus.edu.vn \\
+       \addr Department of Physics\\
+       Vietnam National University, Hanoi University of Science
+       \AND
+       \name Luong Van Tam \\
+       \addr Department of Physics\\
+       Vietnam National University, Hanoi University of Science
+       \AND
+       \name Dang Tri Trung \\
+       \addr Department of Computer Science\\
+       Monash University \\
+       Melbourne, Australia
+       \AND 
+       \name Daud Shahbaz \\
+       \addr Department of Computer Science \\
+       COMSATS University Islamabad \\ 
+       Islamabad, Pakistan
+}
+\editor{Awaiting for editor}
+
+\maketitle
+
+\begin{abstract}%   <- trailing '%' for backward compatibility of .sty file
+\blindtext
+\end{abstract}
+
+\begin{keywords}
+  Artificial intelligence, machine learning, deep learning, 
+\end{keywords}
+
+\section{Introduction}
+
+\blindmathpaper
+
+Here is a citation \cite{chow:68}.
+
+% Acknowledgements and Disclosure of Funding should go at the end, before appendices and references
+
+\acks{All acknowledgements go at the end of the paper before appendices and references.
+Moreover, you are required to declare funding (financial activities supporting the
+submitted work) and competing interests (related financial activities outside the submitted work).
+More information about this disclosure can be found on the JMLR website.}
+
+% Manual newpage inserted to improve layout of sample file - not
+% needed in general before appendices/bibliography.
+
+\newpage
+
+\appendix
+\section{}
+\label{app:theorem}
+
+% Note: in this sample, the section number is hard-coded in. Following
+% proper LaTeX conventions, it should properly be coded as a reference:
+
+%In this appendix we prove the following theorem from
+%Section~\ref{sec:textree-generalization}:
+
+
+
+
+\bibliography{main}
+
+\end{document}

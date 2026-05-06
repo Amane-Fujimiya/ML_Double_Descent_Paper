@@ -1,0 +1,791 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{cms/global//global/global/global}
+    \entry{d_ascoli_triple_2020}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=297c039658e41acdae8748142555e5dd}{%
+           family={Ascoli},
+           familyi={A\bibinitperiod},
+           given={Stéphane},
+           giveni={S\bibinitperiod},
+           givenun=0,
+           prefix={d'},
+           prefixi={d\bibinitperiod},
+           prefixun=0}}%
+        {{un=0,uniquepart=base,hash=3d1f2501fb64c44a686e26c50bc87110}{%
+           family={Sagun},
+           familyi={S\bibinitperiod},
+           given={Levent},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a37018f0369a0addf9e4b95c2a5af5d2}{%
+           family={Biroli},
+           familyi={B\bibinitperiod},
+           given={Giulio},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Curran Associates, Inc.}%
+      }
+      \strng{namehash}{2d1ed372d680d9b3b9d8403ab2900b4c}
+      \strng{fullhash}{2d1ed372d680d9b3b9d8403ab2900b4c}
+      \strng{fullhashraw}{2d1ed372d680d9b3b9d8403ab2900b4c}
+      \strng{bibnamehash}{2d1ed372d680d9b3b9d8403ab2900b4c}
+      \strng{authorbibnamehash}{2d1ed372d680d9b3b9d8403ab2900b4c}
+      \strng{authornamehash}{2d1ed372d680d9b3b9d8403ab2900b4c}
+      \strng{authorfullhash}{2d1ed372d680d9b3b9d8403ab2900b4c}
+      \strng{authorfullhashraw}{2d1ed372d680d9b3b9d8403ab2900b4c}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{A recent line of research has highlighted the existence of a ``double descent'' phenomenon in deep learning, whereby increasing the number of training examples N causes the generalization error of neural networks to peak when N is of the same order as the number of parameters P. In earlier works, a similar phenomenon was shown to exist in simpler models such as linear regression, where the peak instead occurs when N is equal to the input dimension D. Since both peaks coincide with the interpolation threshold, they are often conflated in the litterature. In this paper, we show that despite their apparent similarity, these two scenarios are inherently different. In fact, both peaks can co-exist when neural networks are applied to noisy regression tasks. The relative size of the peaks is then governed by the degree of nonlinearity of the activation function. Building on recent developments in the analysis of random feature models, we provide a theoretical ground for this sample-wise triple descent. As shown previously, the nonlinear peak at N=P is a true divergence caused by the extreme sensitivity of the output function to both the noise corrupting the labels and the initialization of the random features (or the weights in neural networks). This peak survives in the absence of noise, but can be suppressed by regularization. In contrast, the linear peak at N=D is solely due to overfitting the noise in the labels, and forms earlier during training. We show that this peak is implicitly regularized by the nonlinearity, which is why it only becomes salient at high noise and is weakly affected by explicit regularization. Throughout the paper, we compare the analytical results obtained in the random feature model with the outcomes of numerical experiments involving realistic neural networks.}
+      \field{booktitle}{Advances in {Neural} {Information} {Processing} {Systems}}
+      \field{shorttitle}{Triple descent and the two kinds of overfitting}
+      \field{title}{Triple descent and the two kinds of overfitting: where \& why do they appear?}
+      \field{urlday}{26}
+      \field{urlmonth}{8}
+      \field{urlyear}{2024}
+      \field{volume}{33}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \field{pages}{3058\bibrangedash 3069}
+      \range{pages}{12}
+      \verb{file}
+      \verb Full Text PDF:C\:\\Users\\Admin\\Zotero\\storage\\BMDU7UMD\\d' Ascoli et al. - 2020 - Triple descent and the two kinds of overfitting w.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://proceedings.neurips.cc/paper/2020/hash/1fd09c5f59a8ff35d499c0ee25a1d47e-Abstract.html
+      \endverb
+      \verb{url}
+      \verb https://proceedings.neurips.cc/paper/2020/hash/1fd09c5f59a8ff35d499c0ee25a1d47e-Abstract.html
+      \endverb
+    \endentry
+    \entry{belkin_reconciling_2019}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=b2aeb0539e71c989e52b170b56b1fabd}{%
+           family={Belkin},
+           familyi={B\bibinitperiod},
+           given={Mikhail},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=97d68bdafb2fefd550bc00375aab158e}{%
+           family={Hsu},
+           familyi={H\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2eebe9bcff663d57eb49edc43dfee6a4}{%
+           family={Ma},
+           familyi={M\bibinitperiod},
+           given={Siyuan},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b59a201ea7db1f04f3e759f7f4f9fdb1}{%
+           family={Mandal},
+           familyi={M\bibinitperiod},
+           given={Soumik},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{d345a47731758681f1be1a00df52823b}
+      \strng{fullhash}{53ff9bd1260405afa11c8ea0926eccf4}
+      \strng{fullhashraw}{53ff9bd1260405afa11c8ea0926eccf4}
+      \strng{bibnamehash}{53ff9bd1260405afa11c8ea0926eccf4}
+      \strng{authorbibnamehash}{53ff9bd1260405afa11c8ea0926eccf4}
+      \strng{authornamehash}{d345a47731758681f1be1a00df52823b}
+      \strng{authorfullhash}{53ff9bd1260405afa11c8ea0926eccf4}
+      \strng{authorfullhashraw}{53ff9bd1260405afa11c8ea0926eccf4}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{author}
+      \field{abstract}{Breakthroughs in machine learning are rapidly changing science and society, yet our fundamental understanding of this technology has lagged far behind. Indeed, one of the central tenets of the field, the bias-variance trade-off, appears to be at odds with the observed behavior of methods used in the modern machine learning practice. The bias-variance trade-off implies that a model should balance under-fitting and over-fitting: rich enough to express underlying structure in data, simple enough to avoid fitting spurious patterns. However, in the modern practice, very rich models such as neural networks are trained to exactly fit (i.e., interpolate) the data. Classically, such models would be considered over-fit, and yet they often obtain high accuracy on test data. This apparent contradiction has raised questions about the mathematical foundations of machine learning and their relevance to practitioners. In this paper, we reconcile the classical understanding and the modern practice within a unified performance curve. This "double descent" curve subsumes the textbook U-shaped bias-variance trade-off curve by showing how increasing model capacity beyond the point of interpolation results in improved performance. We provide evidence for the existence and ubiquity of double descent for a wide spectrum of models and datasets, and we posit a mechanism for its emergence. This connection between the performance and the structure of machine learning models delineates the limits of classical analyses, and has implications for both the theory and practice of machine learning.}
+      \field{issn}{0027-8424, 1091-6490}
+      \field{journaltitle}{Proc. Natl. Acad. Sci. U.S.A.}
+      \field{month}{8}
+      \field{note}{arXiv:1812.11118 [cs, stat]}
+      \field{number}{32}
+      \field{title}{Reconciling modern machine learning practice and the bias-variance trade-off}
+      \field{urlday}{16}
+      \field{urlmonth}{7}
+      \field{urlyear}{2024}
+      \field{volume}{116}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \field{pages}{15849\bibrangedash 15854}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1073/pnas.1903070116
+      \endverb
+      \verb{file}
+      \verb arXiv Fulltext PDF:C\:\\Users\\Admin\\Zotero\\storage\\ZMYPPK75\\Belkin et al. - 2019 - Reconciling modern machine learning practice and t.pdf:application/pdf;arXiv.org Snapshot:C\:\\Users\\Admin\\Zotero\\storage\\258WG5FI\\1812.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1812.11118
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1812.11118
+      \endverb
+      \keyw{Computer Science - Machine Learning,Statistics - Machine Learning}
+    \endentry
+    \entry{bousquet2020theoryuniversallearning}{misc}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=cf4fea95321213e7dc3532fd33b85112}{%
+           family={Bousquet},
+           familyi={B\bibinitperiod},
+           given={Olivier},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ef7c5042fa12097a807dc1a551d0c049}{%
+           family={Hanneke},
+           familyi={H\bibinitperiod},
+           given={Steve},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cf2c7811cbeaca3f08824c9c5b2ebd58}{%
+           family={Moran},
+           familyi={M\bibinitperiod},
+           given={Shay},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=506191e77fc05606bd0582527704e599}{%
+           family={Handel},
+           familyi={H\bibinitperiod},
+           given={Ramon},
+           giveni={R\bibinitperiod},
+           givenun=0,
+           prefix={van},
+           prefixi={v\bibinitperiod},
+           prefixun=0}}%
+        {{un=0,uniquepart=base,hash=8fea19bbf1f84f9f59e959335022dd6f}{%
+           family={Yehudayoff},
+           familyi={Y\bibinitperiod},
+           given={Amir},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{bd028f3c47946b50793e82b7d1048c4e}
+      \strng{fullhash}{4f868b2e11694083fa72b3286fd120f2}
+      \strng{fullhashraw}{4f868b2e11694083fa72b3286fd120f2}
+      \strng{bibnamehash}{4f868b2e11694083fa72b3286fd120f2}
+      \strng{authorbibnamehash}{4f868b2e11694083fa72b3286fd120f2}
+      \strng{authornamehash}{bd028f3c47946b50793e82b7d1048c4e}
+      \strng{authorfullhash}{4f868b2e11694083fa72b3286fd120f2}
+      \strng{authorfullhashraw}{4f868b2e11694083fa72b3286fd120f2}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.LG}
+      \field{eprinttype}{arXiv}
+      \field{title}{A Theory of Universal Learning}
+      \field{year}{2020}
+      \verb{eprint}
+      \verb 2011.04483
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2011.04483
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2011.04483
+      \endverb
+    \endentry
+    \entry{davies_unifying_2023}{misc}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=289e6941420ce1003991e393ab41c00e}{%
+           family={Davies},
+           familyi={D\bibinitperiod},
+           given={Xander},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=336fe85e2bdeaea23b4aca0b2621bc02}{%
+           family={Langosco},
+           familyi={L\bibinitperiod},
+           given={Lauro},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e7f73df1af7c68ac1fa70ee32d1da619}{%
+           family={Krueger},
+           familyi={K\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \list{publisher}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{a82223f42e8c170c4e62de9f35a84162}
+      \strng{fullhash}{a82223f42e8c170c4e62de9f35a84162}
+      \strng{fullhashraw}{a82223f42e8c170c4e62de9f35a84162}
+      \strng{bibnamehash}{a82223f42e8c170c4e62de9f35a84162}
+      \strng{authorbibnamehash}{a82223f42e8c170c4e62de9f35a84162}
+      \strng{authornamehash}{a82223f42e8c170c4e62de9f35a84162}
+      \strng{authorfullhash}{a82223f42e8c170c4e62de9f35a84162}
+      \strng{authorfullhashraw}{a82223f42e8c170c4e62de9f35a84162}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A principled understanding of generalization in deep learning may require unifying disparate observations under a single conceptual framework. Previous work has studied grokking, a training dynamic in which a sustained period of near-perfect training performance and near-chance test performance is eventually followed by generalization, as well as the superficially similar double descent. These topics have so far been studied in isolation. We hypothesize that grokking and double descent can be understood as instances of the same learning dynamics within a framework of pattern learning speeds. We propose that this framework also applies when varying model capacity instead of optimization steps, and provide the ﬁrst demonstration of model-wise grokking.}
+      \field{annotation}{Comment: ML Safety Workshop, 36th Conference on Neural Information Processing Systems (NeurIPS 2022)}
+      \field{month}{3}
+      \field{note}{arXiv:2303.06173 [cs]}
+      \field{title}{Unifying {Grokking} and {Double} {Descent}}
+      \field{urlday}{26}
+      \field{urlmonth}{8}
+      \field{urlyear}{2024}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Davies et al. - 2023 - Unifying Grokking and Double Descent.pdf:C\:\\Users\\Admin\\Zotero\\storage\\7F3CMF7D\\Davies et al. - 2023 - Unifying Grokking and Double Descent.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/2303.06173
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/2303.06173
+      \endverb
+      \keyw{Computer Science - Machine Learning,Computer Science - Artificial Intelligence}
+    \endentry
+    \entry{Domingos2000AUB}{inproceedings}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=6f2b143346d76f2653dd01966846f7db}{%
+           family={Domingos},
+           familyi={D\bibinitperiod},
+           given={Pedro\bibnamedelima M.},
+           giveni={P\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{6f2b143346d76f2653dd01966846f7db}
+      \strng{fullhash}{6f2b143346d76f2653dd01966846f7db}
+      \strng{fullhashraw}{6f2b143346d76f2653dd01966846f7db}
+      \strng{bibnamehash}{6f2b143346d76f2653dd01966846f7db}
+      \strng{authorbibnamehash}{6f2b143346d76f2653dd01966846f7db}
+      \strng{authornamehash}{6f2b143346d76f2653dd01966846f7db}
+      \strng{authorfullhash}{6f2b143346d76f2653dd01966846f7db}
+      \strng{authorfullhashraw}{6f2b143346d76f2653dd01966846f7db}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{AAAI/IAAI}
+      \field{title}{A Unified Bias-Variance Decomposition for Zero-One and Squared Loss}
+      \field{year}{2000}
+      \verb{urlraw}
+      \verb https://api.semanticscholar.org/CorpusID:2063488
+      \endverb
+      \verb{url}
+      \verb https://api.semanticscholar.org/CorpusID:2063488
+      \endverb
+    \endentry
+    \entry{6797087}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=559187c6e8cad5a03e2e2c57be738be0}{%
+           family={Geman},
+           familyi={G\bibinitperiod},
+           given={Stuart},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5e800f4e8612595408e837b525dcb194}{%
+           family={Bienenstock},
+           familyi={B\bibinitperiod},
+           given={Elie},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=68ac32b8ce9c69a0863d654a6cfc74be}{%
+           family={Doursat},
+           familyi={D\bibinitperiod},
+           given={Rene},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{d4864cf38b463604c2e780e23b3383bc}
+      \strng{fullhash}{d4864cf38b463604c2e780e23b3383bc}
+      \strng{fullhashraw}{d4864cf38b463604c2e780e23b3383bc}
+      \strng{bibnamehash}{d4864cf38b463604c2e780e23b3383bc}
+      \strng{authorbibnamehash}{d4864cf38b463604c2e780e23b3383bc}
+      \strng{authornamehash}{d4864cf38b463604c2e780e23b3383bc}
+      \strng{authorfullhash}{d4864cf38b463604c2e780e23b3383bc}
+      \strng{authorfullhashraw}{d4864cf38b463604c2e780e23b3383bc}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{author}
+      \field{journaltitle}{Neural Computation}
+      \field{number}{1}
+      \field{title}{Neural Networks and the Bias/Variance Dilemma}
+      \field{volume}{4}
+      \field{year}{1992}
+      \field{pages}{1\bibrangedash 58}
+      \range{pages}{58}
+      \verb{doi}
+      \verb 10.1162/neco.1992.4.1.1
+      \endverb
+    \endentry
+    \entry{STL_Hajek_Maxim_2021}{book}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=3775bfe0bd60efe59ea5895d9f5195d6}{%
+           family={Hajek},
+           familyi={H\bibinitperiod},
+           given={Bruce},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1762c6d4ace229f7656ee9fa9eff446a}{%
+           family={Raginsky},
+           familyi={R\bibinitperiod},
+           given={Maxim},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{86124f040e0c7dc00669fb58606052d6}
+      \strng{fullhash}{86124f040e0c7dc00669fb58606052d6}
+      \strng{fullhashraw}{86124f040e0c7dc00669fb58606052d6}
+      \strng{bibnamehash}{86124f040e0c7dc00669fb58606052d6}
+      \strng{authorbibnamehash}{86124f040e0c7dc00669fb58606052d6}
+      \strng{authornamehash}{86124f040e0c7dc00669fb58606052d6}
+      \strng{authorfullhash}{86124f040e0c7dc00669fb58606052d6}
+      \strng{authorfullhashraw}{86124f040e0c7dc00669fb58606052d6}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Statistical Learning Theory}
+      \field{volume}{1}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://maxim.ece.illinois.edu/teaching/SLT/
+      \endverb
+      \verb{url}
+      \verb https://maxim.ece.illinois.edu/teaching/SLT/
+      \endverb
+    \endentry
+    \entry{lafon_understanding_2024}{misc}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=b635e8fd7f77d70dfb46863403363bd0}{%
+           family={Lafon},
+           familyi={L\bibinitperiod},
+           given={Marc},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a2f2714feb98100247756cde9293e2bc}{%
+           family={Thomas},
+           familyi={T\bibinitperiod},
+           given={Alexandre},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \list{publisher}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{c0cbb9fdca9701f19f193890c1a9e69a}
+      \strng{fullhash}{c0cbb9fdca9701f19f193890c1a9e69a}
+      \strng{fullhashraw}{c0cbb9fdca9701f19f193890c1a9e69a}
+      \strng{bibnamehash}{c0cbb9fdca9701f19f193890c1a9e69a}
+      \strng{authorbibnamehash}{c0cbb9fdca9701f19f193890c1a9e69a}
+      \strng{authornamehash}{c0cbb9fdca9701f19f193890c1a9e69a}
+      \strng{authorfullhash}{c0cbb9fdca9701f19f193890c1a9e69a}
+      \strng{authorfullhashraw}{c0cbb9fdca9701f19f193890c1a9e69a}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Combining empirical risk minimization with capacity control is a classical strategy in machine learning when trying to control the generalization gap and avoid overfitting, as the model class capacity gets larger. Yet, in modern deep learning practice, very large over-parameterized models (e.g. neural networks) are optimized to fit perfectly the training data and still obtain great generalization performance. Past the interpolation point, increasing model complexity seems to actually lower the test error.}
+      \field{month}{3}
+      \field{note}{arXiv:2403.10459 [cs, stat]}
+      \field{title}{Understanding the {Double} {Descent} {Phenomenon} in {Deep} {Learning}}
+      \field{urlday}{26}
+      \field{urlmonth}{8}
+      \field{urlyear}{2024}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Lafon and Thomas - 2024 - Understanding the Double Descent Phenomenon in Dee.pdf:C\:\\Users\\Admin\\Zotero\\storage\\VUY4KCYC\\Lafon and Thomas - 2024 - Understanding the Double Descent Phenomenon in Dee.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/2403.10459
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/2403.10459
+      \endverb
+      \keyw{Computer Science - Machine Learning,Statistics - Machine Learning,Computer Science - Computer Vision and Pattern Recognition}
+    \endentry
+    \entry{10.5555/2371238}{book}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=8298c87c77cd46a5b2b7e799ba087945}{%
+           family={Mohri},
+           familyi={M\bibinitperiod},
+           given={Mehryar},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7aef26bccf2dba53f4b3c49adfb2983e}{%
+           family={Rostamizadeh},
+           familyi={R\bibinitperiod},
+           given={Afshin},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=70e0fe957473b80f1b1b5dcb8e99d31e}{%
+           family={Talwalkar},
+           familyi={T\bibinitperiod},
+           given={Ameet},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {The MIT Press}%
+      }
+      \strng{namehash}{79f7790e383ae556514d27a942686512}
+      \strng{fullhash}{79f7790e383ae556514d27a942686512}
+      \strng{fullhashraw}{79f7790e383ae556514d27a942686512}
+      \strng{bibnamehash}{79f7790e383ae556514d27a942686512}
+      \strng{authorbibnamehash}{79f7790e383ae556514d27a942686512}
+      \strng{authornamehash}{79f7790e383ae556514d27a942686512}
+      \strng{authorfullhash}{79f7790e383ae556514d27a942686512}
+      \strng{authorfullhashraw}{79f7790e383ae556514d27a942686512}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This graduate-level textbook introduces fundamental concepts and methods in machine learning. It describes several important modern algorithms, provides the theoretical underpinnings of these algorithms, and illustrates key aspects for their application. The authors aim to present novel theoretical tools and concepts while giving concise proofs even for relatively advanced topics. Foundations of Machine Learning fills the need for a general textbook that also offers theoretical details and an emphasis on proofs. Certain topics that are often treated with insufficient attention are discussed in more detail here; for example, entire chapters are devoted to regression, multi-class classification, and ranking. The first three chapters lay the theoretical foundation for what follows, but each remaining chapter is mostly self-contained. The appendix offers a concise probability review, a short introduction to convex optimization, tools for concentration bounds, and several basic properties of matrices and norms used in the book. The book is intended for graduate students and researchers in machine learning, statistics, and related areas; it can be used either as a textbook or as a reference text for a research seminar.}
+      \field{isbn}{026201825X}
+      \field{title}{Foundations of Machine Learning}
+      \field{year}{2012}
+    \endentry
+    \entry{nakkiran_deep_2019}{misc}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=40e2f3b9e5b92b654aa9f0b7daf86b17}{%
+           family={Nakkiran},
+           familyi={N\bibinitperiod},
+           given={Preetum},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=723227e59eb378f3c109acd8fdf92ae1}{%
+           family={Kaplun},
+           familyi={K\bibinitperiod},
+           given={Gal},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=35a3e1d37bd752bf6670132d23fe6397}{%
+           family={Bansal},
+           familyi={B\bibinitperiod},
+           given={Yamini},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e1cd0505a976e2627a032e654fb88ac3}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Tristan},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ef4505bdcbc58ae15e11f8bc6c51af7e}{%
+           family={Barak},
+           familyi={B\bibinitperiod},
+           given={Boaz},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8d569d1d5b8b5a7836017a98b430f959}{%
+           family={Sutskever},
+           familyi={S\bibinitperiod},
+           given={Ilya},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{64e67062f362bfd1a20ee69a1596698b}
+      \strng{fullhash}{45c4992ace609564bb7e78357f1a5214}
+      \strng{fullhashraw}{45c4992ace609564bb7e78357f1a5214}
+      \strng{bibnamehash}{45c4992ace609564bb7e78357f1a5214}
+      \strng{authorbibnamehash}{45c4992ace609564bb7e78357f1a5214}
+      \strng{authornamehash}{64e67062f362bfd1a20ee69a1596698b}
+      \strng{authorfullhash}{45c4992ace609564bb7e78357f1a5214}
+      \strng{authorfullhashraw}{45c4992ace609564bb7e78357f1a5214}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{We show that a variety of modern deep learning tasks exhibit a "double-descent" phenomenon where, as we increase model size, performance first gets worse and then gets better. Moreover, we show that double descent occurs not just as a function of model size, but also as a function of the number of training epochs. We unify the above phenomena by defining a new complexity measure we call the effective model complexity and conjecture a generalized double descent with respect to this measure. Furthermore, our notion of model complexity allows us to identify certain regimes where increasing (even quadrupling) the number of train samples actually hurts test performance.}
+      \field{annotation}{Comment: G.K. and Y.B. contributed equally}
+      \field{month}{12}
+      \field{note}{arXiv:1912.02292 [cs, stat]}
+      \field{shorttitle}{Deep {Double} {Descent}}
+      \field{title}{Deep {Double} {Descent}: {Where} {Bigger} {Models} and {More} {Data} {Hurt}}
+      \field{urlday}{16}
+      \field{urlmonth}{7}
+      \field{urlyear}{2024}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.1912.02292
+      \endverb
+      \verb{file}
+      \verb arXiv Fulltext PDF:C\:\\Users\\Admin\\Zotero\\storage\\VVVJSJI4\\Nakkiran et al. - 2019 - Deep Double Descent Where Bigger Models and More .pdf:application/pdf;arXiv.org Snapshot:C\:\\Users\\Admin\\Zotero\\storage\\QH63P2SG\\1912.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1912.02292
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1912.02292
+      \endverb
+      \keyw{Computer Science - Machine Learning,Statistics - Machine Learning,Computer Science - Computer Vision and Pattern Recognition,Computer Science - Neural and Evolutionary Computing}
+    \endentry
+    \entry{schaeffer_double_2023}{misc}{}{}
+      \name{author}{8}{}{%
+        {{un=0,uniquepart=base,hash=141bacfb93384c35c172c22f8f069afb}{%
+           family={Schaeffer},
+           familyi={S\bibinitperiod},
+           given={Rylan},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d0a560375a85aeafd073cd0d279e4db8}{%
+           family={Khona},
+           familyi={K\bibinitperiod},
+           given={Mikail},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3eed3c1188e782d64f2a6509f638bcf8}{%
+           family={Robertson},
+           familyi={R\bibinitperiod},
+           given={Zachary},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7f7bb86b80238ec442e58357981cab0a}{%
+           family={Boopathy},
+           familyi={B\bibinitperiod},
+           given={Akhilan},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9f97ab4fa9797626c3076a9db9f0f0f1}{%
+           family={Pistunova},
+           familyi={P\bibinitperiod},
+           given={Kateryna},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=80171f7d1e21a0f9facc7c62b3b80b30}{%
+           family={Rocks},
+           familyi={R\bibinitperiod},
+           given={Jason\bibnamedelima W.},
+           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=10bb2702e98c71c289f6f30a06ae3ea3}{%
+           family={Fiete},
+           familyi={F\bibinitperiod},
+           given={Ila\bibnamedelima Rani},
+           giveni={I\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=36de36165fdc06c581efd1c44425c9bf}{%
+           family={Koyejo},
+           familyi={K\bibinitperiod},
+           given={Oluwasanmi},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{807abfb4236318d230d3cbae57eceac6}
+      \strng{fullhash}{79f1c72c19f2f48f918d69088e77a4dd}
+      \strng{fullhashraw}{79f1c72c19f2f48f918d69088e77a4dd}
+      \strng{bibnamehash}{79f1c72c19f2f48f918d69088e77a4dd}
+      \strng{authorbibnamehash}{79f1c72c19f2f48f918d69088e77a4dd}
+      \strng{authornamehash}{807abfb4236318d230d3cbae57eceac6}
+      \strng{authorfullhash}{79f1c72c19f2f48f918d69088e77a4dd}
+      \strng{authorfullhashraw}{79f1c72c19f2f48f918d69088e77a4dd}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Double descent is a surprising phenomenon in machine learning, in which as the number of model parameters grows relative to the number of data, test error drops as models grow ever larger into the highly overparameterized (data undersampled) regime. This drop in test error flies against classical learning theory on overfitting and has arguably underpinned the success of large models in machine learning. This non-monotonic behavior of test loss depends on the number of data, the dimensionality of the data and the number of model parameters. Here, we briefly describe double descent, then provide an explanation of why double descent occurs in an informal and approachable manner, requiring only familiarity with linear algebra and introductory probability. We provide visual intuition using polynomial regression, then mathematically analyze double descent with ordinary linear regression and identify three interpretable factors that, when simultaneously all present, together create double descent. We demonstrate that double descent occurs on real data when using ordinary linear regression, then demonstrate that double descent does not occur when any of the three factors are ablated. We use this understanding to shed light on recent observations in nonlinear models concerning superposition and double descent. Code is publicly available.}
+      \field{month}{3}
+      \field{note}{arXiv:2303.14151 [cs, stat]}
+      \field{shorttitle}{Double {Descent} {Demystified}}
+      \field{title}{Double {Descent} {Demystified}: {Identifying}, {Interpreting} and {Ablating} the {Sources} of a {Deep} {Learning} {Puzzle}}
+      \field{urlday}{16}
+      \field{urlmonth}{7}
+      \field{urlyear}{2024}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.2303.14151
+      \endverb
+      \verb{file}
+      \verb arXiv Fulltext PDF:C\:\\Users\\Admin\\Zotero\\storage\\UCKNCDW3\\Schaeffer et al. - 2023 - Double Descent Demystified Identifying, Interpret.pdf:application/pdf;arXiv.org Snapshot:C\:\\Users\\Admin\\Zotero\\storage\\6W2R97EC\\2303.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/2303.14151
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/2303.14151
+      \endverb
+      \keyw{Computer Science - Machine Learning,Statistics - Machine Learning}
+    \endentry
+    \entry{10.5555/2621980}{book}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=a6c5827676b0a2058e5b904c3dd7f878}{%
+           family={Shalev-Shwartz},
+           familyi={S\bibinithyphendelim S\bibinitperiod},
+           given={Shai},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=509866d90ae18bfca30c6f4cdc846529}{%
+           family={Ben-David},
+           familyi={B\bibinithyphendelim D\bibinitperiod},
+           given={Shai},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {USA}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{38fabf8438a7aae182a9d192e7aa2d98}
+      \strng{fullhash}{38fabf8438a7aae182a9d192e7aa2d98}
+      \strng{fullhashraw}{38fabf8438a7aae182a9d192e7aa2d98}
+      \strng{bibnamehash}{38fabf8438a7aae182a9d192e7aa2d98}
+      \strng{authorbibnamehash}{38fabf8438a7aae182a9d192e7aa2d98}
+      \strng{authornamehash}{38fabf8438a7aae182a9d192e7aa2d98}
+      \strng{authorfullhash}{38fabf8438a7aae182a9d192e7aa2d98}
+      \strng{authorfullhashraw}{38fabf8438a7aae182a9d192e7aa2d98}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Machine learning is one of the fastest growing areas of computer science, with far-reaching applications. The aim of this textbook is to introduce machine learning, and the algorithmic paradigms it offers, in a principled way. The book provides an extensive theoretical account of the fundamental ideas underlying machine learning and the mathematical derivations that transform these principles into practical algorithms. Following a presentation of the basics of the field, the book covers a wide array of central topics that have not been addressed by previous textbooks. These include a discussion of the computational complexity of learning and the concepts of convexity and stability; important algorithmic paradigms including stochastic gradient descent, neural networks, and structured output learning; and emerging theoretical concepts such as the PAC-Bayes approach and compression-based bounds. Designed for an advanced undergraduate or beginning graduate course, the text makes the fundamentals and algorithms of machine learning accessible to students and non-expert readers in statistics, computer science, mathematics, and engineering.}
+      \field{isbn}{1107057132}
+      \field{title}{Understanding Machine Learning: From Theory to Algorithms}
+      \field{year}{2014}
+    \endentry
+    \entry{10.1145/1968.1972}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=ebcdecb3264d74c439b7eba5e14bbb35}{%
+           family={Valiant},
+           familyi={V\bibinitperiod},
+           given={L.\bibnamedelimi G.},
+           giveni={L\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{ebcdecb3264d74c439b7eba5e14bbb35}
+      \strng{fullhash}{ebcdecb3264d74c439b7eba5e14bbb35}
+      \strng{fullhashraw}{ebcdecb3264d74c439b7eba5e14bbb35}
+      \strng{bibnamehash}{ebcdecb3264d74c439b7eba5e14bbb35}
+      \strng{authorbibnamehash}{ebcdecb3264d74c439b7eba5e14bbb35}
+      \strng{authornamehash}{ebcdecb3264d74c439b7eba5e14bbb35}
+      \strng{authorfullhash}{ebcdecb3264d74c439b7eba5e14bbb35}
+      \strng{authorfullhashraw}{ebcdecb3264d74c439b7eba5e14bbb35}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{author}
+      \field{issn}{0001-0782}
+      \field{journaltitle}{Commun. ACM}
+      \field{month}{11}
+      \field{number}{11}
+      \field{title}{A theory of the learnable}
+      \field{volume}{27}
+      \field{year}{1984}
+      \field{pages}{1134\bibrangedash 1142}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1145/1968.1972
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/1968.1972
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/1968.1972
+      \endverb
+      \keyw{inductive inference,probabilistic models of learning,propositional expressions}
+    \endentry
+    \entry{Vapnik1999-VAPTNO}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=c2b3e05872463585b4be6aab10d10d63}{%
+           family={Vapnik},
+           familyi={V\bibinitperiod},
+           given={Vladimir},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Springer: New York}%
+      }
+      \strng{namehash}{c2b3e05872463585b4be6aab10d10d63}
+      \strng{fullhash}{c2b3e05872463585b4be6aab10d10d63}
+      \strng{fullhashraw}{c2b3e05872463585b4be6aab10d10d63}
+      \strng{bibnamehash}{c2b3e05872463585b4be6aab10d10d63}
+      \strng{authorbibnamehash}{c2b3e05872463585b4be6aab10d10d63}
+      \strng{authornamehash}{c2b3e05872463585b4be6aab10d10d63}
+      \strng{authorfullhash}{c2b3e05872463585b4be6aab10d10d63}
+      \strng{authorfullhashraw}{c2b3e05872463585b4be6aab10d10d63}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The Nature of Statistical Learning Theory}
+      \field{year}{1999}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

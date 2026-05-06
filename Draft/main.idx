@@ -1,19 +1,27 @@
 \indexentry{Markov's inequality|hyperpage}{2}
-\indexentry{Chernoff's inequality|hyperpage}{5}
-\indexentry{Cramer condition|hyperpage}{5}
-\indexentry{operationalisation|hyperpage}{13}
-\indexentry{empirical risk|hyperpage}{14}
-\indexentry{generalization risk|hyperpage}{14}
-\indexentry{model-free learning|hyperpage}{18}
-\indexentry{representation scheme|hyperpage}{19}
-\indexentry{representation size|hyperpage}{20}
-\indexentry{noise|hyperpage}{26}
-\indexentry{ERC|hyperpage}{29}
-\indexentry{Rademacher variables|hyperpage}{29}
-\indexentry{Rademacher complexity|hyperpage}{30}
-\indexentry{growth function|hyperpage}{33}
-\indexentry{shattering|hyperpage}{35}
-\indexentry{VC-dimension|hyperpage}{35}
-\indexentry{halfspace|hyperpage}{35}
-\indexentry{Sauer's lemma|hyperpage}{36}
-\indexentry{outer typing|hyperpage}{114}
+\indexentry{Chernoff's inequality|hyperpage}{6}
+\indexentry{Cramer condition|hyperpage}{6}
+\indexentry{transparency|hyperpage}{16}
+\indexentry{mechanistic layer|hyperpage}{16}
+\indexentry{phenomenological layer|hyperpage}{16}
+\indexentry{operationalisation|hyperpage}{16}
+\indexentry{hypothesis class|hyperpage}{20}
+\indexentry{empirical risk|hyperpage}{21}
+\indexentry{generalization risk|hyperpage}{21}
+\indexentry{Bayes model|hyperpage}{24}
+\indexentry{model-specific learning|hyperpage}{27}
+\indexentry{model-free learning|hyperpage}{27}
+\indexentry{representation scheme|hyperpage}{29}
+\indexentry{representation size|hyperpage}{30}
+\indexentry{noise|hyperpage}{38}
+\indexentry{ERC|hyperpage}{42}
+\indexentry{Rademacher variables|hyperpage}{42}
+\indexentry{Rademacher complexity|hyperpage}{43}
+\indexentry{growth function|hyperpage}{46}
+\indexentry{shattering|hyperpage}{48}
+\indexentry{VC-dimension|hyperpage}{48}
+\indexentry{halfspace|hyperpage}{49}
+\indexentry{Sauer's lemma|hyperpage}{49}
+\indexentry{temporal difference|hyperpage}{78}
+\indexentry{dataset identifiability|hyperpage}{97}
+\indexentry{outer typing|hyperpage}{150}

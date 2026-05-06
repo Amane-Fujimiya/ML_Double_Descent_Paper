@@ -1,0 +1,19 @@
+[0] Config.pm:308> INFO - This is Biber 2.20
+[0] Config.pm:311> INFO - Logfile is 'paper1a.blg'
+[193] biber-MSWIN64:340> INFO - === 
+[257] Biber.pm:420> INFO - Reading 'paper1a.bcf'
+[628] Biber.pm:994> INFO - Found 14 citekeys in bib section 0
+[654] Biber.pm:4463> INFO - Processing section 0
+[675] Biber.pm:4654> INFO - Looking for bibtex file 'references.bib' for section 0
+[753] bibtex.pm:1713> INFO - LaTeX decoding ...
+[1091] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
+[1433] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1433] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1433] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'level = 4' with 'level = 2'
+[1433] Biber.pm:4283> INFO - Sorting list 'cms/global//global/global/global' of type 'entry' with template 'cms' and locale 'en-US'
+[1433] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[1467] bbl.pm:676> INFO - Writing 'paper1a.bbl' with encoding 'UTF-8'
+[1490] bbl.pm:779> INFO - Output to paper1a.bbl
+[1491] Biber.pm:131> WARN - Duplicate entry key: 'modelcomplex_exp' in file 'references.bib', skipping ...
+[1491] Biber.pm:131> WARN - BibTeX subsystem: C:\Users\Admin\AppData\Local\Temp\biber_tmp_5edg\33e59b5ca9ec342068223d604c3f8d55_22568.utf8, line 1539, warning: 4 characters of junk seen at toplevel
+[1491] Biber.pm:133> INFO - WARNINGS: 2

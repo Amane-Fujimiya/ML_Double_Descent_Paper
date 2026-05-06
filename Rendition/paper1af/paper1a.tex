@@ -1215,6 +1215,8 @@ This implies that
     then $P(x)$ is a polynomial in $x$ of degree at most $2N$ such that $\lvert S_{h_0} f(x) - P(x) \rvert < \varepsilon/2$ for all $\lvert x\rvert \le R$. This implies that $\lvert f(x) - P(x) \rvert < \varepsilon$ for all $x \in [a,b]$.
 \end{proof}
 
+I want to refer to \cite{molnar2020general}
+
 Here, $\epsilon$ is defined to be the \textit{global error} of the polynomial with respect to the arbitrary function, and with uniform approximation. Another variation works on the squared error, such that $||f-p||=\sum_{i=1}^{\infty}(f(x_{i})-p(x_{i}))^{2}$, or the mean absolute $$||f-p||=\lim_{n\to\infty}\frac{1}{n}\sum_{i=1}^{n}(f(x_{i})-p(x_{i}))$$
 Weierstrass Approximation Theorem provides tighter bound for the mean absolute error, but not the square error, or the mean square case. Nevertheless, they are natural measure on the uniform metric space $C(X)$ with measure $d(f,g)=\sup_{x\in X}|f(x)-g(x)|$. If said metric also use the $L^{p}$ metric instead, which is defined by 
 \begin{equation}

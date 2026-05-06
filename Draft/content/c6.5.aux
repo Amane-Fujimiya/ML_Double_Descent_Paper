@@ -1,48 +1,135 @@
 \relax 
 \providecommand\hyper@newdestlabel[2]{}
-\citation{power2022grokkinggeneralizationoverfittingsmall}
-\citation{wei2022emergentabilitieslargelanguage}
-\citation{soudry2024implicitbiasgradientdescent}
-\citation{kaplan2020scalinglawsneurallanguage,wei2022emergentabilitieslargelanguage}
-\citation{vandeven2024continuallearningcatastrophicforgetting}
-\citation{Manin_2024}
+\citation{Vapnik1999-VAPTNO,10.1145/1968.1972}
+\citation{semmelrock2023reproducibilitymachinelearningdrivenresearch,KAPOOR2023100804}
+\citation{Kliemann2016,Tamassia1997ACS}
+\citation{bgpt2024}
+\citation{Revol_2014,COLLANGE201583,Diethelm2012}
+\citation{Kaskenpalo_2012}
+\citation{holk2025statisticalguaranteesdenoisingreflected}
+\citation{adcock2021gaptheorypracticefunction}
+\citation{saxena2025aimismatchesidentifyingpotential}
+\citation{behrouz2025nested}
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
-\@writefile{toc}{\contentsline {chapter}{\chapternumberline {4}Interpretation}{63}{chapter.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\chapternumberline {6}Intersectional insights}{129}{chapter.6}\protected@file@percent }
 \@writefile{loa}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Structural and operational problems}{63}{section.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Bias-variance and the definitive form}{64}{subsection.4.1.1}\protected@file@percent }
+\citation{Sterkenburg_2024,Vapnik1999-VAPTNO,STL_Hajek_Maxim_2021}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Interpreting the learning theory}{130}{section.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}Domain and process}{130}{subsection.6.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}The learning theoretic approach}{131}{section.6.2}\protected@file@percent }
 \@writefile{loe}{\addvspace {10\p@ }}
-\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~4.1.1\else \numberline {4.1.1}Definition\fi \thmtformatoptarg {Parameterization}}{64}{definition.1}\protected@file@percent }
-\newlabel{def:paramterization}{{4.1.1}{64}{Parameterization}{definition.1}{}}
-\@writefile{loe}{\contentsline {construction}{\ifthmt@listswap Construction~4.1.1.1\else \numberline {4.1.1.1}Construction\fi \thmtformatoptarg {Bias-variance structure preconditioning}}{64}{construction.1}\protected@file@percent }
-\newlabel{const:bias-variance1}{{4.1.1.1}{64}{Bias-variance structure preconditioning}{construction.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}The definitions of double descent}{65}{subsection.4.1.2}\protected@file@percent }
-\citation{STL_Hajek_Maxim_2021,10.5555/2930837,10.5555/2371238,10.5555/200548}
-\citation{Vapnik1999-VAPTNO}
-\citation{STL_Hajek_Maxim_2021,10.5555/2930837,10.5555/2371238,10.5555/200548}
-\citation{Vapnik1999-VAPTNO}
-\citation{STL_Hajek_Maxim_2021,10.5555/2371238,10.5555/2621980}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.3}Gradient descent and metric mismatch}{66}{subsection.4.1.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Complexity notion and its pluralism}{66}{section.4.2}\protected@file@percent }
+\@writefile{loe}{\contentsline {assumption}{\ifthmt@listswap Assumption~6.2.1\else \numberline {6.2.1}Assumption\fi }{132}{assumption.1}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~6.2.1\else \numberline {6.2.1}Definition\fi \thmtformatoptarg {Empirical risk}}{132}{definition.1}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~6.2.2\else \numberline {6.2.2}Definition\fi \thmtformatoptarg {Generalization risk}}{132}{definition.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces {\small  \textbf  {Illustrative dynamic of the learning problem.} For an incremental hypothesis space sequence $\mathcal  {H}_{1},\mathcal  {H}_{2},\mathcal  {H}_{3}$, we aim to obtain the procedure $\mathcal  {T}$ that would either reach the \textit  {\color  {blue!60!black}generalization solution} $\bm  {h}$, or the \textit  {\color  {blue!60!black}empirical solution} $h^{*}$ for a particular hypothesis class, with respect to the concept $c$ and its observed concept $c'$. Model selection hence dictates how an algorithm or procedure than choose the best possible hypothesis to approximate the generalization solution from the empirical solution set. Do notice that here we explicitly state that the data would create a \textbf  {proxy concept} that overlaps with the concept class and of some arbitrary `distance' from the true concept by $d(c,c')$. In case the two classes overlap, there still exists the arbitrary distance. Also, we can also observe the intuitive notion of increasing hypothesis class - while it indeed can help in getting closer to the concept class, the somewhat intrinsic property of current learning theory being the relative random procedure class make it probabilistically unstable.}}}{133}{figure.caption.52}\protected@file@percent }
+\newlabel{fig:statlearnclassical}{{6.1}{133}{\small \textbf {Illustrative dynamic of the learning problem.} For an incremental hypothesis space sequence $\mathcal {H}_{1},\mathcal {H}_{2},\mathcal {H}_{3}$, we aim to obtain the procedure $\mathcal {T}$ that would either reach the \textit {generalization solution} $\bm {h}$, or the \textit {empirical solution} $h^{*}$ for a particular hypothesis class, with respect to the concept $c$ and its observed concept $c'$. Model selection hence dictates how an algorithm or procedure than choose the best possible hypothesis to approximate the generalization solution from the empirical solution set. Do notice that here we explicitly state that the data would create a \textbf {proxy concept} that overlaps with the concept class and of some arbitrary `distance' from the true concept by $d(c,c')$. In case the two classes overlap, there still exists the arbitrary distance. Also, we can also observe the intuitive notion of increasing hypothesis class - while it indeed can help in getting closer to the concept class, the somewhat intrinsic property of current learning theory being the relative random procedure class make it probabilistically unstable}{figure.caption.52}{}}
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~6.2.3\else \numberline {6.2.3}Definition\fi \thmtformatoptarg {Empirical learning problem}}{133}{definition.3}\protected@file@percent }
+\newlabel{eq:lp1}{{6.5}{133}{Empirical learning problem}{equation.6.5}{}}
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~6.2.4\else \numberline {6.2.4}Definition\fi \thmtformatoptarg {Generalization learning problem}}{133}{definition.4}\protected@file@percent }
+\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces Empirical-generalization learning dynamics (non-proxy)}}{134}{algocf.2}\protected@file@percent }
+\newlabel{algo:algo_optim_ideal}{{2}{134}{The learning theoretic approach}{equation.6.7}{}}
 \citation{James2021}
-\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Descriptions of complexity measures applied to models and learning processes, from \cite  {STL_Hajek_Maxim_2021,10.5555/2930837,10.5555/2371238,10.5555/200548} and \cite  {Vapnik1999-VAPTNO} with some custom notions.}}{67}{table.caption.22}\protected@file@percent }
-\newlabel{tab:polynomial_test}{{4.1}{67}{Descriptions of complexity measures applied to models and learning processes, from \cite {STL_Hajek_Maxim_2021,10.5555/2930837,10.5555/2371238,10.5555/200548} and \cite {Vapnik1999-VAPTNO} with some custom notions}{table.caption.22}{}}
+\@writefile{loe}{\contentsline {setting}{\ifthmt@listswap Setting~6.2.1\else \numberline {6.2.1}Setting\fi }{135}{setting.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Overfitting and underfitting}{135}{subsection.6.2.1}\protected@file@percent }
+\@writefile{loe}{\contentsline {assumption}{\ifthmt@listswap Assumption~6.2.2\else \numberline {6.2.2}Assumption\fi }{135}{assumption.2}\protected@file@percent }
+\newlabel{assume:cpi_transparency}{{6.2.2}{135}{}{assumption.2}{}}
+\citation{10.5555/2371238}
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~6.2.5\else \numberline {6.2.5}Definition\fi \thmtformatoptarg {Heuristic empirical risk}}{136}{definition.5}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~6.2.6\else \numberline {6.2.6}Definition\fi \thmtformatoptarg {Heuristical generalization risk}}{136}{definition.6}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~6.2.7\else \numberline {6.2.7}Definition\fi \thmtformatoptarg {Underfitting}}{136}{definition.7}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~6.2.8\else \numberline {6.2.8}Definition\fi \thmtformatoptarg {Overfitting}}{136}{definition.8}\protected@file@percent }
+\@writefile{loe}{\contentsline {theorem}{\ifthmt@listswap Theorem~6.2.3\else \numberline {6.2.3}Theorem\fi \thmtformatoptarg {\cite  {10.5555/2371238}}}{136}{theorem.3}\protected@file@percent }
+\newlabel{thm:minimalNeu}{{6.2.3}{136}{\cite {10.5555/2371238}}{theorem.3}{}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {3}{\ignorespaces Empirical-generalization learning dynamics (proxy)}}{137}{algocf.3}\protected@file@percent }
+\newlabel{algo:algo_optim_no_c}{{3}{137}{Overfitting and underfitting}{equation.6.8}{}}
+\@writefile{loe}{\contentsline {conjecture}{\ifthmt@listswap Conjecture~6.2.1\else \numberline {6.2.1}Conjecture\fi }{137}{conjecture.1}\protected@file@percent }
+\citation{mcculloch_pitts_1943,hebb_1949,rosenblatt_1958,widrow_hoff_1960_adaline,minsky_papert_1969,fukushima_1980,kohonen_1982,hopfield_1982,werbos_1974,rumelhart_hinton_williams_1986,cybenko_1989,hornik_1991,hochreiter_schmidhuber_1997,lecun_bottou_bengio_haffner_1998,bishop_1995,haykin_1994}
+\citation{goodfellow2016deep,zhang2023mathematical,hinton_osindero_teh_2006,lecun_bengio_hinton_2015,goodfellow_et_al_2014,srivastava_hinton_2014_dropout,szegedy_2014_inception,simonyan_zisserman_2014_vgg,vaswani_et_al_2017_transformer,he_zhang_ren_sun_2016_resnet,devlin_2018_bert,brown_et_al_2020_gpt3}
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}System-wide structuralization}{138}{section.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.1}The idea of neural network formalism}{138}{subsection.6.3.1}\protected@file@percent }
+\citation{goodfellow2016deep,zhang2023mathematical}
+\citation{zhang2023mathematical}
+\@writefile{toc}{\contentsline {subsubsection}{Basic understanding}{139}{subsubsection*.55}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~6.3.1\else \numberline {6.3.1}Definition\fi \thmtformatoptarg {Standard multilayer network, \cite  {zhang2023mathematical}}}{139}{definition.1}\protected@file@percent }
+\citation{chen2021equivalence,wang2019svmdsn,zhang2014equivalence}
+\citation{Vapnik1999-VAPTNO}
+\@writefile{loe}{\contentsline {setting}{\ifthmt@listswap Setting~6.3.1\else \numberline {6.3.1}Setting\fi \thmtformatoptarg {Support vector machine}}{140}{setting.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{The SVM generator}{140}{subsubsection*.56}\protected@file@percent }
+\citation{Cristianini2000AnIT}
+\citation{wang2017research,chen2021equivalence}
+\@writefile{loa}{\contentsline {algocf}{\numberline {4}{\ignorespaces Support Vector Machine - backward construction.}}{142}{algocf.4}\protected@file@percent }
+\newlabel{algo:algo_SVM_no_kernel}{{4}{142}{The SVM generator}{equation.6.28}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.2}Attractor-based insights}{142}{subsection.6.3.2}\protected@file@percent }
+\@writefile{loe}{\contentsline {theorem}{\ifthmt@listswap Theorem~6.3.1\else \numberline {6.3.1}Theorem\fi \thmtformatoptarg {Heuristic-generalization tradeoff, model selection}}{142}{theorem.1}\protected@file@percent }
+\citation{mcculloch_logical_1943,Rosenblatt1958ThePA}
+\@writefile{loa}{\contentsline {algocf}{\numberline {5}{\ignorespaces Neural Network - forward construction class}}{143}{algocf.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.4}Reattaching the neural perspective}{143}{section.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.5}Motivation}{144}{section.6.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.1}Neurons perspective}{144}{subsection.6.5.1}\protected@file@percent }
+\@writefile{loe}{\contentsline {note}{\ifthmt@listswap Note~6.5.1\else \numberline {6.5.1}Note\fi }{145}{note.1}\protected@file@percent }
+\@writefile{loe}{\contentsline {theorem}{\ifthmt@listswap Theorem~6.5.1\else \numberline {6.5.1}Theorem\fi \thmtformatoptarg {Fundamental theorem of neural formalism}}{145}{theorem.1}\protected@file@percent }
+\newlabel{thm:fundamental_neuron}{{6.5.1}{145}{Fundamental theorem of neural formalism}{theorem.1}{}}
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~6.5.1\else \numberline {6.5.1}Definition\fi \thmtformatoptarg {Neuron}}{145}{definition.1}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~6.5.2\else \numberline {6.5.2}Definition\fi \thmtformatoptarg {Minimally defined neuron}}{145}{definition.2}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~6.5.3\else \numberline {6.5.3}Definition\fi \thmtformatoptarg {Classical neuron class}}{146}{definition.3}\protected@file@percent }
+\newlabel{def:neuclass}{{6.5.3}{146}{Classical neuron class}{definition.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Minimal neuron structure}}{146}{figure.caption.59}\protected@file@percent }
+\newlabel{fig:lable}{{6.2}{146}{Minimal neuron structure}{figure.caption.59}{}}
+\@writefile{loe}{\contentsline {proposition}{\ifthmt@listswap Proposition~6.5.2\else \numberline {6.5.2}Proposition\fi \thmtformatoptarg {Compound construction}}{146}{proposition.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Analysis}{147}{subsubsection*.60}\protected@file@percent }
+\citation{hu_model_2021}
+\citation{Cartuyvels_2021}
+\citation{M_ller_2022}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.2}Why we call it minimal}{149}{subsection.6.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.3}Preliminary Formalisation}{149}{subsection.6.5.3}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~6.5.4\else \numberline {6.5.4}Definition\fi \thmtformatoptarg {Primitive framework}}{149}{definition.4}\protected@file@percent }
+\citation{goodfellow2016deep,10.5555/2930837}
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~6.5.5\else \numberline {6.5.5}Definition\fi \thmtformatoptarg {Base neuron class}}{150}{definition.5}\protected@file@percent }
+\@@wrindexm@m{main}{outer typing|hyperpage}{150}
+\newmarginnote{note.164.1}{{164}{27772070sp}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.6}Polynomial insights}{150}{section.6.6}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~6.6.1\else \numberline {6.6.1}Definition\fi \thmtformatoptarg {Univariate polynomial}}{150}{definition.1}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~6.6.2\else \numberline {6.6.2}Definition\fi \thmtformatoptarg {Polynomial, multivariate generalization}}{150}{definition.2}\protected@file@percent }
+\citation{Schep2007}
+\@writefile{loe}{\contentsline {theorem}{\ifthmt@listswap Theorem~6.6.1\else \numberline {6.6.1}Theorem\fi \thmtformatoptarg {Weierstrass Approximation Theorem}}{151}{theorem.1}\protected@file@percent }
+\newlabel{thm:Weierstrass_AT}{{6.6.1}{151}{Weierstrass Approximation Theorem}{theorem.1}{}}
+\citation{sury2019weierstrass,bernsprob2023}
+\@writefile{loe}{\contentsline {theorem}{\ifthmt@listswap Theorem~6.6.2\else \numberline {6.6.2}Theorem\fi \thmtformatoptarg {Stone-Weierstrass Theorem (real version)}}{152}{theorem.2}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~6.6.3\else \numberline {6.6.3}Definition\fi \thmtformatoptarg {Interpolation}}{152}{definition.3}\protected@file@percent }
+\citation{NieYangZhou2021}
+\@writefile{loe}{\contentsline {theorem}{\ifthmt@listswap Theorem~6.6.3\else \numberline {6.6.3}Theorem\fi \thmtformatoptarg {Unisolvence theorem}}{153}{theorem.3}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~6.6.4\else \numberline {6.6.4}Definition\fi \thmtformatoptarg {Saddle point,\cite  {NieYangZhou2021}}}{153}{definition.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces \small  Table of monotonicity for the saddle point landscape between $[a,b]$, for both cases of the landscape.}}{153}{figure.caption.61}\protected@file@percent }
+\newlabel{fig:monotonicity_test}{{6.3}{153}{\small Table of monotonicity for the saddle point landscape between $[a,b]$, for both cases of the landscape}{figure.caption.61}{}}
+\@writefile{loe}{\contentsline {assumption}{\ifthmt@listswap Assumption~6.6.4\else \numberline {6.6.4}Assumption\fi \thmtformatoptarg {Transparency}}{153}{assumption.4}\protected@file@percent }
+\@writefile{loe}{\contentsline {conjecture}{\ifthmt@listswap Conjecture~6.6.1\else \numberline {6.6.1}Conjecture\fi }{154}{conjecture.1}\protected@file@percent }
+\@writefile{loe}{\contentsline {assumption}{\ifthmt@listswap Assumption~6.6.5\else \numberline {6.6.5}Assumption\fi \thmtformatoptarg {Fallacy}}{154}{assumption.5}\protected@file@percent }
+\@writefile{loe}{\contentsline {definition}{\ifthmt@listswap Definition~6.6.5\else \numberline {6.6.5}Definition\fi \thmtformatoptarg {Dataset uncertainty}}{154}{definition.5}\protected@file@percent }
+\citation{nakkiran2019datahurtlinearregression}
+\@writefile{loe}{\contentsline {theorem}{\ifthmt@listswap Theorem~6.6.6\else \numberline {6.6.6}Theorem\fi \thmtformatoptarg {Separation Encoding under Diffusion}}{155}{theorem.6}\protected@file@percent }
+\citation{Runge1901,CorlessSevyeri2018,AMC2009RungeDivergence}
+\@writefile{loe}{\contentsline {conjecture}{\ifthmt@listswap Conjecture~6.6.2\else \numberline {6.6.2}Conjecture\fi \thmtformatoptarg {Probabilistic layer}}{157}{conjecture.2}\protected@file@percent }
+\newlabel{eq:soft_hard_interpolation_role}{{6.57}{158}{Polynomial insights}{equation.6.57}{}}
+\@writefile{loe}{\contentsline {hypothesis}{\ifthmt@listswap Hypothesis~6.6.1\else \numberline {6.6.1}Hypothesis\fi \thmtformatoptarg {Polynomial double descent}}{159}{hypothesis.1}\protected@file@percent }
+\newlabel{hyp:hypothesis_poly_dd}{{6.6.1}{159}{Polynomial double descent}{hypothesis.1}{}}
+\@writefile{loe}{\contentsline {conjecture}{\ifthmt@listswap Conjecture~6.6.3\else \numberline {6.6.3}Conjecture\fi \thmtformatoptarg {Double descent}}{159}{conjecture.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces \small  \textbf  {Intuition of Hypothesis~\ref {hyp:hypothesis_poly_dd}}. Effectively, in the overparameterized range $(p>n)$, the problem turns into soft interpolation, where the polynomial is possible to be dense enough such that relative error remains internally low. This can also happen if the dataset itself is intrinsically large.}}{159}{figure.caption.62}\protected@file@percent }
 \@setckpt{content/c6.5}{
-\setcounter{page}{68}
-\setcounter{equation}{1}
-\setcounter{enumi}{4}
+\setcounter{page}{160}
+\setcounter{equation}{57}
+\setcounter{enumi}{3}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
 \setcounter{enumiv}{0}
-\setcounter{footnote}{6}
+\setcounter{footnote}{9}
 \setcounter{mpfootnote}{0}
 \setcounter{@memmarkcntra}{0}
 \setcounter{storedpagenumber}{1}
 \setcounter{book}{0}
 \setcounter{part}{0}
-\setcounter{chapter}{4}
-\setcounter{section}{2}
+\setcounter{chapter}{6}
+\setcounter{section}{6}
 \setcounter{subsection}{0}
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
@@ -77,49 +164,49 @@
 \setcounter{cmsm@mctr}{0}
 \setcounter{bsm@mctr}{0}
 \setcounter{workm@mctr}{0}
-\setcounter{sheetsequence}{80}
-\setcounter{lastsheet}{167}
-\setcounter{lastpage}{155}
-\setcounter{figure}{0}
+\setcounter{sheetsequence}{174}
+\setcounter{lastsheet}{229}
+\setcounter{lastpage}{215}
+\setcounter{figure}{4}
 \setcounter{lofdepth}{1}
-\setcounter{table}{1}
+\setcounter{table}{0}
 \setcounter{lotdepth}{1}
 \setcounter{parentequation}{0}
-\setcounter{tkz@cnt@line}{0}
-\setcounter{tkz@cnt@lg}{0}
-\setcounter{tkz@cnt@cl}{0}
-\setcounter{tkz@cnt@pred}{0}
+\setcounter{tkz@cnt@line}{5}
+\setcounter{tkz@cnt@lg}{4}
+\setcounter{tkz@cnt@cl}{4}
+\setcounter{tkz@cnt@pred}{3}
 \setcounter{tkz@cnt@temp}{0}
-\setcounter{tkz@cnt@arrow}{0}
+\setcounter{tkz@cnt@arrow}{4}
 \setcounter{tkz@cnt@zone}{0}
-\setcounter{tkz@cnt@lgnext}{0}
-\setcounter{tkz@cnt@clnext}{0}
-\setcounter{tkz@cnt@pair}{0}
-\setcounter{tkz@cnt@impair}{0}
-\setcounter{tkz@cnt@aw}{0}
+\setcounter{tkz@cnt@lgnext}{5}
+\setcounter{tkz@cnt@clnext}{4}
+\setcounter{tkz@cnt@pair}{4}
+\setcounter{tkz@cnt@impair}{5}
+\setcounter{tkz@cnt@aw}{4}
 \setcounter{caption@flags}{2}
 \setcounter{continuedfloat}{0}
 \setcounter{parnotemark}{1}
 \setcounter{float@type}{8}
-\setcounter{thmt@dummyctr}{84}
+\setcounter{thmt@dummyctr}{148}
 \setcounter{tabularnote}{0}
 \setcounter{nicematrix_draft}{0}
 \setcounter{subfigure}{0}
 \setcounter{subtable}{0}
 \setcounter{NAT@ctr}{0}
 \setcounter{@todonotes@numberoftodonotes}{1}
-\setcounter{Item}{46}
-\setcounter{Hfootnote}{16}
-\setcounter{bookmark@seq@number}{67}
+\setcounter{Item}{86}
+\setcounter{Hfootnote}{32}
+\setcounter{bookmark@seq@number}{99}
 \setcounter{memhycontfloat}{0}
 \setcounter{mem@Hpagenote}{0}
 \setcounter{tcbbreakpart}{0}
 \setcounter{tcblayer}{0}
 \setcounter{tcolorbox@number}{0}
 \setcounter{AlgoLine}{0}
-\setcounter{algocfline}{0}
-\setcounter{algocfproc}{0}
-\setcounter{algocf}{0}
+\setcounter{algocfline}{5}
+\setcounter{algocfproc}{5}
+\setcounter{algocf}{5}
 \setcounter{ALG@line}{0}
 \setcounter{ALG@rem}{0}
 \setcounter{ALG@nested}{0}
@@ -129,20 +216,20 @@
 \setcounter{ALG@tmpcounter}{0}
 \setcounter{SC@C}{1}
 \setcounter{etoc@tocid}{1}
-\setcounter{definition}{0}
-\setcounter{theorem}{0}
+\setcounter{definition}{5}
+\setcounter{theorem}{6}
 \setcounter{col}{0}
-\setcounter{conjecture}{0}
+\setcounter{conjecture}{3}
 \setcounter{setting}{0}
 \setcounter{assume}{0}
-\setcounter{hypothesis}{0}
+\setcounter{hypothesis}{1}
 \setcounter{axiom}{0}
 \setcounter{question}{0}
 \setcounter{example}{0}
 \setcounter{note}{0}
 \setcounter{claim}{0}
 \setcounter{construction}{0}
-\setcounter{mn@abspage}{80}
+\setcounter{mn@abspage}{174}
 \setcounter{tabularnotesi}{0}
 \setcounter{tabularnotes*i}{0}
 }
