@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.13)  27 APR 2026 01:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.13)  20 MAY 2026 17:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1902,29 +1902,29 @@ LaTeX Font Info:    Font shape `T1/ETbb-TLF/regular/it' will be
 (Font)              scaled to size 10.0pt on input line 83.
 [2]
 Overfull \hbox (0.81998pt too wide) detected at line 83
- \T1/cmss/m/n/10.95 129
+ \T1/cmss/m/n/10.95 137
  []
 
 
 Overfull \hbox (0.81998pt too wide) detected at line 83
- \T1/cmss/m/n/10.95 161
+ \T1/cmss/m/n/10.95 169
  []
 
 
 Overfull \hbox (0.81998pt too wide) detected at line 83
- \T1/cmss/m/n/10.95 165
+ \T1/cmss/m/n/10.95 173
  []
 
 
 Overfull \hbox (0.81998pt too wide) detected at line 83
- \T1/cmss/m/n/10.95 183
+ \T1/cmss/m/n/10.95 191
  []
 
 
 
 [3]
 Overfull \hbox (0.81998pt too wide) detected at line 83
- \T1/cmss/m/n/10.95 195
+ \T1/cmss/m/n/10.95 203
  []
 
 
@@ -1989,12 +1989,1750 @@ LaTeX Font Info:    Font shape `T1/ETbb-TLF/regular/sc' will be
 )
 
 [8{D:/MikTek/fonts/enc/dvips/etbb/etbb_6bhqsy.enc}]
+\openout2 = `content/introduction.aux'.
+
+ (content/introduction.tex
+LaTeX Font Info:    Font shape `T1/ETbb-TLF/regular/n' will be
+(Font)              scaled to size 17.28pt on input line 1.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[9
+
+
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[10]
+LaTeX Font Info:    Font shape `T1/ETbb-TLF/regular/it' will be
+(Font)              scaled to size 8.0pt on input line 16.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[11])
+
+[12]
+\openout2 = `content/c1.aux'.
+
+ (content/c1.tex
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.19     W
+          hile the topic itself is much more complex than it is guaranteed t... [1
+
+
+
+
+
+]
+Package hyperref Info: bookmark level for unknown note defaults to 0 on input line 19.
+LaTeX Font Info:    Trying to load font information for TS1+ETbb-TLF on input line 21.
+ (D:\MikTek\tex/latex/etbb\ts1etbb-tlf.fd
+File: TS1ETbb-TLF.fd 2020/07/01 (autoinst) Font definitions for TS1/ETbb-TLF.
+)
+LaTeX Font Info:    Font shape `TS1/ETbb-TLF/regular/n' will be
+(Font)              scaled to size 10.0pt on input line 21.
+Package marginnote Info: Margin note 16.1 is on absolute page 16 on input line 37.
+Package marginnote Info: xpos seems to be 532.03224pt on input line 37.
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 53.
+ (D:\MikTek\tex/latex/bbm\ubbm.fd
+File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
+)
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.59 \end{proof}
+                 [2{D:/MikTek/fonts/enc/dvips/etbb/etbb_6z6nrw.enc}]
+Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 83.
+
+
+[3]
+
+[4]
+
+[5]
+Package marginnote Info: Margin note 20.1 is on absolute page 20 on input line 180.
+Package marginnote Info: xpos seems to be 266.66606pt on input line 180.
+Package marginnote Info: Margin note 20.2 is on absolute page 20 on input line 184.
+Package marginnote Info: xpos seems to be 414.60382pt on input line 184.
+Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 184.
+
+
+[6
+pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.207     \end{enumerate}
+                         ]
+
+[7]
+pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.238     A
+            \textbf{simple graph} is a pair $(V,E)$, where $V$ is a finite s...
+pdfTeX warning (ext4): destination with the same identifier (name{definition.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.244     L
+           et $G=(V,E)$ be a simple graph.
+Overfull \hbox (1.85974pt too wide) in paragraph at lines 254--255
+[][]\T1/ETbb-TLF/bold/n/10 Definition 1.3.3 \T1/ETbb-TLF/regular/n/10 (Con-nect-ed-ness)\T1/ETbb-TLF/bold/n/10 . []\T1/ETbb-TLF/regular/n/10 If the two graphs are $\OML/cmm/m/it/10 G[] \OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 V\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 G[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; E\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 G[]\OT1/cmr/m/n/10 ))$ \T1/ETbb-TLF/regular/n/10 and $\OML/cmm/m/it/10 G[] \OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 V\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 G[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; E\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 G[]\OT1/cmr/m/n/10 ))$
+ []
+
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 267.
+
+
+[8]
+
+[9]
+Overfull \hbox (2.08855pt too wide) in paragraph at lines 338--339
+[][]\T1/ETbb-TLF/bold/n/10 Definition 1.3.14 \T1/ETbb-TLF/regular/n/10 (Lapla-cian ma-trix)\T1/ETbb-TLF/bold/n/10 . []\T1/ETbb-TLF/regular/n/10 Let $\OML/cmm/m/it/10 G$ \T1/ETbb-TLF/regular/n/10 be a graph with $\OT1/cmr/m/n/10 V(\OML/cmm/m/it/10 G\OT1/cmr/m/n/10 ) = \OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 ; [] ; n\OMS/cmsy/m/n/10 g$ \T1/ETbb-TLF/regular/n/10 and $\OT1/cmr/m/n/10 E(\OML/cmm/m/it/10 G\OT1/cmr/m/n/10 ) = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 e[]; [] ; e[]\OMS/cmsy/m/n/10 g$\T1/ETbb-TLF/regular/n/10 .
+ []
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.354   I
+         n any graph $G$, the sum of all the vertex-degree is an even number...
+
+[10]
+
+[11])
+
+[12]
+\openout2 = `content/c3.aux'.
+
+ (content/c3.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[13
+
+
+
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[14]
+Underfull \vbox (badness 1325) has occurred while \output is active []
+
+
+
+[15]
+Package marginnote Info: Margin note 30.1 is on absolute page 30 on input line 37.
+Package marginnote Info: xpos seems to be 419.98795pt on input line 37.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.39     C
+          ategorization of system can be defined on the \textbf{transparency...
+Package marginnote Info: Margin note 30.2 is on absolute page 30 on input line 48.
+Package marginnote Info: xpos seems to be 455.31293pt on input line 48.
+Package marginnote Info: Margin note 30.3 is on absolute page 30 on input line 48.
+Package marginnote Info: xpos seems to be 361.8106pt on input line 48.
+Package marginnote Info: Margin note 30.4 is on absolute page 30 on input line 49.
+Package marginnote Info: xpos seems to be 429.83786pt on input line 49.
+
+
+[16]
+LaTeX Font Info:    Font shape `T1/ETbb-TLF/bold/n' will be
+(Font)              scaled to size 8.0pt on input line 54.
+
+
+[17]
+
+[18]
+pdfTeX warning (ext4): destination with the same identifier (name{definition.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.74   A
+         procedure $\mathcal{P}$ is called a \textbf{learning process}, give...
+
+[19]
+Package marginnote Info: Margin note 34.1 is on absolute page 34 on input line 84.
+Package marginnote Info: xpos seems to be 311.19254pt on input line 84.
+
+
+[20]
+pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.104     G
+           iven a hypothesis $h\in \mathcal{H}$, a target concept $c\in \mat...
+Package marginnote Info: Margin note 35.1 is on absolute page 35 on input line 104.
+Package marginnote Info: xpos seems to be 215.08807pt on input line 104.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definition.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.114     G
+           iven a hypothesis $h\in\mathcal{H}$, a target concept $c\in\mathc...
+Package marginnote Info: Margin note 35.2 is on absolute page 35 on input line 114.
+Package marginnote Info: xpos seems to be 236.84148pt on input line 114.
+
+
+[21]
+
+[22]
+
+[23]
+<pdf/figfig-crop.pdf, id=1575, 191.71625pt x 135.50626pt>
+File: pdf/figfig-crop.pdf Graphic file (type pdf)
+<use pdf/figfig-crop.pdf>
+Package pdftex.def Info: pdf/figfig-crop.pdf  used on input line 162.
+(pdftex.def)             Requested size: 258.00539pt x 182.38586pt.
+Package marginnote Info: Margin note 38.1 is on absolute page 38 on input line 168.
+Package marginnote Info: xpos seems to be 521.80748pt on input line 168.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definition.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.169     G
+           iven a distribution $\mathcal{D}$, the Bayes error $R^{*}$ is def...
+pdfTeX warning (ext4): destination with the same identifier (name{definition.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.175     A
+            hypothesis $h$ with $R(h)=R^{*}$ is called a \textit{Bayes hypot...
+
+[24 <./pdf/figfig-crop.pdf>]
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.184     W
+           e suppose the statistical, classical learning problem setting. Th...
+LaTeX Font Info:    Font shape `T1/ETbb-TLF/bold/it' will be
+(Font)              scaled to size 10.0pt on input line 188.
+
+
+[25]
+
+[26]
+pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.216     A
+            learning scenario is called \textit{model-specific} learning if,...
+Package marginnote Info: Margin note 41.1 is on absolute page 41 on input line 216.
+Package marginnote Info: xpos seems to be 252.14082pt on input line 216.
+Package marginnote Info: Margin note 41.2 is on absolute page 41 on input line 222.
+Package marginnote Info: xpos seems to be 170.03488pt on input line 222.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definition.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.224     A
+            learning scenario is called \textit{model-free} learning if, for...
+
+[27]
+pdfTeX warning (ext4): destination with the same identifier (name{definition.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.251     L
+           et $\mathcal{C}$ be a concept class over $X$. We say that $\mathc...
+
+[28]
+Package marginnote Info: Margin note 43.1 is on absolute page 43 on input line 270.
+Package marginnote Info: xpos seems to be 151.56995pt on input line 270.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definition.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.277     F
+           or a given concept class $\mathcal{C}$, a \textbf{representation ...
+
+LaTeX Font Warning: Font shape `U/stmry/b/n' undefined
+(Font)              using `U/stmry/m/n' instead on input line 277.
+
+
+
+[29]
+Package marginnote Info: Margin note 44.1 is on absolute page 44 on input line 282.
+Package marginnote Info: xpos seems to be 300.26265pt on input line 282.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definition.5}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.287     G
+           iven a concept $c\in\mathcal{C}$, the \textbf{representation comp...
+pdfTeX warning (ext4): destination with the same identifier (name{definition.6}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.298     A
+            concept class $\mathcal{C}$ is said to be \textbf{PAC-learnable}...
+
+[30]
+Package hyperref Info: bookmark level for unknown assumption defaults to 0 on input line 307.
+
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.316     L
+           et $H$ be a finite set of functions mapping from $\mathcal{X}\to ...
+
+[31]
+
+[32]
+pdfTeX warning (ext4): destination with the same identifier (name{definition.7}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.366     A
+            concept class $\mathcal{C}$ is said to be \textbf{PAC-learnable}...
+
+[33]
+pdfTeX warning (ext4): destination with the same identifier (name{definition.8}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.375     W
+           e say that a learning algorithm for a problem $(\mathcal{X},\math...
+pdfTeX warning (ext4): destination with the same identifier (name{definition.9}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.401     A
+            learning problem is learnable if there exist a learning rule $\m...
+
+[34]
+pdfTeX warning (ext4): destination with the same identifier (name{definition.10}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.410     A
+            rule $\mathcal{A}$ is an ERM (Empirical Risk Minimizer), denoted...
+pdfTeX warning (ext4): destination with the same identifier (name{definition.11}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.420     A
+            rule $\mathcal{A}$ is an SRM (Structural Risk Minimizer), denote...
+Package hyperref Info: bookmark level for unknown conjecture defaults to 0 on input line 429.
+
+
+[35]
+Package hyperref Info: bookmark level for unknown proposition defaults to 0 on input line 443.
+
+
+[36]
+
+[37]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\begingroup' on input line 517.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<let>-command' on input line 517.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\NAT@ctype' on input line 517.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@' on input line 517.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\let' on input line 517.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\let' on input line 517.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\new@ifnextchar' on input line 517.
+
+Package marginnote Info: Margin note 52.1 is on absolute page 52 on input line 519.
+Package marginnote Info: xpos seems to be 463.35764pt on input line 519.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definition.12}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.521     G
+           iven a distribution $\mathcal{D}$ over $\mathcal{X}\times \mathca...
+
+[38]
+pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.547     L
+           et $\alpha \geq 0$ and $0\leq \beta < 1$ be constant. $L$ is an $...
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.558     F
+           ix $n$. Then $\mathcal{O}(n\cdot size(c))^{\alpha} m^{\beta}$ is ...
+
+[39]
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.571     L
+           et $L$ be an efficient $(\alpha,\beta)$-Occam algorithm for $\mat...
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.582     L
+           et $\mathcal{C}$ be a concept class and $\mathcal{H}$ a represent...
+
+[40]
+
+[41]
+Package marginnote Info: Margin note 56.1 is on absolute page 56 on input line 628.
+Package marginnote Info: xpos seems to be 348.318pt on input line 628.
+LaTeX Font Info:    Trying to load font information for U+euf on input line 631.
+ (D:\MikTek\tex/latex/amsfonts\ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
+Package marginnote Info: Margin note 56.2 is on absolute page 56 on input line 634.
+Package marginnote Info: xpos seems to be 349.61931pt on input line 634.
+
+
+[42]
+Package marginnote Info: Margin note 57.1 is on absolute page 57 on input line 640.
+Package marginnote Info: xpos seems to be 337.00992pt on input line 640.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.641     L
+           et $\mathcal{D}$ denote the distribution according to which sampl...
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.650     L
+           et $\mathcal{G}$ be a family of functions mapping from $\mathcal{...
+
+[43]
+
+[44]
+Package hyperref Info: bookmark level for unknown col defaults to 0 on input line 717.
+
+Overfull \hbox (6.97476pt too wide) in paragraph at lines 723--723
+[]\T1/ETbb-TLF/regular/n/10 We may con-sider the em-pir-i-cal Rademacher com-plex-ity $\OML/cmm/m/it/10 R[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 G\OT1/cmr/m/n/10 )$ \T1/ETbb-TLF/regular/n/10 as a func-tion of the points $\OML/cmm/m/it/10 z[]; [] ; z[]$
+ []
+
+Package hyperref Info: bookmark level for unknown lemma defaults to 0 on input line 734.
+
+
+[45]
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.761     L
+           et $\mathcal{H}$ be a family of functions taking values in $\{-1,...
+Package marginnote Info: Margin note 60.1 is on absolute page 60 on input line 776.
+Package marginnote Info: xpos seems to be 538.08888pt on input line 776.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definition.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.778     G
+           iven a binary class of functions $\mathcal{H}$, we define the \te...
+
+[46]
+
+[47]
+Package marginnote Info: Margin note 62.1 is on absolute page 62 on input line 831.
+Package marginnote Info: xpos seems to be 446.47987pt on input line 831.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.834     W
+           e say that a finite set $S\subset \mathcal{X}$ is \textbf{shatter...
+Package marginnote Info: Margin note 62.2 is on absolute page 62 on input line 838.
+Package marginnote Info: xpos seems to be 413.40665pt on input line 838.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definition.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.839     T
+           he \textbf{VC}-dimension of a hypothesis set $\mathcal{H}$ is the...
+
+[48]
+Package marginnote Info: Margin note 63.1 is on absolute page 63 on input line 846.
+Package marginnote Info: xpos seems to be 472.55403pt on input line 846.
+
+Overfull \hbox (12.76323pt too wide) in paragraph at lines 846--847
+[]\T1/ETbb-TLF/regular/n/10 A fa-mous ex-am-ple il-lus-trat-ing this con-cept is the prob-lem of half-s-pace par-ti-tion. The \T1/ETbb-TLF/bold/n/10 half-s-pace [] |[]\T1/ETbb-TLF/regular/n/10 hypothesis
+ []
+
+Package marginnote Info: Margin note 63.2 is on absolute page 63 on input line 877.
+Package marginnote Info: xpos seems to be 199.52998pt on input line 877.
+
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.878     L
+           et $\mathcal{H}$ be a hypothesis set with $\mathrm{VCdim}(\mathca...
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 880.
+
+
+
+[49]
+
+[50])
+
+[51]
+\openout2 = `content/c4.aux'.
+
+ (content/c4.tex
+
+[52
+
+
+
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[53]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[54]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[55]
+LaTeX Font Info:    Font shape `T1/ETbb-TLF/m/n' aliased to
+(Font)              `T1/ETbb-TLF/regular/n' on input line 61.
+LaTeX Font Info:    Font shape `T1/ETbb-TLF/regular/n' will be
+(Font)              scaled to size 9.0pt on input line 61.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.62     W
+          e say that an algorithm is a consistent learner for a concept clas...
+pdfTeX warning (ext4): destination with the same identifier (name{assumption.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.72     T
+          he algorithm is capable of extrapolate the entire coverage structu...
+
+[56]
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.82     L
+          et $H$ be a finite set of functions mapping from $\mathcal{X}\to \...
+<pdf/PAC_sample_complexity.pdf, id=2165, 601.84767pt x 608.34558pt>
+File: pdf/PAC_sample_complexity.pdf Graphic file (type pdf)
+<use pdf/PAC_sample_complexity.pdf>
+Package pdftex.def Info: pdf/PAC_sample_complexity.pdf  used on input line 97.
+(pdftex.def)             Requested size: 301.00192pt x 304.2463pt.
+<pdf/PAC_generalization_bound.pdf, id=2166, 708.24597pt x 491.436pt>
+File: pdf/PAC_generalization_bound.pdf Graphic file (type pdf)
+<use pdf/PAC_generalization_bound.pdf>
+Package pdftex.def Info: pdf/PAC_generalization_bound.pdf  used on input line 104.
+(pdftex.def)             Requested size: 301.00192pt x 208.86128pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{col.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.124     F
+           ix $\epsilon > 0$. Then, for any hypothesis $h: X \to \{0,1\}$, t...
+
+[57]
+
+[58 <./pdf/PAC_sample_complexity.pdf>]
+
+[59 <./pdf/PAC_generalization_bound.pdf>]
+pdfTeX warning (ext4): destination with the same identifier (name{col.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.179     F
+           ix a hypothesis $h: \mathcal{X}\to \{0,1\}$ or more generally ont...
+
+[60]
+
+[61]
+Package hyperref Info: bookmark level for unknown hypothesis defaults to 0 on input line 236.
+<media/interpolation_threshold_tau.png, id=2311, 1084.05pt x 481.8pt>
+File: media/interpolation_threshold_tau.png Graphic file (type png)
+<use media/interpolation_threshold_tau.png>
+Package pdftex.def Info: media/interpolation_threshold_tau.png  used on input line 253.
+(pdftex.def)             Requested size: 387.00153pt x 171.99959pt.
+
+
+[62 <./media/interpolation_threshold_tau.png>]
+
+[63]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[64]
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.318     S
+           uppose the model $f(x;\mathcal{D})$ for the data $\mathcal{D}=(x_...
+
+[65]
+LaTeX Font Info:    Font shape `T1/ETbb-TLF/regular/it' will be
+(Font)              scaled to size 7.0pt on input line 328.
+LaTeX Font Info:    Font shape `T1/ETbb-TLF/regular/it' will be
+(Font)              scaled to size 5.0pt on input line 328.
+<media/error_decomposition.png, id=2370, 174.1707pt x 87.4467pt>
+File: media/error_decomposition.png Graphic file (type png)
+<use media/error_decomposition.png>
+Package pdftex.def Info: media/error_decomposition.png  used on input line 333.
+(pdftex.def)             Requested size: 150.50424pt x 75.56961pt.
+
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.354 \begin{theorem}[Bias-variance tradeoff]
+                                             \label{thm:bias-variance} [66 <./media/error_decomposition.png>]
+
+[67]
+Underfull \vbox (badness 1596) has occurred while \output is active []
+
+
+
+[68]
+<pdf/u-shaped.pdf, id=2441, 114.32813pt x 75.23106pt>
+File: pdf/u-shaped.pdf Graphic file (type pdf)
+<use pdf/u-shaped.pdf>
+Package pdftex.def Info: pdf/u-shaped.pdf  used on input line 434.
+(pdftex.def)             Requested size: 109.94737pt x 72.34467pt.
+<pdf/doubledescent.pdf, id=2442, 203.12387pt x 75.23106pt>
+File: pdf/doubledescent.pdf Graphic file (type pdf)
+<use pdf/doubledescent.pdf>
+Package pdftex.def Info: pdf/doubledescent.pdf  used on input line 435.
+(pdftex.def)             Requested size: 195.34073pt x 72.34467pt.
+
+
+[69 <./pdf/u-shaped.pdf> <./pdf/doubledescent.pdf>]
+pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.455     A
+           ssuming a typical supervised learning setting, for a hypothesis $...
+<media/errorvscomplexity.png, id=2509, 986.7264pt x 263.5446pt>
+File: media/errorvscomplexity.png Graphic file (type png)
+<use media/errorvscomplexity.png>
+Package pdftex.def Info: media/errorvscomplexity.png  used on input line 466.
+(pdftex.def)             Requested size: 430.00462pt x 114.85008pt.
+<media/introroc1.png, id=2514, 885.0666pt x 493.3632pt>
+File: media/introroc1.png Graphic file (type png)
+<use media/introroc1.png>
+Package pdftex.def Info: media/introroc1.png  used on input line 489.
+(pdftex.def)             Requested size: 220.15953pt x 122.72319pt.
+<media/introroc2.png, id=2515, 869.1672pt x 493.3632pt>
+File: media/introroc2.png Graphic file (type png)
+<use media/introroc2.png>
+Package pdftex.def Info: media/introroc2.png  used on input line 493.
+(pdftex.def)             Requested size: 209.84508pt x 119.1097pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definition.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.503 T
+       he \emph{Effective Model Complexity} (EMC) of a training procedure $\...
+pdfTeX warning (ext4): destination with the same identifier (name{hypothesis.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.515 F
+       or any natural data distribution $\cD$, neural-network-based training...
+
+[70]
+
+[71 <./media/errorvscomplexity.png> <./media/introroc1.png> <./media/introroc2.png>]
+pdfTeX warning (ext4): destination with the same identifier (name{conjecture.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.543     O
+           n the landscape of double descent, model complexity versus genera...
+
+[72]
+
+[73]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\begingroup' on input line 578.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<let>-command' on input line 578.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\NAT@ctype' on input line 578.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@' on input line 578.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\let' on input line 578.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\let' on input line 578.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\new@ifnextchar' on input line 578.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[74]
+
+[75]
+
+[76]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\begingroup' on input line 631.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<let>-command' on input line 631.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\NAT@ctype' on input line 631.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@' on input line 631.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\let' on input line 631.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\let' on input line 631.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\new@ifnextchar' on input line 631.
+
+Package hyperref Info: bookmark level for unknown claim defaults to 0 on input line 635.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\begingroup' on input line 666.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<let>-command' on input line 666.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\NAT@ctype' on input line 666.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@' on input line 666.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\let' on input line 666.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\let' on input line 666.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\new@ifnextchar' on input line 666.
+
+
+
+[77]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\begingroup' on input line 675.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<let>-command' on input line 675.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\NAT@ctype' on input line 675.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@' on input line 675.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\let' on input line 675.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\let' on input line 675.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\new@ifnextchar' on input line 675.
+
+Package marginnote Info: Margin note 92.1 is on absolute page 92 on input line 677.
+Package marginnote Info: xpos seems to be 477.73834pt on input line 677.
+
+pdfTeX warning (ext4): destination with the same identifier (name{assumption.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.696     A
+           s $N, m, d \to \infty$, we have:
+pdfTeX warning (ext4): destination with the same identifier (name{assumption.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.705     T
+           here exist $0 < \xi_{\min} < \xi_{\max}$ such that for every $m$,...
+
+[78]
+<img/taxi.png, id=2706, 1896.08376pt x 1896.08376pt>
+File: img/taxi.png Graphic file (type png)
+<use img/taxi.png>
+Package pdftex.def Info: img/taxi.png  used on input line 721.
+(pdftex.def)             Requested size: 107.50114pt x 107.4819pt.
+ (pdf/msbe_err.tex)
+
+[79 <./img/taxi.png>]
+
+[80]
+
+[81]
+
+[82]
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.780     L
+           et $\alpha = C< \frac{1}{(1+\sqrt{p/n})^2}$, the expected test er...)
+
+[83]
+\openout2 = `content/c5.aux'.
+
+ (content/c5.tex
+
+[84
+
+
+
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[85]
+
+[86]
+
+[87]
+pdfTeX warning (ext4): destination with the same identifier (name{conjecture.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.62     T
+          he probability of dataset representing wrong $n$-univariate polyno...
+
+[88]
+Overfull \hbox (27.13333pt too wide) in paragraph at lines 81--82
+[]\T1/ETbb-TLF/regular/n/10 Polynomial, chang-ing ba-sis con-struc-tion, $\OT1/cmr/m/n/10 [\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1]$ \T1/ETbb-TLF/regular/n/10 range: Use mod-ules, like \T1/cmtt/m/n/10 numpy.polynomial.legendre\T1/ETbb-TLF/regular/n/10 ,
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\begingroup' on input line 86.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<let>-command' on input line 86.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\NAT@ctype' on input line 86.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@' on input line 86.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\let' on input line 86.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\let' on input line 86.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\new@ifnextchar' on input line 86.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 86.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 86.
+
+
+
+[89]
+<img/generation_condition_1.png, id=2888, 712.5822pt x 420.6114pt>
+File: img/generation_condition_1.png Graphic file (type png)
+<use img/generation_condition_1.png>
+Package pdftex.def Info: img/generation_condition_1.png  used on input line 114.
+(pdftex.def)             Requested size: 344.005pt x 203.05284pt.
+<img/generation_condition_2.png, id=2889, 708.246pt x 421.3341pt>
+File: img/generation_condition_2.png Graphic file (type png)
+<use img/generation_condition_2.png>
+Package pdftex.def Info: img/generation_condition_2.png  used on input line 120.
+(pdftex.def)             Requested size: 344.005pt x 204.64896pt.
+
+
+[90]
+
+LaTeX Warning: Reference `fig:uncertainty_condition_1' on page 91 undefined on input line 132.
+
+
+
+[91 <./img/generation_condition_1.png>]
+<img/uncertainty_U_linearized.png, id=2905, 481.8pt x 481.8pt>
+File: img/uncertainty_U_linearized.png Graphic file (type png)
+<use img/uncertainty_U_linearized.png>
+Package pdftex.def Info: img/uncertainty_U_linearized.png  used on input line 143.
+(pdftex.def)             Requested size: 139.11557pt x 139.11914pt.
+<img/ETP1.png, id=2906, 708.246pt x 421.3341pt>
+File: img/ETP1.png Graphic file (type png)
+<use img/ETP1.png>
+Package pdftex.def Info: img/ETP1.png  used on input line 144.
+(pdftex.def)             Requested size: 280.62405pt x 166.94466pt.
+
+Overfull \hbox (13.73503pt too wide) in paragraph at lines 142--147
+ [][] 
+ []
+
+<img/poly_dataset.png, id=2907, 982.67125pt x 585.18625pt>
+File: img/poly_dataset.png Graphic file (type png)
+<use img/poly_dataset.png>
+Package pdftex.def Info: img/poly_dataset.png  used on input line 154.
+(pdftex.def)             Requested size: 344.005pt x 204.85397pt.
+
+
+[92 <./img/generation_condition_2.png>]
+Overfull \hbox (2.13466pt too wide) in paragraph at lines 161--162
+[]\T1/ETbb-TLF/regular/n/10 Polynomial re-gres-sion is then one such an-a-lyt-i-cal so-lu-tion to func-tion ap-prox-i-ma-tion task, us-ing Weier-
+ []
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{assumption.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.166     F
+           or any bivariate pair $(x,y)$, we assume each pair depends on and...
+pdfTeX warning (ext4): destination with the same identifier (name{conjecture.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.172     I
+           f $\forall x$ there exists $y$ corresponding to such, and $(x,y)\...
+
+[93 <./img/uncertainty_U_linearized.png (PNG copy)> <./img/ETP1.png>]
+pdfTeX warning (ext4): destination with the same identifier (name{assumption.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.177     W
+           e assume there exists every specific bivariate pair $(x_{i},y_{i}...
+pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.185     G
+           iven a closed interval $[a,b]$, for the sample set $\mathcal{S}_{...
+
+[94 <./img/poly_dataset.png (PNG copy)>]
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.211 ...rem}[Separation Encoding under Diffusion]
+                                                   [95]
+
+[96]
+Package marginnote Info: Margin note 111.1 is on absolute page 111 on input line 293.
+Package marginnote Info: xpos seems to be 397.25659pt on input line 293.
+
+
+[97]
+
+[98]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 308.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 308.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\begingroup' on input line 308.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<let>-command' on input line 308.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\NAT@ctype' on input line 308.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@' on input line 308.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\let' on input line 308.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\let' on input line 308.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\new@ifnextchar' on input line 308.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 308.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 308.
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.313 F
+       or $p \in \llbracket1,d\rrbracket$, $\mathcal{H}_p$ is the set of fun...
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.328 L
+       et $(x, \epsilon)\in \R^d\times\R$ independent random variables with ...
+
+[99]
+<pdf/theorem_1.pdf, id=2986, 462.96765pt x 279.93083pt>
+File: pdf/theorem_1.pdf Graphic file (type pdf)
+<use pdf/theorem_1.pdf>
+Package pdftex.def Info: pdf/theorem_1.pdf  used on input line 349.
+(pdftex.def)             Requested size: 344.005pt x 208.01265pt.
+<pdf/theorem_2.pdf, id=2992, 462.96765pt x 267.93098pt>
+File: pdf/theorem_2.pdf Graphic file (type pdf)
+<use pdf/theorem_2.pdf>
+Package pdftex.def Info: pdf/theorem_2.pdf  used on input line 368.
+(pdftex.def)             Requested size: 344.005pt x 199.09573pt.
+
+
+[100 <./pdf/theorem_1.pdf>]
+<pdf/theorem_3.pdf, id=3038, 462.96765pt x 269.35028pt>
+File: pdf/theorem_3.pdf Graphic file (type pdf)
+<use pdf/theorem_3.pdf>
+Package pdftex.def Info: pdf/theorem_3.pdf  used on input line 392.
+(pdftex.def)             Requested size: 344.005pt x 200.1504pt.
+<media/dimensional_descent.png, id=3043, 792.9625pt x 491.8375pt>
+File: media/dimensional_descent.png Graphic file (type png)
+<use media/dimensional_descent.png>
+Package pdftex.def Info: media/dimensional_descent.png  used on input line 398.
+(pdftex.def)             Requested size: 258.00539pt x 160.03291pt.
+
+
+[101 <./pdf/theorem_2.pdf>]
+Underfull \vbox (badness 4036) has occurred while \output is active []
+
+
+
+[102 <./pdf/theorem_3.pdf> <./media/dimensional_descent.png>]
+pdfTeX warning (ext4): destination with the same identifier (name{definition.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.421     C
+           onsider class $h: (\mathbb{R}^{d+1})^{q}\to \mathbb{R}\in\mathcal...
+pdfTeX warning (ext4): destination with the same identifier (name{definition.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.430     C
+           onsider class $\mathcal{H}_{\mathsf{Lin}}$. For maximum flexibili...
+
+[103]
+<pdf/linear_gen.pdf, id=3148, 462.96765pt x 398.67043pt>
+File: pdf/linear_gen.pdf Graphic file (type pdf)
+<use pdf/linear_gen.pdf>
+Package pdftex.def Info: pdf/linear_gen.pdf  used on input line 463.
+(pdftex.def)             Requested size: 344.005pt x 296.24637pt.
+
+
+[104]
+
+[105 <./pdf/linear_gen.pdf>]
+pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.486     A
+            shallow polynomial is a neural network of one layer that are fun...
+pdfTeX warning (ext4): destination with the same identifier (name{definition.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.501     T
+           he polynomial network based on Model~\ref{def:poly_structure1} is...
+<media/diagram_poly_model.png, id=3236, 3332.45pt x 2148.025pt>
+File: media/diagram_poly_model.png Graphic file (type png)
+<use media/diagram_poly_model.png>
+Package pdftex.def Info: media/diagram_poly_model.png  used on input line 566.
+(pdftex.def)             Requested size: 215.0023pt x 138.57768pt.
+
+
+[106]
+
+[107 <./media/diagram_poly_model.png>]
+pdfTeX warning (ext4): destination with the same identifier (name{definition.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.586     F
+           or $x>1$ or $\mathbf{x}_{i}>1$ of $\mathbf{x}\in\mathbb{R}^{n}$ a...
+
+[108]
+
+[109]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\begingroup' on input line 616.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\<let>-command' on input line 616.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\NAT@ctype' on input line 616.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@' on input line 616.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\let' on input line 616.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\let' on input line 616.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\new@ifnextchar' on input line 616.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[110
+
+]
+<media/img/graphdecom.png, id=3301, 237.22627pt x 68.11447pt>
+File: media/img/graphdecom.png Graphic file (type png)
+<use media/img/graphdecom.png>
+Package pdftex.def Info: media/img/graphdecom.png  used on input line 652.
+(pdftex.def)             Requested size: 301.00192pt x 86.42851pt.
+
+
+[111 <./media/img/graphdecom.png>]
+pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.670     G
+           iven a graph $\mathcal{G}(\mathcal{V},\mathcal{E})$, for any type...
+
+Package natbib Warning: Citation `pyg_docs' on page 112 undefined on input line 679.
+
+
+Package natbib Warning: Citation `Fey/Lenssen/2019' on page 112 undefined on input line 679.
+
+
+
+[112]
+<img/What.png, id=3351, 738.3585pt x 351.714pt>
+File: img/What.png Graphic file (type png)
+<use img/What.png>
+Package pdftex.def Info: img/What.png  used on input line 699.
+(pdftex.def)             Requested size: 344.005pt x 163.86732pt.
+<media/img/gnn_encoding.png, id=3354, 328.8285pt x 126.11115pt>
+File: media/img/gnn_encoding.png Graphic file (type png)
+<use media/img/gnn_encoding.png>
+Package pdftex.def Info: media/img/gnn_encoding.png  used on input line 707.
+(pdftex.def)             Requested size: 344.005pt x 131.93759pt.
+
+
+[113 <./img/What.png>]
+
+[114 <./media/img/gnn_encoding.png>])
+
+[115
+
+]
+\openout2 = `content/c6.aux'.
+
+ (content/c6.tex
+
+[116
+
+
+
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[117]
+pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.15     O
+          n arbitrary function space $\mathcal{F}:\{X\}\to \{Y\}$, of which ...
+
+[118]
+Package hyperref Info: bookmark level for unknown construction defaults to 0 on input line 21.
+
+
+[119]
+pdfTeX warning (ext4): destination with the same identifier (name{definition.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.48   G
+        iven a model $M[h,S]$, where $h\in\mathcal{H}$ and $S$ is the associ...
+pdfTeX warning (ext4): destination with the same identifier (name{definition.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.70   S
+        uppose a model with the form $M(h,S)$, where $S\subset \mathbb{R}^{n...
+
+[120]
+pdfTeX warning (ext4): destination with the same identifier (name{definition.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.91   G
+        iven the partition $\mathcal{D}\to \{\mathcal{D}_{tr}, \mathcal{D}_{...
+pdfTeX warning (ext4): destination with the same identifier (name{definition.5}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.104   G
+         iven the partition $\mathcal{D}\to \{\mathcal{D}_{tr}, \mathcal{D}_...
+
+[121]
+pdfTeX warning (ext4): destination with the same identifier (name{definition.6}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.120   G
+         iven a model $M[h,S]$, where $h\in\mathcal{H}$ and $S$ is the assoc...
+pdfTeX warning (ext4): destination with the same identifier (name{definition.7}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.138   G
+         iven a model $M[h,S]$, where $h\in\mathcal{H}$ and $S$ is the assoc...
+pdfTeX warning (ext4): destination with the same identifier (name{definition.8}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.147   S
+         uppose a model with the form $M(h,S)$, where $S\subset \mathbb{R}^{...
+
+[122]
+Package marginnote Info: Margin note 137.1 is on absolute page 137 on input line 154.
+Package marginnote Info: xpos seems to be 378.33778pt on input line 154.
+
+
+[123]
+<pdf/ce_mse_train_test-hidden_units_reuseweight_FCNN-1hiddenlayer_mnist_10class_4000.pdf, id=3471, 162.6075pt x 173.448pt>
+File: pdf/ce_mse_train_test-hidden_units_reuseweight_FCNN-1hiddenlayer_mnist_10class_4000.pdf Graphic file (type pdf)
+<use pdf/ce_mse_train_test-hidden_units_reuseweight_FCNN-1hiddenlayer_mnist_10class_4000.pdf>
+Package pdftex.def Info: pdf/ce_mse_train_test-hidden_units_reuseweight_FCNN-1hiddenlayer_mnist_10class_4000.pdf  used on input line 179.
+(pdftex.def)             Requested size: 206.40038pt x 220.17593pt.
+<pdf/mnist_r5_notitle.pdf, id=3476, 152.93239pt x 140.79594pt>
+File: pdf/mnist_r5_notitle.pdf Graphic file (type pdf)
+<use pdf/mnist_r5_notitle.pdf>
+Package pdftex.def Info: pdf/mnist_r5_notitle.pdf  used on input line 190.
+(pdftex.def)             Requested size: 206.40038pt x 190.03192pt.
+
+Underfull \hbox (badness 1616) in paragraph at lines 193--193
+\T1/ETbb-TLF/regular/n/8 with in-creas-ing model com-plex-ity trained on a sub-set of
+ []
+
+
+
+[124 <./pdf/ce_mse_train_test-hidden_units_reuseweight_FCNN-1hiddenlayer_mnist_10class_4000.pdf> <./pdf/mnist_r5_notitle.pdf
+
+pdfTeX warning: pdflatex (file ./pdf/mnist_r5_notitle.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+
+[125]
+Underfull \vbox (badness 1297) has occurred while \output is active []
+
+
+
+[126]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[127]
+pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.309     F
+           or a given concept class $\mathcal{C}$, a \textbf{representation ...
+pdfTeX warning (ext4): destination with the same identifier (name{definition.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.315     G
+           iven a concept $c\in\mathcal{C}$, the \textbf{representation comp...
+
+[128]
+pdfTeX warning (ext4): destination with the same identifier (name{assumption.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.326     F
+           or every concept $c\in\mathcal{C}$, there exists the representati...
+
+[129]
+pdfTeX warning (ext4): destination with the same identifier (name{definition.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.338   T
+         he \textbf{optimization complexity}, or $\epsilon$-optimization of ...
+pdfTeX warning (ext4): destination with the same identifier (name{definition.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.347   A
+          measure $\mathcal{M}_{S}$ gauges the \textit{sample complexity} of...
+pdfTeX warning (ext4): destination with the same identifier (name{definition.5}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.359   A
+          measure $\mathcal{M}_{S}[\epsilon,\mu](h,c)$ gauges the \textit{sa...
+
+[130]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[131]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[132]
+
+[133]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[134]
+
+Package natbib Warning: Citation `electronics13020416' on page 135 undefined on input line 432.
+
+
+Package natbib Warning: Citation `kapoor2022leakage' on page 135 undefined on input line 434.
+
+)
+
+[135]
+
+[136]
+\openout2 = `content/c6.5.aux'.
+
+ (content/c6.5.tex
+
+[137
+
+
+
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[138]
+
+[139]
+pdfTeX warning (ext4): destination with the same identifier (name{assumption.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.54 T
+      he observational space is governed by a particular sampling distributi...
+pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.62     G
+          iven a hypothesis $h\in \mathcal{H}$, a target concept $c\in \math...
+pdfTeX warning (ext4): destination with the same identifier (name{definition.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.70     G
+          iven a hypothesis $h\in\mathcal{H}$, a target concept $c\in\mathca...
+<media/g10.png, id=3890, 384.0749pt x 142.5325pt>
+File: media/g10.png Graphic file (type png)
+<use media/g10.png>
+Package pdftex.def Info: media/g10.png  used on input line 84.
+(pdftex.def)             Requested size: 301.00192pt x 111.70555pt.
+
+
+[140]
+pdfTeX warning (ext4): destination with the same identifier (name{definition.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.91     W
+          e present the formal form of the empirical learning. Suppose we ha...
+pdfTeX warning (ext4): destination with the same identifier (name{definition.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.100     W
+           e present the formal form of the generalization learning problem....
+
+[141 <./media/g10.png>]
+
+[142]
+Package hyperref Info: bookmark level for unknown setting defaults to 0 on input line 140.
+
+pdfTeX warning (ext4): destination with the same identifier (name{assumption.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.153     N
+           o knowledge of $c\in\mathcal{C}$ is provided. Consequentially, $R...
+
+[143]
+pdfTeX warning (ext4): destination with the same identifier (name{definition.5}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.159   G
+         iven a dataset $\mathcal{S}$ of size $m$, supposedly of the concept...
+pdfTeX warning (ext4): destination with the same identifier (name{definition.6}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.163   G
+         iven a dataset $\mathcal{S}$ of size $m$, supposedly of the concept...
+pdfTeX warning (ext4): destination with the same identifier (name{definition.7}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.167   A
+          model $h$ is called \textbf{underfitting} if for a constant $\epsi...
+pdfTeX warning (ext4): destination with the same identifier (name{definition.8}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.172   A
+          model $h$ is called \textbf{overfitting} if there exists a specifi...
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.203     F
+           or fixed $\mathcal{H}$, for fixed and sufficiently large $\mathca...
+
+[144]
+pdfTeX warning (ext4): destination with the same identifier (name{conjecture.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.238     S
+           upposed $\mathcal{H},\mathcal{C}$ are fixed, for $\mathcal{S}$ is...
+
+[145]
+
+[146]
+pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.264     W
+           e define a $K$-layer fully-connected deep neural network with rea...
+
+[147]
+pdfTeX warning (ext4): destination with the same identifier (name{setting.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.287     F
+           or any given optimization problem on input space $x_{i}\in \mathb...
+
+[148]
+
+Package natbib Warning: Citation `Cristianini2000AnIT' on page 149 undefined on input line 312.
+
+
+
+[149]
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.400     A
+           n algorithm $\mathcal{A}$ on the system $(\mathcal{H},\mathcal{C}...
+Overfull \hbox (0.27693pt too wide) in paragraph at lines 400--400
+[][]\T1/ETbb-TLF/bold/n/10 Theorem 6.3.1 \T1/ETbb-TLF/regular/n/10 (Heuris-tic--gen-er-al-iza-tion trade-off, model se-lec-tion)\T1/ETbb-TLF/bold/n/10 . []\T1/ETbb-TLF/regular/it/10 An al-go-rithm $\OMS/cmsy/m/n/10 A$ \T1/ETbb-TLF/regular/it/10 on the sys-tem $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 H\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 C\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 A\OT1/cmr/m/n/10 )$\T1/ETbb-TLF/regular/it/10 ,
+ []
+
+
+
+[150]
+
+Package natbib Warning: Citation `mcculloch_logical_1943' on page 151 undefined on input line 414.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[151]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[152]
+pdfTeX warning (ext4): destination with the same identifier (name{note.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.440 F
+       rom such, we can conclude that, we have to have some classification t...
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.448 L
+       et $\mathcal{S}$ be an automated operational system with internal com...
+pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.460     G
+           iven the neural network formalism. Define a construct $x$. Then $...
+pdfTeX warning (ext4): destination with the same identifier (name{definition.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.466     G
+           iven the neural network formalism. Then, for $x\in \mathcal{N}$, ...
+
+[153]
+pdfTeX warning (ext4): destination with the same identifier (name{definition.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.474     G
+           iven the \textit{neural network formalism}. Then, we define a \te...
+
+[154]
+
+[155]
+
+[156]
+
+Package natbib Warning: Citation `Cartuyvels_2021' on page 157 undefined on input line 548.
+
+
+Package natbib Warning: Citation `M_ller_2022' on page 157 undefined on input line 548.
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{definition.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.551     L
+           et us define the primitive framework $\mathcal{P}_{0}$ of the dua...
+
+[157]
+pdfTeX warning (ext4): destination with the same identifier (name{definition.5}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.561     W
+           e define the base neuron class $\mathcal{N}_{1}\equiv L_{1}$ as f...
+Package marginnote Info: Margin note 172.1 is on absolute page 172 on input line 564.
+Package marginnote Info: xpos seems to be 432.16171pt on input line 564.
+
+pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.573     A
+            function of a single variable $t$ is a polynomial on its domain ...
+pdfTeX warning (ext4): destination with the same identifier (name{definition.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.583     L
+           et $K$ be a field. We then denote $K[x_{1},\dots,x_{n}]$ the spac...
+Overfull \hbox (2.5659pt too wide) in paragraph at lines 583--584
+[][]\T1/ETbb-TLF/bold/n/10 Definition 6.6.2 \T1/ETbb-TLF/regular/n/10 (Poly-no-mial, mul-ti-vari-ate gen-er-al-iza-tion)\T1/ETbb-TLF/bold/n/10 . []\T1/ETbb-TLF/regular/n/10 Let $\OML/cmm/m/it/10 K$ \T1/ETbb-TLF/regular/n/10 be a field. We then de-note $\OML/cmm/m/it/10 K\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 x[]; [] ; x[]\OT1/cmr/m/n/10 ]$
+ []
+
+
+
+[158]
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.592     L
+           et $f\in C[a,b]$ of all continuously differentiable functions on ...
+
+[159]
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.656   L
+         et $S$ be a locally compact Hausdorff space. Let $A$ be the subset ...
+pdfTeX warning (ext4): destination with the same identifier (name{definition.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.663     A
+            function class $\mathcal{F}$ is said to \textbf{interpolate} a d...
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.668     G
+           iven $n+1$ bivariate data points $(x_{0},y_{0}),(x_{1},y_{1}),\do...
+
+[160]
+pdfTeX warning (ext4): destination with the same identifier (name{definition.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.674     L
+           et $X\subseteq \mathbb{R}^{n}$, $Y\subseteq \mathbb{R}^{m}$ be tw...
+Overfull \hbox (5.51529pt too wide) in paragraph at lines 701--701
+ [][]$\OMS/cmsy/m/n/8 D[]\OT1/cmr/m/n/8 [\OML/cmm/m/it/8 p\OT1/cmr/m/n/8 ]$ 
+ []
+
+
+Overfull \hbox (5.61499pt too wide) in paragraph at lines 701--701
+ [][]$\OML/cmm/m/it/8 p[]\OT1/cmr/m/n/8 (\OML/cmm/m/it/8 x\OT1/cmr/m/n/8 )$ 
+ []
+
+
+Overfull \hbox (5.51529pt too wide) in paragraph at lines 701--701
+ [][]$\OMS/cmsy/m/n/8 D[]\OT1/cmr/m/n/8 [\OML/cmm/m/it/8 p\OT1/cmr/m/n/8 ]$ 
+ []
+
+
+Overfull \hbox (5.4196pt too wide) in paragraph at lines 701--701
+ [][]$\OML/cmm/m/it/8 f[]\OT1/cmr/m/n/8 (\OML/cmm/m/it/8 x\OT1/cmr/m/n/8 )$ 
+ []
+
+
+Overfull \hbox (2.13466pt too wide) in paragraph at lines 706--707
+[]\T1/ETbb-TLF/regular/n/10 Polynomial re-gres-sion is then one such an-a-lyt-i-cal so-lu-tion to func-tion ap-prox-i-ma-tion task, us-ing Weier-
+ []
+
+
+
+[161]
+pdfTeX warning (ext4): destination with the same identifier (name{conjecture.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.717     I
+           f $\forall x$ there exists $y$ corresponding to such, and $(x,y)\...
+pdfTeX warning (ext4): destination with the same identifier (name{definition.5}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.731     G
+           iven a closed interval $[a,b]$, for the sample set $\mathcal{S}_{...
+
+[162]
+pdfTeX warning (ext4): destination with the same identifier (name{theorem.6}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.759     F
+           ix the encoding space $\mathbb{D} = \mathbb{R}^{q} \times \mathbb...
+
+[163]
+
+[164]
+
+[165]
+
+[166]
+pdfTeX warning (ext4): destination with the same identifier (name{hypothesis.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.892 F
+       or a polynomial $\{a_{i}x^{i}\}_{n}$ on Vandermonde basis, approximat...
+<media/diagram_poly_dd.png, id=4288, 896.8707pt x 234.8775pt>
+File: media/diagram_poly_dd.png Graphic file (type png)
+<use media/diagram_poly_dd.png>
+Package pdftex.def Info: media/diagram_poly_dd.png  used on input line 908.
+(pdftex.def)             Requested size: 301.00192pt x 78.82869pt.
+)
+
+[167 <./media/diagram_poly_dd.png>]
 \openout2 = `content/c7.aux'.
 
  (content/c7.tex
 
-[160
+[168
 
+
+
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[169]
+pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.22     A
+           neural architecture $\mathcal{N}_{m,\{n\}}$ admits an order $n$ t...
+
+[170]
+pdfTeX warning (ext4): destination with the same identifier (name{definition.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.118     C
+           onstruct an oracle that can be admitted of a form, either in full...
+
+[171])
+
+[172]
+\openout2 = `content/c8.aux'.
+
+ (content/c8.tex)
+\openout2 = `content/c9.aux'.
+
+ (content/c9.tex)
+\openout2 = `content/c10.aux'.
+
+ (content/c10.tex
+
+[173
 
 
 
@@ -2006,29 +3744,70 @@ LaTeX Font Info:    Font shape `T1/ETbb-TLF/regular/sc' will be
 
 
 ]
-LaTeX Font Info:    Font shape `T1/ETbb-TLF/regular/n' will be
-(Font)              scaled to size 17.28pt on input line 1.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[174]
 
+[175]
 
+[176]
 
-[161]
-Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 21.
+[177]
 
-
-[162]
-
-[163])
-
-[164] (main.ind
+[178]
+Underfull \vbox (badness 1043) has occurred while \output is active []
 
 
 
-[183
+[179]
+
+[180]
+pdfTeX warning (ext4): destination with the same identifier (name{assumption.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.159 T
+       he system reaches a stationary distribution $\rho^*(W)$ independent o...
+
+[181]
+pdfTeX warning (ext4): destination with the same identifier (name{hypothesis.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.218 D
+       ouble Descent is the result of the SGD algorithm navigating through p...
+Overfull \hbox (1.13971pt too wide) in paragraph at lines 238--239
+[]\T1/ETbb-TLF/regular/n/10 Crucially, the dif-fu-sion ten-sor $\OML/cmm/m/it/10 D\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 W\OT1/cmr/m/n/10 )$ \T1/ETbb-TLF/regular/n/10 is not con-stant (as in ther-mal equi-lib-rium) but is \T1/ETbb-TLF/bold/n/10 state-dependent\T1/ETbb-TLF/regular/n/10 ,
+ []
 
 
 
+[182]
+LaTeX Font Info:    Font shape `T1/ETbb-TLF/bold/n' will be
+(Font)              scaled to size 7.0pt on input line 294.
+
+
+[183]
+
+[184]
+
+[185]
+
+[186]
+
+[187]
+Overfull \hbox (8.97383pt too wide) in paragraph at lines 498--499
+\T1/ETbb-TLF/regular/n/10 the NESP per-spec-tive, we spec-u-late that Grokking rep-re-sents an []\T1/ETbb-TLF/regular/it/10 ex-treme[] \T1/ETbb-TLF/regular/n/10 in-stance of the Jamming-Relaxation
+ []
+
+
+
+[188])
+
+[189]
+
+[190] (main.ind
+
+
+
+[191
 
 
 
@@ -2041,10 +3820,10 @@ LaTeX Warning: Command \textellipsis invalid in math mode on input line 41.
 
 
 
-[184
+[192
 
 ]
-<pdf/theorem_4_verify.pdf, id=721, 462.96765pt x 356.13351pt>
+<pdf/theorem_4_verify.pdf, id=4674, 462.96765pt x 356.13351pt>
 File: pdf/theorem_4_verify.pdf Graphic file (type pdf)
 <use pdf/theorem_4_verify.pdf>
 Package pdftex.def Info: pdf/theorem_4_verify.pdf  used on input line 51.
@@ -2054,8 +3833,8 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[185 <./pdf/theorem_4_verify.pdf>]
-<pdf/VennFig2.pdf, id=784, 1824.8175pt x 527.9725pt>
+[193 <./pdf/theorem_4_verify.pdf>]
+<pdf/VennFig2.pdf, id=4731, 1824.8175pt x 527.9725pt>
 File: pdf/VennFig2.pdf Graphic file (type pdf)
 <use pdf/VennFig2.pdf>
 Package pdftex.def Info: pdf/VennFig2.pdf  used on input line 70.
@@ -2064,23 +3843,21 @@ LaTeX Font Info:    Font shape `T1/ETbb-TLF/regular/sc' will be
 (Font)              scaled to size 9.0pt on input line 71.
 
 
-[186]
+[194]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[187 <./pdf/VennFig2.pdf>]
+[195 <./pdf/VennFig2.pdf>]
 
-[188
+[196
 pdfTeX warning (ext4): destination with the same identifier (name{equation.Alph0.23}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.155 \end{align}
                  ]
 
-[189]
-LaTeX Font Info:    Font shape `T1/ETbb-TLF/regular/it' will be
-(Font)              scaled to size 8.0pt on input line 203.
+[197]
 LaTeX Font Info:    Font shape `T1/ETbb-TLF/m/it' aliased to
 (Font)              `T1/ETbb-TLF/regular/it' on input line 207.
 LaTeX Font Info:    Font shape `T1/ETbb-TLF/regular/it' will be
@@ -2102,23 +3879,33 @@ pdfTeX warning (ext4): destination with the same identifier (name{definition.2})
 l.213     A
             \textbf{probabilistic model} $h_{p}$ assumes its internal space ...
 
-[190]
-Package hyperref Info: bookmark level for unknown conjecture defaults to 0 on input line 228.
+[198]
+pdfTeX warning (ext4): destination with the same identifier (name{definition.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.224         A
+                loss function is a non-negative function $\ell :\mathcal{Y}\...
+pdfTeX warning (ext4): destination with the same identifier (name{conjecture.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.229     F
+           or any supervisor $\nabla$ of a learner framework $\mathcal{L}(\m...
+pdfTeX warning (ext4): destination with the same identifier (name{definition.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.242         A
+                \textbf{parametric model} is one that can be parameterized b...
 
-
-[191]
+[199]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[192]
-LaTeX Font Info:    Font shape `T1/ETbb-TLF/bold/n' will be
-(Font)              scaled to size 8.0pt on input line 302.
+[200]
 
+[201]) (main.bbl
 
-[193]) (main.bbl
-
-[194]
+[202]
 Underfull \hbox (badness 1342) in paragraph at lines 15--19
 []\T1/ETbb-TLF/regular/n/9 [PDF] A Unifeid Bias-Variance De-com-po-si-tion and its Ap-pli-ca-tions | Se-man-tic Scholar, b.  URL [][]$\T1/cmtt/m/n/9 https :
  []
@@ -2140,7 +3927,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 21--25
 
 
 
-[195
+[203
 
 ]
 Underfull \hbox (badness 1571) in paragraph at lines 164--171
@@ -2154,9 +3941,9 @@ Underfull \hbox (badness 3826) in paragraph at lines 164--171
 
 
 
-[196]
+[204]
 
-[197]
+[205]
 Underfull \hbox (badness 7099) in paragraph at lines 441--446
 []\T1/ETbb-TLF/regular/n/9 Nicolò Cesa-Bianchi and Gá-bor Lu-gosi.  \T1/ETbb-TLF/regular/it/9 Pre-dic-tion, Learn-ing, and Games\T1/ETbb-TLF/regular/n/9 .  Cam-bridge Uni-ver-sity
  []
@@ -2168,14 +3955,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 441--446
 
 
 
-[198]
+[206]
 Underfull \hbox (badness 2027) in paragraph at lines 537--544
 []\T1/ETbb-TLF/regular/n/9 Stéphane d' As-coli, Lev-ent Sa-gun, and Giulio Biroli.  Triple de-scent and the two kinds of over-fit-ting:
  []
 
 
 
-[199]
+[207]
 Underfull \hbox (badness 10000) in paragraph at lines 619--624
 []\T1/ETbb-TLF/regular/n/9 Pedro M. Domin-gos.  A Unifeid Bias-Variance De-com-po-si-tion and its Ap-pli-ca-
  []
@@ -2202,13 +3989,13 @@ Underfull \hbox (badness 1983) in paragraph at lines 703--708
 
 
 
-[200]
+[208]
 
-[201]
+[209]
 
-[202]
+[210]
 
-[203]
+[211]
 Underfull \hbox (badness 3568) in paragraph at lines 1163--1172
 []\T1/ETbb-TLF/regular/n/9 Xinyue Li and Rishi Son-thalia.  Least squares re-gres-sion can ex-hibit under-parameterized dou-ble de-
  []
@@ -2230,33 +4017,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 1163--1172
 
 
 
-[204]
+[212]
 
-[205]
+[213]
 
-[206]
+[214]
 
-[207]
+[215]
 Underfull \hbox (badness 1454) in paragraph at lines 1633--1640
 \T1/ETbb-TLF/regular/n/9 9780486843070.  URL [][]$\T1/cmtt/m/n/9 https : / / archive . org / details / Introduction _ To _ Artificial _ Intelligence _
  []
 
 
 
-[208]
+[216]
 Underfull \hbox (badness 1824) in paragraph at lines 1684--1690
 []\T1/ETbb-TLF/regular/n/9 Alec Rad-ford, Karthik Narasimhan, Tim Sal-i-mans, and Ilya Sutskever.  Im-prov-ing lan-guage un-der-stand-
  []
 
 
 
-[209]
+[217]
 
-[210]
+[218]
 
-[211]
+[219]
 
-[212]
+[220]
 Underfull \hbox (badness 10000) in paragraph at lines 2184--2190
 []\T1/ETbb-TLF/regular/n/9 Onur Tu-nali.  Em-pir-i-cal Rademacher Com-plex-ity and Its Im-pli-ca-tions to Deep Learn-ing.
  []
@@ -2268,9 +4055,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 2184--2190
 
 
 
-[213]
+[221]
 
-[214]
+[222]
 Underfull \hbox (badness 7649) in paragraph at lines 2430--2436
 []\T1/ETbb-TLF/regular/n/9 Tong Zhang.  \T1/ETbb-TLF/regular/it/9 Math-e-mat-i-cal Anal-y-sis of Ma-chine Learn-ing Al-go-rithms\T1/ETbb-TLF/regular/n/9 .  Cam-bridge Uni-ver-sity Press,
  []
@@ -2282,7 +4069,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 2430--2436
 
 )
 
-[215]
+Package natbib Warning: There were undefined citations.
+
+
+
+[223]
 \tf@lof=\write9
 \openout9 = `main.lof'.
 
@@ -2293,494 +4084,29 @@ L3 programming layer <2020/03/25>
  ***********
 
 
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: DA777A846DD8872BB2A3AF52D9646F00;2299.
+(rerunfilecheck)             Checksum: EB710F88E7ECCB6680C81597A0CD77E9;24619.
  ) 
 Here is how much of TeX's memory you used:
- 74764 strings out of 468187
- 1809255 string characters out of 5448666
- 2761994 words of memory out of 5000000
- 101611 multiletter control sequences out of 15000+600000
- 874935 words of font info for 172 fonts, out of 8000000 for 9000
+ 78163 strings out of 468187
+ 1879194 string characters out of 5448666
+ 2799360 words of memory out of 5000000
+ 104003 multiletter control sequences out of 15000+600000
+ 905619 words of font info for 200 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 103i,25n,120p,2023b,1379s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{page.78} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{page.48} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{page.30} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{page.29} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{page.43} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{page.150} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{page.38} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{page.27} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{page.16} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{page.20} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{page.49} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{page.46} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{page.42} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{page.21} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{page.97} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{page.6} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{page.24} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.67} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.62} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.61} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.59} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.52} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.44} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.41} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.40} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.38} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.36} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.33} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.31} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.30} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.29} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{theorem.1} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.28} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.27} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.26} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.25} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.24} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.20} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.19} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.18} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.17} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.13} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{hypothesis.1} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.11} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.9} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.8} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{equation.4.24} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.8.3.4} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.8.3.3} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.8.3.2} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.8.3.1} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.8.3} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.8.2.2} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.8.2.1} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.8.2} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.8.1.3} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.8.1.2} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.8.1.1} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.8.1} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{chapter.8} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.6.6} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.6.5.3} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.6.5.2} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.6.5.1} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.6.5} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.6.4} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.6.3.2} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.6.3.1} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.6.3} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.6.2.1} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.6.2} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.6.1.1} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.6.1} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{chapter.6} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.5.3.4} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.5.3.3} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.5.3.2} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.5.3.1} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.5.3} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.5.2.1} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.5.2} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.5.1.4} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.5.1.3} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.5.1.2} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.5.1.1} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.5.1} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{chapter.5} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.4.6} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.4.5.2} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.4.5.1} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.4.5} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.4.4.3} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.4.4.2} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.4.4.1} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.4.4} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.4.3.1} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.4.3} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.4.2} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.4.1.3} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.4.1.2} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.4.1.1} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.4.1} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{chapter.4} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.4.8} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.4.7} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.4.6} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.4.5} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.4.4} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.4.3} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.4.2} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.4.1} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.3.4} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.3.2} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.3.1} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.3.3} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.2.1} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.3.2} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.1.2} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.1.1} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.3.1} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{chapter.3} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.2.9} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.2.8} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.2.7} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.2.6.2} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.2.6.1} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.2.6} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.2.5.1} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.2.5} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.2.4.6} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.2.4.5} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.2.4.4} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.2.4.3} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.2.4.2} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.2.4.1} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.2.4} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.2.3.1} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.2.3} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.2.2.2} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.2.2.1} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.2.2} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.2.1} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{chapter.2} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.1.3.3} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.1.3.2} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.1.3.1} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.1.3} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.1.2} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.1.1.6} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.1.1.5} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.1.1.4} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.1.1.3} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.1.1.2} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.1.1.1} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.1.1} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{chapter.1} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{chapter*.3} has been referenced but does not exist, replaced by a fixed one
-
-<D:/MikTek/fonts/type1/public/etbb/ETbb-Bold.pfb><D:/MikTek/fonts/type1/public/etbb/ETbb-Italic.pfb><D:/MikTek/fonts/type1/public/etbb/ETbb-Regular.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbx9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi5.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmmib6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmmib9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr5.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmss10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmss9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy9.pfb><D:/MikTek/fonts/type1/public/amsfonts/symbols/msbm10.pfb><D:/MikTek/fonts/type1/public/amsfonts/symbols/msbm7.pfb><D:/MikTek/fonts/type1/public/cm-super/sfrm0800.pfb><D:/MikTek/fonts/type1/public/cm-super/sfss1095.pfb><D:/MikTek/fonts/type1/public/cm-super/sfss1200.pfb><D:/MikTek/fonts/type1/public/cm-super/sfss1728.pfb><D:/MikTek/fonts/type1/public/cm-super/sfss2074.pfb><D:/MikTek/fonts/type1/public/cm-super/sftt0900.pfb>
-Output written on main.pdf (48 pages, 2719393 bytes).
+ 103i,27n,120p,5858b,2940s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbm/dpi600\bbm10.pk><D:/MikTek/fonts/type1/public/etbb/ETbb-Bold.pfb><D:/MikTek/fonts/type1/public/etbb/ETbb-BoldItalic.pfb><D:/MikTek/fonts/type1/public/etbb/ETbb-Italic.pfb><D:/MikTek/fonts/type1/public/etbb/ETbb-Regular.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbx7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbx8.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmbx9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi12.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi5.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmi9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmmib10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmmib5.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmmib6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><D:/MikTek/fonts/type1/public/amsfonts/cmextra/cmmib9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr5.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmr9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmss10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmss8.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmss9.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy5.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy6.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/MikTek/fonts/type1/public/amsfonts/cm/cmsy9.pfb><D:/MikTek/fonts/type1/public/amsfonts/euler/eufm10.pfb><D:/MikTek/fonts/type1/public/amsfonts/symbols/msbm10.pfb><D:/MikTek/fonts/type1/public/amsfonts/symbols/msbm7.pfb><D:/MikTek/fonts/type1/public/tex-gyre/qhvr.pfb><D:/MikTek/fonts/type1/public/tex-gyre/qhvri.pfb><D:/MikTek/fonts/type1/public/cm-super/sfrm0800.pfb><D:/MikTek/fonts/type1/public/cm-super/sfsi1000.pfb><D:/MikTek/fonts/type1/public/cm-super/sfss1095.pfb><D:/MikTek/fonts/type1/public/cm-super/sfss1200.pfb><D:/MikTek/fonts/type1/public/cm-super/sfss1728.pfb><D:/MikTek/fonts/type1/public/cm-super/sfss2074.pfb><D:/MikTek/fonts/type1/public/cm-super/sfsx1000.pfb><D:/MikTek/fonts/type1/public/cm-super/sftt0900.pfb><D:/MikTek/fonts/type1/public/cm-super/sftt1000.pfb><D:/MikTek/fonts/type1/public/hoekwater/stmary10.pfb><D:/MikTek/fonts/type1/public/hoekwater/stmary7.pfb>
+Output written on main.pdf (237 pages, 10326007 bytes).
 PDF statistics:
- 1965 PDF objects out of 2073 (max. 8388607)
- 610 named destinations out of 1000 (max. 500000)
- 135 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 5888 PDF objects out of 6186 (max. 8388607)
+ 1561 named destinations out of 1728 (max. 500000)
+ 1168 words of extra memory for PDF output out of 10000 (max. 10000000)
 

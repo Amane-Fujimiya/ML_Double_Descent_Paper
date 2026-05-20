@@ -205,7 +205,7 @@ Table~\ref{tab:dd_comparison} summarises the principal contributions on double d
 \footnotesize
 \caption{Comparison of key double descent results.}
 \label{tab:dd_comparison}
-\begin{tabular}{@{}p{3.2cm}p{2.8cm}p{2.8cm}p{1.8cm}p{4cm}@{}}
+\begin{tabular}{ p{3.2cm}p{2.8cm}p{2.8cm}p{1.8cm}p{4cm} }
 \toprule
 \textbf{Reference} & \textbf{Model Class} & \textbf{Framework} & \textbf{DD Type} & \textbf{Key Finding} \\
 \midrule
@@ -239,7 +239,7 @@ Table~\ref{tab:theoretical_requirements} enumerates the theoretical tools requir
 \footnotesize
 \caption{Theoretical tools required for NESP framework: status and gaps}
 \label{tab:theoretical_requirements}
-\begin{tabular}{@{}p{3.5cm}p{2cm}p{6cm}@{}}
+\begin{tabular}{ p{3.5cm}p{2cm}p{6cm} }
 \toprule
 \textbf{Theoretical Tool} & \textbf{Status} & \textbf{Notes / Gaps} \\
 \midrule
@@ -2038,7 +2038,7 @@ Table~\ref{tab:exp1_data} reports the numerical values. The central finding is a
 \footnotesize
 \caption{Numerical results for Experiment 1 (production run, $d=30$, $n=4000$). $\gamma = k/d$; $\mathrm{Tr}(H)$ is the Hessian trace; $\mathrm{Tr}(\Sigma)$ is the noise covariance trace; $\kappa(H)$ is the Hessian condition number.}
 \label{tab:exp1_data}
-\begin{tabular}{@{}cccccc@{}}
+\begin{tabular}{ cccccc }
 \toprule
 $k$ & $\gamma$ & Test Loss (MSE) & $\mathrm{Tr}(H)$ & $\mathrm{Tr}(\Sigma)$ & $\kappa(H)$ \\
 \midrule
@@ -2179,7 +2179,7 @@ Table~\ref{tab:exp6_data} reports the key measurements. The central finding is a
 \setlength{\tabcolsep}{3pt}
 \caption{Curvature-noise coupling metrics across activation functions (Experiment~6). Alignment ratio = $\mathcal{A}/\mathcal{A}_{\mathrm{rand}}$ where $\mathcal{A}_{\mathrm{rand}} = 1/\mathrm{dim}$.}
 \label{tab:exp6_data}
-\begin{tabularx}{\textwidth}{@{}lccYY@{}}
+\begin{tabularx}{\textwidth}{ lccYY }
 \toprule
 \textbf{Activation} & \shortstack{\textbf{Max}\\\textbf{Align. Ratio}} & \shortstack{\textbf{Mean}\\\textbf{Align. Ratio}} & \shortstack{\textbf{Eigval.}\\\textbf{Corr. Range}} & \shortstack{\textbf{Test Loss}\\\textbf{Range}} \\
 \midrule
@@ -2246,7 +2246,7 @@ Table~\ref{tab:sharpness_gradient} reports the complete measurements. The Sharpn
 \setlength{\tabcolsep}{3pt}
 \caption{Sharpness Ratio and double descent metrics across five activation functions (Experiment~8).}
 \label{tab:sharpness_gradient}
-\begin{tabularx}{\textwidth}{@{}lcccccY@{}}
+\begin{tabularx}{\textwidth}{ lcccccY }
 \toprule
 \textbf{Activation} & $R_H$ & \shortstack{$\langle H\rangle$\\$_{\gamma<1}$} & \shortstack{$\langle H\rangle$\\$_{\gamma>2}$} & \shortstack{\textbf{DD}\\\textbf{Peak}} & \shortstack{\textbf{Recovery}\\\textbf{(\%)}} & \shortstack{\textbf{Mean}\\\textbf{Align.}} \\
 \midrule
@@ -2286,7 +2286,7 @@ Table~\ref{tab:lr_modulation} reports the per-$\eta$ Spearman correlations. At t
 \setlength{\tabcolsep}{3pt}
 \caption{Per-learning-rate Spearman correlation between $R_H$ and DD peak (Experiment~9, $n=3$ activations).}
 \label{tab:lr_modulation}
-\begin{tabularx}{\textwidth}{@{}lccX@{}}
+\begin{tabularx}{\textwidth}{lccX}
 \toprule
 $\eta$ & $\rho(R_H, \text{peak})$ & $p$-value & Interpretation \\
 \midrule
@@ -2346,7 +2346,7 @@ Experiment~8 is the centerpiece: $R_H$ achieves Spearman $\rho = 0.700$ with dou
 \setlength{\tabcolsep}{3pt}
 \caption{Scaled sharpness gradient results ($d=30$, $n=3000$, $N_{\mathrm{seeds}}=3$). Test MSE in $\times 10^{-3}$, $\mathrm{Tr}(H)$ as mean $\pm$ bootstrap 95\% CI.}
 \label{tab:scaled_sharpness}
-\begin{tabular}{@{}rccccr@{}}
+\begin{tabular}{ rccccr }
 \toprule
 \multirow{2}{*}{$\gamma$} & \multicolumn{2}{c}{\textbf{Linear}} & \multicolumn{2}{c}{\textbf{$\tanh$}} & \multirow{2}{*}{\shortstack{\textbf{Eq.}\\$\mathrm{Tr}(H)$}} \\
 \cmidrule(lr){2-3}\cmidrule(lr){4-5}
@@ -2392,13 +2392,13 @@ Having confirmed that the Sharpness Ratio scales robustly to $d=30$, we turned t
 \end{itemize}
 Parameters: $\eta = 0.01$, $\gamma \in \{0.3, 0.5, 0.8, 1.0, 1.2, 1.5, 2.0, 3.0\}$, $B=16$. All measurements are mean $\pm$ bootstrap 95\% CI across $N_{\mathrm{seeds}}=3$.
 
-\begin{table}[htb]
+\begin{table*}[htb]
 \centering
 \scriptsize
 \setlength{\tabcolsep}{5pt}
 \caption{Calibrated causal intervention ($\tanh$, $d=20$, $n=1000$, $N_{\mathrm{seeds}}=3$). All test loss values $\times 10^{-2}$. Equal-powered noise eliminates the apparent structure effect.}
 \label{tab:causal_intervention}
-\begin{tabular}{@{}lccc@{}}
+\begin{tabular}{ lccc }
 \toprule
 \textbf{Noise Mode} & \textbf{Peak} & \textbf{Final ($\gamma{=}3$)} & \textbf{Recovery} \\
 \midrule
@@ -2406,9 +2406,9 @@ Curvature-matched & $1.64$ & $1.23$ & $13.5\%$ \\
 Standard SGD (natural) & $1.61$ & $1.23$ & $12.1\%$ \\
 Isotropic calibrated & $1.63$ & $1.23$ & $12.1\%$ \\
 \bottomrule
-\multicolumn{4}{@{}l}{\scriptsize Pairwise $t$-tests ($N{=}3$): curvature vs.\ standard $p{=}0.99$; curvature vs.\ iso $p{=}0.86$ (both n.s.)}\\
+\multicolumn{4}{ l}{\scriptsize Pairwise $t$-tests ($N{=}3$): curvature vs.\ standard $p{=}0.99$; curvature vs.\ iso $p{=}0.86$ (both n.s.)}\\
 \end{tabular}
-\end{table}
+\end{table*}
 
 \textbf{Key results (calibrated, Loop~5):}
 \begin{enumerate}
@@ -2436,7 +2436,7 @@ Isotropic calibrated & $1.63$ & $1.23$ & $12.1\%$ \\
 \setlength{\tabcolsep}{4pt}
 \caption{Corrected FTLE spectrum ($\tanh$, $d=20$, converged models). All $\lambda_i$ values $\times 10^{-4}$. $\lambda_1$ is the maximal FTLE.}
 \label{tab:ftle_corrected}
-\begin{tabular}{@{}cccccc@{}}
+\begin{tabular}{ cccccc }
 \toprule
 $\gamma$ & $\mathrm{Tr}(H)$ & $\lambda_1$ & $\lambda_2$ & $\lambda_3$ \\
 \midrule
@@ -2477,7 +2477,7 @@ $\gamma$ & $\mathrm{Tr}(H)$ & $\lambda_1$ & $\lambda_2$ & $\lambda_3$ \\
 \setlength{\tabcolsep}{3pt}
 \caption{Phase diagram test loss (all $\times 10^{-3}$, $\tanh$, $d=20$, $n=1500$, $200$ epochs). Bold: best/worst at each $B$.}
 \label{tab:phase_diagram}
-\begin{tabular}{@{}lccccc@{}}
+\begin{tabular}{ lccccc }
 \toprule
 $\gamma$ & $B{=}4$ & $B{=}16$ & $B{=}64$ & $B{=}256$ & $B{=}1024$ \\
 & {\scriptsize ($T_{\mathrm{eff}}{=}2.5{\times}10^{-3}$)} & {\scriptsize ($6.3{\times}10^{-4}$)} & {\scriptsize ($1.6{\times}10^{-4}$)} & {\scriptsize ($3.9{\times}10^{-5}$)} & {\scriptsize ($9.8{\times}10^{-6}$)} \\
@@ -2525,10 +2525,9 @@ where $f(x)$ is a window function peaking at $x \approx 30$--$70$ and vanishing 
 \setlength{\tabcolsep}{2.5pt}
 \caption{\textbf{$d=50$ scaled campaign:} Sharpness Ratio and double descent metrics. Test MSE (all values $\times 10^{-3}$) and $\mathrm{Tr}(H)$ are mean $\pm$ bootstrap 95\% CI across $N_{\mathrm{seeds}}=3$. Equilibrium baseline: $\mathrm{Tr}(H)_{\mathrm{eq}} = 49.95$, $\mathrm{MSE}_{\mathrm{eq}} = 2.604 \times 10^{-3}$.}
 \label{tab:d50_campaign}
-\begin{tabular}{@{}rccccr@{}}
+\begin{tabular}{ rccccr }
 \toprule
-\multirow{2}{*}{$\gamma$} & \multicolumn{2}{c}{\textbf{$\tanh$}} & \multicolumn{2}{c}{\textbf{Linear}} & \multirow{2}{*}{\shortstack{\textbf{Eq.}\\$\mathrm{Tr}(H)$}} \\
-\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+\multirow{2}{*}{} & \multicolumn{2}{c}{\textbf{$\tanh$}} & \multicolumn{2}{c}{\textbf{Linear}} & \multirow{2}{*}{\shortstack{\textbf{Eq.}\\$\mathrm{Tr}(H)$}} \\
 & Test MSE & $\mathrm{Tr}(H)$ & Test MSE & $\mathrm{Tr}(H)$ & \\
 \midrule
 0.20 & $4.480 \pm 0.076$ & $\mathbf{414.0 \pm 25.2}$ & $2.673 \pm 0.004$ & $103.6 \pm 5.5$ & 49.95 \\
@@ -2607,7 +2606,7 @@ Both grids use identical high-$\gamma$ points ($k = 60, 75, 100, 150, 250, 500$)
 
 \vspace{4pt}
 \begin{center}
-\begin{tabular}{@{}lccc@{}}
+\begin{tabular}{ lccc }
 \toprule
 \textbf{Phase} & \textbf{Epoch range (d=50)} & \textbf{Test loss (d=50)} & \textbf{Test loss (d=30)} \\
 \midrule
@@ -2642,9 +2641,8 @@ Late plateau           & 539--5000 & $\sim 2.9$--$3.1 \times 10^{-3}$ & $\sim 2.
 
 \textbf{Protocol (Loop~8):} A 5-layer $\tanh$ network ($d=30$, hidden widths proportional to $k_1{:}k_2{:}k_3{:}k_4{:}k_5 = 0.5{:}0.6{:}0.7{:}0.83{:}1.0 \times k_{\mathrm{ref}}$) was trained at 7 values of $\gamma = k_{\mathrm{ref}}/d \in \{0.5, 0.8, 1.0, 1.5, 2.0, 3.0, 5.0\}$ with $N_{\mathrm{seeds}}=5$, $\eta=0.01$, $B=16$, $\mathrm{n\_epochs}=2000$. Hessian trace was estimated via the Hutchinson estimator at each $(\gamma, \sigma)$ pair.
 
-\vspace{4pt}
-\begin{center}
-\begin{tabular}{@{}rcccc@{}}
+\begin{table*}
+    \begin{tabular}{ rcccc }
 \toprule
 $\gamma$ & $k_5$ (output width) & Total params $\sim$ & Test MSE & $\mathrm{Tr}(H)$ \\
 \midrule
@@ -2657,8 +2655,7 @@ $\gamma$ & $k_5$ (output width) & Total params $\sim$ & Test MSE & $\mathrm{Tr}(
 5.0  & 310 & 159920& $1.11821 \pm 0.00176$ & $6.55 \pm 14.05$ \\
 \bottomrule
 \end{tabular}
-\end{center}
-\vspace{4pt}
+\end{table*}
 
 \textbf{Key results:}
 \begin{enumerate}
@@ -2701,25 +2698,25 @@ We acknowledge several limitations of the present experimental study, \textbf{up
 
 \subsection{Summary of Key Numerical Results}
 
-\begin{table}[htb]
+\begin{table*}[htb]
 \centering
 \scriptsize
 \setlength{\tabcolsep}{1.5pt}
 \renewcommand{\arraystretch}{0.92}
 \caption{Summary of key experimental observables and their theoretical counterparts.}
 \label{tab:results_summary}
-\begin{tabular}{@{}p{3.4cm}p{2.4cm}p{3.0cm}p{1.7cm}@{}}
+\begin{tabular}{ p{3.4cm}p{2.4cm}p{3.0cm}p{1.7cm} }
 \toprule
 \textbf{Observable} & \textbf{Prediction} & \textbf{Experiment} & \textbf{Status} \\
 \midrule
-\multicolumn{4}{@{}l}{\textbf{Microscopic mechanism --- Curvature-Noise Coupling}} \\
+\multicolumn{4}{ l}{\textbf{Microscopic mechanism --- Curvature-Noise Coupling}} \\
 \addlinespace[1pt]
 $\mathrm{Tr}(\Sigma)$ peak at $\gamma \approx 1$ & Eq.~\eqref{eq:trace_divergence} & Exp.\ 1: $+4.6\%$ elevation & Confirmed \\
 $\lambda(H)$ vs.\ $\lambda(\Sigma)$ correlation & Hyp.~\ref{hyp:curvature_noise} & Exp.\ 1: $\rho = 0.37$ & Confirmed \\
 $H$-$\Sigma$ alignment in ReLU & coupling survives $\sigma$ & Exp.\ 4: $3.2$--$8.7\times$ baseline & Confirmed \\
 Coupling universal across activations & Rem.~\ref{rmk:sharpness_gradient_condition} & Exp.\ 6: $19$--$26\times$ baseline & Confirmed \\
 \midrule
-\multicolumn{4}{@{}l}{\textbf{Dynamical selection --- Survival of the Flattest}} \\
+\multicolumn{4}{ l}{\textbf{Dynamical selection --- Survival of the Flattest}} \\
 \addlinespace[1pt]
 $\tau \propto \lambda_{\max}^{\alpha}$ ($\alpha < 0$) & Eq.~\eqref{eq:escape_time_nesp} & Exp.\ 2: $\alpha = -1.34$ & Confirmed \\
 Smaller $B$ $\to$ larger peak & $T_{\mathrm{eff}} = \eta/B$ & Exp.\ 3: monotonic trend & Confirmed \\
@@ -2727,7 +2724,7 @@ Smaller $B$ $\to$ faster recovery & dynamical selection & Exp.\ 3: $B=1$ best fi
 Post-convergence erosion & Eq.~\ref{eq:erosion_diffusion} & Exp.\ 5: $p<0.01$, $B=16$ & Confirmed \\
 Full-batch no erosion & kinetic, not thermal & Exp.\ 5: $p=0.87$, $B=n$ & Confirmed \\
 \midrule
-\multicolumn{4}{@{}l}{\textbf{Sufficient condition --- Sharpness Ratio $R_H$}} \\
+\multicolumn{4}{ l}{\textbf{Sufficient condition --- Sharpness Ratio $R_H$}} \\
 \addlinespace[1pt]
 $R_H$ predicts DD peak rank & Eq.~\eqref{eq:dd_peak_prediction} & Exp.\ 8: $\rho = 0.700$ ($n=5$) & Confirmed \\
 $R_H \gg 1$ for saturating activations & Rem.~\ref{rmk:linear_weak_dd} & Exp.\ 8: $\tanh$ $R_H=3.39$ & Confirmed \\
@@ -2735,7 +2732,7 @@ $R_H$ invariant to $\eta$ & structural property & Exp.\ 9: CV $\approx 0.3$ & Co
 Perfect $R_H$--peak corr.\ at opt.~$\eta$ & Eq.~\eqref{eq:dd_peak_prediction} & Exp.\ 9: $\rho = 1.000$ ($\eta=0.01$) & Confirmed \\
 DD peak $\propto \eta \cdot R_H$ & Eq.~\eqref{eq:dd_peak_prediction} & Exp.\ 9: combined $\rho = 0.550$ & Confirmed \\
 \midrule
-\multicolumn{4}{@{}l}{\textbf{Scaled Campaign --- Statistical Robustness \& Causality}} \\
+\multicolumn{4}{ l}{\textbf{Scaled Campaign --- Statistical Robustness \& Causality}} \\
 \addlinespace[1pt]
 $R_H$ scales to $d=30$ (3 seeds, bootstrap) & SGH (Rem.~\ref{rmk:sharpness_gradient_condition}) & C1: $\tanh$ $R_H=2.03$, rec.~$15.1\%$ & Confirmed \\
 SGD $\neq$ equilibrium pseudoinverse & NESP kinetic selection & C1: $R_H^{\mathrm{eq}}=1$, $R_H^{\mathrm{SGD}}\gg 1$ & Confirmed \\
@@ -2745,14 +2742,14 @@ DD magnitude $\propto T_{\mathrm{eff}}$ & Eq.~\eqref{eq:one_component_causal} & 
 FTLE $\rho(\mathrm{Tr}(H), \lambda_1) = -0.762$ & Sec.~\ref{sec:lyapunov} & L5: $\tanh$, $d=20$, $p=0.028$ & Confirmed \\
 Linear $R_H$ finite-size scaling & Kronecker correction & C1: $R_H(15)=0.74$, $R_H(30)=1.36$ & Testable pred. \\
 \midrule
-\multicolumn{4}{@{}l}{\textbf{Phase Diagram \& Empirical Constraints (Loop~6)}} \\
+\multicolumn{4}{ l}{\textbf{Phase Diagram \& Empirical Constraints (Loop~6)}} \\
 \addlinespace[1pt]
 No DD at $d{=}20$, $n{=}1500$ & DD needs critical $n/d$ & C2: monotonic decrease all $B$ & Negative -- constrains DD \\
 $T_{\mathrm{eff}}$ controls under-param.\ test loss & Eq.~\eqref{eq:one_component_causal} & C2: $B{=}4 \ll B{=}1024$ at $\gamma{=}0.3$ & Confirmed \\
 Over-param.\ regime robust to $T_{\mathrm{eff}}$ & Free lunch at $\gamma \gg 1$ & C2: all $B$ converge $\approx 3{\times}10^{-3}$ & Confirmed \\
 DD window $f(n_{\mathrm{train}}/d)$ predicted & H1$'''''$ & C2: DD at $n/d{=}70$, absent $n/d{=}52.5$ & New prediction \\
 \midrule
-\multicolumn{4}{@{}l}{\textbf{$d=50$ GPU Campaign --- Scaling Confirmation (Loop~7)}} \\
+\multicolumn{4}{ l}{\textbf{$d=50$ GPU Campaign --- Scaling Confirmation (Loop~7)}} \\
 \addlinespace[1pt]
 $\tanh$ $R_H=2.18$, rec.~$38.0\%$ at $d=50$ & Eq.~\eqref{eq:dd_peak_prediction} & C1-ext: 16 $\gamma$, 3 seeds & Confirmed -- DD scales up \\
 Linear $R_H \to 1$ as $d \to \infty$ & Kronecker limit & $R_H(15){=}0.74$, $R_H(30){=}1.36$, $R_H(50){=}0.98$ & Confirmed -- finite-size \\
@@ -2760,7 +2757,7 @@ Recovery $\propto \gamma_{\max} \times R_H$ & H1$''''''$ & $38.0\%$ ($\gamma_{\m
 SGD $\mathrm{Tr}(H)$ $= 1.7$--$8.3\times$ equilibrium & NESP kinetics & $d=50$ eq.\ baseline $=49.95$ (constant) & Confirmed -- non-equil. \\
 Bootstrap CI $<5\%$ for all test loss & Statistical robustness & $16\gamma \times 2$ arch $\times 3$ seeds $=96$ pts & Confirmed -- submission-grade \\
 \midrule
-\multicolumn{4}{@{}l}{\textbf{Loop~8 --- Epoch-wise DD, Grid Sensitivity \& Deep Networks}} \\
+\multicolumn{4}{ l}{\textbf{Loop~8 --- Epoch-wise DD, Grid Sensitivity \& Deep Networks}} \\
 \addlinespace[1pt]
 Epoch-wise DD hump at epoch $\sim$100--130 & NESP progressive sharpening & $+6.8\%$ ($d{=}50$), $+3.1\%$ ($d{=}30$) & Confirmed -- time domain \\
 Epoch-wise DD scales with $d$ & Larger $d$, stronger selection & $d{=}50$ amplitude ${>}\, d{=}30$ & Confirmed -- scaling \\
@@ -2769,7 +2766,7 @@ Deep5 $\tanh$ $R_H = 0.40 < 1$ & No DD predicted & Test loss flat ($<0.25\%$ var
 Deep5 Hessian $17\%$ negative eigenvalues & Non-convexity blocks selection & $\mathrm{Tr}(H)$ $2$--$8$ (vs.\ $80$--$500$ two-layer) & Negative -- boundary condition \\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}
 
 \textbf{Final assessment (updated, Loop~8):} The experimental program---spanning nine proof-of-concept experiments, a scaled campaign with causal intervention, a Phase Diagram sweep, a GPU-accelerated $d=50$ confirmation, and three new validation paradigms (epoch-wise DD, grid resolution sensitivity, deep network boundary)---now provides \textbf{positive evidence for 25 confirmed predictions}, \textbf{2 empirically-revised predictions}, and \textbf{3 negative constraints} of the NESP + Sharpness Ratio framework. 
 
@@ -2953,7 +2950,7 @@ We have constructed a framework---NESP---that reframes double descent as a dynam
 
 \begin{table}[htb]
 \centering
-\begin{tabular}{@{}lcc@{}}
+\begin{tabular}{ lcc }
 \toprule
 \textbf{Component} & \textbf{Status} & \textbf{Notes} \\
 \midrule
